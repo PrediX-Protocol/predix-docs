@@ -28,7 +28,7 @@ All deployed smart contracts on Unichain Sepolia:
 ## How to Report
 
 1. **DO NOT** disclose publicly
-2. Email: [security@predix.io]
+2. Contact us via [Telegram](https://t.me/CoinCrazeCentral) or [Twitter DM](https://x.com/CoinCrazeCen)
 3. Include: description, reproduction steps, impact assessment
 4. Expected response: within 48 hours
 
