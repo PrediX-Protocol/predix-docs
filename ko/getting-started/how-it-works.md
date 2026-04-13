@@ -8,12 +8,18 @@ description: 마켓 생성부터 토큰 수령까지의 단계별 흐름
 
 ```
 ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│  생성    │ →  │  활성    │ →  │  만기    │ →  │  해결    │ →  │  수령    │
+│ Created  │ →  │  Active  │ →  │ Expired  │ →  │ Resolved │ →  │Redeemable│
 └──────────┘    └──────────┘    └──────────┘    └──────────┘    └──────────┘
                      │                                │
-                   거래                          긴급 (7일)
-                   가능                          또는 환불 모드
+                  Trading                        Emergency (7d)
+                  allowed                        or Refund Mode
 ```
+
+- **Created**: 생성됨
+- **Active**: 활성 (거래 가능)
+- **Expired**: 만기
+- **Resolved**: 해결됨
+- **Redeemable**: 수령 가능
 
 ## 단계별 설명
 
@@ -57,13 +63,13 @@ description: 마켓 생성부터 토큰 수령까지의 단계별 흐름
 승리 토큰 보유자는 토큰당 $1.00를 수령합니다:
 
 ```
-YES 승리 시:
-  1 YES 토큰 → $1.00 USDC
-  1 NO 토큰  → $0.00
+If YES wins:
+  1 YES token → $1.00 USDC
+  1 NO token  → $0.00
 
-NO 승리 시:
-  1 YES 토큰 → $0.00
-  1 NO 토큰  → $1.00 USDC
+If NO wins:
+  1 YES token → $0.00
+  1 NO token  → $1.00 USDC
 ```
 
 ## 실제 예시

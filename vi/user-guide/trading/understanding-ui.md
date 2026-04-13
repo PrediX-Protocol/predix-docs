@@ -2,7 +2,7 @@
 description: Hiểu giao diện giao dịch PrediX
 ---
 
-# Hiểu giao diện
+# Giao diện giao dịch
 
 ## Bố cục chính
 
@@ -10,34 +10,35 @@ Trang giao dịch có 4 khu vực chính:
 
 ```
 ┌──────────────────────┬─────────────────┐
-│                      │  Vị thế của bạn │
-│   Biểu đồ giá       │  YES: 65 cổ phần│
+│                      │  Your Position  │
+│   Price Chart        │  YES: 65 shares │
 │                      ├─────────────────┤
-│                      │  Bảng giao dịch │
-│                      │  Mua / Bán      │
-│                      │  Thị trường/    │
-│                      │  Giới hạn       │
-│                      │  [Số tiền]      │
+│                      │  Trading Panel  │
+│                      │  Buy / Sell     │
+│                      │  Market / Limit │
+│                      │  [Amount]       │
 │                      │  [Buy YES]      │
 ├──────────────────────┤                 │
-│   Sổ lệnh           │  Tách / Gộp     │
-│   Mua     Bán       │                 │
-│   $0.35   $0.40      │  Thông tin market│
+│   Order Book         │  Split / Merge  │
+│   Bids    Asks       │                 │
+│   $0.35   $0.40      │  Market Info    │
 │   $0.34   $0.41      │                 │
 └──────────────────────┴─────────────────┘
 ```
 
-## Vị thế của bạn (trên phải)
+Chú thích: *Price Chart* = Biểu đồ giá, *Your Position* = Vị thế của bạn, *Trading Panel* = Bảng giao dịch, *Order Book* = Sổ lệnh, *Split / Merge* = Tách / Gộp, *Market Info* = Thông tin market.
+
+## Your Position — Vị thế của bạn (trên phải)
 
 Hiển thị những gì bạn đang nắm giữ trong market này:
 
 ```
-Vị thế của bạn
-  YES    65 cổ phần     ← bạn sở hữu 65 token YES
-  NO     0 cổ phần      ← bạn không sở hữu token NO
+Your Position
+  YES    65 shares     ← bạn sở hữu 65 token YES
+  NO     0 shares      ← bạn không sở hữu token NO
 ```
 
-## Bảng giao dịch (phải)
+## Trading Panel — Bảng giao dịch (phải)
 
 ### Nút YES / NO
 ```
@@ -49,17 +50,17 @@ Vị thế của bạn
 - Tô xanh = đang chọn
 - Giá hiển thị = giá thị trường hiện tại
 
-### Chuyển đổi Mua / Bán
-- **Mua**: chi USDC để nhận cổ phần
-- **Bán**: bán cổ phần lấy USDC
+### Chuyển đổi Buy / Sell
+- **Buy**: chi USDC để nhận shares (cổ phần)
+- **Sell**: bán shares lấy USDC
 
-### Chuyển đổi Thị trường / Giới hạn
-- **Thị trường**: mua/bán ngay ở giá hiện tại
-- **Giới hạn**: đặt giá riêng, chờ khớp
+### Chuyển đổi Market / Limit
+- **Market**: mua/bán ngay ở giá hiện tại
+- **Limit**: đặt giá riêng, chờ khớp
 
-### Nhập số tiền
+### Nhập số tiền (Amount)
 ```
-Số tiền:              Số dư: $17,927.54
+Amount:              Balance: $17,927.54
 ┌──────────────────────────────────────┐
 │ $ 50.00                         MAX │
 └──────────────────────────────────────┘
@@ -67,7 +68,7 @@ Số tiền:              Số dư: $17,927.54
 ```
 - Nhập số tiền hoặc nhấn nút preset
 - **MAX** = toàn bộ số dư
-- **Số dư** hiển thị để tham khảo
+- **Balance** = số dư hiện có (để tham khảo)
 
 ### Nút thực hiện
 ```
@@ -77,67 +78,67 @@ Số tiền:              Số dư: $17,927.54
 ```
 Hiển thị hành động và giá.
 
-## Biểu đồ giá (trái)
+## Price Chart — Biểu đồ giá (trái)
 
 Hiển thị lịch sử giá theo thời gian:
 - Đường xanh = giá tăng
 - Đường đỏ = giá giảm
 - Di chuột để xem giá tại thời điểm cụ thể
 
-## Sổ lệnh (dưới trái)
+## Order Book — Sổ lệnh (dưới trái)
 
 ```
-Giá     Số lượng     Tổng
-$0.40    61.58      543.73    ← Ask (người bán)
+Price    Qty        Total
+$0.40    61.58      543.73    ← Asks (sellers)
 $0.39    69.68      482.15
 $0.38    70.34      412.47
 
-         $0.38   Chênh lệch: $0.03      ← Giá giữa
+         $0.38   Spread: $0.03      ← Mid price
 
-$0.35    24.67      24.67     ← Bid (người mua)
+$0.35    24.67      24.67     ← Bids (buyers)
 $0.34    31.87      56.54
 $0.33    31.29      87.83
 ```
 
-- **Đỏ (trên)** = Ask — người muốn bán ở giá này
-- **Xanh (dưới)** = Bid — người muốn mua ở giá này
-- **Chênh lệch** = khoảng cách giữa giá bid tốt nhất và ask tốt nhất
+- **Đỏ (trên)** = Asks — người muốn bán ở giá này
+- **Xanh (dưới)** = Bids — người muốn mua ở giá này
+- **Spread** = khoảng cách giữa giá bid tốt nhất và ask tốt nhất
 
-## Bảng Tách / Gộp
+## Split / Merge — Tách / Gộp
 
 ```
 ┌──────────────────────────────┐
-│  [Tách]          [Gộp]      │
+│  [Split]        [Merge]      │
 │                              │
-│  Tách USDC thành token       │
-│  YES + NO bằng nhau          │
+│  Split USDC into equal       │
+│  YES + NO tokens             │
 │                              │
 │  ┌────────────────────┐      │
 │  │ 100.00        USDC │      │
 │  └────────────────────┘      │
 │                              │
 │  ┌────────────────────┐      │
-│  │        Tách         │      │
+│  │       Split         │      │
 │  └────────────────────┘      │
 └──────────────────────────────┘
 ```
 
-- **Tách**: $100 USDC → 100 YES + 100 NO token
-- **Gộp**: 100 YES + 100 NO → $100 USDC
-- Hữu ích cho chiến lược nâng cao
+- **Split (Tách)**: $100 USDC → 100 YES + 100 NO token
+- **Merge (Gộp)**: 100 YES + 100 NO → $100 USDC
+- Hữu ích cho các chiến lược nâng cao
 
-## Thông tin market
+## Market Info — Thông tin market
 
 ```
-Thông tin market
-  Danh mục:          crypto
-  Tổng tài sản thế chấp: $9,936.67 USDC
-  Trạng thái:        active
+Market Info
+  Category:          crypto
+  Total Collateral:  $9,936.67 USDC
+  Status:            active
   Oracle:            0x699a8c...992cf3
 ```
 
-- **Tổng tài sản thế chấp**: tổng USDC bị khóa trong market
-- **Trạng thái**: active / ended / resolved
+- **Total Collateral**: tổng USDC bị khóa trong market
+- **Status**: active / ended / resolved
 - **Oracle**: ai xác định kết quả
 
 ---

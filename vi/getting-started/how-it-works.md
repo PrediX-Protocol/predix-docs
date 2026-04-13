@@ -8,13 +8,13 @@ description: Quy trình từng bước từ tạo market đến nhận token
 
 ```
 ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│  Tạo     │ →  │  Hoạt    │ →  │  Hết hạn │ →  │ Giải     │ →  │  Nhận   │
-│          │    │  động    │    │          │    │ quyết    │    │  thưởng │
+│ Created  │ →  │  Active  │ →  │ Expired  │ →  │ Resolved │ →  │Redeemable│
 └──────────┘    └──────────┘    └──────────┘    └──────────┘    └──────────┘
                      │                                │
-                  Giao dịch                      Khẩn cấp (7 ngày)
-                  được phép                      hoặc Chế độ hoàn tiền
+                  Trading                        Emergency (7d)
+                  allowed                        or Refund Mode
 ```
+*(Đã tạo → Đang hoạt động → Hết hạn → Đã giải quyết → Có thể nhận thưởng)*
 
 ## Từng bước
 
