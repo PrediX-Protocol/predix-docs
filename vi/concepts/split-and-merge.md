@@ -1,44 +1,44 @@
 ---
-description: Split USDC into outcome tokens, or merge them back
+description: Tách USDC thành token kết quả, hoặc gộp chúng lại
 ---
 
-# Split & Merge
+# Tách & Gộp
 
-Split and Merge are the foundational mechanisms that anchor outcome token prices to real value.
+Tách và Gộp là các cơ chế nền tảng neo giá token kết quả vào giá trị thực.
 
-## Split
+## Tách
 
-Deposit USDC collateral to receive equal amounts of YES and NO tokens:
+Nạp tài sản thế chấp USDC để nhận số lượng bằng nhau token YES và NO:
 
 ```
 1 USDC → 1 YES + 1 NO
 ```
 
-The collateral is locked in the Diamond contract. Both token supplies increase equally.
+Tài sản thế chấp được khóa trong hợp đồng Diamond. Cung cấp của cả hai token tăng đều nhau.
 
-## Merge
+## Gộp
 
-Burn equal amounts of YES and NO tokens to withdraw USDC:
+Đốt số lượng bằng nhau token YES và NO để rút USDC:
 
 ```
 1 YES + 1 NO → 1 USDC
 ```
 
-The collateral is released from the Diamond. Both token supplies decrease equally.
+Tài sản thế chấp được giải phóng từ Diamond. Cung cấp của cả hai token giảm đều nhau.
 
-## Why This Matters
+## Tại sao điều này quan trọng
 
-Split/Merge creates the **price anchor** for the entire market:
+Tách/Gộp tạo ra **neo giá** cho toàn bộ thị trường:
 
 ```
-If YES = $0.70 and NO = $0.40:
+Nếu YES = $0.70 và NO = $0.40:
   YES + NO = $1.10 > $1.00
-  → Arbitrageur: split $1 → sell YES for $0.70 + sell NO for $0.40 = $1.10
-  → Profit: $0.10
-  → Selling pressure pushes prices back to sum ≈ $1.00
+  → Người kinh doanh chênh lệch giá: tách $1 → bán YES $0.70 + bán NO $0.40 = $1.10
+  → Lợi nhuận: $0.10
+  → Áp lực bán đẩy giá trở về tổng ≈ $1.00
 ```
 
-## Code Example
+## Ví dụ mã
 
 ```typescript
 import { ethers } from "ethers";
@@ -49,28 +49,28 @@ const usdc = new ethers.Contract(USDC_ADDRESS, ERC20_ABI, signer);
 const marketId = "0x...";
 const amount = ethers.parseUnits("100", 6); // 100 USDC
 
-// Step 1: Approve USDC to Diamond
+// Bước 1: Phê duyệt USDC cho Diamond
 await usdc.approve(DIAMOND_ADDRESS, amount);
 
-// Step 2: Split — receive 100 YES + 100 NO
+// Bước 2: Tách — nhận 100 YES + 100 NO
 await diamond.splitPosition(marketId, amount);
 
-// Step 3: Merge — burn 100 YES + 100 NO, receive 100 USDC
+// Bước 3: Gộp — đốt 100 YES + 100 NO, nhận 100 USDC
 await diamond.mergePositions(marketId, amount);
 ```
 
-## Safety Caps
+## Giới hạn an toàn
 
-Split operations are subject to safety caps:
+Thao tác tách chịu giới hạn an toàn:
 
-| Cap | Description |
-| --- | ----------- |
-| **TVL Cap** | Maximum total USDC locked in the system |
-| **Per-Trade Cap** | Maximum USDC per single split operation |
-| **Per-Market Cap** | Maximum USDC per individual market |
+| Giới hạn | Mô tả |
+| -------- | ----- |
+| **Giới hạn TVL** | USDC tối đa được khóa trong hệ thống |
+| **Giới hạn mỗi giao dịch** | USDC tối đa cho mỗi thao tác tách |
+| **Giới hạn mỗi thị trường** | USDC tối đa cho mỗi thị trường riêng lẻ |
 
-> ⚠️ **Note**: You must hold equal amounts of YES and NO tokens to merge. The merge amount cannot exceed your balance of either token.
+> ⚠️ **Lưu ý**: Bạn phải giữ số lượng bằng nhau token YES và NO để gộp. Số lượng gộp không thể vượt quá số dư của bất kỳ token nào.
 
 ---
 
-**Next**: [Resolution](resolution.md) · [Multi-Outcome Markets](multi-outcome-markets.md) · [Trading Overview](../trading/overview.md)
+**Tiếp theo**: [Xác định kết quả](resolution.md) · [Thị trường đa kết quả](multi-outcome-markets.md) · [Tổng quan giao dịch](../trading/overview.md)

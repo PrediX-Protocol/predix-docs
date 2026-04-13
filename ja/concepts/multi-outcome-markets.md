@@ -1,62 +1,62 @@
 ---
-description: Categories — markets with more than two outcomes
+description: カテゴリ — 2つ以上の結果を持つマーケット
 ---
 
-# Multi-Outcome Markets
+# マルチアウトカムマーケット
 
-## Categories
+## カテゴリ
 
-A **category** groups multiple YES/NO markets into one multi-outcome event.
+**カテゴリ**は、複数のYES/NOマーケットを1つのマルチアウトカムイベントにグループ化します。
 
-### Example: "Who will win the US Presidential Election 2028?"
+### 例：「2028年米国大統領選挙で誰が勝つか？」
 
 ```
 Category: "US President 2028"
-  Market 0: "Trump wins?"     → YES/NO tokens
-  Market 1: "DeSantis wins?"  → YES/NO tokens
-  Market 2: "Newsom wins?"    → YES/NO tokens
-  Market 3: "Harris wins?"    → YES/NO tokens
-  Market 4: "Other wins?"     → YES/NO tokens
+  Market 0: "Trump wins?"     → YES/NO トークン
+  Market 1: "DeSantis wins?"  → YES/NO トークン
+  Market 2: "Newsom wins?"    → YES/NO トークン
+  Market 3: "Harris wins?"    → YES/NO トークン
+  Market 4: "Other wins?"     → YES/NO トークン
 ```
 
 ## GroupSplit & GroupMerge
 
 ### GroupSplit
 
-Deposit `amount × N` USDC (where N = number of markets in category) to receive `amount` YES + NO per market.
+`amount × N` USDC（N = カテゴリ内のマーケット数）を預け入れて、各マーケットごとに`amount`個のYES + NOを受け取ります。
 
 ```typescript
-// Category has 5 markets. Deposit 500 USDC → 100 YES+NO per market
+// カテゴリに5つのマーケット。500 USDC預入 → マーケットごとに100 YES+NO
 const amount = ethers.parseUnits("100", 6);
-// Requires approval of 100 × 5 = 500 USDC
+// 100 × 5 = 500 USDCの承認が必要
 await usdc.approve(DIAMOND_ADDRESS, ethers.parseUnits("500", 6));
 await diamond.groupSplit(categoryId, amount);
 ```
 
 ### GroupMerge
 
-Burn `amount` YES + NO from every market to reclaim `amount × N` USDC.
+すべてのマーケットから`amount`個のYES + NOをバーンして`amount × N` USDCを回収します。
 
 ```typescript
 await diamond.groupMerge(categoryId, amount);
-// Burns 100 YES + 100 NO from each of 5 markets
-// Returns 500 USDC
+// 5つのマーケットそれぞれから100 YES + 100 NOをバーン
+// 500 USDCを返還
 ```
 
-## Resolution
+## 結果確定
 
 ```typescript
-// Only 1 winner: market at index 2 wins
+// 勝者は1つ：インデックス2のマーケットが勝利
 await diamond.resolveCategory(categoryId, 2);
 
-// Result:
-// Market 2 → YES wins (YES holders redeem $1)
-// Markets 0, 1, 3, 4 → NO wins (NO holders redeem $1)
-// All resolved atomically
+// 結果：
+// Market 2 → YES勝利（YES保有者が$1を償還）
+// Markets 0, 1, 3, 4 → NO勝利（NO保有者が$1を償還）
+// すべてアトミックに結果確定
 ```
 
-> ⚠️ **Important**: `resolveCategory` is called by ADMIN role and resolves ALL markets in the category simultaneously.
+> ⚠️ **重要**: `resolveCategory`はADMINロールによって呼び出され、カテゴリ内のすべてのマーケットを同時に結果確定します。
 
 ---
 
-**Next**: [Fees](fees.md) · [Trading Overview](../trading/overview.md) · [Create Market (Developer)](../developers/create-market.md)
+**次へ**: [手数料](fees.md) · [取引概要](../trading/overview.md) · [マーケット作成（開発者向け）](../developers/create-market.md)

@@ -1,10 +1,10 @@
 ---
-description: All protocol events with signatures and listening examples
+description: 모든 프로토콜 이벤트 시그니처 및 수신 예제
 ---
 
-# Events
+# 이벤트
 
-## MarketFacet Events
+## MarketFacet 이벤트
 
 ```solidity
 event MarketCreated(bytes32 indexed marketId, string question, string description, uint256 endTime, address yesToken, address noToken, PoolId poolId, bytes32 categoryId, address oracle);
@@ -22,7 +22,7 @@ event RefundModeEnabled(bytes32 indexed marketId);
 event MarketRefunded(bytes32 indexed marketId, address indexed user, uint256 amount);
 ```
 
-## Exchange Events
+## Exchange 이벤트
 
 ```solidity
 event OrderPlaced(bytes32 indexed orderId, bytes32 indexed marketId, address indexed owner, Side side, uint256 price, uint256 amount);
@@ -31,36 +31,36 @@ event OrderCancelled(bytes32 indexed orderId);
 event FeeCollected(bytes32 indexed marketId, uint256 amount);
 ```
 
-## Router Events
+## Router 이벤트
 
 ```solidity
 event Trade(bytes32 indexed marketId, address indexed trader, uint8 tradeType, uint256 amountIn, uint256 amountOut, uint256 yesPrice);
 ```
 
-## Hook Events
+## Hook 이벤트
 
 ```solidity
 event PoolRegistered(bytes32 indexed marketId, PoolId indexed poolId, address yesToken, address usdcToken);
 event MarketTraded(bytes32 indexed marketId, address indexed trader, bool isBuy, uint256 amount, uint256 cost, uint8 side, uint256 yesPrice);
 ```
 
-## Listening Example
+## 수신 예제
 
 ```typescript
-// Listen for new trades
+// 새로운 거래 수신
 router.on("Trade", (marketId, trader, tradeType, amountIn, amountOut, yesPrice) => {
-  console.log(`Trade on ${marketId}:`);
-  console.log(`  Trader: ${trader}`);
-  console.log(`  In: ${ethers.formatUnits(amountIn, 6)}`);
-  console.log(`  Out: ${ethers.formatUnits(amountOut, 6)}`);
-  console.log(`  YES price: $${ethers.formatUnits(yesPrice, 6)}`);
+  console.log(`${marketId} 거래:`);
+  console.log(`  트레이더: ${trader}`);
+  console.log(`  입력: ${ethers.formatUnits(amountIn, 6)}`);
+  console.log(`  출력: ${ethers.formatUnits(amountOut, 6)}`);
+  console.log(`  YES 가격: $${ethers.formatUnits(yesPrice, 6)}`);
 });
 
-// Query historical events
+// 과거 이벤트 조회
 const filter = diamond.filters.MarketCreated();
-const events = await diamond.queryFilter(filter, -10000); // Last 10K blocks
+const events = await diamond.queryFilter(filter, -10000); // 최근 10K 블록
 ```
 
 ---
 
-**Next**: [Errors](errors.md) · [Contract Overview](../contracts/overview.md)
+**다음**: [오류](errors.md) · [컨트랙트 개요](../contracts/overview.md)

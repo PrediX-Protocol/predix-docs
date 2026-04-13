@@ -1,61 +1,61 @@
 ---
-description: Fee structure for AMM, CLOB, and market creation
+description: Cấu trúc phí cho AMM, CLOB và tạo thị trường
 ---
 
-# Fees
+# Phí
 
-## AMM Dynamic Fees
+## Phí động AMM
 
-Swap fees on the Uniswap v4 AMM pool increase as the market approaches expiry. This protects liquidity providers from informed ("toxic") traders near resolution.
+Phí swap trên pool AMM Uniswap v4 tăng lên khi thị trường tiến gần đến thời điểm hết hạn. Điều này bảo vệ nhà cung cấp thanh khoản khỏi các nhà giao dịch có thông tin ("độc hại") gần thời điểm thanh toán.
 
-| Time Remaining | Fee   | Rationale |
-| -------------- | ----- | --------- |
-| > 7 days       | 0.5%  | Normal trading, encourage volume |
-| 3–7 days       | 1.0%  | Begin caution |
-| 1–3 days       | 2.0%  | Outcome becoming clearer |
-| < 24 hours     | 5.0%  | High risk for LPs, deter toxic flow |
+| Thời gian còn lại | Phí | Lý do |
+| ------------------ | --- | ----- |
+| > 7 ngày | 0.5% | Giao dịch bình thường, khuyến khích khối lượng |
+| 3–7 ngày | 1.0% | Bắt đầu thận trọng |
+| 1–3 ngày | 2.0% | Kết quả đang trở nên rõ ràng |
+| < 24 giờ | 5.0% | Rủi ro cao cho LP, ngăn chặn dòng tiền độc hại |
 
-## CLOB Fees
+## Phí CLOB
 
-The CLOB charges fees through the MINT and MERGE surplus mechanism:
+CLOB thu phí thông qua cơ chế thặng dư MINT và MERGE:
 
-### MINT Surplus
+### Thặng dư MINT
 
-When BUY_YES and BUY_NO orders match with sum ≥ $1.00:
+Khi lệnh BUY_YES và BUY_NO khớp với tổng >= $1.00:
 
 ```
 Fee = (takerPrice + makerPrice - $1.00) × amount
 
-Example:
+Ví dụ:
   BUY_YES @ $0.60 + BUY_NO @ $0.50 = $1.10
-  Surplus = $0.10 per token → protocol treasury
+  Thặng dư = $0.10 mỗi token → kho bạc giao thức
 ```
 
-### MERGE Surplus
+### Thặng dư MERGE
 
-When SELL_YES and SELL_NO orders match with sum ≤ $1.00:
+Khi lệnh SELL_YES và SELL_NO khớp với tổng <= $1.00:
 
 ```
 Fee = ($1.00 - takerPrice - makerPrice) × amount
 
-Example:
+Ví dụ:
   SELL_YES @ $0.40 + SELL_NO @ $0.50 = $0.90
-  Surplus = $0.10 per token → protocol treasury
+  Thặng dư = $0.10 mỗi token → kho bạc giao thức
 ```
 
-## Market Creation Fee
+## Phí tạo thị trường
 
-Configurable per market. Set to **0** during beta period.
+Có thể cấu hình cho từng thị trường. Được đặt thành **0** trong giai đoạn beta.
 
-## Fee Summary
+## Tóm tắt phí
 
-| Source | Fee | Recipient |
-| ------ | --- | --------- |
-| AMM swap | 0.5%–5% (dynamic) | LP providers |
-| CLOB MINT surplus | Variable | Protocol treasury |
-| CLOB MERGE surplus | Variable | Protocol treasury |
-| Market creation | Configurable | Protocol treasury |
+| Nguồn | Phí | Người nhận |
+| ----- | --- | ---------- |
+| Swap AMM | 0.5%–5% (động) | Nhà cung cấp LP |
+| Thặng dư CLOB MINT | Biến động | Kho bạc giao thức |
+| Thặng dư CLOB MERGE | Biến động | Kho bạc giao thức |
+| Tạo thị trường | Có thể cấu hình | Kho bạc giao thức |
 
 ---
 
-**Next**: [Trading Overview](../trading/overview.md) · [Providing Liquidity](../liquidity/overview.md)
+**Tiếp theo**: [Tổng quan giao dịch](../trading/overview.md) · [Cung cấp thanh khoản](../liquidity/overview.md)

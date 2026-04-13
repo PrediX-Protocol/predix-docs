@@ -1,44 +1,44 @@
 ---
-description: Common errors and how to resolve them
+description: 一般的なエラーとその解決方法
 ---
 
-# Error Reference
+# エラーリファレンス
 
-## Common Errors
+## 一般的なエラー
 
-| Error | Cause | Solution |
+| エラー | 原因 | 解決方法 |
 | ----- | ----- | -------- |
-| `Market_NotFound` | Invalid marketId | Verify marketId from MarketCreated event |
-| `Market_Ended` | Market's endTime has passed | Cannot trade after expiry |
-| `Market_ExceedsPerTradeCap` | Amount exceeds per-trade safety cap | Reduce trade size |
-| `Market_ExceedsTvlCap` | Total system TVL cap reached | Wait or use smaller amount |
-| `Market_ExceedsPerMarketCap` | Market's collateral cap reached | Use smaller amount |
-| `InvalidPrice` | Price not on $0.01 tick grid | Use multiples of `10000` (6 decimals) |
-| `MaxOrdersExceeded` | User has 50 orders in this market | Cancel existing orders first |
-| `MarketNotActive` | Market expired, resolved, or in refund mode | Check market status |
-| `InsufficientBalance` | Not enough tokens for the operation | Check token balances |
-| `SandwichDetected` | Opposite-direction swap in same block | Wait for next block |
-| `SlippageExceeded` | Output below minOut | Increase slippage or retry |
-| `DeadlineExpired` | Transaction mined after deadline | Set longer deadline |
-| `OnlyFactory` | Attempted direct mint/burn of tokens | Tokens can only be minted via Diamond |
+| `Market_NotFound` | 無効なmarketId | MarketCreatedイベントでmarketIdを確認 |
+| `Market_Ended` | マーケットのendTimeが経過 | 期限後は取引不可 |
+| `Market_ExceedsPerTradeCap` | 取引あたりの安全上限を超過 | 取引サイズを縮小 |
+| `Market_ExceedsTvlCap` | システム全体のTVL上限に到達 | 待機するか少額で実行 |
+| `Market_ExceedsPerMarketCap` | マーケットの担保上限に到達 | 少額で実行 |
+| `InvalidPrice` | 価格が$0.01ティックグリッドに合っていない | `10000`（6桁小数）の倍数を使用 |
+| `MaxOrdersExceeded` | このマーケットでユーザーの注文が50件 | 既存の注文を先にキャンセル |
+| `MarketNotActive` | マーケットが期限切れ、解決済み、または返金モード | マーケットの状態を確認 |
+| `InsufficientBalance` | 操作に必要なトークンが不足 | トークン残高を確認 |
+| `SandwichDetected` | 同じブロックで逆方向のスワップ | 次のブロックまで待機 |
+| `SlippageExceeded` | 出力がminOut未満 | スリッページを増やすか再試行 |
+| `DeadlineExpired` | デッドライン後にトランザクションがマイニング | より長いデッドラインを設定 |
+| `OnlyFactory` | トークンの直接ミント/バーンを試行 | トークンはDiamondを通じてのみミント可能 |
 
-## Debugging Tips
+## デバッグのヒント
 
 ```typescript
 try {
   await router.buyYes(marketId, usdcIn, minYesOut, recipient, deadline);
 } catch (error: any) {
-  // Decode custom error
+  // カスタムエラーをデコード
   const iface = new ethers.Interface(ROUTER_ABI);
   try {
     const decoded = iface.parseError(error.data);
-    console.error("Custom error:", decoded?.name, decoded?.args);
+    console.error("カスタムエラー:", decoded?.name, decoded?.args);
   } catch {
-    console.error("Raw error:", error.message);
+    console.error("生エラー:", error.message);
   }
 }
 ```
 
 ---
 
-**Next**: [Developer Quickstart](quickstart.md) · [Trading Integration](trading-integration.md)
+**次へ**: [開発者クイックスタート](quickstart.md) · [取引統合](trading-integration.md)

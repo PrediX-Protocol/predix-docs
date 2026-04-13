@@ -1,36 +1,36 @@
 ---
-description: Diamond proxy (EIP-2535) — market management, split, merge, resolve, redeem
+description: Diamond プロキシ (EIP-2535) — マーケット管理、分割、統合、結果確定、償還
 ---
 
-# Diamond Contract
+# Diamond コントラクト
 
-The Diamond is the central contract of PrediX Protocol, implementing EIP-2535 for modular upgradeability.
+Diamondは PrediX Protocol の中央コントラクトであり、モジュール式アップグレードのために EIP-2535 を実装しています。
 
-## Facets
+## Facet一覧
 
-| Facet | Functions |
+| Facet | 関数 |
 | ----- | --------- |
-| **DiamondCutFacet** | `diamondCut` — add/replace/remove facets |
-| **DiamondLoupeFacet** | `facets`, `facetAddresses`, `facetFunctionSelectors` — introspection |
+| **DiamondCutFacet** | `diamondCut` — Facetの追加/置換/削除 |
+| **DiamondLoupeFacet** | `facets`, `facetAddresses`, `facetFunctionSelectors` — イントロスペクション |
 | **AccessControlFacet** | `grantRole`, `revokeRole`, `hasRole` |
 | **OwnableFacet** | `transferOwnership`, `acceptOwnership`, `owner` |
 | **PausableFacet** | `pause`, `unpause`, `paused` |
-| **MarketFacet** | All market operations (see below) |
+| **MarketFacet** | すべてのマーケット操作（以下参照） |
 
-## How It Works
+## 動作の仕組み
 
-Every function call to the Diamond is routed by selector:
+Diamondへのすべての関数呼び出しはセレクターによってルーティングされます：
 
 ```
-User calls diamond.splitPosition(marketId, amount)
-  → Diamond fallback: lookup selector 0x... → MarketFacet address
-  → delegatecall to MarketFacet
-  → MarketFacet executes using Diamond's storage
+ユーザーが diamond.splitPosition(marketId, amount) を呼び出す
+  → Diamond fallback: セレクター 0x... を検索 → MarketFacet アドレス
+  → MarketFacet に delegatecall
+  → MarketFacet が Diamond のストレージを使用して実行
 ```
 
-## MarketFacet Functions
+## MarketFacet 関数
 
-### Creation (ADMIN_ROLE)
+### 作成 (ADMIN_ROLE)
 
 ```solidity
 createMarket(string question, string description, uint256 endTime,
@@ -42,7 +42,7 @@ addMarketToCategory(bytes32 categoryId, bytes32 marketId)
 removeMarketFromCategory(bytes32 categoryId, bytes32 marketId)
 ```
 
-### Position Management (PUBLIC)
+### ポジション管理 (PUBLIC)
 
 ```solidity
 splitPosition(bytes32 marketId, uint256 amount)
@@ -51,24 +51,24 @@ groupSplit(bytes32 categoryId, uint256 amount)
 groupMerge(bytes32 categoryId, uint256 amount)
 ```
 
-### Resolution
+### 結果確定
 
 ```solidity
-resolveMarket(bytes32 marketId)                              // PUBLIC (after oracle)
+resolveMarket(bytes32 marketId)                              // PUBLIC（オラクル後）
 resolveCategory(bytes32 categoryId, uint256 winningIndex)    // ADMIN_ROLE
-emergencyResolve(bytes32 marketId, bool outcome)             // OPERATOR_ROLE (7d delay)
+emergencyResolve(bytes32 marketId, bool outcome)             // OPERATOR_ROLE（7日間遅延）
 enableRefundMode(bytes32 marketId)                           // OPERATOR_ROLE
-refund(bytes32 marketId)                                     // PUBLIC (refund mode)
+refund(bytes32 marketId)                                     // PUBLIC（返金モード）
 ```
 
-### Redemption (PUBLIC)
+### 償還 (PUBLIC)
 
 ```solidity
 redeemMarketTokens(bytes32 marketId)
 redeemCategoryTokens(bytes32 categoryId)
 ```
 
-### View Functions
+### ビュー関数
 
 ```solidity
 getMarket(bytes32 marketId) → MarketData
@@ -78,7 +78,7 @@ isRefundMode(bytes32 marketId) → bool
 getSafetyCaps() → (uint256 tvlCap, uint256 perTradeCap, uint256 perMarketCap)
 ```
 
-### Admin (ADMIN_ROLE)
+### 管理者 (ADMIN_ROLE)
 
 ```solidity
 setApprovedOracle(address oracle, bool approved)
@@ -87,7 +87,7 @@ setPerTradeCap(uint256 cap)
 setPerMarketCap(uint256 cap)
 ```
 
-## MarketData Struct
+## MarketData 構造体
 
 ```solidity
 struct MarketData {
@@ -100,15 +100,15 @@ struct MarketData {
     bytes32 categoryId;
     address oracle;
     bool isResolved;
-    bool outcome;           // true = YES wins, false = NO wins
+    bool outcome;           // true = YES勝利、false = NO勝利
     uint256 totalCollateral;
-    bytes32 questionHash;   // DEPRECATED
+    bytes32 questionHash;   // 非推奨
     uint256 resolvedAt;
 }
 ```
 
-> ⚠️ **Critical selectors** (`diamondCut`, `owner`, `transferOwnership`) are protected and cannot be removed.
+> ⚠️ **重要なセレクター** (`diamondCut`, `owner`, `transferOwnership`) は保護されており、削除できません。
 
 ---
 
-**Next**: [Exchange](exchange.md) · [Router](router.md) · [Access Control](access-control.md)
+**次へ**: [Exchange](exchange.md) · [Router](router.md) · [アクセス制御](access-control.md)

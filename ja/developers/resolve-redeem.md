@@ -1,50 +1,50 @@
 ---
-description: Resolve markets and redeem winning tokens
+description: マーケットの解決と勝利トークンの償還
 ---
 
-# Resolve & Redeem
+# 解決 & 償還
 
-## Resolve Market
+## マーケットの解決
 
-After the oracle reports the outcome, anyone can finalize:
+オラクルが結果を報告した後、誰でも確定できます:
 
 ```typescript
-// Check if oracle has reported
+// オラクルが報告したか確認
 const oracle = new ethers.Contract(ORACLE_ADDRESS, ORACLE_ABI, provider);
 const [resolved, outcome] = await oracle.getResolution(marketId);
 
 if (resolved) {
   const tx = await diamond.resolveMarket(marketId);
   await tx.wait();
-  console.log("Market resolved. Outcome:", outcome ? "YES" : "NO");
+  console.log("マーケット解決完了。結果:", outcome ? "YES" : "NO");
 }
 ```
 
-## Redeem Winning Tokens
+## 勝利トークンの償還
 
 ```typescript
-// Winners get 1 USDC per winning token
+// 勝者は勝利トークン1つにつき1 USDCを受け取ります
 const tx = await diamond.redeemMarketTokens(marketId);
 await tx.wait();
 ```
 
-## Emergency Resolve (OPERATOR only)
+## 緊急解決（OPERATOR専用）
 
 ```typescript
-// Available 7 days after endTime if oracle hasn't reported
-await diamond.emergencyResolve(marketId, true); // true = YES wins
+// オラクルが報告していない場合、endTimeから7日後に利用可能
+await diamond.emergencyResolve(marketId, true); // true = YES勝利
 ```
 
-## Refund Mode (OPERATOR only)
+## 返金モード（OPERATOR専用）
 
 ```typescript
-// Enable refund for problematic markets
+// 問題のあるマーケットの返金を有効化
 await diamond.enableRefundMode(marketId);
 
-// Users claim proportional refund
+// ユーザーが比例返金を請求
 await diamond.refund(marketId);
 ```
 
 ---
 
-**Next**: [Events](events.md) · [Errors](errors.md)
+**次へ**: [イベント](events.md) · [エラー](errors.md)

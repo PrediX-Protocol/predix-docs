@@ -1,54 +1,54 @@
 ---
-description: Safety caps, emergency controls, reentrancy guards, and anti-sandwich
+description: Giới hạn an toàn, kiểm soát khẩn cấp, bảo vệ tái nhập và chống tấn công sandwich
 ---
 
-# Safety Mechanisms
+# Cơ chế an toàn
 
-## Safety Caps
+## Giới hạn an toàn
 
-| Cap | Description | Configurable by |
+| Giới hạn | Mô tả | Quyền cấu hình |
 | --- | ----------- | --------------- |
-| TVL Cap | Max total USDC in the system | ADMIN |
-| Per-Trade Cap | Max USDC per split/trade | ADMIN |
-| Per-Market Cap | Max USDC per market | ADMIN |
+| Giới hạn TVL | USDC tối đa trong hệ thống | ADMIN |
+| Giới hạn mỗi giao dịch | USDC tối đa mỗi lần tách/giao dịch | ADMIN |
+| Giới hạn mỗi thị trường | USDC tối đa mỗi thị trường | ADMIN |
 
-Caps start conservative and can be increased as the protocol matures.
+Các giới hạn bắt đầu thận trọng và có thể tăng khi giao thức trưởng thành.
 
-## Emergency Controls
+## Kiểm soát khẩn cấp
 
-| Mechanism | Role | Description |
+| Cơ chế | Vai trò | Mô tả |
 | --------- | ---- | ----------- |
-| Pause Module | PAUSER | Freeze specific market module |
-| Pause All | PAUSER | Freeze entire system |
-| Emergency Resolve | OPERATOR | Resolve after 7-day delay (oracle failure) |
-| Refund Mode | OPERATOR | Proportional refund for all holders |
+| Tạm dừng module | PAUSER | Đóng băng module thị trường cụ thể |
+| Tạm dừng toàn bộ | PAUSER | Đóng băng toàn bộ hệ thống |
+| Xác nhận kết quả khẩn cấp | OPERATOR | Xác nhận kết quả sau 7 ngày trì hoãn (oracle lỗi) |
+| Chế độ hoàn tiền | OPERATOR | Hoàn tiền theo tỷ lệ cho tất cả người nắm giữ |
 
-## Reentrancy Guards
+## Bảo vệ tái nhập
 
-Three independent guards protect different contract boundaries:
+Ba bộ bảo vệ độc lập bảo vệ các ranh giới hợp đồng khác nhau:
 
-1. **Diamond storage guard**: Protects MarketFacet functions
-2. **Exchange/Router transient storage**: Protects CLOB and routing
-3. **Hook state guard**: Protects Uniswap v4 hook callbacks
+1. **Bảo vệ lưu trữ Diamond**: Bảo vệ các hàm MarketFacet
+2. **Lưu trữ tạm thời Exchange/Router**: Bảo vệ CLOB và định tuyến
+3. **Bảo vệ trạng thái Hook**: Bảo vệ callback Uniswap v4 Hook
 
-20 functions are protected with `nonReentrant` modifiers.
+20 hàm được bảo vệ bằng modifier `nonReentrant`.
 
-## Anti-Sandwich Protection
+## Chống tấn công Sandwich
 
-Built into the Hook at protocol level. Detects same-user opposite-direction swaps in the same block.
+Được tích hợp vào Hook ở cấp giao thức. Phát hiện các swap ngược chiều của cùng một người dùng trong cùng một block.
 
-Additional layer: Unichain provides sequencer-level revert protection.
+Lớp bổ sung: Unichain cung cấp bảo vệ hoàn lại ở cấp bộ tuần tự.
 
-## Invariants
+## Bất biến
 
 ```
-1. YES.totalSupply == NO.totalSupply == totalCollateral (always)
-2. Split(N) + Merge(N) = identity (zero value leak)
-3. Total redeemed ≤ total deposited
-4. Exchange balance ≥ total resting order deposits
-5. Refund mode blocks ALL trading (split, merge, CLOB, AMM)
+1. YES.totalSupply == NO.totalSupply == totalCollateral (luôn luôn)
+2. Split(N) + Merge(N) = đồng nhất (không rò rỉ giá trị)
+3. Tổng đổi thưởng ≤ tổng nạp
+4. Số dư Exchange ≥ tổng tiền gửi lệnh chờ
+5. Chế độ hoàn tiền chặn TẤT CẢ giao dịch (tách, gộp, CLOB, AMM)
 ```
 
 ---
 
-**Next**: [Security Overview](../security/overview.md) · [Access Control](access-control.md)
+**Tiếp theo**: [Tổng quan bảo mật](../security/overview.md) · [Kiểm soát truy cập](access-control.md)

@@ -1,47 +1,47 @@
 ---
-description: Detailed audit results and testing coverage
+description: Ket qua kiem toan chi tiet va do phu kiem thu
 ---
 
-# Audit Reports
+# Bao cao Kiem toan
 
-## Testing Coverage
+## Do phu Kiem thu
 
-| Category | Details |
+| Danh muc | Chi tiet |
 | -------- | ------- |
-| **Unit Tests** | 264 tests covering all contract functions, 0 failures |
-| **Fuzz Tests** | 14 property-based tests, each running 10,000 iterations |
-| **On-chain E2E** | 31 end-to-end tests on Unichain Sepolia with real Uniswap v4 |
-| **Slither** | Static analysis: 0 real security issues |
+| **Kiem thu don vi** | 264 bai thu bao phu tat ca cac ham contract, 0 that bai |
+| **Kiem thu fuzz** | 14 bai thu dua tren thuoc tinh, moi bai chay 10.000 lan |
+| **E2E tren chuoi** | 31 bai thu dau-cuoi tren Unichain Sepolia voi Uniswap v4 thuc te |
+| **Slither** | Phan tich tinh: 0 van de bao mat thuc te |
 
-## AI Audit Reports
+## Bao cao Kiem toan AI
 
-3 independent AI-powered audits were conducted and cross-verified:
+3 kiem toan doc lap su dung AI da duoc thuc hien va kiem chung cheo:
 
-### Bugs Found and Fixed
+### Loi duoc Phat hien va Sua
 
-| Severity | Found | Fixed |
+| Muc do nghiem trong | Phat hien | Da sua |
 | -------- | ----- | ----- |
 | CRITICAL | 6 | 6 ✅ |
 | HIGH | 3 | 3 ✅ |
 | MEDIUM | 7 | 7 ✅ |
 | LOW | 6 | 6 ✅ |
-| **Total** | **22** | **22 ✅** |
+| **Tong** | **22** | **22 ✅** |
 
 ## OWASP Smart Contract Top 10 2026
 
-| # | Category | Status |
+| # | Danh muc | Trang thai |
 | - | -------- | ------ |
-| SC01 | Access Control | ✅ Role-based ACL, 62 checks, last-admin protection |
-| SC02 | Business Logic | ✅ Invariant YES=NO=Collateral, refundMode |
-| SC03 | Oracle Manipulation | ✅ Oracle whitelist, endTime gate |
-| SC04 | Flash Loan | ✅ nonReentrant (20 functions), safety caps |
-| SC05 | Input Validation | ✅ 49 zero-checks, price range validation |
-| SC06 | Unchecked Calls | ✅ SafeERC20, CEI pattern |
-| SC07 | Arithmetic | ✅ FullMath.mulDiv, Solidity 0.8.30 overflow |
-| SC08 | Reentrancy | ✅ 3 independent guards |
-| SC09 | Overflow/Underflow | ✅ Solidity 0.8.30 |
-| SC10 | Proxy/Upgrade | ✅ Protected selectors, two-step ownership |
+| SC01 | Kiem soat truy cap | ✅ ACL dua tren vai tro, 62 kiem tra, bao ve quan tri vien cuoi |
+| SC02 | Logic kinh doanh | ✅ Bat bien YES=NO=Tai san dam bao, refundMode |
+| SC03 | Thao tung Oracle | ✅ Danh sach trang Oracle, cong endTime |
+| SC04 | Flash Loan | ✅ nonReentrant (20 ham), gioi han an toan |
+| SC05 | Xac thuc dau vao | ✅ 49 kiem tra zero, xac thuc pham vi gia |
+| SC06 | Cuoc goi chua kiem tra | ✅ SafeERC20, mau CEI |
+| SC07 | Phep tinh | ✅ FullMath.mulDiv, tran so Solidity 0.8.30 |
+| SC08 | Tai nhap | ✅ 3 bao ve doc lap |
+| SC09 | Tran/Thieu so | ✅ Solidity 0.8.30 |
+| SC10 | Proxy/Nang cap | ✅ Selector duoc bao ve, so huu hai buoc |
 
 ---
 
-**Next**: [Bug Bounty](bug-bounty.md) · [Security Overview](overview.md)
+**Tiep theo**: [Chuong trinh Bug Bounty](bug-bounty.md) · [Tong quan Bao mat](overview.md)

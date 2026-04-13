@@ -1,38 +1,38 @@
 ---
-description: How the Router aggregates CLOB and AMM liquidity
+description: Cách Router tổng hợp thanh khoản CLOB và AMM
 ---
 
-# Smart Routing
+# Định tuyến thông minh
 
-The PrediXRouter automatically finds the best execution path across both CLOB and AMM.
+PrediXRouter tự động tìm đường thực hiện tốt nhất trên cả CLOB và AMM.
 
-## How It Works
+## Cách hoạt động
 
 ```
 router.buyYes($100):
-  Step 1: Check CLOB for SELL_YES orders with better price than AMM
-  Step 2: Fill CLOB orders first (best price, zero slippage)
-  Step 3: Route remaining amount through Uniswap v4 AMM
-  Step 4: User receives total YES tokens from both sources
+  Bước 1: Kiểm tra CLOB cho lệnh SELL_YES có giá tốt hơn AMM
+  Bước 2: Khớp lệnh CLOB trước (giá tốt nhất, không trượt giá)
+  Bước 3: Định tuyến số lượng còn lại qua Uniswap v4 AMM
+  Bước 4: Người dùng nhận tổng token YES từ cả hai nguồn
 ```
 
-### Example
+### Ví dụ
 
 ```
-Buy 100 YES tokens:
-  CLOB: 60 YES available @ $0.62 → cost: $37.20
-  AMM:  40 YES @ ~$0.65 avg      → cost: $26.00
-  Total: 100 YES for $63.20
+Mua 100 token YES:
+  CLOB: 60 YES có sẵn @ $0.62 → chi phí: $37.20
+  AMM:  40 YES @ trung bình ~$0.65 → chi phí: $26.00
+  Tổng: 100 YES với giá $63.20
 
-Without Smart Router (AMM only):
-  100 YES @ ~$0.66 avg → cost: $66.00
+Không có Smart Router (chỉ AMM):
+  100 YES @ trung bình ~$0.66 → chi phí: $66.00
   
-  Savings: $2.80 (4.2% better execution)
+  Tiết kiệm: $2.80 (thực hiện tốt hơn 4.2%)
 ```
 
-## Quote Functions
+## Các hàm truy vấn giá
 
-Always quote before trading:
+Luôn truy vấn giá trước khi giao dịch:
 
 ```typescript
 const router = new ethers.Contract(ROUTER_ADDRESS, ROUTER_ABI, provider);
@@ -43,15 +43,15 @@ const noOut = await router.quoteBuyNo(marketId, usdcIn);
 const usdcFromNo = await router.quoteSellNo(marketId, noIn);
 ```
 
-## When CLOB is Better vs AMM
+## Khi nào CLOB tốt hơn AMM
 
-| Condition | Better venue |
+| Điều kiện | Sàn tốt hơn |
 | --------- | ------------ |
-| Deep order book, tight spread | CLOB |
-| No orders at desired price | AMM |
-| Large orders | Split across both |
-| Near market expiry (high AMM fees) | CLOB |
+| Sổ lệnh sâu, chênh lệch giá hẹp | CLOB |
+| Không có lệnh tại giá mong muốn | AMM |
+| Lệnh lớn | Chia đều cả hai |
+| Gần hết hạn thị trường (phí AMM cao) | CLOB |
 
 ---
 
-**Next**: [Matching Engine](matching-engine.md) · [Virtual NO Pricing](virtual-no-pricing.md)
+**Tiếp theo**: [Công cụ khớp lệnh](matching-engine.md) · [Định giá NO ảo](virtual-no-pricing.md)

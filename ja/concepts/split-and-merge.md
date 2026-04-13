@@ -1,44 +1,44 @@
 ---
-description: Split USDC into outcome tokens, or merge them back
+description: USDCをアウトカムトークンにスプリット、またはマージして戻す
 ---
 
-# Split & Merge
+# スプリット＆マージ
 
-Split and Merge are the foundational mechanisms that anchor outcome token prices to real value.
+スプリットとマージは、アウトカムトークンの価格を実際の価値に固定する基本的なメカニズムです。
 
-## Split
+## スプリット
 
-Deposit USDC collateral to receive equal amounts of YES and NO tokens:
+USDC担保を預け入れて、同数のYESおよびNOトークンを受け取ります：
 
 ```
 1 USDC → 1 YES + 1 NO
 ```
 
-The collateral is locked in the Diamond contract. Both token supplies increase equally.
+担保はDiamondコントラクトにロックされます。両方のトークン供給量が均等に増加します。
 
-## Merge
+## マージ
 
-Burn equal amounts of YES and NO tokens to withdraw USDC:
+同数のYESおよびNOトークンをバーンしてUSDCを引き出します：
 
 ```
 1 YES + 1 NO → 1 USDC
 ```
 
-The collateral is released from the Diamond. Both token supplies decrease equally.
+担保はDiamondからリリースされます。両方のトークン供給量が均等に減少します。
 
-## Why This Matters
+## これが重要な理由
 
-Split/Merge creates the **price anchor** for the entire market:
+スプリット/マージはマーケット全体の**価格アンカー**を作成します：
 
 ```
-If YES = $0.70 and NO = $0.40:
+YES = $0.70でNO = $0.40の場合：
   YES + NO = $1.10 > $1.00
-  → Arbitrageur: split $1 → sell YES for $0.70 + sell NO for $0.40 = $1.10
-  → Profit: $0.10
-  → Selling pressure pushes prices back to sum ≈ $1.00
+  → アービトラージャー：$1をスプリット → YESを$0.70で売却 + NOを$0.40で売却 = $1.10
+  → 利益：$0.10
+  → 売り圧力が価格を合計 ≈ $1.00に戻す
 ```
 
-## Code Example
+## コード例
 
 ```typescript
 import { ethers } from "ethers";
@@ -49,28 +49,28 @@ const usdc = new ethers.Contract(USDC_ADDRESS, ERC20_ABI, signer);
 const marketId = "0x...";
 const amount = ethers.parseUnits("100", 6); // 100 USDC
 
-// Step 1: Approve USDC to Diamond
+// ステップ1：USDCをDiamondに承認
 await usdc.approve(DIAMOND_ADDRESS, amount);
 
-// Step 2: Split — receive 100 YES + 100 NO
+// ステップ2：スプリット — 100 YES + 100 NOを受領
 await diamond.splitPosition(marketId, amount);
 
-// Step 3: Merge — burn 100 YES + 100 NO, receive 100 USDC
+// ステップ3：マージ — 100 YES + 100 NOをバーン、100 USDCを受領
 await diamond.mergePositions(marketId, amount);
 ```
 
-## Safety Caps
+## 安全上限
 
-Split operations are subject to safety caps:
+スプリット操作には安全上限が適用されます：
 
-| Cap | Description |
-| --- | ----------- |
-| **TVL Cap** | Maximum total USDC locked in the system |
-| **Per-Trade Cap** | Maximum USDC per single split operation |
-| **Per-Market Cap** | Maximum USDC per individual market |
+| 上限 | 説明 |
+| ---- | ---- |
+| **TVL上限** | システムにロックできる最大USDC |
+| **取引あたりの上限** | 単一スプリット操作あたりの最大USDC |
+| **マーケットあたりの上限** | 個別マーケットあたりの最大USDC |
 
-> ⚠️ **Note**: You must hold equal amounts of YES and NO tokens to merge. The merge amount cannot exceed your balance of either token.
+> ⚠️ **注意**: マージするには同数のYESとNOトークンを保有する必要があります。マージ数量はどちらかのトークン残高を超えることはできません。
 
 ---
 
-**Next**: [Resolution](resolution.md) · [Multi-Outcome Markets](multi-outcome-markets.md) · [Trading Overview](../trading/overview.md)
+**次へ**: [結果確定](resolution.md) · [マルチアウトカムマーケット](multi-outcome-markets.md) · [取引概要](../trading/overview.md)

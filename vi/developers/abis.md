@@ -1,12 +1,12 @@
 ---
-description: ABI references for all PrediX contracts
+description: Tham chiếu ABI cho tất cả hợp đồng PrediX
 ---
 
-# ABIs
+# ABI
 
 ## Diamond ABI (MarketFacet)
 
-Key function signatures:
+Các chữ ký hàm chính:
 
 ```json
 [
@@ -55,7 +55,7 @@ Key function signatures:
 ]
 ```
 
-## ERC-20 ABI (Outcome Tokens + USDC)
+## ERC-20 ABI (Token kết quả + USDC)
 
 ```json
 [
@@ -68,8 +68,8 @@ Key function signatures:
 ]
 ```
 
-> ⚠️ Full ABI JSON files are available in the GitHub repository.
+> ⚠️ Các tệp ABI JSON đầy đủ có sẵn trong kho GitHub.
 
 ---
 
-**Next**: [Create Market](create-market.md) · [Trading Integration](trading-integration.md)
+**Tiếp theo**: [Tạo thị trường](create-market.md) · [Tích hợp giao dịch](trading-integration.md)

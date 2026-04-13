@@ -1,61 +1,61 @@
 ---
-description: Fee structure for AMM, CLOB, and market creation
+description: AMM, CLOB 및 마켓 생성 수수료 구조
 ---
 
-# Fees
+# 수수료
 
-## AMM Dynamic Fees
+## AMM 동적 수수료
 
-Swap fees on the Uniswap v4 AMM pool increase as the market approaches expiry. This protects liquidity providers from informed ("toxic") traders near resolution.
+Uniswap v4 AMM 풀의 스왑 수수료는 마켓 만료가 가까워질수록 증가합니다. 이를 통해 유동성 공급자를 결과 확정 시점 근처의 정보 우위("유해") 트레이더로부터 보호합니다.
 
-| Time Remaining | Fee   | Rationale |
-| -------------- | ----- | --------- |
-| > 7 days       | 0.5%  | Normal trading, encourage volume |
-| 3–7 days       | 1.0%  | Begin caution |
-| 1–3 days       | 2.0%  | Outcome becoming clearer |
-| < 24 hours     | 5.0%  | High risk for LPs, deter toxic flow |
+| 남은 시간 | 수수료 | 근거 |
+| ---------- | ------ | ---- |
+| > 7일 | 0.5% | 정상 거래, 거래량 촉진 |
+| 3~7일 | 1.0% | 주의 구간 시작 |
+| 1~3일 | 2.0% | 결과가 명확해지는 구간 |
+| < 24시간 | 5.0% | LP 고위험 구간, 유해 주문 억제 |
 
-## CLOB Fees
+## CLOB 수수료
 
-The CLOB charges fees through the MINT and MERGE surplus mechanism:
+CLOB은 MINT 및 MERGE 잉여금 메커니즘을 통해 수수료를 부과합니다:
 
-### MINT Surplus
+### MINT 잉여금
 
-When BUY_YES and BUY_NO orders match with sum ≥ $1.00:
+BUY_YES와 BUY_NO 주문이 합산 >= $1.00으로 매칭될 때:
 
 ```
 Fee = (takerPrice + makerPrice - $1.00) × amount
 
-Example:
+예시:
   BUY_YES @ $0.60 + BUY_NO @ $0.50 = $1.10
-  Surplus = $0.10 per token → protocol treasury
+  잉여금 = 토큰당 $0.10 → 프로토콜 금고
 ```
 
-### MERGE Surplus
+### MERGE 잉여금
 
-When SELL_YES and SELL_NO orders match with sum ≤ $1.00:
+SELL_YES와 SELL_NO 주문이 합산 <= $1.00으로 매칭될 때:
 
 ```
 Fee = ($1.00 - takerPrice - makerPrice) × amount
 
-Example:
+예시:
   SELL_YES @ $0.40 + SELL_NO @ $0.50 = $0.90
-  Surplus = $0.10 per token → protocol treasury
+  잉여금 = 토큰당 $0.10 → 프로토콜 금고
 ```
 
-## Market Creation Fee
+## 마켓 생성 수수료
 
-Configurable per market. Set to **0** during beta period.
+마켓별로 설정 가능합니다. 베타 기간 동안 **0**으로 설정됩니다.
 
-## Fee Summary
+## 수수료 요약
 
-| Source | Fee | Recipient |
-| ------ | --- | --------- |
-| AMM swap | 0.5%–5% (dynamic) | LP providers |
-| CLOB MINT surplus | Variable | Protocol treasury |
-| CLOB MERGE surplus | Variable | Protocol treasury |
-| Market creation | Configurable | Protocol treasury |
+| 출처 | 수수료 | 수령자 |
+| ---- | ------ | ------ |
+| AMM 스왑 | 0.5%~5% (동적) | LP 공급자 |
+| CLOB MINT 잉여금 | 변동 | 프로토콜 금고 |
+| CLOB MERGE 잉여금 | 변동 | 프로토콜 금고 |
+| 마켓 생성 | 설정 가능 | 프로토콜 금고 |
 
 ---
 
-**Next**: [Trading Overview](../trading/overview.md) · [Providing Liquidity](../liquidity/overview.md)
+**다음**: [거래 개요](../trading/overview.md) · [유동성 공급](../liquidity/overview.md)

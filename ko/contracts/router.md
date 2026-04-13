@@ -1,12 +1,12 @@
 ---
-description: Smart Router — hybrid CLOB + AMM execution via Uniswap v4
+description: 스마트 Router — Uniswap v4를 통한 하이브리드 CLOB + AMM 실행
 ---
 
-# Router Contract
+# Router 컨트랙트
 
-The PrediXRouter aggregates liquidity from the CLOB (Exchange) and AMM (Uniswap v4) to provide best execution for traders.
+PrediXRouter는 CLOB (Exchange)와 AMM (Uniswap v4)의 유동성을 통합하여 트레이더에게 최적의 실행을 제공합니다.
 
-## Trading Functions
+## 거래 함수
 
 ```solidity
 buyYes(bytes32 marketId, uint256 usdcIn, uint256 minYesOut,
@@ -22,7 +22,7 @@ sellNo(bytes32 marketId, uint256 noIn, uint256 minUsdcOut,
        address recipient, uint256 deadline) → uint256 usdcOut
 ```
 
-## Quote Functions
+## 견적 함수
 
 ```solidity
 quoteBuyYes(bytes32 marketId, uint256 usdcIn) → uint256
@@ -31,29 +31,29 @@ quoteBuyNo(bytes32 marketId, uint256 usdcIn) → uint256
 quoteSellNo(bytes32 marketId, uint256 noIn) → uint256
 ```
 
-## Routing Logic
+## 라우팅 로직
 
 ```
 buyYes($100):
-  1. Check CLOB for SELL_YES orders better than AMM price
-  2. Fill CLOB (zero slippage, limit price)
-  3. Route remaining to Uniswap v4 AMM swap
-  4. Return total YES to recipient
+  1. AMM 가격보다 유리한 CLOB의 SELL_YES 주문 확인
+  2. CLOB 체결 (슬리피지 없음, 지정가)
+  3. 나머지를 Uniswap v4 AMM 스왑으로 라우팅
+  4. 총 YES를 수신자에게 반환
 ```
 
-## Virtual NO Pricing
+## 가상 NO 가격 책정
 
-Since only YES/USDC pools exist:
+YES/USDC 풀만 존재하므로:
 
-- **Buy NO**: Split USDC → YES+NO → sell YES via AMM → keep NO
-- **Sell NO**: Buy YES from AMM → merge YES+NO → return USDC
+- **NO 매수**: USDC를 YES+NO로 분할 → AMM을 통해 YES 매도 → NO 보유
+- **NO 매도**: AMM에서 YES 매수 → YES+NO 병합 → USDC 반환
 
 ## Flash Accounting
 
-The Router uses Uniswap v4's flash accounting (unlock callback pattern) for gas-efficient multi-step operations.
+Router는 Uniswap v4의 Flash Accounting (unlock 콜백 패턴)을 사용하여 가스 효율적인 다단계 작업을 수행합니다.
 
-> ⚠️ **Parameters**: Always set `deadline` (typically 5 minutes) and `minOut` (slippage protection). Transactions revert if conditions aren't met.
+> ⚠️ **파라미터**: 항상 `deadline` (일반적으로 5분)과 `minOut` (슬리피지 보호)을 설정하세요. 조건이 충족되지 않으면 트랜잭션이 되돌려집니다.
 
 ---
 
-**Next**: [Hook](hook.md) · [Smart Routing](../trading/smart-routing.md) · [Market Orders](../trading/market-orders.md)
+**다음**: [Hook](hook.md) · [스마트 라우팅](../trading/smart-routing.md) · [시장가 주문](../trading/market-orders.md)

@@ -1,31 +1,31 @@
 ---
-description: On-chain CLOB with 99-tick bitmap and three-phase matching
+description: CLOB on-chain với bitmap 99 tick và khớp lệnh ba giai đoạn
 ---
 
-# Exchange Contract
+# Hợp đồng Exchange
 
-The PrediXExchange implements an on-chain Central Limit Order Book (CLOB) with a 99-tick bitmap for gas-efficient price scanning.
+PrediXExchange triển khai Sổ lệnh giới hạn trung tâm (CLOB) on-chain với bitmap 99 tick để quét giá hiệu quả về gas.
 
-## Core Functions
+## Các hàm cốt lõi
 
-### Place Order
+### Đặt lệnh
 
 ```solidity
 placeOrder(bytes32 marketId, uint8 side, uint256 price, uint256 amount)
     → (bytes32 orderId, uint256 filledAmount)
 ```
 
-Attempts to match against existing orders. Unfilled portion becomes a resting order.
+Cố gắng khớp với các lệnh hiện có. Phần chưa khớp trở thành lệnh chờ.
 
-### Cancel Order
+### Hủy lệnh
 
 ```solidity
 cancelOrder(bytes32 orderId)
 ```
 
-Owner can cancel anytime. Anyone can cancel after market expiry.
+Chủ sở hữu có thể hủy bất cứ lúc nào. Bất kỳ ai cũng có thể hủy sau khi thị trường hết hạn.
 
-### Fill Market Order
+### Khớp lệnh thị trường
 
 ```solidity
 fillMarketOrder(bytes32 marketId, uint8 side, uint256 maxPrice,
@@ -33,9 +33,9 @@ fillMarketOrder(bytes32 marketId, uint8 side, uint256 maxPrice,
     → (uint256 filledAmount, uint256 totalCost)
 ```
 
-Used by the Router for CLOB portion of hybrid execution.
+Được Router sử dụng cho phần CLOB trong thực thi kết hợp.
 
-## View Functions
+## Hàm truy vấn
 
 ```solidity
 getOrder(bytes32 orderId) → Order
@@ -44,32 +44,32 @@ getDepthAtPrice(bytes32 marketId, uint8 side, uint256 price) → uint256
 getOrderBook(bytes32 marketId, uint8 depth) → (yesBids, yesAsks, noBids, noAsks)
 ```
 
-## Matching Algorithm
+## Thuật toán khớp lệnh
 
-Orders are matched in three phases:
+Các lệnh được khớp qua ba giai đoạn:
 
-1. **COMPLEMENTARY**: Direct counterparty (BUY_YES ↔ SELL_YES)
-2. **MINT**: Two buy orders (BUY_YES + BUY_NO, sum ≥ $1.00)
-3. **MERGE**: Two sell orders (SELL_YES + SELL_NO, sum ≤ $1.00)
+1. **COMPLEMENTARY**: Đối tác trực tiếp (BUY_YES ↔ SELL_YES)
+2. **MINT**: Hai lệnh mua (BUY_YES + BUY_NO, tổng ≥ $1.00)
+3. **MERGE**: Hai lệnh bán (SELL_YES + SELL_NO, tổng ≤ $1.00)
 
-## Constraints
+## Ràng buộc
 
-| Parameter | Value |
+| Tham số | Giá trị |
 | --------- | ----- |
-| Price range | `10000` – `990000` ($0.01 – $0.99, 6 decimals) |
-| Price step | `10000` ($0.01) |
-| Min order | `1000000` ($1.00) |
-| Max orders/user/market | 50 |
-| Max fills per placement | 20 |
+| Phạm vi giá | `10000` – `990000` ($0.01 – $0.99, 6 chữ số thập phân) |
+| Bước giá | `10000` ($0.01) |
+| Lệnh tối thiểu | `1000000` ($1.00) |
+| Số lệnh tối đa/người dùng/thị trường | 50 |
+| Số khớp tối đa mỗi lần đặt lệnh | 20 |
 
-## Pause Mechanism
+## Cơ chế tạm dừng
 
 ```solidity
-pause()            // PAUSE_ADMIN only
-unpause()          // PAUSE_ADMIN only
-setPauseAdmin(address) // Current PAUSE_ADMIN only
+pause()            // Chỉ PAUSE_ADMIN
+unpause()          // Chỉ PAUSE_ADMIN
+setPauseAdmin(address) // Chỉ PAUSE_ADMIN hiện tại
 ```
 
 ---
 
-**Next**: [Router](router.md) · [Matching Engine](../trading/matching-engine.md) · [Limit Orders](../trading/limit-orders.md)
+**Tiếp theo**: [Router](router.md) · [Công cụ khớp lệnh](../trading/matching-engine.md) · [Lệnh giới hạn](../trading/limit-orders.md)

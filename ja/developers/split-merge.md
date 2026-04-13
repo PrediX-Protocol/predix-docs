@@ -1,10 +1,10 @@
 ---
-description: Split USDC into tokens and merge tokens back
+description: USDCをトークンに分割し、トークンを再統合する
 ---
 
-# Split & Merge (Developer Guide)
+# 分割 & マージ（開発者ガイド）
 
-## Split Position
+## ポジションの分割
 
 ```typescript
 const diamond = new ethers.Contract(DIAMOND_ADDRESS, DIAMOND_ABI, signer);
@@ -13,36 +13,36 @@ const usdc = new ethers.Contract(USDC_ADDRESS, ERC20_ABI, signer);
 const marketId = "0x...";
 const amount = ethers.parseUnits("100", 6); // 100 USDC
 
-// Approve USDC to Diamond
+// DiamondにUSDCを承認
 await (await usdc.approve(DIAMOND_ADDRESS, amount)).wait();
 
-// Split: 100 USDC → 100 YES + 100 NO
+// 分割: 100 USDC → 100 YES + 100 NO
 const tx = await diamond.splitPosition(marketId, amount);
 await tx.wait();
 
-// Verify balances
+// 残高を確認
 const market = await diamond.getMarket(marketId);
 const yesToken = new ethers.Contract(market.yesToken, ERC20_ABI, provider);
 const noToken = new ethers.Contract(market.noToken, ERC20_ABI, provider);
 
-console.log("YES balance:", ethers.formatUnits(await yesToken.balanceOf(signer.address), 6));
-console.log("NO balance:", ethers.formatUnits(await noToken.balanceOf(signer.address), 6));
+console.log("YES 残高:", ethers.formatUnits(await yesToken.balanceOf(signer.address), 6));
+console.log("NO 残高:", ethers.formatUnits(await noToken.balanceOf(signer.address), 6));
 ```
 
-## Merge Positions
+## ポジションのマージ
 
 ```typescript
-const mergeAmount = ethers.parseUnits("50", 6); // Merge 50 YES + 50 NO
+const mergeAmount = ethers.parseUnits("50", 6); // 50 YES + 50 NOをマージ
 
-// No approval needed (Diamond already has burn authority)
+// 承認不要（Diamondは既にバーン権限を保有）
 const tx = await diamond.mergePositions(marketId, mergeAmount);
 await tx.wait();
 
-// Result: 50 USDC returned to your wallet
+// 結果: 50 USDCがウォレットに返却されます
 ```
 
-> ⚠️ You must hold **equal** amounts of YES and NO tokens to merge. The merge amount cannot exceed your balance of either token.
+> ⚠️ マージするには**同量**のYESおよびNOトークンを保有する必要があります。マージ量はどちらのトークンの残高も超えることはできません。
 
 ---
 
-**Next**: [Resolve & Redeem](resolve-redeem.md) · [Events](events.md)
+**次へ**: [解決 & 償還](resolve-redeem.md) · [イベント](events.md)

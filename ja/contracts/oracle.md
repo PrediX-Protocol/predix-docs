@@ -1,10 +1,10 @@
 ---
-description: Pluggable oracle system — Manual, Chainlink, and custom adapters
+description: プラガブルオラクルシステム — Manual、Chainlink、カスタムアダプター
 ---
 
-# Oracle System
+# Oracle システム
 
-PrediX uses a pluggable oracle architecture. Every oracle implements the same interface:
+PrediXはプラガブルオラクルアーキテクチャを採用しています。すべてのオラクルは同じインターフェースを実装します：
 
 ```solidity
 interface IOracle {
@@ -15,26 +15,26 @@ interface IOracle {
 
 ## ManualOracleAdapter
 
-Admin-controlled resolution for subjective events (politics, sports, etc.).
+主観的なイベント（政治、スポーツなど）のための管理者制御による結果確定。
 
 ```solidity
-resolve(bytes32 marketId, bool outcome)     // ADMIN only
+resolve(bytes32 marketId, bool outcome)     // 管理者のみ
 getResolution(bytes32 marketId) → (bool resolved, bool outcome)
 getResolvedAt(bytes32 marketId) → uint64
 ```
 
 ## ChainlinkAdapter
 
-Automatic resolution based on Chainlink price feeds. Example: "BTC > $100K?"
+Chainlink価格フィードに基づく自動結果確定。例：「BTC > $100K？」
 
-**Safety checks**: stale feed detection (24h), L2 sequencer uptime, round completeness.
+**安全チェック**：古いフィード検出（24時間）、L2シーケンサー稼働時間、ラウンド完全性。
 
-## Creating a Custom Oracle
+## カスタムOracleの作成
 
-1. Implement the `IOracle` interface
-2. Deploy your adapter contract
-3. Admin approves: `diamond.setApprovedOracle(adapterAddress, true)`
-4. Use when creating markets: `createMarket(..., adapterAddress)`
+1. `IOracle`インターフェースを実装
+2. アダプターコントラクトをデプロイ
+3. 管理者が承認：`diamond.setApprovedOracle(adapterAddress, true)`
+4. マーケット作成時に使用：`createMarket(..., adapterAddress)`
 
 ```solidity
 contract MyCustomOracle is IOracle {
@@ -48,15 +48,15 @@ contract MyCustomOracle is IOracle {
     }
 
     function resolve(bytes32 marketId, bool outcome) external {
-        // Your resolution logic here
+        // ここに結果確定ロジックを記述
         resolved[marketId] = true;
         outcomes[marketId] = outcome;
     }
 }
 ```
 
-> ⚠️ **Oracle approval**: Only admin-approved oracle addresses can be used when creating markets.
+> ⚠️ **Oracle承認**：マーケット作成時には管理者が承認したOracleアドレスのみ使用できます。
 
 ---
 
-**Next**: [Access Control](access-control.md) · [Safety](safety.md) · [Resolution Concept](../concepts/resolution.md)
+**次へ**: [アクセス制御](access-control.md) · [安全機構](safety.md) · [結果確定の概念](../concepts/resolution.md)

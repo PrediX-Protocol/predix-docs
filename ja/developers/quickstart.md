@@ -1,21 +1,21 @@
 ---
-description: Start building on PrediX in 5 minutes
+description: 5分でPrediXの開発を始めましょう
 ---
 
-# Developer Quickstart
+# 開発者クイックスタート
 
-## Prerequisites
+## 前提条件
 
 - Node.js 18+
 - ethers.js v6
 
-## Setup
+## セットアップ
 
 ```bash
 npm install ethers
 ```
 
-## Connect to Unichain Sepolia
+## Unichain Sepolia に接続
 
 ```typescript
 import { ethers } from "ethers";
@@ -23,7 +23,7 @@ import { ethers } from "ethers";
 const provider = new ethers.JsonRpcProvider("https://sepolia.unichain.org");
 const signer = new ethers.Wallet(process.env.PRIVATE_KEY!, provider);
 
-// Contract instances
+// コントラクトインスタンス
 const DIAMOND = "0xF38a265E6e4F57D000a1CC08004da5B4A380B08A";
 const EXCHANGE = "0xa202abCb2A358c0862B2dA76b553398339F2C638";
 const ROUTER = "0xEfc57eB2b5b5BE7E5b8377be23f8D31354811Eb7";
@@ -34,40 +34,40 @@ const router = new ethers.Contract(ROUTER, ROUTER_ABI, signer);
 const usdc = new ethers.Contract(USDC, ERC20_ABI, signer);
 ```
 
-## Read a Market
+## マーケットの読み取り
 
 ```typescript
-const marketId = "0x..."; // Get from MarketCreated event or API
+const marketId = "0x..."; // MarketCreated イベントまたはAPIから取得
 const market = await diamond.getMarket(marketId);
 
-console.log("Question:", market.question);
-console.log("End time:", new Date(Number(market.endTime) * 1000));
-console.log("YES token:", market.yesToken);
-console.log("NO token:", market.noToken);
-console.log("Resolved:", market.isResolved);
-console.log("Collateral:", ethers.formatUnits(market.totalCollateral, 6), "USDC");
+console.log("質問:", market.question);
+console.log("終了時刻:", new Date(Number(market.endTime) * 1000));
+console.log("YES トークン:", market.yesToken);
+console.log("NO トークン:", market.noToken);
+console.log("解決済み:", market.isResolved);
+console.log("担保金:", ethers.formatUnits(market.totalCollateral, 6), "USDC");
 ```
 
-## Place First Trade
+## 最初の取引を実行
 
 ```typescript
 const usdcAmount = ethers.parseUnits("10", 6); // 10 USDC
-const deadline = Math.floor(Date.now() / 1000) + 300; // 5 min
+const deadline = Math.floor(Date.now() / 1000) + 300; // 5分
 
-// Step 1: Get quote
+// ステップ1: 見積もりを取得
 const expectedYes = await router.quoteBuyYes(marketId, usdcAmount);
-const minYesOut = expectedYes * 95n / 100n; // 5% slippage
+const minYesOut = expectedYes * 95n / 100n; // 5% スリッページ
 
-// Step 2: Approve USDC
+// ステップ2: USDCを承認
 await (await usdc.approve(ROUTER, usdcAmount)).wait();
 
-// Step 3: Buy YES tokens
+// ステップ3: YESトークンを購入
 const tx = await router.buyYes(marketId, usdcAmount, minYesOut, signer.address, deadline);
 const receipt = await tx.wait();
 
-console.log("Trade hash:", receipt.hash);
+console.log("取引ハッシュ:", receipt.hash);
 ```
 
 ---
 
-**Next**: [Contract Addresses](addresses.md) · [ABIs](abis.md) · [Trading Integration](trading-integration.md)
+**次へ**: [コントラクトアドレス](addresses.md) · [ABI](abis.md) · [取引統合](trading-integration.md)

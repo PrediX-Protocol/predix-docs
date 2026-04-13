@@ -1,12 +1,12 @@
 ---
-description: Smart Router — hybrid CLOB + AMM execution via Uniswap v4
+description: スマート Router — Uniswap v4 によるハイブリッド CLOB + AMM 実行
 ---
 
-# Router Contract
+# Router コントラクト
 
-The PrediXRouter aggregates liquidity from the CLOB (Exchange) and AMM (Uniswap v4) to provide best execution for traders.
+PrediXRouterは、CLOB（Exchange）とAMM（Uniswap v4）の流動性を統合し、トレーダーに最良の約定を提供します。
 
-## Trading Functions
+## トレーディング関数
 
 ```solidity
 buyYes(bytes32 marketId, uint256 usdcIn, uint256 minYesOut,
@@ -22,7 +22,7 @@ sellNo(bytes32 marketId, uint256 noIn, uint256 minUsdcOut,
        address recipient, uint256 deadline) → uint256 usdcOut
 ```
 
-## Quote Functions
+## 見積もり関数
 
 ```solidity
 quoteBuyYes(bytes32 marketId, uint256 usdcIn) → uint256
@@ -31,29 +31,29 @@ quoteBuyNo(bytes32 marketId, uint256 usdcIn) → uint256
 quoteSellNo(bytes32 marketId, uint256 noIn) → uint256
 ```
 
-## Routing Logic
+## ルーティングロジック
 
 ```
 buyYes($100):
-  1. Check CLOB for SELL_YES orders better than AMM price
-  2. Fill CLOB (zero slippage, limit price)
-  3. Route remaining to Uniswap v4 AMM swap
-  4. Return total YES to recipient
+  1. AMM価格より有利なCLOBのSELL_YES注文を確認
+  2. CLOBで約定（スリッページなし、指値）
+  3. 残りをUniswap v4 AMMスワップにルーティング
+  4. 合計YESを受取人に返却
 ```
 
-## Virtual NO Pricing
+## 仮想NO価格設定
 
-Since only YES/USDC pools exist:
+YES/USDCプールのみ存在するため：
 
-- **Buy NO**: Split USDC → YES+NO → sell YES via AMM → keep NO
-- **Sell NO**: Buy YES from AMM → merge YES+NO → return USDC
+- **NO購入**：USDCをYES+NOに分割 → AMMでYESを売却 → NOを保持
+- **NO売却**：AMMでYESを購入 → YES+NOを統合 → USDCを返却
 
 ## Flash Accounting
 
-The Router uses Uniswap v4's flash accounting (unlock callback pattern) for gas-efficient multi-step operations.
+RouterはUniswap v4のFlash Accounting（unlockコールバックパターン）を使用して、ガス効率の良い多段階操作を実行します。
 
-> ⚠️ **Parameters**: Always set `deadline` (typically 5 minutes) and `minOut` (slippage protection). Transactions revert if conditions aren't met.
+> ⚠️ **パラメータ**：常に`deadline`（通常5分）と`minOut`（スリッページ保護）を設定してください。条件が満たされない場合、トランザクションはリバートされます。
 
 ---
 
-**Next**: [Hook](hook.md) · [Smart Routing](../trading/smart-routing.md) · [Market Orders](../trading/market-orders.md)
+**次へ**: [Hook](hook.md) · [スマートルーティング](../trading/smart-routing.md) · [成行注文](../trading/market-orders.md)

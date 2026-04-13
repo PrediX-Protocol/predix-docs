@@ -1,33 +1,33 @@
 ---
-description: Two trading venues — CLOB and AMM — unified by the Smart Router
+description: 두 가지 거래소 - CLOB과 AMM - Smart Router로 통합
 ---
 
-# Trading Overview
+# 거래 개요
 
-PrediX offers two trading venues unified by the Smart Router:
+PrediX는 Smart Router로 통합된 두 가지 거래소를 제공합니다:
 
 ```
 User → PrediXRouter (Smart Router)
-          ├── PrediXExchange (CLOB) — limit orders, zero slippage
-          └── Uniswap v4 AMM — always-on liquidity
+          ├── PrediXExchange (CLOB) — 지정가 주문, 슬리피지 없음
+          └── Uniswap v4 AMM — 항시 유동성 제공
 ```
 
-## Market Orders vs Limit Orders
+## 시장가 주문 vs 지정가 주문
 
-| Type | Via | Best for |
-| ---- | --- | -------- |
-| **Market Order** | Router (`buyYes`, `sellYes`, `buyNo`, `sellNo`) | Instant execution, best available price |
-| **Limit Order** | Exchange (`placeOrder`) | Specific price, patient traders |
+| 유형 | 경유 | 적합한 경우 |
+| ---- | ---- | ----------- |
+| **시장가 주문** | Router (`buyYes`, `sellYes`, `buyNo`, `sellNo`) | 즉시 체결, 최적 가격 |
+| **지정가 주문** | Exchange (`placeOrder`) | 특정 가격, 인내심 있는 트레이더 |
 
-## Trading Flow
+## 거래 흐름
 
-1. **Approve** USDC (or tokens) to the contract
-2. **Quote** the expected output using `quoteBuyYes` / `quoteSellYes` etc.
-3. **Execute** the trade with slippage protection (`minOut` parameter)
-4. **Receive** outcome tokens (or USDC)
+1. USDC(또는 토큰)를 컨트랙트에 **승인**
+2. `quoteBuyYes` / `quoteSellYes` 등을 사용하여 예상 출력량 **조회**
+3. 슬리피지 보호(`minOut` 파라미터)와 함께 거래 **실행**
+4. 결과 토큰(또는 USDC) **수령**
 
-> ⚠️ **Always set a deadline** (typically 5 minutes from now) and **minOut** for slippage protection.
+> ⚠️ **항상 마감 시한을 설정하세요** (일반적으로 현재로부터 5분) 그리고 슬리피지 보호를 위한 **minOut**을 설정하세요.
 
 ---
 
-**Next**: [Market Orders](market-orders.md) · [Limit Orders](limit-orders.md) · [Smart Routing](smart-routing.md)
+**다음**: [시장가 주문](market-orders.md) · [지정가 주문](limit-orders.md) · [스마트 라우팅](smart-routing.md)

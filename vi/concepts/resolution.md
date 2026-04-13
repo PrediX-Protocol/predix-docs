@@ -1,72 +1,72 @@
 ---
-description: How markets are resolved and how winners redeem
+description: Cách thị trường được xác định kết quả và cách người thắng đổi thưởng
 ---
 
-# Resolution
+# Xác định kết quả
 
-## Market Lifecycle
+## Vòng đời thị trường
 
 ```
-Created → Active (trading) → Expired → Resolved → Redeemable
-                                ↓
-                        Emergency (7 days) → Emergency Resolved
-                                ↓
-                        Refund Mode → Users Refund
+Đã tạo → Hoạt động (giao dịch) → Hết hạn → Đã xác định → Có thể đổi thưởng
+                                    ↓
+                            Khẩn cấp (7 ngày) → Xác định khẩn cấp
+                                    ↓
+                            Chế độ hoàn tiền → Người dùng hoàn tiền
 ```
 
-## Normal Resolution
+## Xác định kết quả thông thường
 
-1. Market reaches `endTime` (trading continues but no new splits)
-2. Oracle reports outcome: `resolve(marketId, true/false)`
-3. Anyone calls `resolveMarket(marketId)` on the Diamond
-4. Market is marked as resolved
-5. Winners call `redeemMarketTokens(marketId)`
+1. Thị trường đạt `endTime` (giao dịch tiếp tục nhưng không tách mới)
+2. Oracle báo cáo kết quả: `resolve(marketId, true/false)`
+3. Bất kỳ ai gọi `resolveMarket(marketId)` trên Diamond
+4. Thị trường được đánh dấu đã xác định
+5. Người thắng gọi `redeemMarketTokens(marketId)`
 
 ```typescript
-// Step 1: Resolve (anyone can call after oracle reports)
+// Bước 1: Xác định kết quả (bất kỳ ai có thể gọi sau khi oracle báo cáo)
 await diamond.resolveMarket(marketId);
 
-// Step 2: Redeem winning tokens
+// Bước 2: Đổi token thắng
 await diamond.redeemMarketTokens(marketId);
-// Winners receive 1 USDC per winning token
+// Người thắng nhận 1 USDC cho mỗi token thắng
 ```
 
-## Emergency Resolution
+## Xác định kết quả khẩn cấp
 
-If the oracle fails to report within 7 days after `endTime`:
+Nếu oracle không báo cáo trong vòng 7 ngày sau `endTime`:
 
-1. An `OPERATOR` can call `emergencyResolve(marketId, outcome)`
-2. This bypasses the oracle and sets the outcome directly
+1. `OPERATOR` có thể gọi `emergencyResolve(marketId, outcome)`
+2. Bỏ qua oracle và đặt kết quả trực tiếp
 
-> ⚠️ Emergency resolution requires a **7-day delay** after `endTime` and can only be called by the OPERATOR role.
+> ⚠️ Xác định khẩn cấp yêu cầu **trì hoãn 7 ngày** sau `endTime` và chỉ có thể được gọi bởi vai trò OPERATOR.
 
-## Refund Mode
+## Chế độ hoàn tiền
 
-If a market is deemed invalid or problematic:
+Nếu thị trường được coi là không hợp lệ hoặc có vấn đề:
 
-1. `OPERATOR` calls `enableRefundMode(marketId)`
-2. All trading is blocked (split, merge, CLOB, AMM)
-3. Token holders call `refund(marketId)`
-4. Each holder receives USDC proportional to their YES + NO balance
+1. `OPERATOR` gọi `enableRefundMode(marketId)`
+2. Tất cả giao dịch bị chặn (tách, gộp, CLOB, AMM)
+3. Người giữ token gọi `refund(marketId)`
+4. Mỗi người giữ nhận USDC theo tỷ lệ số dư YES + NO
 
 ```typescript
-// Operator enables refund
+// Người vận hành kích hoạt hoàn tiền
 await diamond.enableRefundMode(marketId);
 
-// Users claim proportional refund
+// Người dùng yêu cầu hoàn tiền theo tỷ lệ
 await diamond.refund(marketId);
 ```
 
-## Category Resolution
+## Xác định kết quả danh mục
 
-For multi-outcome markets:
+Đối với thị trường đa kết quả:
 
 ```typescript
-// Admin resolves the category: winner is outcome index 2
+// Quản trị viên xác định danh mục: người thắng là chỉ số kết quả 2
 await diamond.resolveCategory(categoryId, 2);
-// All markets in the category are resolved atomically
+// Tất cả thị trường trong danh mục được xác định nguyên tử
 ```
 
 ---
 
-**Next**: [Multi-Outcome Markets](multi-outcome-markets.md) · [Fees](fees.md) · [Oracle Contract](../contracts/oracle.md)
+**Tiếp theo**: [Thị trường đa kết quả](multi-outcome-markets.md) · [Phí](fees.md) · [Hợp đồng Oracle](../contracts/oracle.md)

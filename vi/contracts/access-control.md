@@ -1,21 +1,21 @@
 ---
-description: Role-based access control — 4 roles with granular permissions
+description: Kiểm soát truy cập dựa trên vai trò — 4 vai trò với quyền chi tiết
 ---
 
-# Access Control
+# Kiểm soát truy cập
 
-## Roles
+## Các vai trò
 
-| Role | ID | Purpose |
+| Vai trò | ID | Mục đích |
 | ---- | -- | ------- |
-| DEFAULT_ADMIN | 0 | Manage all roles |
-| ADMIN | 1 | Create markets, config fees, approve oracles |
-| OPERATOR | 2 | Emergency resolve, enable refund |
-| PAUSER | 3 | Pause the system |
+| DEFAULT_ADMIN | 0 | Quản lý tất cả các vai trò |
+| ADMIN | 1 | Tạo thị trường, cấu hình phí, phê duyệt Oracle |
+| OPERATOR | 2 | Xác nhận kết quả khẩn cấp, kích hoạt hoàn tiền |
+| PAUSER | 3 | Tạm dừng hệ thống |
 
-## Permission Matrix
+## Ma trận quyền hạn
 
-| Function | PUBLIC | ADMIN | OPERATOR | PAUSER | OWNER |
+| Hàm | PUBLIC | ADMIN | OPERATOR | PAUSER | OWNER |
 | -------- | ------ | ----- | -------- | ------ | ----- |
 | `createMarket` | | ✓ | | | |
 | `splitPosition` | ✓ | | | | |
@@ -24,28 +24,28 @@ description: Role-based access control — 4 roles with granular permissions
 | `redeemMarketTokens` | ✓ | | | | |
 | `placeOrder` | ✓ | | | | |
 | `buyYes` (Router) | ✓ | | | | |
-| `emergencyResolve` | | | ✓ (7d) | | |
+| `emergencyResolve` | | | ✓ (7 ngày) | | |
 | `enableRefundMode` | | | ✓ | | |
 | `setTvlCap` | | ✓ | | | |
 | `setApprovedOracle` | | ✓ | | | |
 | `pauseAll` | | | | ✓ | |
 | `diamondCut` | | | | | ✓ |
 
-## Two-Step Ownership Transfer
+## Chuyển quyền sở hữu hai bước
 
 ```
-1. Current owner calls transferOwnership(newOwner)
-2. newOwner becomes pendingOwner
-3. newOwner calls acceptOwnership()
-4. Ownership transferred
+1. Chủ sở hữu hiện tại gọi transferOwnership(newOwner)
+2. newOwner trở thành pendingOwner
+3. newOwner gọi acceptOwnership()
+4. Hoàn tất chuyển quyền sở hữu
 ```
 
-This prevents accidental transfers to wrong addresses.
+Điều này ngăn chặn việc chuyển nhầm sang địa chỉ sai.
 
-## Last-Admin Protection
+## Bảo vệ quản trị viên cuối cùng
 
-The system prevents revoking the last admin's role, ensuring the protocol always has at least one admin.
+Hệ thống ngăn chặn việc thu hồi vai trò của quản trị viên cuối cùng, đảm bảo giao thức luôn có ít nhất một quản trị viên.
 
 ---
 
-**Next**: [Safety](safety.md) · [Diamond Contract](diamond.md)
+**Tiếp theo**: [An toàn](safety.md) · [Hợp đồng Diamond](diamond.md)

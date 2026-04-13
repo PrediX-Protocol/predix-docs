@@ -1,12 +1,12 @@
 ---
-description: Place and manage limit orders on the on-chain CLOB
+description: Đặt và quản lý lệnh giới hạn trên CLOB trên chuỗi
 ---
 
-# Limit Orders
+# Lệnh giới hạn
 
-Limit orders are placed directly on the PrediXExchange (CLOB). They remain on-chain until filled, cancelled, or the market expires.
+Lệnh giới hạn được đặt trực tiếp trên PrediXExchange (CLOB). Chúng tồn tại trên chuỗi cho đến khi được khớp, hủy, hoặc thị trường hết hạn.
 
-## Place Order
+## Đặt lệnh
 
 ```typescript
 const exchange = new ethers.Contract(
@@ -15,41 +15,41 @@ const exchange = new ethers.Contract(
   signer
 );
 
-// Side enum: 0=BUY_YES, 1=SELL_YES, 2=BUY_NO, 3=SELL_NO
+// Enum Side: 0=BUY_YES, 1=SELL_YES, 2=BUY_NO, 3=SELL_NO
 const side = 0; // BUY_YES
-const price = ethers.parseUnits("0.65", 6);   // $0.65 per token
-const amount = ethers.parseUnits("100", 6);    // 100 tokens
+const price = ethers.parseUnits("0.65", 6);   // $0.65 mỗi token
+const amount = ethers.parseUnits("100", 6);    // 100 token
 
-// For BUY orders: approve USDC to Exchange
+// Với lệnh MUA: phê duyệt USDC cho Exchange
 // deposit = price × amount / 1e6
 await usdc.approve(exchange.target, price * amount / 1000000n);
 
 const tx = await exchange.placeOrder(marketId, side, price, amount);
 const receipt = await tx.wait();
-// Parse OrderPlaced event for orderId
+// Phân tích sự kiện OrderPlaced để lấy orderId
 ```
 
-## Cancel Order
+## Hủy lệnh
 
 ```typescript
 await exchange.cancelOrder(orderId);
-// Unfilled deposit is returned to the order owner
+// Tiền nạp chưa khớp được trả lại cho chủ lệnh
 ```
 
-> ⚠️ Anyone can cancel expired market orders (after endTime).
+> ⚠️ Bất kỳ ai cũng có thể hủy lệnh thị trường đã hết hạn (sau endTime).
 
-## Constraints
+## Ràng buộc
 
-| Parameter | Value |
-| --------- | ----- |
-| Price range | $0.01 – $0.99 (`10000` – `990000` in 6 decimals) |
-| Price step | $0.01 (`10000`) |
-| Min order amount | $1.00 (`1000000` in 6 decimals) |
-| Max orders per user per market | 50 |
-| Max fills per placement | 20 |
-| Self-trade prevention | maker.owner ≠ taker.owner |
+| Tham số | Giá trị |
+| ------- | ------- |
+| Phạm vi giá | $0.01 – $0.99 (`10000` – `990000` với 6 chữ số thập phân) |
+| Bước giá | $0.01 (`10000`) |
+| Số lượng lệnh tối thiểu | $1.00 (`1000000` với 6 chữ số thập phân) |
+| Số lệnh tối đa mỗi người dùng mỗi thị trường | 50 |
+| Số lần khớp tối đa mỗi lần đặt | 20 |
+| Ngăn chặn tự giao dịch | maker.owner ≠ taker.owner |
 
-## Side Enum
+## Enum Side
 
 ```solidity
 enum Side {
@@ -62,4 +62,4 @@ enum Side {
 
 ---
 
-**Next**: [Matching Engine](matching-engine.md) · [Smart Routing](smart-routing.md) · [Order Book](order-book.md)
+**Tiếp theo**: [Công cụ khớp lệnh](matching-engine.md) · [Định tuyến thông minh](smart-routing.md) · [Sổ lệnh](order-book.md)

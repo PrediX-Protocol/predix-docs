@@ -1,40 +1,40 @@
 ---
-description: Security posture — audits, testing, and safety mechanisms
+description: セキュリティ態勢 — 監査、テスト、安全メカニズム
 ---
 
-# Security Overview
+# セキュリティ概要
 
-## Audit Summary
+## 監査サマリー
 
-| Metric | Value |
+| 指標 | 値 |
 | ------ | ----- |
-| Source files | 44 Solidity files, 6,222 lines |
-| Unit tests | 264 tests, 0 failures |
-| Fuzz tests | 14 tests × 10,000 runs |
-| On-chain E2E | 31 tests on Unichain Sepolia |
-| Audit reports | 3 independent reviews cross-verified |
-| Slither analysis | 0 real security issues |
-| OWASP coverage | 10/10 categories (SC Top 10 2026) |
-| Security fixes | 22 bugs found and fixed |
+| ソースファイル | Solidityファイル44個、6,222行 |
+| ユニットテスト | 264テスト、0失敗 |
+| ファズテスト | 14テスト x 10,000回実行 |
+| オンチェーンE2E | Unichain Sepoliaで31テスト |
+| 監査レポート | 3件の独立レビューをクロス検証 |
+| Slither分析 | 実際のセキュリティ問題0件 |
+| OWASPカバレッジ | 10/10カテゴリ (SC Top 10 2026) |
+| セキュリティ修正 | 22件のバグ発見・修正 |
 
-## Safety Mechanisms
+## 安全メカニズム
 
-1. **Safety Caps**: TVL, per-trade, per-market limits (configurable)
-2. **Pause**: PAUSER can freeze specific modules or entire system
-3. **Emergency Resolve**: OPERATOR can resolve after 7-day delay
-4. **Refund Mode**: Proportional refund for problematic markets
-5. **Anti-Sandwich**: Hook-level detection (same block, opposite direction)
-6. **Reentrancy Guards**: 3 independent guards across contracts
-7. **Two-Step Ownership**: Prevents accidental ownership transfer
+1. **安全上限**: TVL、取引あたり、市場あたりの制限（設定可能）
+2. **一時停止**: PAUSERが特定モジュールまたはシステム全体を凍結可能
+3. **緊急決済**: OPERATORが7日間の遅延後に決済可能
+4. **返金モード**: 問題のある市場への比例返金
+5. **サンドイッチ攻撃防止**: Hookレベルの検出（同一ブロック、逆方向）
+6. **リエントランシーガード**: コントラクト全体で3つの独立ガード
+7. **2段階オーナーシップ**: 誤ったオーナーシップ移転を防止
 
-## Smart Contract Risks
+## スマートコントラクトリスク
 
-While PrediX has undergone extensive testing and auditing, smart contract risk can never be fully eliminated. Users should:
+PrediXは広範なテストと監査を受けていますが、スマートコントラクトリスクを完全に排除することはできません。ユーザーは以下を推奨します:
 
-- Start with small amounts
-- Understand the risks of prediction market trading
-- Never invest more than they can afford to lose
+- 少額から始める
+- 予測市場取引のリスクを理解する
+- 損失しても問題ない金額以上を投資しない
 
 ---
 
-**Next**: [Audit Reports](audit-reports.md) · [Bug Bounty](bug-bounty.md) · [Safety Mechanisms](../contracts/safety.md)
+**次へ**: [監査レポート](audit-reports.md) · [バグバウンティ](bug-bounty.md) · [安全メカニズム](../contracts/safety.md)

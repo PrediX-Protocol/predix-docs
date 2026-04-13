@@ -1,47 +1,47 @@
 ---
-description: Detailed audit results and testing coverage
+description: 상세 감사 결과 및 테스트 커버리지
 ---
 
-# Audit Reports
+# 감사 보고서
 
-## Testing Coverage
+## 테스트 커버리지
 
-| Category | Details |
+| 카테고리 | 세부 사항 |
 | -------- | ------- |
-| **Unit Tests** | 264 tests covering all contract functions, 0 failures |
-| **Fuzz Tests** | 14 property-based tests, each running 10,000 iterations |
-| **On-chain E2E** | 31 end-to-end tests on Unichain Sepolia with real Uniswap v4 |
-| **Slither** | Static analysis: 0 real security issues |
+| **단위 테스트** | 모든 컨트랙트 함수를 커버하는 264개 테스트, 0개 실패 |
+| **퍼즈 테스트** | 14개 속성 기반 테스트, 각 10,000회 반복 실행 |
+| **온체인 E2E** | 실제 Uniswap v4를 사용한 Unichain Sepolia에서의 31개 종단간 테스트 |
+| **Slither** | 정적 분석: 실제 보안 이슈 0개 |
 
-## AI Audit Reports
+## AI 감사 보고서
 
-3 independent AI-powered audits were conducted and cross-verified:
+3개의 독립적인 AI 기반 감사가 수행되고 교차 검증되었습니다:
 
-### Bugs Found and Fixed
+### 발견 및 수정된 버그
 
-| Severity | Found | Fixed |
+| 심각도 | 발견 | 수정 |
 | -------- | ----- | ----- |
 | CRITICAL | 6 | 6 ✅ |
 | HIGH | 3 | 3 ✅ |
 | MEDIUM | 7 | 7 ✅ |
 | LOW | 6 | 6 ✅ |
-| **Total** | **22** | **22 ✅** |
+| **합계** | **22** | **22 ✅** |
 
-## OWASP Smart Contract Top 10 2026
+## OWASP 스마트 컨트랙트 Top 10 2026
 
-| # | Category | Status |
+| # | 카테고리 | 상태 |
 | - | -------- | ------ |
-| SC01 | Access Control | ✅ Role-based ACL, 62 checks, last-admin protection |
-| SC02 | Business Logic | ✅ Invariant YES=NO=Collateral, refundMode |
-| SC03 | Oracle Manipulation | ✅ Oracle whitelist, endTime gate |
-| SC04 | Flash Loan | ✅ nonReentrant (20 functions), safety caps |
-| SC05 | Input Validation | ✅ 49 zero-checks, price range validation |
-| SC06 | Unchecked Calls | ✅ SafeERC20, CEI pattern |
-| SC07 | Arithmetic | ✅ FullMath.mulDiv, Solidity 0.8.30 overflow |
-| SC08 | Reentrancy | ✅ 3 independent guards |
-| SC09 | Overflow/Underflow | ✅ Solidity 0.8.30 |
-| SC10 | Proxy/Upgrade | ✅ Protected selectors, two-step ownership |
+| SC01 | 접근 제어 | ✅ 역할 기반 ACL, 62개 검사, 마지막 관리자 보호 |
+| SC02 | 비즈니스 로직 | ✅ 불변식 YES=NO=담보, refundMode |
+| SC03 | 오라클 조작 | ✅ 오라클 화이트리스트, endTime 게이트 |
+| SC04 | 플래시론 | ✅ nonReentrant (20개 함수), 안전 한도 |
+| SC05 | 입력 검증 | ✅ 49개 제로 체크, 가격 범위 검증 |
+| SC06 | 미확인 호출 | ✅ SafeERC20, CEI 패턴 |
+| SC07 | 산술 연산 | ✅ FullMath.mulDiv, Solidity 0.8.30 오버플로우 |
+| SC08 | 재진입 | ✅ 3개 독립 가드 |
+| SC09 | 오버플로우/언더플로우 | ✅ Solidity 0.8.30 |
+| SC10 | 프록시/업그레이드 | ✅ 보호된 셀렉터, 2단계 소유권 |
 
 ---
 
-**Next**: [Bug Bounty](bug-bounty.md) · [Security Overview](overview.md)
+**다음**: [버그 바운티](bug-bounty.md) · [보안 개요](overview.md)

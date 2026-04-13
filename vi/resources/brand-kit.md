@@ -1,39 +1,39 @@
 ---
-description: PrediX brand assets and usage guidelines
+description: Tai san thuong hieu PrediX va huong dan su dung
 ---
 
-# Brand Kit
+# Bo Thuong hieu
 
 ## Logo
 
-> 🚧 Logo files will be available for download here after brand finalization.
+> 🚧 Cac tep logo se san sang de tai xuong tai day sau khi hoan tat thuong hieu.
 
-## Color Palette
+## Bang Mau
 
-| Color | Hex | Usage |
+| Mau | Hex | Su dung |
 | ----- | --- | ----- |
-| Primary Blue | `#0D3B66` | Headers, primary buttons |
-| Accent Blue | `#2980B9` | Links, highlights |
-| Success Green | `#27AE60` | YES token, positive states |
-| Danger Red | `#E74C3C` | NO token, warnings |
-| Background | `#F5F8FA` | Page background |
-| Text | `#2C3E50` | Body text |
+| Xanh chinh | `#0D3B66` | Tieu de, nut chinh |
+| Xanh nhan | `#2980B9` | Lien ket, diem noi bat |
+| Xanh la thanh cong | `#27AE60` | Token YES, trang thai tich cuc |
+| Do canh bao | `#E74C3C` | Token NO, canh bao |
+| Nen | `#F5F8FA` | Nen trang |
+| Van ban | `#2C3E50` | Van ban noi dung |
 
-## Typography
+## Kieu chu
 
-| Element | Font | Weight |
+| Thanh phan | Phong chu | Do dam |
 | ------- | ---- | ------ |
-| Headings | Inter | Bold (700) |
-| Body | Inter | Regular (400) |
-| Code | JetBrains Mono | Regular (400) |
+| Tieu de | Inter | Bold (700) |
+| Noi dung | Inter | Regular (400) |
+| Ma nguon | JetBrains Mono | Regular (400) |
 
-## Usage Guidelines
+## Huong dan Su dung
 
-- Always use the PrediX logo with adequate spacing
-- Do not alter the logo colors or proportions
-- When referring to the protocol, use "PrediX Protocol" or "PrediX"
-- Do not use the logo to imply endorsement
+- Luon su dung logo PrediX voi khoang cach phu hop
+- Khong thay doi mau sac hoac ty le cua logo
+- Khi de cap den giao thuc, su dung "PrediX Protocol" hoac "PrediX"
+- Khong su dung logo de ngam chi su chung thuc
 
 ---
 
-**Next**: [Community](community.md)
+**Tiep theo**: [Cong dong](community.md)

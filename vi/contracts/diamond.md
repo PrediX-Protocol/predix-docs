@@ -1,36 +1,36 @@
 ---
-description: Diamond proxy (EIP-2535) — market management, split, merge, resolve, redeem
+description: Diamond proxy (EIP-2535) — quản lý thị trường, tách, gộp, xác nhận kết quả, đổi thưởng
 ---
 
-# Diamond Contract
+# Hợp đồng Diamond
 
-The Diamond is the central contract of PrediX Protocol, implementing EIP-2535 for modular upgradeability.
+Diamond là hợp đồng trung tâm của PrediX Protocol, triển khai EIP-2535 để hỗ trợ nâng cấp theo module.
 
-## Facets
+## Danh sách Facet
 
-| Facet | Functions |
+| Facet | Hàm |
 | ----- | --------- |
-| **DiamondCutFacet** | `diamondCut` — add/replace/remove facets |
-| **DiamondLoupeFacet** | `facets`, `facetAddresses`, `facetFunctionSelectors` — introspection |
+| **DiamondCutFacet** | `diamondCut` — thêm/thay thế/xóa Facet |
+| **DiamondLoupeFacet** | `facets`, `facetAddresses`, `facetFunctionSelectors` — kiểm tra nội bộ |
 | **AccessControlFacet** | `grantRole`, `revokeRole`, `hasRole` |
 | **OwnableFacet** | `transferOwnership`, `acceptOwnership`, `owner` |
 | **PausableFacet** | `pause`, `unpause`, `paused` |
-| **MarketFacet** | All market operations (see below) |
+| **MarketFacet** | Tất cả hoạt động thị trường (xem bên dưới) |
 
-## How It Works
+## Cách hoạt động
 
-Every function call to the Diamond is routed by selector:
+Mọi lệnh gọi hàm đến Diamond được định tuyến bằng selector:
 
 ```
-User calls diamond.splitPosition(marketId, amount)
-  → Diamond fallback: lookup selector 0x... → MarketFacet address
-  → delegatecall to MarketFacet
-  → MarketFacet executes using Diamond's storage
+Người dùng gọi diamond.splitPosition(marketId, amount)
+  → Diamond fallback: tra cứu selector 0x... → địa chỉ MarketFacet
+  → delegatecall đến MarketFacet
+  → MarketFacet thực thi sử dụng storage của Diamond
 ```
 
-## MarketFacet Functions
+## Các hàm MarketFacet
 
-### Creation (ADMIN_ROLE)
+### Tạo mới (ADMIN_ROLE)
 
 ```solidity
 createMarket(string question, string description, uint256 endTime,
@@ -42,7 +42,7 @@ addMarketToCategory(bytes32 categoryId, bytes32 marketId)
 removeMarketFromCategory(bytes32 categoryId, bytes32 marketId)
 ```
 
-### Position Management (PUBLIC)
+### Quản lý vị thế (PUBLIC)
 
 ```solidity
 splitPosition(bytes32 marketId, uint256 amount)
@@ -51,24 +51,24 @@ groupSplit(bytes32 categoryId, uint256 amount)
 groupMerge(bytes32 categoryId, uint256 amount)
 ```
 
-### Resolution
+### Xác nhận kết quả
 
 ```solidity
-resolveMarket(bytes32 marketId)                              // PUBLIC (after oracle)
+resolveMarket(bytes32 marketId)                              // PUBLIC (sau oracle)
 resolveCategory(bytes32 categoryId, uint256 winningIndex)    // ADMIN_ROLE
-emergencyResolve(bytes32 marketId, bool outcome)             // OPERATOR_ROLE (7d delay)
+emergencyResolve(bytes32 marketId, bool outcome)             // OPERATOR_ROLE (trì hoãn 7 ngày)
 enableRefundMode(bytes32 marketId)                           // OPERATOR_ROLE
-refund(bytes32 marketId)                                     // PUBLIC (refund mode)
+refund(bytes32 marketId)                                     // PUBLIC (chế độ hoàn tiền)
 ```
 
-### Redemption (PUBLIC)
+### Đổi thưởng (PUBLIC)
 
 ```solidity
 redeemMarketTokens(bytes32 marketId)
 redeemCategoryTokens(bytes32 categoryId)
 ```
 
-### View Functions
+### Hàm truy vấn
 
 ```solidity
 getMarket(bytes32 marketId) → MarketData
@@ -78,7 +78,7 @@ isRefundMode(bytes32 marketId) → bool
 getSafetyCaps() → (uint256 tvlCap, uint256 perTradeCap, uint256 perMarketCap)
 ```
 
-### Admin (ADMIN_ROLE)
+### Quản trị (ADMIN_ROLE)
 
 ```solidity
 setApprovedOracle(address oracle, bool approved)
@@ -87,7 +87,7 @@ setPerTradeCap(uint256 cap)
 setPerMarketCap(uint256 cap)
 ```
 
-## MarketData Struct
+## Cấu trúc MarketData
 
 ```solidity
 struct MarketData {
@@ -100,15 +100,15 @@ struct MarketData {
     bytes32 categoryId;
     address oracle;
     bool isResolved;
-    bool outcome;           // true = YES wins, false = NO wins
+    bool outcome;           // true = YES thắng, false = NO thắng
     uint256 totalCollateral;
-    bytes32 questionHash;   // DEPRECATED
+    bytes32 questionHash;   // KHÔNG CÒN SỬ DỤNG
     uint256 resolvedAt;
 }
 ```
 
-> ⚠️ **Critical selectors** (`diamondCut`, `owner`, `transferOwnership`) are protected and cannot be removed.
+> ⚠️ **Các selector quan trọng** (`diamondCut`, `owner`, `transferOwnership`) được bảo vệ và không thể bị xóa.
 
 ---
 
-**Next**: [Exchange](exchange.md) · [Router](router.md) · [Access Control](access-control.md)
+**Tiếp theo**: [Exchange](exchange.md) · [Router](router.md) · [Kiểm soát truy cập](access-control.md)

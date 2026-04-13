@@ -1,51 +1,51 @@
 ---
-description: CLOB market making — providing order book liquidity
+description: CLOBマーケットメイキング — オーダーブック流動性の提供
 ---
 
-# Market Making
+# マーケットメイキング
 
-## Overview
+## 概要
 
-Market making on the CLOB involves placing simultaneous buy and sell orders to capture the spread.
+CLOBでのマーケットメイキングは、スプレッドを獲得するために買い注文と売り注文を同時に配置することです。
 
-## Basic Strategy
+## 基本戦略
 
 ```typescript
 const exchange = new ethers.Contract(EXCHANGE_ADDRESS, EXCHANGE_ABI, signer);
 
-// Place bid (BUY_YES) and ask (SELL_YES)
+// 買い(BUY_YES)と売り(SELL_YES)を配置
 const bidPrice = ethers.parseUnits("0.48", 6);
 const askPrice = ethers.parseUnits("0.52", 6);
 const amount = ethers.parseUnits("100", 6);
 
-// BUY_YES: deposit USDC
+// BUY_YES: USDCを預入
 await exchange.placeOrder(marketId, 0, bidPrice, amount); // side 0 = BUY_YES
 
-// SELL_YES: deposit YES tokens (must hold from split)
+// SELL_YES: YESトークンを預入（分割で保有している必要あり）
 await exchange.placeOrder(marketId, 1, askPrice, amount); // side 1 = SELL_YES
 ```
 
-## Spread Management
+## スプレッド管理
 
-| Market Phase | Recommended Spread |
+| 市場フェーズ | 推奨スプレッド |
 | ------------ | ------------------ |
-| New market (low volume) | $0.05–$0.10 |
-| Active market | $0.02–$0.05 |
-| Near expiry (< 24h) | $0.05–$0.10 or wider |
+| 新規市場（低取引量） | $0.05–$0.10 |
+| アクティブ市場 | $0.02–$0.05 |
+| 満期間近（< 24時間） | $0.05–$0.10またはそれ以上 |
 
-## Inventory Risk
+## 在庫リスク
 
-When you get filled on one side more than the other, you accumulate directional exposure:
+一方の約定が他方より多くなると、方向性のエクスポージャーが蓄積されます:
 
-- Too many YES tokens → your position profits if YES wins
-- Too many NO tokens → your position profits if NO wins
+- YESトークンが多すぎる → YESが勝てば利益
+- NOトークンが多すぎる → NOが勝てば利益
 
-Manage by adjusting prices or using split/merge to rebalance.
+価格の調整やsplit/mergeを使用してリバランスしてください。
 
-## Market Maker Bot
+## マーケットメイカーボット
 
-PrediX provides a reference Market Maker Bot implementation. See the GitHub repository for details.
+PrediXはリファレンスとなるマーケットメイカーボットの実装を提供しています。詳細はGitHubリポジトリを参照してください。
 
 ---
 
-**Next**: [Liquidity Overview](overview.md) · [Limit Orders](../trading/limit-orders.md)
+**次へ**: [流動性の概要](overview.md) · [指値注文](../trading/limit-orders.md)

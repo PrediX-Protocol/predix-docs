@@ -1,12 +1,12 @@
 ---
-description: Smart Router — hybrid CLOB + AMM execution via Uniswap v4
+description: Smart Router — thực thi kết hợp CLOB + AMM qua Uniswap v4
 ---
 
-# Router Contract
+# Hợp đồng Router
 
-The PrediXRouter aggregates liquidity from the CLOB (Exchange) and AMM (Uniswap v4) to provide best execution for traders.
+PrediXRouter tổng hợp thanh khoản từ CLOB (Exchange) và AMM (Uniswap v4) để cung cấp thực thi tốt nhất cho nhà giao dịch.
 
-## Trading Functions
+## Các hàm giao dịch
 
 ```solidity
 buyYes(bytes32 marketId, uint256 usdcIn, uint256 minYesOut,
@@ -22,7 +22,7 @@ sellNo(bytes32 marketId, uint256 noIn, uint256 minUsdcOut,
        address recipient, uint256 deadline) → uint256 usdcOut
 ```
 
-## Quote Functions
+## Các hàm báo giá
 
 ```solidity
 quoteBuyYes(bytes32 marketId, uint256 usdcIn) → uint256
@@ -31,29 +31,29 @@ quoteBuyNo(bytes32 marketId, uint256 usdcIn) → uint256
 quoteSellNo(bytes32 marketId, uint256 noIn) → uint256
 ```
 
-## Routing Logic
+## Logic định tuyến
 
 ```
 buyYes($100):
-  1. Check CLOB for SELL_YES orders better than AMM price
-  2. Fill CLOB (zero slippage, limit price)
-  3. Route remaining to Uniswap v4 AMM swap
-  4. Return total YES to recipient
+  1. Kiểm tra lệnh SELL_YES trên CLOB có giá tốt hơn AMM
+  2. Khớp CLOB (không trượt giá, giá giới hạn)
+  3. Định tuyến phần còn lại sang Uniswap v4 AMM swap
+  4. Trả tổng YES cho người nhận
 ```
 
-## Virtual NO Pricing
+## Định giá NO ảo
 
-Since only YES/USDC pools exist:
+Vì chỉ có pool YES/USDC:
 
-- **Buy NO**: Split USDC → YES+NO → sell YES via AMM → keep NO
-- **Sell NO**: Buy YES from AMM → merge YES+NO → return USDC
+- **Mua NO**: Tách USDC → YES+NO → bán YES qua AMM → giữ NO
+- **Bán NO**: Mua YES từ AMM → gộp YES+NO → trả USDC
 
 ## Flash Accounting
 
-The Router uses Uniswap v4's flash accounting (unlock callback pattern) for gas-efficient multi-step operations.
+Router sử dụng Flash Accounting của Uniswap v4 (mẫu unlock callback) để thực hiện các thao tác nhiều bước hiệu quả về gas.
 
-> ⚠️ **Parameters**: Always set `deadline` (typically 5 minutes) and `minOut` (slippage protection). Transactions revert if conditions aren't met.
+> ⚠️ **Tham số**: Luôn đặt `deadline` (thường là 5 phút) và `minOut` (bảo vệ trượt giá). Giao dịch sẽ bị hoàn lại nếu điều kiện không được đáp ứng.
 
 ---
 
-**Next**: [Hook](hook.md) · [Smart Routing](../trading/smart-routing.md) · [Market Orders](../trading/market-orders.md)
+**Tiếp theo**: [Hook](hook.md) · [Định tuyến thông minh](../trading/smart-routing.md) · [Lệnh thị trường](../trading/market-orders.md)

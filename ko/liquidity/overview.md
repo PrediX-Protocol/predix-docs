@@ -1,42 +1,42 @@
 ---
-description: Two ways to provide liquidity — AMM and CLOB
+description: 유동성을 제공하는 두 가지 방법 — AMM과 CLOB
 ---
 
-# Liquidity Overview
+# 유동성 개요
 
-## Two Types of Liquidity
+## 두 가지 유동성 유형
 
-| Type | Via | Earns | Risk |
+| 유형 | 경로 | 수익 | 리스크 |
 | ---- | --- | ----- | ---- |
-| **AMM LP** | Uniswap v4 pool (YES/USDC) | Dynamic swap fees (0.5%–5%) | Impermanent loss |
-| **CLOB Orders** | PrediXExchange limit orders | Spread capture | Inventory risk |
+| **AMM LP** | Uniswap v4 풀 (YES/USDC) | 동적 스왑 수수료 (0.5%–5%) | 비영구적 손실 |
+| **CLOB 주문** | PrediXExchange 지정가 주문 | 스프레드 수익 | 재고 리스크 |
 
-## AMM LP Fees
+## AMM LP 수수료
 
-Fees are dynamic and increase near market expiry:
+수수료는 동적이며 시장 만료 시점이 가까워질수록 증가합니다:
 
-| Time Remaining | Fee |
+| 잔여 시간 | 수수료 |
 | -------------- | --- |
-| > 7 days | 0.5% |
-| 3–7 days | 1.0% |
-| 1–3 days | 2.0% |
-| < 24 hours | 5.0% |
+| > 7일 | 0.5% |
+| 3–7일 | 1.0% |
+| 1–3일 | 2.0% |
+| < 24시간 | 5.0% |
 
-## Risks
+## 리스크
 
-- **Impermanent loss**: As the outcome becomes clearer, one token trends toward $1 and the other toward $0
-- **Toxic flow**: Near expiry, informed traders know the outcome before resolution — high fees help mitigate this
-- **Resolution risk**: LP positions in losing tokens become worthless
+- **비영구적 손실**: 결과가 명확해질수록 한 토큰은 $1로, 다른 토큰은 $0으로 수렴합니다
+- **악성 거래 흐름**: 만료 직전에 정보를 가진 트레이더들은 결과 확정 전에 결과를 알고 있습니다 — 높은 수수료가 이를 완화합니다
+- **결과 확정 리스크**: 패배 토큰의 LP 포지션은 무가치해집니다
 
-## Best Practices
+## 모범 사례
 
-1. Provide concentrated liquidity around the current price range
-2. Monitor time-to-expiry — consider removing LP 24–48 hours before market ends
-3. Use CLOB market-making for tighter spread control
-4. Diversify across multiple markets
+1. 현재 가격 범위 주위에 집중 유동성을 제공하세요
+2. 만료까지 남은 시간을 모니터링하세요 — 시장 종료 24–48시간 전에 LP 제거를 고려하세요
+3. 더 정밀한 스프레드 관리를 위해 CLOB 마켓 메이킹을 활용하세요
+4. 여러 시장에 분산 투자하세요
 
-> ⚠️ **Critical**: Remove LP positions before market resolution. After resolution, the losing token becomes worthless.
+> ⚠️ **중요**: 시장 결과 확정 전에 LP 포지션을 제거하세요. 결과 확정 후 패배 토큰은 무가치해집니다.
 
 ---
 
-**Next**: [Providing Liquidity](providing-liquidity.md) · [Market Making](market-making.md) · [Fees](../concepts/fees.md)
+**다음**: [유동성 제공](providing-liquidity.md) · [마켓 메이킹](market-making.md) · [수수료](../concepts/fees.md)

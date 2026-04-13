@@ -1,43 +1,43 @@
 ---
-description: Three-phase matching algorithm — COMPLEMENTARY, MINT, and MERGE
+description: Thuật toán khớp lệnh ba giai đoạn — COMPLEMENTARY, MINT và MERGE
 ---
 
-# Matching Engine
+# Công cụ khớp lệnh
 
-The PrediXExchange uses a 99-tick bitmap for gas-efficient order scanning across three matching types.
+PrediXExchange sử dụng bitmap 99 tick để quét lệnh hiệu quả gas trên ba loại khớp lệnh.
 
-## Match Types
+## Các loại khớp lệnh
 
-### COMPLEMENTARY — Direct Swap
+### COMPLEMENTARY — Hoán đổi trực tiếp
 
-Two opposite orders for the same token:
+Hai lệnh đối lập cho cùng một token:
 
 ```
 BUY_YES @ $0.60  ↔  SELL_YES @ $0.50
-→ Match at maker price ($0.50)
-→ Buyer gets YES, seller gets USDC
-→ Buyer receives $0.10 price improvement (refund)
+→ Khớp tại giá maker ($0.50)
+→ Người mua nhận YES, người bán nhận USDC
+→ Người mua nhận cải thiện giá $0.10 (hoàn tiền)
 ```
 
-### MINT — Both Sides Buying (sum ≥ $1.00)
+### MINT — Cả hai bên mua (tổng >= $1.00)
 
 ```
 BUY_YES @ $0.60  +  BUY_NO @ $0.50  =  $1.10 ≥ $1.00
-→ Split USDC → YES + NO
-→ YES delivered to YES buyer, NO delivered to NO buyer
-→ Surplus $0.10 → protocol fee
+→ Tách USDC → YES + NO
+→ YES giao cho người mua YES, NO giao cho người mua NO
+→ Thặng dư $0.10 → phí giao thức
 ```
 
-### MERGE — Both Sides Selling (sum ≤ $1.00)
+### MERGE — Cả hai bên bán (tổng <= $1.00)
 
 ```
 SELL_YES @ $0.40  +  SELL_NO @ $0.50  =  $0.90 ≤ $1.00
-→ Merge YES + NO → USDC
-→ USDC split between sellers by price
-→ Surplus $0.10 → protocol fee
+→ Gộp YES + NO → USDC
+→ USDC phân chia giữa người bán theo giá
+→ Thặng dư $0.10 → phí giao thức
 ```
 
-## MatchType Enum
+## Enum MatchType
 
 ```solidity
 enum MatchType {
@@ -47,15 +47,15 @@ enum MatchType {
 }
 ```
 
-## Matching Priority
+## Ưu tiên khớp lệnh
 
-When a new order is placed, the engine attempts matching in this order:
+Khi một lệnh mới được đặt, công cụ thử khớp theo thứ tự này:
 
-1. **COMPLEMENTARY** — check for direct counterparty orders
-2. **MINT** — check if opposite-side buy orders can pair
-3. **MERGE** — check if opposite-side sell orders can pair
-4. **Rest** — unfilled amount becomes a resting order on the book
+1. **COMPLEMENTARY** — kiểm tra lệnh đối tác trực tiếp
+2. **MINT** — kiểm tra xem lệnh mua phía đối diện có thể ghép đôi không
+3. **MERGE** — kiểm tra xem lệnh bán phía đối diện có thể ghép đôi không
+4. **Còn lại** — số lượng chưa khớp trở thành lệnh chờ trên sổ lệnh
 
 ---
 
-**Next**: [Order Book](order-book.md) · [Virtual NO Pricing](virtual-no-pricing.md)
+**Tiếp theo**: [Sổ lệnh](order-book.md) · [Định giá NO ảo](virtual-no-pricing.md)

@@ -1,58 +1,58 @@
 ---
-description: How NO tokens are priced without a dedicated AMM pool
+description: Cách token NO được định giá mà không cần pool AMM riêng
 ---
 
-# Virtual NO Pricing
+# Định giá NO ảo
 
-NO tokens do not have their own AMM pool. The Router synthesizes NO trades using the YES/USDC pool and split/merge operations.
+Token NO không có pool AMM riêng. Router tổng hợp giao dịch NO bằng cách sử dụng pool YES/USDC và các thao tác tách/gộp.
 
-## Buy NO
-
-```
-1. Split USDC → YES + NO
-2. Sell YES into AMM pool
-3. Keep NO tokens
-
-User pays USDC → receives NO tokens
-```
-
-## Sell NO
+## Mua NO
 
 ```
-1. Buy YES from AMM pool
-2. Merge YES + NO → USDC
-3. Return USDC to user
+1. Tách USDC → YES + NO
+2. Bán YES vào pool AMM
+3. Giữ lại token NO
 
-User pays NO tokens → receives USDC
+Người dùng trả USDC → nhận token NO
 ```
 
-## Price Relationship
-
-Because of the split/merge anchor:
+## Bán NO
 
 ```
-NO price ≈ $1.00 - YES price
+1. Mua YES từ pool AMM
+2. Gộp YES + NO → USDC
+3. Trả USDC cho người dùng
 
-If YES trades at $0.70:
+Người dùng trả token NO → nhận USDC
+```
+
+## Mối quan hệ giá
+
+Do neo giá tách/gộp:
+
+```
+Giá NO ≈ $1.00 - Giá YES
+
+Nếu YES giao dịch ở $0.70:
   NO ≈ $0.30
 ```
 
-This is enforced by arbitrage — any deviation creates profit opportunities that push prices back.
+Điều này được thực thi bằng kinh doanh chênh lệch giá — bất kỳ sai lệch nào cũng tạo cơ hội lợi nhuận đẩy giá trở lại.
 
-## From the User's Perspective
+## Từ góc nhìn người dùng
 
-The Router handles all complexity internally. Users simply call:
+Router xử lý tất cả sự phức tạp bên trong. Người dùng chỉ cần gọi:
 
 ```typescript
-// Buy NO — just like buying YES
+// Mua NO — giống như mua YES
 await router.buyNo(marketId, usdcIn, mintAmount, minNoOut, recipient, deadline);
 
-// Sell NO — just like selling YES
+// Bán NO — giống như bán YES
 await router.sellNo(marketId, noIn, minUsdcOut, recipient, deadline);
 ```
 
-> ⚠️ **Gas cost**: NO trades involve extra steps (split + swap or swap + merge), so gas is approximately 2.5x higher than YES trades. The CLOB supports direct NO trading without this overhead.
+> ⚠️ **Chi phí gas**: Giao dịch NO bao gồm các bước bổ sung (tách + swap hoặc swap + gộp), nên gas cao hơn khoảng 2.5 lần so với giao dịch YES. CLOB hỗ trợ giao dịch NO trực tiếp mà không có chi phí phụ này.
 
 ---
 
-**Next**: [Market Orders](market-orders.md) · [Smart Routing](smart-routing.md) · [Fees](../concepts/fees.md)
+**Tiếp theo**: [Lệnh thị trường](market-orders.md) · [Định tuyến thông minh](smart-routing.md) · [Phí](../concepts/fees.md)

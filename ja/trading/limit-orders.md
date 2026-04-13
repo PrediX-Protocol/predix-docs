@@ -1,12 +1,12 @@
 ---
-description: Place and manage limit orders on the on-chain CLOB
+description: オンチェーンCLOBでの指値注文の配置と管理
 ---
 
-# Limit Orders
+# 指値注文
 
-Limit orders are placed directly on the PrediXExchange (CLOB). They remain on-chain until filled, cancelled, or the market expires.
+指値注文はPrediXExchange（CLOB）に直接配置されます。約定、キャンセル、またはマーケット満了まで、オンチェーンに残ります。
 
-## Place Order
+## 注文配置
 
 ```typescript
 const exchange = new ethers.Contract(
@@ -15,41 +15,41 @@ const exchange = new ethers.Contract(
   signer
 );
 
-// Side enum: 0=BUY_YES, 1=SELL_YES, 2=BUY_NO, 3=SELL_NO
+// Side列挙型：0=BUY_YES, 1=SELL_YES, 2=BUY_NO, 3=SELL_NO
 const side = 0; // BUY_YES
-const price = ethers.parseUnits("0.65", 6);   // $0.65 per token
-const amount = ethers.parseUnits("100", 6);    // 100 tokens
+const price = ethers.parseUnits("0.65", 6);   // トークンあたり$0.65
+const amount = ethers.parseUnits("100", 6);    // 100トークン
 
-// For BUY orders: approve USDC to Exchange
+// 買い注文の場合：USDCをExchangeに承認
 // deposit = price × amount / 1e6
 await usdc.approve(exchange.target, price * amount / 1000000n);
 
 const tx = await exchange.placeOrder(marketId, side, price, amount);
 const receipt = await tx.wait();
-// Parse OrderPlaced event for orderId
+// OrderPlacedイベントからorderIdを解析
 ```
 
-## Cancel Order
+## 注文キャンセル
 
 ```typescript
 await exchange.cancelOrder(orderId);
-// Unfilled deposit is returned to the order owner
+// 未約定の預入金が注文所有者に返還
 ```
 
-> ⚠️ Anyone can cancel expired market orders (after endTime).
+> ⚠️ 満了したマーケットの注文は、誰でもキャンセルできます（endTime後）。
 
-## Constraints
+## 制約条件
 
-| Parameter | Value |
-| --------- | ----- |
-| Price range | $0.01 – $0.99 (`10000` – `990000` in 6 decimals) |
-| Price step | $0.01 (`10000`) |
-| Min order amount | $1.00 (`1000000` in 6 decimals) |
-| Max orders per user per market | 50 |
-| Max fills per placement | 20 |
-| Self-trade prevention | maker.owner ≠ taker.owner |
+| パラメータ | 値 |
+| ---------- | -- |
+| 価格範囲 | $0.01〜$0.99（6小数点で`10000`〜`990000`） |
+| 価格ステップ | $0.01（`10000`） |
+| 最小注文数量 | $1.00（6小数点で`1000000`） |
+| ユーザーあたりマーケットあたりの最大注文数 | 50 |
+| 配置あたりの最大約定数 | 20 |
+| 自己取引防止 | maker.owner ≠ taker.owner |
 
-## Side Enum
+## Side列挙型
 
 ```solidity
 enum Side {
@@ -62,4 +62,4 @@ enum Side {
 
 ---
 
-**Next**: [Matching Engine](matching-engine.md) · [Smart Routing](smart-routing.md) · [Order Book](order-book.md)
+**次へ**: [マッチングエンジン](matching-engine.md) · [スマートルーティング](smart-routing.md) · [オーダーブック](order-book.md)

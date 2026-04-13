@@ -1,54 +1,54 @@
 ---
-description: Safety caps, emergency controls, reentrancy guards, and anti-sandwich
+description: 安全上限、緊急制御、リエントランシーガード、サンドイッチ攻撃防止
 ---
 
-# Safety Mechanisms
+# 安全機構
 
-## Safety Caps
+## 安全上限
 
-| Cap | Description | Configurable by |
+| 上限 | 説明 | 設定権限 |
 | --- | ----------- | --------------- |
-| TVL Cap | Max total USDC in the system | ADMIN |
-| Per-Trade Cap | Max USDC per split/trade | ADMIN |
-| Per-Market Cap | Max USDC per market | ADMIN |
+| TVL上限 | システム内の最大USDC | ADMIN |
+| 取引ごとの上限 | 分割/取引ごとの最大USDC | ADMIN |
+| マーケットごとの上限 | マーケットごとの最大USDC | ADMIN |
 
-Caps start conservative and can be increased as the protocol matures.
+上限は保守的に開始し、プロトコルの成熟に伴い増加できます。
 
-## Emergency Controls
+## 緊急制御
 
-| Mechanism | Role | Description |
+| メカニズム | ロール | 説明 |
 | --------- | ---- | ----------- |
-| Pause Module | PAUSER | Freeze specific market module |
-| Pause All | PAUSER | Freeze entire system |
-| Emergency Resolve | OPERATOR | Resolve after 7-day delay (oracle failure) |
-| Refund Mode | OPERATOR | Proportional refund for all holders |
+| モジュール一時停止 | PAUSER | 特定のマーケットモジュールを凍結 |
+| 全体一時停止 | PAUSER | システム全体を凍結 |
+| 緊急結果確定 | OPERATOR | 7日間遅延後に結果確定（オラクル障害） |
+| 返金モード | OPERATOR | 全保有者への比例返金 |
 
-## Reentrancy Guards
+## リエントランシーガード
 
-Three independent guards protect different contract boundaries:
+3つの独立したガードが異なるコントラクト境界を保護します：
 
-1. **Diamond storage guard**: Protects MarketFacet functions
-2. **Exchange/Router transient storage**: Protects CLOB and routing
-3. **Hook state guard**: Protects Uniswap v4 hook callbacks
+1. **Diamondストレージガード**：MarketFacet関数を保護
+2. **Exchange/Routerトランジェントストレージ**：CLOBとルーティングを保護
+3. **Hook状態ガード**：Uniswap v4 Hookコールバックを保護
 
-20 functions are protected with `nonReentrant` modifiers.
+20の関数が`nonReentrant`修飾子で保護されています。
 
-## Anti-Sandwich Protection
+## サンドイッチ攻撃防止
 
-Built into the Hook at protocol level. Detects same-user opposite-direction swaps in the same block.
+プロトコルレベルでHookに組み込まれています。同じブロック内での同一ユーザーによる逆方向スワップを検出します。
 
-Additional layer: Unichain provides sequencer-level revert protection.
+追加レイヤー：Unichainがシーケンサーレベルのリバート保護を提供します。
 
-## Invariants
+## 不変条件
 
 ```
-1. YES.totalSupply == NO.totalSupply == totalCollateral (always)
-2. Split(N) + Merge(N) = identity (zero value leak)
-3. Total redeemed ≤ total deposited
-4. Exchange balance ≥ total resting order deposits
-5. Refund mode blocks ALL trading (split, merge, CLOB, AMM)
+1. YES.totalSupply == NO.totalSupply == totalCollateral（常に）
+2. Split(N) + Merge(N) = 恒等（価値の漏れなし）
+3. 総償還 ≤ 総預入
+4. Exchange残高 ≥ 総レスティング注文預入金
+5. 返金モードはすべての取引をブロック（分割、統合、CLOB、AMM）
 ```
 
 ---
 
-**Next**: [Security Overview](../security/overview.md) · [Access Control](access-control.md)
+**次へ**: [セキュリティ概要](../security/overview.md) · [アクセス制御](access-control.md)

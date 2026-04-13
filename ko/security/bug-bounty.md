@@ -1,14 +1,14 @@
 ---
-description: Responsible disclosure and bug bounty program
+description: 책임 있는 공개 및 버그 바운티 프로그램
 ---
 
-# Bug Bounty Program
+# 버그 바운티 프로그램
 
-## Scope
+## 범위
 
-All deployed smart contracts on Unichain Sepolia:
+Unichain Sepolia에 배포된 모든 스마트 컨트랙트:
 
-| Contract | Address |
+| 컨트랙트 | 주소 |
 | -------- | ------- |
 | Diamond | `0xF38a265E6e4F57D000a1CC08004da5B4A380B08A` |
 | Hook | `0xAe7eA7eba1D3B0815dCA2b43f250428c20ed30c0` |
@@ -16,29 +16,29 @@ All deployed smart contracts on Unichain Sepolia:
 | Router | `0xEfc57eB2b5b5BE7E5b8377be23f8D31354811Eb7` |
 | Oracle | `0x699A8C74663b1C852E195b2ffa00D5965E992Cf3` |
 
-## Severity Levels
+## 심각도 수준
 
-| Severity | Description | Reward |
+| 심각도 | 설명 | 보상 |
 | -------- | ----------- | ------ |
-| **Critical** | Loss of funds, bypass access control | Up to $50,000 |
-| **High** | Significant protocol disruption | Up to $10,000 |
-| **Medium** | Limited impact bugs | Up to $2,000 |
-| **Low** | Minor issues, gas optimizations | Up to $500 |
+| **Critical** | 자금 손실, 접근 제어 우회 | 최대 $50,000 |
+| **High** | 중대한 프로토콜 장애 | 최대 $10,000 |
+| **Medium** | 제한적 영향의 버그 | 최대 $2,000 |
+| **Low** | 사소한 이슈, 가스 최적화 | 최대 $500 |
 
-## How to Report
+## 제보 방법
 
-1. **DO NOT** disclose publicly
-2. Contact us via [Telegram](https://t.me/CoinCrazeCentral) or [Twitter DM](https://x.com/CoinCrazeCen)
-3. Include: description, reproduction steps, impact assessment
-4. Expected response: within 48 hours
+1. 공개적으로 공개하지 **마세요**
+2. [Telegram](https://t.me/CoinCrazeCentral) 또는 [Twitter DM](https://x.com/CoinCrazeCen)으로 연락하세요
+3. 포함 사항: 설명, 재현 단계, 영향 평가
+4. 예상 응답 시간: 48시간 이내
 
-## Responsible Disclosure Policy
+## 책임 있는 공개 정책
 
-- Allow 90 days for fix before public disclosure
-- Do not exploit vulnerabilities beyond proof-of-concept
-- Do not access or modify other users' data
-- Testnet exploitation is acceptable for demonstration
+- 공개 전 수정을 위한 90일의 기간을 허용하세요
+- 개념 증명을 넘어서는 취약점 악용을 금지합니다
+- 다른 사용자의 데이터에 접근하거나 수정하지 마세요
+- 시연을 위한 테스트넷 활용은 허용됩니다
 
 ---
 
-**Next**: [Security Overview](overview.md) · [Contract Safety](../contracts/safety.md)
+**다음**: [보안 개요](overview.md) · [컨트랙트 안전](../contracts/safety.md)

@@ -1,33 +1,33 @@
 ---
-description: Two trading venues — CLOB and AMM — unified by the Smart Router
+description: Hai sàn giao dịch — CLOB và AMM — được hợp nhất bởi Smart Router
 ---
 
-# Trading Overview
+# Tổng quan giao dịch
 
-PrediX offers two trading venues unified by the Smart Router:
+PrediX cung cấp hai sàn giao dịch được hợp nhất bởi Smart Router:
 
 ```
 User → PrediXRouter (Smart Router)
-          ├── PrediXExchange (CLOB) — limit orders, zero slippage
-          └── Uniswap v4 AMM — always-on liquidity
+          ├── PrediXExchange (CLOB) — lệnh giới hạn, không trượt giá
+          └── Uniswap v4 AMM — thanh khoản luôn sẵn sàng
 ```
 
-## Market Orders vs Limit Orders
+## Lệnh thị trường vs Lệnh giới hạn
 
-| Type | Via | Best for |
-| ---- | --- | -------- |
-| **Market Order** | Router (`buyYes`, `sellYes`, `buyNo`, `sellNo`) | Instant execution, best available price |
-| **Limit Order** | Exchange (`placeOrder`) | Specific price, patient traders |
+| Loại | Qua | Phù hợp cho |
+| ---- | --- | ------------ |
+| **Lệnh thị trường** | Router (`buyYes`, `sellYes`, `buyNo`, `sellNo`) | Thực hiện ngay, giá tốt nhất |
+| **Lệnh giới hạn** | Exchange (`placeOrder`) | Giá cụ thể, nhà giao dịch kiên nhẫn |
 
-## Trading Flow
+## Quy trình giao dịch
 
-1. **Approve** USDC (or tokens) to the contract
-2. **Quote** the expected output using `quoteBuyYes` / `quoteSellYes` etc.
-3. **Execute** the trade with slippage protection (`minOut` parameter)
-4. **Receive** outcome tokens (or USDC)
+1. **Phê duyệt** USDC (hoặc token) cho hợp đồng
+2. **Truy vấn** đầu ra dự kiến bằng `quoteBuyYes` / `quoteSellYes` v.v.
+3. **Thực hiện** giao dịch với bảo vệ trượt giá (tham số `minOut`)
+4. **Nhận** token kết quả (hoặc USDC)
 
-> ⚠️ **Always set a deadline** (typically 5 minutes from now) and **minOut** for slippage protection.
+> ⚠️ **Luôn đặt thời hạn** (thường là 5 phút từ bây giờ) và **minOut** để bảo vệ trượt giá.
 
 ---
 
-**Next**: [Market Orders](market-orders.md) · [Limit Orders](limit-orders.md) · [Smart Routing](smart-routing.md)
+**Tiếp theo**: [Lệnh thị trường](market-orders.md) · [Lệnh giới hạn](limit-orders.md) · [Định tuyến thông minh](smart-routing.md)

@@ -1,54 +1,54 @@
 ---
-description: Safety caps, emergency controls, reentrancy guards, and anti-sandwich
+description: 안전 한도, 비상 제어, 재진입 가드 및 샌드위치 공격 방지
 ---
 
-# Safety Mechanisms
+# 안전 메커니즘
 
-## Safety Caps
+## 안전 한도
 
-| Cap | Description | Configurable by |
+| 한도 | 설명 | 설정 권한 |
 | --- | ----------- | --------------- |
-| TVL Cap | Max total USDC in the system | ADMIN |
-| Per-Trade Cap | Max USDC per split/trade | ADMIN |
-| Per-Market Cap | Max USDC per market | ADMIN |
+| TVL 한도 | 시스템 내 최대 USDC | ADMIN |
+| 거래당 한도 | 분할/거래당 최대 USDC | ADMIN |
+| 마켓당 한도 | 마켓당 최대 USDC | ADMIN |
 
-Caps start conservative and can be increased as the protocol matures.
+한도는 보수적으로 시작하며, 프로토콜이 성숙함에 따라 증가시킬 수 있습니다.
 
-## Emergency Controls
+## 비상 제어
 
-| Mechanism | Role | Description |
+| 메커니즘 | 역할 | 설명 |
 | --------- | ---- | ----------- |
-| Pause Module | PAUSER | Freeze specific market module |
-| Pause All | PAUSER | Freeze entire system |
-| Emergency Resolve | OPERATOR | Resolve after 7-day delay (oracle failure) |
-| Refund Mode | OPERATOR | Proportional refund for all holders |
+| 모듈 일시정지 | PAUSER | 특정 마켓 모듈 동결 |
+| 전체 일시정지 | PAUSER | 전체 시스템 동결 |
+| 긴급 결과 확정 | OPERATOR | 7일 지연 후 결과 확정 (오라클 장애) |
+| 환불 모드 | OPERATOR | 모든 보유자에 대한 비례 환불 |
 
-## Reentrancy Guards
+## 재진입 가드
 
-Three independent guards protect different contract boundaries:
+세 가지 독립적인 가드가 서로 다른 컨트랙트 경계를 보호합니다:
 
-1. **Diamond storage guard**: Protects MarketFacet functions
-2. **Exchange/Router transient storage**: Protects CLOB and routing
-3. **Hook state guard**: Protects Uniswap v4 hook callbacks
+1. **Diamond 스토리지 가드**: MarketFacet 함수 보호
+2. **Exchange/Router 임시 스토리지**: CLOB 및 라우팅 보호
+3. **Hook 상태 가드**: Uniswap v4 Hook 콜백 보호
 
-20 functions are protected with `nonReentrant` modifiers.
+20개의 함수가 `nonReentrant` 수정자로 보호됩니다.
 
-## Anti-Sandwich Protection
+## 샌드위치 공격 방지
 
-Built into the Hook at protocol level. Detects same-user opposite-direction swaps in the same block.
+프로토콜 수준에서 Hook에 내장되어 있습니다. 같은 블록에서 동일 사용자의 반대 방향 스왑을 감지합니다.
 
-Additional layer: Unichain provides sequencer-level revert protection.
+추가 레이어: Unichain이 시퀀서 수준의 되돌림 보호를 제공합니다.
 
-## Invariants
+## 불변식
 
 ```
-1. YES.totalSupply == NO.totalSupply == totalCollateral (always)
-2. Split(N) + Merge(N) = identity (zero value leak)
-3. Total redeemed ≤ total deposited
-4. Exchange balance ≥ total resting order deposits
-5. Refund mode blocks ALL trading (split, merge, CLOB, AMM)
+1. YES.totalSupply == NO.totalSupply == totalCollateral (항상)
+2. Split(N) + Merge(N) = 항등 (가치 유출 없음)
+3. 총 상환 ≤ 총 예치
+4. Exchange 잔액 ≥ 총 대기 주문 예치금
+5. 환불 모드는 모든 거래를 차단 (분할, 병합, CLOB, AMM)
 ```
 
 ---
 
-**Next**: [Security Overview](../security/overview.md) · [Access Control](access-control.md)
+**다음**: [보안 개요](../security/overview.md) · [접근 제어](access-control.md)

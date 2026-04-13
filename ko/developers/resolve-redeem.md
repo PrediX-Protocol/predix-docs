@@ -1,50 +1,50 @@
 ---
-description: Resolve markets and redeem winning tokens
+description: 마켓 정산 및 승리 토큰 상환
 ---
 
-# Resolve & Redeem
+# 정산 & 상환
 
-## Resolve Market
+## 마켓 정산
 
-After the oracle reports the outcome, anyone can finalize:
+오라클이 결과를 보고한 후 누구나 확정할 수 있습니다:
 
 ```typescript
-// Check if oracle has reported
+// 오라클이 보고했는지 확인
 const oracle = new ethers.Contract(ORACLE_ADDRESS, ORACLE_ABI, provider);
 const [resolved, outcome] = await oracle.getResolution(marketId);
 
 if (resolved) {
   const tx = await diamond.resolveMarket(marketId);
   await tx.wait();
-  console.log("Market resolved. Outcome:", outcome ? "YES" : "NO");
+  console.log("마켓 정산 완료. 결과:", outcome ? "YES" : "NO");
 }
 ```
 
-## Redeem Winning Tokens
+## 승리 토큰 상환
 
 ```typescript
-// Winners get 1 USDC per winning token
+// 승리자는 승리 토큰당 1 USDC를 받습니다
 const tx = await diamond.redeemMarketTokens(marketId);
 await tx.wait();
 ```
 
-## Emergency Resolve (OPERATOR only)
+## 긴급 정산 (OPERATOR 전용)
 
 ```typescript
-// Available 7 days after endTime if oracle hasn't reported
-await diamond.emergencyResolve(marketId, true); // true = YES wins
+// 오라클이 보고하지 않은 경우 endTime 이후 7일 후 사용 가능
+await diamond.emergencyResolve(marketId, true); // true = YES 승리
 ```
 
-## Refund Mode (OPERATOR only)
+## 환불 모드 (OPERATOR 전용)
 
 ```typescript
-// Enable refund for problematic markets
+// 문제가 있는 마켓에 대해 환불 활성화
 await diamond.enableRefundMode(marketId);
 
-// Users claim proportional refund
+// 사용자가 비례 환불 청구
 await diamond.refund(marketId);
 ```
 
 ---
 
-**Next**: [Events](events.md) · [Errors](errors.md)
+**다음**: [이벤트](events.md) · [오류](errors.md)

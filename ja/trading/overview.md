@@ -1,33 +1,33 @@
 ---
-description: Two trading venues — CLOB and AMM — unified by the Smart Router
+description: 2つの取引所 — CLOBとAMM — Smart Routerで統合
 ---
 
-# Trading Overview
+# 取引概要
 
-PrediX offers two trading venues unified by the Smart Router:
+PrediXはSmart Routerで統合された2つの取引所を提供します：
 
 ```
 User → PrediXRouter (Smart Router)
-          ├── PrediXExchange (CLOB) — limit orders, zero slippage
-          └── Uniswap v4 AMM — always-on liquidity
+          ├── PrediXExchange (CLOB) — 指値注文、スリッページなし
+          └── Uniswap v4 AMM — 常時流動性提供
 ```
 
-## Market Orders vs Limit Orders
+## 成行注文 vs 指値注文
 
-| Type | Via | Best for |
-| ---- | --- | -------- |
-| **Market Order** | Router (`buyYes`, `sellYes`, `buyNo`, `sellNo`) | Instant execution, best available price |
-| **Limit Order** | Exchange (`placeOrder`) | Specific price, patient traders |
+| タイプ | 経由 | 最適な用途 |
+| ------ | ---- | ---------- |
+| **成行注文** | Router (`buyYes`, `sellYes`, `buyNo`, `sellNo`) | 即時約定、最良価格 |
+| **指値注文** | Exchange (`placeOrder`) | 特定価格、忍耐力のあるトレーダー |
 
-## Trading Flow
+## 取引フロー
 
-1. **Approve** USDC (or tokens) to the contract
-2. **Quote** the expected output using `quoteBuyYes` / `quoteSellYes` etc.
-3. **Execute** the trade with slippage protection (`minOut` parameter)
-4. **Receive** outcome tokens (or USDC)
+1. USDC（またはトークン）をコントラクトに**承認**
+2. `quoteBuyYes` / `quoteSellYes`などを使用して予想出力量を**照会**
+3. スリッページ保護（`minOut`パラメータ）付きで取引を**実行**
+4. アウトカムトークン（またはUSDC）を**受領**
 
-> ⚠️ **Always set a deadline** (typically 5 minutes from now) and **minOut** for slippage protection.
+> ⚠️ **常にデッドラインを設定してください**（通常は現在から5分後）そしてスリッページ保護のために**minOut**を設定してください。
 
 ---
 
-**Next**: [Market Orders](market-orders.md) · [Limit Orders](limit-orders.md) · [Smart Routing](smart-routing.md)
+**次へ**: [成行注文](market-orders.md) · [指値注文](limit-orders.md) · [スマートルーティング](smart-routing.md)

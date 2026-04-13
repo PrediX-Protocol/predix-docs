@@ -1,43 +1,43 @@
 ---
-description: Three-phase matching algorithm — COMPLEMENTARY, MINT, and MERGE
+description: 3단계 매칭 알고리즘 - COMPLEMENTARY, MINT, MERGE
 ---
 
-# Matching Engine
+# 매칭 엔진
 
-The PrediXExchange uses a 99-tick bitmap for gas-efficient order scanning across three matching types.
+PrediXExchange는 세 가지 매칭 유형에 걸쳐 가스 효율적인 주문 스캔을 위해 99-틱 비트맵을 사용합니다.
 
-## Match Types
+## 매칭 유형
 
-### COMPLEMENTARY — Direct Swap
+### COMPLEMENTARY - 직접 스왑
 
-Two opposite orders for the same token:
+동일 토큰에 대한 두 개의 반대 주문:
 
 ```
 BUY_YES @ $0.60  ↔  SELL_YES @ $0.50
-→ Match at maker price ($0.50)
-→ Buyer gets YES, seller gets USDC
-→ Buyer receives $0.10 price improvement (refund)
+→ 메이커 가격($0.50)으로 매칭
+→ 매수자는 YES 수령, 매도자는 USDC 수령
+→ 매수자는 $0.10 가격 개선 (환불)
 ```
 
-### MINT — Both Sides Buying (sum ≥ $1.00)
+### MINT - 양쪽 모두 매수 (합산 >= $1.00)
 
 ```
 BUY_YES @ $0.60  +  BUY_NO @ $0.50  =  $1.10 ≥ $1.00
-→ Split USDC → YES + NO
-→ YES delivered to YES buyer, NO delivered to NO buyer
-→ Surplus $0.10 → protocol fee
+→ USDC 분할 → YES + NO
+→ YES는 YES 매수자에게, NO는 NO 매수자에게 전달
+→ 잉여금 $0.10 → 프로토콜 수수료
 ```
 
-### MERGE — Both Sides Selling (sum ≤ $1.00)
+### MERGE - 양쪽 모두 매도 (합산 <= $1.00)
 
 ```
 SELL_YES @ $0.40  +  SELL_NO @ $0.50  =  $0.90 ≤ $1.00
-→ Merge YES + NO → USDC
-→ USDC split between sellers by price
-→ Surplus $0.10 → protocol fee
+→ YES + NO 병합 → USDC
+→ USDC를 가격에 따라 매도자 간 분배
+→ 잉여금 $0.10 → 프로토콜 수수료
 ```
 
-## MatchType Enum
+## MatchType 열거형
 
 ```solidity
 enum MatchType {
@@ -47,15 +47,15 @@ enum MatchType {
 }
 ```
 
-## Matching Priority
+## 매칭 우선순위
 
-When a new order is placed, the engine attempts matching in this order:
+새 주문이 배치되면 엔진은 다음 순서로 매칭을 시도합니다:
 
-1. **COMPLEMENTARY** — check for direct counterparty orders
-2. **MINT** — check if opposite-side buy orders can pair
-3. **MERGE** — check if opposite-side sell orders can pair
-4. **Rest** — unfilled amount becomes a resting order on the book
+1. **COMPLEMENTARY** - 직접 상대방 주문 확인
+2. **MINT** - 반대쪽 매수 주문과 쌍을 이룰 수 있는지 확인
+3. **MERGE** - 반대쪽 매도 주문과 쌍을 이룰 수 있는지 확인
+4. **대기** - 미체결 수량은 오더북에 대기 주문으로 등록
 
 ---
 
-**Next**: [Order Book](order-book.md) · [Virtual NO Pricing](virtual-no-pricing.md)
+**다음**: [오더북](order-book.md) · [가상 NO 가격 책정](virtual-no-pricing.md)

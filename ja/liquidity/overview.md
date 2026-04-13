@@ -1,42 +1,42 @@
 ---
-description: Two ways to provide liquidity — AMM and CLOB
+description: 流動性を提供する2つの方法 — AMMとCLOB
 ---
 
-# Liquidity Overview
+# 流動性の概要
 
-## Two Types of Liquidity
+## 2種類の流動性
 
-| Type | Via | Earns | Risk |
+| タイプ | 経由 | 収益 | リスク |
 | ---- | --- | ----- | ---- |
-| **AMM LP** | Uniswap v4 pool (YES/USDC) | Dynamic swap fees (0.5%–5%) | Impermanent loss |
-| **CLOB Orders** | PrediXExchange limit orders | Spread capture | Inventory risk |
+| **AMM LP** | Uniswap v4プール (YES/USDC) | 動的スワップ手数料 (0.5%–5%) | インパーマネントロス |
+| **CLOB注文** | PrediXExchange指値注文 | スプレッド収益 | 在庫リスク |
 
-## AMM LP Fees
+## AMM LP手数料
 
-Fees are dynamic and increase near market expiry:
+手数料は動的で、市場の満期が近づくにつれて増加します:
 
-| Time Remaining | Fee |
+| 残り時間 | 手数料 |
 | -------------- | --- |
-| > 7 days | 0.5% |
-| 3–7 days | 1.0% |
-| 1–3 days | 2.0% |
-| < 24 hours | 5.0% |
+| > 7日 | 0.5% |
+| 3–7日 | 1.0% |
+| 1–3日 | 2.0% |
+| < 24時間 | 5.0% |
 
-## Risks
+## リスク
 
-- **Impermanent loss**: As the outcome becomes clearer, one token trends toward $1 and the other toward $0
-- **Toxic flow**: Near expiry, informed traders know the outcome before resolution — high fees help mitigate this
-- **Resolution risk**: LP positions in losing tokens become worthless
+- **インパーマネントロス**: 結果が明確になるにつれ、一方のトークンは$1に、もう一方は$0に向かいます
+- **有害な取引フロー**: 満期直前、情報を持つトレーダーは決済前に結果を把握しています — 高い手数料がこれを緩和します
+- **決済リスク**: 敗北トークンのLPポジションは無価値になります
 
-## Best Practices
+## ベストプラクティス
 
-1. Provide concentrated liquidity around the current price range
-2. Monitor time-to-expiry — consider removing LP 24–48 hours before market ends
-3. Use CLOB market-making for tighter spread control
-4. Diversify across multiple markets
+1. 現在の価格帯の周辺に集中的な流動性を提供する
+2. 満期までの時間を監視する — 市場終了の24–48時間前にLP除去を検討する
+3. より精密なスプレッド管理のためにCLOBマーケットメイキングを活用する
+4. 複数の市場に分散する
 
-> ⚠️ **Critical**: Remove LP positions before market resolution. After resolution, the losing token becomes worthless.
+> ⚠️ **重要**: 市場の決済前にLPポジションを除去してください。決済後、敗北トークンは無価値になります。
 
 ---
 
-**Next**: [Providing Liquidity](providing-liquidity.md) · [Market Making](market-making.md) · [Fees](../concepts/fees.md)
+**次へ**: [流動性の提供](providing-liquidity.md) · [マーケットメイキング](market-making.md) · [手数料](../concepts/fees.md)

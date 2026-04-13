@@ -1,39 +1,39 @@
 ---
-description: PrediX brand assets and usage guidelines
+description: PrediX 브랜드 자산 및 사용 가이드라인
 ---
 
-# Brand Kit
+# 브랜드 키트
 
-## Logo
+## 로고
 
-> 🚧 Logo files will be available for download here after brand finalization.
+> 🚧 로고 파일은 브랜드 확정 후 여기에서 다운로드할 수 있습니다.
 
-## Color Palette
+## 컬러 팔레트
 
-| Color | Hex | Usage |
+| 색상 | Hex | 용도 |
 | ----- | --- | ----- |
-| Primary Blue | `#0D3B66` | Headers, primary buttons |
-| Accent Blue | `#2980B9` | Links, highlights |
-| Success Green | `#27AE60` | YES token, positive states |
-| Danger Red | `#E74C3C` | NO token, warnings |
-| Background | `#F5F8FA` | Page background |
-| Text | `#2C3E50` | Body text |
+| 프라이머리 블루 | `#0D3B66` | 헤더, 주요 버튼 |
+| 액센트 블루 | `#2980B9` | 링크, 하이라이트 |
+| 성공 그린 | `#27AE60` | YES 토큰, 긍정 상태 |
+| 위험 레드 | `#E74C3C` | NO 토큰, 경고 |
+| 배경 | `#F5F8FA` | 페이지 배경 |
+| 텍스트 | `#2C3E50` | 본문 텍스트 |
 
-## Typography
+## 타이포그래피
 
-| Element | Font | Weight |
+| 요소 | 폰트 | 굵기 |
 | ------- | ---- | ------ |
-| Headings | Inter | Bold (700) |
-| Body | Inter | Regular (400) |
-| Code | JetBrains Mono | Regular (400) |
+| 제목 | Inter | Bold (700) |
+| 본문 | Inter | Regular (400) |
+| 코드 | JetBrains Mono | Regular (400) |
 
-## Usage Guidelines
+## 사용 가이드라인
 
-- Always use the PrediX logo with adequate spacing
-- Do not alter the logo colors or proportions
-- When referring to the protocol, use "PrediX Protocol" or "PrediX"
-- Do not use the logo to imply endorsement
+- PrediX 로고는 항상 적절한 여백과 함께 사용하세요
+- 로고의 색상이나 비율을 변경하지 마세요
+- 프로토콜을 언급할 때 "PrediX Protocol" 또는 "PrediX"를 사용하세요
+- 로고를 승인을 암시하는 데 사용하지 마세요
 
 ---
 
-**Next**: [Community](community.md)
+**다음**: [커뮤니티](community.md)

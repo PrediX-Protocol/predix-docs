@@ -1,14 +1,14 @@
 ---
-description: Responsible disclosure and bug bounty program
+description: 責任ある開示とバグバウンティプログラム
 ---
 
-# Bug Bounty Program
+# バグバウンティプログラム
 
-## Scope
+## 対象範囲
 
-All deployed smart contracts on Unichain Sepolia:
+Unichain Sepoliaにデプロイされた全スマートコントラクト:
 
-| Contract | Address |
+| コントラクト | アドレス |
 | -------- | ------- |
 | Diamond | `0xF38a265E6e4F57D000a1CC08004da5B4A380B08A` |
 | Hook | `0xAe7eA7eba1D3B0815dCA2b43f250428c20ed30c0` |
@@ -16,29 +16,29 @@ All deployed smart contracts on Unichain Sepolia:
 | Router | `0xEfc57eB2b5b5BE7E5b8377be23f8D31354811Eb7` |
 | Oracle | `0x699A8C74663b1C852E195b2ffa00D5965E992Cf3` |
 
-## Severity Levels
+## 深刻度レベル
 
-| Severity | Description | Reward |
+| 深刻度 | 説明 | 報酬 |
 | -------- | ----------- | ------ |
-| **Critical** | Loss of funds, bypass access control | Up to $50,000 |
-| **High** | Significant protocol disruption | Up to $10,000 |
-| **Medium** | Limited impact bugs | Up to $2,000 |
-| **Low** | Minor issues, gas optimizations | Up to $500 |
+| **Critical** | 資金の損失、アクセス制御の回避 | 最大$50,000 |
+| **High** | 重大なプロトコル障害 | 最大$10,000 |
+| **Medium** | 限定的な影響のバグ | 最大$2,000 |
+| **Low** | 軽微な問題、ガス最適化 | 最大$500 |
 
-## How to Report
+## 報告方法
 
-1. **DO NOT** disclose publicly
-2. Contact us via [Telegram](https://t.me/CoinCrazeCentral) or [Twitter DM](https://x.com/CoinCrazeCen)
-3. Include: description, reproduction steps, impact assessment
-4. Expected response: within 48 hours
+1. 公に開示**しないでください**
+2. [Telegram](https://t.me/CoinCrazeCentral)または[Twitter DM](https://x.com/CoinCrazeCen)でご連絡ください
+3. 含める内容: 説明、再現手順、影響評価
+4. 予想応答時間: 48時間以内
 
-## Responsible Disclosure Policy
+## 責任ある開示ポリシー
 
-- Allow 90 days for fix before public disclosure
-- Do not exploit vulnerabilities beyond proof-of-concept
-- Do not access or modify other users' data
-- Testnet exploitation is acceptable for demonstration
+- 公開前に修正のための90日間の猶予を設けてください
+- 概念実証を超えた脆弱性の悪用は禁止です
+- 他のユーザーのデータにアクセスまたは変更しないでください
+- デモンストレーション目的のテストネット利用は許可されています
 
 ---
 
-**Next**: [Security Overview](overview.md) · [Contract Safety](../contracts/safety.md)
+**次へ**: [セキュリティ概要](overview.md) · [コントラクトの安全性](../contracts/safety.md)

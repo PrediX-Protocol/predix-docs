@@ -1,42 +1,42 @@
 ---
-description: Two ways to provide liquidity — AMM and CLOB
+description: Hai cach cung cap thanh khoan — AMM va CLOB
 ---
 
-# Liquidity Overview
+# Tong quan ve Thanh khoan
 
-## Two Types of Liquidity
+## Hai loai Thanh khoan
 
-| Type | Via | Earns | Risk |
+| Loai | Qua | Thu nhap | Rui ro |
 | ---- | --- | ----- | ---- |
-| **AMM LP** | Uniswap v4 pool (YES/USDC) | Dynamic swap fees (0.5%–5%) | Impermanent loss |
-| **CLOB Orders** | PrediXExchange limit orders | Spread capture | Inventory risk |
+| **AMM LP** | Pool Uniswap v4 (YES/USDC) | Phi swap dong (0.5%–5%) | Ton that tam thoi |
+| **Lenh CLOB** | Lenh gioi han PrediXExchange | Thu nhap tu chenh lech gia | Rui ro ton kho |
 
-## AMM LP Fees
+## Phi AMM LP
 
-Fees are dynamic and increase near market expiry:
+Phi la dong va tang khi thi truong gan het han:
 
-| Time Remaining | Fee |
+| Thoi gian con lai | Phi |
 | -------------- | --- |
-| > 7 days | 0.5% |
-| 3–7 days | 1.0% |
-| 1–3 days | 2.0% |
-| < 24 hours | 5.0% |
+| > 7 ngay | 0.5% |
+| 3–7 ngay | 1.0% |
+| 1–3 ngay | 2.0% |
+| < 24 gio | 5.0% |
 
-## Risks
+## Rui ro
 
-- **Impermanent loss**: As the outcome becomes clearer, one token trends toward $1 and the other toward $0
-- **Toxic flow**: Near expiry, informed traders know the outcome before resolution — high fees help mitigate this
-- **Resolution risk**: LP positions in losing tokens become worthless
+- **Ton that tam thoi**: Khi ket qua tro nen ro rang hon, mot token huong toi $1 va token kia huong toi $0
+- **Dong giao dich doc hai**: Gan het han, cac nha giao dich co thong tin biet ket qua truoc khi quyet toan — phi cao giup giam thieu dieu nay
+- **Rui ro quyet toan**: Vi the LP trong token thua tro nen vo gia tri
 
-## Best Practices
+## Thuc hanh tot nhat
 
-1. Provide concentrated liquidity around the current price range
-2. Monitor time-to-expiry — consider removing LP 24–48 hours before market ends
-3. Use CLOB market-making for tighter spread control
-4. Diversify across multiple markets
+1. Cung cap thanh khoan tap trung xung quanh pham vi gia hien tai
+2. Theo doi thoi gian den het han — can nhac rut LP 24–48 gio truoc khi thi truong ket thuc
+3. Su dung tao lap thi truong CLOB de kiem soat chenh lech gia chinh xac hon
+4. Da dang hoa tren nhieu thi truong
 
-> ⚠️ **Critical**: Remove LP positions before market resolution. After resolution, the losing token becomes worthless.
+> ⚠️ **Quan trong**: Rut vi the LP truoc khi thi truong quyet toan. Sau khi quyet toan, token thua tro nen vo gia tri.
 
 ---
 
-**Next**: [Providing Liquidity](providing-liquidity.md) · [Market Making](market-making.md) · [Fees](../concepts/fees.md)
+**Tiep theo**: [Cung cap Thanh khoan](providing-liquidity.md) · [Tao lap Thi truong](market-making.md) · [Phi](../concepts/fees.md)

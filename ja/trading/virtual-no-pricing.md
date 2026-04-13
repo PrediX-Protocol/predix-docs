@@ -1,58 +1,58 @@
 ---
-description: How NO tokens are priced without a dedicated AMM pool
+description: 専用AMMプールなしでNOトークンの価格を設定する方法
 ---
 
-# Virtual NO Pricing
+# 仮想NO価格設定
 
-NO tokens do not have their own AMM pool. The Router synthesizes NO trades using the YES/USDC pool and split/merge operations.
+NOトークンには専用のAMMプールがありません。RouterがYES/USDCプールとスプリット/マージ操作を使用してNO取引を合成します。
 
-## Buy NO
-
-```
-1. Split USDC → YES + NO
-2. Sell YES into AMM pool
-3. Keep NO tokens
-
-User pays USDC → receives NO tokens
-```
-
-## Sell NO
+## NO購入
 
 ```
-1. Buy YES from AMM pool
-2. Merge YES + NO → USDC
-3. Return USDC to user
+1. USDCをスプリット → YES + NO
+2. YESをAMMプールで売却
+3. NOトークンを保持
 
-User pays NO tokens → receives USDC
+ユーザーはUSDCを支払い → NOトークンを受領
 ```
 
-## Price Relationship
-
-Because of the split/merge anchor:
+## NO売却
 
 ```
-NO price ≈ $1.00 - YES price
+1. AMMプールからYESを購入
+2. YES + NOをマージ → USDC
+3. USDCをユーザーに返還
 
-If YES trades at $0.70:
+ユーザーはNOトークンを支払い → USDCを受領
+```
+
+## 価格関係
+
+スプリット/マージアンカーにより：
+
+```
+NO価格 ≈ $1.00 - YES価格
+
+YESが$0.70で取引される場合：
   NO ≈ $0.30
 ```
 
-This is enforced by arbitrage — any deviation creates profit opportunities that push prices back.
+これはアービトラージによって強制されます — どんな乖離も価格を戻す利益機会を生み出します。
 
-## From the User's Perspective
+## ユーザーの視点から
 
-The Router handles all complexity internally. Users simply call:
+Routerが内部的にすべての複雑さを処理します。ユーザーは単に呼び出すだけです：
 
 ```typescript
-// Buy NO — just like buying YES
+// NO購入 — YES購入と同じように
 await router.buyNo(marketId, usdcIn, mintAmount, minNoOut, recipient, deadline);
 
-// Sell NO — just like selling YES
+// NO売却 — YES売却と同じように
 await router.sellNo(marketId, noIn, minUsdcOut, recipient, deadline);
 ```
 
-> ⚠️ **Gas cost**: NO trades involve extra steps (split + swap or swap + merge), so gas is approximately 2.5x higher than YES trades. The CLOB supports direct NO trading without this overhead.
+> ⚠️ **ガスコスト**: NO取引は追加ステップ（スプリット+スワップまたはスワップ+マージ）を含むため、ガスはYES取引の約2.5倍高くなります。CLOBはこのオーバーヘッドなしに直接NO取引をサポートしています。
 
 ---
 
-**Next**: [Market Orders](market-orders.md) · [Smart Routing](smart-routing.md) · [Fees](../concepts/fees.md)
+**次へ**: [成行注文](market-orders.md) · [スマートルーティング](smart-routing.md) · [手数料](../concepts/fees.md)

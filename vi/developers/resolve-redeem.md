@@ -1,50 +1,50 @@
 ---
-description: Resolve markets and redeem winning tokens
+description: Giải quyết thị trường và đổi thưởng token thắng
 ---
 
-# Resolve & Redeem
+# Giải quyết & Đổi thưởng
 
-## Resolve Market
+## Giải quyết thị trường
 
-After the oracle reports the outcome, anyone can finalize:
+Sau khi oracle báo cáo kết quả, bất kỳ ai cũng có thể xác nhận:
 
 ```typescript
-// Check if oracle has reported
+// Kiểm tra xem oracle đã báo cáo chưa
 const oracle = new ethers.Contract(ORACLE_ADDRESS, ORACLE_ABI, provider);
 const [resolved, outcome] = await oracle.getResolution(marketId);
 
 if (resolved) {
   const tx = await diamond.resolveMarket(marketId);
   await tx.wait();
-  console.log("Market resolved. Outcome:", outcome ? "YES" : "NO");
+  console.log("Thị trường đã giải quyết. Kết quả:", outcome ? "YES" : "NO");
 }
 ```
 
-## Redeem Winning Tokens
+## Đổi thưởng token thắng
 
 ```typescript
-// Winners get 1 USDC per winning token
+// Người thắng nhận 1 USDC cho mỗi token thắng
 const tx = await diamond.redeemMarketTokens(marketId);
 await tx.wait();
 ```
 
-## Emergency Resolve (OPERATOR only)
+## Giải quyết khẩn cấp (chỉ OPERATOR)
 
 ```typescript
-// Available 7 days after endTime if oracle hasn't reported
-await diamond.emergencyResolve(marketId, true); // true = YES wins
+// Có sẵn sau 7 ngày kể từ endTime nếu oracle chưa báo cáo
+await diamond.emergencyResolve(marketId, true); // true = YES thắng
 ```
 
-## Refund Mode (OPERATOR only)
+## Chế độ hoàn tiền (chỉ OPERATOR)
 
 ```typescript
-// Enable refund for problematic markets
+// Bật hoàn tiền cho các thị trường có vấn đề
 await diamond.enableRefundMode(marketId);
 
-// Users claim proportional refund
+// Người dùng yêu cầu hoàn tiền theo tỷ lệ
 await diamond.refund(marketId);
 ```
 
 ---
 
-**Next**: [Events](events.md) · [Errors](errors.md)
+**Tiếp theo**: [Sự kiện](events.md) · [Lỗi](errors.md)

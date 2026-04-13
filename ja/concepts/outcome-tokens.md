@@ -1,56 +1,56 @@
 ---
-description: YES and NO tokens — ERC-20 standard with full DeFi composability
+description: YESおよびNOトークン — 完全なDeFiコンポーザビリティを備えたERC-20標準
 ---
 
-# Outcome Tokens
+# アウトカムトークン
 
-## Overview
+## 概要
 
-Each PrediX market creates two **ERC-20** outcome tokens:
+各PrediXマーケットは2つの**ERC-20**アウトカムトークンを作成します：
 
-| Token | Pays $1.00 if... | Pays $0.00 if... |
-| ----- | ----------------- | ----------------- |
-| **YES** | Event occurs | Event does not occur |
-| **NO** | Event does not occur | Event occurs |
+| トークン | $1.00が支払われる条件 | $0.00が支払われる条件 |
+| -------- | --------------------- | --------------------- |
+| **YES** | イベントが発生 | イベントが発生しない |
+| **NO** | イベントが発生しない | イベントが発生 |
 
-## Technical Specifications
+## 技術仕様
 
-| Property | Value |
-| -------- | ----- |
-| Standard | ERC-20 + ERC-2612 (Permit) |
-| Decimals | 6 (matches USDC) |
-| Mintable by | Diamond contract only (`onlyFactory` modifier) |
-| Burnable by | Diamond contract only |
-| Immutable fields | `factory`, `marketId`, `isYesToken` |
+| プロパティ | 値 |
+| ---------- | -- |
+| 標準 | ERC-20 + ERC-2612 (Permit) |
+| 小数点 | 6（USDCと同じ） |
+| 発行権限 | Diamondコントラクトのみ（`onlyFactory`修飾子） |
+| バーン権限 | Diamondコントラクトのみ |
+| 不変フィールド | `factory`, `marketId`, `isYesToken` |
 
 ## ERC-2612 Permit
 
-Outcome tokens support gasless approvals via the `permit` function. This allows users to approve and transfer in a single transaction using off-chain signatures.
+アウトカムトークンは`permit`関数によるガスレス承認をサポートしています。これにより、オフチェーン署名を使用して単一トランザクションで承認と転送を実行できます。
 
 ```typescript
-// Sign a permit off-chain
+// オフチェーンでpermitに署名
 const deadline = Math.floor(Date.now() / 1000) + 3600;
 const nonce = await yesToken.nonces(userAddress);
 const signature = await signer.signTypedData(domain, types, { owner, spender, value, nonce, deadline });
 
-// Execute permit on-chain (no prior approve needed)
+// オンチェーンでpermitを実行（事前のapprove不要）
 await yesToken.permit(owner, spender, value, deadline, v, r, s);
 ```
 
-## Core Invariant
+## コア不変条件
 
 ```
 YES.totalSupply == NO.totalSupply == market.totalCollateral
 ```
 
-This invariant holds true across **all** operations: `splitPosition`, `mergePositions`, `groupSplit`, `groupMerge`, `redeemMarketTokens`, and `refund`.
+この不変条件は**すべて**の操作で維持されます：`splitPosition`、`mergePositions`、`groupSplit`、`groupMerge`、`redeemMarketTokens`、`refund`。
 
-## Address Generation
+## アドレス生成
 
-YES token addresses must be less than the USDC address (Uniswap v4 pool ordering requirement). PrediX uses **CREATE2 salt mining** to deterministically find compliant addresses.
+YESトークンアドレスはUSDCアドレスよりも小さくなければなりません（Uniswap v4プール順序要件）。PrediXは**CREATE2ソルトマイニング**を使用して、準拠するアドレスを決定論的に見つけます。
 
-> ⚠️ **Important**: Outcome tokens can ONLY be minted and burned by the Diamond contract. There is no public mint function.
+> ⚠️ **重要**: アウトカムトークンはDiamondコントラクトによってのみ発行およびバーンできます。パブリックなミント関数はありません。
 
 ---
 
-**Next**: [Split & Merge](split-and-merge.md) · [Fees](fees.md) · [Trading Overview](../trading/overview.md)
+**次へ**: [スプリット＆マージ](split-and-merge.md) · [手数料](fees.md) · [取引概要](../trading/overview.md)

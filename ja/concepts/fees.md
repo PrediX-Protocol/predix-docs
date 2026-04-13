@@ -1,61 +1,61 @@
 ---
-description: Fee structure for AMM, CLOB, and market creation
+description: AMM、CLOB、およびマーケット作成の手数料構造
 ---
 
-# Fees
+# 手数料
 
-## AMM Dynamic Fees
+## AMM ダイナミック手数料
 
-Swap fees on the Uniswap v4 AMM pool increase as the market approaches expiry. This protects liquidity providers from informed ("toxic") traders near resolution.
+Uniswap v4 AMM プールのスワップ手数料は、マーケットの満了が近づくにつれて増加します。これにより、決済時点付近の情報優位（「有害」）トレーダーから流動性提供者を保護します。
 
-| Time Remaining | Fee   | Rationale |
-| -------------- | ----- | --------- |
-| > 7 days       | 0.5%  | Normal trading, encourage volume |
-| 3–7 days       | 1.0%  | Begin caution |
-| 1–3 days       | 2.0%  | Outcome becoming clearer |
-| < 24 hours     | 5.0%  | High risk for LPs, deter toxic flow |
+| 残り時間 | 手数料 | 根拠 |
+| -------- | ------ | ---- |
+| > 7日 | 0.5% | 通常取引、取引量を促進 |
+| 3〜7日 | 1.0% | 注意期間の開始 |
+| 1〜3日 | 2.0% | 結果が明確になる期間 |
+| < 24時間 | 5.0% | LP高リスク期間、有害フローを抑制 |
 
-## CLOB Fees
+## CLOB 手数料
 
-The CLOB charges fees through the MINT and MERGE surplus mechanism:
+CLOBはMINTおよびMERGE余剰メカニズムを通じて手数料を徴収します：
 
-### MINT Surplus
+### MINT 余剰
 
-When BUY_YES and BUY_NO orders match with sum ≥ $1.00:
+BUY_YESとBUY_NO注文が合計 >= $1.00でマッチングされた場合：
 
 ```
 Fee = (takerPrice + makerPrice - $1.00) × amount
 
-Example:
+例:
   BUY_YES @ $0.60 + BUY_NO @ $0.50 = $1.10
-  Surplus = $0.10 per token → protocol treasury
+  余剰 = トークンあたり$0.10 → プロトコル金庫
 ```
 
-### MERGE Surplus
+### MERGE 余剰
 
-When SELL_YES and SELL_NO orders match with sum ≤ $1.00:
+SELL_YESとSELL_NO注文が合計 <= $1.00でマッチングされた場合：
 
 ```
 Fee = ($1.00 - takerPrice - makerPrice) × amount
 
-Example:
+例:
   SELL_YES @ $0.40 + SELL_NO @ $0.50 = $0.90
-  Surplus = $0.10 per token → protocol treasury
+  余剰 = トークンあたり$0.10 → プロトコル金庫
 ```
 
-## Market Creation Fee
+## マーケット作成手数料
 
-Configurable per market. Set to **0** during beta period.
+マーケットごとに設定可能です。ベータ期間中は**0**に設定されています。
 
-## Fee Summary
+## 手数料の概要
 
-| Source | Fee | Recipient |
-| ------ | --- | --------- |
-| AMM swap | 0.5%–5% (dynamic) | LP providers |
-| CLOB MINT surplus | Variable | Protocol treasury |
-| CLOB MERGE surplus | Variable | Protocol treasury |
-| Market creation | Configurable | Protocol treasury |
+| ソース | 手数料 | 受取先 |
+| ------ | ------ | ------ |
+| AMM スワップ | 0.5%〜5%（ダイナミック） | LP提供者 |
+| CLOB MINT 余剰 | 変動 | プロトコル金庫 |
+| CLOB MERGE 余剰 | 変動 | プロトコル金庫 |
+| マーケット作成 | 設定可能 | プロトコル金庫 |
 
 ---
 
-**Next**: [Trading Overview](../trading/overview.md) · [Providing Liquidity](../liquidity/overview.md)
+**次へ**: [取引概要](../trading/overview.md) · [流動性提供](../liquidity/overview.md)

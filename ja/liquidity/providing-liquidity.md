@@ -1,25 +1,25 @@
 ---
-description: Step-by-step guide to providing AMM liquidity
+description: AMM流動性提供のステップバイステップガイド
 ---
 
-# Providing Liquidity
+# 流動性の提供
 
-## Overview
+## 概要
 
-AMM liquidity is provided to the Uniswap v4 YES/USDC pool via the PositionManager.
+AMM流動性はPositionManagerを通じてUniswap v4 YES/USDCプールに提供されます。
 
-## Steps
+## 手順
 
-### 1. Split USDC into YES + NO
+### 1. USDCをYES + NOに分割
 
 ```typescript
 const amount = ethers.parseUnits("1000", 6); // 1000 USDC
 await usdc.approve(DIAMOND_ADDRESS, amount);
 await diamond.splitPosition(marketId, amount);
-// Now you have 1000 YES + 1000 NO
+// これで1000 YES + 1000 NOを保有します
 ```
 
-### 2. Approve YES and USDC to PositionManager
+### 2. YESとUSDCをPositionManagerに承認
 
 ```typescript
 const yesToken = new ethers.Contract(market.yesToken, ERC20_ABI, signer);
@@ -27,21 +27,21 @@ await yesToken.approve(POSITION_MANAGER, ethers.MaxUint256);
 await usdc.approve(POSITION_MANAGER, ethers.MaxUint256);
 ```
 
-### 3. Mint LP Position
+### 3. LPポジションのミント
 
-Use the Uniswap v4 PositionManager to create a liquidity position in the YES/USDC pool. You can choose:
+Uniswap v4 PositionManagerを使用してYES/USDCプールに流動性ポジションを作成します。以下から選択できます:
 
-- **Full-range**: Covers $0.01–$0.99, less capital efficient
-- **Concentrated**: Covers a narrow range (e.g., $0.40–$0.70), more capital efficient
+- **フルレンジ**: $0.01–$0.99をカバー、資本効率が低い
+- **集中**: 狭い範囲をカバー（例: $0.40–$0.70）、資本効率が高い
 
-### 4. When to Remove
+### 4. 除去のタイミング
 
-- Remove LP **at least 24 hours** before market expiry (when fees jump to 5%)
-- Monitor the market — if outcome becomes certain early, remove immediately
-- After resolution, the losing token is worth $0
+- 市場満期の**少なくとも24時間前**にLPを除去（手数料が5%に急騰する時）
+- 市場を監視する — 結果が早期に確実になった場合、すぐに除去する
+- 決済後、敗北トークンの価値は$0です
 
-> ⚠️ **Note**: The NO tokens from split can be sold or held separately. They are not needed for LP.
+> ⚠️ **注意**: 分割で得たNOトークンは別途売却または保有できます。LPには必要ありません。
 
 ---
 
-**Next**: [Market Making](market-making.md) · [Liquidity Overview](overview.md)
+**次へ**: [マーケットメイキング](market-making.md) · [流動性の概要](overview.md)

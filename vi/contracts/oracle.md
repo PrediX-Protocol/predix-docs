@@ -1,10 +1,10 @@
 ---
-description: Pluggable oracle system — Manual, Chainlink, and custom adapters
+description: Hệ thống oracle dạng cắm được — Manual, Chainlink và bộ điều hợp tùy chỉnh
 ---
 
-# Oracle System
+# Hệ thống Oracle
 
-PrediX uses a pluggable oracle architecture. Every oracle implements the same interface:
+PrediX sử dụng kiến trúc oracle dạng cắm được. Mọi oracle đều triển khai cùng một giao diện:
 
 ```solidity
 interface IOracle {
@@ -15,26 +15,26 @@ interface IOracle {
 
 ## ManualOracleAdapter
 
-Admin-controlled resolution for subjective events (politics, sports, etc.).
+Xác nhận kết quả do quản trị viên kiểm soát cho các sự kiện chủ quan (chính trị, thể thao, v.v.).
 
 ```solidity
-resolve(bytes32 marketId, bool outcome)     // ADMIN only
+resolve(bytes32 marketId, bool outcome)     // Chỉ quản trị viên
 getResolution(bytes32 marketId) → (bool resolved, bool outcome)
 getResolvedAt(bytes32 marketId) → uint64
 ```
 
 ## ChainlinkAdapter
 
-Automatic resolution based on Chainlink price feeds. Example: "BTC > $100K?"
+Xác nhận kết quả tự động dựa trên nguồn giá Chainlink. Ví dụ: "BTC > $100K?"
 
-**Safety checks**: stale feed detection (24h), L2 sequencer uptime, round completeness.
+**Kiểm tra an toàn**: phát hiện nguồn cấp cũ (24 giờ), thời gian hoạt động bộ tuần tự L2, tính hoàn chỉnh của vòng.
 
-## Creating a Custom Oracle
+## Tạo Oracle tùy chỉnh
 
-1. Implement the `IOracle` interface
-2. Deploy your adapter contract
-3. Admin approves: `diamond.setApprovedOracle(adapterAddress, true)`
-4. Use when creating markets: `createMarket(..., adapterAddress)`
+1. Triển khai giao diện `IOracle`
+2. Triển khai hợp đồng bộ điều hợp
+3. Quản trị viên phê duyệt: `diamond.setApprovedOracle(adapterAddress, true)`
+4. Sử dụng khi tạo thị trường: `createMarket(..., adapterAddress)`
 
 ```solidity
 contract MyCustomOracle is IOracle {
@@ -48,15 +48,15 @@ contract MyCustomOracle is IOracle {
     }
 
     function resolve(bytes32 marketId, bool outcome) external {
-        // Your resolution logic here
+        // Logic xác nhận kết quả của bạn ở đây
         resolved[marketId] = true;
         outcomes[marketId] = outcome;
     }
 }
 ```
 
-> ⚠️ **Oracle approval**: Only admin-approved oracle addresses can be used when creating markets.
+> ⚠️ **Phê duyệt Oracle**: Chỉ các địa chỉ Oracle được quản trị viên phê duyệt mới có thể sử dụng khi tạo thị trường.
 
 ---
 
-**Next**: [Access Control](access-control.md) · [Safety](safety.md) · [Resolution Concept](../concepts/resolution.md)
+**Tiếp theo**: [Kiểm soát truy cập](access-control.md) · [An toàn](safety.md) · [Khái niệm xác nhận kết quả](../concepts/resolution.md)

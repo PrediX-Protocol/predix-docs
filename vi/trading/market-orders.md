@@ -1,23 +1,23 @@
 ---
-description: Execute market orders through the Smart Router
+description: Thực hiện lệnh thị trường thông qua Smart Router
 ---
 
-# Market Orders
+# Lệnh thị trường
 
-Market orders execute immediately through the Router, which aggregates liquidity from both CLOB and AMM.
+Lệnh thị trường được thực hiện ngay lập tức thông qua Router, tổng hợp thanh khoản từ cả CLOB và AMM.
 
-## Functions
+## Các hàm
 
-| Function | Action |
-| -------- | ------ |
-| `buyYes(marketId, usdcIn, minYesOut, recipient, deadline)` | Pay USDC, receive YES tokens |
-| `sellYes(marketId, yesIn, minUsdcOut, recipient, deadline)` | Pay YES tokens, receive USDC |
-| `buyNo(marketId, usdcIn, mintAmount, minNoOut, recipient, deadline)` | Pay USDC, receive NO tokens |
-| `sellNo(marketId, noIn, minUsdcOut, recipient, deadline)` | Pay NO tokens, receive USDC |
+| Hàm | Hành động |
+| --- | --------- |
+| `buyYes(marketId, usdcIn, minYesOut, recipient, deadline)` | Trả USDC, nhận token YES |
+| `sellYes(marketId, yesIn, minUsdcOut, recipient, deadline)` | Trả token YES, nhận USDC |
+| `buyNo(marketId, usdcIn, mintAmount, minNoOut, recipient, deadline)` | Trả USDC, nhận token NO |
+| `sellNo(marketId, noIn, minUsdcOut, recipient, deadline)` | Trả token NO, nhận USDC |
 
-## Code Examples
+## Ví dụ mã
 
-### Buy YES
+### Mua YES
 
 ```typescript
 import { ethers } from "ethers";
@@ -31,56 +31,56 @@ const usdc = new ethers.Contract(USDC_ADDRESS, ERC20_ABI, signer);
 
 const marketId = "0x...";
 const usdcIn = ethers.parseUnits("100", 6);    // 100 USDC
-const minYesOut = ethers.parseUnits("90", 6);   // 2% slippage
-const deadline = Math.floor(Date.now() / 1000) + 300; // 5 minutes
+const minYesOut = ethers.parseUnits("90", 6);   // 2% trượt giá
+const deadline = Math.floor(Date.now() / 1000) + 300; // 5 phút
 
-// Step 1: Approve USDC to Router
+// Bước 1: Phê duyệt USDC cho Router
 await usdc.approve(router.target, usdcIn);
 
-// Step 2: Buy YES
+// Bước 2: Mua YES
 const tx = await router.buyYes(marketId, usdcIn, minYesOut, signer.address, deadline);
 const receipt = await tx.wait();
-console.log("Trade executed:", receipt.hash);
+console.log("Giao dịch đã thực hiện:", receipt.hash);
 ```
 
-### Sell YES
+### Bán YES
 
 ```typescript
 const yesToken = new ethers.Contract(market.yesToken, ERC20_ABI, signer);
 const yesIn = ethers.parseUnits("100", 6);
 const minUsdcOut = ethers.parseUnits("60", 6);
 
-// Approve YES tokens to Router
+// Phê duyệt token YES cho Router
 await yesToken.approve(router.target, yesIn);
 
-// Sell YES
+// Bán YES
 await router.sellYes(marketId, yesIn, minUsdcOut, signer.address, deadline);
 ```
 
-### Buy NO
+### Mua NO
 
 ```typescript
-// Buy NO requires a mintAmount parameter (used internally for split)
+// Mua NO yêu cầu tham số mintAmount (được sử dụng nội bộ cho tách)
 const usdcIn = ethers.parseUnits("100", 6);
-const mintAmount = ethers.parseUnits("100", 6); // Amount to split
+const mintAmount = ethers.parseUnits("100", 6); // Số lượng cần tách
 const minNoOut = ethers.parseUnits("90", 6);
 
 await usdc.approve(router.target, usdcIn);
 await router.buyNo(marketId, usdcIn, mintAmount, minNoOut, signer.address, deadline);
 ```
 
-## Quote Before Trading
+## Truy vấn giá trước khi giao dịch
 
-Always get a quote before executing:
+Luôn lấy báo giá trước khi thực hiện:
 
 ```typescript
 const expectedYes = await router.quoteBuyYes(marketId, usdcIn);
-console.log("Expected YES:", ethers.formatUnits(expectedYes, 6));
+console.log("YES dự kiến:", ethers.formatUnits(expectedYes, 6));
 
-// Set minOut with slippage tolerance
-const minYesOut = expectedYes * 98n / 100n; // 2% slippage
+// Đặt minOut với dung sai trượt giá
+const minYesOut = expectedYes * 98n / 100n; // 2% trượt giá
 ```
 
 ---
 
-**Next**: [Limit Orders](limit-orders.md) · [Smart Routing](smart-routing.md) · [Developer Trading Integration](../developers/trading-integration.md)
+**Tiếp theo**: [Lệnh giới hạn](limit-orders.md) · [Định tuyến thông minh](smart-routing.md) · [Tích hợp giao dịch cho nhà phát triển](../developers/trading-integration.md)

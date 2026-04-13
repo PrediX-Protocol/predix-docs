@@ -1,21 +1,21 @@
 ---
-description: Role-based access control — 4 roles with granular permissions
+description: ロールベースアクセス制御 — きめ細かい権限を持つ4つのロール
 ---
 
-# Access Control
+# アクセス制御
 
-## Roles
+## ロール
 
-| Role | ID | Purpose |
+| ロール | ID | 目的 |
 | ---- | -- | ------- |
-| DEFAULT_ADMIN | 0 | Manage all roles |
-| ADMIN | 1 | Create markets, config fees, approve oracles |
-| OPERATOR | 2 | Emergency resolve, enable refund |
-| PAUSER | 3 | Pause the system |
+| DEFAULT_ADMIN | 0 | すべてのロールを管理 |
+| ADMIN | 1 | マーケット作成、手数料設定、Oracle承認 |
+| OPERATOR | 2 | 緊急結果確定、返金の有効化 |
+| PAUSER | 3 | システムの一時停止 |
 
-## Permission Matrix
+## 権限マトリクス
 
-| Function | PUBLIC | ADMIN | OPERATOR | PAUSER | OWNER |
+| 関数 | PUBLIC | ADMIN | OPERATOR | PAUSER | OWNER |
 | -------- | ------ | ----- | -------- | ------ | ----- |
 | `createMarket` | | ✓ | | | |
 | `splitPosition` | ✓ | | | | |
@@ -24,28 +24,28 @@ description: Role-based access control — 4 roles with granular permissions
 | `redeemMarketTokens` | ✓ | | | | |
 | `placeOrder` | ✓ | | | | |
 | `buyYes` (Router) | ✓ | | | | |
-| `emergencyResolve` | | | ✓ (7d) | | |
+| `emergencyResolve` | | | ✓ (7日間) | | |
 | `enableRefundMode` | | | ✓ | | |
 | `setTvlCap` | | ✓ | | | |
 | `setApprovedOracle` | | ✓ | | | |
 | `pauseAll` | | | | ✓ | |
 | `diamondCut` | | | | | ✓ |
 
-## Two-Step Ownership Transfer
+## 2段階所有権移転
 
 ```
-1. Current owner calls transferOwnership(newOwner)
-2. newOwner becomes pendingOwner
-3. newOwner calls acceptOwnership()
-4. Ownership transferred
+1. 現在のオーナーが transferOwnership(newOwner) を呼び出す
+2. newOwner が pendingOwner になる
+3. newOwner が acceptOwnership() を呼び出す
+4. 所有権の移転が完了
 ```
 
-This prevents accidental transfers to wrong addresses.
+これにより、誤ったアドレスへの意図しない移転を防止します。
 
-## Last-Admin Protection
+## 最終管理者保護
 
-The system prevents revoking the last admin's role, ensuring the protocol always has at least one admin.
+システムは最後の管理者のロール取り消しを防止し、プロトコルに常に少なくとも1人の管理者がいることを保証します。
 
 ---
 
-**Next**: [Safety](safety.md) · [Diamond Contract](diamond.md)
+**次へ**: [安全機構](safety.md) · [Diamond コントラクト](diamond.md)

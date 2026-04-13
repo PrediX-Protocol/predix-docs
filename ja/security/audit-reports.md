@@ -1,47 +1,47 @@
 ---
-description: Detailed audit results and testing coverage
+description: 詳細な監査結果とテストカバレッジ
 ---
 
-# Audit Reports
+# 監査レポート
 
-## Testing Coverage
+## テストカバレッジ
 
-| Category | Details |
+| カテゴリ | 詳細 |
 | -------- | ------- |
-| **Unit Tests** | 264 tests covering all contract functions, 0 failures |
-| **Fuzz Tests** | 14 property-based tests, each running 10,000 iterations |
-| **On-chain E2E** | 31 end-to-end tests on Unichain Sepolia with real Uniswap v4 |
-| **Slither** | Static analysis: 0 real security issues |
+| **ユニットテスト** | 全コントラクト関数をカバーする264テスト、0失敗 |
+| **ファズテスト** | 14のプロパティベーステスト、各10,000回反復実行 |
+| **オンチェーンE2E** | 実際のUniswap v4を使用したUnichain Sepoliaでの31エンドツーエンドテスト |
+| **Slither** | 静的分析: 実際のセキュリティ問題0件 |
 
-## AI Audit Reports
+## AI監査レポート
 
-3 independent AI-powered audits were conducted and cross-verified:
+3件の独立したAI監査が実施され、クロス検証されました:
 
-### Bugs Found and Fixed
+### 発見・修正されたバグ
 
-| Severity | Found | Fixed |
+| 深刻度 | 発見 | 修正 |
 | -------- | ----- | ----- |
 | CRITICAL | 6 | 6 ✅ |
 | HIGH | 3 | 3 ✅ |
 | MEDIUM | 7 | 7 ✅ |
 | LOW | 6 | 6 ✅ |
-| **Total** | **22** | **22 ✅** |
+| **合計** | **22** | **22 ✅** |
 
-## OWASP Smart Contract Top 10 2026
+## OWASPスマートコントラクトTop 10 2026
 
-| # | Category | Status |
+| # | カテゴリ | ステータス |
 | - | -------- | ------ |
-| SC01 | Access Control | ✅ Role-based ACL, 62 checks, last-admin protection |
-| SC02 | Business Logic | ✅ Invariant YES=NO=Collateral, refundMode |
-| SC03 | Oracle Manipulation | ✅ Oracle whitelist, endTime gate |
-| SC04 | Flash Loan | ✅ nonReentrant (20 functions), safety caps |
-| SC05 | Input Validation | ✅ 49 zero-checks, price range validation |
-| SC06 | Unchecked Calls | ✅ SafeERC20, CEI pattern |
-| SC07 | Arithmetic | ✅ FullMath.mulDiv, Solidity 0.8.30 overflow |
-| SC08 | Reentrancy | ✅ 3 independent guards |
-| SC09 | Overflow/Underflow | ✅ Solidity 0.8.30 |
-| SC10 | Proxy/Upgrade | ✅ Protected selectors, two-step ownership |
+| SC01 | アクセス制御 | ✅ ロールベースACL、62チェック、最終管理者保護 |
+| SC02 | ビジネスロジック | ✅ 不変量YES=NO=担保、refundMode |
+| SC03 | オラクル操作 | ✅ オラクルホワイトリスト、endTimeゲート |
+| SC04 | フラッシュローン | ✅ nonReentrant（20関数）、安全上限 |
+| SC05 | 入力検証 | ✅ 49のゼロチェック、価格範囲検証 |
+| SC06 | 未チェック呼び出し | ✅ SafeERC20、CEIパターン |
+| SC07 | 算術演算 | ✅ FullMath.mulDiv、Solidity 0.8.30オーバーフロー |
+| SC08 | リエントランシー | ✅ 3つの独立ガード |
+| SC09 | オーバーフロー/アンダーフロー | ✅ Solidity 0.8.30 |
+| SC10 | プロキシ/アップグレード | ✅ 保護されたセレクタ、2段階オーナーシップ |
 
 ---
 
-**Next**: [Bug Bounty](bug-bounty.md) · [Security Overview](overview.md)
+**次へ**: [バグバウンティ](bug-bounty.md) · [セキュリティ概要](overview.md)

@@ -1,39 +1,39 @@
 ---
-description: PrediX brand assets and usage guidelines
+description: PrediXブランドアセットと使用ガイドライン
 ---
 
-# Brand Kit
+# ブランドキット
 
-## Logo
+## ロゴ
 
-> 🚧 Logo files will be available for download here after brand finalization.
+> 🚧 ロゴファイルはブランド確定後にこちらからダウンロードできます。
 
-## Color Palette
+## カラーパレット
 
-| Color | Hex | Usage |
+| 色 | Hex | 用途 |
 | ----- | --- | ----- |
-| Primary Blue | `#0D3B66` | Headers, primary buttons |
-| Accent Blue | `#2980B9` | Links, highlights |
-| Success Green | `#27AE60` | YES token, positive states |
-| Danger Red | `#E74C3C` | NO token, warnings |
-| Background | `#F5F8FA` | Page background |
-| Text | `#2C3E50` | Body text |
+| プライマリブルー | `#0D3B66` | ヘッダー、メインボタン |
+| アクセントブルー | `#2980B9` | リンク、ハイライト |
+| サクセスグリーン | `#27AE60` | YESトークン、成功状態 |
+| デンジャーレッド | `#E74C3C` | NOトークン、警告 |
+| 背景 | `#F5F8FA` | ページ背景 |
+| テキスト | `#2C3E50` | 本文テキスト |
 
-## Typography
+## タイポグラフィ
 
-| Element | Font | Weight |
+| 要素 | フォント | ウェイト |
 | ------- | ---- | ------ |
-| Headings | Inter | Bold (700) |
-| Body | Inter | Regular (400) |
-| Code | JetBrains Mono | Regular (400) |
+| 見出し | Inter | Bold (700) |
+| 本文 | Inter | Regular (400) |
+| コード | JetBrains Mono | Regular (400) |
 
-## Usage Guidelines
+## 使用ガイドライン
 
-- Always use the PrediX logo with adequate spacing
-- Do not alter the logo colors or proportions
-- When referring to the protocol, use "PrediX Protocol" or "PrediX"
-- Do not use the logo to imply endorsement
+- PrediXロゴは常に十分な余白をとって使用してください
+- ロゴの色や比率を変更しないでください
+- プロトコルを参照する際は「PrediX Protocol」または「PrediX」を使用してください
+- ロゴを推薦を暗示する目的で使用しないでください
 
 ---
 
-**Next**: [Community](community.md)
+**次へ**: [コミュニティ](community.md)

@@ -1,72 +1,72 @@
 ---
-description: How markets are resolved and how winners redeem
+description: マーケットの結果確定方法と勝者の償還手順
 ---
 
-# Resolution
+# 結果確定
 
-## Market Lifecycle
+## マーケットライフサイクル
 
 ```
-Created → Active (trading) → Expired → Resolved → Redeemable
-                                ↓
-                        Emergency (7 days) → Emergency Resolved
-                                ↓
-                        Refund Mode → Users Refund
+作成済み → アクティブ（取引中） → 満了 → 結果確定済み → 償還可能
+                                   ↓
+                           緊急（7日間） → 緊急結果確定
+                                   ↓
+                           返金モード → ユーザー返金
 ```
 
-## Normal Resolution
+## 通常の結果確定
 
-1. Market reaches `endTime` (trading continues but no new splits)
-2. Oracle reports outcome: `resolve(marketId, true/false)`
-3. Anyone calls `resolveMarket(marketId)` on the Diamond
-4. Market is marked as resolved
-5. Winners call `redeemMarketTokens(marketId)`
+1. マーケットが`endTime`に到達（取引は継続するが新しいスプリットは不可）
+2. オラクルが結果を報告：`resolve(marketId, true/false)`
+3. 誰でもDiamond上で`resolveMarket(marketId)`を呼び出し可能
+4. マーケットが結果確定済みとしてマーク
+5. 勝者が`redeemMarketTokens(marketId)`を呼び出し
 
 ```typescript
-// Step 1: Resolve (anyone can call after oracle reports)
+// ステップ1：結果確定（オラクル報告後、誰でも呼び出し可能）
 await diamond.resolveMarket(marketId);
 
-// Step 2: Redeem winning tokens
+// ステップ2：勝利トークンの償還
 await diamond.redeemMarketTokens(marketId);
-// Winners receive 1 USDC per winning token
+// 勝者は勝利トークンあたり1 USDCを受け取る
 ```
 
-## Emergency Resolution
+## 緊急結果確定
 
-If the oracle fails to report within 7 days after `endTime`:
+`endTime`後7日以内にオラクルが報告しない場合：
 
-1. An `OPERATOR` can call `emergencyResolve(marketId, outcome)`
-2. This bypasses the oracle and sets the outcome directly
+1. `OPERATOR`が`emergencyResolve(marketId, outcome)`を呼び出し可能
+2. オラクルをバイパスして結果を直接設定
 
-> ⚠️ Emergency resolution requires a **7-day delay** after `endTime` and can only be called by the OPERATOR role.
+> ⚠️ 緊急結果確定には`endTime`後**7日間の遅延**が必要であり、OPERATORロールのみが呼び出せます。
 
-## Refund Mode
+## 返金モード
 
-If a market is deemed invalid or problematic:
+マーケットが無効または問題があると判断された場合：
 
-1. `OPERATOR` calls `enableRefundMode(marketId)`
-2. All trading is blocked (split, merge, CLOB, AMM)
-3. Token holders call `refund(marketId)`
-4. Each holder receives USDC proportional to their YES + NO balance
+1. `OPERATOR`が`enableRefundMode(marketId)`を呼び出し
+2. すべての取引がブロック（スプリット、マージ、CLOB、AMM）
+3. トークン保有者が`refund(marketId)`を呼び出し
+4. 各保有者はYES + NO残高に比例してUSDCを受け取る
 
 ```typescript
-// Operator enables refund
+// オペレーターが返金を有効化
 await diamond.enableRefundMode(marketId);
 
-// Users claim proportional refund
+// ユーザーが比例返金を請求
 await diamond.refund(marketId);
 ```
 
-## Category Resolution
+## カテゴリ結果確定
 
-For multi-outcome markets:
+マルチアウトカムマーケットの場合：
 
 ```typescript
-// Admin resolves the category: winner is outcome index 2
+// 管理者がカテゴリを結果確定：勝者はアウトカムインデックス2
 await diamond.resolveCategory(categoryId, 2);
-// All markets in the category are resolved atomically
+// カテゴリ内のすべてのマーケットがアトミックに結果確定
 ```
 
 ---
 
-**Next**: [Multi-Outcome Markets](multi-outcome-markets.md) · [Fees](fees.md) · [Oracle Contract](../contracts/oracle.md)
+**次へ**: [マルチアウトカムマーケット](multi-outcome-markets.md) · [手数料](fees.md) · [オラクルコントラクト](../contracts/oracle.md)

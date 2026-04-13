@@ -1,51 +1,51 @@
 ---
-description: CLOB market making — providing order book liquidity
+description: Tao lap thi truong CLOB — cung cap thanh khoan so lenh
 ---
 
-# Market Making
+# Tao lap Thi truong
 
-## Overview
+## Tong quan
 
-Market making on the CLOB involves placing simultaneous buy and sell orders to capture the spread.
+Tao lap thi truong tren CLOB bao gom viec dat dong thoi lenh mua va lenh ban de nam bat chenh lech gia.
 
-## Basic Strategy
+## Chien luoc co ban
 
 ```typescript
 const exchange = new ethers.Contract(EXCHANGE_ADDRESS, EXCHANGE_ABI, signer);
 
-// Place bid (BUY_YES) and ask (SELL_YES)
+// Dat lenh mua (BUY_YES) va lenh ban (SELL_YES)
 const bidPrice = ethers.parseUnits("0.48", 6);
 const askPrice = ethers.parseUnits("0.52", 6);
 const amount = ethers.parseUnits("100", 6);
 
-// BUY_YES: deposit USDC
+// BUY_YES: nap USDC
 await exchange.placeOrder(marketId, 0, bidPrice, amount); // side 0 = BUY_YES
 
-// SELL_YES: deposit YES tokens (must hold from split)
+// SELL_YES: nap token YES (phai co tu viec tach)
 await exchange.placeOrder(marketId, 1, askPrice, amount); // side 1 = SELL_YES
 ```
 
-## Spread Management
+## Quan ly chenh lech gia
 
-| Market Phase | Recommended Spread |
+| Giai doan thi truong | Chenh lech gia khuyen nghi |
 | ------------ | ------------------ |
-| New market (low volume) | $0.05–$0.10 |
-| Active market | $0.02–$0.05 |
-| Near expiry (< 24h) | $0.05–$0.10 or wider |
+| Thi truong moi (khoi luong thap) | $0.05–$0.10 |
+| Thi truong hoat dong | $0.02–$0.05 |
+| Gan het han (< 24 gio) | $0.05–$0.10 hoac rong hon |
 
-## Inventory Risk
+## Rui ro ton kho
 
-When you get filled on one side more than the other, you accumulate directional exposure:
+Khi ban bi khop lenh mot phia nhieu hon phia kia, ban tich luy muc do pho nhiem theo huong:
 
-- Too many YES tokens → your position profits if YES wins
-- Too many NO tokens → your position profits if NO wins
+- Qua nhieu token YES → vi the cua ban co lai neu YES thang
+- Qua nhieu token NO → vi the cua ban co lai neu NO thang
 
-Manage by adjusting prices or using split/merge to rebalance.
+Quan ly bang cach dieu chinh gia hoac su dung split/merge de tai can bang.
 
-## Market Maker Bot
+## Bot Tao lap Thi truong
 
-PrediX provides a reference Market Maker Bot implementation. See the GitHub repository for details.
+PrediX cung cap mot ban tham chieu cua Bot Tao lap Thi truong. Xem kho luu tru GitHub de biet chi tiet.
 
 ---
 
-**Next**: [Liquidity Overview](overview.md) · [Limit Orders](../trading/limit-orders.md)
+**Tiep theo**: [Tong quan Thanh khoan](overview.md) · [Lenh gioi han](../trading/limit-orders.md)

@@ -1,25 +1,25 @@
 ---
-description: Step-by-step guide to providing AMM liquidity
+description: AMM 유동성 제공 단계별 가이드
 ---
 
-# Providing Liquidity
+# 유동성 제공
 
-## Overview
+## 개요
 
-AMM liquidity is provided to the Uniswap v4 YES/USDC pool via the PositionManager.
+AMM 유동성은 PositionManager를 통해 Uniswap v4 YES/USDC 풀에 제공됩니다.
 
-## Steps
+## 단계
 
-### 1. Split USDC into YES + NO
+### 1. USDC를 YES + NO로 분할
 
 ```typescript
 const amount = ethers.parseUnits("1000", 6); // 1000 USDC
 await usdc.approve(DIAMOND_ADDRESS, amount);
 await diamond.splitPosition(marketId, amount);
-// Now you have 1000 YES + 1000 NO
+// 이제 1000 YES + 1000 NO를 보유하게 됩니다
 ```
 
-### 2. Approve YES and USDC to PositionManager
+### 2. YES와 USDC를 PositionManager에 승인
 
 ```typescript
 const yesToken = new ethers.Contract(market.yesToken, ERC20_ABI, signer);
@@ -27,21 +27,21 @@ await yesToken.approve(POSITION_MANAGER, ethers.MaxUint256);
 await usdc.approve(POSITION_MANAGER, ethers.MaxUint256);
 ```
 
-### 3. Mint LP Position
+### 3. LP 포지션 민팅
 
-Use the Uniswap v4 PositionManager to create a liquidity position in the YES/USDC pool. You can choose:
+Uniswap v4 PositionManager를 사용하여 YES/USDC 풀에 유동성 포지션을 생성합니다. 다음 중 선택할 수 있습니다:
 
-- **Full-range**: Covers $0.01–$0.99, less capital efficient
-- **Concentrated**: Covers a narrow range (e.g., $0.40–$0.70), more capital efficient
+- **전체 범위**: $0.01–$0.99를 커버하며, 자본 효율이 낮음
+- **집중 범위**: 좁은 범위를 커버 (예: $0.40–$0.70), 자본 효율이 높음
 
-### 4. When to Remove
+### 4. 제거 시점
 
-- Remove LP **at least 24 hours** before market expiry (when fees jump to 5%)
-- Monitor the market — if outcome becomes certain early, remove immediately
-- After resolution, the losing token is worth $0
+- 시장 만료 **최소 24시간 전**에 LP를 제거하세요 (수수료가 5%로 급등할 때)
+- 시장을 모니터링하세요 — 결과가 조기에 확실해지면 즉시 제거하세요
+- 결과 확정 후 패배 토큰의 가치는 $0입니다
 
-> ⚠️ **Note**: The NO tokens from split can be sold or held separately. They are not needed for LP.
+> ⚠️ **참고**: 분할로 얻은 NO 토큰은 별도로 매도하거나 보유할 수 있습니다. LP에는 필요하지 않습니다.
 
 ---
 
-**Next**: [Market Making](market-making.md) · [Liquidity Overview](overview.md)
+**다음**: [마켓 메이킹](market-making.md) · [유동성 개요](overview.md)

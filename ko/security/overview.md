@@ -1,40 +1,40 @@
 ---
-description: Security posture — audits, testing, and safety mechanisms
+description: 보안 태세 — 감사, 테스트 및 안전 메커니즘
 ---
 
-# Security Overview
+# 보안 개요
 
-## Audit Summary
+## 감사 요약
 
-| Metric | Value |
+| 지표 | 값 |
 | ------ | ----- |
-| Source files | 44 Solidity files, 6,222 lines |
-| Unit tests | 264 tests, 0 failures |
-| Fuzz tests | 14 tests × 10,000 runs |
-| On-chain E2E | 31 tests on Unichain Sepolia |
-| Audit reports | 3 independent reviews cross-verified |
-| Slither analysis | 0 real security issues |
-| OWASP coverage | 10/10 categories (SC Top 10 2026) |
-| Security fixes | 22 bugs found and fixed |
+| 소스 파일 | Solidity 파일 44개, 6,222줄 |
+| 단위 테스트 | 264개 테스트, 0개 실패 |
+| 퍼즈 테스트 | 14개 테스트 x 10,000회 실행 |
+| 온체인 E2E | Unichain Sepolia에서 31개 테스트 |
+| 감사 보고서 | 3개의 독립 리뷰 교차 검증 |
+| Slither 분석 | 실제 보안 이슈 0개 |
+| OWASP 커버리지 | 10/10 카테고리 (SC Top 10 2026) |
+| 보안 수정 | 22개 버그 발견 및 수정 |
 
-## Safety Mechanisms
+## 안전 메커니즘
 
-1. **Safety Caps**: TVL, per-trade, per-market limits (configurable)
-2. **Pause**: PAUSER can freeze specific modules or entire system
-3. **Emergency Resolve**: OPERATOR can resolve after 7-day delay
-4. **Refund Mode**: Proportional refund for problematic markets
-5. **Anti-Sandwich**: Hook-level detection (same block, opposite direction)
-6. **Reentrancy Guards**: 3 independent guards across contracts
-7. **Two-Step Ownership**: Prevents accidental ownership transfer
+1. **안전 한도**: TVL, 거래당, 시장당 한도 (설정 가능)
+2. **일시 정지**: PAUSER가 특정 모듈 또는 전체 시스템을 동결 가능
+3. **긴급 결과 확정**: OPERATOR가 7일 지연 후 결과 확정 가능
+4. **환불 모드**: 문제 있는 시장에 대한 비례 환불
+5. **샌드위치 공격 방지**: Hook 수준 감지 (동일 블록, 반대 방향)
+6. **재진입 방지**: 컨트랙트 전반에 걸친 3개의 독립 가드
+7. **2단계 소유권**: 실수로 인한 소유권 이전 방지
 
-## Smart Contract Risks
+## 스마트 컨트랙트 리스크
 
-While PrediX has undergone extensive testing and auditing, smart contract risk can never be fully eliminated. Users should:
+PrediX는 광범위한 테스트와 감사를 거쳤지만, 스마트 컨트랙트 리스크를 완전히 제거할 수는 없습니다. 사용자는 다음을 권장합니다:
 
-- Start with small amounts
-- Understand the risks of prediction market trading
-- Never invest more than they can afford to lose
+- 소액으로 시작하세요
+- 예측 시장 거래의 리스크를 이해하세요
+- 감당할 수 있는 금액 이상을 투자하지 마세요
 
 ---
 
-**Next**: [Audit Reports](audit-reports.md) · [Bug Bounty](bug-bounty.md) · [Safety Mechanisms](../contracts/safety.md)
+**다음**: [감사 보고서](audit-reports.md) · [버그 바운티](bug-bounty.md) · [안전 메커니즘](../contracts/safety.md)

@@ -1,38 +1,38 @@
 ---
-description: How the Router aggregates CLOB and AMM liquidity
+description: Router가 CLOB과 AMM 유동성을 집계하는 방법
 ---
 
-# Smart Routing
+# 스마트 라우팅
 
-The PrediXRouter automatically finds the best execution path across both CLOB and AMM.
+PrediXRouter는 CLOB과 AMM 양쪽에서 자동으로 최적의 실행 경로를 찾습니다.
 
-## How It Works
+## 작동 방식
 
 ```
 router.buyYes($100):
-  Step 1: Check CLOB for SELL_YES orders with better price than AMM
-  Step 2: Fill CLOB orders first (best price, zero slippage)
-  Step 3: Route remaining amount through Uniswap v4 AMM
-  Step 4: User receives total YES tokens from both sources
+  1단계: CLOB에서 AMM보다 유리한 가격의 SELL_YES 주문 확인
+  2단계: CLOB 주문을 먼저 체결 (최적 가격, 슬리피지 없음)
+  3단계: 잔여 수량을 Uniswap v4 AMM으로 라우팅
+  4단계: 사용자가 양쪽 소스에서 총 YES 토큰 수령
 ```
 
-### Example
+### 예시
 
 ```
-Buy 100 YES tokens:
-  CLOB: 60 YES available @ $0.62 → cost: $37.20
-  AMM:  40 YES @ ~$0.65 avg      → cost: $26.00
-  Total: 100 YES for $63.20
+100 YES 토큰 매수:
+  CLOB: 60 YES 이용 가능 @ $0.62 → 비용: $37.20
+  AMM:  40 YES @ 평균 ~$0.65   → 비용: $26.00
+  합계: 100 YES를 $63.20에 구매
 
-Without Smart Router (AMM only):
-  100 YES @ ~$0.66 avg → cost: $66.00
+Smart Router 없이 (AMM만 사용):
+  100 YES @ 평균 ~$0.66 → 비용: $66.00
   
-  Savings: $2.80 (4.2% better execution)
+  절감액: $2.80 (4.2% 더 나은 체결)
 ```
 
-## Quote Functions
+## 시세 조회 함수
 
-Always quote before trading:
+거래 전에 항상 시세를 조회하세요:
 
 ```typescript
 const router = new ethers.Contract(ROUTER_ADDRESS, ROUTER_ABI, provider);
@@ -43,15 +43,15 @@ const noOut = await router.quoteBuyNo(marketId, usdcIn);
 const usdcFromNo = await router.quoteSellNo(marketId, noIn);
 ```
 
-## When CLOB is Better vs AMM
+## CLOB이 AMM보다 유리한 경우
 
-| Condition | Better venue |
-| --------- | ------------ |
-| Deep order book, tight spread | CLOB |
-| No orders at desired price | AMM |
-| Large orders | Split across both |
-| Near market expiry (high AMM fees) | CLOB |
+| 조건 | 더 나은 거래소 |
+| ---- | -------------- |
+| 깊은 오더북, 좁은 스프레드 | CLOB |
+| 원하는 가격에 주문 없음 | AMM |
+| 대량 주문 | 양쪽 분산 |
+| 마켓 만료 임박 (높은 AMM 수수료) | CLOB |
 
 ---
 
-**Next**: [Matching Engine](matching-engine.md) · [Virtual NO Pricing](virtual-no-pricing.md)
+**다음**: [매칭 엔진](matching-engine.md) · [가상 NO 가격 책정](virtual-no-pricing.md)

@@ -1,12 +1,12 @@
 ---
-description: ABI references for all PrediX contracts
+description: すべてのPrediXコントラクトのABIリファレンス
 ---
 
-# ABIs
+# ABI
 
 ## Diamond ABI (MarketFacet)
 
-Key function signatures:
+主要な関数シグネチャ:
 
 ```json
 [
@@ -55,7 +55,7 @@ Key function signatures:
 ]
 ```
 
-## ERC-20 ABI (Outcome Tokens + USDC)
+## ERC-20 ABI (アウトカムトークン + USDC)
 
 ```json
 [
@@ -68,8 +68,8 @@ Key function signatures:
 ]
 ```
 
-> ⚠️ Full ABI JSON files are available in the GitHub repository.
+> ⚠️ 完全なABI JSONファイルはGitHubリポジトリで入手できます。
 
 ---
 
-**Next**: [Create Market](create-market.md) · [Trading Integration](trading-integration.md)
+**次へ**: [マーケット作成](create-market.md) · [取引統合](trading-integration.md)

@@ -1,44 +1,44 @@
 ---
-description: Smart contract architecture and deployment addresses
+description: スマートコントラクトのアーキテクチャとデプロイアドレス
 ---
 
-# Contract Overview
+# コントラクト概要
 
-## Architecture
+## アーキテクチャ
 
-PrediX Protocol consists of 5 core contracts:
+PrediX Protocolは5つのコアコントラクトで構成されています：
 
-| Contract | Address (Unichain Sepolia) | Role |
+| コントラクト | アドレス (Unichain Sepolia) | 役割 |
 | -------- | -------------------------- | ---- |
-| **Diamond** | `0xF38a265E6e4F57D000a1CC08004da5B4A380B08A` | Market management (EIP-2535 proxy) |
-| **Hook** | `0xAe7eA7eba1D3B0815dCA2b43f250428c20ed30c0` | Uniswap v4 hook: dynamic fees + anti-sandwich |
-| **Exchange** | `0xa202abCb2A358c0862B2dA76b553398339F2C638` | On-chain CLOB order book |
-| **Router** | `0xEfc57eB2b5b5BE7E5b8377be23f8D31354811Eb7` | Smart routing: CLOB + AMM aggregation |
+| **Diamond** | `0xF38a265E6e4F57D000a1CC08004da5B4A380B08A` | マーケット管理 (EIP-2535 プロキシ) |
+| **Hook** | `0xAe7eA7eba1D3B0815dCA2b43f250428c20ed30c0` | Uniswap v4 Hook：動的手数料 + サンドイッチ攻撃防止 |
+| **Exchange** | `0xa202abCb2A358c0862B2dA76b553398339F2C638` | オンチェーン CLOB オーダーブック |
+| **Router** | `0xEfc57eB2b5b5BE7E5b8377be23f8D31354811Eb7` | スマートルーティング：CLOB + AMM 統合 |
 | **Oracle** | `0x699A8C74663b1C852E195b2ffa00D5965E992Cf3` | ManualOracleAdapter |
 
-### External Dependencies
+### 外部依存関係
 
-| Contract | Address |
+| コントラクト | アドレス |
 | -------- | ------- |
 | USDC | `0x12fd156C8b5F2901BA2781d97db84AaC56b2b911` |
 | Uniswap v4 PoolManager | `0x00B036B58a818B1BC34d502D3fE730Db729e62AC` |
 
-## Why Diamond Proxy (EIP-2535)
+## Diamond Proxy (EIP-2535) を採用する理由
 
-- **Bypass 24KB limit**: Complex protocol logic exceeds EVM contract size limit
-- **Granular upgrades**: Replace individual functions without redeploying everything
-- **Shared storage**: All facets share the same storage layout
-- **Production-proven**: Used by Aavegotchi, Beanstalk, and others
+- **24KB制限の回避**：複雑なプロトコルロジックがEVMコントラクトサイズ制限を超過
+- **細粒度のアップグレード**：全体の再デプロイなしに個別の関数を置換可能
+- **共有ストレージ**：すべてのFacetが同じストレージレイアウトを共有
+- **本番環境で実績あり**：Aavegotchi、Beanstalkなどで使用
 
-## Chain Information
+## チェーン情報
 
-| Parameter | Value |
+| パラメータ | 値 |
 | --------- | ----- |
-| Network | Unichain Sepolia (Testnet) |
-| Chain ID | `1301` |
+| ネットワーク | Unichain Sepolia (テストネット) |
+| チェーンID | `1301` |
 | RPC | `https://sepolia.unichain.org` |
-| Explorer | `https://sepolia.uniscan.xyz` |
+| エクスプローラー | `https://sepolia.uniscan.xyz` |
 
 ---
 
-**Next**: [Diamond Contract](diamond.md) · [Exchange](exchange.md) · [Router](router.md) · [Hook](hook.md) · [Oracle](oracle.md)
+**次へ**: [Diamond コントラクト](diamond.md) · [Exchange](exchange.md) · [Router](router.md) · [Hook](hook.md) · [Oracle](oracle.md)

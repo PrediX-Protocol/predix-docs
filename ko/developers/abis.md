@@ -1,12 +1,12 @@
 ---
-description: ABI references for all PrediX contracts
+description: 모든 PrediX 컨트랙트의 ABI 참조
 ---
 
-# ABIs
+# ABI
 
 ## Diamond ABI (MarketFacet)
 
-Key function signatures:
+주요 함수 시그니처:
 
 ```json
 [
@@ -55,7 +55,7 @@ Key function signatures:
 ]
 ```
 
-## ERC-20 ABI (Outcome Tokens + USDC)
+## ERC-20 ABI (결과 토큰 + USDC)
 
 ```json
 [
@@ -68,8 +68,8 @@ Key function signatures:
 ]
 ```
 
-> ⚠️ Full ABI JSON files are available in the GitHub repository.
+> ⚠️ 전체 ABI JSON 파일은 GitHub 저장소에서 확인할 수 있습니다.
 
 ---
 
-**Next**: [Create Market](create-market.md) · [Trading Integration](trading-integration.md)
+**다음**: [마켓 생성](create-market.md) · [거래 연동](trading-integration.md)

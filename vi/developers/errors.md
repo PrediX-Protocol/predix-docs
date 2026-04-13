@@ -1,44 +1,44 @@
 ---
-description: Common errors and how to resolve them
+description: Các lỗi phổ biến và cách khắc phục
 ---
 
-# Error Reference
+# Tham chiếu lỗi
 
-## Common Errors
+## Các lỗi phổ biến
 
-| Error | Cause | Solution |
+| Lỗi | Nguyên nhân | Giải pháp |
 | ----- | ----- | -------- |
-| `Market_NotFound` | Invalid marketId | Verify marketId from MarketCreated event |
-| `Market_Ended` | Market's endTime has passed | Cannot trade after expiry |
-| `Market_ExceedsPerTradeCap` | Amount exceeds per-trade safety cap | Reduce trade size |
-| `Market_ExceedsTvlCap` | Total system TVL cap reached | Wait or use smaller amount |
-| `Market_ExceedsPerMarketCap` | Market's collateral cap reached | Use smaller amount |
-| `InvalidPrice` | Price not on $0.01 tick grid | Use multiples of `10000` (6 decimals) |
-| `MaxOrdersExceeded` | User has 50 orders in this market | Cancel existing orders first |
-| `MarketNotActive` | Market expired, resolved, or in refund mode | Check market status |
-| `InsufficientBalance` | Not enough tokens for the operation | Check token balances |
-| `SandwichDetected` | Opposite-direction swap in same block | Wait for next block |
-| `SlippageExceeded` | Output below minOut | Increase slippage or retry |
-| `DeadlineExpired` | Transaction mined after deadline | Set longer deadline |
-| `OnlyFactory` | Attempted direct mint/burn of tokens | Tokens can only be minted via Diamond |
+| `Market_NotFound` | marketId không hợp lệ | Xác minh marketId từ sự kiện MarketCreated |
+| `Market_Ended` | endTime của thị trường đã qua | Không thể giao dịch sau khi hết hạn |
+| `Market_ExceedsPerTradeCap` | Vượt quá giới hạn an toàn mỗi giao dịch | Giảm kích thước giao dịch |
+| `Market_ExceedsTvlCap` | Đạt giới hạn TVL toàn hệ thống | Chờ hoặc dùng số lượng nhỏ hơn |
+| `Market_ExceedsPerMarketCap` | Đạt giới hạn tài sản thế chấp của thị trường | Dùng số lượng nhỏ hơn |
+| `InvalidPrice` | Giá không nằm trên lưới tick $0.01 | Sử dụng bội số của `10000` (6 chữ số thập phân) |
+| `MaxOrdersExceeded` | Người dùng có 50 lệnh trong thị trường này | Hủy các lệnh hiện có trước |
+| `MarketNotActive` | Thị trường đã hết hạn, đã giải quyết hoặc đang ở chế độ hoàn tiền | Kiểm tra trạng thái thị trường |
+| `InsufficientBalance` | Không đủ token cho thao tác | Kiểm tra số dư token |
+| `SandwichDetected` | Hoán đổi ngược chiều trong cùng một khối | Chờ đến khối tiếp theo |
+| `SlippageExceeded` | Đầu ra thấp hơn minOut | Tăng trượt giá hoặc thử lại |
+| `DeadlineExpired` | Giao dịch được đào sau deadline | Đặt deadline dài hơn |
+| `OnlyFactory` | Cố gắng mint/đốt token trực tiếp | Token chỉ có thể được mint qua Diamond |
 
-## Debugging Tips
+## Mẹo gỡ lỗi
 
 ```typescript
 try {
   await router.buyYes(marketId, usdcIn, minYesOut, recipient, deadline);
 } catch (error: any) {
-  // Decode custom error
+  // Giải mã lỗi tùy chỉnh
   const iface = new ethers.Interface(ROUTER_ABI);
   try {
     const decoded = iface.parseError(error.data);
-    console.error("Custom error:", decoded?.name, decoded?.args);
+    console.error("Lỗi tùy chỉnh:", decoded?.name, decoded?.args);
   } catch {
-    console.error("Raw error:", error.message);
+    console.error("Lỗi gốc:", error.message);
   }
 }
 ```
 
 ---
 
-**Next**: [Developer Quickstart](quickstart.md) · [Trading Integration](trading-integration.md)
+**Tiếp theo**: [Hướng dẫn nhanh cho nhà phát triển](quickstart.md) · [Tích hợp giao dịch](trading-integration.md)

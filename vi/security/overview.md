@@ -1,40 +1,40 @@
 ---
-description: Security posture — audits, testing, and safety mechanisms
+description: Tinh trang bao mat — kiem toan, thu nghiem va co che an toan
 ---
 
-# Security Overview
+# Tong quan Bao mat
 
-## Audit Summary
+## Tom tat Kiem toan
 
-| Metric | Value |
+| Chi so | Gia tri |
 | ------ | ----- |
-| Source files | 44 Solidity files, 6,222 lines |
-| Unit tests | 264 tests, 0 failures |
-| Fuzz tests | 14 tests × 10,000 runs |
-| On-chain E2E | 31 tests on Unichain Sepolia |
-| Audit reports | 3 independent reviews cross-verified |
-| Slither analysis | 0 real security issues |
-| OWASP coverage | 10/10 categories (SC Top 10 2026) |
-| Security fixes | 22 bugs found and fixed |
+| Tep nguon | 44 tep Solidity, 6.222 dong |
+| Kiem thu don vi | 264 bai thu, 0 that bai |
+| Kiem thu fuzz | 14 bai thu x 10.000 lan chay |
+| E2E tren chuoi | 31 bai thu tren Unichain Sepolia |
+| Bao cao kiem toan | 3 danh gia doc lap duoc kiem chung cheo |
+| Phan tich Slither | 0 van de bao mat thuc te |
+| Phu OWASP | 10/10 danh muc (SC Top 10 2026) |
+| Sua loi bao mat | 22 loi duoc phat hien va sua |
 
-## Safety Mechanisms
+## Co che An toan
 
-1. **Safety Caps**: TVL, per-trade, per-market limits (configurable)
-2. **Pause**: PAUSER can freeze specific modules or entire system
-3. **Emergency Resolve**: OPERATOR can resolve after 7-day delay
-4. **Refund Mode**: Proportional refund for problematic markets
-5. **Anti-Sandwich**: Hook-level detection (same block, opposite direction)
-6. **Reentrancy Guards**: 3 independent guards across contracts
-7. **Two-Step Ownership**: Prevents accidental ownership transfer
+1. **Gioi han an toan**: Gioi han TVL, moi giao dich, moi thi truong (co the cau hinh)
+2. **Tam dung**: PAUSER co the dong bang cac module cu the hoac toan bo he thong
+3. **Quyet toan khan cap**: OPERATOR co the quyet toan sau 7 ngay tre
+4. **Che do hoan tien**: Hoan tien ty le cho cac thi truong co van de
+5. **Chong sandwich**: Phat hien o cap Hook (cung block, huong nguoc lai)
+6. **Bao ve tai nhap**: 3 bao ve doc lap tren cac contract
+7. **So huu hai buoc**: Ngan chan chuyen quyen so huu nham
 
-## Smart Contract Risks
+## Rui ro Smart Contract
 
-While PrediX has undergone extensive testing and auditing, smart contract risk can never be fully eliminated. Users should:
+Mac du PrediX da trai qua thu nghiem va kiem toan rong rai, rui ro smart contract khong bao gio co the loai bo hoan toan. Nguoi dung nen:
 
-- Start with small amounts
-- Understand the risks of prediction market trading
-- Never invest more than they can afford to lose
+- Bat dau voi so luong nho
+- Hieu ro rui ro cua giao dich thi truong du doan
+- Khong bao gio dau tu nhieu hon muc co the chap nhan mat
 
 ---
 
-**Next**: [Audit Reports](audit-reports.md) · [Bug Bounty](bug-bounty.md) · [Safety Mechanisms](../contracts/safety.md)
+**Tiep theo**: [Bao cao Kiem toan](audit-reports.md) · [Chuong trinh Bug Bounty](bug-bounty.md) · [Co che An toan](../contracts/safety.md)

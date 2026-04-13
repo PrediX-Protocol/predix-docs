@@ -1,56 +1,56 @@
 ---
-description: YES and NO tokens — ERC-20 standard with full DeFi composability
+description: Token YES và NO — tiêu chuẩn ERC-20 với khả năng kết hợp DeFi đầy đủ
 ---
 
-# Outcome Tokens
+# Token kết quả
 
-## Overview
+## Tổng quan
 
-Each PrediX market creates two **ERC-20** outcome tokens:
+Mỗi thị trường PrediX tạo ra hai token kết quả **ERC-20**:
 
-| Token | Pays $1.00 if... | Pays $0.00 if... |
+| Token | Trả $1.00 nếu... | Trả $0.00 nếu... |
 | ----- | ----------------- | ----------------- |
-| **YES** | Event occurs | Event does not occur |
-| **NO** | Event does not occur | Event occurs |
+| **YES** | Sự kiện xảy ra | Sự kiện không xảy ra |
+| **NO** | Sự kiện không xảy ra | Sự kiện xảy ra |
 
-## Technical Specifications
+## Thông số kỹ thuật
 
-| Property | Value |
-| -------- | ----- |
-| Standard | ERC-20 + ERC-2612 (Permit) |
-| Decimals | 6 (matches USDC) |
-| Mintable by | Diamond contract only (`onlyFactory` modifier) |
-| Burnable by | Diamond contract only |
-| Immutable fields | `factory`, `marketId`, `isYesToken` |
+| Thuộc tính | Giá trị |
+| ---------- | ------- |
+| Tiêu chuẩn | ERC-20 + ERC-2612 (Permit) |
+| Số thập phân | 6 (giống USDC) |
+| Quyền phát hành | Chỉ hợp đồng Diamond (bộ điều chỉnh `onlyFactory`) |
+| Quyền đốt | Chỉ hợp đồng Diamond |
+| Trường bất biến | `factory`, `marketId`, `isYesToken` |
 
 ## ERC-2612 Permit
 
-Outcome tokens support gasless approvals via the `permit` function. This allows users to approve and transfer in a single transaction using off-chain signatures.
+Token kết quả hỗ trợ phê duyệt không gas thông qua hàm `permit`. Điều này cho phép người dùng phê duyệt và chuyển trong một giao dịch duy nhất sử dụng chữ ký ngoại chuỗi.
 
 ```typescript
-// Sign a permit off-chain
+// Ký permit ngoại chuỗi
 const deadline = Math.floor(Date.now() / 1000) + 3600;
 const nonce = await yesToken.nonces(userAddress);
 const signature = await signer.signTypedData(domain, types, { owner, spender, value, nonce, deadline });
 
-// Execute permit on-chain (no prior approve needed)
+// Thực thi permit trên chuỗi (không cần approve trước)
 await yesToken.permit(owner, spender, value, deadline, v, r, s);
 ```
 
-## Core Invariant
+## Bất biến cốt lõi
 
 ```
 YES.totalSupply == NO.totalSupply == market.totalCollateral
 ```
 
-This invariant holds true across **all** operations: `splitPosition`, `mergePositions`, `groupSplit`, `groupMerge`, `redeemMarketTokens`, and `refund`.
+Bất biến này được duy trì qua **tất cả** các thao tác: `splitPosition`, `mergePositions`, `groupSplit`, `groupMerge`, `redeemMarketTokens` và `refund`.
 
-## Address Generation
+## Tạo địa chỉ
 
-YES token addresses must be less than the USDC address (Uniswap v4 pool ordering requirement). PrediX uses **CREATE2 salt mining** to deterministically find compliant addresses.
+Địa chỉ token YES phải nhỏ hơn địa chỉ USDC (yêu cầu sắp xếp pool Uniswap v4). PrediX sử dụng **khai thác salt CREATE2** để tìm địa chỉ phù hợp một cách xác định.
 
-> ⚠️ **Important**: Outcome tokens can ONLY be minted and burned by the Diamond contract. There is no public mint function.
+> ⚠️ **Quan trọng**: Token kết quả CHỈ có thể được phát hành và đốt bởi hợp đồng Diamond. Không có hàm phát hành công khai.
 
 ---
 
-**Next**: [Split & Merge](split-and-merge.md) · [Fees](fees.md) · [Trading Overview](../trading/overview.md)
+**Tiếp theo**: [Tách & Gộp](split-and-merge.md) · [Phí](fees.md) · [Tổng quan giao dịch](../trading/overview.md)

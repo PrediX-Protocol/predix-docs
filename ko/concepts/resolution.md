@@ -1,72 +1,72 @@
 ---
-description: How markets are resolved and how winners redeem
+description: 마켓 결과 확정 방법과 승자 상환 절차
 ---
 
-# Resolution
+# 결과 확정
 
-## Market Lifecycle
+## 마켓 생명주기
 
 ```
-Created → Active (trading) → Expired → Resolved → Redeemable
-                                ↓
-                        Emergency (7 days) → Emergency Resolved
-                                ↓
-                        Refund Mode → Users Refund
+생성됨 → 활성 (거래 중) → 만료됨 → 결과 확정됨 → 상환 가능
+                           ↓
+                   비상 (7일) → 비상 결과 확정
+                           ↓
+                   환불 모드 → 사용자 환불
 ```
 
-## Normal Resolution
+## 일반 결과 확정
 
-1. Market reaches `endTime` (trading continues but no new splits)
-2. Oracle reports outcome: `resolve(marketId, true/false)`
-3. Anyone calls `resolveMarket(marketId)` on the Diamond
-4. Market is marked as resolved
-5. Winners call `redeemMarketTokens(marketId)`
+1. 마켓이 `endTime`에 도달 (거래는 계속되지만 새로운 분할은 불가)
+2. 오라클이 결과 보고: `resolve(marketId, true/false)`
+3. 누구나 Diamond에서 `resolveMarket(marketId)` 호출 가능
+4. 마켓이 결과 확정됨으로 표시
+5. 승자가 `redeemMarketTokens(marketId)` 호출
 
 ```typescript
-// Step 1: Resolve (anyone can call after oracle reports)
+// 1단계: 결과 확정 (오라클 보고 후 누구나 호출 가능)
 await diamond.resolveMarket(marketId);
 
-// Step 2: Redeem winning tokens
+// 2단계: 승리 토큰 상환
 await diamond.redeemMarketTokens(marketId);
-// Winners receive 1 USDC per winning token
+// 승자는 승리 토큰당 1 USDC를 받음
 ```
 
-## Emergency Resolution
+## 비상 결과 확정
 
-If the oracle fails to report within 7 days after `endTime`:
+`endTime` 이후 7일 이내에 오라클이 보고하지 않는 경우:
 
-1. An `OPERATOR` can call `emergencyResolve(marketId, outcome)`
-2. This bypasses the oracle and sets the outcome directly
+1. `OPERATOR`가 `emergencyResolve(marketId, outcome)`를 호출 가능
+2. 오라클을 우회하여 결과를 직접 설정
 
-> ⚠️ Emergency resolution requires a **7-day delay** after `endTime` and can only be called by the OPERATOR role.
+> ⚠️ 비상 결과 확정은 `endTime` 이후 **7일의 지연**이 필요하며, OPERATOR 역할만 호출할 수 있습니다.
 
-## Refund Mode
+## 환불 모드
 
-If a market is deemed invalid or problematic:
+마켓이 무효 또는 문제가 있다고 판단될 경우:
 
-1. `OPERATOR` calls `enableRefundMode(marketId)`
-2. All trading is blocked (split, merge, CLOB, AMM)
-3. Token holders call `refund(marketId)`
-4. Each holder receives USDC proportional to their YES + NO balance
+1. `OPERATOR`가 `enableRefundMode(marketId)` 호출
+2. 모든 거래가 차단됨 (분할, 병합, CLOB, AMM)
+3. 토큰 보유자가 `refund(marketId)` 호출
+4. 각 보유자는 YES + NO 잔액에 비례하여 USDC를 받음
 
 ```typescript
-// Operator enables refund
+// 운영자가 환불 활성화
 await diamond.enableRefundMode(marketId);
 
-// Users claim proportional refund
+// 사용자가 비례 환불 청구
 await diamond.refund(marketId);
 ```
 
-## Category Resolution
+## 카테고리 결과 확정
 
-For multi-outcome markets:
+다중 결과 마켓의 경우:
 
 ```typescript
-// Admin resolves the category: winner is outcome index 2
+// 관리자가 카테고리 결과 확정: 승자는 결과 인덱스 2
 await diamond.resolveCategory(categoryId, 2);
-// All markets in the category are resolved atomically
+// 카테고리 내 모든 마켓이 원자적으로 결과 확정
 ```
 
 ---
 
-**Next**: [Multi-Outcome Markets](multi-outcome-markets.md) · [Fees](fees.md) · [Oracle Contract](../contracts/oracle.md)
+**다음**: [다중 결과 마켓](multi-outcome-markets.md) · [수수료](fees.md) · [오라클 컨트랙트](../contracts/oracle.md)

@@ -1,25 +1,25 @@
 ---
-description: Step-by-step guide to providing AMM liquidity
+description: Huong dan tung buoc cung cap thanh khoan AMM
 ---
 
-# Providing Liquidity
+# Cung cap Thanh khoan
 
-## Overview
+## Tong quan
 
-AMM liquidity is provided to the Uniswap v4 YES/USDC pool via the PositionManager.
+Thanh khoan AMM duoc cung cap cho pool YES/USDC cua Uniswap v4 thong qua PositionManager.
 
-## Steps
+## Cac buoc
 
-### 1. Split USDC into YES + NO
+### 1. Tach USDC thanh YES + NO
 
 ```typescript
 const amount = ethers.parseUnits("1000", 6); // 1000 USDC
 await usdc.approve(DIAMOND_ADDRESS, amount);
 await diamond.splitPosition(marketId, amount);
-// Now you have 1000 YES + 1000 NO
+// Bay gio ban co 1000 YES + 1000 NO
 ```
 
-### 2. Approve YES and USDC to PositionManager
+### 2. Phe duyet YES va USDC cho PositionManager
 
 ```typescript
 const yesToken = new ethers.Contract(market.yesToken, ERC20_ABI, signer);
@@ -27,21 +27,21 @@ await yesToken.approve(POSITION_MANAGER, ethers.MaxUint256);
 await usdc.approve(POSITION_MANAGER, ethers.MaxUint256);
 ```
 
-### 3. Mint LP Position
+### 3. Mint vi the LP
 
-Use the Uniswap v4 PositionManager to create a liquidity position in the YES/USDC pool. You can choose:
+Su dung Uniswap v4 PositionManager de tao vi the thanh khoan trong pool YES/USDC. Ban co the chon:
 
-- **Full-range**: Covers $0.01–$0.99, less capital efficient
-- **Concentrated**: Covers a narrow range (e.g., $0.40–$0.70), more capital efficient
+- **Toan bo pham vi**: Bao phu $0.01–$0.99, hieu qua von thap hon
+- **Tap trung**: Bao phu pham vi hep (vi du: $0.40–$0.70), hieu qua von cao hon
 
-### 4. When to Remove
+### 4. Khi nao nen rut
 
-- Remove LP **at least 24 hours** before market expiry (when fees jump to 5%)
-- Monitor the market — if outcome becomes certain early, remove immediately
-- After resolution, the losing token is worth $0
+- Rut LP **it nhat 24 gio** truoc khi thi truong het han (khi phi tang len 5%)
+- Theo doi thi truong — neu ket qua tro nen chac chan som, rut ngay lap tuc
+- Sau khi quyet toan, token thua co gia tri $0
 
-> ⚠️ **Note**: The NO tokens from split can be sold or held separately. They are not needed for LP.
+> ⚠️ **Luu y**: Token NO tu viec tach co the ban hoac giu rieng. Chung khong can thiet cho LP.
 
 ---
 
-**Next**: [Market Making](market-making.md) · [Liquidity Overview](overview.md)
+**Tiep theo**: [Tao lap Thi truong](market-making.md) · [Tong quan Thanh khoan](overview.md)

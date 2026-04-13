@@ -1,51 +1,51 @@
 ---
-description: Uniswap v4 Hook — dynamic fees, anti-sandwich, pool management
+description: Uniswap v4 Hook — 동적 수수료, 샌드위치 공격 방지, 풀 관리
 ---
 
-# Hook Contract
+# Hook 컨트랙트
 
-PrediXHookV1 is a Uniswap v4 Hook that adds prediction-market-specific logic to AMM pools.
+PrediXHookV1은 AMM 풀에 예측 시장 전용 로직을 추가하는 Uniswap v4 Hook입니다.
 
-## Hook Permissions
+## Hook 권한
 
-| Hook Point | Enabled | Purpose |
+| Hook 포인트 | 활성화 | 목적 |
 | ---------- | ------- | ------- |
-| `beforeInitialize` | ✅ | Validate pool registration |
-| `afterInitialize` | ✅ | Setup pool metadata |
-| `beforeSwap` | ✅ | Dynamic fee + anti-sandwich check |
-| `afterSwap` | ✅ | Record swap data, emit events |
+| `beforeInitialize` | ✅ | 풀 등록 검증 |
+| `afterInitialize` | ✅ | 풀 메타데이터 설정 |
+| `beforeSwap` | ✅ | 동적 수수료 + 샌드위치 공격 검사 |
+| `afterSwap` | ✅ | 스왑 데이터 기록, 이벤트 발행 |
 
-## Dynamic Fee Calculation
+## 동적 수수료 계산
 
-Fees increase as markets approach expiry to protect LPs from informed traders:
+마켓 만료가 가까워질수록 수수료가 증가하여 정보를 가진 트레이더로부터 LP를 보호합니다:
 
-| Time Remaining | Fee |
+| 잔여 시간 | 수수료 |
 | -------------- | --- |
-| > 7 days | 0.5% |
-| 3–7 days | 1.0% |
-| 1–3 days | 2.0% |
-| < 24 hours | 5.0% |
+| > 7일 | 0.5% |
+| 3~7일 | 1.0% |
+| 1~3일 | 2.0% |
+| < 24시간 | 5.0% |
 
-## Anti-Sandwich Protection
+## 샌드위치 공격 방지
 
-The Hook tracks each swap as `(block.number, direction)` per user per pool. If the same user swaps in opposite directions within the same block, the transaction reverts with `SandwichDetected()`.
+Hook은 사용자별 풀별로 각 스왑을 `(block.number, direction)`으로 추적합니다. 동일 사용자가 같은 블록 내에서 반대 방향으로 스왑하면 `SandwichDetected()` 오류와 함께 트랜잭션이 되돌려집니다.
 
-**Trusted Router**: The Hook extracts the actual user address from `hookData` instead of using `msg.sender`, so the Router can execute on behalf of users without triggering false positives.
+**신뢰된 Router**: Hook은 `msg.sender` 대신 `hookData`에서 실제 사용자 주소를 추출하므로, Router가 사용자를 대신하여 실행할 때 오탐이 발생하지 않습니다.
 
-## Functions
+## 함수
 
 ```solidity
-// Called by Diamond only
+// Diamond만 호출 가능
 registerMarketPool(bytes32 marketId, address yesToken, PoolKey key)
 setTrustedRouter(address router, bool trusted)
 
-// Called once during deployment
+// 배포 시 한 번만 호출
 initialize(address diamond, address usdc, address admin)
 
-// View
+// 조회
 getMarketForPool(PoolId poolId) → bytes32 marketId
 ```
 
 ---
 
-**Next**: [Oracle](oracle.md) · [Fees](../concepts/fees.md) · [Safety](safety.md)
+**다음**: [Oracle](oracle.md) · [수수료](../concepts/fees.md) · [안전장치](safety.md)

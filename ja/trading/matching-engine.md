@@ -1,43 +1,43 @@
 ---
-description: Three-phase matching algorithm — COMPLEMENTARY, MINT, and MERGE
+description: 3段階マッチングアルゴリズム — COMPLEMENTARY、MINT、MERGE
 ---
 
-# Matching Engine
+# マッチングエンジン
 
-The PrediXExchange uses a 99-tick bitmap for gas-efficient order scanning across three matching types.
+PrediXExchangeは3つのマッチングタイプにわたるガス効率の良い注文スキャンのために99ティックビットマップを使用します。
 
-## Match Types
+## マッチングタイプ
 
-### COMPLEMENTARY — Direct Swap
+### COMPLEMENTARY — ダイレクトスワップ
 
-Two opposite orders for the same token:
+同一トークンに対する2つの反対注文：
 
 ```
 BUY_YES @ $0.60  ↔  SELL_YES @ $0.50
-→ Match at maker price ($0.50)
-→ Buyer gets YES, seller gets USDC
-→ Buyer receives $0.10 price improvement (refund)
+→ メイカー価格（$0.50）でマッチング
+→ 買い手がYESを受領、売り手がUSDCを受領
+→ 買い手は$0.10の価格改善（返金）
 ```
 
-### MINT — Both Sides Buying (sum ≥ $1.00)
+### MINT — 両方が購入（合計 >= $1.00）
 
 ```
 BUY_YES @ $0.60  +  BUY_NO @ $0.50  =  $1.10 ≥ $1.00
-→ Split USDC → YES + NO
-→ YES delivered to YES buyer, NO delivered to NO buyer
-→ Surplus $0.10 → protocol fee
+→ USDCをスプリット → YES + NO
+→ YESをYES購入者に、NOをNO購入者に配送
+→ 余剰$0.10 → プロトコル手数料
 ```
 
-### MERGE — Both Sides Selling (sum ≤ $1.00)
+### MERGE — 両方が売却（合計 <= $1.00）
 
 ```
 SELL_YES @ $0.40  +  SELL_NO @ $0.50  =  $0.90 ≤ $1.00
-→ Merge YES + NO → USDC
-→ USDC split between sellers by price
-→ Surplus $0.10 → protocol fee
+→ YES + NOをマージ → USDC
+→ USDCを価格に基づいて売り手間で分配
+→ 余剰$0.10 → プロトコル手数料
 ```
 
-## MatchType Enum
+## MatchType列挙型
 
 ```solidity
 enum MatchType {
@@ -47,15 +47,15 @@ enum MatchType {
 }
 ```
 
-## Matching Priority
+## マッチング優先順位
 
-When a new order is placed, the engine attempts matching in this order:
+新しい注文が配置されると、エンジンは以下の順序でマッチングを試みます：
 
-1. **COMPLEMENTARY** — check for direct counterparty orders
-2. **MINT** — check if opposite-side buy orders can pair
-3. **MERGE** — check if opposite-side sell orders can pair
-4. **Rest** — unfilled amount becomes a resting order on the book
+1. **COMPLEMENTARY** — 直接の対手方注文を確認
+2. **MINT** — 反対サイドの買い注文とペアにできるか確認
+3. **MERGE** — 反対サイドの売り注文とペアにできるか確認
+4. **残余** — 未約定数量はオーダーブック上の待機注文となる
 
 ---
 
-**Next**: [Order Book](order-book.md) · [Virtual NO Pricing](virtual-no-pricing.md)
+**次へ**: [オーダーブック](order-book.md) · [仮想NO価格設定](virtual-no-pricing.md)

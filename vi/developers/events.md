@@ -1,10 +1,10 @@
 ---
-description: All protocol events with signatures and listening examples
+description: Tất cả sự kiện giao thức với chữ ký và ví dụ lắng nghe
 ---
 
-# Events
+# Sự kiện
 
-## MarketFacet Events
+## Sự kiện MarketFacet
 
 ```solidity
 event MarketCreated(bytes32 indexed marketId, string question, string description, uint256 endTime, address yesToken, address noToken, PoolId poolId, bytes32 categoryId, address oracle);
@@ -22,7 +22,7 @@ event RefundModeEnabled(bytes32 indexed marketId);
 event MarketRefunded(bytes32 indexed marketId, address indexed user, uint256 amount);
 ```
 
-## Exchange Events
+## Sự kiện Exchange
 
 ```solidity
 event OrderPlaced(bytes32 indexed orderId, bytes32 indexed marketId, address indexed owner, Side side, uint256 price, uint256 amount);
@@ -31,36 +31,36 @@ event OrderCancelled(bytes32 indexed orderId);
 event FeeCollected(bytes32 indexed marketId, uint256 amount);
 ```
 
-## Router Events
+## Sự kiện Router
 
 ```solidity
 event Trade(bytes32 indexed marketId, address indexed trader, uint8 tradeType, uint256 amountIn, uint256 amountOut, uint256 yesPrice);
 ```
 
-## Hook Events
+## Sự kiện Hook
 
 ```solidity
 event PoolRegistered(bytes32 indexed marketId, PoolId indexed poolId, address yesToken, address usdcToken);
 event MarketTraded(bytes32 indexed marketId, address indexed trader, bool isBuy, uint256 amount, uint256 cost, uint8 side, uint256 yesPrice);
 ```
 
-## Listening Example
+## Ví dụ lắng nghe
 
 ```typescript
-// Listen for new trades
+// Lắng nghe giao dịch mới
 router.on("Trade", (marketId, trader, tradeType, amountIn, amountOut, yesPrice) => {
-  console.log(`Trade on ${marketId}:`);
-  console.log(`  Trader: ${trader}`);
-  console.log(`  In: ${ethers.formatUnits(amountIn, 6)}`);
-  console.log(`  Out: ${ethers.formatUnits(amountOut, 6)}`);
-  console.log(`  YES price: $${ethers.formatUnits(yesPrice, 6)}`);
+  console.log(`Giao dịch trên ${marketId}:`);
+  console.log(`  Nhà giao dịch: ${trader}`);
+  console.log(`  Đầu vào: ${ethers.formatUnits(amountIn, 6)}`);
+  console.log(`  Đầu ra: ${ethers.formatUnits(amountOut, 6)}`);
+  console.log(`  Giá YES: $${ethers.formatUnits(yesPrice, 6)}`);
 });
 
-// Query historical events
+// Truy vấn sự kiện lịch sử
 const filter = diamond.filters.MarketCreated();
-const events = await diamond.queryFilter(filter, -10000); // Last 10K blocks
+const events = await diamond.queryFilter(filter, -10000); // 10K khối gần nhất
 ```
 
 ---
 
-**Next**: [Errors](errors.md) · [Contract Overview](../contracts/overview.md)
+**Tiếp theo**: [Lỗi](errors.md) · [Tổng quan hợp đồng](../contracts/overview.md)
