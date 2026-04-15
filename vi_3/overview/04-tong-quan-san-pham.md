@@ -2,9 +2,9 @@
 
 ### 4.1 Kiến Trúc Protocol
 
-PrediX là prediction market hoàn toàn on-chain trên Unichain (L2 OP Stack). Non-custodial — người dùng luôn giữ key riêng. Năm module smart contract cốt lõi:
+PrediX là prediction market hoàn toàn on-chain trên Unichain (L2 OP Stack). Non-custodial :  người dùng luôn giữ key riêng. Năm module smart contract cốt lõi:
 
-* **Diamond Proxy (EIP-2535):** 6 facets — Cut, Loupe, AccessControl, Ownable, Pausable, Market. Nâng cấp module không cần redeploy
+* **Diamond Proxy (EIP-2535):** 6 facets : Cut, Loupe, AccessControl, Ownable, Pausable, Market. Nâng cấp module không cần redeploy
 * **Exchange (CLOB):** Sổ lệnh on-chain 99-tick bitmap, limit order $0,01–$0,99 theo bước $0,01
 * **Router (Smart Router):** Tổng hợp AMM + CLOB, route tối ưu, flash accounting đa bước nguyên tử
 * **Hook (Uniswap v4):** Phí dynamic time-decay, chống sandwich, buyNo/sellNo nguyên tử
@@ -52,6 +52,6 @@ USDC deposit/withdraw qua Circle CCTP V2 (native mint/burn, <30 giây). Oracle c
 
 ### 4.8 Địa Chỉ Contract (Unichain Sepolia Testnet)
 
-<table><thead><tr><th width="203">Contract</th><th>Địa chỉ</th></tr></thead><tbody><tr><td>Diamond</td><td>0xF38a265E6e4F57D000a1CC08004da5B4A380B08A</td></tr><tr><td>Hook</td><td>0xAe7eA7eba1D3B0815dCA2b43f250428c20ed30c0</td></tr><tr><td>Exchange</td><td>0xa202abCb2A358c0862B2dA76b553398339F2C638</td></tr><tr><td>Router</td><td>0xEfc57eB2b5b5BE7E5b8377be23f8D31354811Eb7</td></tr><tr><td>Oracle</td><td>0x699A8C74663b1C852E195b2ffa00D5965E992Cf3</td></tr><tr><td>USDC</td><td>0x12fd156C8b5F2901BA2781d97db84AaC56b2b911</td></tr><tr><td>Pool Manager</td><td>0x00B036B58a818B1BC34d502D3fE730Db729e62AC</td></tr></tbody></table>
+<table><thead><tr><th width="182.1640625">Contract</th><th>Địa chỉ</th></tr></thead><tbody><tr><td>Diamond</td><td>0xF38a265E6e4F57D000a1CC08004da5B4A380B08A</td></tr><tr><td>Hook</td><td>0xAe7eA7eba1D3B0815dCA2b43f250428c20ed30c0</td></tr><tr><td>Exchange</td><td>0xa202abCb2A358c0862B2dA76b553398339F2C638</td></tr><tr><td>Router</td><td>0xEfc57eB2b5b5BE7E5b8377be23f8D31354811Eb7</td></tr><tr><td>Oracle</td><td>0x699A8C74663b1C852E195b2ffa00D5965E992Cf3</td></tr><tr><td>USDC</td><td>0x12fd156C8b5F2901BA2781d97db84AaC56b2b911</td></tr><tr><td>Pool Manager</td><td>0x00B036B58a818B1BC34d502D3fE730Db729e62AC</td></tr></tbody></table>
 
 Chain ID: 1301 (Unichain Sepolia)

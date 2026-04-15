@@ -1,6 +1,6 @@
 # 7. Tokenomics
 
-Tổng cung: 1.000.000.000 PREDIX | Giá khởi điểm: $0,015 | FDV tại TGE: $15M
+Tổng cung: 1.000.000.000 PRX | Giá khởi điểm: $0,015 | FDV tại TGE: $15M
 
 ### 7.1 Phân Bổ Token
 
@@ -12,7 +12,7 @@ Tổng cung: 1.000.000.000 PREDIX | Giá khởi điểm: $0,015 | FDV tại TGE:
 
 ### 7.2.1 Staking & Chia Sẻ Doanh Thu
 
-* **Cơ chế:** Stake PREDIX → nhận 50% tổng phí giao dịch protocol bằng USDC
+* **Cơ chế:** Stake PRX → nhận 50% tổng phí giao dịch protocol bằng USDC
 * **Real yield:** Doanh thu từ phí thật, không phải token lạm phát. APY scale tuyến tính theo volume
 * **Ví dụ:** $500K volume/tháng × 1% phí trung bình = $5K USDC/tháng cho pool staker
 * **Activation:** P0 — từ TGE
@@ -20,25 +20,25 @@ Tổng cung: 1.000.000.000 PREDIX | Giá khởi điểm: $0,015 | FDV tại TGE:
 
 ### 7.2.2 Oracle & Giải Quyết Tranh Chấp
 
-* **Cơ chế:** Stake PREDIX để vote kết quả tranh chấp qua commit-reveal voting (hash trước, reveal sau để chống front-running)
+* **Cơ chế:** Stake PRX để vote kết quả tranh chấp qua commit-reveal voting (hash trước, reveal sau để chống front-running)
 * **Incentive:** Vote đúng → nhận thưởng từ dispute bond. Vote sai → bị slash theo tỷ lệ
-* **Escalation:** Tranh chấp vượt 10% vốn hoá PREDIX → chuyển lên multi-sig
+* **Escalation:** Tranh chấp vượt 10% vốn hoá PRX → chuyển lên multi-sig
 * **Price markets:** Tự động resolve qua Chainlink feeds (VD: “BTC > $200K”)
 * **Activation:** P1 — từ mainnet
 * **Ref:** UMA DVM (Optimistic Oracle + bond mechanism). PrediX mở rộng bằng commit-reveal thay vì optimistic window
 
-### 7.2.3 Gauge Voting (vePREDIX)
+### 7.2.3 Gauge Voting (vePRX)
 
-* **Cơ chế:** Khoá PREDIX → nhận vePREDIX (khoá 1–12 tháng, khoá lâu = nhiều voting power hơn)
+* **Cơ chế:** Khoá PRX → nhận vePRX (khoá 1–12 tháng, khoá lâu = nhiều voting power hơn)
 * **Tác dụng:** vePREDIX holders vote hàng tuần market nào nhận trợ cấp LP từ treasury
-* **Flywheel:** Market được vote nhiều → thanh khoản sâu → volume cao → phí nhiều → yield staker tăng → demand PREDIX tăng
+* **Flywheel:** Market được vote nhiều → thanh khoản sâu → volume cao → phí nhiều → yield staker tăng → demand PRX tăng
 * **Differentiator:** “Curve Wars” cho prediction markets — không đối thủ nào có cơ chế này
 * **Activation:** P0 — từ TGE
 * **Ref:** Curve veCRV (khoá CRV → vote gauge → $4B TVL locked). Balancer veBAL. PrediX áp dụng mô hình đã proven cho vertical mới
 
 ### 7.2.4 Giảm Phí Theo Tầng
 
-* **Cơ chế:** Stake PREDIX đạt ngưỡng → giảm phí giao dịch 20–50%
+* **Cơ chế:** Stake PRX đạt ngưỡng → giảm phí giao dịch 20–50%
 * **Điều kiện giữ tầng:** Kết hợp với volume giao dịch tối thiểu hàng tháng
 * **Tầng (dự kiến):** Bronze (giảm 10%), Silver (giảm 20%), Gold (giảm 35%), Diamond (giảm 50%)
 * **Activation:** P0 — từ TGE
@@ -54,7 +54,7 @@ Tổng cung: 1.000.000.000 PREDIX | Giá khởi điểm: $0,015 | FDV tại TGE:
 
 ### 7.2.6 Bond Tạo Market
 
-* **Cơ chế:** Stake 10.000 PREDIX để tạo market không cần phép (permissionless)
+* **Cơ chế:** Stake 10.000 PRX để tạo market không cần phép (permissionless)
 * **Incentive:** Resolve hợp lệ → hoàn bond + thưởng (5–10% phí market). Spam/thao túng → slash toàn bộ bond
 * **Tác dụng:** Bộ lọc chất lượng + tạo demand cấu trúc cho PREDIX khi số lượng market scale
 * **Activation:** P1 — M+3 sau mainnet
@@ -62,9 +62,9 @@ Tổng cung: 1.000.000.000 PREDIX | Giá khởi điểm: $0,015 | FDV tại TGE:
 
 ### 7.2.7 Collateral Yield Sharing
 
-* **Cơ chế:** vePREDIX holders nhận phần chia từ yield trên idle USDC collateral (70% USDC protocol → Aave v3 \~4% APY)
+* **Cơ chế:** vePRX holders nhận phần chia từ yield trên idle USDC collateral (70% USDC protocol → Aave v3 \~4% APY)
 * **Tác dụng:** Tạo thêm nguồn real yield ngoài phí giao dịch, scale theo TVL thay vì volume
-* **Ví dụ:** Tại TVL $50M → \~$1,4M yield/năm → chia cho vePREDIX holders
+* **Ví dụ:** Tại TVL $50M → \~$1,4M yield/năm → chia cho vePRX holders
 * **Activation:** P2 — M+12 sau TGE
 * **Ref:** GMX (GLP yield sharing -70% phí cho staker). Polymarket giữ $416M USDC nhàn rỗi ở 0% yield — PrediX biến thành nguồn doanh thu
 

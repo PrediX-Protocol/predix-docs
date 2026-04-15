@@ -28,4 +28,4 @@ Prediction market không còn là thí nghiệm mà hiện nay các tổ chức 
 
 FIFA World Cup 2026 (tháng 6–7/2026) sẽ là giải đấu lớn nhất lịch sử: 48 đội, 104 trận, diễn ra tại Mỹ, Canada và Mexico. Để tham chiếu, chỉ riêng Super Bowl 2026 đã tạo hơn $1B volume trên các nền tảng dự đoán.
 
-PrediX đặt mục tiêu ra mắt  t /rước thời điểm khai mạc giải đấu, tận dụng sự kiện thể thao lớn nhất hành tinh làm điểm khởi động cho việc thu hút người dùng tại khu vực APAC.
+PrediX đặt mục tiêu ra mắt nền tảng trước thời điểm khai mạc giải đấu, tận dụng sự kiện thể thao lớn nhất hành tinh làm điểm khởi động cho việc thu hút người dùng tại khu vực APAC.

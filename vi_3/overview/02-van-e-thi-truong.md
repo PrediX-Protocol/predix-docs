@@ -14,7 +14,7 @@ AMM prediction market (Augur, Omen) yêu cầu LP phủ full range $0–$1 → 6
 
 ### 2.3 Oracle Resolution Tập Trung
 
-Hầu hết nền tảng chỉ có 1 oracle hoặc giải quyết bởi admin. Cần hệ thống pluggable — chọn oracle phù hợp cho từng loại market.
+Hầu hết nền tảng chỉ có 1 oracle hoặc giải quyết bởi admin. Cần hệ thống pluggable chọn oracle phù hợp cho từng loại market.
 
 ### 2.4 Người Dùng Không Sở Hữu Gì
 
