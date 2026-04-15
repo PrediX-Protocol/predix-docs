@@ -11,11 +11,11 @@
 | Volume thấp | TB | FIFA WC catalyst, văn hoá APAC, hoà vốn $4,5–7M khả thi |
 | Thực thi team | THẤP | Contracts deployed, 264 tests, SP Labs đồng tài trợ 40% |
 
-
 ## Kiến Trúc An Ninh
-Safety Caps: TVL, per-trade, per-market (configurable)
-Pause Module: Tạm dừng từng facet hoặc toàn bộ
-Emergency Resolve: 7 ngày delay sau endTime
-Refund Mode: Hoàn USDC tỷ lệ
-Anti-Sandwich: 200ms Flashblocks + TEE ordering
-Reentrancy Guards: 3 loại bảo vệ
+
+- **Safety Caps:** TVL, per-trade, per-market (configurable)
+- **Pause Module:** Tạm dừng từng facet hoặc toàn bộ
+- **Emergency Resolve:** 7 ngày delay sau endTime
+- **Refund Mode:** Hoàn USDC tỷ lệ
+- **Anti-Sandwich:** 200ms Flashblocks + TEE ordering
+- **Reentrancy Guards:** 3 loại bảo vệ

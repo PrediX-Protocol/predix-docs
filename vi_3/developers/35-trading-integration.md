@@ -1,13 +1,20 @@
 # 35. Trading Integration
 
 ## Approve USDC
+
 Trước khi trade, approve USDC cho contract tương ứng:
-Router: cho market orders (buyYes/sellYes/buyNo/sellNo)
-Exchange: cho limit orders (placeOrder)
-Diamond: cho split/merge
+
+- **Router:** cho market orders (buyYes/sellYes/buyNo/sellNo)
+- **Exchange:** cho limit orders (placeOrder)
+- **Diamond:** cho split/merge
+
+```typescript
 await usdc.approve(ROUTER_ADDRESS, ethers.MaxUint256);
+```
 
 ## Market Order Flow (Buy YES)
+
+```typescript
 // 1. Get quote
 const expectedOut = await router.quoteBuyYes(marketId, usdcAmount);
 
@@ -16,8 +23,11 @@ const minOut = expectedOut * 98n / 100n;
 
 // 3. Execute
 const tx = await router.buyYes(marketId, usdcAmount, minOut, wallet.address, deadline);
+```
 
 ## Limit Order Flow
+
+```typescript
 // Approve USDC to Exchange
 await usdc.approve(EXCHANGE_ADDRESS, ethers.MaxUint256);
 
@@ -28,12 +38,19 @@ const amount = ethers.parseUnits("100", 6); // 100 tokens
 
 const tx = await exchange.placeOrder(marketId, side, price, amount);
 const receipt = await tx.wait();
+```
 
 ## Cancel Order
+
+```typescript
 await exchange.cancelOrder(orderId);
+```
 
 ## Get Quotes Before Trading
+
+```typescript
 const yesCost = await router.quoteBuyYes(marketId, ethers.parseUnits("100", 6));
 const noCost = await router.quoteBuyNo(marketId, ethers.parseUnits("100", 6));
 console.log("100 USDC buys:", ethers.formatUnits(yesCost, 6), "YES");
 console.log("100 USDC buys:", ethers.formatUnits(noCost, 6), "NO");
+```

@@ -1,6 +1,8 @@
 # 27. Contract Architecture
 
 ## 5 Module Chính
+
+```
 User → Router (Smart Router)
          ├── Exchange (CLOB)
          └── Hook (AMM via Uniswap v4)
@@ -18,8 +20,10 @@ Oracle (IOracle interface)
 ├── ManualOracleAdapter
 ├── ChainlinkAdapter
 └── UMACrossChainAdapter (Phase 3)
+```
 
 ## Tại Sao Diamond Proxy?
+
 48 source files qua 6 facets vượt giới hạn 24KB. Diamond cho phép nâng cấp từng facet riêng, shared storage giảm gas, function routing qua selector → facet.
 
 ## Contract Addresses (Unichain Sepolia Testnet)

@@ -1,15 +1,19 @@
 # 28. Diamond Proxy (EIP-2535)
 
 ## 6 Facets
-CutFacet: Thêm/xoá/thay thế functions (upgrade)
-LoupeFacet: Introspection -xem facets, functions, interfaces
-AccessControlFacet: Quản lý roles (ADMIN, OPERATOR, PAUSER)
-OwnableFacet: Two-step ownership transfer, last-admin protection
-PausableFacet: Pause từng facet hoặc toàn bộ
-MarketFacet: Logic chính -tạo market, split/merge, resolve, redeem
+
+- **CutFacet:** Thêm/xoá/thay thế functions (upgrade)
+- **LoupeFacet:** Introspection — xem facets, functions, interfaces
+- **AccessControlFacet:** Quản lý roles (ADMIN, OPERATOR, PAUSER)
+- **OwnableFacet:** Two-step ownership transfer, last-admin protection
+- **PausableFacet:** Pause từng facet hoặc toàn bộ
+- **MarketFacet:** Logic chính — tạo market, split/merge, resolve, redeem
 
 ## MarketFacet Functions
-Creation (ADMIN_ROLE):
+
+**Creation (ADMIN_ROLE):**
+
+```
 createMarket(question, description, endTime, categoryId, oracle) → marketId
 createCategory(name, description, endTime) → categoryId
 addMarketToCategory(categoryId, marketId)
@@ -20,11 +24,11 @@ mergePositions(marketId, amount)
 groupSplit(categoryId, amount)
 groupMerge(categoryId, amount)
 Resolution:
-resolveMarket(marketId) -PUBLIC, after endTime + oracle resolved
-resolveCategory(categoryId, winningOutcomeIndex) -ADMIN_ROLE
-emergencyResolve(marketId, outcome) -OPERATOR_ROLE, 7d after endTime
-enableRefundMode(marketId) -OPERATOR_ROLE
-refund(marketId) -PUBLIC, when refundMode active
+resolveMarket(marketId) — PUBLIC, after endTime + oracle resolved
+resolveCategory(categoryId, winningOutcomeIndex) — ADMIN_ROLE
+emergencyResolve(marketId, outcome) — OPERATOR_ROLE, 7d after endTime
+enableRefundMode(marketId) — OPERATOR_ROLE
+refund(marketId) — PUBLIC, when refundMode active
 Redemption (PUBLIC):
 redeemMarketTokens(marketId)
 redeemCategoryTokens(categoryId)
@@ -39,8 +43,11 @@ setApprovedOracle(oracle, approved)
 setTvlCap(cap)
 setPerTradeCap(cap)
 setPerMarketCap(cap)
+```
 
 ## MarketData Struct
+
+```solidity
 struct MarketData {
     string question;
     string description;
@@ -56,3 +63,4 @@ struct MarketData {
     bytes32 questionHash;   // DEPRECATED
     uint256 resolvedAt;
 }
+```

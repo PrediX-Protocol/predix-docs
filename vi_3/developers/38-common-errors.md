@@ -10,6 +10,3 @@
 | MarketNotActive | Market expired/resolved/refund | Kiểm tra trạng thái market |
 | InsufficientBalance | Không đủ token | Kiểm tra balance |
 | SlippageExceeded | Giá thay đổi quá nhiều | Tăng slippage tolerance |
-
-
-# PART VI: LIQUIDITY

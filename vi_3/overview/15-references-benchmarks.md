@@ -1,5 +1,6 @@
 # 15. References & Benchmarks
-PrediX không phát minh lại bánh xe -protocol kết hợp các cơ chế đã proven từ những project thành công nhất trong DeFi, áp dụng cho vertical prediction market. Dưới đây là bảng tham chiếu đầy đủ:
+
+PrediX không phát minh lại bánh xe — protocol kết hợp các cơ chế đã proven từ những project thành công nhất trong DeFi, áp dụng cho vertical prediction market. Dưới đây là bảng tham chiếu đầy đủ:
 
 ## 15.1 Token Mechanics References
 
@@ -14,7 +15,6 @@ PrediX không phát minh lại bánh xe -protocol kết hợp các cơ chế đ�
 | Collateral Yield | GMX (GLP yield sharing) | vePREDIX holders chia yield từ idle USDC | GMX: 70% ETH fees → staker |
 | Fee Tiers by Staking | Hyperliquid, BNB (Binance) | Kết hợp staking + volume threshold | Binance: BNB discount là driver chính |
 
-
 ## 15.2 NFT & Gamification References
 
 | Cơ chế PrediX | Protocol tham chiếu | Cách áp dụng | Kết quả ở gốc |
@@ -25,7 +25,6 @@ PrediX không phát minh lại bánh xe -protocol kết hợp các cơ chế đ�
 | Referral NFT → Fee sharing | Blur referral, Hyperliquid referral | NFT tiến hoá + perpetual fee share | Hyperliquid: 5% referral program |
 | LP Position NFT | Uniswap V3 LP NFTs | Tokenize LP prediction market, enable secondary market | Uniswap V3: $5B+ TVL qua LP NFTs |
 | Market Founder NFT | Mirror Writing NFTs, Azuro pool creator | Dynamic art + perpetual revenue share cho creator | Mirror: creator economy on-chain |
-
 
 ## 15.3 Architecture References
 
@@ -38,7 +37,6 @@ PrediX không phát minh lại bánh xe -protocol kết hợp các cơ chế đ�
 | CCTP V2 Cross-chain | Circle CCTP | Native USDC mint/burn, <30 giây |
 | Protocol-Managed LP | Olympus DAO (protocol-owned liquidity) | Auto-seed $5–30K/market, giải quyết cold-start |
 
-
 ## 15.4 Fundraising Comparables
 
 | Protocol | Raise | FDV khi raise | Hiện tại | Bài học cho PrediX |
@@ -50,6 +48,3 @@ PrediX không phát minh lại bánh xe -protocol kết hợp các cơ chế đ�
 | Azuro | $11M Series A | ~$30M | Multi-chain | Infrastructure play. Nhưng: token utility yếu |
 | Novig | $18M Series A | ~$80M+ | Sports P2P PM | Validates sports PM vertical. US-focused |
 | PrediX | $1,5–2M | $15–20M | Contracts xong | FDV thấp nhất + break-even thấp nhất trong category |
-
-
-# PART II: CORE CONCEPTS

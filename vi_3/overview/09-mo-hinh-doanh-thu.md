@@ -12,8 +12,8 @@
 | Genesis NFT Minting | 5% | 5% | 5% | PREDIX burn + mint |
 | Referral Commission (5%) | 5% | 5% | 5% | On-chain referral |
 
+## 9.2 Lợi Suất Collateral — Nguồn Doanh Thu Lớn Nhất
 
-## 9.2 Lợi Suất Collateral -Nguồn Doanh Thu Lớn Nhất
 70% idle USDC → Aave v3 (~4% APY), 30% dự trữ lỏng. Tại TVL Polymarket ($416M) = ~$16,6M/năm. Polymarket KHÔNG khai thác nguồn này.
 
 ## 9.3 Dự Phóng Doanh Thu
@@ -26,8 +26,8 @@
 | MAU | 5.000 | 20.000 | 100.000 |
 | Buyback-Burn/năm | $1,5M | $3,6M | $12M |
 
-
 ## 9.4 Khả Năng Sinh Lời
-Chi phí vận hành: $50–66K/tháng (28 người, 60% raise + 40% SP Labs)
-Volume hoà vốn: $4,5–7M/tháng
-Biên lợi nhuận ròng: 80–97% vs 20–40% đối thủ tập trung
+
+- **Chi phí vận hành:** $50–66K/tháng (28 người, 60% raise + 40% SP Labs)
+- **Volume hoà vốn:** $4,5–7M/tháng
+- **Biên lợi nhuận ròng:** 80–97% vs 20–40% đối thủ tập trung
