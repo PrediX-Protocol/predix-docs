@@ -2,22 +2,22 @@
 
 PrediX giải quyết từng vấn đề bằng thiết kế cơ chế cụ thể:
 
-### Trading Engine Hybrid (AMM + CLOB)
+### 3.1Trading Engine Hybrid (AMM + CLOB)
 
 Smart Router tổng hợp thanh khoản từ Uniswap v4 AMM và CLOB on-chain. AMM cung cấp định giá tức thời và độ sâu thụ động. CLOB cho phép limit order chính xác. AMM đảm bảo thanh khoản cơ bản từ ngày đầu, CLOB thu hút market maker chuyên nghiệp.
 
-### Oracle Resolution Phi Tập Trung
+### 3.2Oracle Resolution Phi Tập Trung
 
 PRX holders stake token để vote kết quả tranh chấp qua commit-reveal voting. Vote đúng được thưởng từ dispute bond, vote sai bị slash. Price markets tự động resolve qua Chainlink feeds.
 
-### Real Yield — Chia Sẻ Doanh Thu
+### 3.3Real Yield — Chia Sẻ Doanh Thu
 
 50% phí giao dịch phân phối cho PREDIX staker bằng USDC (không phải token lạm phát). 30% bổ sung buyback-and-burn PREDIX tự động.
 
-### Gauge Voting Cho Market
+### 3.4Gauge Voting Cho Market
 
 Khoá PRX → vePRX (1–12 tháng). vePRX holders vote hàng tuần market nào nhận trợ cấp LP. Market được vote nhiều → thanh khoản sâu hơn → volume cao hơn → phí nhiều hơn. Cơ chế Curve Wars cho prediction market lần đầu tiên.
 
-### Phân Phối APAC-Native
+### 3.5Phân Phối APAC-Native
 
 CoinCraze (30K+ thành viên tại VN, KR, JP) và MegaPro cung cấp kênh phân phối sẵn có. NFT gamification phù hợp văn hoá gaming APAC. Bản địa hoá tiếng Việt, Hàn, Nhật từ ngày đầu.

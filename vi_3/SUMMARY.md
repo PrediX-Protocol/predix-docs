@@ -18,8 +18,9 @@
 * [11. Chiến Lược Tăng Trưởng (Go-to-Market)](overview/11-chien-luoc-tang-truong-go-to-market.md)
 * [12. Lộ Trình Phát Triển (Roadmap)](overview/12-lo-trinh-phat-trien-roadmap.md)
 * [13. Rủi Ro & Giảm Thiểu](overview/13-rui-ro-giam-thieu.md)
-* [14. Team & Advisors](overview/14-team-advisors.md)
-* [15. References & Benchmarks](overview/15-references-benchmarks.md)
+* [14. Bối Cảnh Pháp Lý](tong-quan-du-an/14.-boi-canh-phap-ly.md)
+* [15. Team & Advisors](overview/14-team-advisors.md)
+* [16. References & Benchmarks](overview/15-references-benchmarks.md)
 
 ## Khái Niệm Cốt Lõi
 
