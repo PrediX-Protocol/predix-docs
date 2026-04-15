@@ -1,6 +1,8 @@
-# Mục lục
+# Table of contents
 
 * [Welcome](README.md)
+  * [Tầm Nhìn & Sứ Mệnh](readme/tam-nhin-and-su-menh.md)
+  * [Market Timing - Tại Sao Thời Điểm Này?](readme/market-timing-tai-sao-thoi-diem-nay.md)
 
 ## Tổng Quan Dự Án
 
@@ -24,7 +26,7 @@
 * [16. Prediction Markets](concepts/16-prediction-markets.md)
 * [17. Outcome Tokens (YES/NO)](concepts/17-outcome-tokens-yesno.md)
 * [18. Split & Merge](concepts/18-split-merge.md)
-* [19. Resolution (Giải Quyết Market)](concepts/19-resolution-giai-quyet-market.md)
+* [19. Resolution (Kết Quả Market)](concepts/19-resolution-giai-quyet-market.md)
 * [20. Phí Giao Dịch](concepts/20-phi-giao-dich.md)
 
 ## Giao Dịch

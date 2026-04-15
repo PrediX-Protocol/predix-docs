@@ -1,17 +1,17 @@
 # 28. Diamond Proxy (EIP-2535)
 
-## 6 Facets
+### 6 Facets
 
-- **CutFacet:** Thêm/xoá/thay thế functions (upgrade)
-- **LoupeFacet:** Introspection — xem facets, functions, interfaces
-- **AccessControlFacet:** Quản lý roles (ADMIN, OPERATOR, PAUSER)
-- **OwnableFacet:** Two-step ownership transfer, last-admin protection
-- **PausableFacet:** Pause từng facet hoặc toàn bộ
-- **MarketFacet:** Logic chính — tạo market, split/merge, resolve, redeem
+* **CutFacet:** Thêm/xoá/thay thế functions (upgrade)
+* **LoupeFacet:** Introspection — xem facets, functions, interfaces
+* **AccessControlFacet:** Quản lý roles (ADMIN, OPERATOR, PAUSER)
+* **OwnableFacet:** Two-step ownership transfer, last-admin protection
+* **PausableFacet:** Pause từng facet hoặc toàn bộ
+* **MarketFacet:** Logic chính — tạo market, split/merge, resolve, redeem
 
-## MarketFacet Functions
+### MarketFacet Functions
 
-**Creation (ADMIN_ROLE):**
+**Creation (ADMIN\_ROLE):**
 
 ```
 createMarket(question, description, endTime, categoryId, oracle) → marketId
@@ -45,7 +45,7 @@ setPerTradeCap(cap)
 setPerMarketCap(cap)
 ```
 
-## MarketData Struct
+### MarketData Struct
 
 ```solidity
 struct MarketData {
