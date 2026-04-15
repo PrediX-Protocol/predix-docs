@@ -4,7 +4,11 @@ description: PrediX - Nơi câu chuyện trở thành thị trường
 
 # Welcome
 
-Chung kết World Cup, đến dự đoán giá Bitcoin thành thị trường giao dịch on-chain nơi niềm tin được định giá bằng tiền thật. Xây dựng trên Unichain (L2 OP Stack do Uniswap vận hành), PrediX kết hợp AMM (Uniswap v4 Hooks) với CLOB on-chain thông qua Smart Router, cho phép bất kỳ ai mua bán outcome tokens bằng USDC từ market hai kết quả (YES/NO) đến multi-outcome với nhiều lựa chọn , biến quan điểm thành vị thế tài chính và câu chuyện thành cơ hội.
+Từ dự đoán kết quả chung kết World Cup đến xu hướng giá Bitcoin - PrediX biến mọi dự đoán thành một thị trường mở, nơi người dùng thể hiện góc nhìn bằng cách nắm giữ outcome tokens.
+
+Xây dựng trên Unichain (L2 OP Stack do Uniswap vận hành), PrediX kết hợp cơ chế AMM (Uniswap v4 Hooks) với sổ lệnh on-chain (CLOB) thông qua Smart Router - cho phép mua bán outcome tokens bằng USDC trên các thị trường hai kết quả (YES/NO) hoặc nhiều lựa chọn (multi-outcome).
+
+Đơn giản hơn: bạn chọn kết quả mình tin, nắm giữ token đại diện cho dự đoán đó, và thị trường phản ánh quan điểm của cộng đồng theo thời gian thực.
 
 **What  ? PrediX là gì?**
 
