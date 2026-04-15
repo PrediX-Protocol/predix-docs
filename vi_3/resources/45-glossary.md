@@ -1,25 +1,3 @@
 # 45. Glossary
 
-| Thuật ngữ | Định nghĩa |
-|---|---|
-| Prediction Market | Thị trường giao dịch dựa trên kết quả sự kiện tương lai |
-| Outcome Token | Token đại diện cho 1 kết quả (YES hoặc NO) |
-| Split | Chia $1 USDC thành 1 YES + 1 NO |
-| Merge | Gộp 1 YES + 1 NO thành $1 USDC |
-| Redeem | Đổi token thắng lấy USDC sau khi market resolve |
-| CLOB | Central Limit Order Book  - sổ lệnh trung tâm |
-| AMM | Automated Market Maker  - tạo lập thị trường tự động |
-| Smart Router | Hệ thống route giao dịch tối ưu qua CLOB + AMM |
-| Hook | Uniswap v4 Hook  - custom logic cho pool operations |
-| Diamond Proxy | EIP-2535  - proxy pattern cho phép nhiều facets |
-| Facet | Module smart contract trong Diamond pattern |
-| Oracle | Hệ thống cung cấp kết quả sự kiện cho smart contract |
-| TVL | Total Value Locked  - tổng giá trị khoá trong protocol |
-| Slippage | Chênh lệch giá dự kiến vs giá thực tế |
-| Spread | Chênh lệch giữa giá bid (mua) và ask (bán) |
-| Depth | Khối lượng orders tại mỗi mức giá |
-| USDC | USD Coin  - stablecoin 1:1 USD |
-| ERC-20 | Chuẩn token Ethereum phổ biến nhất |
-| ERC-2612 | Permit  - cho phép approve gasless |
-| vePREDIX | Vote-escrowed PREDIX  - token khoá cho governance |
-| Gauge Voting | Vote phân bổ LP incentives cho markets |
+<table><thead><tr><th width="222">Thuật ngữ</th><th>Định nghĩa</th></tr></thead><tbody><tr><td>Prediction Market</td><td>Thị trường giao dịch dựa trên kết quả sự kiện tương lai</td></tr><tr><td>Outcome Token</td><td>Token đại diện cho 1 kết quả (YES hoặc NO)</td></tr><tr><td>Split</td><td>Chia $1 USDC thành 1 YES + 1 NO</td></tr><tr><td>Merge</td><td>Gộp 1 YES + 1 NO thành $1 USDC</td></tr><tr><td>Redeem</td><td>Đổi token thắng lấy USDC sau khi market resolve</td></tr><tr><td>CLOB</td><td>Central Limit Order Book - sổ lệnh trung tâm</td></tr><tr><td>AMM</td><td>Automated Market Maker - tạo lập thị trường tự động</td></tr><tr><td>Smart Router</td><td>Hệ thống route giao dịch tối ưu qua CLOB + AMM</td></tr><tr><td>Hook</td><td>Uniswap v4 Hook - custom logic cho pool operations</td></tr><tr><td>Diamond Proxy</td><td>EIP-2535 - proxy pattern cho phép nhiều facets</td></tr><tr><td>Facet</td><td>Module smart contract trong Diamond pattern</td></tr><tr><td>Oracle</td><td>Hệ thống cung cấp kết quả sự kiện cho smart contract</td></tr><tr><td>TVL</td><td>Total Value Locked - tổng giá trị khoá trong protocol</td></tr><tr><td>Slippage</td><td>Chênh lệch giá dự kiến vs giá thực tế</td></tr><tr><td>Spread</td><td>Chênh lệch giữa giá bid (mua) và ask (bán)</td></tr><tr><td>Depth</td><td>Khối lượng orders tại mỗi mức giá</td></tr><tr><td>USDC</td><td>USD Coin - stablecoin 1:1 USD</td></tr><tr><td>ERC-20</td><td>Chuẩn token Ethereum phổ biến nhất</td></tr><tr><td>ERC-2612</td><td>Permit - cho phép approve gasless</td></tr><tr><td>vePREDIX</td><td>Vote-escrowed PREDIX - token khoá cho governance</td></tr><tr><td>Gauge Voting</td><td>Vote phân bổ LP incentives cho markets</td></tr></tbody></table>

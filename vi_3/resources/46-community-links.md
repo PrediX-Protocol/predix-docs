@@ -1,12 +1,11 @@
 # 46. Community & Links
 
-| Kênh | Link |
-|---|---|
-| Website | predixpro.io |
-| App | app.predixpro.io |
-| Docs | docs.predixpro.io |
-| Twitter / X | @PrediXProtocol |
-| Discord | discord.gg/predix |
-| Telegram | t.me/predix_official |
-| GitHub | github.com/predix-protocol |
-| Medium | medium.com/@predix |
+| Kênh        | Link                                                           |
+| ----------- | -------------------------------------------------------------- |
+| Website     | predixpro.io                                                   |
+| App         | app.predixpro.io                                               |
+| Docs        | docs.predixpro.io                                              |
+| Twitter / X | @CoinCrazeCen                                                  |
+| Discord     | discord.gg/predix                                              |
+| Telegram    | [https://t.me/CoinCrazeCentral](https://t.me/CoinCrazeCentral) |
+| GitHub      | github.com/predix-protocol                                     |
