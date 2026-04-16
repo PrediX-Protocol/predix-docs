@@ -1,8 +1,8 @@
-# 8. Hệ Sinh Thái NFT
+# Hệ Sinh Thái NFT
 
 Chi phí mint trên Unichain L2: \~$0,01–$0,05/NFT. Gamification tăng engagement 47%, loyalty 22% (nghiên cứu Mintology). Không đối thủ prediction market nào có lớp gamification hay NFT. PrediX xây dựng hệ sinh thái NFT với hai lớp chức năng: Identity/Gamification (tăng retention, tạo danh tính on-chain) và Tài Sản Tài Chính (tokenize vị thế, tạo thị trường thứ cấp).
 
-### 8.1 Lớp Identity & Gamification
+### 1 Lớp Identity & Gamification
 
 ### Trader Passport — Hộ Chiếu Trader (Soulbound, ERC-5192)
 
@@ -37,7 +37,7 @@ Mô tả: Semi-fungible badges mint tự động khi đạt milestone Danh sách
 * **Utility:** Network Builder nhận % phí giao dịch vĩnh viễn từ tất cả referred users. Ambassador+ được invite-only access vào community riêng và early alpha trên market mới
 * **Ref:** Blur referral (% fee sharing vĩnh viễn). Hyperliquid referral program (5% fee). PrediX kết hợp NFT tiến hoá + fee sharing + CoinCraze 100K+ network sẵn có
 
-### 8.2 Lớp Tài Sản Tài Chính
+### 2 Lớp Tài Sản Tài Chính
 
 #### LP Position NFT (ERC-721)
 
@@ -60,6 +60,6 @@ Mô tả: Semi-fungible badges mint tự động khi đạt milestone Danh sách
 * **Tác dụng:** Khuyến khích nền kinh tế creator cho prediction market. Market creators trở thành stakeholders có incentive dài hạn
 * **Ref:** Mirror Writing NFTs (creator revenue share). Azuro pool creator incentives. PrediX thêm dynamic art + perpetual fee share
 
-### 8.3 NFT Utility Summary
+### 3 NFT Utility Summary
 
 <table><thead><tr><th>NFT</th><th>Chuẩn</th><th width="128">Chuyển nhượng</th><th>Utility chính</th><th>Ref</th></tr></thead><tbody><tr><td>Trader Passport</td><td>ERC-5192</td><td>Không (Soulbound)</td><td>Fee tier, whitelist, eligibility</td><td>Galxe, Lens</td></tr><tr><td>Achievement Badge</td><td>ERC-1155</td><td>Có</td><td>Combo perks, Pro/Elite status</td><td>Blur, Rabbithole</td></tr><tr><td>Season Trophy</td><td>ERC-721</td><td>Có</td><td>Giảm phí, airdrop bonus</td><td>Fortnite Pass, Hyperliquid</td></tr><tr><td>Referral NFT</td><td>ERC-5192</td><td>Không (Soulbound)</td><td>% phí vĩnh viễn, early access</td><td>Blur, Hyperliquid ref</td></tr><tr><td>LP Position</td><td>ERC-721</td><td>Có</td><td>Thị trường thứ cấp LP, collateral</td><td>Uniswap V3 LP NFT</td></tr><tr><td>Limit Order Receipt</td><td>ERC-721</td><td>Có</td><td>OTC market cho limit orders</td><td>Không tiền lệ</td></tr><tr><td>Market Founder</td><td>ERC-721</td><td>Có</td><td>5–10% phí vĩnh viễn, dynamic art</td><td>Mirror, Azuro</td></tr></tbody></table>

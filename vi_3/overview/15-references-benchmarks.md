@@ -1,8 +1,8 @@
-# 15. References & Benchmarks
+# References & Benchmarks
 
 PrediX không phát minh lại bánh xe — protocol kết hợp các cơ chế đã proven từ những project thành công nhất trong DeFi, áp dụng cho vertical prediction market. Dưới đây là bảng tham chiếu đầy đủ:
 
-### 15.1 Token Mechanics References
+### 1 Token Mechanics References
 
 | Cơ chế PrediX                  | Protocol tham chiếu                          | Cách áp dụng                                       | Kết quả ở protocol gốc                  |
 | ------------------------------ | -------------------------------------------- | -------------------------------------------------- | --------------------------------------- |
@@ -15,7 +15,7 @@ PrediX không phát minh lại bánh xe — protocol kết hợp các cơ chế 
 | Collateral Yield               | GMX (GLP yield sharing)                      | vePREDIX holders chia yield từ idle USDC           | GMX: 70% ETH fees → staker              |
 | Fee Tiers by Staking           | Hyperliquid, BNB (Binance)                   | Kết hợp staking + volume threshold                 | Binance: BNB discount là driver chính   |
 
-### 15.2 NFT & Gamification References
+### 2 NFT & Gamification References
 
 | Cơ chế PrediX                     | Protocol tham chiếu                      | Cách áp dụng                                           | Kết quả ở gốc                    |
 | --------------------------------- | ---------------------------------------- | ------------------------------------------------------ | -------------------------------- |
@@ -26,7 +26,7 @@ PrediX không phát minh lại bánh xe — protocol kết hợp các cơ chế 
 | LP Position NFT                   | Uniswap V3 LP NFTs                       | Tokenize LP prediction market, enable secondary market | Uniswap V3: $5B+ TVL qua LP NFTs |
 | Market Founder NFT                | Mirror Writing NFTs, Azuro pool creator  | Dynamic art + perpetual revenue share cho creator      | Mirror: creator economy on-chain |
 
-### 15.3 Architecture References
+### 3 Architecture References
 
 | Thành phần PrediX        | Protocol tham chiếu                     | Tại sao chọn                                   |
 | ------------------------ | --------------------------------------- | ---------------------------------------------- |
@@ -37,6 +37,6 @@ PrediX không phát minh lại bánh xe — protocol kết hợp các cơ chế 
 | CCTP V2 Cross-chain      | Circle CCTP                             | Native USDC mint/burn, <30 giây                |
 | Protocol-Managed LP      | Olympus DAO (protocol-owned liquidity)  | Auto-seed $5–30K/market, giải quyết cold-start |
 
-### 15.4 Fundraising Comparables
+### 4 Fundraising Comparables
 
 <table><thead><tr><th width="136">Protocol</th><th width="123">Raise</th><th width="118">FDV khi raise</th><th width="153">Hiện tại</th><th>Bài học cho PrediX</th></tr></thead><tbody><tr><td>Polymarket</td><td>$4M seed (2020)</td><td>$25M</td><td>~$20B valuation</td><td>Volume = moat. Nhưng: banned 33+ countries</td></tr><tr><td>Kalshi</td><td>Tier-1 VC</td><td>~$100M</td><td>$22B, $1,5B rev/năm</td><td>CFTC license = monopoly. Nhưng: $500K+ ops/tháng</td></tr><tr><td>Opinion (OPN)</td><td>$25M total</td><td>~$50M seed</td><td>TGE $450M FDV</td><td>Binance Labs = credibility. Nhưng: dump 17,8% D1</td></tr><tr><td>PredictEX</td><td>$10M</td><td>~$30–50M</td><td>Private beta</td><td>Exchange VCs = distribution. 1 exchange VC = $5M marketing</td></tr><tr><td>Azuro</td><td>$11M Series A</td><td>~$30M</td><td>Multi-chain</td><td>Infrastructure play. Nhưng: token utility yếu</td></tr><tr><td>Novig</td><td>$18M Series A</td><td>~$80M+</td><td>Sports P2P PM</td><td>Validates sports PM vertical. US-focused</td></tr><tr><td>PrediX</td><td>$1,5–2M</td><td>$15–20M</td><td>Contracts xong</td><td>FDV thấp nhất + break-even thấp nhất trong category</td></tr></tbody></table>

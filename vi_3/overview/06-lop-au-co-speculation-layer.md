@@ -1,6 +1,6 @@
-# 6. Lớp Đầu Cơ (Speculation Layer)
+# Lớp Đầu Cơ (Speculation Layer)
 
-### 6.1 Tối ưu hoá thanh khoản từ Outcome Tokens
+### 1 Tối ưu hoá thanh khoản từ Outcome Tokens
 
 Outcome tokens trên PrediX tuân chuẩn ERC-20, cho phép người nắm giữ cung cấp thanh khoản vào các pool (ví dụ: YES/USDC) trên Uniswap v4 - nhận phí giao dịch (swap fees) trong khi vẫn duy trì vị thế dự đoán.
 
@@ -8,7 +8,7 @@ Nói cách khác, thay vì để outcome tokens nằm yên trong ví chờ sự 
 
 ***
 
-### 6.2 Composability — Lộ trình mở rộng (Phase 3)
+### 2 Composability — Lộ trình mở rộng (Phase 3)
 
 Nhờ outcome tokens là ERC-20 chuẩn và vận hành trên Unichain (tương thích EVM), PrediX có thể tích hợp với các protocol DeFi khác trong tương lai. Một số hướng đang được nghiên cứu:
 
