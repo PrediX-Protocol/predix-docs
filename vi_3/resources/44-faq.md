@@ -8,7 +8,7 @@
 
 **PrediX là gì?**
 
-PrediX là sàn dự đoán phi tập trung — nơi bạn có thể đặt cược bằng USDC vào kết quả của bất kỳ sự kiện nào: thể thao, chính trị, crypto, văn hoá và nhiều hơn nữa. Mọi giao dịch đều minh bạch, on-chain, không cần tin tưởng vào bất kỳ bên trung gian nào.
+PrediX là sàn dự đoán phi tập trung — nơi bạn có thể dự đoán bằng USDC vào kết quả của bất kỳ sự kiện nào: thể thao, chính trị, crypto, văn hoá và nhiều hơn nữa. Mọi giao dịch đều minh bạch, on-chain, không cần tin tưởng vào bất kỳ bên trung gian nào.
 
 > _"Where narratives become markets"_ — Bất kỳ câu chuyện nào đang hot đều có thể trở thành một market để giao dịch.
 
@@ -31,7 +31,7 @@ Sau khi sự kiện kết thúc và có kết quả → vào app nhấn **"Rút 
 
 **Tôi có thể mất nhiều hơn số tiền bỏ vào không?**
 
-Không. Mức thua lỗ tối đa là **100% số tiền bạn đặt** — không hơn. PrediX không có đòn bẩy, không có liquidation, không có rủi ro vượt vốn như trading phái sinh.
+Không. Mức sai lỗ tối đa là **100% số tiền bạn đặt** — không hơn. PrediX không có đòn bẩy, không có liquidation, không có rủi ro vượt vốn như trading phái sinh.
 
 ***
 
@@ -39,12 +39,12 @@ Không. Mức thua lỗ tối đa là **100% số tiền bạn đặt** — khô
 
 **Khi market có kết quả, tôi nhận tiền như thế nào?**
 
-* Token của **phe thắng** → đổi được **$1 USDC mỗi token**
-* Token của **phe thua** → giá trị **$0**
+* Token của **phe đúng** → đổi được **$1 USDC mỗi token**
+* Token của **phe sai**→ giá trị **$0**
 
 Vào app, chọn market đã kết thúc và nhấn **"Rút thưởng"** — USDC sẽ về ví của bạn ngay.
 
-> 💡 Ví dụ: Mua 100 token YES ở giá $0.40 (bỏ ra $40). Nếu YES thắng → nhận về $100, lời $60.
+> 💡 Ví dụ: Mua 100 token YES ở giá $0.40 (bỏ ra $40). Nếu YES đúng → nhận về $100, lời $60.
 
 ***
 
@@ -79,7 +79,7 @@ Nhờ cơ chế này, nếu YES = $0.65 thì NO luôn xấp xỉ $0.35 — tự 
 | Giao dịch qua AMM          | 0.5% – 5% (tự động điều chỉnh theo thời gian còn lại của market) |
 | Đặt lệnh giới hạn — Maker  | **Miễn phí**                                                     |
 | Khớp lệnh giới hạn — Taker | 0% – 1%                                                          |
-| Rút thưởng sau khi thắng   | **Miễn phí**                                                     |
+| Rút thưởng sau khi đúng    | **Miễn phí**                                                     |
 
 > 💡 Phí AMM tăng dần khi market gần đến ngày kết thúc — khuyến khích giao dịch sớm sẽ có phí thấp hơn.
 
@@ -135,7 +135,7 @@ Hiện tại các market được tạo bởi đội ngũ PrediX và các đối
 
 **Điều gì xảy ra nếu sự kiện bị hủy hoặc không thể xác định kết quả?**
 
-PrediX có cơ chế **hoàn tiền (Refund Mode)** cho trường hợp này. Toàn bộ USDC sẽ được hoàn lại cho tất cả người tham gia theo tỷ lệ token đang nắm giữ — không ai thắng, không ai thua, vốn được trả lại đầy đủ.
+PrediX có cơ chế **hoàn tiền (Refund Mode)** cho trường hợp này. Toàn bộ USDC sẽ được hoàn lại cho tất cả người tham gia theo tỷ lệ token đang nắm giữ — không ai đúng, không ai sai, vốn được trả lại đầy đủ.
 
 ***
 

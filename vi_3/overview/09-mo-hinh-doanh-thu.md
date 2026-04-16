@@ -8,7 +8,7 @@
 
 70% idle USDC → Aave v3 (\~4% APY), 30% dự trữ lỏng. Tại TVL Polymarket ($416M) = \~$16,6M/năm. Polymarket KHÔNG khai thác nguồn này.
 
-### 9.3 Dự Phóng Doanh Thu
+### 9.3 Dự Phòng Doanh Thu
 
 | Chỉ số           | Năm 1 | Năm 2  | Năm 3   |
 | ---------------- | ----- | ------ | ------- |

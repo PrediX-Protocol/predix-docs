@@ -48,7 +48,7 @@ USDC deposit/withdraw qua Circle CCTP V2 (native mint/burn, <30 giây). Oracle c
 * Chọn market → Duyệt theo category (Sports, Crypto, Politics…)
 * Mua YES hoặc NO → Router tự động route qua CLOB/AMM tối ưu
 * Đợi kết quả → Oracle resolve market sau khi hết hạn
-* Redeem → Token thắng đổi 1:1 USDC, token thua = $0
+* Redeem → Token đúng đổi 1:1 USDC, token sai = $0
 
 ### 4.8 Địa Chỉ Contract (Unichain Sepolia Testnet)
 
