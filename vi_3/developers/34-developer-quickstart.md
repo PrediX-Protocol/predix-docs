@@ -1,12 +1,22 @@
-# 34. Developer Quickstart
+---
+description: Bắt đầu phát triển trên PrediX trong 5 phút
+---
+
+# Developer Quickstart
 
 ## Prerequisites
 
-- Node.js 18+
-- ethers.js v6
-- TypeScript (khuyến nghị)
+* Node.js 18+
+* ethers.js v6
+* TypeScript (khuyến nghị)
 
-## Connect to Unichain Sepolia
+### Cài đặt
+
+```bash
+npm install ethers
+```
+
+### Connect to Unichain Sepolia
 
 ```typescript
 import { ethers } from "ethers";
@@ -17,7 +27,7 @@ const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
 // Chain ID: 1301
 ```
 
-## Read a Market
+### Read a Market
 
 ```typescript
 const diamond = new ethers.Contract(DIAMOND_ADDRESS, MarketFacetABI, provider);
@@ -27,7 +37,7 @@ console.log("End Time:", new Date(Number(market.endTime) * 1000));
 console.log("Total Collateral:", ethers.formatUnits(market.totalCollateral, 6));
 ```
 
-## Place First Trade
+### Place First Trade
 
 ```typescript
 const usdc = new ethers.Contract(USDC_ADDRESS, ERC20ABI, wallet);
@@ -48,7 +58,7 @@ const tx = await router.buyYes(
 await tx.wait();
 ```
 
-## Contract Addresses
+### Contract Addresses
 
 ```
 DIAMOND = 0xF38a265E6e4F57D000a1CC08004da5B4A380B08A

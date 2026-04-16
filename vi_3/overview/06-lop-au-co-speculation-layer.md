@@ -22,3 +22,22 @@ Nhờ outcome tokens là ERC-20 chuẩn và vận hành trên Unichain (tương 
 
 > **Disclaimer:** Các tính năng trong Phase 3 đang ở giai đoạn nghiên cứu và phát triển, chưa có lịch ra mắt xác định. Kiến trúc cuối cùng có thể thay đổi tuỳ thuộc vào điều kiện kỹ thuật và quy định tại từng thị trường.
 
+#### 6.1 Kiếm Lãi Từ Vị Thế Dự Đoán
+
+Thông thường, khi bạn mua token YES hoặc NO trên một prediction market, số vốn đó "nằm yên" — bạn chỉ có thể thắng hoặc thua khi sự kiện kết thúc. Không hơn không kém.
+
+**PrediX thay đổi điều này.**
+
+Vì outcome token YES/NO là ERC-20 chuẩn, bạn có thể đem token YES vào pool thanh khoản YES/USDC trên Uniswap v4 — tức là vừa **giữ nguyên cược dự đoán**, vừa **thu phí swap** từ những người giao dịch trong pool đó.
+
+> Nói đơn giản: vốn của bạn không còn "ngủ" trong khi chờ kết quả — nó tiếp tục sinh lời mỗi ngày.
+
+Đây là điểm mà **không một nền tảng prediction market lớn nào** (Polymarket, Kalshi…) có thể làm được, vì họ không xây trên AMM với outcome token chuẩn ERC-20.
+
+***
+
+#### 6.2 Khả Năng Mở Rộng Trong Tương Lai (Phase 3)
+
+Khi nền tảng trưởng thành, PrediX sẽ mở khóa thêm các lớp tài chính phức tạp hơn:
+
+<table><thead><tr><th width="274">Tính năng</th><th>Ý nghĩa thực tế</th></tr></thead><tbody><tr><td><strong>Lending với outcome token</strong></td><td>Dùng token YES/NO làm tài sản thế chấp để vay USDC — giải phóng thanh khoản mà không cần bán cược</td></tr><tr><td><strong>Structured Vault</strong></td><td>Vault tự động kết hợp nhiều vị thế dự đoán thành một sản phẩm đầu tư đóng gói sẵn</td></tr><tr><td><strong>Dự đoán đòn bẩy</strong></td><td>Vay thêm vốn đối ứng với vị thế hiện có để khuếch đại lợi nhuận (và rủi ro)</td></tr><tr><td><strong>AI Agent SDK</strong></td><td>Bộ công cụ cho phép bot giao dịch tự động, marketplace chiến lược, và engine</td></tr></tbody></table>

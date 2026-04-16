@@ -2,7 +2,7 @@
 description: PrediX Protocol — Where narratives become markets.
 ---
 
-# 47. Brand Kit
+# Brand Kit
 
 ## Logo
 
@@ -27,12 +27,11 @@ PrediX có hai phiên bản logo chính thức:&#x20;
 
 ## Usage Guidelines
 
-* • Luôn giữ khoảng cách tối thiểu quanh logo = chiều cao chữ “P” trong wordmark
-* • Không thay đổi tỷ lệ, xoay, làm méo hoặc thêm hiệu ứng (shadow, glow, outline)
-* • Không tách biểu tượng X ra khỏi đường kẻ ngang vàng
-* • Nền tối (khuyến nghị): Logo Full trắng + vàng trên nền đen/tối
-* • Nền sáng: Logo Full đen + vàng trên nền trắng/sáng (có sẵn phiên bản riêng)
-* • Không đặt logo trên nền có pattern phức tạp hoặc hình ảnh nhiều chi tiết
-* • Kích thước tối thiểu: 120px chiều rộng (digital), 30mm (in ấn)
-* PrediX Protocol — Where narratives become markets.
-* SP Labs | predixpro.io | April 2026
+* Luôn giữ khoảng cách tối thiểu quanh logo = chiều cao chữ “P” trong wordmark
+* Không thay đổi tỷ lệ, xoay, làm méo hoặc thêm hiệu ứng (shadow, glow, outline)
+* Không tách biểu tượng X ra khỏi đường kẻ ngang vàng
+* Nền tối (khuyến nghị): Logo Full trắng + vàng trên nền đen/tối
+* Nền sáng: Logo Full đen + vàng trên nền trắng/sáng (có sẵn phiên bản riêng)
+* Không đặt logo trên nền có pattern phức tạp hoặc hình ảnh nhiều chi tiết
+* Kích thước tối thiểu: 120px chiều rộng (digital), 30mm (in ấn)
+

@@ -22,13 +22,24 @@
 * [Team & Advisors](overview/14-team-advisors.md)
 * [References & Benchmarks](overview/15-references-benchmarks.md)
 
+## USER FLOW
+
+* [Kết nối ví](user-flow/ket-noi-vi.md)
+* [Nhận USDC thử nghiệm](user-flow/nhan-usdc-thu-nghiem.md)
+* [Giao dịch đầu tiên](user-flow/giao-dich-dau-tien.md)
+* [Mua & Bán Share (Yes / No)](user-flow/mua-and-ban-share-yes-no.md)
+* [Hiểu giao diện](user-flow/hieu-giao-dien.md)
+* [Hủy lệnh](user-flow/huy-lenh.md)
+* [Xem vị thế của bạn](user-flow/xem-vi-the-cua-ban.md)
+* [Nhận thưởng](user-flow/nhan-thuong.md)
+
 ## Khái Niệm Cốt Lõi
 
-* [Prediction Markets](concepts/16-prediction-markets.md)
-* [Outcome Tokens (YES/NO)](concepts/17-outcome-tokens-yesno.md)
-* [Split & Merge](concepts/18-split-merge.md)
-* [Resolution (Kết Quả Market)](concepts/19-resolution-giai-quyet-market.md)
-* [Phí Giao Dịch](concepts/20-phi-giao-dich.md)
+* [17. Prediction Markets](concepts/16-prediction-markets.md)
+* [18. Outcome Tokens (YES/NO)](concepts/17-outcome-tokens-yesno.md)
+* [19. Split & Merge](concepts/18-split-merge.md)
+* [20. Resolution (Kết Quả Market)](concepts/19-resolution-giai-quyet-market.md)
+* [21. Phí Giao Dịch](concepts/20-phi-giao-dich.md)
 
 ## Giao Dịch
 
@@ -48,6 +59,7 @@
 * [Hook (Uniswap v4)](contracts/31-hook-uniswap-v4.md)
 * [Oracle](contracts/32-oracle.md)
 * [Access Control & Safety](contracts/33-access-control-safety.md)
+* [An toàn](smart-contracts/an-toan.md)
 
 ## Developers
 
@@ -56,17 +68,6 @@
 * [Split, Merge, Resolve & Redeem](developers/36-split-merge-resolve-redeem.md)
 * [Events](developers/37-events.md)
 * [Common Errors](developers/38-common-errors.md)
-
-## Thanh Khoản
-
-* [Liquidity Overview](liquidity/39-liquidity-overview.md)
-* [Providing Liquidity](liquidity/40-providing-liquidity.md)
-* [Market Making (CLOB)](liquidity/41-market-making-clob.md)
-
-## Bảo Mật
-
-* [Security Overview](security/42-security-overview.md)
-* [Bug Bounty](security/43-bug-bounty.md)
 
 ## Tài Nguyên
 

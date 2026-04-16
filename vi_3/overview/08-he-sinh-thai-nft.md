@@ -21,7 +21,12 @@ Mô tả: Semi-fungible badges mint tự động khi đạt milestone Danh sách
 * Whale (Rare) ->$10K trong 1 market
 * Oracle (Epic) -10+ lần vote oracle đúng
 * Season Champion (Legendary) — top leaderboard mùa
-* **Utility:** Combo badges mở khoá perks: 3 Rare → Pro Trader status (giảm phí 15% + badge hiển thị trên profile). 5 Epic → Elite Trader (truy cập analytics nâng cao)
+* **Utility:** Combo badges mở khoá perks:&#x20;
+
+&#x20;        3 Rare → Pro Trader status (giảm phí 15% + badge hiển thị trên profile).&#x20;
+
+&#x20;         5 Epic → Elite Trader (truy cập analytics nâng cao)
+
 * **Ref:** Blur Season badges (drive volume qua gamification), Rabbithole (quest rewards). PrediX gắn badge trực tiếp với fee discount thay vì chỉ cosmetic
 
 ### Season Competition & Trophy

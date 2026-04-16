@@ -1,21 +1,61 @@
-# 32. Oracle
+---
+description: Hệ thống oracle dạng cắm được - Manual, Chainlink và bộ điều hợp tùy chỉnh
+---
 
-### IOracle Interface
+# Oracle
 
+PrediX sử dụng kiến trúc oracle dạng cắm được. Mọi oracle đều triển khai cùng một giao diện:
+
+```solidity
+interface IOracle {
+    function getResolution(bytes32 marketId)
+        external view returns (bool resolved, bool outcome);
+}
 ```
-resolve(marketId, outcome) — ADMIN
-getResolution(marketId) → (resolved, outcome)
-getResolvedAt(marketId) → uint64
+
+## ManualOracleAdapter
+
+Xác nhận kết quả do quản trị viên kiểm soát cho các sự kiện chủ quan (chính trị, thể thao, v.v.).
+
+```solidity
+resolve(bytes32 marketId, bool outcome)     // Chỉ quản trị viên
+getResolution(bytes32 marketId) → (bool resolved, bool outcome)
+getResolvedAt(bytes32 marketId) → uint64
 ```
 
-### ManualOracleAdapter
+## ChainlinkAdapter
 
-Admin resolve thủ công. Dùng cho sự kiện mà không có price feed tự động.
+Xác nhận kết quả tự động dựa trên nguồn giá Chainlink. Ví dụ: "BTC > $100K?"
 
-### ChainlinkAdapter
+**Kiểm tra an toàn**: phát hiện nguồn cấp cũ (24 giờ), thời gian hoạt động bộ tuần tự L2, tính hoàn chỉnh của vòng.
 
-Tự động resolve price markets dựa trên Chainlink feeds. VD: “BTC > $200K vào T12/2026” → check Chainlink BTC/USD.
+## Tạo Oracle tùy chỉnh
 
-### Custom Oracle Adapter
+1. Triển khai giao diện `IOracle`
+2. Triển khai hợp đồng bộ điều hợp
+3. Quản trị viên phê duyệt: `diamond.setApprovedOracle(adapterAddress, true)`
+4. Sử dụng khi tạo thị trường: `createMarket(..., adapterAddress)`
 
-Implement IOracle interface để tạo adapter tuỳ chỉnh. Phải được approved qua setApprovedOracle().
+```solidity
+contract MyCustomOracle is IOracle {
+    mapping(bytes32 => bool) public resolved;
+    mapping(bytes32 => bool) public outcomes;
+
+    function getResolution(bytes32 marketId)
+        external view returns (bool, bool)
+    {
+        return (resolved[marketId], outcomes[marketId]);
+    }
+
+    function resolve(bytes32 marketId, bool outcome) external {
+        // Logic xác nhận kết quả của bạn ở đây
+        resolved[marketId] = true;
+        outcomes[marketId] = outcome;
+    }
+}
+```
+
+> ⚠️ **Phê duyệt Oracle**: Chỉ các địa chỉ Oracle được quản trị viên phê duyệt mới có thể sử dụng khi tạo thị trường.
+
+***
+

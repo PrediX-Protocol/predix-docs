@@ -1,27 +1,48 @@
-# 33. Access Control & Safety
+---
+description: Kiểm soát truy cập dựa trên vai trò — 4 vai trò với quyền chi tiết
+---
 
-## 4 Roles
+# Access Control & Safety
 
-| Role | ID | Quyền |
-|---|---|---|
-| DEFAULT_ADMIN | 0 | Quản lý roles, toàn quyền |
-| ADMIN | 1 | Tạo market, set oracle, set caps |
-| OPERATOR | 2 | Emergency resolve, refund mode |
-| PAUSER | 3 | Pause/unpause |
+## Các vai trò
 
-## Two-Step Ownership Transfer
+| Vai trò        | ID | Mục đích                                       |
+| -------------- | -- | ---------------------------------------------- |
+| DEFAULT\_ADMIN | 0  | Quản lý tất cả các vai trò                     |
+| ADMIN          | 1  | Tạo thị trường, cấu hình phí, phê duyệt Oracle |
+| OPERATOR       | 2  | Xác nhận kết quả khẩn cấp, kích hoạt hoàn tiền |
+| PAUSER         | 3  | Tạm dừng hệ thống                              |
 
-Chuyển quyền sở hữu yêu cầu bước confirm. Last-admin protection ngăn xoá admin cuối cùng.
+## Ma trận quyền hạn
 
-## Safety Caps
+| Hàm                  | PUBLIC | ADMIN | OPERATOR   | PAUSER | OWNER |
+| -------------------- | ------ | ----- | ---------- | ------ | ----- |
+| `createMarket`       |        | ✓     |            |        |       |
+| `splitPosition`      | ✓      |       |            |        |       |
+| `mergePositions`     | ✓      |       |            |        |       |
+| `resolveMarket`      | ✓      |       |            |        |       |
+| `redeemMarketTokens` | ✓      |       |            |        |       |
+| `placeOrder`         | ✓      |       |            |        |       |
+| `buyYes` (Router)    | ✓      |       |            |        |       |
+| `emergencyResolve`   |        |       | ✓ (7 ngày) |        |       |
+| `enableRefundMode`   |        |       | ✓          |        |       |
+| `setTvlCap`          |        | ✓     |            |        |       |
+| `setApprovedOracle`  |        | ✓     |            |        |       |
+| `pauseAll`           |        |       |            | ✓      |       |
+| `diamondCut`         |        |       |            |        | ✓     |
 
-- **TVL Cap:** Giới hạn tổng giá trị khoá trong protocol
-- **Per-Trade Cap:** Giới hạn size mỗi giao dịch
-- **Per-Market Cap:** Giới hạn collateral mỗi market
+## Chuyển quyền sở hữu hai bước
 
-## Emergency Mechanisms
+```
+1. Chủ sở hữu hiện tại gọi transferOwnership(newOwner)
+2. newOwner trở thành pendingOwner
+3. newOwner gọi acceptOwnership()
+4. Hoàn tất chuyển quyền sở hữu
+```
 
-- **Pause:** Dừng từng facet hoặc toàn bộ protocol
-- **Emergency Resolve:** Sau 7 ngày nếu oracle thất bại
-- **Refund Mode:** Hoàn USDC tỷ lệ khi không thể giải quyết
-- **Reentrancy Guards:** 3 loại trên tất cả external functions
+Điều này ngăn chặn việc chuyển nhầm sang địa chỉ sai.
+
+## Bảo vệ quản trị viên cuối cùng
+
+Hệ thống ngăn chặn việc thu hồi vai trò của quản trị viên cuối cùng, đảm bảo giao thức luôn có ít nhất một quản trị viên.
+
