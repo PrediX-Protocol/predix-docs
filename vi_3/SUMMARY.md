@@ -32,14 +32,16 @@
 * [Hủy lệnh](user-flow/huy-lenh.md)
 * [Xem vị thế của bạn](user-flow/xem-vi-the-cua-ban.md)
 * [Nhận thưởng](user-flow/nhan-thuong.md)
+* [Nếu sai thì sao?](user-flow/neu-sai-thi-sao.md)
+* [Tách & Gộp (Nâng cao)](user-flow/tach-and-gop-nang-cao.md)
 
 ## Khái Niệm Cốt Lõi
 
-* [17. Prediction Markets](concepts/16-prediction-markets.md)
-* [18. Outcome Tokens (YES/NO)](concepts/17-outcome-tokens-yesno.md)
-* [19. Split & Merge](concepts/18-split-merge.md)
-* [20. Resolution (Kết Quả Market)](concepts/19-resolution-giai-quyet-market.md)
-* [21. Phí Giao Dịch](concepts/20-phi-giao-dich.md)
+* [Prediction Markets](concepts/16-prediction-markets.md)
+* [Outcome Tokens (YES/NO)](concepts/17-outcome-tokens-yesno.md)
+* [Split & Merge](concepts/18-split-merge.md)
+* [Resolution (Kết Quả Market)](concepts/19-resolution-giai-quyet-market.md)
+* [Phí Giao Dịch](concepts/20-phi-giao-dich.md)
 
 ## Giao Dịch
 
