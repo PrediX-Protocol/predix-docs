@@ -32,7 +32,7 @@ Mô tả: Semi-fungible badges mint tự động khi đạt milestone Danh sách
 ### Season Competition & Trophy
 
 * **Mô tả:** Mỗi season 3 tháng với leaderboard theo volume, win rate và P\&L
-* **Utility:** Top performers nhận Trophy NFTs mở khoá: giảm phí 20–30%, bonus PREDIX airdrop, quyền truy cập sớm market premium, và badge độc quyền không bao giờ mint lại
+* **Utility:** Top performers nhận Trophy NFTs mở khoá: giảm phí 20–30%, bonus PRX airdrop, quyền truy cập sớm market premium, và badge độc quyền không bao giờ mint lại
 * **Ref:** Mô hình Season Pass đã proven trong gaming (Fortnite: $5,8B doanh thu từ battle pass). Hyperliquid Points Season. PrediX áp dụng cho prediction market — phù hợp văn hoá gaming APAC
 
 ### Referral NFT — Giới Thiệu (Soulbound)

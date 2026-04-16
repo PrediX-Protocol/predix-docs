@@ -30,7 +30,7 @@ Tổng cung: 1.000.000.000 PRX | Giá khởi điểm: $0,015 | FDV tại TGE: $1
 ### 2.3 Gauge Voting (vePRX)
 
 * **Cơ chế:** Khoá PRX → nhận vePRX (khoá 1–12 tháng, khoá lâu = nhiều voting power hơn)
-* **Tác dụng:** vePREDIX holders vote hàng tuần market nào nhận trợ cấp LP từ treasury
+* **Tác dụng:** vePRX holders vote hàng tuần market nào nhận trợ cấp LP từ treasury
 * **Flywheel:** Market được vote nhiều → thanh khoản sâu → volume cao → phí nhiều → yield staker tăng → demand PRX tăng
 * **Differentiator:** “Curve Wars” cho prediction markets — không đối thủ nào có cơ chế này
 * **Activation:** P0 — từ TGE
@@ -46,7 +46,7 @@ Tổng cung: 1.000.000.000 PRX | Giá khởi điểm: $0,015 | FDV tại TGE: $1
 
 ### 2.5 Buyback-Burn
 
-* **Cơ chế:** 30% doanh thu protocol → buyback PREDIX tự động trên thị trường mở → burn vĩnh viễn. On-chain verifiable
+* **Cơ chế:** 30% doanh thu protocol → buyback PRX tự động trên thị trường mở → burn vĩnh viễn. On-chain verifiable
 * **Liên kết trực tiếp:** Sử dụng nền tảng tăng → burn rate tăng → cung giảm → price floor tự nhiên
 * **Ước tính:** 1–3% tổng cung bị burn mỗi năm tại quy mô dự phóng
 * **Activation:** P0 — từ TGE (từ ngày đầu có volume)

@@ -12,7 +12,7 @@ PRX holders stake token để vote kết quả tranh chấp qua commit-reveal vo
 
 ### 3 Real Yield — Chia Sẻ Doanh Thu
 
-50% phí giao dịch phân phối cho PREDIX staker bằng USDC (không phải token lạm phát). 30% bổ sung buyback-and-burn PREDIX tự động.
+50% phí giao dịch phân phối cho PRX staker bằng USDC (không phải token lạm phát). 30% bổ sung buyback-and-burn PRX tự động.
 
 ### 4 Gauge Voting Cho Market
 

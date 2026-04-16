@@ -12,7 +12,7 @@ PrediX không phát minh lại bánh xe — protocol kết hợp các cơ chế 
 | Real Yield Staking (50% fee)   | dYdX V4 (100% fee → staker), GMX (30% → GLP) | Mô hình 50/30/20 cân bằng                          | dYdX: $1B+ volume/ngày. GMX: $150M TVL  |
 | Oracle Dispute Bond            | UMA (Optimistic Oracle + DVM)                | Commit-reveal thay vì optimistic window            | UMA: 99,9% dispute resolution chính xác |
 | Market Creation Bond           | Azuro (pool creation), Hyperliquid HIP-3     | Kết hợp bond + revenue share cho creator           | Azuro: 100+ data providers              |
-| Collateral Yield               | GMX (GLP yield sharing)                      | vePREDIX holders chia yield từ idle USDC           | GMX: 70% ETH fees → staker              |
+| Collateral Yield               | GMX (GLP yield sharing)                      | vePRX holders chia yield từ idle USDC              | GMX: 70% ETH fees → staker              |
 | Fee Tiers by Staking           | Hyperliquid, BNB (Binance)                   | Kết hợp staking + volume threshold                 | Binance: BNB discount là driver chính   |
 
 ### 2 NFT & Gamification References

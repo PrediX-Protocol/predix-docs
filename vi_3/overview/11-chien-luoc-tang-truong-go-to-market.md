@@ -12,7 +12,7 @@ Không cạnh tranh #5 toàn cầu. Thống trị khu vực chưa được phụ
 
 ### 3 Flywheel Tăng Trưởng
 
-Community muốn market yêu thích có thanh khoản sâu → Mua/khoá PREDIX → Vote gauge → Market nhận trợ cấp LP → Volume tăng → Phí tăng → Yield staker tăng → Demand PREDIX tăng → Buyback-burn mạnh hơn → Cung giảm → Vòng lặp tự cường
+Community muốn market yêu thích có thanh khoản sâu → Mua/khoá PRX → Vote gauge → Market nhận trợ cấp LP → Volume tăng → Phí tăng → Yield staker tăng → Demand PRX tăng → Buyback-burn mạnh hơn → Cung giảm → Vòng lặp tự cường
 
 ### 4 Các Giai Đoạn
 
