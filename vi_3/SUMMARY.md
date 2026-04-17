@@ -6,21 +6,21 @@
 
 ## Tổng Quan Dự Án
 
-* [Vấn Đề Thị Trường](overview/02-van-e-thi-truong.md)
-* [Giải Pháp](overview/03-giai-phap.md)
-* [Tổng Quan Sản Phẩm](overview/04-tong-quan-san-pham.md)
-* [Cơ Chế Hoạt Động](overview/05-co-che-hoat-ong.md)
-* [Lớp Đầu Cơ (Speculation Layer)](overview/06-lop-au-co-speculation-layer.md)
-* [Tokenomics](overview/07-tokenomics.md)
-* [Hệ Sinh Thái NFT](overview/08-he-sinh-thai-nft.md)
-* [Mô Hình Doanh Thu](overview/09-mo-hinh-doanh-thu.md)
-* [Lợi Thế Cạnh Tranh](overview/10-loi-the-canh-tranh.md)
-* [Chiến Lược Tăng Trưởng (Go-to-Market)](overview/11-chien-luoc-tang-truong-go-to-market.md)
-* [Lộ Trình Phát Triển (Roadmap)](overview/12-lo-trinh-phat-trien-roadmap.md)
-* [Rủi Ro & Giảm Thiểu](overview/13-rui-ro-giam-thieu.md)
+* [Vấn Đề Thị Trường](tong-quan-du-an/02-van-e-thi-truong.md)
+* [Giải Pháp](tong-quan-du-an/03-giai-phap.md)
+* [Tổng Quan Sản Phẩm](tong-quan-du-an/04-tong-quan-san-pham.md)
+* [Cơ Chế Hoạt Động](tong-quan-du-an/05-co-che-hoat-ong.md)
+* [Lớp Đầu Cơ (Speculation Layer)](tong-quan-du-an/06-lop-au-co-speculation-layer.md)
+* [Tokenomics](tong-quan-du-an/07-tokenomics.md)
+* [Hệ Sinh Thái NFT](tong-quan-du-an/08-he-sinh-thai-nft.md)
+* [Mô Hình Doanh Thu](tong-quan-du-an/09-mo-hinh-doanh-thu.md)
+* [Lợi Thế Cạnh Tranh](tong-quan-du-an/10-loi-the-canh-tranh.md)
+* [Chiến Lược Tăng Trưởng (Go-to-Market)](tong-quan-du-an/11-chien-luoc-tang-truong-go-to-market.md)
+* [Lộ Trình Phát Triển (Roadmap)](tong-quan-du-an/12-lo-trinh-phat-trien-roadmap.md)
+* [Rủi Ro & Giảm Thiểu](tong-quan-du-an/13-rui-ro-giam-thieu.md)
 * [Bối Cảnh Pháp Lý](tong-quan-du-an/boi-canh-phap-ly.md)
-* [Team & Advisors](overview/14-team-advisors.md)
-* [References & Benchmarks](overview/15-references-benchmarks.md)
+* [Team & Advisors](tong-quan-du-an/14-team-advisors.md)
+* [References & Benchmarks](tong-quan-du-an/15-references-benchmarks.md)
 
 ## USER FLOW
 
@@ -37,30 +37,30 @@
 
 ## Khái Niệm Cốt Lõi
 
-* [Prediction Markets](concepts/16-prediction-markets.md)
-* [Outcome Tokens (YES/NO)](concepts/17-outcome-tokens-yesno.md)
-* [Split & Merge](concepts/18-split-merge.md)
-* [Resolution (Kết Quả Market)](concepts/19-resolution-giai-quyet-market.md)
-* [Phí Giao Dịch](concepts/20-phi-giao-dich.md)
+* [Prediction Markets](khai-niem-cot-loi/16-prediction-markets.md)
+* [Outcome Tokens (YES/NO)](khai-niem-cot-loi/17-outcome-tokens-yesno.md)
+* [Split & Merge](khai-niem-cot-loi/18-split-merge.md)
+* [Resolution (Kết Quả Market)](khai-niem-cot-loi/19-resolution-giai-quyet-market.md)
+* [Phí Giao Dịch](khai-niem-cot-loi/20-phi-giao-dich.md)
 
 ## Giao Dịch
 
-* [Trading Overview](trading/21-trading-overview.md)
-* [Market Orders](trading/22-market-orders.md)
-* [Limit Orders](trading/23-limit-orders.md)
-* [Smart Routing](trading/24-smart-routing.md)
-* [Matching Engine](trading/25-matching-engine.md)
-* [Virtual NO Pricing](trading/26-virtual-no-pricing.md)
+* [Trading Overview](giao-dich/21-trading-overview.md)
+* [Market Orders](giao-dich/22-market-orders.md)
+* [Limit Orders](giao-dich/23-limit-orders.md)
+* [Smart Routing](giao-dich/24-smart-routing.md)
+* [Matching Engine](giao-dich/25-matching-engine.md)
+* [Virtual NO Pricing](giao-dich/26-virtual-no-pricing.md)
 
 ## Smart Contracts
 
-* [Contract Architecture](contracts/27-contract-architecture.md)
-* [Diamond Proxy (EIP-2535)](contracts/28-diamond-proxy-eip-2535.md)
-* [Exchange (CLOB)](contracts/29-exchange-clob.md)
-* [Router (Smart Router)](contracts/30-router-smart-router.md)
-* [Hook (Uniswap v4)](contracts/31-hook-uniswap-v4.md)
-* [Oracle](contracts/32-oracle.md)
-* [Access Control & Safety](contracts/33-access-control-safety.md)
+* [Contract Architecture](smart-contracts/27-contract-architecture.md)
+* [Diamond Proxy (EIP-2535)](smart-contracts/28-diamond-proxy-eip-2535.md)
+* [Exchange (CLOB)](smart-contracts/29-exchange-clob.md)
+* [Router (Smart Router)](smart-contracts/30-router-smart-router.md)
+* [Hook (Uniswap v4)](smart-contracts/31-hook-uniswap-v4.md)
+* [Oracle](smart-contracts/32-oracle.md)
+* [Access Control & Safety](smart-contracts/33-access-control-safety.md)
 * [An toàn](smart-contracts/an-toan.md)
 
 ## Developers
@@ -73,7 +73,7 @@
 
 ## Tài Nguyên
 
-* [FAQ](resources/44-faq.md)
-* [Glossary](resources/45-glossary.md)
-* [Community & Links](resources/46-community-links.md)
-* [Brand Kit](resources/47-brand-kit.md)
+* [FAQ](tai-nguyen/44-faq.md)
+* [Glossary](tai-nguyen/45-glossary.md)
+* [Community & Links](tai-nguyen/46-community-links.md)
+* [Brand Kit](tai-nguyen/47-brand-kit.md)
