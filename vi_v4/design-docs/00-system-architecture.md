@@ -1,5 +1,5 @@
 ---
-description: System architecture design doc — on-chain + off-chain, data flow, deployment topology, SLOs. Target audience: audit firms, VC CTO, security researchers.
+description: "System architecture design doc — on-chain + off-chain, data flow, deployment topology, SLOs. Target audience: audit firms, VC CTO, security researchers."
 ---
 
 # System Architecture

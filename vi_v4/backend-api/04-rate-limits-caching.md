@@ -1,5 +1,5 @@
 ---
-description: Rate limit per-IP và per-session. Cache 2 tier: hot (2s) + warm (60s).
+description: "Rate limit per-IP và per-session. Cache 2 tier: hot (2s) + warm (60s)."
 ---
 
 # Rate Limits & Caching
