@@ -2,20 +2,13 @@
 
 Trade lần đầu trên PrediX trong dưới 2 phút.
 
-```mermaid
-journey
-    title Onboarding 60s
-    section Setup
-      Mở app: 5: User
-      Sign in (passkey hoặc wallet): 5: User
-    section Funding
-      Bridge USDC từ chain khác: 4: User
-      Hoặc nạp trực tiếp Unichain: 5: User
-    section Trade
-      Browse market: 5: User
-      Buy YES / NO: 5: User
-      Theo dõi vị thế: 5: User
-```
+## Overview
+
+| 🔐 **Setup** (~10s) | 💰 **Funding** (~30s) | 📈 **Trade** (~20s) |
+|---|---|---|
+| Mở app | Bridge USDC từ chain khác | Browse market |
+| Sign in (passkey / MetaMask) | Hoặc nạp trực tiếp từ CEX | Buy YES hoặc NO |
+| | | Theo dõi P\&L realtime |
 
 ## 3 bước
 

@@ -84,24 +84,16 @@ Score thấp = pricing đúng. Score cao = đoán sai thường xuyên.
 
 ### Accuracy band
 
-Biểu đồ đo: Khi bạn mua ở khoảng giá X, % sự kiện thực sự xảy ra là bao nhiêu?
+Biểu đồ đo: khi bạn mua ở khoảng giá X, % sự kiện thực sự xảy ra là bao nhiêu?
 
-```mermaid
-quadrantChart
-    title Accuracy calibration
-    x-axis Giá bạn mua (implied probability)
-    y-axis Tỷ lệ thực tế win
-    quadrant-1 Underconfident (mua thấp, thắng cao)
-    quadrant-2 Well-calibrated
-    quadrant-3 Well-calibrated
-    quadrant-4 Overconfident (mua cao, thua nhiều)
-    Bạn: [0.7, 0.55]
-    Trung bình: [0.5, 0.5]
-```
+| Bạn mua giá | Win rate thực tế | Đánh giá |
+|---|---|---|
+| `$0.30` (low confidence) | 30% | ✅ Well-calibrated |
+| `$0.30` (low confidence) | 70% | ⬆️ **Underconfident** — bạn quá thận trọng, có thể trade size lớn hơn |
+| `$0.70` (high confidence) | 70% | ✅ Well-calibrated |
+| `$0.70` (high confidence) | 30% | ⬇️ **Overconfident** — bạn tự tin quá, nên trade nhỏ hơn |
 
-- Diagonal = perfect calibration: mua $0.70 → thắng 70%.
-- Band trên diagonal = underconfident.
-- Band dưới = overconfident — bạn tự tin quá, kết quả thực tế thấp hơn.
+App vẽ điểm của bạn trên biểu đồ scatter so với diagonal lý tưởng (mua $0.X → thắng X%). Càng gần diagonal càng pricing chính xác.
 
 ## Performance replay
 

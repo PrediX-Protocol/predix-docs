@@ -70,16 +70,15 @@ burn_per_year > emission_per_year
 
 Emission = community pool release + team vesting + treasury unlock. Sau năm 4, emission ≈ 0 (vest xong).
 
-```mermaid
-xychart-beta
-    title "Burn vs Emission per year (% supply)"
-    x-axis [Y1, Y2, Y3, Y4, Y5+]
-    y-axis "% of supply" 0 --> 30
-    bar [25, 22, 15, 5, 1]
-    line [1, 3, 7, 12, 15]
-```
+| Year | Emission (% supply) | Burn (% supply) | Net |
+|---|---|---|---|
+| **Y1** | 25% | 1% | +24% (dilutive) |
+| **Y2** | 22% | 3% | +19% |
+| **Y3** | 15% | 7% | +8% |
+| **Y4** | 5% | 12% | −7% (deflationary) |
+| **Y5+** | 1% | 15% | **−14% (strong deflationary)** |
 
-- **Y1-Y4**: Emission dominant → circulating tăng.
+- **Y1-Y4**: Emission dominant → circulating tăng (buyback giảm tốc độ).
 - **Y4+**: Emission ≈ 0 → net deflationary nếu volume đủ (>$2-4M/tháng).
 
 Y1-Y4 buyback giảm tốc độ dilution, không đảo chiều. Y5+ thực sự burn ròng.

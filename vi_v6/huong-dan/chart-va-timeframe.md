@@ -74,19 +74,18 @@ Click **Compare** + chọn market khác:
 
 ## Multi-outcome event chart
 
-Trong event detail, chart hiện giá YES của **tất cả members** trên cùng timeline:
+Trong event detail, chart hiện giá YES của **tất cả members** trên cùng timeline. Ví dụ event *"FIFA WC 2026 Winner"* qua 6 tháng:
 
-```mermaid
-xychart-beta
-    title "FIFA WC 2026 Winner — giá YES per đội"
-    x-axis [Jan, Feb, Mar, Apr, May, Jun]
-    y-axis "Probability" 0 --> 1
-    line [0.20, 0.22, 0.25, 0.28, 0.32, 0.35]
-    line [0.18, 0.16, 0.15, 0.14, 0.12, 0.10]
-    line [0.15, 0.18, 0.22, 0.20, 0.18, 0.15]
-```
+| Tháng | 🇦🇷 Argentina | 🇧🇷 Brazil | 🇫🇷 France |
+|---|---|---|---|
+| Jan | $0.20 | $0.18 | $0.15 |
+| Feb | $0.22 | $0.16 | $0.18 |
+| Mar | $0.25 | $0.15 | $0.22 |
+| Apr | $0.28 | $0.14 | $0.20 |
+| May | $0.32 | $0.12 | $0.18 |
+| Jun | $0.35 | $0.10 | $0.15 |
 
-Click member trong legend → highlight, hide các đường khác.
+Trên app: line chart overlay tất cả members, click member trong legend để highlight hoặc hide. Useful theo dõi shift xác suất real-time.
 
 ## Order book depth chart
 
