@@ -6,26 +6,17 @@ Thị trường giao dịch token phản ánh **xác suất** một sự kiện 
 
 Sự kiện: *"Bitcoin vượt $100,000 trước 2027-01-01?"*
 
-```mermaid
-flowchart LR
-    Event[Sự kiện future] --> Market[Market]
-    Market --> Y[YES @ $0.68]
-    Market --> N[NO @ $0.32]
-    Y -.->|sự kiện xảy ra| Y1[1 YES = $1.00]
-    Y -.->|không xảy ra| Y0[1 YES = $0]
-    N -.->|sự kiện xảy ra| N0[1 NO = $0]
-    N -.->|không xảy ra| N1[1 NO = $1.00]
+Market hiện đang pricing:
+- **YES** = `$0.68` → thị trường đánh giá **68% khả năng xảy ra**
+- **NO** = `$0.32` → 32% khả năng không xảy ra
+- Tổng YES + NO ≈ `$1.00` (xem [Outcome token](outcome-tokens.md) tại sao)
 
-    classDef ev fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef yes fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef no fill:#fee2e2,stroke:#dc2626,color:#0f172a
-    class Event,Market ev
-    class Y,Y1,Y0 yes
-    class N,N1,N0 no
-```
+Payout matrix khi market resolve:
 
-- Giá YES = $0.68 → market đang pricing sự kiện **68% khả năng xảy ra**.
-- Giá YES + Giá NO ≈ $1.00 (xem [Outcome token](outcome-tokens.md) tại sao).
+| Outcome thực tế | YES holder | NO holder |
+|---|---|---|
+| Sự kiện **xảy ra** | `1 YES = $1.00` ✅ | `1 NO = $0` ❌ |
+| Sự kiện **không xảy ra** | `1 YES = $0` ❌ | `1 NO = $1.00` ✅ |
 
 ## Tại sao giá là tín hiệu thông tin tốt
 

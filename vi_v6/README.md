@@ -2,21 +2,12 @@
 
 Prediction market on-chain trên Unichain. Mỗi sự kiện có hai outcome token YES / NO; token đúng redeem 1:1 USDC khi market resolve.
 
-```mermaid
-flowchart LR
-    Q[Câu hỏi sự kiện<br/><i>BTC > $100k trước 2027?</i>] --> M[Market]
-    M --> YES[YES token]
-    M --> NO[NO token]
-    YES --> Y1[Sự kiện xảy ra<br/>1 YES = 1 USDC]
-    NO --> N1[Sự kiện không xảy ra<br/>1 NO = 1 USDC]
+**Ví dụ**: Market *"Bitcoin vượt $100k trước 2027?"* tạo ra 2 token YES + NO. User mua bên mình tin sẽ thắng.
 
-    classDef src fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef yes fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef no fill:#fee2e2,stroke:#dc2626,color:#0f172a
-    class Q,M src
-    class YES,Y1 yes
-    class NO,N1 no
-```
+| Khi market resolve | YES holder | NO holder |
+|---|---|---|
+| Sự kiện **xảy ra** | Nhận `$1 USDC / token` | `$0` (mất hết) |
+| Sự kiện **không xảy ra** | `$0` (mất hết) | Nhận `$1 USDC / token` |
 
 ---
 
