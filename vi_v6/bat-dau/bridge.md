@@ -86,11 +86,11 @@ Cùng UI:
 
 ## Native ETH cho gas
 
-Nếu bạn dùng MetaMask EOA (không smart account), cần ETH Unichain để trả gas:
+Nếu bạn dùng **crypto wallet (EOA)**, cần ETH Unichain để trả gas:
 
 - Bridge cùng widget: chọn **ETH** thay vì USDC.
 - Số lượng nhỏ thôi — gas Unichain rất rẻ (~$0.001-0.01 / tx).
-- Smart account user: bỏ qua, paymaster sponsor.
+- **Passkey + Smart Account user**: bỏ qua bước này, paymaster sponsor gas (chính sách hiện tại).
 
 ## Câu hỏi an toàn
 

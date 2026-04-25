@@ -91,8 +91,8 @@ fee   = 100 - 99            =  1 USDC
 
 ## Gas
 
-- **Smart account** (passkey hoặc MetaMask upgraded): Paymaster sponsor gas cho actions chính (swap, split, merge, redeem, place/cancel order). **Free**.
-- **MetaMask EOA**: Tự trả ETH. Gas Unichain rẻ — thường $0.001-0.01 per tx.
+- **Passkey + Smart Account**: Hiện tại paymaster sponsor gas cho actions chính (swap, split, merge, redeem, place/cancel order). **Free trong giai đoạn bootstrap** — chính sách paymaster có thể thay đổi tương lai theo governance.
+- **Crypto wallet (EOA)**: Tự trả ETH. Gas Unichain rẻ — thường $0.001-0.01 per tx.
 
 ## Phí phân bổ — chi tiết
 

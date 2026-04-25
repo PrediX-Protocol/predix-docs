@@ -12,7 +12,7 @@ Trade lần đầu trên PrediX trong dưới 2 phút.
 
 ## 3 bước
 
-1. **[Kết nối ví](ket-noi-vi.md)** — Passkey (sinh trắc học, 1-tap), MetaMask, hoặc smart account ECDSA. Gas sponsor mặc định.
+1. **[Kết nối ví](ket-noi-vi.md)** — Passkey (sinh trắc học, UX web2) hoặc crypto wallet (MetaMask / Rainbow / WalletConnect). Smart account user hiện được paymaster sponsor gas.
 2. **[Bridge USDC](bridge.md)** — Nếu USDC của bạn đang ở chain khác, bridge sang Unichain trước.
 3. **[Trade lần đầu](giao-dich-dau-tien.md)** — Buy YES hoặc NO trong 30 giây.
 

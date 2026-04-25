@@ -66,7 +66,7 @@ Slippage = chênh lệch giá preview vs giá thực tế khi tx execute.
 - **1-2%**: Tăng lên nếu market spread rộng.
 - **> 5%**: Hiếm khi nên — Router cảnh báo.
 
-Vượt slippage → tx **revert**, tiền không mất (chỉ tốn gas EOA, free với smart account).
+Vượt slippage → tx **revert**, tiền không mất (chỉ tốn gas nếu EOA; smart account hiện free qua paymaster).
 
 ## Fee bạn trả
 
@@ -75,11 +75,13 @@ Hiển thị breakdown trên preview:
 ```
 AMM swap fee:    0.50 USDC  (0.5% vì market còn > 7 ngày)
 CLOB taker fee:  0.00 USDC  (0% bootstrap window)
-Gas:             Free       (paymaster sponsor)
+Gas:             Free       (paymaster sponsor — smart account)
 ─────────────────────────
 Tổng chi:        100.00 USDC (đã bao gồm fee)
 Nhận:            ~205 YES
 ```
+
+> EOA user: gas hiển thị bằng ETH thực, ước tính $0.001-0.01.
 
 Chi tiết fee structure: [Cấu trúc fee](../khai-niem/phi.md).
 
@@ -90,7 +92,7 @@ Cùng panel, tab **Split** / **Merge**:
 - **Split**: 100 USDC → 100 YES + 100 NO. Dùng khi muốn hold cả 2 để sell riêng (market making).
 - **Merge**: 100 YES + 100 NO → 100 USDC. Dùng khi đang có cả 2 và muốn rút.
 
-Free phí protocol, free gas (smart account).
+Free phí protocol. Gas: paymaster sponsor cho smart account, EOA tự trả ETH.
 
 ## Lỗi thường gặp
 

@@ -18,7 +18,7 @@ Sau market resolve, đổi token thắng thành USDC. Nếu market không resolv
 
 ### Batch redeem
 
-Nhiều market đã resolve → nút **Claim All** → batch qua smart account (1 click, 1 tx).
+Nhiều market đã resolve → nút **Claim All** → batch qua **passkey smart account** (1 click, 1 tx). EOA user: từng market 1 tx riêng (Wallet không hỗ trợ batch native).
 
 ```mermaid
 sequenceDiagram

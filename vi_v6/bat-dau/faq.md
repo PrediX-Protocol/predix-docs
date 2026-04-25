@@ -24,7 +24,7 @@ Cân bằng tự động ở ~$1 (chênh lệch nhỏ chỉ vì AMM curve + spre
 | Outcome token | ERC-20 (composable) | ERC-1155 |
 | Liquidity | CLOB + AMM hybrid | CLOB only (matching off-chain) |
 | Chain | Unichain (L2) | Polygon |
-| Account | EOA + smart account (passkey, ECDSA) | EOA + Magic Link |
+| Account | Passkey + smart account (AA) hoặc EOA wallet | EOA + Magic Link |
 | Geo restriction | Per regulation từng region, không default block | Cấm 33+ quốc gia |
 | Token economy | PRX với real yield + buyback-burn | UMA staking, no native token |
 
@@ -34,11 +34,14 @@ PrediX là protocol on-chain phi tập trung. Truy cập từ bất kỳ đâu c
 
 ## Ví & tài khoản
 
-### Passkey vs MetaMask, chọn cái nào? {#passkey-vs-metamask}
+### Passkey vs crypto wallet, chọn cái nào? {#passkey-vs-metamask}
 
-- **Passkey**: Tiện nhất, không cài extension, sinh trắc học mở khoá. Backup qua cloud sync (iCloud/Google) hoặc thiết bị thứ 2. Phù hợp số dư vừa.
-- **MetaMask EOA**: Khôi phục được bằng seed phrase BIP-39. Phù hợp số dư lớn, hoặc bạn đã có hardware wallet (Ledger).
-- **MetaMask + Smart Account**: Tốt nhất cả hai — seed phrase backup + batch tx + paymaster sponsor.
+PrediX có 2 phương pháp:
+
+- **Passkey + Smart Account** (ERC-4337): Tiện nhất, UX web2-like, không cài extension. Sinh trắc học (Touch ID / Face ID) mở khoá. Backup qua cloud sync hoặc thiết bị thứ 2. Hiện được paymaster sponsor gas. Phù hợp user mới, số dư nhỏ-vừa.
+- **Crypto wallet (EOA)** — MetaMask, Rainbow, Coinbase Wallet, WalletConnect, Ledger: Khôi phục bằng seed phrase BIP-39, compatible hardware wallet. Tự trả gas ETH. Phù hợp DeFi user quen, custody lớn, hoặc tích hợp tooling khác.
+
+Cả 2 đều **non-custodial** — PrediX không bao giờ giữ private key.
 
 ### Mất thiết bị có passkey thì sao? {#mat-passkey}
 
@@ -50,7 +53,7 @@ PrediX là protocol on-chain phi tập trung. Truy cập từ bất kỳ đâu c
 
 ### Ví passkey có xuất seed được không?
 
-Không. Private key của passkey nằm trong Secure Enclave / TPM, không exportable theo design. Nếu cần seed phrase backup, dùng MetaMask + Smart Account.
+Không. Private key của passkey nằm trong Secure Enclave / TPM, không exportable theo design. Nếu cần seed phrase backup chuẩn BIP-39, dùng **crypto wallet (EOA)** thay vì passkey.
 
 ### Smart account address của tôi là gì?
 
@@ -60,8 +63,8 @@ Sau khi sign-in lần đầu, app hiển thị address. Đây là **counterfactu
 
 ### Có phải trả gas không? {#gas-co-mat-tien}
 
-- **Smart account** (passkey hoặc MetaMask upgraded): Paymaster PrediX sponsor gas cho các action chính (swap, split, merge, redeem, place/cancel order). **Free cho user**.
-- **MetaMask EOA**: Tự trả gas bằng ETH Unichain. Gas Unichain rẻ — thường $0.001-0.01 per tx.
+- **Passkey + Smart Account**: Hiện tại paymaster PrediX sponsor gas cho các action chính (swap, split, merge, redeem, place/cancel order). **Free cho user trong giai đoạn bootstrap** — chính sách paymaster có thể thay đổi tương lai (theo governance vote).
+- **Crypto wallet (EOA)**: Tự trả gas bằng ETH Unichain. Gas Unichain rất rẻ — thường $0.001-0.01 per tx.
 
 ### Phí maker/taker bao nhiêu?
 
@@ -73,7 +76,7 @@ Chi tiết: [Cấu trúc fee](../khai-niem/phi.md).
 
 ### Phí cancel limit order?
 
-Không. Cancel free. Smart account user → free hoàn toàn. EOA → trả gas thường.
+Không phí protocol. Smart account user → gas paymaster sponsor (hiện free). EOA → trả gas ETH thường.
 
 ### Phí redeem khi resolve?
 
@@ -105,7 +108,7 @@ PrediX tích hợp các bridge có TVL hàng tỷ USD: Across, Stargate, LayerZe
 
 Chênh lệch giữa giá preview và giá thực tế khi tx execute. Default tolerance 0.5%.
 
-Vượt slippage → tx **revert**, tiền không mất (chỉ tốn gas EOA, miễn phí với smart account).
+Vượt slippage → tx **revert**, tiền không mất (EOA tốn gas ETH; smart account hiện được paymaster sponsor).
 
 ### Trade nhỏ nhất bao nhiêu?
 

@@ -4,7 +4,7 @@ Thuật ngữ cốt lõi sắp theo ABC. Định nghĩa ngắn + ví dụ.
 
 ### AA (Account Abstraction)
 
-ERC-4337 standard cho smart contract wallet. PrediX dùng Kernel v3 smart account với passkey hoặc ECDSA validator + paymaster sponsor gas.
+ERC-4337 standard cho smart contract wallet. PrediX dùng Kernel v3 smart account với **passkey validator** (sign bằng sinh trắc học). Hiện tại paymaster sponsor gas cho user — chính sách có thể thay đổi tương lai.
 
 ### AMM (Automated Market Maker)
 
@@ -124,7 +124,7 @@ Auth standard WebAuthn dùng sinh trắc học (Touch ID, Face ID). Private key 
 
 ### Paymaster (ERC-4337)
 
-Contract sponsor gas cho UserOp. PrediX Paymaster cho user qua app session SIWE.
+Contract sponsor gas cho UserOp. PrediX Paymaster hiện sponsor gas cho passkey smart account user — chính sách có thể thay đổi (governance vote, partial subsidy, hoặc gas-relayer payment) trong tương lai.
 
 ### Permit2
 
@@ -172,7 +172,7 @@ Chênh lệch giá preview vs giá thực tế khi tx execute. Default tolerance
 
 ### Smart account (ERC-4337)
 
-Contract wallet support batch tx, paymaster, passkey. PrediX dùng Kernel v3.
+Contract wallet support batch tx, paymaster, passkey. PrediX dùng Kernel v3 smart account với passkey validator. Đối lập EOA (externally-owned account) như MetaMask thông thường.
 
 ### Split
 

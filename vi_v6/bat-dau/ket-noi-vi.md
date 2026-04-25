@@ -1,84 +1,85 @@
 # Kết nối ví
 
-PrediX hỗ trợ 3 cách đăng nhập. Cả 3 đều **non-custodial** — không ai (kể cả PrediX) giữ private key của bạn.
+PrediX có **2 phương pháp đăng nhập**. Cả 2 đều **non-custodial** — không ai (kể cả PrediX) giữ private key của bạn.
 
 ## Chọn nhanh
 
 ```mermaid
 flowchart TD
-    Start{Bạn đã có ví crypto?}
-    Start -->|Chưa| Passkey[<b>Passkey</b><br/>Touch ID / Face ID<br/>Tạo mới ngay trong browser]
-    Start -->|Có MetaMask| Choice{Muốn batch tx<br/>+ gas miễn phí?}
-    Choice -->|Có| Smart[<b>MetaMask + Smart Account</b><br/>Vẫn dùng MetaMask làm signer<br/>Hưởng paymaster sponsor]
-    Choice -->|Không| EOA[<b>MetaMask EOA</b><br/>Đơn giản nhất<br/>Tự trả gas]
+    Start{Trải nghiệm bạn muốn?}
+    Start -->|Đơn giản như app web2<br/>không cần biết crypto| Passkey[<b>Passkey + Smart Account</b><br/>Touch ID · Face ID · WebAuthn<br/>Tự deploy ERC-4337 account<br/>Không cần install extension]
+    Start -->|Quen DeFi · muốn full control<br/>tự ký mỗi tx| Wallet[<b>Crypto wallet (EOA)</b><br/>MetaMask · Rainbow · WalletConnect<br/>Self-custody seed phrase BIP-39<br/>Compatible với hardware wallet]
 
     classDef pk fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef sa fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef eoa fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef cw fill:#dbeafe,stroke:#2563eb,color:#0f172a
     class Passkey pk
-    class Smart sa
-    class EOA eoa
+    class Wallet cw
 ```
 
 ## So sánh
 
-| | Passkey | MetaMask + Smart Account | MetaMask EOA |
-|---|---|---|---|
-| Cài extension | Không | Có | Có |
-| Backup recovery | Cloud sync (iCloud/Google) hoặc thiết bị thứ 2 | Seed phrase (BIP-39) | Seed phrase |
-| Phí gas | Sponsor qua paymaster | Sponsor qua paymaster | Tự trả ETH |
-| Batch transaction | Có (1-click `[approve, swap]`) | Có | Không (2 tx riêng) |
-| Đăng ký lần đầu | ~5 giây | ~30 giây + sign | Đã có ví → instant |
-| Phù hợp số dư | Nhỏ–vừa | Mọi mức | Mọi mức |
+| | Passkey + Smart Account | Crypto wallet (EOA) |
+|---|---|---|
+| **Trải nghiệm** | Web2-like, sinh trắc học | Web3 truyền thống, ký mỗi tx |
+| **Cài extension** | Không | Có (MetaMask, Rainbow…) |
+| **Backup recovery** | Cloud sync (iCloud / Google), hoặc thiết bị thứ 2 | Seed phrase BIP-39 (12-24 từ) |
+| **Hardware wallet** | Không (private key trong Secure Enclave) | Có (Ledger, Trezor) |
+| **Phí gas** | Hiện free qua paymaster (chính sách có thể thay đổi) | Tự trả ETH |
+| **Batch transaction** | Có (1-click `[approve, swap]` atomic) | Không (2 tx riêng) |
+| **Đăng ký lần đầu** | ~5 giây sinh trắc học | Đã có ví → instant |
+| **Phù hợp** | User mới · onboarding nhanh | DeFi user · custody lớn · hardware wallet |
 
-## Passkey — nhanh nhất
+> **Ghi chú gas**: Hiện tại paymaster sponsor toàn bộ gas cho smart account user trên các action chính (swap, split, merge, redeem, place/cancel order). Đây là chính sách bootstrap — protocol có thể chuyển sang gas-relayer payment hoặc subsidize partial trong tương lai theo governance vote.
 
-Passkey dùng chuẩn WebAuthn — sinh trắc học (Touch ID, Face ID, Windows Hello) hoặc PIN của thiết bị xác thực. Private key sinh ra và lưu trong **Secure Enclave / TPM**, không export được.
+## Passkey + Smart Account
+
+Passkey dùng chuẩn **WebAuthn** — sinh trắc học (Touch ID, Face ID, Windows Hello) hoặc PIN của thiết bị xác thực. Private key sinh ra và lưu trong **Secure Enclave / TPM**, không export được.
+
+Khi sign-up, app tự deploy một **Kernel smart account (ERC-4337)** — wallet contract on-chain validator bằng passkey signature. Mọi action đi qua UserOp.
 
 ### Tạo mới
 
 1. Mở [app.predix.app](https://app.predix.app) → **Sign up**.
 2. Chọn **Continue with passkey**.
 3. Browser hỏi xác thực sinh trắc học. Confirm.
-4. Smart account (ERC-4337 Kernel) được deploy on-chain ở swap đầu tiên (counterfactual address ngay từ đầu).
+4. Smart account counterfactual address xuất hiện ngay (deploy on-chain ở action đầu tiên).
 
 ### Backup
 
-- **iCloud Keychain** (iPhone, Mac) — passkey sync giữa các thiết bị Apple đã sign-in cùng Apple ID.
+- **iCloud Keychain** (iPhone, Mac) — passkey sync giữa các thiết bị Apple cùng Apple ID.
 - **Google Password Manager** (Android, Chrome) — sync giữa devices.
-- **Hardware key** (YubiKey, Titan) — passkey đứng độc lập, không phụ thuộc cloud.
+- **Hardware key** (YubiKey, Titan) — passkey lưu trên hardware key, dùng plug-in xác thực.
 
-> **Cảnh báo**: Nếu chỉ có 1 thiết bị + không sync cloud + không có backup → mất thiết bị = mất ví. Khuyến nghị enable cloud sync hoặc thêm thiết bị thứ 2.
+> **Cảnh báo**: Nếu chỉ có 1 thiết bị + không sync cloud + không có hardware key backup → mất thiết bị = mất ví. Khuyến nghị enable cloud sync hoặc thêm thiết bị thứ 2 ngay sau sign-up.
 
 ### Recovery (mất thiết bị)
 
-Phase 1: tạo lại passkey trên thiết bị mới qua cloud sync (nếu enabled).
+Hiện tại: tạo lại passkey trên thiết bị mới qua cloud sync (nếu enabled).
 
-Phase 2 (TBA): **Social recovery** với guardian — chỉ định N người tin cậy, M trong N có thể restore quyền truy cập.
+Roadmap: **Social recovery** với guardian — chỉ định N người tin cậy, M trong N có thể restore quyền truy cập (TBA).
 
-## MetaMask + Smart Account
+## Crypto wallet (EOA)
 
-Nếu bạn đã có MetaMask hoặc Rainbow, upgrade lên smart account:
+Dùng wallet truyền thống bạn đã có — MetaMask, Rainbow, Coinbase Wallet, hoặc bất kỳ wallet nào hỗ trợ WalletConnect / hardware wallet.
 
-1. Connect MetaMask qua RainbowKit.
-2. Sign-in (SIWE — Sign-In With Ethereum) — ký 1 message offline, không tốn gas.
-3. App detect EOA → đề xuất **Upgrade to Smart Account**.
-4. Sign 1 tx duy nhất tạo Kernel smart account với MetaMask EOA làm validator ECDSA.
-5. Sau đó mọi action đi qua smart account: batch tx, paymaster sponsor.
+### Bước
 
-**Khi nào dùng**: muốn giữ seed phrase của MetaMask làm backup nhưng vẫn hưởng UX của smart account (batch + gasless).
+1. Click **Connect wallet** ở header.
+2. Chọn wallet (MetaMask / Rainbow / WalletConnect / Ledger…).
+3. Approve connection request trong wallet.
+4. Ký **SIWE message** (Sign-In With Ethereum) — off-chain, không tốn gas.
+5. Trade trực tiếp — mỗi tx tự trả gas ETH.
 
-## MetaMask EOA (truyền thống)
+### Khi nào nên dùng
 
-1. Connect MetaMask qua RainbowKit.
-2. Ký SIWE message.
-3. Trade trực tiếp — mỗi tx tự trả gas ETH.
-
-**Khi nào dùng**: bạn muốn full control, không quan tâm gasless, hoặc tích hợp tooling khác (Frame, ledger với MetaMask).
+- Bạn đã có DeFi workflow với MetaMask + hardware wallet.
+- Custody số dư lớn — muốn seed phrase backup chuẩn BIP-39.
+- Tích hợp tooling khác (Frame, Rabby, Safe multisig).
+- Preferred full control, không muốn dependency vào paymaster.
 
 ## SIWE session
 
-Tất cả 3 cách trên đều dùng **SIWE** (EIP-4361) để tạo session với backend:
+Cả 2 phương pháp đều dùng **SIWE** (EIP-4361) để tạo session với backend:
 
 ```mermaid
 sequenceDiagram
@@ -110,6 +111,6 @@ App **không bao giờ** request `eth_signTypedData` cho approve token với amo
 
 ## Đăng xuất
 
-- App: nút **Disconnect** ở header. Xoá session cookie.
-- Wallet: ngắt kết nối từ MetaMask UI.
-- Smart account: chỉ "log out" session — smart account vẫn tồn tại on-chain, lần sau sign in lại dùng cùng address.
+- App: nút **Disconnect** ở header → xoá session cookie.
+- Crypto wallet: ngắt kết nối từ wallet UI.
+- Passkey smart account: chỉ "log out" session — smart account vẫn tồn tại on-chain, lần sau sign-in lại dùng cùng address.

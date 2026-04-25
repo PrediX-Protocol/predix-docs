@@ -259,7 +259,7 @@ const gasLimit = (estimatedGas * 120n) / 100n;
 | Error | Cause | Fix |
 |---|---|---|
 | `User rejected request` | User cancel ví | Show retry UI |
-| `Insufficient funds for gas` | Wallet thiếu ETH (EOA) | Suggest bridge ETH hoặc upgrade smart account |
+| `Insufficient funds for gas` | Wallet thiếu ETH (EOA) | Suggest bridge ETH, hoặc switch sang passkey smart account |
 | `Internal JSON-RPC error` | RPC down hoặc rate limit | Fallback RPC, retry |
 | `Network mismatch` | Ví không connect Unichain | Auto switch via `wallet_switchEthereumChain` |
 | `Nonce too low` | Tx race condition | Refresh nonce, retry |
