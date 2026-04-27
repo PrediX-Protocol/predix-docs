@@ -84,23 +84,26 @@ Set qua admin BE endpoint sau khi tạo on-chain.
 ## Bước — tạo binary market với Chainlink
 
 ```mermaid
-sequenceDiagram
-    participant C as Creator
-    participant D as Diamond
-    participant O as ChainlinkOracle
-    participant H as Hook
-    participant P as PoolManager
+flowchart TD
+    Start(["🛠️ Creator: createMarket"])
+    Start --> S1["Diamond.createMarket<br/>(question, endTime, oracle=ChainlinkOracle)"]
+    S1 --> S2["Diamond mint YES + NO ERC-20<br/>Trả về marketId, yesToken, noToken"]
+    S2 --> S3["ChainlinkOracle.register<br/>(marketId, feed, threshold, gte, snapshotAt)"]
+    S3 --> S4["Emit OracleMarketRegistered"]
+    S4 --> S5["Hook.registerMarketPool<br/>(marketId, poolKey YES-USDC)"]
+    S5 --> S6["PoolManager initialize<br/>Uniswap v4 pool YES-USDC"]
+    S6 --> S7["[Optional] registerMarketPool NO-USDC"]
+    S7 --> S8["Seed initial liquidity vào pool"]
+    S8 --> End(["✅ Market live · user có thể trade"])
 
-    C->>D: createMarket(question, endTime, oracle=ChainlinkOracle)
-    D->>D: Mint YES, NO ERC-20
-    D-->>C: marketId, yesToken, noToken
-    C->>O: register(marketId, feed, threshold, gte, snapshotAt)
-    O-->>C: OracleMarketRegistered event
-    C->>H: registerMarketPool(marketId, poolKey YES-USDC)
-    H->>P: Initialize v4 pool YES-USDC
-    C->>H: registerMarketPool(marketId, poolKey NO-USDC) [optional]
-    Note over C: Seed initial liquidity vào pool
-    Note over C: Market ready cho user trade
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef opt fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Start st
+    class S1,S2,S3,S4,S5,S6,S8 step
+    class S7 opt
+    class End ok
 ```
 
 ### Chi tiết

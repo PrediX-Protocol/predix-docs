@@ -5,19 +5,22 @@ Lock PRX → nhận share **50% phí protocol** dạng **USDC thật**. Không e
 ## Cơ chế
 
 ```mermaid
-sequenceDiagram
-    participant U as User
-    participant V as Staking Vault
-    participant P as Protocol fees
-    participant W as User wallet
+flowchart TD
+    Start(["👤 User deposit N PRX vào Staking Vault"])
+    Start --> S1["Vault mint N stkPRX cho user<br/>(non-transferable, đại diện share)"]
+    S1 --> Loop[("⏱ Mỗi week (epoch):<br/>Protocol collect 50% fee USDC<br/>distribute vault pro-rata")]
+    Loop --> S2["Vault account share user theo stake"]
+    S2 --> Claim(["👤 User gọi claim()"])
+    Claim --> End(["✅ Vault transfer USDC yield về ví user"])
 
-    U->>V: Deposit N PRX
-    V-->>U: Mint N stkPRX (non-transferable)
-    Note over V,P: Mỗi week (epoch)
-    P->>V: Distribute 50% weekly fee USDC
-    V->>V: Account user share pro-rata
-    U->>V: claim()
-    V-->>W: Transfer USDC yield
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef loop fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Start,Claim st
+    class S1,S2 step
+    class Loop loop
+    class End ok
 ```
 
 1. Deposit N PRX vào `StakingVault`.

@@ -5,19 +5,19 @@
 ## Cơ chế buyback-burn
 
 ```mermaid
-sequenceDiagram
-    participant P as Protocol
-    participant T as Treasury contract
-    participant R as Router
-    participant Burn as 0x000...dEaD
+flowchart TD
+    Start[("⏱ Mỗi week (epoch)")]
+    Start --> S1["Protocol collect 30% × weekly fee USDC<br/>vào Treasury contract"]
+    S1 --> S2["Treasury swap USDC → PRX qua Router/DEX<br/>(random timing · chia 5-10 tx nhỏ chống front-run)"]
+    S2 --> S3["Treasury transfer PRX → burn address<br/>0x000...dEaD"]
+    S3 --> End(["🔥 PRX burn vĩnh viễn<br/>Emit BuybackExecuted(usdcSpent, prxBurned)"])
 
-    Note over P,T: Mỗi week (epoch)
-    P->>T: Collect 30% × weekly fee USDC
-    T->>R: Swap USDC → PRX (qua DEX)
-    Note over T,R: Random timing trong tuần<br/>chia 5-10 tx nhỏ chống front-run
-    R-->>T: PRX nhận được
-    T->>Burn: Transfer PRX to burn address
-    Burn-->>P: emit BuybackExecuted(usdcSpent, prxBurned)
+    classDef tick fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef burn fill:#fee2e2,stroke:#dc2626,color:#0f172a
+    class Start tick
+    class S1,S2,S3 step
+    class End burn
 ```
 
 1. Mỗi week, protocol collect phí từ AMM + CLOB + redemption + creation.

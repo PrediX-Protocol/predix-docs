@@ -82,20 +82,21 @@ Dùng wallet truyền thống bạn đã có — MetaMask, Rainbow, Coinbase Wal
 Cả 2 phương pháp đều dùng **SIWE** (EIP-4361) để tạo session với backend:
 
 ```mermaid
-sequenceDiagram
-    participant U as User
-    participant W as Ví / Passkey
-    participant FE as PrediX FE
-    participant BE as PrediX BE
+flowchart TD
+    Start(["👤 User click Sign in"])
+    Start --> S1["FE → BE<br/>GET /auth/challenge?address=0x..."]
+    S1 --> S2["BE response<br/>{ message, nonce }"]
+    S2 --> S3["Ví / Passkey<br/>signMessage(message)"]
+    S3 --> S4["FE → BE<br/>POST /auth/verify<br/>{ address, signature }"]
+    S4 --> S5["BE verify ECDSA signature<br/>Set-Cookie: predix_session"]
+    S5 --> End(["✅ Session active 7 ngày<br/>HTTPOnly cookie · không expose JS"])
 
-    U->>FE: Click "Sign in"
-    FE->>BE: GET /auth/challenge?address=0x...
-    BE-->>FE: { message, nonce }
-    FE->>W: signMessage(message)
-    W-->>FE: signature
-    FE->>BE: POST /auth/verify { address, signature }
-    BE-->>FE: Set-Cookie: predix_session
-    Note over FE,BE: Session 7 ngày
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Start st
+    class S1,S2,S3,S4,S5 step
+    class End ok
 ```
 
 Session lưu HTTPOnly cookie, không expose JS. Hết hạn → re-sign.

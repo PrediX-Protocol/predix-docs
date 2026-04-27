@@ -20,25 +20,26 @@ Mua YES hoặc NO trên một market. ~30 giây từ click đến confirm.
 ## Đang xảy ra gì bên dưới
 
 ```mermaid
-sequenceDiagram
-    autonumber
-    participant U as Bạn
-    participant R as PrediX Router
-    participant E as Exchange (CLOB)
-    participant H as Hook (AMM)
+flowchart TD
+    Start(["👤 Bạn click Buy<br/>buyYes(marketId, 100 USDC, minOut)"])
+    Start --> S1["Router pull USDC qua Permit2"]
+    S1 --> S2{"Try CLOB fillMarketOrder()"}
+    S2 -->|CLOB có liquidity| S3["Exchange fill X YES<br/>consume X USDC"]
+    S2 -->|CLOB skip / revert| S4["Emit ClobSkipped<br/>Fall back AMM full"]
+    S3 --> S5
+    S4 --> S5["Router commitSwapIdentity<br/>+ swap remaining qua Hook AMM"]
+    S5 --> S6["Hook return Y YES delta"]
+    S6 --> S7["Router check minOut<br/>refund dust"]
+    S7 --> End(["✅ X + Y YES về ví<br/>1 tx atomic"])
 
-    U->>R: buyYes(marketId, 100 USDC, minOut)
-    R->>R: Pull USDC qua Permit2
-    R->>E: try fillMarketOrder()
-    alt CLOB có liquidity
-        E-->>R: filled X YES, X USDC consumed
-    else CLOB skip
-        Note over R,E: Emit ClobSkipped, fall back AMM
-    end
-    R->>H: commitSwapIdentity + swap remaining
-    H-->>R: Y YES delta
-    R->>R: Check minOut, refund dust
-    R-->>U: X+Y YES về ví
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef alt fill:#fee2e2,stroke:#dc2626,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Start st
+    class S1,S2,S3,S5,S6,S7 step
+    class S4 alt
+    class End ok
 ```
 
 Tất cả 1 tx atomic. Slippage > tolerance → revert, tiền không mất.

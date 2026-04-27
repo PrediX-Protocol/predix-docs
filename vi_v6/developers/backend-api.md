@@ -195,20 +195,22 @@ GET  /api/v2/capabilities                  enum describe list
 ## Auth flow SIWE
 
 ```mermaid
-sequenceDiagram
-    participant U as User
-    participant W as Wallet
-    participant FE
-    participant BE
+flowchart TD
+    Start(["👤 User click Sign in"])
+    Start --> S1["FE → BE<br/>GET /auth/challenge?address=0x..."]
+    S1 --> S2["BE response<br/>{ message, nonce, expiresAt }"]
+    S2 --> S3["FE → Wallet<br/>signMessage(message)"]
+    S3 --> S4["Wallet return signature"]
+    S4 --> S5["FE → BE<br/>POST /auth/verify { address, signature }"]
+    S5 --> S6["BE verify ECDSA<br/>Set-Cookie predix_session (HTTPOnly, 7 days)"]
+    S6 --> End(["✅ Subsequent requests auto-include cookie"])
 
-    U->>FE: Click Sign in
-    FE->>BE: GET /auth/challenge?address=0x...
-    BE-->>FE: { message, nonce, expiresAt }
-    FE->>W: signMessage(message)
-    W-->>FE: signature
-    FE->>BE: POST /auth/verify { address, signature }
-    BE-->>FE: Set-Cookie predix_session (HTTPOnly, 7 days)
-    Note over FE,BE: Subsequent requests auto-include cookie
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Start st
+    class S1,S2,S3,S4,S5,S6 step
+    class End ok
 ```
 
 ```typescript

@@ -218,21 +218,22 @@ Event này là **canonical source** cho indexer. Bạn listen để update UI sa
 ## Batch với Smart Account
 
 ```mermaid
-sequenceDiagram
-    participant U as User
-    participant SA as Kernel Smart Account
-    participant B as Pimlico Bundler
-    participant PM as PrediX Paymaster
-    participant R as Router
+flowchart TD
+    Start(["👤 User: encodeCalls([approve, buyYes])"])
+    Start --> S1["Kernel Smart Account build UserOp"]
+    S1 --> S2["SA → PrediX Paymaster<br/>getPaymasterStubData (sponsor request)"]
+    S2 --> S3["Paymaster return paymasterData<br/>(signature off-chain xác nhận eligible)"]
+    S3 --> S4["SA → Pimlico Bundler<br/>sendUserOperation"]
+    S4 --> S5["Bundler bundle UserOps + execute on-chain"]
+    S5 --> S6["Router execute approve + buyYes atomic"]
+    S6 --> End(["✅ Trade complete · 1 tx visible on explorer"])
 
-    U->>SA: encodeCalls([approve, buyYes])
-    SA->>SA: build UserOp
-    SA->>PM: getPaymasterStubData (sponsor request)
-    PM-->>SA: paymasterData (signature off-chain)
-    SA->>B: sendUserOperation
-    B->>B: bundle UserOps
-    B->>R: execute on-chain
-    R-->>U: Trade complete (1 tx visible on explorer)
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Start st
+    class S1,S2,S3,S4,S5,S6 step
+    class End ok
 ```
 
 ```typescript

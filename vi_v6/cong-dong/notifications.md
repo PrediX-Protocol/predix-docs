@@ -71,19 +71,23 @@ flowchart LR
 ## Price alerts
 
 ```mermaid
-sequenceDiagram
-    participant U as User
-    participant App as PrediX
-    participant Indexer
-    participant Notif
+flowchart TD
+    Setup(["👤 User set alert<br/>BTC market YES > $0.70"])
+    Setup --> S1["App subscribe price stream qua Indexer"]
+    S1 --> Loop[("⏱ Mỗi block:<br/>Indexer check alert conditions")]
+    Loop --> Cond{"Condition met?"}
+    Cond -->|Chưa| Loop
+    Cond -->|Trigger| S2["Notification service fire alert"]
+    S2 --> End(["✅ User nhận push + email + in-app"])
 
-    U->>App: Set alert: BTC market YES > $0.70
-    App->>Indexer: Subscribe price stream
-    loop Every block
-        Indexer->>Indexer: Check alert conditions
-    end
-    Indexer-->>Notif: Alert trigger when condition met
-    Notif-->>U: Push + email + in-app
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef loop fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Setup st
+    class S1,S2,Cond step
+    class Loop loop
+    class End ok
 ```
 
 ### Setup

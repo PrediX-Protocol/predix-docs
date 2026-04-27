@@ -101,20 +101,27 @@ Reset 00:00 UTC mỗi ngày.
 Sealed box mở lúc resolve, content random PRX / USDC / NFT.
 
 ```mermaid
-sequenceDiagram
-    participant U as User
-    participant App
-    participant VRF as Chainlink VRF
-    participant Treasury
+flowchart TD
+    Trade(["👤 User trade qua Router (eligible event)"])
+    Trade --> Drop{"Drop reward box?<br/>~5% chance"}
+    Drop -->|No| End0(["Không có box lần này"])
+    Drop -->|Yes| Box[("📦 Box appear trong inventory<br/>sealed, chờ user open")]
+    Box --> Open(["👤 User click Open box"])
+    Open --> S1["App request Chainlink VRF<br/>random number"]
+    S1 --> S2["VRF return verifiable random"]
+    S2 --> S3["Treasury calc reward<br/>80% PRX · 15% USDC · 5% rare NFT"]
+    S3 --> End(["✅ Transfer reward về ví user"])
 
-    U->>App: Trade qua Router (eligible event)
-    App->>App: Drop reward box (5% chance)
-    Note over U: Box appear in inventory, sealed
-    U->>App: Open box
-    App->>VRF: Request random number
-    VRF-->>App: Verifiable random
-    App->>Treasury: Calc reward (PRX / USDC / NFT)
-    Treasury-->>U: Transfer reward
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef box fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef miss fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    class Trade,Open st
+    class Drop,S1,S2,S3 step
+    class Box box
+    class End ok
+    class End0 miss
 ```
 
 - **Drop rate**: ~5% mỗi trade > $10.

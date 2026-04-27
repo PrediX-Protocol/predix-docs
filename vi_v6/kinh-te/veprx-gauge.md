@@ -84,18 +84,27 @@ Mô hình "vote market" từ Curve / Balancer. PrediX áp dụng cho prediction 
 ## Bribe market
 
 ```mermaid
-sequenceDiagram
-    participant Project as Project A
-    participant Bribe as Bribe contract
-    participant Voter as vePRX voter
-    participant Treasury
+flowchart TD
+    Project(["🏢 Project A muốn pool X nhận subsidy"])
+    Project --> S1["Project deposit 10k USDC vào Bribe contract<br/>+ chỉ định gauge X"]
+    S1 --> Voter(["👤 vePRX voter thấy bribe"])
+    Voter --> S2["Voter vote gauge X<br/>(commit vePRX weight, lock 1 epoch)"]
+    S2 --> Epoch[("⏱ Cuối epoch")]
+    Epoch --> S3["Treasury subsidy chia theo vote<br/>→ Pool X nhận subsidy → LP happy"]
+    Epoch --> S4["Bribe contract chia USDC bribe<br/>pro-rata theo voter weight"]
+    S3 --> End(["✅ Pool X depth tăng · LP earn fee + subsidy"])
+    S4 --> End2(["✅ Voter nhận USDC bribe"])
 
-    Project->>Bribe: Deposit 10k USDC + chỉ định gauge X
-    Voter->>Bribe: Vote gauge X (commit vePRX weight)
-    Note over Voter: Voter bị lock vote 1 epoch
-    Bribe->>Treasury: Subsidy đi theo vote
-    Bribe-->>Voter: USDC bribe pro-rata theo weight
-    Note over Treasury: Pool X nhận subsidy<br/>LP của X happy
+    classDef proj fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef voter fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef tick fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Project proj
+    class Voter voter
+    class Epoch tick
+    class S1,S2,S3,S4 step
+    class End,End2 ok
 ```
 
 External project trả PRX/USDC cho vePRX holder vote pool của họ. Standard DeFi (Convex/Votium model).

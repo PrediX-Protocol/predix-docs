@@ -34,24 +34,23 @@ flowchart TB
 Tự động, permissionless.
 
 ```mermaid
-sequenceDiagram
-    participant Creator
-    participant Oracle as ChainlinkOracle
-    participant CL as Chainlink Aggregator
-    participant Anyone
-    participant Diamond
+flowchart TD
+    Creator(["🛠️ Creator: register(marketId, feed, threshold, gte, snapshotAt)<br/>feed=BTC/USD · threshold=$100k · snapshotAt=endTime"])
+    Creator --> Wait[("⏱ ...endTime trôi qua...")]
+    Wait --> Anyone(["👤 Anyone: resolve(marketId, roundIdHint, prevHint)"])
+    Anyone --> S1["Oracle gọi Chainlink.getRoundData(roundIdHint)<br/>→ { answer, updatedAt }"]
+    S1 --> Check["Oracle verify (3 conditions):<br/>• updatedAt ≥ snapshotAt<br/>• prev.updatedAt &lt; snapshotAt (adjacency)<br/>• L2 sequencer uptime OK"]
+    Check --> S2["Compute outcome = (answer ≥ threshold) == gte"]
+    S2 --> End(["✅ Diamond emit MarketResolved event"])
 
-    Creator->>Oracle: register(marketId, feed, threshold, gte, snapshotAt)
-    Note over Oracle: feed = BTC/USD<br/>threshold = $100k<br/>snapshotAt = endTime
-    Note over Anyone,CL: ...endTime trôi qua...
-    Anyone->>Oracle: resolve(marketId, roundIdHint, prevHint)
-    Oracle->>CL: getRoundData(roundIdHint)
-    CL-->>Oracle: { answer, updatedAt }
-    Oracle->>Oracle: Verify updatedAt ≥ snapshotAt
-    Oracle->>Oracle: Verify prev.updatedAt < snapshotAt
-    Oracle->>Oracle: Verify L2 sequencer uptime
-    Oracle->>Diamond: outcome = (answer ≥ threshold) == gte
-    Diamond-->>Anyone: MarketResolved event
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef wait fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Creator,Anyone st
+    class S1,Check,S2 step
+    class Wait wait
+    class End ok
 ```
 
 **Use case**: Price-threshold market (BTC, ETH, asset prices, FX rates).
@@ -78,21 +77,21 @@ Multisig 3/5 đọc kết quả từ nguồn off-chain, ký tx.
 ### Flow
 
 ```mermaid
-sequenceDiagram
-    participant E as Event happen
-    participant Multisig
-    participant Oracle as ManualOracle
-    participant Diamond
-    participant User
+flowchart TD
+    Event(["📰 Event resolves real-world<br/>(e.g. Argentina wins WC)"])
+    Event --> S1["Multisig verify từ ≥ 2 sources<br/>(Reuters, AP, official API)"]
+    S1 --> S2["Multisig 3/5 sign<br/>ManualOracle.report(marketId, outcome=true)"]
+    S2 --> S3(["📢 Emit OracleReportCreated event"])
+    S3 --> S4["Anyone gọi Diamond.resolveMarket(marketId)"]
+    S4 --> S5["Diamond đọc outcome từ oracle<br/>Set isResolved=true, outcome=true"]
+    S5 --> End(["✅ Emit MarketResolved · user redeem được"])
 
-    E-->>Multisig: Event resolves (e.g. Argentina wins)
-    Multisig->>Multisig: Verify từ ≥ 2 sources
-    Multisig->>Oracle: report(marketId, outcome=true) [3/5 sign]
-    Oracle-->>User: OracleReportCreated event
-    User->>Diamond: resolveMarket(marketId)
-    Diamond->>Oracle: read outcome
-    Diamond->>Diamond: Set isResolved=true, outcome=true
-    Diamond-->>User: MarketResolved event
+    classDef event fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Event event
+    class S1,S2,S4,S5 step
+    class S3,End ok
 ```
 
 ### Risks + mitigation
@@ -117,25 +116,27 @@ Admin có thể `revoke(marketId)` clear pending report khi:
 Permissionless propose + 48h dispute window.
 
 ```mermaid
-sequenceDiagram
-    participant P as Proposer
-    participant U as UMA Oracle
-    participant D as Disputer
-    participant DVM as UMA DVM
-    participant M as Market
+flowchart TD
+    Start(["👤 Proposer: propose(outcome, bond)"])
+    Start --> Wait[("⏱ 48h dispute window")]
+    Wait --> Branch{"Có ai dispute?"}
+    Branch -->|Không| OK1["UMA refund bond cho proposer<br/>+ finalize outcome"]
+    Branch -->|Có| Disp["👤 Disputer post bond"]
+    Disp --> Vote["UMA DVM vote<br/>quyết định outcome final"]
+    Vote --> Slash["Loser lose bond<br/>winner take"]
+    OK1 --> End(["✅ Market.resolveMarket(outcome)"])
+    Slash --> End
 
-    P->>U: propose(outcome, bond)
-    Note over U: 48h dispute window
-    alt Không ai dispute
-        U-->>P: Refund bond + finalize outcome
-        U->>M: resolveMarket(outcome)
-    else Có dispute
-        D->>U: dispute(bond)
-        U->>DVM: vote
-        DVM-->>U: Decision
-        Note over P,D: Loser lose bond
-        U->>M: resolveMarket(final outcome)
-    end
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef wait fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    classDef bad fill:#fee2e2,stroke:#dc2626,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Start st
+    class Wait wait
+    class Branch,OK1 step
+    class Disp,Vote,Slash bad
+    class End ok
 ```
 
 ### Bond sizing

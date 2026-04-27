@@ -21,18 +21,19 @@ Sau market resolve, đổi token thắng thành USDC. Nếu market không resolv
 Nhiều market đã resolve → nút **Claim All** → batch qua **passkey smart account** (1 click, 1 tx, gas qua paymaster — sponsor nếu đủ điều kiện). EOA user: từng market 1 tx riêng, tự trả gas (Wallet không hỗ trợ batch native).
 
 ```mermaid
-sequenceDiagram
-    participant U as User
-    participant SA as Smart Account
-    participant D as Diamond
-    participant W as Ví
+flowchart TD
+    Start(["👤 User click Claim All"])
+    Start --> S1["Smart Account bundle calls<br/>redeem(m1) · redeem(m2) · ... · redeem(mN)"]
+    S1 --> S2["Execute batch trong 1 UserOp<br/>Gas qua paymaster (sponsor nếu đủ điều kiện)"]
+    S2 --> S3["Diamond burn winning tokens<br/>+ transfer USDC tổng"]
+    S3 --> End(["✅ Total USDC về ví trong 1 tx duy nhất"])
 
-    U->>SA: Click "Claim All"
-    SA->>SA: Bundle calls = [redeem(m1), redeem(m2), ..., redeem(mN)]
-    SA->>D: Execute batch (1 UserOp)
-    D->>D: Burn winning tokens, transfer USDC
-    D-->>W: Total USDC claim
-    Note over U,W: 1 tx duy nhất, gas sponsor
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Start st
+    class S1,S2,S3 step
+    class End ok
 ```
 
 ### Công thức
@@ -100,19 +101,23 @@ Phase 2 (TBA): Có thể mở **single-sided refund** với haircut 50% — burn
 ## Ai quyết định enable refund
 
 ```mermaid
-sequenceDiagram
-    participant Admin
-    participant T as TimelockController
-    participant D as Diamond
-    participant U as User Community
+flowchart TD
+    Start(["🔧 Admin propose enableRefundMode"])
+    Start --> S1["TimelockController.schedule<br/>delay = 48h"]
+    S1 --> S2["Emit CallScheduled event<br/>+ Discord / Twitter announce"]
+    S2 --> Wait[("⏳ 48h challenge window<br/>Community verify lý do<br/>Có thể fork hoặc exit nếu sai")]
+    Wait --> S3["Admin execute() sau 48h"]
+    S3 --> S4["Diamond.enableRefundMode(marketId)<br/>Emit RefundModeEnabled event"]
+    S4 --> End(["✅ User có thể refund từ giờ<br/>burn cặp YES+NO → USDC pro-rata"])
 
-    Admin->>T: schedule(enableRefundMode(marketId), delay=48h)
-    T-->>U: CallScheduled event<br/>+ Discord/Twitter announce
-    Note over U: 48h challenge window<br/>community verify lý do
-    Admin->>T: execute() sau 48h
-    T->>D: enableRefundMode(marketId)
-    D-->>U: RefundModeEnabled event
-    Note over U: User refund từ giờ
+    classDef admin fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef wait fill:#fee2e2,stroke:#dc2626,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Start admin
+    class S1,S2,S3,S4 step
+    class Wait wait
+    class End ok
 ```
 
 - Admin multisig propose qua TimelockController.

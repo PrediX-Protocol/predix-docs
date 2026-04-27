@@ -62,17 +62,25 @@ Click **Follow** trên profile:
 ## Copy trading
 
 ```mermaid
-sequenceDiagram
-    participant Lead as Lead trader
-    participant Sys as PrediX Copy Engine
-    participant Follower
+flowchart TD
+    Setup[("⚙️ Follower setup<br/>Copy 10% size · max $100/trade")]
+    Setup --> Lead(["📊 Lead trader execute<br/>Buy 100 YES BTC market"])
+    Lead --> S1["PrediX Copy Engine detect tx"]
+    S1 --> S2["Calc copy size<br/>= 10% × Lead balance, cap $100"]
+    S2 --> S3{"Mode setting"}
+    S3 -->|Auto| S4["Auto-execute mirror trade"]
+    S3 -->|Manual| S5["Notify Follower → user confirm"]
+    S4 --> End(["✅ Trade mirrored trên Follower account"])
+    S5 --> End
 
-    Note over Follower: Setup: copy 10% size, max $100/trade
-    Lead->>Sys: Trade detected (Buy 100 YES BTC market)
-    Sys->>Sys: Calc copy size (10% × Lead balance, cap $100)
-    Sys->>Follower: Notification + auto-execute (nếu opt-in auto)
-    Follower->>Sys: Confirm hoặc auto-execute
-    Sys->>Sys: Mirror trade trên Follower account
+    classDef cfg fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Setup cfg
+    class Lead st
+    class S1,S2,S3,S4,S5 step
+    class End ok
 ```
 
 ### Setup copy

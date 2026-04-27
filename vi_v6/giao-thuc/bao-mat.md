@@ -69,18 +69,22 @@ Mọi upgrade có blast radius đi qua timelock 48h.
 ### Diamond facet upgrade
 
 ```mermaid
-sequenceDiagram
-    participant M as Multisig 3/5
-    participant T as TimelockController
-    participant D as Diamond
-    participant C as Community
+flowchart TD
+    Start(["🔧 Multisig 3/5: schedule diamondCut<br/>delay = 48h"])
+    Start --> S1(["📢 TimelockController emit CallScheduled<br/>+ Discord / Twitter announce"])
+    S1 --> Wait[("⏳ 48h window<br/>Community verify facet trên explorer<br/>Simulate logic<br/>Challenge nếu phát hiện malicious")]
+    Wait --> S2["Multisig execute() sau 48h"]
+    S2 --> S3["Timelock gọi Diamond.diamondCut(facets[])"]
+    S3 --> End(["✅ Emit DiamondCut event<br/>Facets updated"])
 
-    M->>T: schedule(diamondCut, delay=48h)
-    T-->>C: event CallScheduled (announce Discord + Twitter)
-    Note over C: 48h window<br/>Verify facet trên explorer<br/>Simulate logic<br/>Challenge nếu malicious
-    M->>T: execute() sau 48h
-    T->>D: diamondCut(facets[])
-    D-->>C: event DiamondCut emit
+    classDef admin fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef wait fill:#fee2e2,stroke:#dc2626,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    class Start admin
+    class S1,S2,S3 step
+    class Wait wait
+    class End ok
 ```
 
 `CUT_EXECUTOR_ROLE` = **chỉ TimelockController contract**. Không EOA nào bypass.

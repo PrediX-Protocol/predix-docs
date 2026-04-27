@@ -121,21 +121,25 @@ Có thể. Pool YES-USDC là v4 pool bình thường — bạn swap qua Universa
 PrediX Hook implement **identity commit** chống sandwich attack:
 
 ```mermaid
-sequenceDiagram
-    participant U as User tx
-    participant R as Router
-    participant H as Hook
-    participant P as PoolManager
+flowchart TD
+    User(["👤 User tx: buyYes"])
+    User --> S1["Router commitSwapIdentity(user, poolId)<br/>lưu vào transient storage EIP-1153"]
+    S1 --> S2["Router gọi poolManager.swap(...)"]
+    S2 --> S3["PoolManager call hook.beforeSwap(poolKey, params, sender)"]
+    S3 --> Check{"Hook verify identity match?"}
+    Check -->|✅ Match| Allow["Allow swap"]
+    Check -->|❌ No identity<br/>(sandwich attacker)| Revert(["🛑 Revert · attacker fail"])
+    Allow --> S4["PoolManager return delta cho Router"]
+    S4 --> End(["✅ Token out về User"])
 
-    U->>R: buyYes
-    R->>H: commitSwapIdentity(user, poolId) [transient storage]
-    R->>P: poolManager.swap(...)
-    P->>H: beforeSwap(poolKey, params, sender)
-    H->>H: Verify identity match (EIP-1153)
-    Note over H: Sandwich attacker không có identity → revert
-    H-->>P: Allow swap
-    P-->>R: Delta
-    R-->>U: Token out
+    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef bad fill:#fee2e2,stroke:#dc2626,color:#0f172a
+    class User st
+    class S1,S2,S3,S4,Check,Allow step
+    class End ok
+    class Revert bad
 ```
 
 MEV bot không thể frontrun + backrun trade của bạn trong cùng block — Hook revert nếu identity không match.
