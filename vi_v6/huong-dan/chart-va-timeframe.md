@@ -128,7 +128,7 @@ GET /api/markets/:id/price-history?from=...&to=...
 → [{ ts, yesPrice, source }]
 ```
 
-Chi tiết: [Indexer API](../developers/indexer-api.md).
+Chi tiết: [Indexer API](../developers/api-reference.md#indexer-endpoints).
 
 ## Tip đọc chart prediction market
 

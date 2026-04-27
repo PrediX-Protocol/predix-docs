@@ -113,7 +113,7 @@ Tắt push notifications trong giờ specific (e.g. 22:00-07:00). In-app + email
 
 Setup từng market: Settings → Alerts → Add alert. Hoặc click 🔔 trong market detail.
 
-Chi tiết: [Notifications](../cong-dong/notifications.md).
+Chi tiết: [Notifications](../huong-dan/notifications.md).
 
 ## Privacy
 
@@ -183,11 +183,11 @@ List active session:
 
 ### API keys
 
-Quản lý API key cho bot. Chi tiết: [Bots & API](../developers/bots-api.md).
+Quản lý API key cho bot. Chi tiết: [Bots & API](../developers/bots-and-mobile.md).
 
 ### Webhooks
 
-Setup HTTP callback for events. Chi tiết: [Bots & API](../developers/bots-api.md).
+Setup HTTP callback for events. Chi tiết: [Bots & API](../developers/bots-and-mobile.md).
 
 ### Test mode
 

@@ -165,4 +165,4 @@ POST /api/v2/staking/:address/claim  # trigger claim (returns calldata)
 GET  /api/v2/staking/history         # epoch distribution history
 ```
 
-Chi tiết: [Backend API](../developers/backend-api.md).
+Chi tiết: [Backend API](../developers/api-reference.md#backend-endpoints-v2).

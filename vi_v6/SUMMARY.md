@@ -30,14 +30,9 @@
 * [Chart & timeframe](huong-dan/chart-va-timeframe.md)
 * [Redeem & refund](huong-dan/redeem-va-claim.md)
 * [Event đa outcome](huong-dan/event-multi-outcome.md)
-
-## Cộng đồng
-
-* [Mục lục](cong-dong/README.md)
-* [Leaderboard & traders](cong-dong/leaderboard-traders.md)
-* [Rewards & gamification](cong-dong/rewards-gamification.md)
-* [Notifications & price alerts](cong-dong/notifications.md)
-* [Discussion & social feed](cong-dong/discussion.md)
+* [Leaderboard & traders](huong-dan/leaderboard.md)
+* [Notifications & price alerts](huong-dan/notifications.md)
+* [Discussion & social feed](huong-dan/discussion.md)
 
 ## Kinh tế
 
@@ -46,24 +41,21 @@
 * [Staking real yield](kinh-te/staking-real-yield.md)
 * [vePRX & gauge voting](kinh-te/veprx-gauge.md)
 * [Buyback-burn & treasury](kinh-te/buyback-burn.md)
+* [Rewards & gamification](kinh-te/rewards.md)
 
 ## Giao thức
 
 * [Kiến trúc tổng thể](giao-thuc/README.md)
-* [Smart contracts](giao-thuc/smart-contracts.md)
+* [Architecture & contracts](giao-thuc/architecture.md)
 * [Oracle](giao-thuc/oracle.md)
 * [Bảo mật & timelock](giao-thuc/bao-mat.md)
-* [Contract addresses](giao-thuc/addresses.md)
 
 ## Developers
 
 * [Quickstart](developers/README.md)
 * [Tích hợp Router](developers/router-integration.md)
-* [Indexer API](developers/indexer-api.md)
-* [Backend API](developers/backend-api.md)
-* [Events reference](developers/events-reference.md)
-* [Bots & API key](developers/bots-api.md)
-* [Mobile / Wagmi integration](developers/mobile-integration.md)
+* [API reference](developers/api-reference.md)
+* [Bots & mobile](developers/bots-and-mobile.md)
 * [Testnet info](developers/testnet.md)
 
 ## Tài nguyên

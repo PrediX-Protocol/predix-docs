@@ -37,6 +37,7 @@ mindmap
 | Token có utility gì? | Stake USDC yield, vote governance, gauge vote, fee discount | [Staking real yield](staking-real-yield.md) |
 | Governance thế nào? | Lock PRX → vePRX → vote gauge + protocol params | [vePRX & gauge](veprx-gauge.md) |
 | Mechanic gì hỗ trợ giá? | 30% phí → buyback-burn, deflationary post-Y4 | [Buyback-burn](buyback-burn.md) |
+| Reward + gamification cho user? | Streak, badge, daily challenge, leaderboard reward | [Rewards & gamification](rewards.md) |
 
 ## Real yield, không inflation
 

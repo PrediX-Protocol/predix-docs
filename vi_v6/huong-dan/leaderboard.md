@@ -148,4 +148,4 @@ GET /api/v2/users/:address/follows  (followed by who)
 GET /api/v2/users/:address/following (following who)
 ```
 
-Chi tiết: [Backend API](../developers/backend-api.md).
+Chi tiết: [Backend API](../developers/api-reference.md#backend-endpoints-v2).

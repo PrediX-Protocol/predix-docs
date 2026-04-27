@@ -205,4 +205,4 @@ GET  /api/v2/gauges/:gaugeId/votes
 POST /api/v2/governance/vote  # returns calldata
 ```
 
-Chi tiết: [Backend API](../developers/backend-api.md).
+Chi tiết: [Backend API](../developers/api-reference.md#backend-endpoints-v2).

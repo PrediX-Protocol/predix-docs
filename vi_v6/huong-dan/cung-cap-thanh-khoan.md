@@ -146,4 +146,4 @@ LP positions truy cập qua:
 - Indexer: `GET /api/users/:address/lp-positions`
 - BE: `GET /api/v2/users/:address/lp-positions`
 
-Chi tiết: [Indexer API](../developers/indexer-api.md).
+Chi tiết: [Indexer API](../developers/api-reference.md#indexer-endpoints).

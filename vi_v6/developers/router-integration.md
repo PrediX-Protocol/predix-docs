@@ -8,7 +8,7 @@ Router address:
 - **Testnet** (Unichain Sepolia, live): `0x6698253F38F4A4bbBC4A223309B4E560d83D7ee0`
 - **Mainnet** (TBA, sau launch)
 
-Full address list: [Contract addresses](../giao-thuc/addresses.md).
+Full address list: [Contract addresses](../giao-thuc/architecture.md#contract-addresses).
 
 Core function:
 

@@ -121,7 +121,7 @@ flowchart LR
     class Badge1,Badge2,Badge3 earn
 ```
 
-Badge là NFT — sang shareable, profile signature. Chi tiết: [Rewards & gamification](../cong-dong/rewards-gamification.md).
+Badge là NFT — sang shareable, profile signature. Chi tiết: [Rewards & gamification](../kinh-te/rewards.md).
 
 ## LP positions
 

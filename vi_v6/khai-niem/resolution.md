@@ -179,4 +179,4 @@ Chi tiết: [Tạo market](../huong-dan/tao-market.md).
 - **Redemption**: Không deadline cứng, grace 365 ngày, sau đó admin có thể `sweepUnclaimed` về treasury.
 - **UMA dispute**: 48h sau propose.
 
-Time params config per-market hoặc global. Xem [Smart contracts](../giao-thuc/smart-contracts.md).
+Time params config per-market hoặc global. Xem [Smart contracts](../giao-thuc/architecture.md).

@@ -178,4 +178,4 @@ GET /api/v2/daily-challenges
 GET /api/v2/leaderboard/rewards
 ```
 
-Chi tiết: [Backend API](../developers/backend-api.md).
+Chi tiết: [Backend API](../developers/api-reference.md#backend-endpoints-v2).

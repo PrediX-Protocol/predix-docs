@@ -8,24 +8,19 @@ Tích hợp PrediX vào app, bot, data pipeline.
 flowchart LR
     Goal{Mục tiêu?}
     Goal -->|App user trade PrediX| R[Tích hợp Router contract]
-    Goal -->|Fetch data on-chain| I[Indexer API]
-    Goal -->|Dùng BE cache + metadata| BE[Backend API]
-    Goal -->|Bot trade automated| BO[Bots & API key]
-    Goal -->|Mobile / native app| M[Mobile / Wagmi]
-    Goal -->|Listen events realtime| EV[Events reference]
+    Goal -->|Fetch market / portfolio data| API[API reference]
+    Goal -->|Bot trade / mobile app / web app riêng| BO[Bots & mobile]
+    Goal -->|Test integrate trước mainnet| T[Testnet info]
 
     classDef opt fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    class R,I,BE,BO,M,EV opt
+    class R,API,BO,T opt
 ```
 
 | Tôi muốn… | Đi tới |
 |---|---|
 | Cho user app trade PrediX markets | [Tích hợp Router](router-integration.md) |
-| Fetch market list / portfolio / history | [Indexer API](indexer-api.md) |
-| Dùng BE cache + metadata | [Backend API](backend-api.md) |
-| Listen events realtime | [Events reference](events-reference.md) |
-| Build trading bot | [Bots & API key](bots-api.md) |
-| Tích hợp mobile / native | [Mobile / Wagmi](mobile-integration.md) |
+| Fetch market / portfolio / candles / events | [API reference](api-reference.md) |
+| Build trading bot, mobile app, web app riêng | [Bots & mobile](bots-and-mobile.md) |
 | Test integrate trước mainnet | [Testnet info](testnet.md) |
 
 ## Quickstart — first call
@@ -48,7 +43,7 @@ const { data: markets } = await res.json();
 console.log(markets.map(m => `${m.question} — YES @ ${m.yesPrice}`));
 ```
 
-Chi tiết integration step-by-step: [Tích hợp Router](router-integration.md). Get testnet endpoint: [Testnet info](testnet.md).
+Step-by-step: [Tích hợp Router](router-integration.md). Get testnet endpoint: [Testnet info](testnet.md).
 
 ## Stack overview
 
@@ -62,9 +57,9 @@ Chi tiết integration step-by-step: [Tích hợp Router](router-integration.md)
 
 ## API environments
 
-| Env | Indexer API | Backend API |
+| Env | Indexer | Backend |
 |---|---|---|
-| **Testnet** (live) | Gated access — xem [Testnet info](testnet.md) | Gated access — xem [Testnet info](testnet.md) |
+| **Testnet** (live) | Gated — xem [Testnet info](testnet.md) | Gated — xem [Testnet info](testnet.md) |
 | **Mainnet** (TBA) | `https://indexer.predix.app` | `https://api.predix.app` |
 
 > Testnet endpoint hiện gated qua Discord #testnet-access (chống abuse). Mainnet endpoint sẽ public khi launch.

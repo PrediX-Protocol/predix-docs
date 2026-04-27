@@ -167,4 +167,4 @@ GET /api/v2/markets/:id/activity?type=trade|lp|comment
 
 Realtime via WebSocket: `wss://api.predix.app/v2/ws/feed`.
 
-Chi tiết: [Backend API](../developers/backend-api.md).
+Chi tiết: [Backend API](../developers/api-reference.md#backend-endpoints-v2).

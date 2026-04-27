@@ -37,9 +37,8 @@ Data flow **một chiều**: SC emit events → Indexer sync → BE serialize �
 
 ## Đọc theo thứ tự
 
-1. [Smart contracts](smart-contracts.md) — packages, Diamond + facets, Hook, Exchange, Router, Paymaster
+1. [Architecture & contracts](architecture.md) — packages, Diamond + facets, Hook, Exchange, Router, Paymaster, deployed addresses (testnet + mainnet)
 2. [Oracle](oracle.md) — Manual, Chainlink, UMA, Committee
 3. [Bảo mật & timelock](bao-mat.md) — Invariants, audit posture, 48h delay, incident response
-4. [Contract addresses](addresses.md) — Mainnet + testnet
 
 Muốn integrate code → [Developers](../developers/README.md).

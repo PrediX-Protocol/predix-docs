@@ -117,4 +117,4 @@ Khi match complementary, taker trả fee, maker không. Nếu lệnh của bạn
   - Order fill (full hoặc partial)
   - Order cancel (do bạn hoặc do market resolve)
   - Order gần endTime (warning để cân nhắc cancel)
-- Webhook / API tích hợp bot — xem [Developers](../developers/bots-api.md).
+- Webhook / API tích hợp bot — xem [Developers](../developers/bots-and-mobile.md).

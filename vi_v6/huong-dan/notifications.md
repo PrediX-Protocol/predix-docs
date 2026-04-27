@@ -193,4 +193,4 @@ DELETE /api/v2/users/:address/alerts/:id
 
 Realtime via WebSocket: `wss://api.predix.app/v2/ws/notifications` với auth header.
 
-Chi tiết: [Backend API](../developers/backend-api.md).
+Chi tiết: [Backend API](../developers/api-reference.md#backend-endpoints-v2).

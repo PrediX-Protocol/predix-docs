@@ -20,8 +20,7 @@ Prediction market on-chain trên Unichain. Mỗi sự kiện có hai outcome tok
 | Trader muốn vào ngay | [Bắt đầu](bat-dau/README.md) |
 | Muốn hiểu sản phẩm trước | [Khái niệm](khai-niem/README.md) |
 | Cần tutorial từng bước | [Hướng dẫn](huong-dan/README.md) |
-| Quan tâm cộng đồng + reward | [Cộng đồng](cong-dong/README.md) |
-| Stake PRX + governance | [Kinh tế](kinh-te/README.md) |
+| Stake PRX + governance + rewards | [Kinh tế](kinh-te/README.md) |
 | Builder tích hợp | [Developers](developers/README.md) |
 
 Đọc sâu giao thức + bảo mật: [Giao thức](giao-thuc/README.md).
@@ -43,6 +42,6 @@ Prediction market on-chain trên Unichain. Mỗi sự kiện có hai outcome tok
 - **App**: [app.predix.app](https://app.predix.app) (testnet beta)
 - **Explorer testnet**: [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz)
 - **Explorer mainnet**: [uniscan.xyz](https://uniscan.xyz) (post-launch)
-- **Contract addresses**: [giao-thuc/addresses.md](giao-thuc/addresses.md) (testnet live + mainnet TBA)
+- **Contract addresses**: [giao-thuc/architecture.md#contract-addresses](giao-thuc/architecture.md#contract-addresses) (testnet live + mainnet TBA)
 - **Bug bounty + audit**: [giao-thuc/bao-mat.md](giao-thuc/bao-mat.md)
 - **Discord, Twitter, GitHub**: [tai-nguyen/links.md](tai-nguyen/links.md)
