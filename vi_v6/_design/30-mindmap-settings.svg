@@ -1,53 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 560" font-family="Inter, system-ui, sans-serif">
-  <rect x="0" y="0" width="740" height="560" rx="12" fill="#ffffff"/>
-  <g transform="translate(30,30)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="900" height="520" rx="12" fill="#ffffff"/>
 
   <style>
-    .center { font-size: 16px; font-weight: 700; fill: #334155; }
-    .l1 { font-size: 13px; font-weight: 600; }
-    .l2 { font-size: 11px; fill: #64748b; }
-    .branch { fill: none; stroke-width: 2; stroke-linecap: round; }
-    .twig { fill: none; stroke-width: 1.2; stroke-linecap: round; }
+    .center { font-size: 18px; font-weight: 700; fill: #334155; }
+    .l1 { font-size: 14px; font-weight: 600; }
+    .l2 { font-size: 11px; font-weight: 500; fill: #334155; }
+    .branch { fill: none; stroke-width: 2.5; stroke-linecap: round; }
+    .twig { fill: none; stroke-width: 1.5; stroke-linecap: round; }
+    .leaf { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1; }
   </style>
 
-  <rect x="272" y="216" width="136" height="48" rx="24" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text class="center" x="340" y="244" text-anchor="middle">Settings</text>
+  <!-- Center: edges L=365 R=535 T=196 B=248 -->
+  <rect x="365" y="196" width="170" height="52" rx="26" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text class="center" x="450" y="228" text-anchor="middle">Settings</text>
 
   <!-- Profile (top-left) -->
-  <path class="branch" stroke="#2563eb" d="M282 228 Q170 210 90 140"/>
-  <rect x="30" y="106" width="110" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
-  <text class="l1" fill="#1e40af" x="85" y="129" text-anchor="middle">Profile</text>
-  <path class="twig" stroke="#93c5fd" d="M45 106 Q35 86 25 70"/><text class="l2" x="21" y="64" text-anchor="end">Display name</text>
-  <path class="twig" stroke="#93c5fd" d="M115 106 Q125 86 140 70"/><text class="l2" x="142" y="64" text-anchor="start">Avatar</text>
+  <path class="branch" stroke="#2563eb" d="M365 204 C260 170, 180 140, 130 110"/>
+  <rect x="60" y="86" width="130" height="40" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="l1" fill="#1e40af" x="125" y="111" text-anchor="middle">Profile</text>
+  <path class="twig" stroke="#93c5fd" d="M85 86 Q65 62, 48 46"/>
+  <rect x="4" y="28" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="58" y="46" text-anchor="middle">Display name</text>
+  <path class="twig" stroke="#93c5fd" d="M160 86 Q180 62, 200 46"/>
+  <rect x="166" y="28" width="72" height="26" rx="6" class="leaf"/><text class="l2" x="202" y="46" text-anchor="middle">Avatar</text>
 
   <!-- Trading (top-right) -->
-  <path class="branch" stroke="#0d9488" d="M398 228 Q510 210 580 140"/>
-  <rect x="520" y="106" width="120" height="36" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
-  <text class="l1" fill="#134e4a" x="580" y="129" text-anchor="middle">Trading</text>
-  <path class="twig" stroke="#5eead4" d="M540 106 Q530 86 515 70"/><text class="l2" x="513" y="64" text-anchor="end">Default slippage</text>
-  <path class="twig" stroke="#5eead4" d="M620 106 Q630 86 645 70"/><text class="l2" x="647" y="64" text-anchor="start">Gas priority</text>
+  <path class="branch" stroke="#0d9488" d="M535 204 C640 170, 720 140, 770 110"/>
+  <rect x="710" y="86" width="130" height="40" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text class="l1" fill="#134e4a" x="775" y="111" text-anchor="middle">Trading</text>
+  <path class="twig" stroke="#5eead4" d="M740 86 Q720 62, 695 46"/>
+  <rect x="630" y="28" width="120" height="26" rx="6" class="leaf"/><text class="l2" x="690" y="46" text-anchor="middle">Default slippage</text>
+  <path class="twig" stroke="#5eead4" d="M810 86 Q830 62, 850 46"/>
+  <rect x="802" y="28" width="96" height="26" rx="6" class="leaf"/><text class="l2" x="850" y="46" text-anchor="middle">Gas priority</text>
 
-  <!-- Notifications (left) -->
-  <path class="branch" stroke="#d97706" d="M282 248 Q170 270 80 300"/>
-  <rect x="20" y="290" width="130" height="36" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
-  <text class="l1" fill="#92400e" x="85" y="313" text-anchor="middle">Notifications</text>
-  <path class="twig" stroke="#fbbf24" d="M35 326 Q25 345 15 358"/><text class="l2" x="11" y="372" text-anchor="end">Market alerts</text>
-  <path class="twig" stroke="#fbbf24" d="M115 326 Q125 345 140 358"/><text class="l2" x="142" y="372" text-anchor="start">Resolution updates</text>
+  <!-- Notifications (bottom-left) — far left -->
+  <path class="branch" stroke="#d97706" d="M365 242 C230 290, 120 330, 80 360"/>
+  <rect x="10" y="348" width="160" height="40" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text class="l1" fill="#92400e" x="90" y="373" text-anchor="middle">Notifications</text>
+  <path class="twig" stroke="#fbbf24" d="M40 388 Q20 414, 8 430"/>
+  <rect x="4" y="424" width="104" height="26" rx="6" class="leaf"/><text class="l2" x="56" y="442" text-anchor="middle">Market alerts</text>
+  <path class="twig" stroke="#fbbf24" d="M140 388 Q165 414, 195 430"/>
+  <rect x="130" y="424" width="140" height="26" rx="6" class="leaf"/><text class="l2" x="200" y="442" text-anchor="middle">Resolution updates</text>
 
-  <!-- Privacy (right) -->
-  <path class="branch" stroke="#dc2626" d="M398 248 Q510 270 590 300"/>
-  <rect x="530" y="290" width="110" height="36" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
-  <text class="l1" fill="#991b1b" x="585" y="313" text-anchor="middle">Privacy</text>
-  <path class="twig" stroke="#fca5a5" d="M545 326 Q535 345 520 358"/><text class="l2" x="518" y="372" text-anchor="end">Hide portfolio</text>
-  <path class="twig" stroke="#fca5a5" d="M620 326 Q630 345 645 358"/><text class="l2" x="647" y="372" text-anchor="start">Anonymous mode</text>
+  <!-- Developer (bottom-center) -->
+  <path class="branch" stroke="#8b5cf6" d="M450 248 Q450 350, 450 370"/>
+  <rect x="385" y="368" width="130" height="40" rx="10" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text class="l1" fill="#5b21b6" x="450" y="393" text-anchor="middle">Developer</text>
+  <path class="twig" stroke="#c4b5fd" d="M410 408 Q375 434, 340 448"/>
+  <rect x="288" y="440" width="96" height="26" rx="6" class="leaf"/><text class="l2" x="336" y="458" text-anchor="middle">API keys</text>
+  <path class="twig" stroke="#c4b5fd" d="M450 408 Q450 434, 450 448"/>
+  <rect x="396" y="440" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="450" y="458" text-anchor="middle">Webhook URLs</text>
+  <path class="twig" stroke="#c4b5fd" d="M490 408 Q525 434, 560 448"/>
+  <rect x="510" y="440" width="112" height="26" rx="6" class="leaf"/><text class="l2" x="566" y="458" text-anchor="middle">Testnet toggle</text>
 
-  <!-- Developer (bottom) -->
-  <path class="branch" stroke="#8b5cf6" d="M340 264 Q340 360 340 390"/>
-  <rect x="275" y="390" width="130" height="36" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
-  <text class="l1" fill="#5b21b6" x="340" y="413" text-anchor="middle">Developer</text>
-  <path class="twig" stroke="#c4b5fd" d="M290 426 Q275 445 255 458"/><text class="l2" x="253" y="472" text-anchor="end">API keys</text>
-  <path class="twig" stroke="#c4b5fd" d="M340 426 Q340 445 340 458"/><text class="l2" x="340" y="472" text-anchor="middle">Webhook URLs</text>
-  <path class="twig" stroke="#c4b5fd" d="M390 426 Q405 445 425 458"/><text class="l2" x="427" y="472" text-anchor="start">Testnet toggle</text>
+  <!-- Privacy (bottom-right) — far right -->
+  <path class="branch" stroke="#dc2626" d="M535 242 C670 290, 780 330, 820 360"/>
+  <rect x="760" y="348" width="130" height="40" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <text class="l1" fill="#991b1b" x="825" y="373" text-anchor="middle">Privacy</text>
+  <path class="twig" stroke="#fca5a5" d="M790 388 Q765 414, 740 430"/>
+  <rect x="684" y="424" width="116" height="26" rx="6" class="leaf"/><text class="l2" x="742" y="442" text-anchor="middle">Hide portfolio</text>
+  <path class="twig" stroke="#fca5a5" d="M860 388 Q878 414, 870 430"/>
+  <rect x="830" y="424" width="68" height="26" rx="6" class="leaf"/><text class="l2" x="864" y="442" text-anchor="middle">Anon</text>
 
-  </g>
 </svg>

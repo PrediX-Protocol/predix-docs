@@ -1,52 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 560" font-family="Inter, system-ui, sans-serif">
-  <rect x="0" y="0" width="740" height="560" rx="12" fill="#ffffff"/>
-  <g transform="translate(30,30)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="900" height="500" rx="12" fill="#ffffff"/>
 
   <style>
-    .center { font-size: 16px; font-weight: 700; fill: #5b21b6; }
-    .l1 { font-size: 13px; font-weight: 600; }
-    .l2 { font-size: 11px; fill: #64748b; }
-    .branch { fill: none; stroke-width: 2; stroke-linecap: round; }
-    .twig { fill: none; stroke-width: 1.2; stroke-linecap: round; }
+    .center { font-size: 18px; font-weight: 700; fill: #5b21b6; }
+    .l1 { font-size: 14px; font-weight: 600; }
+    .l2 { font-size: 11px; font-weight: 500; fill: #334155; }
+    .branch { fill: none; stroke-width: 2.5; stroke-linecap: round; }
+    .twig { fill: none; stroke-width: 1.5; stroke-linecap: round; }
+    .leaf { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1; }
   </style>
 
-  <rect x="260" y="216" width="160" height="48" rx="24" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
-  <text class="center" x="340" y="244" text-anchor="middle">vePRX rights</text>
+  <!-- Center: edges L=350 R=550 T=210 B=262 -->
+  <rect x="350" y="210" width="200" height="52" rx="26" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+  <text class="center" x="450" y="242" text-anchor="middle">vePRX rights</text>
 
   <!-- Gauge (top-left) -->
-  <path class="branch" stroke="#2563eb" d="M275 228 Q160 200 90 130"/>
-  <rect x="30" y="96" width="110" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
-  <text class="l1" fill="#1e40af" x="85" y="119" text-anchor="middle">Gauge</text>
-  <path class="twig" stroke="#93c5fd" d="M45 96 Q35 76 25 60"/><text class="l2" x="21" y="54" text-anchor="end">Direct subsidy</text>
-  <path class="twig" stroke="#93c5fd" d="M115 96 Q125 76 140 60"/><text class="l2" x="142" y="54" text-anchor="start">Earn bribes</text>
+  <path class="branch" stroke="#2563eb" d="M350 216 C250 180, 170 150, 120 120"/>
+  <rect x="50" y="96" width="130" height="40" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="l1" fill="#1e40af" x="115" y="121" text-anchor="middle">Gauge</text>
+  <path class="twig" stroke="#93c5fd" d="M75 96 Q55 72, 38 56"/>
+  <rect x="4" y="38" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="58" y="56" text-anchor="middle">Direct subsidy</text>
+  <path class="twig" stroke="#93c5fd" d="M150 96 Q170 72, 195 56"/>
+  <rect x="150" y="38" width="96" height="26" rx="6" class="leaf"/><text class="l2" x="198" y="56" text-anchor="middle">Earn bribes</text>
 
   <!-- Params (top-right) -->
-  <path class="branch" stroke="#0d9488" d="M405 228 Q520 200 590 130"/>
-  <rect x="530" y="96" width="120" height="36" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
-  <text class="l1" fill="#134e4a" x="590" y="119" text-anchor="middle">Params</text>
-  <path class="twig" stroke="#5eead4" d="M550 96 Q540 76 525 60"/><text class="l2" x="523" y="54" text-anchor="end">Fee tiers</text>
-  <path class="twig" stroke="#5eead4" d="M630 96 Q640 76 655 60"/><text class="l2" x="657" y="54" text-anchor="start">Burn rate</text>
+  <path class="branch" stroke="#0d9488" d="M550 216 C650 180, 730 150, 780 120"/>
+  <rect x="720" y="96" width="130" height="40" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text class="l1" fill="#134e4a" x="785" y="121" text-anchor="middle">Params</text>
+  <path class="twig" stroke="#5eead4" d="M750 96 Q730 72, 710 56"/>
+  <rect x="660" y="38" width="96" height="26" rx="6" class="leaf"/><text class="l2" x="708" y="56" text-anchor="middle">Fee tiers</text>
+  <path class="twig" stroke="#5eead4" d="M820 96 Q840 72, 860 56"/>
+  <rect x="816" y="38" width="80" height="26" rx="6" class="leaf"/><text class="l2" x="856" y="56" text-anchor="middle">Burn rate</text>
 
-  <!-- Treasury (bottom-left) -->
-  <path class="branch" stroke="#d97706" d="M275 252 Q160 280 90 350"/>
-  <rect x="30" y="340" width="120" height="36" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
-  <text class="l1" fill="#92400e" x="90" y="363" text-anchor="middle">Treasury</text>
-  <path class="twig" stroke="#fbbf24" d="M45 376 Q35 396 25 410"/><text class="l2" x="21" y="424" text-anchor="end">Spending votes</text>
-  <path class="twig" stroke="#fbbf24" d="M125 376 Q140 396 155 410"/><text class="l2" x="157" y="424" text-anchor="start">Grant allocation</text>
+  <!-- Treasury (bottom-left) — pushed far left -->
+  <path class="branch" stroke="#d97706" d="M350 256 C230 300, 130 340, 80 370"/>
+  <rect x="10" y="358" width="140" height="40" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text class="l1" fill="#92400e" x="80" y="383" text-anchor="middle">Treasury</text>
+  <path class="twig" stroke="#fbbf24" d="M35 398 Q15 424, 4 440"/>
+  <rect x="4" y="434" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="58" y="452" text-anchor="middle">Spending votes</text>
+  <path class="twig" stroke="#fbbf24" d="M120 398 Q145 424, 170 440"/>
+  <rect x="116" y="434" width="120" height="26" rx="6" class="leaf"/><text class="l2" x="176" y="452" text-anchor="middle">Grant allocation</text>
 
   <!-- Phase (bottom-center) -->
-  <path class="branch" stroke="#dc2626" d="M340 264 Q340 330 340 350"/>
-  <rect x="275" y="350" width="130" height="36" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
-  <text class="l1" fill="#991b1b" x="340" y="373" text-anchor="middle">Phase</text>
-  <path class="twig" stroke="#fca5a5" d="M300 386 Q290 405 280 418"/><text class="l2" x="278" y="432" text-anchor="end">Transition vote</text>
-  <path class="twig" stroke="#fca5a5" d="M380 386 Q390 405 400 418"/><text class="l2" x="402" y="432" text-anchor="start">Milestone gates</text>
+  <path class="branch" stroke="#dc2626" d="M450 262 Q450 340, 450 366"/>
+  <rect x="385" y="358" width="130" height="40" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <text class="l1" fill="#991b1b" x="450" y="383" text-anchor="middle">Phase</text>
+  <path class="twig" stroke="#fca5a5" d="M410 398 Q380 424, 350 440"/>
+  <rect x="290" y="434" width="120" height="26" rx="6" class="leaf"/><text class="l2" x="350" y="452" text-anchor="middle">Transition vote</text>
+  <path class="twig" stroke="#fca5a5" d="M490 398 Q520 424, 550 440"/>
+  <rect x="496" y="434" width="120" height="26" rx="6" class="leaf"/><text class="l2" x="556" y="452" text-anchor="middle">Milestone gates</text>
 
-  <!-- Emergency (bottom-right) -->
-  <path class="branch" stroke="#8b5cf6" d="M405 252 Q520 280 590 350"/>
-  <rect x="520" y="340" width="130" height="36" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
-  <text class="l1" fill="#5b21b6" x="585" y="363" text-anchor="middle">Emergency</text>
-  <path class="twig" stroke="#c4b5fd" d="M545 376 Q530 396 515 410"/><text class="l2" x="513" y="424" text-anchor="end">Pause protocol</text>
-  <path class="twig" stroke="#c4b5fd" d="M630 376 Q645 396 655 410"/><text class="l2" x="657" y="424" text-anchor="start">Force refund</text>
+  <!-- Emergency (bottom-right) — pushed far right -->
+  <path class="branch" stroke="#8b5cf6" d="M550 256 C670 300, 770 340, 820 370"/>
+  <rect x="750" y="358" width="140" height="40" rx="10" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text class="l1" fill="#5b21b6" x="820" y="383" text-anchor="middle">Emergency</text>
+  <path class="twig" stroke="#c4b5fd" d="M775 398 Q750 424, 728 440"/>
+  <rect x="670" y="434" width="116" height="26" rx="6" class="leaf"/><text class="l2" x="728" y="452" text-anchor="middle">Pause protocol</text>
+  <path class="twig" stroke="#c4b5fd" d="M860 398 Q875 424, 870 440"/>
+  <rect x="830" y="434" width="66" height="26" rx="6" class="leaf"/><text class="l2" x="863" y="452" text-anchor="middle">Refund</text>
 
-  </g>
 </svg>

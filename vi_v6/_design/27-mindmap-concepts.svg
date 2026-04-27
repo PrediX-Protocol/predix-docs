@@ -1,53 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 560" font-family="Inter, system-ui, sans-serif">
-  <rect x="0" y="0" width="740" height="560" rx="12" fill="#ffffff"/>
-  <g transform="translate(30,30)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="900" height="500" rx="12" fill="#ffffff"/>
 
   <style>
-    .center { font-size: 16px; font-weight: 700; fill: #1e40af; }
-    .l1 { font-size: 13px; font-weight: 600; }
-    .l2 { font-size: 11px; fill: #64748b; }
-    .branch { fill: none; stroke-width: 2; stroke-linecap: round; }
-    .twig { fill: none; stroke-width: 1.2; stroke-linecap: round; }
+    .center { font-size: 18px; font-weight: 700; fill: #1e40af; }
+    .l1 { font-size: 14px; font-weight: 600; }
+    .l2 { font-size: 11px; font-weight: 500; fill: #334155; }
+    .branch { fill: none; stroke-width: 2.5; stroke-linecap: round; }
+    .twig { fill: none; stroke-width: 1.5; stroke-linecap: round; }
+    .leaf { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1; }
   </style>
 
-  <!-- Center -->
-  <rect x="255" y="216" width="170" height="48" rx="24" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
-  <text class="center" x="340" y="244" text-anchor="middle">Core concepts</text>
+  <!-- Center: edges L=350 R=550 T=210 B=262 -->
+  <rect x="350" y="210" width="200" height="52" rx="26" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text class="center" x="450" y="242" text-anchor="middle">Core concepts</text>
 
   <!-- Market (top-left) -->
-  <path class="branch" stroke="#2563eb" d="M275 228 Q180 200 110 130"/>
-  <rect x="40" y="100" width="110" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
-  <text class="l1" fill="#1e40af" x="95" y="123" text-anchor="middle">Market</text>
-  <path class="twig" stroke="#93c5fd" d="M60 100 Q50 80 40 62"/><text class="l2" x="36" y="56" text-anchor="end">Binary outcome</text>
-  <path class="twig" stroke="#93c5fd" d="M110 100 Q120 80 130 62"/><text class="l2" x="132" y="56" text-anchor="start">Time-bounded</text>
+  <path class="branch" stroke="#2563eb" d="M350 216 C250 180, 180 150, 130 120"/>
+  <rect x="60" y="96" width="130" height="40" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="l1" fill="#1e40af" x="125" y="121" text-anchor="middle">Market</text>
+  <path class="twig" stroke="#93c5fd" d="M85 96 Q65 72, 48 56"/>
+  <rect x="4" y="38" width="116" height="26" rx="6" class="leaf"/><text class="l2" x="62" y="56" text-anchor="middle">Binary outcome</text>
+  <path class="twig" stroke="#93c5fd" d="M160 96 Q180 72, 200 56"/>
+  <rect x="148" y="38" width="116" height="26" rx="6" class="leaf"/><text class="l2" x="206" y="56" text-anchor="middle">Time-bounded</text>
 
-  <!-- Token (top) -->
-  <path class="branch" stroke="#8b5cf6" d="M340 216 Q340 160 340 120"/>
-  <rect x="275" y="80" width="130" height="36" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
-  <text class="l1" fill="#5b21b6" x="340" y="103" text-anchor="middle">Token</text>
-  <path class="twig" stroke="#c4b5fd" d="M300 80 Q290 60 275 45"/><text class="l2" x="273" y="40" text-anchor="end">ERC-20 YES/NO</text>
-  <path class="twig" stroke="#c4b5fd" d="M380 80 Q390 60 405 45"/><text class="l2" x="407" y="40" text-anchor="start">6 decimals</text>
+  <!-- Token (top-center) -->
+  <path class="branch" stroke="#8b5cf6" d="M450 210 Q450 150, 450 110"/>
+  <rect x="385" y="68" width="130" height="40" rx="10" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text class="l1" fill="#5b21b6" x="450" y="93" text-anchor="middle">Token</text>
+  <path class="twig" stroke="#c4b5fd" d="M410 68 Q390 44, 365 30"/>
+  <rect x="296" y="12" width="120" height="26" rx="6" class="leaf"/><text class="l2" x="356" y="30" text-anchor="middle">ERC-20 YES / NO</text>
+  <path class="twig" stroke="#c4b5fd" d="M490 68 Q510 44, 535 30"/>
+  <rect x="494" y="12" width="96" height="26" rx="6" class="leaf"/><text class="l2" x="542" y="30" text-anchor="middle">6 decimals</text>
 
   <!-- Trading (top-right) -->
-  <path class="branch" stroke="#0d9488" d="M405 228 Q500 200 570 130"/>
-  <rect x="510" y="100" width="120" height="36" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
-  <text class="l1" fill="#134e4a" x="570" y="123" text-anchor="middle">Trading</text>
-  <path class="twig" stroke="#5eead4" d="M530 100 Q520 80 510 62"/><text class="l2" x="508" y="56" text-anchor="end">CLOB + AMM</text>
-  <path class="twig" stroke="#5eead4" d="M600 100 Q615 80 630 62"/><text class="l2" x="632" y="56" text-anchor="start">Single-tx swap</text>
+  <path class="branch" stroke="#0d9488" d="M550 216 C650 180, 720 150, 770 120"/>
+  <rect x="710" y="96" width="130" height="40" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text class="l1" fill="#134e4a" x="775" y="121" text-anchor="middle">Trading</text>
+  <path class="twig" stroke="#5eead4" d="M735 96 Q715 72, 695 56"/>
+  <rect x="636" y="38" width="116" height="26" rx="6" class="leaf"/><text class="l2" x="694" y="56" text-anchor="middle">CLOB + AMM</text>
+  <path class="twig" stroke="#5eead4" d="M810 96 Q830 72, 850 56"/>
+  <rect x="792" y="38" width="104" height="26" rx="6" class="leaf"/><text class="l2" x="844" y="56" text-anchor="middle">Single-tx swap</text>
 
   <!-- Resolution (bottom-left) -->
-  <path class="branch" stroke="#d97706" d="M275 252 Q180 280 110 350"/>
-  <rect x="40" y="340" width="120" height="36" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
-  <text class="l1" fill="#92400e" x="100" y="363" text-anchor="middle">Resolution</text>
-  <path class="twig" stroke="#fbbf24" d="M55 376 Q45 395 30 410"/><text class="l2" x="26" y="424" text-anchor="end">Oracle-driven</text>
-  <path class="twig" stroke="#fbbf24" d="M130 376 Q145 395 160 410"/><text class="l2" x="162" y="424" text-anchor="start">Dispute window</text>
+  <path class="branch" stroke="#d97706" d="M350 256 C250 290, 170 330, 120 360"/>
+  <rect x="50" y="348" width="140" height="40" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text class="l1" fill="#92400e" x="120" y="373" text-anchor="middle">Resolution</text>
+  <path class="twig" stroke="#fbbf24" d="M75 388 Q55 414, 38 430"/>
+  <rect x="4" y="424" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="58" y="442" text-anchor="middle">Oracle-driven</text>
+  <path class="twig" stroke="#fbbf24" d="M165 388 Q190 414, 218 430"/>
+  <rect x="162" y="424" width="116" height="26" rx="6" class="leaf"/><text class="l2" x="220" y="442" text-anchor="middle">Dispute window</text>
 
   <!-- Fee (bottom-right) -->
-  <path class="branch" stroke="#dc2626" d="M405 252 Q500 280 570 350"/>
-  <rect x="510" y="340" width="100" height="36" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
-  <text class="l1" fill="#991b1b" x="560" y="363" text-anchor="middle">Fee</text>
-  <path class="twig" stroke="#fca5a5" d="M525 376 Q510 395 495 410"/><text class="l2" x="493" y="424" text-anchor="end">Dynamic near expiry</text>
-  <path class="twig" stroke="#fca5a5" d="M590 376 Q605 395 625 410"/><text class="l2" x="627" y="424" text-anchor="start">Split to stakers</text>
+  <path class="branch" stroke="#dc2626" d="M550 256 C650 290, 730 330, 780 360"/>
+  <rect x="720" y="348" width="110" height="40" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <text class="l1" fill="#991b1b" x="775" y="373" text-anchor="middle">Fee</text>
+  <path class="twig" stroke="#fca5a5" d="M745 388 Q718 414, 690 430"/>
+  <rect x="618" y="424" width="144" height="26" rx="6" class="leaf"/><text class="l2" x="690" y="442" text-anchor="middle">Dynamic near expiry</text>
+  <path class="twig" stroke="#fca5a5" d="M810 388 Q835 414, 855 430"/>
+  <rect x="800" y="424" width="96" height="26" rx="6" class="leaf"/><text class="l2" x="848" y="442" text-anchor="middle">Split to stakers</text>
 
-  </g>
 </svg>
