@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 466" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="420" height="466" rx="12" fill="#ffffff"/>
+  <g transform="translate(40,40)">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect x="31" y="0" width="278" height="56" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+    <text x="170" y="18" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#92400e">Event type?</text>
+    <text x="170" y="38" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Choose market structure</text>
+    <line x1="170" y1="56" x2="170" y2="86" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+    <rect x="31" y="86" width="278" height="56" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="170" y="104" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#1e40af">Price threshold?</text>
+    <text x="170" y="124" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Binary + ChainlinkOracle</text>
+    <line x1="170" y1="142" x2="170" y2="172" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+    <rect x="31" y="172" width="278" height="56" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="170" y="190" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#5b21b6">Subjective event?</text>
+    <text x="170" y="210" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Binary + ManualOracle</text>
+    <line x1="170" y1="228" x2="170" y2="258" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+    <rect x="31" y="258" width="278" height="56" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="170" y="276" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#334155">Setup parameters</text>
+    <text x="170" y="296" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">End time, fee tier, oracle</text>
+    <line x1="170" y1="314" x2="170" y2="344" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+    <rect x="31" y="344" width="278" height="42" rx="21" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="170" y="365" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#15803d">Deploy on-chain</text>
+  </g>
+</svg>

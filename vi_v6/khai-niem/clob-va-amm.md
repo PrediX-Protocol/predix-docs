@@ -28,21 +28,7 @@ Contract: `PrediXExchange`.
 
 ### 3 match type
 
-```mermaid
-flowchart TB
-    subgraph Complementary
-        A1[BUY_YES @ $0.50] -->|match| A2[SELL_YES @ $0.48]
-        A3[Taker được giá tốt hơn]
-    end
-    subgraph Mint
-        B1[BUY_YES @ $0.60] -->|tổng ≥ $1| B2[BUY_NO @ $0.45]
-        B3[Diamond mint cặp YES+NO<br/>Spread $0.05 → protocol]
-    end
-    subgraph Merge
-        C1[SELL_YES @ $0.40] -->|tổng ≤ $1| C2[SELL_NO @ $0.45]
-        C3[Diamond burn cặp<br/>Spread $0.15 → protocol]
-    end
-```
+![3 match types](../_design/34-clob-3-match-types.svg)
 
 - **Complementary**: BUY_YES ↔ SELL_YES cùng market. Phổ biến nhất.
 - **Mint** (synthetic): BUY_YES + BUY_NO ≥ $1. Diamond mint cặp, đưa YES cho buyer YES, NO cho buyer NO. Spread → protocol.
@@ -98,26 +84,6 @@ Có thể. Pool YES-USDC là v4 pool bình thường — bạn swap qua Universa
 
 PrediX Hook implement **identity commit** chống sandwich attack:
 
-```mermaid
-flowchart TD
-    User(["👤 User tx: buyYes"])
-    User --> S1["Router commitSwapIdentity(user, poolId)<br/>lưu vào transient storage EIP-1153"]
-    S1 --> S2["Router gọi poolManager.swap(...)"]
-    S2 --> S3["PoolManager call hook.beforeSwap(poolKey, params, sender)"]
-    S3 --> Check{"Hook verify identity match?"}
-    Check -->|✅ Match| Allow["Allow swap"]
-    Check -->|❌ No identity<br/>(sandwich attacker)| Revert(["🛑 Revert · attacker fail"])
-    Allow --> S4["PoolManager return delta cho Router"]
-    S4 --> End(["✅ Token out về User"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    classDef bad fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    class User st
-    class S1,S2,S3,S4,Check,Allow step
-    class End ok
-    class Revert bad
-```
+![MEV protection](../_design/35-mev-protection.svg)
 
 MEV bot không thể frontrun + backrun trade của bạn trong cùng block — Hook revert nếu identity không match.

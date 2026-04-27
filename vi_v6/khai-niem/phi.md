@@ -4,12 +4,7 @@ PrediX có 4 loại fee. User thấy đầy đủ breakdown trước khi confirm
 
 ## Tóm tắt
 
-```mermaid
-pie title Phân bổ phí protocol
-    "Staker (USDC real yield)" : 50
-    "Buyback-burn PRX" : 30
-    "Treasury (dev, audit, LP subsidy)" : 20
-```
+![Fee distribution](../_design/31-fee-distribution-pie.svg)
 
 ## 1. AMM swap fee — dynamic theo time-to-end
 
@@ -32,22 +27,7 @@ Phân bổ AMM fee:
 
 ## 2. CLOB fee
 
-```mermaid
-flowchart LR
-    Maker[Maker đặt limit order] -->|0% fee mãi mãi| OK1[Fee 0%]
-    Taker[Taker ăn lệnh thị trường] --> Time{Time to end?}
-    Time -->|> 7d| F1[0% bootstrap]
-    Time -->|3-7d| F2[0.5%]
-    Time -->|1-3d| F3[0.75%]
-    Time -->|< 24h| F4[1.0% cap]
-
-    classDef free fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    classDef low fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef high fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    class OK1,F1 free
-    class F2 low
-    class F3,F4 high
-```
+![CLOB fee tiers](../_design/32-clob-fee-tiers.svg)
 
 - **Maker**: 0% mãi mãi.
 - **Taker**: 0-1% dynamic. Bootstrap window first 7 days post-launch là 0% để build liquidity.
@@ -102,23 +82,7 @@ Mặc định **cả 2 phương pháp wallet user đều tự trả gas**. Predi
 
 PrediX dùng **adaptive split** thay flat — % thay đổi theo growth phase:
 
-```mermaid
-flowchart LR
-    Fee[💰 Phí protocol] --> Adaptive{Adaptive split<br/>per phase}
-    Adaptive -->|15-60%| Treasury[🏛️ Treasury<br/><i>Dev · Audit · LP gauge subsidy</i>]
-    Adaptive -->|20-35%| Staker[👥 stkPRX staker<br/><i>USDC real yield</i>]
-    Adaptive -->|15-50%| Buyback[🔥 Buyback + burn PRX<br/><i>Giảm supply</i>]
-    Adaptive -->|5%| Insurance[🛡️ Insurance fund<br/><i>Exploit reimbursement</i>]
-
-    classDef src fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef phase fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef sink fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef burn fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    class Fee src
-    class Adaptive phase
-    class Staker,Treasury,Insurance sink
-    class Buyback burn
-```
+![Adaptive fee split](../_design/33-adaptive-fee-split.svg)
 
 | Phase | Treasury | Staker | Buyback | Insurance |
 |---|---|---|---|---|

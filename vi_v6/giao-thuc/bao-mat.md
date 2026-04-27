@@ -47,24 +47,7 @@ Mọi upgrade có blast radius đi qua timelock 48h.
 
 ### Diamond facet upgrade
 
-```mermaid
-flowchart TD
-    Start(["🔧 Multisig 3/5: schedule diamondCut<br/>delay = 48h"])
-    Start --> S1(["📢 TimelockController emit CallScheduled<br/>+ Discord / Twitter announce"])
-    S1 --> Wait[("⏳ 48h window<br/>Community verify facet trên explorer<br/>Simulate logic<br/>Challenge nếu phát hiện malicious")]
-    Wait --> S2["Multisig execute() sau 48h"]
-    S2 --> S3["Timelock gọi Diamond.diamondCut(facets[])"]
-    S3 --> End(["✅ Emit DiamondCut event<br/>Facets updated"])
-
-    classDef admin fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef wait fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Start admin
-    class S1,S2,S3 step
-    class Wait wait
-    class End ok
-```
+![Diamond facet upgrade](../_design/54-diamond-upgrade-flow.svg)
 
 `CUT_EXECUTOR_ROLE` = **chỉ TimelockController contract**. Không EOA nào bypass.
 
@@ -126,21 +109,7 @@ Good-faith researcher có safe harbor — không bị kiện pháp lý nếu:
 
 ### Severity tiers
 
-```mermaid
-flowchart TD
-    Detect[Detect issue] --> Triage{Severity?}
-    Triage -->|P0 critical fund risk| P0[On-call page < 15min<br/>Pause module<br/>Public disclosure 72h]
-    Triage -->|P1 high degradation| P1[Alert < 1h<br/>Fix prioritize]
-    Triage -->|P2 medium| P2[Slack < 24h<br/>Schedule fix]
-    Triage -->|P3 low info| P3[Backlog<br/>Next sprint]
-
-    classDef crit fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    classDef high fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef low fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    class P0 crit
-    class P1 high
-    class P2,P3 low
-```
+![Severity tiers](../_design/55-severity-tiers.svg)
 
 ### P0 response flow
 

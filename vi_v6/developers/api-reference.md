@@ -289,24 +289,7 @@ GET /api/v2/capabilities                  enum describe list
 
 ### SIWE auth flow
 
-```mermaid
-flowchart TD
-    Start(["👤 User click Sign in"])
-    Start --> S1["FE → BE<br/>GET /auth/challenge?address=0x..."]
-    S1 --> S2["BE response<br/>{ message, nonce, expiresAt }"]
-    S2 --> S3["FE → Wallet<br/>signMessage(message)"]
-    S3 --> S4["Wallet return signature"]
-    S4 --> S5["FE → BE<br/>POST /auth/verify { address, signature }"]
-    S5 --> S6["BE verify ECDSA<br/>Set-Cookie predix_session (HTTPOnly, 7 days)"]
-    S6 --> End(["✅ Subsequent requests auto-include cookie"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Start st
-    class S1,S2,S3,S4,S5,S6 step
-    class End ok
-```
+![SIWE auth flow](../_design/14-siwe-auth.svg)
 
 ```typescript
 // 1. Challenge
@@ -374,19 +357,7 @@ const { data } = await api.GET('/markets/{id}', {
 
 Source of truth on-chain — bot listener, custom subgraph, monitoring service nên consume từ đây.
 
-```mermaid
-flowchart LR
-    Router[Router.Trade<br/>canonical] --> ProtoStats[protocolStats.totalVolume<br/>+ totalTrades]
-    Router --> Trade[trade table]
-    Router --> Position[position table]
-    Hook[Hook_MarketTraded<br/>analytics] --> PriceSnap[priceSnapshot table<br/>NOT volume]
-    MF[PositionSplit/Merge/Redeem/Refund] --> Audit[Audit rows<br/>always land]
-
-    classDef canon fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    classDef analy fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    class Router,ProtoStats canon
-    class Hook,PriceSnap analy
-```
+![Event source of truth](../_design/63-event-source-truth.svg)
 
 - **Canonical trade**: `Router.Trade` — `protocolStats.totalVolume / totalTrades` **chỉ** tăng từ đây.
 - **AMM swap analytics**: `Hook_MarketTraded` — priceSnapshot only, không count volume (tránh double-count).

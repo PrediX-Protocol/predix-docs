@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="600" height="340" rx="12" fill="#ffffff"/>
+  <g transform="translate(40,40)">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <rect x="120" y="0" width="260" height="42" rx="21" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="250" y="21" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#1e40af">Provide LP (YES + USDC)</text>
+    <line x1="250" y1="42" x2="250" y2="70" stroke="#64748b" stroke-width="1.5"/>
+    <line x1="100" y1="70" x2="400" y2="70" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="100" y1="70" x2="100" y2="100" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <line x1="400" y1="70" x2="400" y2="100" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+
+        <rect x="20" y="100" width="180" height="56" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="110" y="118" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#15803d">Earn fees</text>
+    <text x="110" y="138" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Every swap</text>
+        <rect x="320" y="100" width="180" height="56" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+    <text x="410" y="118" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#991b1b">IL risk</text>
+    <text x="410" y="138" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Price movement</text>
+
+        <line x1="250" y1="156" x2="250" y2="190" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <rect x="150" y="190" width="210" height="56" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+    <text x="255" y="208" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#92400e">Net P&L</text>
+    <text x="255" y="228" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Final value - initial + fees</text>
+  </g>
+</svg>

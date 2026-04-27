@@ -19,25 +19,7 @@ Cần **nguồn ngoài** đưa data on-chain. Oracle sai = market resolve sai = 
 
 Tự động, permissionless.
 
-```mermaid
-flowchart TD
-    Creator(["🛠️ Creator: register(marketId, feed, threshold, gte, snapshotAt)<br/>feed=BTC/USD · threshold=$100k · snapshotAt=endTime"])
-    Creator --> Wait[("⏱ ...endTime trôi qua...")]
-    Wait --> Anyone(["👤 Anyone: resolve(marketId, roundIdHint, prevHint)"])
-    Anyone --> S1["Oracle gọi Chainlink.getRoundData(roundIdHint)<br/>→ { answer, updatedAt }"]
-    S1 --> Check["Oracle verify (3 conditions):<br/>• updatedAt ≥ snapshotAt<br/>• prev.updatedAt &lt; snapshotAt (adjacency)<br/>• L2 sequencer uptime OK"]
-    Check --> S2["Compute outcome = (answer ≥ threshold) == gte"]
-    S2 --> End(["✅ Diamond emit MarketResolved event"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef wait fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Creator,Anyone st
-    class S1,Check,S2 step
-    class Wait wait
-    class End ok
-```
+![ChainlinkOracle flow](../_design/37-chainlink-oracle-flow.svg)
 
 **Use case**: Price-threshold market (BTC, ETH, asset prices, FX rates).
 
@@ -62,23 +44,7 @@ Multisig 3/5 đọc kết quả từ nguồn off-chain, ký tx.
 
 ### Flow
 
-```mermaid
-flowchart TD
-    Event(["📰 Event resolves real-world<br/>(e.g. Argentina wins WC)"])
-    Event --> S1["Multisig verify từ ≥ 2 sources<br/>(Reuters, AP, official API)"]
-    S1 --> S2["Multisig 3/5 sign<br/>ManualOracle.report(marketId, outcome=true)"]
-    S2 --> S3(["📢 Emit OracleReportCreated event"])
-    S3 --> S4["Anyone gọi Diamond.resolveMarket(marketId)"]
-    S4 --> S5["Diamond đọc outcome từ oracle<br/>Set isResolved=true, outcome=true"]
-    S5 --> End(["✅ Emit MarketResolved · user redeem được"])
-
-    classDef event fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Event event
-    class S1,S2,S4,S5 step
-    class S3,End ok
-```
+![ManualOracle flow](../_design/56-manual-oracle-flow.svg)
 
 ### Risk mitigation
 
@@ -96,29 +62,7 @@ Admin có thể `revoke(marketId)` clear pending report khi:
 
 Permissionless propose + 48h dispute window.
 
-```mermaid
-flowchart TD
-    Start(["👤 Proposer: propose(outcome, bond)"])
-    Start --> Wait[("⏱ 48h dispute window")]
-    Wait --> Branch{"Có ai dispute?"}
-    Branch -->|Không| OK1["UMA refund bond cho proposer<br/>+ finalize outcome"]
-    Branch -->|Có| Disp["👤 Disputer post bond"]
-    Disp --> Vote["UMA DVM vote<br/>quyết định outcome final"]
-    Vote --> Slash["Loser lose bond<br/>winner take"]
-    OK1 --> End(["✅ Market.resolveMarket(outcome)"])
-    Slash --> End
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef wait fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef bad fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Start st
-    class Wait wait
-    class Branch,OK1 step
-    class Disp,Vote,Slash bad
-    class End ok
-```
+![UMAOracle flow](../_design/38-uma-oracle-flow.svg)
 
 ### Bond sizing
 
@@ -161,21 +105,7 @@ Cross-chain governance outcome, complex composite event.
 
 Khi không oracle nào resolve được:
 
-```mermaid
-flowchart LR
-    Fail[Oracle fail<br/>feed down · multisig không respond ·<br/>UMA dispute hung]
-    Fail --> Admin[Admin propose<br/>enableRefundMode]
-    Admin --> Time[TimelockController 48h delay]
-    Time --> Active[refundModeActive = true]
-    Active --> User[User refund: burn min YES+NO<br/>→ nhận USDC pro-rata]
-
-    classDef warn fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    classDef wait fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Fail warn
-    class Time wait
-    class Active,User ok
-```
+![Refund mode](../_design/39-refund-mode.svg)
 
 Detail: [Redeem & refund](../huong-dan/redeem-va-claim.md).
 

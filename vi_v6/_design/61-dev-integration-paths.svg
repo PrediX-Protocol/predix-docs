@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 270" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="730" height="270" rx="12" fill="#ffffff"/>
+  <g transform="translate(40,40)">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <polygon points="280,0 380,40 280,80 180,40" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="280" y="40" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="600" fill="#1e40af">Goal?</text>
+
+        <line x1="380" y1="18" x2="420" y2="18" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <rect x="430" y="0" width="200" height="56" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="530" y="18" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#334155">App users trade</text>
+    <text x="530" y="38" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Router integration</text>
+
+        <line x1="380" y1="40" x2="420" y2="40" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <rect x="430" y="44" width="200" height="56" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="530" y="62" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#334155">Fetch data</text>
+    <text x="530" y="82" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">API reference</text>
+
+    <line x1="280" y1="80" x2="280" y2="100" stroke="#64748b" stroke-width="1.5"/>
+    <line x1="140" y1="100" x2="420" y2="100" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="140" y1="100" x2="140" y2="120" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <rect x="60" y="120" width="170" height="56" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="145" y="138" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#334155">Bot / mobile app</text>
+    <text x="145" y="158" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Bots &amp; mobile guide</text>
+        <line x1="420" y1="100" x2="420" y2="120" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <rect x="340" y="120" width="170" height="56" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="425" y="138" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#334155">Test first</text>
+    <text x="425" y="158" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Testnet info</text>
+  </g>
+</svg>

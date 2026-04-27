@@ -16,23 +16,7 @@ YES.totalSupply == NO.totalSupply == market.totalCollateral
 
 Tổng supply YES = Tổng supply NO = USDC đang lock trong market. **Luôn luôn**.
 
-```mermaid
-flowchart TB
-    USDC([100 USDC lock trong market])
-    USDC --> Mint
-    Mint{{Diamond mint atomic}}
-    Mint --> YES([100 YES tokens])
-    Mint --> NO([100 NO tokens])
-    YES -.->|YES wins| RW([Redeem 100 USDC])
-    NO -.->|NO wins| RW
-
-    classDef in fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef tok fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef out fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class USDC in
-    class YES,NO,Mint tok
-    class RW out
-```
+![Outcome token invariant](../_design/40-outcome-tokens.svg)
 
 Đảm bảo: **khi resolve, protocol luôn đủ USDC trả người giữ token đúng**. Không thể insolvent.
 

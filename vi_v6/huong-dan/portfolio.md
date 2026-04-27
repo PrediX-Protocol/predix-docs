@@ -4,20 +4,7 @@ Xem tất cả vị thế, history, P&L tại `/portfolio`.
 
 ## Màn hình tổng
 
-```mermaid
-flowchart TB
-    Hero[Hero KPIs<br/>Total value · Realized PnL · Unrealized PnL<br/>Win rate · Accuracy score]
-    Hero --> Tabs{Tabs}
-    Tabs --> Active[Active positions<br/>YES/NO mỗi market đang giữ]
-    Tabs --> Orders[Open orders<br/>Limit orders chờ khớp]
-    Tabs --> LP[Liquidity positions<br/>LP NFT + uncollected fee]
-    Tabs --> History[History<br/>Trades · Orders · Splits · Merges · Claims · Refunds]
-    Tabs --> Cal[Calibration<br/>Brier score + accuracy band]
-    Tabs --> Replay[Performance replay<br/>Time-travel through trade decisions]
-
-    classDef hero fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    class Hero hero
-```
+![Portfolio overview](../_design/44-portfolio-overview.svg)
 
 ## Active positions
 
@@ -35,18 +22,7 @@ Mỗi row:
 
 ## Realized vs unrealized P&L
 
-```mermaid
-flowchart LR
-    Buy[Buy 100 YES @ $0.50<br/>= chi 50 USDC] --> Sell{Sell 40?}
-    Sell -->|Bán 40 @ $0.60<br/>= nhận 24 USDC| Realized[Realized: +$4<br/>40 × $0.10 profit]
-    Sell --> Hold[Còn 60 YES<br/>Cost basis $0.50]
-    Hold -->|Spot $0.55| Unrealized[Unrealized: +$3<br/>60 × $0.05]
-
-    classDef r fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    classDef u fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    class Realized r
-    class Unrealized u
-```
+![PnL calculation](../_design/45-pnl-calc.svg)
 
 - **Realized** = P&L đã đóng vị thế hoặc redeem.
 - **Unrealized** = chưa chốt, phụ thuộc spot hiện tại.
@@ -108,18 +84,7 @@ Tool dạy bạn nhận biết bias của chính mình.
 
 ## Streak & badge
 
-```mermaid
-flowchart LR
-    Trade[Trade thường xuyên] --> Streak[Win streak counter]
-    Streak --> Badge1[Badge: 3-day, 7-day, 30-day streak]
-    Trade --> Volume[Volume milestones]
-    Volume --> Badge2[Badge: $1k, $10k, $100k volume]
-    Trade --> Resolve[Markets resolve correct]
-    Resolve --> Badge3[Badge: oracle, prophet, sage]
-
-    classDef earn fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Badge1,Badge2,Badge3 earn
-```
+![Badges](../_design/28-mindmap-badges.svg)
 
 Badge là NFT — sang shareable, profile signature. Chi tiết: [Rewards & gamification](../kinh-te/rewards.md).
 

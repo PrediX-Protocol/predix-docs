@@ -4,17 +4,7 @@ Tích hợp PrediX vào app, bot, data pipeline.
 
 ## Đường tích hợp
 
-```mermaid
-flowchart LR
-    Goal{Mục tiêu?}
-    Goal -->|App user trade PrediX| R[Tích hợp Router contract]
-    Goal -->|Fetch market / portfolio data| API[API reference]
-    Goal -->|Bot trade / mobile app / web app riêng| BO[Bots & mobile]
-    Goal -->|Test integrate trước mainnet| T[Testnet info]
-
-    classDef opt fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    class R,API,BO,T opt
-```
+![Dev integration paths](../_design/61-dev-integration-paths.svg)
 
 | Tôi muốn… | Đi tới |
 |---|---|

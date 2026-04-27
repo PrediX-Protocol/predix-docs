@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 330" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="580" height="330" rx="12" fill="#ffffff"/>
+  <g transform="translate(40,40)">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <rect x="0" y="0" width="200" height="56" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="100" y="18" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#15803d">Router.Trade</text>
+    <text x="100" y="38" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Canonical source</text>
+        <rect x="0" y="70" width="200" height="56" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="100" y="88" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#334155">Hook_MarketTraded</text>
+    <text x="100" y="108" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Analytics only</text>
+        <rect x="0" y="140" width="200" height="56" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="100" y="158" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#334155">Position events</text>
+    <text x="100" y="178" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Split/Merge/Redeem</text>
+
+        <line x1="200" y1="28" x2="280" y2="28" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <rect x="290" y="0" width="190" height="56" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="385" y="18" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#1e40af">protocolStats</text>
+    <text x="385" y="38" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">totalVolume, trades</text>
+    
+    <line x1="200" y1="28" x2="230" y2="28" stroke="#64748b" stroke-width="1.5"/>
+    <line x1="230" y1="28" x2="230" y2="76" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="230" y1="76" x2="280" y2="76" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <rect x="290" y="54" width="190" height="56" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="385" y="72" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#1e40af">trade table</text>
+    <text x="385" y="92" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Per-trade records</text>
+
+        <line x1="200" y1="98" x2="280" y2="98" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <rect x="290" y="108" width="190" height="56" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+    <text x="385" y="126" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#92400e">priceSnapshot</text>
+    <text x="385" y="146" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">NOT volume</text>
+
+        <line x1="200" y1="168" x2="280" y2="168" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <rect x="290" y="162" width="190" height="56" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="385" y="180" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#334155">Audit rows</text>
+    <text x="385" y="200" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Always land</text>
+
+    <text x="240" y="230" text-anchor="middle" font-size="12" fill="#991b1b">Router.Trade is canonical — volume/trade counts only from here</text>
+  </g>
+</svg>

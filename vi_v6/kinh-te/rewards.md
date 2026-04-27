@@ -4,23 +4,7 @@ Activity rewards lâu dài (badge, streak, daily challenge, reward box). Không 
 
 > Points / season-based emission / referral 2-phase: xem [Points & seasons](points-seasons.md).
 
-```mermaid
-flowchart TB
-    Trade[Bạn trade trên PrediX] --> S[Streak]
-    Trade --> B[Badge]
-    Trade --> DC[Daily Challenge]
-    Trade --> RB[Reward Box]
-    S --> R[Convert reward]
-    B --> R
-    DC --> R
-    RB --> R
-    R --> PRX[PRX token<br/>USDC<br/>NFT collectible]
-
-    classDef act fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef rwd fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Trade act
-    class PRX rwd
-```
+![Rewards overview](../_design/57-rewards-overview.svg)
 
 ## 1. Streak — chuỗi hành động
 

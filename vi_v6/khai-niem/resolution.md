@@ -18,45 +18,13 @@ Một market cần nguồn *sự thật* để quyết định YES hay NO thắn
 
 ## 4 loại oracle
 
-```mermaid
-flowchart TB
-    Q{Loại sự kiện?}
-    Q -->|Price threshold<br/>BTC > $100k?| Chain[ChainlinkOracle<br/>Auto resolve, permissionless]
-    Q -->|Subjective<br/>Ai thắng bầu cử?| Manual[ManualOracle<br/>Multisig 3/5]
-    Q -->|Decentralized<br/>không muốn multisig| UMA[UMAOracle<br/>48h dispute window]
-    Q -->|Cross-chain<br/>governance vote| Committee[Committee oracle<br/>t-of-N validator]
-
-    classDef p1 fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    classDef p2 fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef p3 fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    class Chain,Manual p1
-    class UMA p2
-    class Committee p3
-```
+![Oracle types](../_design/36-oracle-types.svg)
 
 ### ChainlinkOracle
 
 Tự động, permissionless.
 
-```mermaid
-flowchart TD
-    Creator(["🛠️ Creator register oracle<br/>(marketId, feed=BTC/USD, threshold=$100k, gte, snapshotAt=endTime)"])
-    Creator --> Wait[("⏱ ...endTime trôi qua...")]
-    Wait --> Anyone(["👤 Anyone gọi resolve(marketId, roundIdHint, prevHint)"])
-    Anyone --> S1["Oracle.getRoundData(roundIdHint) từ Chainlink<br/>→ { answer, updatedAt }"]
-    S1 --> Check["Oracle verify:<br/>• updatedAt ≥ snapshotAt<br/>• prev.updatedAt &lt; snapshotAt (adjacency)<br/>• L2 sequencer uptime OK"]
-    Check --> S2["Compute outcome<br/>= (answer ≥ threshold) == gte"]
-    S2 --> End(["✅ Diamond.MarketResolved event<br/>Market resolve, user redeem được"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef wait fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Creator,Anyone st
-    class S1,Check,S2 step
-    class Wait wait
-    class End ok
-```
+![ChainlinkOracle flow](../_design/37-chainlink-oracle-flow.svg)
 
 **Use case**: Price-threshold market (BTC, ETH, asset prices, FX rates).
 
@@ -79,28 +47,7 @@ Multisig 3/5 đọc kết quả từ nguồn off-chain, ký tx.
 
 Permissionless propose + 48h dispute window.
 
-```mermaid
-flowchart TD
-    Start(["👤 Proposer: propose(outcome, bond)"])
-    Start --> Wait[("⏱ 48h dispute window")]
-    Wait --> Branch{"Có ai dispute?"}
-    Branch -->|Không| OK1["UMA refund bond cho proposer<br/>+ finalize outcome"]
-    Branch -->|Có| Disp["Disputer post bond<br/>UMA DVM vote"]
-    Disp --> Decide["DVM quyết định<br/>(loser lose bond, winner take)"]
-    OK1 --> End(["✅ Market.resolveMarket(outcome)"])
-    Decide --> End
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef wait fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef bad fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Start st
-    class Wait wait
-    class Branch,OK1 step
-    class Disp,Decide bad
-    class End ok
-```
+![UMAOracle flow](../_design/38-uma-oracle-flow.svg)
 
 **Bond sizing**: `max(min_bond, min(market_tvl × 0.5%, max_bond))`. Range $500 - $50,000 USDC.
 

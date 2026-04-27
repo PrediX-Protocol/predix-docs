@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="640" height="360" rx="12" fill="#ffffff"/>
+  <g transform="translate(40,40)">
+        <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <circle cx="160" cy="140" r="110" fill="none" stroke="#d97706" stroke-width="40" stroke-dasharray="138 554" stroke-dashoffset="0"/>
+    <circle cx="160" cy="140" r="110" fill="none" stroke="#2563eb" stroke-width="40" stroke-dasharray="104 588" stroke-dashoffset="-138"/>
+    <circle cx="160" cy="140" r="110" fill="none" stroke="#dc2626" stroke-width="40" stroke-dasharray="121 571" stroke-dashoffset="-242"/>
+    <circle cx="160" cy="140" r="110" fill="none" stroke="#16a34a" stroke-width="40" stroke-dasharray="35 657" stroke-dashoffset="-363"/>
+    <text x="160" y="134" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Protocol</text>
+    <text x="160" y="154" text-anchor="middle" font-size="13" fill="#64748b">fee split</text>
+
+    <rect x="320" y="60" width="14" height="14" rx="3" fill="#d97706"/>
+    <text x="342" y="73" font-size="14" font-weight="600" fill="#0f172a">Treasury</text>
+    <text x="440" y="73" font-size="13" fill="#64748b">15–60%</text>
+
+    <rect x="320" y="94" width="14" height="14" rx="3" fill="#2563eb"/>
+    <text x="342" y="107" font-size="14" font-weight="600" fill="#0f172a">Staker yield</text>
+    <text x="440" y="107" font-size="13" fill="#64748b">20–35%</text>
+
+    <rect x="320" y="128" width="14" height="14" rx="3" fill="#dc2626"/>
+    <text x="342" y="141" font-size="14" font-weight="600" fill="#0f172a">Buyback-burn</text>
+    <text x="440" y="141" font-size="13" fill="#64748b">15–50%</text>
+
+    <rect x="320" y="162" width="14" height="14" rx="3" fill="#16a34a"/>
+    <text x="342" y="175" font-size="14" font-weight="600" fill="#0f172a">Insurance</text>
+    <text x="440" y="175" font-size="13" fill="#64748b">5%</text>
+
+    <text x="280" y="260" text-anchor="middle" font-size="12" fill="#64748b">Phase-dependent: Bootstrap → Scale → Mature → Dominance</text>
+  </g>
+</svg>

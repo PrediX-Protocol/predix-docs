@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 624" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="420" height="624" rx="12" fill="#ffffff"/>
+  <g transform="translate(40,40)">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect x="31" y="0" width="278" height="42" rx="21" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="170" y="21" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#1e40af">User locks PRX → vePRX</text>
+    <line x1="170" y1="42" x2="170" y2="72" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+    <rect x="31" y="72" width="278" height="56" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="170" y="90" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#5b21b6">Vote gauge weekly</text>
+    <text x="170" y="110" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Direct LP subsidy</text>
+    <line x1="170" y1="128" x2="170" y2="158" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+    <rect x="31" y="158" width="278" height="56" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+    <text x="170" y="176" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#134e4a">Pool depth increases</text>
+    <text x="170" y="196" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">More liquidity</text>
+    <line x1="170" y1="214" x2="170" y2="244" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+    <rect x="31" y="244" width="278" height="56" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+    <text x="170" y="262" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#334155">Better trading experience</text>
+    <text x="170" y="282" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Less slippage</text>
+    <line x1="170" y1="300" x2="170" y2="330" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+    <rect x="31" y="330" width="278" height="56" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+    <text x="170" y="348" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#92400e">Volume + fees increase</text>
+    <text x="170" y="368" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Protocol revenue</text>
+    <line x1="170" y1="386" x2="170" y2="416" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+    <rect x="31" y="416" width="278" height="56" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="170" y="434" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#15803d">stkPRX yield increases</text>
+    <text x="170" y="454" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Real yield grows</text>
+    <line x1="170" y1="472" x2="170" y2="502" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+    <rect x="31" y="502" width="278" height="42" rx="21" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="170" y="523" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#1e40af">↻ Buy more PRX to stake</text>
+  </g>
+</svg>

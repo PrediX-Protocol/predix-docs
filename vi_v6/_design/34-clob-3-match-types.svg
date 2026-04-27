@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 350" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="760" height="350" rx="12" fill="#ffffff"/>
+  <g transform="translate(40,40)">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <text x="0" y="16" font-size="14" font-weight="600" fill="#15803d">1. Complementary</text>
+        <rect x="0" y="28" width="220" height="44" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="110" y="46" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#15803d">BUY YES @ $0.50</text>
+    <text x="232" y="50" font-size="13" fill="#64748b">← match →</text>
+        <rect x="290" y="28" width="220" height="44" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="400" y="46" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#15803d">SELL YES @ $0.48</text>
+    <text x="520" y="50" font-size="12" fill="#64748b">Taker gets better price</text>
+
+    <line x1="0" y1="86" x2="660" y2="86" stroke="#e2e8f0" stroke-width="0.5"/>
+
+    <text x="0" y="108" font-size="14" font-weight="600" fill="#1e40af">2. Mint (synthetic)</text>
+        <rect x="0" y="120" width="220" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="110" y="138" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#1e40af">BUY YES @ $0.60</text>
+    <text x="225" y="142" font-size="13" fill="#64748b">+</text>
+        <rect x="240" y="120" width="220" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="350" y="138" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#1e40af">BUY NO @ $0.45</text>
+    <text x="470" y="142" font-size="13" fill="#64748b">= $1.05 ≥ $1</text>
+    <text x="560" y="142" font-size="12" fill="#64748b">Spread → protocol</text>
+
+    <line x1="0" y1="178" x2="660" y2="178" stroke="#e2e8f0" stroke-width="0.5"/>
+
+    <text x="0" y="200" font-size="14" font-weight="600" fill="#92400e">3. Merge (synthetic)</text>
+        <rect x="0" y="212" width="220" height="44" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+    <text x="110" y="230" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#92400e">SELL YES @ $0.40</text>
+    <text x="225" y="234" font-size="13" fill="#64748b">+</text>
+        <rect x="240" y="212" width="220" height="44" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+    <text x="350" y="230" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#92400e">SELL NO @ $0.45</text>
+    <text x="470" y="234" font-size="13" fill="#64748b">= $0.85 ≤ $1</text>
+    <text x="560" y="234" font-size="12" fill="#64748b">Spread → protocol</text>
+  </g>
+</svg>

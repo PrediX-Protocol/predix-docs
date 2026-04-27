@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="700" height="320" rx="12" fill="#ffffff"/>
+  <g transform="translate(40,40)">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect x="0" y="0" width="290" height="100" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5"/>
+    <text x="145" y="18" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">$1 Invariant</text>
+    <text x="145" y="40" text-anchor="middle" font-size="13" fill="#64748b">100 USDC → Diamond mint</text>
+    <text x="145" y="58" text-anchor="middle" font-size="13" fill="#64748b">→ 100 YES + 100 NO</text>
+    <text x="145" y="82" text-anchor="middle" font-size="12" fill="#15803d">YES wins → Redeem 100 USDC</text>
+
+    <rect x="310" y="0" width="290" height="100" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5"/>
+    <text x="455" y="18" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">Split</text>
+    <text x="455" y="40" text-anchor="middle" font-size="13" fill="#64748b">Deposit USDC → Diamond</text>
+    <text x="455" y="58" text-anchor="middle" font-size="13" fill="#64748b">→ Mint YES + NO tokens</text>
+    <text x="455" y="82" text-anchor="middle" font-size="12" fill="#1e40af">User receives both outcomes</text>
+
+    <rect x="0" y="120" width="290" height="100" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5"/>
+    <text x="145" y="138" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">Merge</text>
+    <text x="145" y="160" text-anchor="middle" font-size="13" fill="#64748b">Burn YES + NO → Diamond</text>
+    <text x="145" y="178" text-anchor="middle" font-size="13" fill="#64748b">→ Payout USDC</text>
+    <text x="145" y="202" text-anchor="middle" font-size="12" fill="#5b21b6">Equal amounts required</text>
+
+    <rect x="310" y="120" width="290" height="100" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5"/>
+    <text x="455" y="138" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a">Arbitrage $1 peg</text>
+    <text x="455" y="160" text-anchor="middle" font-size="13" fill="#64748b">YES+NO &gt; $1 → Split + sell</text>
+    <text x="455" y="178" text-anchor="middle" font-size="13" fill="#64748b">YES+NO &lt; $1 → Buy + merge</text>
+    <text x="455" y="202" text-anchor="middle" font-size="12" fill="#92400e">Arbs pull price back to ~$1</text>
+  </g>
+</svg>

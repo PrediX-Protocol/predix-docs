@@ -6,18 +6,7 @@ Trao đổi insight về market với community ngay trong app.
 
 Mỗi market có thread comment riêng (tab **Discussion** trên market detail).
 
-```mermaid
-flowchart TD
-    Market[Market detail page] --> Comments[Discussion tab]
-    Comments --> List[List comments<br/>sort: newest / top voted]
-    Comments --> Post[Post comment]
-    Comments --> Reply[Reply threading 2 levels]
-    Comments --> React[Up/down vote]
-    Comments --> Mention[@mention user]
-
-    classDef int fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    class Comments int
-```
+![Discussion features](../_design/47-discussion-features.svg)
 
 ### Đặc điểm
 
@@ -50,18 +39,7 @@ Giúp đánh giá độ tin cậy của comment.
 
 Trang `/feed` — global activity stream.
 
-```mermaid
-flowchart LR
-    On[Activity on-chain<br/>Trade, LP, Resolve] --> Feed[Social Feed]
-    Off[Activity off-chain<br/>Comment, Follow, Badge earn] --> Feed
-    Feed --> Filter[Filter: Following / Trending / Latest]
-    Filter --> Display[Display cards<br/>realtime stream]
-
-    classDef src fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ui fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    class On,Off src
-    class Feed,Display ui
-```
+![Social feed](../_design/48-social-feed.svg)
 
 ### Filter
 
@@ -120,20 +98,7 @@ Phase 2: direct message giữa users. Sẽ có:
 
 PrediX dùng **community moderation** model:
 
-```mermaid
-flowchart TD
-    Spam[Spam / inappropriate] --> Report[User report]
-    Report --> Mod[Community mod review]
-    Mod -->|valid| Action[Hide + warn user]
-    Mod -->|invalid| Dismiss[Dismiss + warn reporter abuse]
-    Action --> Repeat{Repeat offender?}
-    Repeat -->|yes 3+| Ban[Ban 7-30 days]
-
-    classDef bad fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    classDef good fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Spam,Ban bad
-    class Action,Mod good
-```
+![Moderation flow](../_design/49-moderation-flow.svg)
 
 - **Mod recruitment**: vePRX holder + good standing apply.
 - **Mod compensation**: PRX from treasury.

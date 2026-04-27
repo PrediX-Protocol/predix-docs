@@ -38,23 +38,7 @@ Decay tuyến tính theo block. Không step.
 
 Mỗi market có **gauge**. vePRX holder vote gauge nào nhận LP subsidy từ treasury (20% fee budget).
 
-```mermaid
-flowchart LR
-    Lock[User lock PRX] --> VePRX[vePRX weight]
-    VePRX --> Vote[Vote gauge weekly]
-    Vote --> Subsidy[Treasury chia LP subsidy<br/>theo % vote]
-    Subsidy --> LP[LP earn nhiều hơn]
-    LP --> Depth[Pool depth tăng]
-    Depth --> Trader[Trader happier]
-    Trader --> Volume[Volume tăng]
-    Volume --> Fee[Fee tăng]
-    Fee --> Yield[stkPRX yield tăng]
-    Yield --> Demand[User mua PRX để stake]
-    Demand --> Lock
-
-    classDef hot fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    class Volume,Fee,Yield hot
-```
+![Gauge flywheel](../_design/58-gauge-flywheel.svg)
 
 Gauge = pool YES-USDC (hoặc NO-USDC) của market cụ thể. Pool nào được vote nhiều → LP earn nhiều hơn.
 

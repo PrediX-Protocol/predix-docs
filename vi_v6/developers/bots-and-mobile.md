@@ -14,21 +14,7 @@ Hai use case khác nhau dùng chung infra: API key auth + Router contract.
 
 ### Đăng ký API key
 
-```mermaid
-flowchart LR
-    Sign[Sign in qua SIWE] --> Create[Tạo API key in Settings]
-    Create --> Scope[Chọn scope:<br/>read-only / trade / withdraw]
-    Scope --> Limit[Set rate limit + IP whitelist]
-    Limit --> Issue[Receive key + secret]
-    Issue --> Use[Use trong header API request]
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Sign st
-    class Create,Scope,Limit step
-    class Issue,Use ok
-```
+![API key registration](../_design/61-dev-integration-paths.svg)
 
 1. Sign in PrediX qua SIWE.
 2. **Settings → Developer → API keys** → **Create new key**.

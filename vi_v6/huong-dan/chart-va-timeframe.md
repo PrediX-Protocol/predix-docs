@@ -4,18 +4,7 @@ Mỗi market có chart giá YES theo thời gian. Đọc chart + đổi timefram
 
 ## Chart cơ bản
 
-```mermaid
-flowchart LR
-    Source1[Router.Trade events<br/>canonical price] --> Combine[Combined chart]
-    Source2[Hook AMM swaps<br/>analytics price] --> Combine
-    Source3[CLOB matches<br/>price ticks] --> Combine
-    Combine --> Display[Chart YES price<br/>theo thời gian]
-
-    classDef src fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef out fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Source1,Source2,Source3 src
-    class Display out
-```
+![Chart data sources](../_design/41-chart-sources.svg)
 
 Chart tổng hợp giá từ:
 - **Router.Trade**: nguồn canonical, mỗi market order

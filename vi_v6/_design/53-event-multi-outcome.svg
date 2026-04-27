@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 320" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="660" height="320" rx="12" fill="#ffffff"/>
+  <g transform="translate(40,40)">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+    <rect x="0" y="0" width="560" height="120" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5"/>
+    <text x="280" y="20" text-anchor="middle" font-size="15" font-weight="600" fill="#0f172a">Event structure</text>
+    <text x="280" y="42" text-anchor="middle" font-size="13" fill="#64748b">Event: FIFA WC 2026 → N members, each has YES+NO tokens</text>
+        <rect x="20" y="58" width="150" height="56" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="95" y="76" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#15803d">Argentina</text>
+    <text x="95" y="96" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">YES + NO</text>
+        <rect x="200" y="58" width="150" height="56" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="275" y="76" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#1e40af">Brazil</text>
+    <text x="275" y="96" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">YES + NO</text>
+        <rect x="380" y="58" width="150" height="56" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="455" y="76" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#5b21b6">France</text>
+    <text x="455" y="96" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">YES + NO</text>
+
+    <rect x="0" y="140" width="560" height="80" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.5"/>
+    <text x="280" y="160" text-anchor="middle" font-size="15" font-weight="600" fill="#0f172a">Buy flow</text>
+    <text x="280" y="182" text-anchor="middle" font-size="13" fill="#64748b">Click member → Trading panel → Buy YES → Router swap → Tokens received</text>
+    <text x="280" y="204" text-anchor="middle" font-size="12" fill="#92400e">Resolve: winningIndex=0 → Argentina YES=$1, all others=$0</text>
+  </g>
+</svg>

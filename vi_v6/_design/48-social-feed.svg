@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 226" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="226" rx="12" fill="#ffffff"/>
+  <g transform="translate(40,40)">
+    <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <rect x="0" y="0" width="190" height="56" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+    <text x="95" y="18" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#1e40af">On-chain activity</text>
+    <text x="95" y="38" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Trade, LP, Resolve</text>
+        <rect x="0" y="70" width="190" height="56" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+    <text x="95" y="88" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#5b21b6">Off-chain activity</text>
+    <text x="95" y="108" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Comment, Follow, Badge</text>
+        <line x1="190" y1="28" x2="240" y2="28" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <line x1="190" y1="98" x2="240" y2="98" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+    <line x1="240" y1="28" x2="240" y2="98" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="240" y1="63" x2="280" y2="63" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <rect x="290" y="36" width="150" height="56" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+    <text x="365" y="54" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#134e4a">Social feed</text>
+    <text x="365" y="74" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Merged stream</text>
+        <line x1="440" y1="63" x2="480" y2="63" stroke="#64748b" stroke-width="1.5" marker-end="url(#a)"/>
+        <rect x="490" y="36" width="150" height="56" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+    <text x="565" y="54" text-anchor="middle" dominant-baseline="central" font-size="15" font-weight="600" fill="#15803d">Display cards</text>
+    <text x="565" y="74" text-anchor="middle" dominant-baseline="central" font-size="13" fill="#64748b">Following/Trending</text>
+  </g>
+</svg>

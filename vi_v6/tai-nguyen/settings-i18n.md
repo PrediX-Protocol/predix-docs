@@ -87,19 +87,7 @@ Chi tiết: [Notifications](../huong-dan/notifications.md).
 
 ## Privacy
 
-```mermaid
-flowchart TD
-    Setting{Privacy level}
-    Setting -->|Default| Public[Public profile<br/>Active positions visible<br/>History visible]
-    Setting -->|Hide positions| HP[Public profile<br/>Active positions hidden<br/>History visible]
-    Setting -->|Hide history| HH[Public profile<br/>History hidden<br/>Aggregate stats only]
-    Setting -->|Anonymous| Anon[Pseudonym + avatar<br/>Address hidden in UI<br/>Aggregate stats only]
-
-    classDef strict fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    classDef relaxed fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Public relaxed
-    class Anon strict
-```
+![Privacy levels](../_design/60-privacy-levels.svg)
 
 > **Note**: On-chain data **luôn public**. App settings chỉ control UI level — privacy không hoàn toàn nếu ai đó query indexer / chain trực tiếp.
 

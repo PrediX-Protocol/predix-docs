@@ -13,22 +13,7 @@ Apply for `CREATOR_ROLE`: form on [Discord](../tai-nguyen/links.md) #creator-app
 
 ## Quyết định trước khi tạo
 
-```mermaid
-flowchart TD
-    Q1{Sự kiện kiểu gì?} -->|Price threshold<br/>BTC > $X?| Bin1[Binary + ChainlinkOracle]
-    Q1 -->|Yes/No subjective<br/>ai thắng game?| Bin2[Binary + ManualOracle]
-    Q1 -->|Multi-outcome<br/>ai thắng giải đấu?| Multi[Event với N members]
-    Q1 -->|Range value<br/>GDP, dân số?| Scalar[Scalar market]
-
-    Bin1 --> Setup[Setup parameters]
-    Bin2 --> Setup
-    Multi --> Setup
-    Scalar --> Setup
-    Setup --> Deploy[Tạo on-chain]
-
-    classDef option fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    class Bin1,Bin2,Multi,Scalar option
-```
+![Market creation decision](../_design/46-market-creation-decision.svg)
 
 ## Parameters cần quyết định
 

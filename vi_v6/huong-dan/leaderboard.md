@@ -23,18 +23,7 @@ Filter:
 
 Click vào tên trader → trang `/profile/[address]`:
 
-```mermaid
-flowchart TD
-    P[Profile address] --> Hero[Hero KPIs<br/>Volume · PnL · Win rate · Accuracy]
-    P --> Active[Active positions<br/>public]
-    P --> History[Trade history<br/>public]
-    P --> Cal[Calibration chart]
-    P --> Badge[Badges earned]
-    P --> Follow[Follow button]
-
-    classDef hero fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    class Hero hero
-```
+![Trader profile](../_design/50-trader-profile.svg)
 
 ### Public vs private
 
@@ -61,27 +50,7 @@ Click **Follow** trên profile:
 
 ## Copy trading
 
-```mermaid
-flowchart TD
-    Setup[("⚙️ Follower setup<br/>Copy 10% size · max $100/trade")]
-    Setup --> Lead(["📊 Lead trader execute<br/>Buy 100 YES BTC market"])
-    Lead --> S1["PrediX Copy Engine detect tx"]
-    S1 --> S2["Calc copy size<br/>= 10% × Lead balance, cap $100"]
-    S2 --> S3{"Mode setting"}
-    S3 -->|Auto| S4["Auto-execute mirror trade"]
-    S3 -->|Manual| S5["Notify Follower → user confirm"]
-    S4 --> End(["✅ Trade mirrored trên Follower account"])
-    S5 --> End
-
-    classDef cfg fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Setup cfg
-    class Lead st
-    class S1,S2,S3,S4,S5 step
-    class End ok
-```
+![Copy trading flow](../_design/51-copy-trading-flow.svg)
 
 ### Setup copy
 

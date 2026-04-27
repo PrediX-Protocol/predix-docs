@@ -28,20 +28,7 @@ Yield float theo volume thật. Volume tăng → yield tăng. Volume giảm → 
 
 Lock PRX để nhận **boost yield + governance weight**:
 
-```mermaid
-flowchart LR
-    Stake[Stake không lock<br/>stkPRX] -->|1.0× yield| Y0[USDC yield base]
-    Lock3[Lock 3m] -->|1.1×| Y1[USDC yield × 1.1]
-    Lock6[Lock 6m] -->|1.25×| Y2[USDC yield × 1.25]
-    Lock12[Lock 12m] -->|1.5×| Y3[USDC yield × 1.5]
-    Lock24[Lock 24m] -->|2.0×| Y4[USDC yield × 2.0]
-    Lock48[Lock 48m max] -->|2.5×| Y5[USDC yield × 2.5]
-
-    classDef low fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef high fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Stake,Y0 low
-    class Lock48,Y5 high
-```
+![Lock boost tiers](../_design/59-lock-boost-tiers.svg)
 
 | Lock | Yield boost | vePRX weight |
 |---|---|---|

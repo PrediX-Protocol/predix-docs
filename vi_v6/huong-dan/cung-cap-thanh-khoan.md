@@ -11,23 +11,7 @@ Cung cấp liquidity vào AMM pool của một market. Earn fee từ mỗi swap 
 
 ## Risk vs reward
 
-```mermaid
-flowchart TD
-    LP[Provide LP YES + USDC] --> Earn[Earn fee mỗi swap qua pool]
-    LP --> IL[Impermanent loss<br/>nếu giá YES biến động]
-    LP --> Final{Sau resolve?}
-    Final -->|YES wins| YesWin[YES = $1<br/>USDC còn = USDC]
-    Final -->|NO wins| NoWin[YES = $0<br/>USDC còn = USDC]
-    YesWin --> PnL[Net P&L = LP value cuối - LP value đầu + fee earned]
-    NoWin --> PnL
-
-    classDef good fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    classDef bad fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    classDef neutral fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    class Earn good
-    class IL bad
-    class PnL neutral
-```
+![LP risk vs reward](../_design/52-lp-risk-reward.svg)
 
 LP là **directional bet** — bạn lose nếu market resolve về phía bạn không expect. Đảm bảo hiểu IL + outcome risk trước khi LP.
 

@@ -122,18 +122,7 @@ Response sample:
 
 ## Develop flow
 
-```mermaid
-flowchart LR
-    Local[Local dev<br/>anvil fork mainnet] --> Stage1[Test integrate<br/>trên testnet]
-    Stage1 --> Stage2[Test edge case<br/>với faucet USDC test]
-    Stage2 --> Audit[Self-audit<br/>handle errors]
-    Audit --> Mainnet[Deploy / connect mainnet<br/>khi confident]
-
-    classDef stage fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef done fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Local,Stage1,Stage2,Audit stage
-    class Mainnet done
-```
+![Testnet dev flow](../_design/62-testnet-dev-flow.svg)
 
 ### Recommended sequence
 

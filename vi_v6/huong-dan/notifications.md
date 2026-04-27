@@ -4,18 +4,7 @@ Stay updated trên các market quan trọng + activity của portfolio.
 
 ## Channels
 
-```mermaid
-flowchart LR
-    Event[Sự kiện trên PrediX] --> Filter[Notification filter]
-    Filter --> Push[Push notification<br/>browser/mobile]
-    Filter --> Email[Email digest<br/>daily/weekly]
-    Filter --> Discord[Discord webhook]
-    Filter --> Telegram[Telegram bot]
-    Filter --> InApp[In-app notification center]
-
-    classDef ch fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    class Push,Email,Discord,Telegram,InApp ch
-```
+![Notification channels](../_design/42-notification-channels.svg)
 
 | Channel | Realtime | Setup | Best for |
 |---|---|---|---|
@@ -70,25 +59,7 @@ flowchart LR
 
 ## Price alerts
 
-```mermaid
-flowchart TD
-    Setup(["👤 User set alert<br/>BTC market YES > $0.70"])
-    Setup --> S1["App subscribe price stream qua Indexer"]
-    S1 --> Loop[("⏱ Mỗi block:<br/>Indexer check alert conditions")]
-    Loop --> Cond{"Condition met?"}
-    Cond -->|Chưa| Loop
-    Cond -->|Trigger| S2["Notification service fire alert"]
-    S2 --> End(["✅ User nhận push + email + in-app"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef loop fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Setup st
-    class S1,S2,Cond step
-    class Loop loop
-    class End ok
-```
+![Price alert flow](../_design/43-price-alert-flow.svg)
 
 ### Setup
 

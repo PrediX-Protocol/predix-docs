@@ -10,23 +10,7 @@ Event = container chứa N market con (gọi là **members**).
 - **Mutually exclusive** — khi event resolve, đúng 1 member YES = true, còn lại YES = false.
 - Có thể **groupSplit / groupMerge** — mint/burn cặp YES của tất cả members cùng lúc.
 
-```mermaid
-flowchart TB
-    Event[Event: FIFA WC 2026] --> M1[Member 1: Argentina]
-    Event --> M2[Member 2: Brazil]
-    Event --> M3[Member 3: France]
-    Event --> Mn[... 48 members]
-    M1 --> Y1[YES + NO tokens]
-    M2 --> Y2[YES + NO tokens]
-    M3 --> Y3[YES + NO tokens]
-    Mn --> Yn[YES + NO tokens]
-    Event -->|resolve winningIndex=0| Win[Argentina YES = $1<br/>Còn lại YES = $0]
-
-    classDef ev fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef win fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Event ev
-    class Win win
-```
+![Event multi-outcome](../_design/53-event-multi-outcome.svg)
 
 ## Ví dụ
 
