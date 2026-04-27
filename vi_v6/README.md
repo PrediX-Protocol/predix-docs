@@ -31,7 +31,7 @@ Prediction market on-chain trên Unichain. Mỗi sự kiện có hai outcome tok
 
 - **Outcome token là ERC-20** — composable với DeFi (LP, collateral, vault, lending). Không phải ERC-1155 như Polymarket.
 - **Hybrid CLOB + AMM** — Router tự động split lệnh giữa on-chain order book và Uniswap v4 pool, lấy giá tốt nhất trong cùng tx.
-- **Real yield** — 50% phí protocol chảy về staker dưới dạng USDC thật, 30% buyback-burn PRX. Không emission.
+- **Real yield** — adaptive 4-phase fee split: 20-35% staker (USDC thật) · 15-50% buyback-burn PRX · 5% insurance fund · 15-60% treasury. Không emission. Detail: [Kinh tế](kinh-te/README.md).
 - **Non-custodial** — Router stateless, bất biến `balanceOf(router) == 0` enforce on-chain. Diamond + Hook upgrade qua 48h timelock, không emergency bypass.
 - **Account abstraction** — đăng nhập bằng passkey (UX web2) hoặc crypto wallet. PrediX có chương trình gas sponsor cho user đủ điều kiện — áp dụng cả 2 account types.
 

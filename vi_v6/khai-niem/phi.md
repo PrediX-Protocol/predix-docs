@@ -98,27 +98,41 @@ Mặc định **cả 2 phương pháp wallet user đều tự trả gas**. Predi
 
 > Tiêu chí + duration sponsor program công bố pre-launch và có thể thay đổi theo governance vote. UI hiển thị "sponsored" badge khi tx được cover.
 
-## Phí phân bổ — chi tiết
+## Phí phân bổ — adaptive 4-phase
+
+PrediX dùng **adaptive split** thay flat — % thay đổi theo growth phase:
 
 ```mermaid
 flowchart LR
-    Fee[💰 $1 phí protocol] --> Staker[👥 $0.50<br/>stkPRX staker<br/><i>USDC real yield, no emission</i>]
-    Fee --> Buyback[🔥 $0.30<br/>Buyback + burn PRX<br/><i>Giảm supply</i>]
-    Fee --> Treasury[🏛️ $0.20<br/>Treasury<br/><i>Dev · Audit · LP gauge subsidy</i>]
+    Fee[💰 Phí protocol] --> Adaptive{Adaptive split<br/>per phase}
+    Adaptive -->|15-60%| Treasury[🏛️ Treasury<br/><i>Dev · Audit · LP gauge subsidy</i>]
+    Adaptive -->|20-35%| Staker[👥 stkPRX staker<br/><i>USDC real yield</i>]
+    Adaptive -->|15-50%| Buyback[🔥 Buyback + burn PRX<br/><i>Giảm supply</i>]
+    Adaptive -->|5%| Insurance[🛡️ Insurance fund<br/><i>Exploit reimbursement</i>]
 
     classDef src fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef phase fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
     classDef sink fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef burn fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
     class Fee src
-    class Staker,Buyback,Treasury sink
+    class Adaptive phase
+    class Staker,Treasury,Insurance sink
+    class Buyback burn
 ```
 
-Mỗi $1 phí thu từ AMM + CLOB taker + redemption + creation:
+| Phase | Treasury | Staker | Buyback | Insurance |
+|---|---|---|---|---|
+| **Bootstrap** (M+7 → break-even) | 60% | 20% | 15% | 5% |
+| **Scale** (break-even → multi-chain) | 25% | 30% | 40% | 5% |
+| **Mature** (Y3+) | 20% | 35% | 40% | 5% |
+| **Dominance** (post-PMF, mature DAO) | 15% | 30% | 50% | 5% |
 
-- **50% → stkPRX staker** dạng **USDC thật** ([Staking real yield](../kinh-te/staking-real-yield.md))
-- **30% → buyback + burn PRX** giảm supply ([Buyback-burn](../kinh-te/buyback-burn.md))
-- **20% → treasury** fund dev, audit, LP subsidy qua gauge ([vePRX gauge](../kinh-te/veprx-gauge.md))
+Phí thu từ AMM + CLOB taker + redemption + creation. LP fee trên AMM đi riêng — thuộc về LP, không chia về treasury.
 
-LP fee trên AMM đi riêng — thuộc về LP, không chia về treasury.
+Phase transition qua DAO vote dựa metric công khai. Detail:
+- [Buyback-burn §Adaptive](../kinh-te/buyback-burn.md#adaptive-4-phase-split)
+- [Staking real yield](../kinh-te/staking-real-yield.md)
+- [vePRX gauge](../kinh-te/veprx-gauge.md)
 
 ## Ví dụ end-to-end
 

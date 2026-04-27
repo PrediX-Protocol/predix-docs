@@ -1,6 +1,8 @@
 # Staking real yield
 
-Lock PRX → nhận share **50% phí protocol** dạng **USDC thật**. Không emission.
+Lock PRX → nhận share **20-35% phí protocol** (adaptive theo growth phase) dạng **USDC thật**. Không emission.
+
+> **Adaptive split**: staker share thay đổi theo phase — Bootstrap 20% · Scale 30% · Mature 35% · Dominance 30%. Detail: [Buyback-burn §Adaptive split](buyback-burn.md#adaptive-4-phase-split).
 
 ## Cơ chế
 
@@ -8,7 +10,7 @@ Lock PRX → nhận share **50% phí protocol** dạng **USDC thật**. Không e
 flowchart TD
     Start(["👤 User deposit N PRX vào Staking Vault"])
     Start --> S1["Vault mint N stkPRX cho user<br/>(non-transferable, đại diện share)"]
-    S1 --> Loop[("⏱ Mỗi week (epoch):<br/>Protocol collect 50% fee USDC<br/>distribute vault pro-rata")]
+    S1 --> Loop[("⏱ Mỗi week (epoch):<br/>Protocol collect adaptive % fee USDC<br/>(20-35% theo phase)<br/>distribute vault pro-rata")]
     Loop --> S2["Vault account share user theo stake"]
     S2 --> Claim(["👤 User gọi claim()"])
     Claim --> End(["✅ Vault transfer USDC yield về ví user"])
@@ -25,25 +27,27 @@ flowchart TD
 
 1. Deposit N PRX vào `StakingVault`.
 2. Vault mint N **stkPRX** (non-transferable) cho bạn — claim share fee.
-3. Mỗi week (epoch), protocol collect 50% fee USDC từ AMM + CLOB + redemption + creation → distribute vault pro-rata.
+3. Mỗi week (epoch), protocol collect **adaptive % fee USDC** (20-35% per growth phase) từ AMM + CLOB + redemption + creation → distribute vault pro-rata.
 4. Claim USDC bất cứ lúc nào, hoặc auto-compound (convert PRX rồi re-stake).
 5. Unstake: cooldown 7 ngày (chống front-run khi event lớn).
 
 ## Tính yield
 
 ```
-staker_share = 50% × total_fees_USDC_weekly
+staker_share = phase_pct × total_fees_USDC_weekly  (phase_pct = 20-35%)
 your_yield   = staker_share × (your_stake / total_staked)
 APY_USDC     = (weekly_yield × 52) / your_stake_USD_value
 ```
 
-### Ví dụ steady state
+### Ví dụ Scale phase steady state
 
 - Protocol volume: $200M/tháng
 - Fee mix: 0.3% → revenue $600k/tháng
-- Staker portion: $300k/tháng = $3.6M/năm USDC
+- Staker portion (Scale 30%): $180k/tháng = $2.16M/năm USDC
 - Total stake: 100M PRX @ $0.05 = $5M market cap staked
-- **APY_USDC = 3.6M / 5M = 72%**
+- **APY_USDC = 2.16M / 5M = 43%**
+
+Mature phase (35% staker) cùng volume → APY ~50%. Bootstrap (20% staker) lower nhưng volume thấp hơn → APY balanced.
 
 Yield float theo volume thật. Volume tăng → yield tăng. Volume giảm → yield giảm.
 
@@ -152,9 +156,9 @@ Off mặc định — bạn opt-in trong vault settings.
 - Có thể có period **pre-stake** 1-2 tuần cho whitelist (pre-seed, seed, team) để bootstrap.
 - Staking contract deploy + audit song song core, expect cùng mainnet.
 
-## Insurance fund (Phase 2)
+## Insurance fund — 5% all phases
 
-Dự kiến: 5% staker yield → insurance fund treasury. Mục đích: backup nếu protocol bị exploit, partial reimbursement cho user affected. Detail TBA.
+5% protocol revenue → insurance treasury (mọi phase, không phải chỉ Phase 2). Coverage: partial reimbursement nếu contract exploit. Payout chỉ qua DAO vote. Detail: [Buyback-burn §Insurance fund](buyback-burn.md#insurance-fund--5-all-phases).
 
 ## API
 

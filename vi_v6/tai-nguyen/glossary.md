@@ -188,7 +188,7 @@ Chuỗi action liên tiếp. Win streak, daily login streak — earn badge + bon
 
 ### stkPRX
 
-Token non-transferable mint khi stake PRX. Claim share 50% phí protocol bằng USDC.
+Token non-transferable mint khi stake PRX. Claim share 20-35% phí protocol (adaptive theo growth phase) bằng USDC.
 
 ### Taker
 

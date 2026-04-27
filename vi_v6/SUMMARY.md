@@ -41,6 +41,7 @@
 * [Staking real yield](kinh-te/staking-real-yield.md)
 * [vePRX & gauge voting](kinh-te/veprx-gauge.md)
 * [Buyback-burn & treasury](kinh-te/buyback-burn.md)
+* [Points & seasons](kinh-te/points-seasons.md)
 * [Rewards & gamification](kinh-te/rewards.md)
 
 ## Giao thức

@@ -26,7 +26,7 @@ mindmap
       Dynamic AMM
       CLOB taker
       Redemption
-      Distribution 50/30/20
+      Distribution adaptive 4-phase
 ```
 
 ## Đọc theo thứ tự
