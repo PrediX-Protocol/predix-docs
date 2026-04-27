@@ -2,6 +2,8 @@
 
 Prediction market on-chain trên Unichain. Mỗi sự kiện có hai outcome token YES / NO; token đúng redeem 1:1 USDC khi market resolve.
 
+> 🟡 **Trạng thái**: Beta trên **Unichain Sepolia testnet** (chain `1301`). Mainnet (chain `130`) sẽ launch sau external audit hoàn tất — xem [Network info](bat-dau/README.md#network-info).
+
 **Ví dụ**: Market *"Bitcoin vượt $100k trước 2027?"* tạo ra 2 token YES + NO. User mua bên mình tin sẽ thắng.
 
 | Khi market resolve | YES holder | NO holder |
@@ -38,8 +40,9 @@ Prediction market on-chain trên Unichain. Mỗi sự kiện có hai outcome tok
 
 ## Liên kết
 
-- App: [app.predix.app](https://app.predix.app)
-- Explorer: [uniscan.xyz](https://uniscan.xyz)
-- Contract addresses: [giao-thuc/addresses.md](giao-thuc/addresses.md)
-- Bug bounty + audit: [giao-thuc/bao-mat.md](giao-thuc/bao-mat.md)
-- Discord, Twitter, GitHub: [tai-nguyen/links.md](tai-nguyen/links.md)
+- **App**: [app.predix.app](https://app.predix.app) (testnet beta)
+- **Explorer testnet**: [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz)
+- **Explorer mainnet**: [uniscan.xyz](https://uniscan.xyz) (post-launch)
+- **Contract addresses**: [giao-thuc/addresses.md](giao-thuc/addresses.md) (testnet live + mainnet TBA)
+- **Bug bounty + audit**: [giao-thuc/bao-mat.md](giao-thuc/bao-mat.md)
+- **Discord, Twitter, GitHub**: [tai-nguyen/links.md](tai-nguyen/links.md)

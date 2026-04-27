@@ -30,11 +30,18 @@ Theo dõi vị thế realtime ở [Portfolio](../huong-dan/portfolio.md).
 
 ## Network info
 
-| | |
-|---|---|
-| **Chain** | Unichain (chain ID `130`) |
-| **RPC** | `https://mainnet.unichain.org` |
-| **Explorer** | [uniscan.xyz](https://uniscan.xyz) |
-| **USDC contract** | TBA — xem [addresses](../giao-thuc/addresses.md) |
+| | Testnet (live now) | Mainnet (sắp ra) |
+|---|---|---|
+| **Network** | Unichain Sepolia | Unichain |
+| **Chain ID** | `1301` | `130` |
+| **RPC public** | `https://sepolia.unichain.org` | `https://mainnet.unichain.org` |
+| **Explorer** | [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz) | [uniscan.xyz](https://uniscan.xyz) |
+| **USDC** | `0x2D56777Af1B52034068Af6864741a161dEE613Ac` (test-USDC) | TBA |
+| **Faucet** | Có — 0.0005 ETH + 10k USDC / 24h / ví | N/A |
+| **Status** | ✅ Beta live cho user + dev | 🟡 TBA — sau external audit |
 
-> **Tip**: App tự động add Unichain vào ví khi bạn kết nối lần đầu. Không cần thêm thủ công.
+> **Hiện tại bạn đang dùng testnet beta**. Mọi giao dịch trên testnet không có giá trị thật — số dư + history sẽ reset trước khi mainnet launch. Hoạt động testnet được track qua points campaign → convert PRX tại TGE.
+
+> **Tip**: App tự động add network vào ví khi bạn kết nối lần đầu. Không cần thêm thủ công.
+
+Chi tiết testnet (faucet, API endpoint, develop flow): [Testnet info](../developers/testnet.md).
