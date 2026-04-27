@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" font-family="Inter, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 400" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="400" rx="12" fill="#ffffff"/>
+  <g transform="translate(30,30)">
+
   <style>
     text { fill: #0f172a; }
     .label { font-size: 13px; fill: #64748b; }
@@ -48,5 +51,7 @@
 
     <rect x="0" y="150" width="10" height="10" rx="2" fill="#22c55e"/>
     <text class="pct" x="18" y="160">5%</text><text class="label" x="56" y="160">Liquidity DEX/CEX</text>
+  </g>
+
   </g>
 </svg>

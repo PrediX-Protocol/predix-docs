@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" font-family="Inter, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 420" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="420" rx="12" fill="#ffffff"/>
+  <g transform="translate(30,30)">
+
   <style>
     .t { font-size: 14px; font-weight: 600; }
     .s { font-size: 11px; fill: #94a3b8; }
@@ -42,4 +45,6 @@
   <text class="check" x="480" y="160">✓</text><text class="item" x="498" y="160">Single-tx execution</text>
   <text class="check" x="480" y="186">✓</text><text class="item" x="498" y="186">Revert protection</text>
   <text class="check" x="480" y="212">✓</text><text class="item" x="498" y="212">Works for all markets</text>
+
+  </g>
 </svg>

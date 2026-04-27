@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 440" font-family="Inter, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 500" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="500" rx="12" fill="#ffffff"/>
+  <g transform="translate(30,30)">
+
   <style>
     .t { font-size: 14px; font-weight: 600; }
     .s { font-size: 12px; }
@@ -28,4 +31,6 @@
   <rect x="200" y="362" width="280" height="52" rx="21" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
   <text class="t" fill="#15803d" x="340" y="382" text-anchor="middle">Supply reduced</text>
   <text class="s" fill="#64748b" x="340" y="400" text-anchor="middle">Deflationary pressure</text>
+
+  </g>
 </svg>

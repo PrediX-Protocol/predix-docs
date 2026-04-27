@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 520" font-family="Inter, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 580" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="580" rx="12" fill="#ffffff"/>
+  <g transform="translate(30,30)">
+
   <style>
     .t { font-size: 14px; font-weight: 600; }
     .s { font-size: 12px; }
@@ -32,4 +35,6 @@
 
   <rect x="220" y="450" width="240" height="42" rx="21" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
   <text class="t" fill="#15803d" x="340" y="475" text-anchor="middle">First trade complete!</text>
+
+  </g>
 </svg>

@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 500" font-family="Inter, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 560" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="560" rx="12" fill="#ffffff"/>
+  <g transform="translate(30,30)">
+
   <style>
     .center { font-size: 16px; font-weight: 700; fill: #334155; }
     .l1 { font-size: 13px; font-weight: 600; }
@@ -45,4 +48,6 @@
   <path class="twig" stroke="#c4b5fd" d="M290 426 Q275 445 255 458"/><text class="l2" x="253" y="472" text-anchor="end">API keys</text>
   <path class="twig" stroke="#c4b5fd" d="M340 426 Q340 445 340 458"/><text class="l2" x="340" y="472" text-anchor="middle">Webhook URLs</text>
   <path class="twig" stroke="#c4b5fd" d="M390 426 Q405 445 425 458"/><text class="l2" x="427" y="472" text-anchor="start">Testnet toggle</text>
+
+  </g>
 </svg>

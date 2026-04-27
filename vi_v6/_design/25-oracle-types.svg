@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" font-family="Inter, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 380" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="380" rx="12" fill="#ffffff"/>
+  <g transform="translate(30,30)">
+
   <style>
     .t { font-size: 14px; font-weight: 600; }
     .s { font-size: 12px; }
@@ -40,4 +43,6 @@
   <rect x="200" y="244" width="280" height="52" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
   <text class="t" fill="#134e4a" x="340" y="264" text-anchor="middle">Diamond (EIP-2535)</text>
   <text class="s" fill="#64748b" x="340" y="282" text-anchor="middle">Market resolution facet</text>
+
+  </g>
 </svg>

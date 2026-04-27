@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 500" font-family="Inter, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 560" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="560" rx="12" fill="#ffffff"/>
+  <g transform="translate(30,30)">
+
   <style>
     .center { font-size: 18px; font-weight: 700; fill: #1e40af; }
     .l1 { font-size: 14px; font-weight: 600; }
@@ -59,4 +62,6 @@
   <text class="l2" x="540" y="435" text-anchor="middle">Treasury spend</text>
   <path class="twig" stroke="#fbbf24" d="M590 376 Q605 400 625 420"/>
   <text class="l2" x="627" y="435" text-anchor="start">Phase transition</text>
+
+  </g>
 </svg>

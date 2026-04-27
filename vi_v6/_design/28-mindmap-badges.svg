@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 440" font-family="Inter, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 500" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="500" rx="12" fill="#ffffff"/>
+  <g transform="translate(30,30)">
+
   <style>
     .center { font-size: 16px; font-weight: 700; fill: #1e40af; }
     .l1 { font-size: 13px; font-weight: 600; }
@@ -38,4 +41,6 @@
   <path class="twig" stroke="#fbbf24" d="M290 376 Q275 395 260 408"/><text class="l2" x="258" y="422" text-anchor="end">Beta tester</text>
   <path class="twig" stroke="#fbbf24" d="M340 376 Q340 395 340 408"/><text class="l2" x="340" y="422" text-anchor="middle">Community hero</text>
   <path class="twig" stroke="#fbbf24" d="M390 376 Q405 395 420 408"/><text class="l2" x="422" y="422" text-anchor="start">Event winner</text>
+
+  </g>
 </svg>

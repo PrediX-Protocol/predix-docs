@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" font-family="Inter, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 400" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="400" rx="12" fill="#ffffff"/>
+  <g transform="translate(30,30)">
+
   <style>
     .t { font-size: 12px; font-weight: 600; fill: #0f172a; }
     .s { font-size: 11px; fill: #94a3b8; }
@@ -79,4 +82,6 @@
   <text class="legend-t" x="346" y="310">Linear vesting</text>
   <circle cx="480" cy="305" r="4" fill="#64748b" stroke="#fff" stroke-width="1"/>
   <text class="legend-t" x="490" y="310">TGE unlock</text>
+
+  </g>
 </svg>

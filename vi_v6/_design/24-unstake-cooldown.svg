@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" font-family="Inter, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 260" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="260" rx="12" fill="#ffffff"/>
+  <g transform="translate(30,30)">
+
   <style>
     .t { font-size: 14px; font-weight: 600; }
     .s { font-size: 12px; }
@@ -40,4 +43,6 @@
   <!-- Cancel cooldown back to staked -->
   <path d="M285 104 L285 150 L115 150 L115 104" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#a)"/>
   <text class="lbl" x="200" y="164" text-anchor="middle" fill="#dc2626">cancelCooldown()</text>
+
+  </g>
 </svg>

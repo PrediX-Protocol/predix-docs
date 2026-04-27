@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 500" font-family="Inter, system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 560" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="740" height="560" rx="12" fill="#ffffff"/>
+  <g transform="translate(30,30)">
+
   <style>
     .center { font-size: 16px; font-weight: 700; fill: #5b21b6; }
     .l1 { font-size: 13px; font-weight: 600; }
@@ -44,4 +47,6 @@
   <text class="l1" fill="#5b21b6" x="585" y="363" text-anchor="middle">Emergency</text>
   <path class="twig" stroke="#c4b5fd" d="M545 376 Q530 396 515 410"/><text class="l2" x="513" y="424" text-anchor="end">Pause protocol</text>
   <path class="twig" stroke="#c4b5fd" d="M630 376 Q645 396 655 410"/><text class="l2" x="657" y="424" text-anchor="start">Force refund</text>
+
+  </g>
 </svg>
