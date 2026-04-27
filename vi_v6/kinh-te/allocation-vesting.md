@@ -28,28 +28,7 @@ Total supply: **1,000,000,000 PRX** (1B). Hard cap, không mint thêm sau TGE.
 
 ## Lịch unlock
 
-```mermaid
-gantt
-    title PRX vesting schedule (months from TGE)
-    dateFormat X
-    axisFormat %s
-    section Community
-    6 seasons (S1-S6)        :0, 36
-    section Investors
-    Cliff 3-6m                :0, 6
-    Linear 15-24m             :6, 30
-    section Team
-    Cliff 12m                 :0, 12
-    Linear 36m                :12, 48
-    section Treasury
-    Cliff 6m                  :0, 6
-    Linear 48m                :6, 54
-    section Marketing
-    Cliff 3m                  :0, 3
-    Linear 24m                :3, 27
-    section Liquidity
-    100% TGE                  :0, 1
-```
+![Vesting schedule](../_design/10-vesting-gantt.svg)
 
 ## Community — 6-season emission
 

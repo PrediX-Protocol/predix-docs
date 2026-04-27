@@ -4,35 +4,7 @@ Solidity `0.8.30`, Foundry, EVM cancun (EIP-1153 transient storage). 7 package, 
 
 ## Dependency graph
 
-```mermaid
-flowchart TB
-    Shared[shared<br/><i>interfaces + constants</i>]
-    Oracle[oracle<br/><i>Manual + Chainlink adapters</i>]
-    Diamond[diamond<br/><i>core, 6 facets</i>]
-    Hook[hook<br/><i>Uniswap v4 + ERC1967 proxy</i>]
-    Exchange[exchange<br/><i>CLOB</i>]
-    Router[router<br/><i>stateless aggregator</i>]
-    Paymaster[paymaster<br/><i>ERC-4337 v0.7</i>]
-
-    Shared --> Oracle
-    Shared --> Diamond
-    Shared --> Hook
-    Shared --> Exchange
-    Shared --> Router
-    Oracle --> Diamond
-    Diamond --> Hook
-    Diamond --> Exchange
-    Diamond --> Router
-    Exchange --> Router
-    Hook --> Router
-
-    classDef base fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef core fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef leaf fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Shared base
-    class Diamond,Oracle core
-    class Hook,Exchange,Router,Paymaster leaf
-```
+![Smart contract dependency](../_design/08-sc-dependency.svg)
 
 Rule: cross-package import **chỉ** qua `@predix/shared/interfaces/`. Không import implementation của package khác.
 
@@ -73,16 +45,7 @@ Single proxy `PrediX Diamond` với 6 facet. Mỗi facet upgrade được riêng
 
 ### Hook proxy upgrade — 48h monotonic timelock
 
-```mermaid
-stateDiagram-v2
-    [*] --> Idle
-    Idle --> Proposed : proposeUpgrade(newImpl)
-    Proposed --> Proposed : 48h chờ
-    Proposed --> Executed : executeUpgrade()
-    Proposed --> Cancelled : cancelUpgrade()
-    Executed --> Idle : Implementation updated
-    Cancelled --> Idle
-```
+![Hook upgrade state](../_design/23-hook-upgrade-state.svg)
 
 - `proposeUpgrade(newImpl)` → `readyAt = now + timelockDuration` (min 48h).
 - Chờ ≥ timelockDuration → `executeUpgrade(newImpl, sig, readyAt)`.
@@ -115,16 +78,6 @@ struct Order {
 - `fillMarketOrder(marketId, side, amountIn, maxFills)` — permissionless, `taker == msg.sender` gate
 
 ### 3 match types
-
-```mermaid
-flowchart LR
-    A1[BUY_YES @ $0.50] -->|match| A2[SELL_YES @ $0.48]
-    B1[BUY_YES @ $0.60] -.->|tổng ≥ $1| B2[BUY_NO @ $0.45]
-    C1[SELL_YES @ $0.40] -.->|tổng ≤ $1| C2[SELL_NO @ $0.45]
-    A1 --> A3[Complementary]
-    B1 --> B3[Mint synthetic<br/>spread → protocol]
-    C1 --> C3[Merge synthetic<br/>spread → protocol]
-```
 
 - **Complementary**: BUY_YES ↔ SELL_YES cùng market.
 - **Mint** (synthetic): BUY_YES + BUY_NO ≥ $1. Diamond mint cặp, đưa YES cho buyer YES, NO cho buyer NO.

@@ -4,18 +4,7 @@ Một market cần nguồn *sự thật* để quyết định YES hay NO thắn
 
 ## Lifecycle market
 
-```mermaid
-stateDiagram-v2
-    [*] --> Created : createMarket()
-    Created --> Trading : market mở
-    Trading --> EndTime : tới endTime
-    EndTime --> Resolved : oracle.resolve()
-    Resolved --> Redemption : user claim 1:1 USDC
-    EndTime --> RefundMode : oracle fail / dispute
-    RefundMode --> Refunded : user merge YES+NO
-    Redemption --> [*]
-    Refunded --> [*]
-```
+![Market lifecycle](../_design/04-market-lifecycle.svg)
 
 | Stage | Mô tả |
 |---|---|

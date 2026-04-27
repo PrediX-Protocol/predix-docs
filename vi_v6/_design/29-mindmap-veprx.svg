@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 500" font-family="Inter, system-ui, sans-serif">
+  <style>
+    .center { font-size: 16px; font-weight: 700; fill: #5b21b6; }
+    .l1 { font-size: 13px; font-weight: 600; }
+    .l2 { font-size: 11px; fill: #64748b; }
+    .branch { fill: none; stroke-width: 2; stroke-linecap: round; }
+    .twig { fill: none; stroke-width: 1.2; stroke-linecap: round; }
+  </style>
+
+  <rect x="260" y="216" width="160" height="48" rx="24" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text class="center" x="340" y="244" text-anchor="middle">vePRX rights</text>
+
+  <!-- Gauge (top-left) -->
+  <path class="branch" stroke="#2563eb" d="M275 228 Q160 200 90 130"/>
+  <rect x="30" y="96" width="110" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text class="l1" fill="#1e40af" x="85" y="119" text-anchor="middle">Gauge</text>
+  <path class="twig" stroke="#93c5fd" d="M45 96 Q35 76 25 60"/><text class="l2" x="21" y="54" text-anchor="end">Direct subsidy</text>
+  <path class="twig" stroke="#93c5fd" d="M115 96 Q125 76 140 60"/><text class="l2" x="142" y="54" text-anchor="start">Earn bribes</text>
+
+  <!-- Params (top-right) -->
+  <path class="branch" stroke="#0d9488" d="M405 228 Q520 200 590 130"/>
+  <rect x="530" y="96" width="120" height="36" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+  <text class="l1" fill="#134e4a" x="590" y="119" text-anchor="middle">Params</text>
+  <path class="twig" stroke="#5eead4" d="M550 96 Q540 76 525 60"/><text class="l2" x="523" y="54" text-anchor="end">Fee tiers</text>
+  <path class="twig" stroke="#5eead4" d="M630 96 Q640 76 655 60"/><text class="l2" x="657" y="54" text-anchor="start">Burn rate</text>
+
+  <!-- Treasury (bottom-left) -->
+  <path class="branch" stroke="#d97706" d="M275 252 Q160 280 90 350"/>
+  <rect x="30" y="340" width="120" height="36" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text class="l1" fill="#92400e" x="90" y="363" text-anchor="middle">Treasury</text>
+  <path class="twig" stroke="#fbbf24" d="M45 376 Q35 396 25 410"/><text class="l2" x="21" y="424" text-anchor="end">Spending votes</text>
+  <path class="twig" stroke="#fbbf24" d="M125 376 Q140 396 155 410"/><text class="l2" x="157" y="424" text-anchor="start">Grant allocation</text>
+
+  <!-- Phase (bottom-center) -->
+  <path class="branch" stroke="#dc2626" d="M340 264 Q340 330 340 350"/>
+  <rect x="275" y="350" width="130" height="36" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+  <text class="l1" fill="#991b1b" x="340" y="373" text-anchor="middle">Phase</text>
+  <path class="twig" stroke="#fca5a5" d="M300 386 Q290 405 280 418"/><text class="l2" x="278" y="432" text-anchor="end">Transition vote</text>
+  <path class="twig" stroke="#fca5a5" d="M380 386 Q390 405 400 418"/><text class="l2" x="402" y="432" text-anchor="start">Milestone gates</text>
+
+  <!-- Emergency (bottom-right) -->
+  <path class="branch" stroke="#8b5cf6" d="M405 252 Q520 280 590 350"/>
+  <rect x="520" y="340" width="130" height="36" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text class="l1" fill="#5b21b6" x="585" y="363" text-anchor="middle">Emergency</text>
+  <path class="twig" stroke="#c4b5fd" d="M545 376 Q530 396 515 410"/><text class="l2" x="513" y="424" text-anchor="end">Pause protocol</text>
+  <path class="twig" stroke="#c4b5fd" d="M630 376 Q645 396 655 410"/><text class="l2" x="657" y="424" text-anchor="start">Force refund</text>
+</svg>

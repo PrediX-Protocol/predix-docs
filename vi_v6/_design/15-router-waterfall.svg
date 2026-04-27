@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 520" font-family="Inter, system-ui, sans-serif">
+  <style>
+    .t { font-size: 14px; font-weight: 600; }
+    .s { font-size: 12px; }
+    .arr { stroke: #64748b; stroke-width: 1.5; }
+    .lbl { font-size: 11px; fill: #94a3b8; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+  <rect x="220" y="20" width="240" height="42" rx="21" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text class="t" fill="#1e40af" x="340" y="45" text-anchor="middle">Incoming order quote</text>
+  <line x1="340" y1="62" x2="340" y2="100" class="arr" marker-end="url(#a)"/>
+
+  <!-- Decision: CLOB -->
+  <polygon points="340,100 440,150 340,200 240,150" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text class="t" fill="#92400e" x="340" y="146" text-anchor="middle">CLOB has</text>
+  <text class="t" fill="#92400e" x="340" y="162" text-anchor="middle">liquidity?</text>
+
+  <!-- Yes → CLOB fill -->
+  <text class="lbl" x="455" y="140" text-anchor="start">Yes</text>
+  <line x1="440" y1="150" x2="530" y2="150" class="arr" marker-end="url(#a)"/>
+
+  <rect x="530" y="128" width="130" height="44" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+  <text class="t" fill="#134e4a" x="595" y="154" text-anchor="middle">CLOB fill</text>
+
+  <!-- No → AMM fallback -->
+  <text class="lbl" x="225" y="195" text-anchor="end">No</text>
+  <line x1="340" y1="200" x2="340" y2="240" class="arr" marker-end="url(#a)"/>
+
+  <rect x="200" y="240" width="280" height="52" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text class="t" fill="#5b21b6" x="340" y="260" text-anchor="middle">AMM fallback swap</text>
+  <text class="s" fill="#64748b" x="340" y="278" text-anchor="middle">Uniswap v4 pool</text>
+  <line x1="340" y1="292" x2="340" y2="328" class="arr" marker-end="url(#a)"/>
+
+  <rect x="200" y="328" width="280" height="52" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text class="t" fill="#0f172a" x="340" y="348" text-anchor="middle">Cleanup + settle</text>
+  <text class="s" fill="#64748b" x="340" y="366" text-anchor="middle">Transfer tokens to user</text>
+  <line x1="340" y1="380" x2="340" y2="416" class="arr" marker-end="url(#a)"/>
+
+  <!-- CLOB also converges here -->
+  <line x1="595" y1="172" x2="595" y2="398" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="595" y1="398" x2="480" y2="398" class="arr" marker-end="url(#a)"/>
+
+  <rect x="220" y="416" width="240" height="42" rx="21" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text class="t" fill="#15803d" x="340" y="441" text-anchor="middle">Order fulfilled</text>
+</svg>

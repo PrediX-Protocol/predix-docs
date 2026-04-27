@@ -6,37 +6,7 @@ Customize app PrediX theo preference của bạn.
 
 Vào `/settings`.
 
-```mermaid
-%%{init: {"theme":"base","themeVariables":{"primaryColor":"#1e293b","primaryTextColor":"#f1f5f9","primaryBorderColor":"#475569","lineColor":"#94a3b8","background":"transparent","mainBkg":"#334155","tertiaryColor":"#475569"}}}%%
-mindmap
-  root((Settings))
-    Display
-      Theme
-      Number format
-      Currency display
-      Time zone
-    Trading
-      Default slippage
-      Default deadline
-      Auto-approve
-      Confirmation prompts
-    Notifications
-      Channels enabled
-      Type granular
-      Quiet hours
-    Privacy
-      Profile visibility
-      History visibility
-      Anonymous mode
-    Account
-      Linked wallets
-      Email verify
-      2FA
-      Sessions
-    Developer
-      API keys
-      Webhooks
-```
+![Settings mindmap](../_design/30-mindmap-settings.svg)
 
 ## Display
 

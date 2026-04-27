@@ -2,15 +2,7 @@
 
 PRX là token quản trị + revenue share của PrediX. Hard cap **1 tỷ**, không mint thêm. ERC-20 trên Unichain.
 
-```mermaid
-pie title PRX Allocation (1B total)
-    "Community & Ecosystem (30%)" : 30
-    "Investors (20%)" : 20
-    "Team & Advisors (18%)" : 18
-    "Treasury / DAO (17%)" : 17
-    "Marketing & Partners (10%)" : 10
-    "Liquidity DEX/CEX (5%)" : 5
-```
+![PRX Allocation](../_design/01-prx-allocation.svg)
 
 ## Token utility
 
@@ -24,21 +16,7 @@ pie title PRX Allocation (1B total)
 
 Phí thu từ AMM + CLOB + redemption → chia theo growth phase:
 
-```mermaid
-flowchart LR
-    Fee[Phí protocol] --> Split{Adaptive split}
-    Split --> Treasury[Treasury<br/>Dev · Audit · LP gauge]
-    Split --> Staker[stkPRX staker<br/>USDC yield]
-    Split --> Buyback[Buyback + burn PRX]
-    Split --> Insurance[Insurance 5%]
-
-    classDef src fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef sink fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef burn fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    class Fee src
-    class Treasury,Staker,Insurance sink
-    class Buyback burn
-```
+![PRX Token mindmap](../_design/26-mindmap-prx-token.svg)
 
 | Phase | Treasury | Staker | Buyback-burn | Insurance |
 |---|---|---|---|---|

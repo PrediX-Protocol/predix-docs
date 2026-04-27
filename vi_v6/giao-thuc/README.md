@@ -4,25 +4,7 @@ Kiến trúc kỹ thuật của PrediX. Cho advanced user, researcher, developer
 
 ## 4 lớp
 
-```mermaid
-flowchart TB
-    User([👤 User])
-    FE["<b>FE</b> — Next.js + React<br/>App router · Adapter layer · AA wallet"]
-    BE["<b>BE</b> — NestJS + Fastify + MongoDB<br/>Modules · Schema-first zod · Cache 2-tier"]
-    IDX["<b>Indexer</b> — Ponder + PostgreSQL<br/>Contract subscriptions · Tables · Hono REST API"]
-    SC["<b>Smart Contracts</b> — Solidity 0.8.30<br/>Diamond · Hook · Exchange · Router · Oracle · Paymaster<br/>Unichain Sepolia (testnet live) · Unichain mainnet (TBA)"]
-
-    User -->|HTTPS| FE
-    FE -->|REST /api/v2| BE
-    BE -->|REST read-only| IDX
-    IDX -->|RPC + events| SC
-    User -.->|tx ký từ ví| SC
-
-    classDef ground fill:#1e293b,stroke:#0f172a,color:#fff
-    classDef layer fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    class SC ground
-    class FE,BE,IDX layer
-```
+![Architecture 4-layer](../_design/03-architecture-4layer.svg)
 
 Data flow **một chiều**: SC emit events → Indexer sync → BE serialize → FE render. BE không ghi ngược Indexer/SC. User ký tx trực tiếp với SC qua ví — không qua BE.
 

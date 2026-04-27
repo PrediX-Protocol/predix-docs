@@ -19,26 +19,7 @@ PrediX dùng USDC trên Unichain làm collateral. Nếu USDC của bạn đang �
 
 PrediX UI có **Bridge widget** tích hợp — không cần mở Across/Stargate ở tab riêng.
 
-```mermaid
-flowchart TD
-    Start(["👤 User chọn USDC + source chain + amount"])
-    Start --> S1["PrediX Bridge UI tính quote<br/>amount out · fee · ETA"]
-    S1 --> S2["User confirm"]
-    S2 --> S3["Source chain<br/>Approve USDC + Deposit<br/>(Permit2 nếu hỗ trợ)"]
-    S3 --> S4["Bridge contract<br/>Lock USDC + emit event"]
-    S4 --> S5["Bridge relay sang Unichain<br/>Mint USDC mới"]
-    S5 --> Wait[("UI poll status<br/>Progress bar")]
-    Wait --> End(["✅ USDC nhận được trong ví Unichain<br/>Sẵn sàng trade"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef wait fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Start st
-    class S1,S2,S3,S4,S5 step
-    class Wait wait
-    class End ok
-```
+![Bridge to Unichain](../_design/12-bridge-flow.svg)
 
 ## Bước
 

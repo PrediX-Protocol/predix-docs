@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" font-family="Inter, system-ui, sans-serif">
+  <style>
+    .t { font-size: 14px; font-weight: 600; }
+    .s { font-size: 12px; }
+    .arr { stroke: #64748b; stroke-width: 1.5; }
+    .lbl { font-size: 11px; fill: #94a3b8; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+  <!-- Initial -->
+  <circle cx="30" cy="80" r="8" fill="#0f172a"/>
+  <line x1="38" y1="80" x2="58" y2="80" class="arr" marker-end="url(#a)"/>
+
+  <!-- Staked -->
+  <rect x="60" y="52" width="110" height="52" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text class="t" fill="#15803d" x="115" y="72" text-anchor="middle">Staked</text>
+  <text class="s" fill="#64748b" x="115" y="90" text-anchor="middle">Earning yield</text>
+
+  <line x1="170" y1="78" x2="218" y2="78" class="arr" marker-end="url(#a)"/>
+  <text class="lbl" x="194" y="68" text-anchor="middle">unstake()</text>
+
+  <!-- Cooldown Requested -->
+  <rect x="220" y="52" width="130" height="52" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text class="t" fill="#92400e" x="285" y="72" text-anchor="middle">Cooldown</text>
+  <text class="s" fill="#64748b" x="285" y="90" text-anchor="middle">7 days wait</text>
+
+  <line x1="350" y1="78" x2="408" y2="78" class="arr" marker-end="url(#a)"/>
+  <text class="lbl" x="379" y="68" text-anchor="middle">7d passed</text>
+
+  <!-- Withdrawable -->
+  <rect x="410" y="52" width="140" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text class="t" fill="#1e40af" x="480" y="72" text-anchor="middle">Withdrawable</text>
+  <text class="s" fill="#64748b" x="480" y="90" text-anchor="middle">Claim PRX</text>
+
+  <!-- Final -->
+  <line x1="550" y1="78" x2="590" y2="78" class="arr" marker-end="url(#a)"/>
+  <circle cx="608" cy="78" r="10" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+  <circle cx="608" cy="78" r="5" fill="#0f172a"/>
+
+  <!-- Cancel cooldown back to staked -->
+  <path d="M285 104 L285 150 L115 150 L115 104" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#a)"/>
+  <text class="lbl" x="200" y="164" text-anchor="middle" fill="#dc2626">cancelCooldown()</text>
+</svg>

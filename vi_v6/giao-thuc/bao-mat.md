@@ -4,21 +4,7 @@ PrediX defense-in-depth. Không "magic" — nhiều lớp, mỗi lớp 1 việc 
 
 ## 5 lớp phòng thủ
 
-```mermaid
-flowchart TB
-    L1[Layer 1: Protocol design<br/>Non-custodial · Stateless router · Transparent upgrade]
-    L2[Layer 2: Contract implementation<br/>Custom errors · Reentrancy guard · Fail-loud · CEI pattern]
-    L3[Layer 3: Operational<br/>Multisig 3/5 admin · 2/3 operator · HSM signer · Role separation]
-    L4[Layer 4: Observability<br/>Event on-chain · Dune dashboard · Datadog alert · Audit trail]
-    L5[Layer 5: Community<br/>Bug bounty public · Open dashboards · Governance transparency]
-
-    L1 --> L2 --> L3 --> L4 --> L5
-
-    classDef strong fill:#1e293b,stroke:#0f172a,color:#fff
-    classDef good fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    class L1,L2 strong
-    class L3,L4,L5 good
-```
+![Security 5-layer defense](../_design/09-security-5layer.svg)
 
 ## 7 invariants hard-enforce
 

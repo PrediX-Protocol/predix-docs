@@ -4,21 +4,7 @@ PrediX mua PRX từ thị trường bằng phí protocol + burn vĩnh viễn. % 
 
 ## Cơ chế
 
-```mermaid
-flowchart TD
-    Start([⏱ Mỗi tuần])
-    Start --> S1["Protocol collect phí USDC"]
-    S1 --> S2["Treasury swap USDC → PRX<br/>(random timing, chia nhiều tx nhỏ)"]
-    S2 --> S3["PRX → burn address 0x...dEaD"]
-    S3 --> End([🔥 Supply giảm vĩnh viễn])
-
-    classDef tick fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef burn fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    class Start tick
-    class S1,S2,S3 step
-    class End burn
-```
+![Buyback-burn flow](../_design/05-buyback-burn.svg)
 
 Event `BuybackExecuted(usdcSpent, prxBurned)` emit on-chain. Burn không reversible.
 

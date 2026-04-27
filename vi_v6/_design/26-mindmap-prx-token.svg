@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 500" font-family="Inter, system-ui, sans-serif">
+  <style>
+    .center { font-size: 18px; font-weight: 700; fill: #1e40af; }
+    .l1 { font-size: 14px; font-weight: 600; }
+    .l2 { font-size: 12px; fill: #64748b; }
+    .branch { fill: none; stroke-width: 2; stroke-linecap: round; }
+    .twig { fill: none; stroke-width: 1.2; stroke-linecap: round; }
+  </style>
+
+  <!-- Center -->
+  <rect x="270" y="216" width="140" height="48" rx="24" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="center" x="340" y="244" text-anchor="middle">PRX Token</text>
+
+  <!-- Branch 1: Allocation (top-left) -->
+  <path class="branch" stroke="#2563eb" d="M280 228 Q200 228 140 140"/>
+  <rect x="50" y="100" width="130" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text class="l1" fill="#1e40af" x="115" y="123" text-anchor="middle">Allocation</text>
+  <!-- Leaves -->
+  <path class="twig" stroke="#93c5fd" d="M80 100 Q70 70 60 55"/>
+  <text class="l2" x="56" y="50" text-anchor="end">Community 30%</text>
+  <path class="twig" stroke="#93c5fd" d="M100 100 Q95 75 100 55"/>
+  <text class="l2" x="100" y="50" text-anchor="middle">Investors 20%</text>
+  <path class="twig" stroke="#93c5fd" d="M140 100 Q150 75 160 55"/>
+  <text class="l2" x="160" y="50" text-anchor="start">Team 18%</text>
+  <path class="twig" stroke="#93c5fd" d="M160 100 Q185 80 210 65"/>
+  <text class="l2" x="212" y="60" text-anchor="start">Treasury 17%</text>
+
+  <!-- Branch 2: Utility (top-right) -->
+  <path class="branch" stroke="#8b5cf6" d="M400 228 Q480 228 540 140"/>
+  <rect x="480" y="100" width="120" height="36" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text class="l1" fill="#5b21b6" x="540" y="123" text-anchor="middle">Utility</text>
+  <path class="twig" stroke="#c4b5fd" d="M510 100 Q505 75 490 55"/>
+  <text class="l2" x="488" y="50" text-anchor="end">Stake yield</text>
+  <path class="twig" stroke="#c4b5fd" d="M530 100 Q530 75 530 55"/>
+  <text class="l2" x="530" y="50" text-anchor="middle">vePRX vote</text>
+  <path class="twig" stroke="#c4b5fd" d="M560 100 Q565 75 580 55"/>
+  <text class="l2" x="582" y="50" text-anchor="start">Fee discount</text>
+  <path class="twig" stroke="#c4b5fd" d="M580 100 Q600 80 625 65"/>
+  <text class="l2" x="627" y="60" text-anchor="start">Market bond</text>
+
+  <!-- Branch 3: Demand sinks (bottom-left) -->
+  <path class="branch" stroke="#0d9488" d="M280 252 Q200 252 130 340"/>
+  <rect x="50" y="340" width="140" height="36" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+  <text class="l1" fill="#134e4a" x="120" y="363" text-anchor="middle">Demand sinks</text>
+  <path class="twig" stroke="#5eead4" d="M70 376 Q55 400 40 420"/>
+  <text class="l2" x="36" y="435" text-anchor="end">Adaptive buyback</text>
+  <path class="twig" stroke="#5eead4" d="M110 376 Q110 400 110 420"/>
+  <text class="l2" x="110" y="435" text-anchor="middle">veToken lock</text>
+  <path class="twig" stroke="#5eead4" d="M160 376 Q175 400 195 420"/>
+  <text class="l2" x="197" y="435" text-anchor="start">Gauge voting</text>
+
+  <!-- Branch 4: Governance (bottom-right) -->
+  <path class="branch" stroke="#d97706" d="M400 252 Q480 252 550 340"/>
+  <rect x="480" y="340" width="140" height="36" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text class="l1" fill="#92400e" x="550" y="363" text-anchor="middle">Governance</text>
+  <path class="twig" stroke="#fbbf24" d="M500 376 Q490 400 475 420"/>
+  <text class="l2" x="473" y="435" text-anchor="end">Protocol params</text>
+  <path class="twig" stroke="#fbbf24" d="M540 376 Q540 400 540 420"/>
+  <text class="l2" x="540" y="435" text-anchor="middle">Treasury spend</text>
+  <path class="twig" stroke="#fbbf24" d="M590 376 Q605 400 625 420"/>
+  <text class="l2" x="627" y="435" text-anchor="start">Phase transition</text>
+</svg>

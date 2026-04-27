@@ -14,29 +14,7 @@ PrediX kết hợp 2 cơ chế liquidity: order book on-chain (CLOB) + Uniswap v
 
 ## Router — single entry point
 
-```mermaid
-flowchart TD
-    Start([User: buyYes 100 USDC]) --> Pull[Pull USDC qua Permit2]
-    Pull --> CLOB{CLOB có liquidity?}
-    CLOB -->|có| FillCLOB[Fill từ limit orders<br/>Match 3 loại: complementary / mint / merge]
-    CLOB -->|skip / partial| AMM[Swap qua Uniswap v4 pool]
-    FillCLOB --> Check{Đủ minOut?}
-    AMM --> VNO{Pool YES thiếu depth?}
-    VNO -->|có| Virtual[Virtual-NO two-pass<br/>+ 3% safety margin]
-    VNO -->|không| Check
-    Virtual --> Check
-    Check -->|đủ| Done[Refund dust + assert<br/>balanceOf router = 0]
-    Check -->|không| Revert[Revert SlippageExceeded<br/>tiền không mất]
-    Done --> End([Trade thành công])
-    Revert --> End2([Chỉ tốn gas])
-
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    classDef warn fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef err fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    class Done,End ok
-    class Virtual warn
-    class Revert,End2 err
-```
+![CLOB + AMM hybrid](../_design/06-hybrid-comparison.svg)
 
 Router là **stateless** — bất biến `balanceOf(router) == 0` enforce on-chain sau mỗi public call. Không lưu ký, không có funds stuck.
 

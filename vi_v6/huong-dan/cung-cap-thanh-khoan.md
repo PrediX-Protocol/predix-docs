@@ -66,22 +66,7 @@ Có thể compound: re-deposit fee vào pool để tăng position.
 
 Pool đóng — không trade được, không add liquidity được.
 
-```mermaid
-flowchart TD
-    Start(["📍 Market resolve YES = true"])
-    Start --> S1["Hook block beforeAddLiquidity<br/>Pool freeze · không swap thêm"]
-    S1 --> S2["LP gọi removeLiquidity"]
-    S2 --> S3["Pool trả USDC + YES còn lại trong position"]
-    S3 --> S4["LP gọi redeem YES<br/>(1 YES = 1 USDC vì thắng)"]
-    S4 --> End(["✅ LP nhận tổng: USDC LP + USDC redeem<br/>+ uncollected fee đã accrue"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Start st
-    class S1,S2,S3,S4 step
-    class End ok
-```
+![LP after resolve](../_design/19-lp-after-resolve.svg)
 
 Bạn có thể:
 - **Remove liquidity** lấy USDC + outcome token còn lại.

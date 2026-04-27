@@ -36,31 +36,7 @@ Mất streak nếu skip day. Restart từ 0.
 
 NFT badge (ERC-1155 trên Unichain) earn khi đạt milestone:
 
-```mermaid
-%%{init: {"theme":"base","themeVariables":{"primaryColor":"#1e293b","primaryTextColor":"#f1f5f9","primaryBorderColor":"#475569","lineColor":"#94a3b8","background":"transparent","mainBkg":"#334155","tertiaryColor":"#475569"}}}%%
-mindmap
-  root((Badges))
-    Volume
-      $100 first trade
-      $1k volume
-      $10k volume
-      $100k volume
-      $1M volume whale
-    Accuracy
-      Oracle: 70% accuracy 50 trades
-      Prophet: 80% accuracy 100 trades
-      Sage: 90% accuracy 500 trades
-    Streak
-      Week warrior: 7-day
-      Month master: 30-day
-      Year legend: 365-day
-    Special
-      Genesis: trade tuần đầu mainnet
-      OG: testnet participant
-      FIFA Champion: WC 2026 quest
-      Whale: vol top 1%
-      Founding LP: LP tháng đầu
-```
+![Badges mindmap](../_design/28-mindmap-badges.svg)
 
 - Badges là NFT — transferrable (đến khi locked).
 - Hiển thị trên profile, leaderboard.
@@ -85,29 +61,7 @@ Reset 00:00 UTC mỗi ngày.
 
 Sealed box mở lúc resolve, content random PRX / USDC / NFT.
 
-```mermaid
-flowchart TD
-    Trade(["👤 User trade qua Router (eligible event)"])
-    Trade --> Drop{"Drop reward box?<br/>~5% chance"}
-    Drop -->|No| End0(["Không có box lần này"])
-    Drop -->|Yes| Box[("📦 Box appear trong inventory<br/>sealed, chờ user open")]
-    Box --> Open(["👤 User click Open box"])
-    Open --> S1["App request Chainlink VRF<br/>random number"]
-    S1 --> S2["VRF return verifiable random"]
-    S2 --> S3["Treasury calc reward<br/>80% PRX · 15% USDC · 5% rare NFT"]
-    S3 --> End(["✅ Transfer reward về ví user"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef box fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    classDef miss fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    class Trade,Open st
-    class Drop,S1,S2,S3 step
-    class Box box
-    class End ok
-    class End0 miss
-```
+![Reward box VRF](../_design/20-reward-vrf.svg)
 
 - **Drop rate**: ~5% mỗi trade > $10.
 - **Pool**: 80% PRX, 15% USDC, 5% rare NFT.

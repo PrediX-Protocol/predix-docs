@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" font-family="Inter, system-ui, sans-serif">
+  <style>
+    .t { font-size: 14px; font-weight: 600; }
+    .s { font-size: 12px; }
+  </style>
+
+  <!-- Layer 5 (outermost) -->
+  <rect x="40" y="16" width="600" height="360" rx="20" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <text class="t" fill="#1e40af" x="340" y="44" text-anchor="middle">Bug bounty program</text>
+  <text class="s" fill="#64748b" x="340" y="62" text-anchor="middle">Community vulnerability disclosure</text>
+
+  <!-- Layer 4 -->
+  <rect x="80" y="80" width="520" height="276" rx="16" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+  <text class="t" fill="#134e4a" x="340" y="106" text-anchor="middle">External audit</text>
+  <text class="s" fill="#64748b" x="340" y="124" text-anchor="middle">Third-party security review</text>
+
+  <!-- Layer 3 -->
+  <rect x="120" y="140" width="440" height="196" rx="12" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text class="t" fill="#5b21b6" x="340" y="166" text-anchor="middle">Invariant checks</text>
+  <text class="s" fill="#64748b" x="340" y="184" text-anchor="middle">On-chain require / assert guards</text>
+
+  <!-- Layer 2 -->
+  <rect x="160" y="200" width="360" height="116" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text class="t" fill="#92400e" x="340" y="226" text-anchor="middle">Access control</text>
+  <text class="s" fill="#64748b" x="340" y="244" text-anchor="middle">Role-based permissions (RBAC)</text>
+
+  <!-- Layer 1 (innermost) -->
+  <rect x="220" y="264" width="240" height="42" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+  <text class="t" fill="#991b1b" x="340" y="289" text-anchor="middle">Timelock (48h delay)</text>
+</svg>

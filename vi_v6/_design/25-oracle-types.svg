@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" font-family="Inter, system-ui, sans-serif">
+  <style>
+    .t { font-size: 14px; font-weight: 600; }
+    .s { font-size: 12px; }
+    .arr { stroke: #64748b; stroke-width: 1.5; }
+    .lbl { font-size: 11px; fill: #94a3b8; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+  <!-- Title area -->
+  <text class="lbl" x="340" y="24" text-anchor="middle" font-size="12">Pluggable oracle architecture</text>
+
+  <!-- Three oracle types -->
+  <rect x="40" y="50" width="170" height="52" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text class="t" fill="#92400e" x="125" y="70" text-anchor="middle">Manual oracle</text>
+  <text class="s" fill="#64748b" x="125" y="88" text-anchor="middle">Admin resolves</text>
+
+  <rect x="255" y="50" width="170" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text class="t" fill="#1e40af" x="340" y="70" text-anchor="middle">Chainlink</text>
+  <text class="s" fill="#64748b" x="340" y="88" text-anchor="middle">Price feed markets</text>
+
+  <rect x="470" y="50" width="170" height="52" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text class="t" fill="#5b21b6" x="555" y="70" text-anchor="middle">UMA OOv3</text>
+  <text class="s" fill="#64748b" x="555" y="88" text-anchor="middle">Event markets</text>
+
+  <!-- Arrows down to interface -->
+  <line x1="125" y1="102" x2="125" y2="160" class="arr" marker-end="url(#a)"/>
+  <line x1="340" y1="102" x2="340" y2="160" class="arr" marker-end="url(#a)"/>
+  <line x1="555" y1="102" x2="555" y2="160" class="arr" marker-end="url(#a)"/>
+
+  <!-- IOracleAdapter interface -->
+  <rect x="80" y="160" width="520" height="44" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="6 4"/>
+  <text class="t" fill="#334155" x="340" y="186" text-anchor="middle">IOracleAdapter interface</text>
+
+  <!-- Arrow down to Diamond -->
+  <line x1="340" y1="204" x2="340" y2="244" class="arr" marker-end="url(#a)"/>
+  <text class="lbl" x="355" y="228" text-anchor="start">resolve()</text>
+
+  <!-- Diamond -->
+  <rect x="200" y="244" width="280" height="52" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+  <text class="t" fill="#134e4a" x="340" y="264" text-anchor="middle">Diamond (EIP-2535)</text>
+  <text class="s" fill="#64748b" x="340" y="282" text-anchor="middle">Market resolution facet</text>
+</svg>

@@ -13,21 +13,7 @@ Cần **nguồn ngoài** đưa data on-chain. Oracle sai = market resolve sai = 
 
 ## 4 phases, 4 loại oracle
 
-```mermaid
-flowchart TB
-    Q{Loại sự kiện?}
-    Q -->|Price threshold<br/>BTC > $100k?| Chain[ChainlinkOracle<br/>Auto resolve, permissionless]
-    Q -->|Subjective<br/>Ai thắng bầu cử?| Manual[ManualOracle<br/>Multisig 3/5]
-    Q -->|Decentralized<br/>không muốn multisig| UMA[UMAOracle<br/>48h dispute window<br/>Phase 2 TBA]
-    Q -->|Cross-chain<br/>governance vote| Committee[Committee oracle<br/>t-of-N validator<br/>Phase 3 TBA]
-
-    classDef p1 fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    classDef p2 fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef p3 fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    class Chain,Manual p1
-    class UMA p2
-    class Committee p3
-```
+![Oracle types](../_design/25-oracle-types.svg)
 
 ## ChainlinkOracle
 

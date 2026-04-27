@@ -19,28 +19,7 @@ Mua YES hoặc NO trên một market. ~30 giây từ click đến confirm.
 
 ## Đang xảy ra gì bên dưới
 
-```mermaid
-flowchart TD
-    Start(["👤 Bạn click Buy<br/>buyYes(marketId, 100 USDC, minOut)"])
-    Start --> S1["Router pull USDC qua Permit2"]
-    S1 --> S2{"Try CLOB fillMarketOrder()"}
-    S2 -->|CLOB có liquidity| S3["Exchange fill X YES<br/>consume X USDC"]
-    S2 -->|CLOB skip / revert| S4["Emit ClobSkipped<br/>Fall back AMM full"]
-    S3 --> S5
-    S4 --> S5["Router commitSwapIdentity<br/>+ swap remaining qua Hook AMM"]
-    S5 --> S6["Hook return Y YES delta"]
-    S6 --> S7["Router check minOut<br/>refund dust"]
-    S7 --> End(["✅ X + Y YES về ví<br/>1 tx atomic"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef alt fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Start st
-    class S1,S2,S3,S5,S6,S7 step
-    class S4 alt
-    class End ok
-```
+![First trade flow](../_design/11-first-trade.svg)
 
 Tất cả 1 tx atomic. Slippage > tolerance → revert, tiền không mất.
 

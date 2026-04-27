@@ -42,19 +42,7 @@ Router sẽ:
 
 Đối xứng YES. Router có thể dùng **virtual-NO trick** nếu pool NO-USDC thiếu liquidity:
 
-```mermaid
-flowchart LR
-    Goal[Bạn muốn buy NO] --> NoLiq{Pool NO-USDC<br/>đủ depth?}
-    NoLiq -->|có| Direct[Swap USDC → NO trực tiếp]
-    NoLiq -->|không| Virtual[Mua YES từ pool YES-USDC<br/>+ Split USDC mới → mint NO<br/>+ Merge YES vừa mua với NO của bạn<br/>= Net buy NO]
-    Direct --> Done[Bạn nhận NO]
-    Virtual --> Done
-
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    classDef tricky fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    class Direct ok
-    class Virtual tricky
-```
+![Router waterfall](../_design/15-router-waterfall.svg)
 
 Bạn không cần care — UI chỉ hiện "Buy NO" và amount cuối.
 

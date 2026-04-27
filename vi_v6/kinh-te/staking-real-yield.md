@@ -6,24 +6,7 @@ Lock PRX → nhận share **20-35% phí protocol** (adaptive theo growth phase) 
 
 ## Cơ chế
 
-```mermaid
-flowchart TD
-    Start(["👤 User deposit N PRX vào Staking Vault"])
-    Start --> S1["Vault mint N stkPRX cho user<br/>(non-transferable, đại diện share)"]
-    S1 --> Loop[("⏱ Mỗi week (epoch):<br/>Protocol collect adaptive % fee USDC<br/>(20-35% theo phase)<br/>distribute vault pro-rata")]
-    Loop --> S2["Vault account share user theo stake"]
-    S2 --> Claim(["👤 User gọi claim()"])
-    Claim --> End(["✅ Vault transfer USDC yield về ví user"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef loop fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Start,Claim st
-    class S1,S2 step
-    class Loop loop
-    class End ok
-```
+![Staking flow](../_design/07-staking-flow.svg)
 
 1. Deposit N PRX vào `StakingVault`.
 2. Vault mint N **stkPRX** (non-transferable) cho bạn — claim share fee.
@@ -99,41 +82,4 @@ Discount active ngay khi stake, apply tự động trong mỗi tx.
 
 ## Unstake flow
 
-```mermaid
-stateDiagram-v2
-    [*] --> Staked
-    Staked --> CooldownRequested : Request unstake
-    CooldownRequested --> Cooldown : 7 ngày bắt đầu
-    Cooldown --> Cooldown : Vẫn nhận yield
-    Cooldown --> Withdrawable : 7 ngày elapsed
-    Withdrawable --> [*] : Claim PRX
-```
-
-1. UI: **Request unstake**.
-2. Cooldown 7 ngày bắt đầu. Trong cooldown:
-   - Vẫn nhận yield (không rug bạn giữa chừng).
-   - Không rút được PRX.
-   - Không cancel được (tránh flip-flop).
-3. Sau 7 ngày: **Claim** → PRX về ví.
-
-Cooldown tránh user unstake trước event lớn rồi restake ngay sau (giảm tính ổn định yield pool).
-
-## Auto-compound
-
-Nếu enable auto-compound:
-- Mỗi epoch yield USDC tự động:
-  1. Buy PRX trên thị trường (qua Router).
-  2. Re-stake vào vault.
-- Compound interest effect.
-
-Off mặc định — bạn opt-in trong vault settings.
-
-## Khi nào staking khởi động
-
-- Launch cùng TGE (TBA).
-- Có thể có period **pre-stake** 1-2 tuần cho whitelist (pre-seed, seed, team) để bootstrap.
-- Staking contract deploy + audit song song core, expect cùng mainnet.
-
-## Insurance fund
-
-5% protocol revenue → insurance treasury trên mọi phase. Partial reimbursement nếu contract exploit, payout chỉ qua DAO vote. Detail: [Buyback-burn](buyback-burn.md).
+![Unstake cooldown](../_design/24-unstake-cooldown.svg)

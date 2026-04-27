@@ -83,28 +83,7 @@ Set qua admin BE endpoint sau khi tạo on-chain.
 
 ## Bước — tạo binary market với Chainlink
 
-```mermaid
-flowchart TD
-    Start(["🛠️ Creator: createMarket"])
-    Start --> S1["Diamond.createMarket<br/>(question, endTime, oracle=ChainlinkOracle)"]
-    S1 --> S2["Diamond mint YES + NO ERC-20<br/>Trả về marketId, yesToken, noToken"]
-    S2 --> S3["ChainlinkOracle.register<br/>(marketId, feed, threshold, gte, snapshotAt)"]
-    S3 --> S4["Emit OracleMarketRegistered"]
-    S4 --> S5["Hook.registerMarketPool<br/>(marketId, poolKey YES-USDC)"]
-    S5 --> S6["PoolManager initialize<br/>Uniswap v4 pool YES-USDC"]
-    S6 --> S7["[Optional] registerMarketPool NO-USDC"]
-    S7 --> S8["Seed initial liquidity vào pool"]
-    S8 --> End(["✅ Market live · user có thể trade"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef opt fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Start st
-    class S1,S2,S3,S4,S5,S6,S8 step
-    class S7 opt
-    class End ok
-```
+![Create market flow](../_design/18-create-market.svg)
 
 ### Chi tiết
 

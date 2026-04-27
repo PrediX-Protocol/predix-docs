@@ -32,35 +32,7 @@ Decay tuyến tính theo block. Không step.
 
 ## Quyền vePRX
 
-```mermaid
-%%{init: {"theme":"base","themeVariables":{"primaryColor":"#1e293b","primaryTextColor":"#f1f5f9","primaryBorderColor":"#475569","lineColor":"#94a3b8","background":"transparent","mainBkg":"#334155","tertiaryColor":"#475569"}}}%%
-mindmap
-  root((vePRX))
-    Gauge voting
-      Vote pool nhận LP subsidy
-      Weekly epoch
-    Protocol params
-      Fee rate change
-      Oracle approve / revoke
-      Market creation bond
-    Treasury spend
-      Approve grant
-      Audit funding
-      Initiative budget
-    Phase transition
-      Bootstrap → Scale
-      Scale → Mature
-      Mature → Dominance
-      BAR ≥ 0.25 monitoring
-    S6 Reserve unlock
-      60M PRX DAO-locked
-      WC 2030 catalyst
-      Emergency / partnership
-    Emergency
-      Pause module
-      Crisis response
-      BAR < 0.25 mitigation
-```
+![vePRX rights mindmap](../_design/29-mindmap-veprx.svg)
 
 ## Gauge voting — flywheel
 
@@ -94,29 +66,7 @@ Gauge = pool YES-USDC (hoặc NO-USDC) của market cụ thể. Pool nào đư�
 
 ## Bribe market
 
-```mermaid
-flowchart TD
-    Project(["🏢 Project A muốn pool X nhận subsidy"])
-    Project --> S1["Project deposit 10k USDC vào Bribe contract<br/>+ chỉ định gauge X"]
-    S1 --> Voter(["👤 vePRX voter thấy bribe"])
-    Voter --> S2["Voter vote gauge X<br/>(commit vePRX weight, lock 1 epoch)"]
-    S2 --> Epoch[("⏱ Cuối epoch")]
-    Epoch --> S3["Treasury subsidy chia theo vote<br/>→ Pool X nhận subsidy → LP happy"]
-    Epoch --> S4["Bribe contract chia USDC bribe<br/>pro-rata theo voter weight"]
-    S3 --> End(["✅ Pool X depth tăng · LP earn fee + subsidy"])
-    S4 --> End2(["✅ Voter nhận USDC bribe"])
-
-    classDef proj fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef voter fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef tick fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Project proj
-    class Voter voter
-    class Epoch tick
-    class S1,S2,S3,S4 step
-    class End,End2 ok
-```
+![Bribe market flow](../_design/21-bribe-market.svg)
 
 External project trả PRX/USDC cho vePRX holder vote pool của họ — tạo thị trường vote liquid.
 

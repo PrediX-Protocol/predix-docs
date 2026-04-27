@@ -223,24 +223,7 @@ Event này là **canonical source** cho indexer. Bạn listen để update UI sa
 
 ## Batch với Smart Account
 
-```mermaid
-flowchart TD
-    Start(["👤 User: encodeCalls([approve, buyYes])"])
-    Start --> S1["Kernel Smart Account build UserOp"]
-    S1 --> S2["SA → PrediX Paymaster<br/>getPaymasterStubData (sponsor request)"]
-    S2 --> S3["Paymaster return paymasterData<br/>(signature off-chain xác nhận eligible)"]
-    S3 --> S4["SA → Pimlico Bundler<br/>sendUserOperation"]
-    S4 --> S5["Bundler bundle UserOps + execute on-chain"]
-    S5 --> S6["Router execute approve + buyYes atomic"]
-    S6 --> End(["✅ Trade complete · 1 tx visible on explorer"])
-
-    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
-    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Start st
-    class S1,S2,S3,S4,S5,S6 step
-    class End ok
-```
+![AA UserOp batch](../_design/22-aa-userop.svg)
 
 ```typescript
 import { createKernelClient } from '@zerodev/sdk';

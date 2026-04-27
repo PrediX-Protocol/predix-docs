@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" font-family="Inter, system-ui, sans-serif">
+  <style>
+    text { fill: #0f172a; }
+    .label { font-size: 13px; fill: #64748b; }
+    .pct { font-size: 13px; font-weight: 600; fill: #0f172a; }
+    .center-big { font-size: 22px; font-weight: 700; fill: #0f172a; }
+    .center-sm { font-size: 12px; fill: #94a3b8; }
+  </style>
+
+  <!-- Donut chart -->
+  <g transform="translate(180, 170)">
+    <!-- Community 30% = 108deg, start 0 -->
+    <path d="M0,-120 A120,120 0 0,1 103.92,-60 L62.35,-36 A72,72 0 0,0 0,-72 Z" fill="#2563eb"/>
+    <!-- Investors 20% = 72deg -->
+    <path d="M103.92,-60 A120,120 0 0,1 120,0 L72,0 A72,72 0 0,0 62.35,-36 Z" fill="#7c3aed"/>
+    <!-- Team 18% = 64.8deg -->
+    <path d="M120,0 A120,120 0 0,1 74.63,93.91 L44.78,56.35 A72,72 0 0,0 72,0 Z" fill="#06b6d4"/>
+    <!-- Treasury 17% = 61.2deg -->
+    <path d="M74.63,93.91 A120,120 0 0,1 -33.54,115.22 L-20.12,69.13 A72,72 0 0,0 44.78,56.35 Z" fill="#f59e0b"/>
+    <!-- Marketing 10% = 36deg -->
+    <path d="M-33.54,115.22 A120,120 0 0,1 -103.92,60 L-62.35,36 A72,72 0 0,0 -20.12,69.13 Z" fill="#ec4899"/>
+    <!-- Liquidity 5% = 18deg -->
+    <path d="M-103.92,60 A120,120 0 0,1 -109.13,49.63 L-65.48,29.78 A72,72 0 0,0 -62.35,36 Z" fill="#22c55e"/>
+    <!-- Remaining to close -->
+    <path d="M-109.13,49.63 A120,120 0 0,1 0,-120 L0,-72 A72,72 0 0,0 -65.48,29.78 Z" fill="#22c55e"/>
+
+    <!-- Center text -->
+    <text class="center-big" x="0" y="-4" text-anchor="middle" dominant-baseline="central">1B PRX</text>
+    <text class="center-sm" x="0" y="18" text-anchor="middle">Total supply</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(380, 80)">
+    <rect x="0" y="0" width="10" height="10" rx="2" fill="#2563eb"/>
+    <text class="pct" x="18" y="10">30%</text><text class="label" x="56" y="10">Community &amp; Ecosystem</text>
+
+    <rect x="0" y="30" width="10" height="10" rx="2" fill="#7c3aed"/>
+    <text class="pct" x="18" y="40">20%</text><text class="label" x="56" y="40">Investors</text>
+
+    <rect x="0" y="60" width="10" height="10" rx="2" fill="#06b6d4"/>
+    <text class="pct" x="18" y="70">18%</text><text class="label" x="56" y="70">Team &amp; Advisors</text>
+
+    <rect x="0" y="90" width="10" height="10" rx="2" fill="#f59e0b"/>
+    <text class="pct" x="18" y="100">17%</text><text class="label" x="56" y="100">Treasury / DAO</text>
+
+    <rect x="0" y="120" width="10" height="10" rx="2" fill="#ec4899"/>
+    <text class="pct" x="18" y="130">10%</text><text class="label" x="56" y="130">Marketing &amp; Partners</text>
+
+    <rect x="0" y="150" width="10" height="10" rx="2" fill="#22c55e"/>
+    <text class="pct" x="18" y="160">5%</text><text class="label" x="56" y="160">Liquidity DEX/CEX</text>
+  </g>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" font-family="Inter, system-ui, sans-serif">
+  <style>
+    .t { font-size: 14px; font-weight: 600; }
+    .s { font-size: 12px; }
+    .arr { stroke: #64748b; stroke-width: 1.5; }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+  <!-- Router (top) -->
+  <rect x="220" y="20" width="240" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text class="t" fill="#1e40af" x="340" y="40" text-anchor="middle">PrediXRouter</text>
+  <text class="s" fill="#64748b" x="340" y="58" text-anchor="middle">Entry point, CLOB + AMM</text>
+
+  <line x1="280" y1="72" x2="200" y2="112" class="arr" marker-end="url(#a)"/>
+  <line x1="400" y1="72" x2="480" y2="112" class="arr" marker-end="url(#a)"/>
+
+  <!-- Hook + Exchange -->
+  <rect x="80" y="112" width="220" height="52" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text class="t" fill="#5b21b6" x="190" y="132" text-anchor="middle">PrediXHook</text>
+  <text class="s" fill="#64748b" x="190" y="150" text-anchor="middle">Uniswap v4 hook</text>
+
+  <rect x="380" y="112" width="220" height="52" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1"/>
+  <text class="t" fill="#5b21b6" x="490" y="132" text-anchor="middle">Exchange</text>
+  <text class="s" fill="#64748b" x="490" y="150" text-anchor="middle">CLOB matching engine</text>
+
+  <line x1="190" y1="164" x2="190" y2="216" class="arr" marker-end="url(#a)"/>
+  <line x1="490" y1="164" x2="490" y2="216" class="arr" marker-end="url(#a)"/>
+
+  <!-- Diamond + Oracle -->
+  <rect x="80" y="216" width="220" height="52" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+  <text class="t" fill="#134e4a" x="190" y="236" text-anchor="middle">Diamond (EIP-2535)</text>
+  <text class="s" fill="#64748b" x="190" y="254" text-anchor="middle">Market + token facets</text>
+
+  <rect x="380" y="216" width="220" height="52" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1"/>
+  <text class="t" fill="#134e4a" x="490" y="236" text-anchor="middle">Oracle adapters</text>
+  <text class="s" fill="#64748b" x="490" y="254" text-anchor="middle">Manual / Chainlink / UMA</text>
+
+  <line x1="190" y1="268" x2="280" y2="328" class="arr" marker-end="url(#a)"/>
+  <line x1="490" y1="268" x2="400" y2="328" class="arr" marker-end="url(#a)"/>
+
+  <!-- Shared (bottom) -->
+  <rect x="180" y="328" width="320" height="52" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text class="t" fill="#334155" x="340" y="348" text-anchor="middle">Shared libraries</text>
+  <text class="s" fill="#64748b" x="340" y="366" text-anchor="middle">Types, errors, access control</text>
+</svg>
