@@ -68,7 +68,7 @@ Dispenser cấp token test free cho user testnet. PrediX faucet: 0.0005 ETH + 10
 
 ### Gauge voting
 
-Mechanism vePRX vote phân bổ LP subsidy cho market. Mô hình từ Curve (veCRV).
+Mechanism vePRX vote phân bổ LP subsidy cho market. Pool được vote nhiều → LP earn nhiều hơn.
 
 ### Hook (Uniswap v4)
 

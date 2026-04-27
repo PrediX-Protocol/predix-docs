@@ -43,20 +43,6 @@ Yield float theo volume thật. Volume tăng → yield tăng. Volume giảm → 
 
 Yield float theo volume thật. Volume tăng → yield tăng. Volume giảm → yield giảm.
 
-## So với staking model khác
-
-| Protocol | Yield source | Sustainability |
-|---|---|---|
-| **Lido stETH** | ETH staking yield (~3%) | Cao |
-| **Aave stkAAVE** | Emission stkAAVE + safety module | Trung bình (inflationary) |
-| **GMX esGMX** | Fee USDC + ETH từ volume | Cao (real yield) |
-| **PrediX stkPRX** | **Fee USDC từ volume protocol** | **Cao (real yield, GMX model)** |
-
-PrediX chọn GMX model:
-- Không dilute supply PRX.
-- Yield gắn với business performance, không ép emission.
-- User đo được: volume lên → yield lên.
-
 ## Lock boost
 
 Lock PRX để nhận **boost yield + governance weight**:

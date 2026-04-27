@@ -59,15 +59,6 @@ Quản lý:
 - Spend > $10k → governance vote
 - Quarterly report public
 
-## So với benchmarks
-
-| Protocol | Buyback % | Deflationary? |
-|---|---|---|
-| Hyperliquid | ~97% | Yes |
-| BNB | 20% (quarterly) | Yes |
-| GMX | 0% (100% staker) | No |
-| **PrediX** | **15-50% adaptive** | **Yes post-Y4** |
-
 ## Track
 
 Public dashboard:

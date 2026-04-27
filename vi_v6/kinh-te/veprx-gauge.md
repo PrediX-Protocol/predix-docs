@@ -1,6 +1,6 @@
 # vePRX & gauge voting
 
-Hệ thống governance theo mô hình Curve (veCRV). Lock PRX → vePRX → vote + boost.
+Lock PRX → vePRX (vote-escrowed) → vote gauge + boost yield + governance.
 
 ## vePRX là gì
 
@@ -84,7 +84,7 @@ flowchart LR
     class Volume,Fee,Yield hot
 ```
 
-Mô hình "vote market" từ Curve / Balancer. PrediX áp dụng cho prediction market — gauge = pool YES-USDC (hoặc NO-USDC) của market cụ thể.
+Gauge = pool YES-USDC (hoặc NO-USDC) của market cụ thể. Pool nào được vote nhiều → LP earn nhiều hơn.
 
 ## Ai vote gì
 
@@ -118,9 +118,9 @@ flowchart TD
     class End,End2 ok
 ```
 
-External project trả PRX/USDC cho vePRX holder vote pool của họ. Standard DeFi (Convex/Votium model).
+External project trả PRX/USDC cho vePRX holder vote pool của họ — tạo thị trường vote liquid.
 
-PrediX self-host bribe layer hoặc partner với Votium/Paladin (Phase 2).
+PrediX self-host bribe layer (Phase 2).
 
 ## Boost USDC yield
 
@@ -194,7 +194,7 @@ Giảm whale dominance. Chỉ apply cho proposal > $100k spend.
 | Risk | Mitigation |
 |---|---|
 | **Vote concentration** (whale lock lớn) | Quadratic voting Phase 2 |
-| **Bribe corruption** (voter chọn theo bribe, không merit) | Trade-off của model — accepted (Curve work tốt vẫn) |
+| **Bribe corruption** (voter chọn theo bribe, không merit) | Trade-off chấp nhận — bribe tạo market demand cho vePRX |
 | **Low participation** (ít ai vote) | Default fallback (đều các pool) + small PRX emission cho voter |
 
 ## Timeline rollout

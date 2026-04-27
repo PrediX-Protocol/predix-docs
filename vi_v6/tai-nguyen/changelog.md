@@ -10,7 +10,7 @@ Theo dõi thay đổi protocol + docs.
 - 49 file (vs vi_v5 36 file): added LP, market creation, chart, bridge, settings/i18n, bots, mobile, testnet, community section (leaderboard, rewards, notifications, discussion).
 - 82 Mermaid diagrams (vs vi_v5 8) — flowchart, sequence, state, pie, gantt, mindmap, journey, quadrant, xychart.
 - Vietnamese-English mixed style cho DeFi user familiarity.
-- Style references: Uniswap, Aave, Polymarket, GMX, Morpho docs.
+- Vietnamese-English mixed style cho DeFi user familiarity.
 
 ### 2026-04-24 — vi_v5 first release
 
@@ -32,7 +32,7 @@ Theo dõi thay đổi protocol + docs.
 #### Phase 2 — TBA (~6 tháng post-TGE)
 
 - **UMAOracle** integration — permissionless oracle với 48h dispute.
-- **Bribe market** — partner Votium/Paladin hoặc self-host.
+- **Bribe market** — self-host bribe layer.
 - **Insurance fund** activate.
 - **Single-sided refund** option (governance vote).
 - **Stop-loss / OCO** order types.

@@ -74,11 +74,3 @@ S1 = lớn nhất vì cold-start hardest. Detail: [Points & seasons](points-seas
 - Vest contract = OpenZeppelin `VestingWallet` clone, audit cùng core protocol.
 - Address vest contract public — community track unlock realtime.
 
-## So với benchmarks
-
-| Protocol | Community | Team | Investor | TGE float | Team cliff |
-|---|---|---|---|---|---|
-| **PrediX** | **30%** | **18%** | **20%** | **10.25%** | **12 mo** |
-| Hyperliquid | 31% | 23.8% | 0% | ~33% | 12 mo |
-| Aave | 30% | 15% | 17% | ~13% | 6 mo |
-| Jupiter | ~44% | 20% | ~16% | ~13% | 12 mo |

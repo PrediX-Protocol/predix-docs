@@ -110,7 +110,7 @@ Vì là ERC-20 standard, YES / NO có thể:
 - NFT mint condition (mint khi giữ YES của market resolve true).
 - Vault strategy (e.g. auto-merge khi spread arbitrage).
 
-Đây là điểm khác biệt lớn so với Polymarket (ERC-1155 không lending nào list).
+ERC-20 standard → mọi protocol DeFi đều tương thích sẵn, không cần custom integration.
 
 ## Encoding chi tiết
 
