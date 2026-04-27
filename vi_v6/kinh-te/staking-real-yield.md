@@ -39,15 +39,7 @@ your_yield   = staker_share × (your_stake / total_staked)
 APY_USDC     = (weekly_yield × 52) / your_stake_USD_value
 ```
 
-### Ví dụ Scale phase steady state
-
-- Protocol volume: $200M/tháng
-- Fee mix: 0.3% → revenue $600k/tháng
-- Staker portion (Scale 30%): $180k/tháng = $2.16M/năm USDC
-- Total stake: 100M PRX @ $0.05 = $5M market cap staked
-- **APY_USDC = 2.16M / 5M = 43%**
-
-Mature phase (35% staker) cùng volume → APY ~50%. Bootstrap (20% staker) lower nhưng volume thấp hơn → APY balanced.
+Yield float theo volume thật. Volume tăng → yield tăng. Volume giảm → yield giảm.
 
 Yield float theo volume thật. Volume tăng → yield tăng. Volume giảm → yield giảm.
 
@@ -156,17 +148,6 @@ Off mặc định — bạn opt-in trong vault settings.
 - Có thể có period **pre-stake** 1-2 tuần cho whitelist (pre-seed, seed, team) để bootstrap.
 - Staking contract deploy + audit song song core, expect cùng mainnet.
 
-## Insurance fund — 5% all phases
+## Insurance fund
 
-5% protocol revenue → insurance treasury (mọi phase, không phải chỉ Phase 2). Coverage: partial reimbursement nếu contract exploit. Payout chỉ qua DAO vote. Detail: [Buyback-burn §Insurance fund](buyback-burn.md#insurance-fund--5-all-phases).
-
-## API
-
-```
-GET  /api/v2/staking/stats           # total staked, APR, your share
-GET  /api/v2/staking/:address        # your stake, unclaimed yield
-POST /api/v2/staking/:address/claim  # trigger claim (returns calldata)
-GET  /api/v2/staking/history         # epoch distribution history
-```
-
-Chi tiết: [Backend API](../developers/api-reference.md#backend-endpoints-v2).
+5% protocol revenue → insurance treasury trên mọi phase. Partial reimbursement nếu contract exploit, payout chỉ qua DAO vote. Detail: [Buyback-burn](buyback-burn.md).

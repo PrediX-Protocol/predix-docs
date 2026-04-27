@@ -140,20 +140,7 @@ Claim manual hoặc auto-compound (re-stake vào vault).
 
 ## Roadmap (TBA)
 
-- **Tournament mode**: Weekly competition, prize pool $10k+ USDC + NFT.
-- **Quest line**: Complete chain quests theo theme (e.g. "Crypto whale month", "FIFA WC 2026", "Election season 2028").
-- **Guild system**: Tham gia guild, share leaderboard, group reward.
-- **Seasons in-app**: Reset reward stats mỗi quarter, top players limited NFT trophy.
-- **NFT collateral**: Rare badge có thể dùng làm collateral cho lending (Phase 2).
+- Tournament mode (weekly competition, prize pool)
+- Quest line theo theme (crypto, sports, politics)
+- Guild system (group reward)
 
-## API
-
-```
-GET /api/v2/users/:address/streaks
-GET /api/v2/users/:address/badges
-GET /api/v2/daily-challenges
-GET /api/v2/users/:address/rewards
-GET /api/v2/leaderboard/rewards
-```
-
-Chi tiết: [API reference](../developers/api-reference.md#backend-endpoints-v2).

@@ -157,20 +157,9 @@ vePRX vote thay đổi:
 | **Phase transition** | Bootstrap @ TGE | Bootstrap → Scale → Mature → Dominance |
 | **Adaptive fee split** | Per-phase preset | DAO-adjustable trong constraint |
 
-### Phase transition vote
+### Phase transition + S6 Reserve
 
-vePRX vote phase upgrade dựa metric công khai:
-- Bootstrap → Scale: trigger khi monthly volume ≥ $50M, runway > 6 mo, BAR ≥ 0.25 ổn định 3 mo
-- Scale → Mature: monthly volume ≥ $300M, multi-chain live, DAO mature (10+ active proposers)
-- Mature → Dominance: monthly volume ≥ $1B, full-DAO, audit history clean
-
-### BAR governance gate
-
-Buyback Absorption Ratio < 0.25 trong **2 tháng liên tiếp** → DAO emergency vote (delay unlock 3mo hoặc bump phase early). Detail: [Buyback-burn §BAR](buyback-burn.md#bar--buyback-absorption-ratio).
-
-### S6 Reserve unlock
-
-60M PRX trong S6+ Reserve **DAO-locked**. Unlock requires vePRX vote — only for: emergency, strategic partnership, hoặc WC 2030 catalyst. Detail: [Points & seasons §S2-S6](points-seasons.md#s2-s6-emission-post-tge).
+vePRX vote phase upgrade (Bootstrap → Scale → Mature → Dominance) dựa metric công khai (volume, runway). S6 Reserve (60M PRX) DAO-locked — unlock qua vePRX vote.
 
 Proposal flow:
 1. vePRX holder propose change (cần > 100k vePRX để propose, anti-spam).
@@ -221,15 +210,3 @@ Giảm whale dominance. Chỉ apply cho proposal > $100k spend.
 
 Mọi mốc TGE-relative, exact dates **TBA** sau TGE confirmed.
 
-## API
-
-```
-GET  /api/v2/governance/proposals
-GET  /api/v2/governance/proposals/:id
-GET  /api/v2/governance/users/:address/votes
-GET  /api/v2/gauges
-GET  /api/v2/gauges/:gaugeId/votes
-POST /api/v2/governance/vote  # returns calldata
-```
-
-Chi tiết: [Backend API](../developers/api-reference.md#backend-endpoints-v2).
