@@ -10,7 +10,7 @@ flowchart TB
     FE["<b>FE</b> — Next.js + React<br/>App router · Adapter layer · AA wallet"]
     BE["<b>BE</b> — NestJS + Fastify + MongoDB<br/>Modules · Schema-first zod · Cache 2-tier"]
     IDX["<b>Indexer</b> — Ponder + PostgreSQL<br/>Contract subscriptions · Tables · Hono REST API"]
-    SC["<b>Smart Contracts</b> — Solidity 0.8.30<br/>Diamond · Hook · Exchange · Router · Oracle · Paymaster<br/>Unichain mainnet"]
+    SC["<b>Smart Contracts</b> — Solidity 0.8.30<br/>Diamond · Hook · Exchange · Router · Oracle · Paymaster<br/>Unichain Sepolia (testnet live) · Unichain mainnet (TBA)"]
 
     User -->|HTTPS| FE
     FE -->|REST /api/v2| BE

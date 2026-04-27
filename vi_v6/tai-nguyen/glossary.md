@@ -216,7 +216,7 @@ Permissionless oracle với 48h dispute window + DVM (Data Verification Mechanis
 
 ### Unichain
 
-L2 EVM chain built by Uniswap Labs. PrediX deploy trên Unichain mainnet.
+L2 EVM chain built by Uniswap Labs. PrediX hiện deploy trên **Unichain Sepolia testnet** (chain `1301`); **mainnet** (chain `130`) sẽ launch sau external audit hoàn tất.
 
 ### USDC
 

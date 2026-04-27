@@ -138,17 +138,21 @@ Smart account + paymaster support full trên mobile:
 ```typescript
 import { createKernelClient } from '@zerodev/sdk';
 import { createPublicClient, http } from 'viem';
+import { unichainSepolia } from 'viem/chains';  // testnet hiện tại
+// import { unichain } from 'viem/chains';      // mainnet sau launch
 
 const publicClient = createPublicClient({
-  chain: unichain,
-  transport: http('https://mainnet.unichain.org'),
+  chain: unichainSepolia,
+  transport: http('https://sepolia.unichain.org'),
 });
 
 const kernelClient = createKernelClient({
   publicClient,
-  bundlerTransport: http('https://api.predix.app/v2/aa/bundler'),  // BE proxy
-  paymasterTransport: http('https://api.predix.app/v2/aa/paymaster/sponsor'),
-  validator: passkeyValidator,  // hoặc ECDSA
+  // Testnet BE proxy URLs (gated — xem Testnet info)
+  // Mainnet sau launch: https://api.predix.app/v2/aa/{bundler,paymaster}
+  bundlerTransport: http(`${TESTNET_BE_URL}/v2/aa/bundler`),
+  paymasterTransport: http(`${TESTNET_BE_URL}/v2/aa/paymaster/sponsor`),
+  validator: passkeyValidator,  // chỉ passkey hỗ trợ AA
 });
 
 // Send UserOp
@@ -269,16 +273,22 @@ const gasLimit = (estimatedGas * 120n) / 100n;
 Nếu user wallet chưa có Unichain network:
 
 ```typescript
+// Testnet — Unichain Sepolia (live)
 await window.ethereum.request({
   method: 'wallet_addEthereumChain',
   params: [{
-    chainId: '0x82', // 130 hex
-    chainName: 'Unichain',
-    rpcUrls: ['https://mainnet.unichain.org'],
-    blockExplorerUrls: ['https://uniscan.xyz'],
+    chainId: '0x515', // 1301 hex
+    chainName: 'Unichain Sepolia',
+    rpcUrls: ['https://sepolia.unichain.org'],
+    blockExplorerUrls: ['https://sepolia.uniscan.xyz'],
     nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   }],
 });
+
+// Mainnet — Unichain (sau launch)
+// chainId: '0x82' (130), chainName: 'Unichain'
+// rpcUrls: ['https://mainnet.unichain.org']
+// blockExplorerUrls: ['https://uniscan.xyz']
 ```
 
 App PrediX UI chính tự handle. Nếu integrate riêng, code snippet này useful.

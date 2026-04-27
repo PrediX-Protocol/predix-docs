@@ -32,21 +32,23 @@ flowchart LR
 
 ```typescript
 import { createPublicClient, http } from 'viem';
-import { unichain } from 'viem/chains';
+import { unichainSepolia } from 'viem/chains';  // testnet hiện tại
+// import { unichain } from 'viem/chains';      // mainnet sau launch
 
 const client = createPublicClient({
-  chain: unichain,
-  transport: http('https://mainnet.unichain.org'),
+  chain: unichainSepolia,
+  transport: http('https://sepolia.unichain.org'),
 });
 
-// Fetch market list từ Indexer
-const res = await fetch('https://api.predix.app/v2/markets?limit=10');
+// Fetch market list từ testnet Indexer (gated — xem Testnet info để có endpoint)
+const TESTNET_INDEXER = 'https://indexer.testnet.predix.app';  // example, real URL via Discord
+const res = await fetch(`${TESTNET_INDEXER}/api/markets?limit=10`);
 const { data: markets } = await res.json();
 
 console.log(markets.map(m => `${m.question} — YES @ ${m.yesPrice}`));
 ```
 
-Chi tiết integration step-by-step: [Tích hợp Router](router-integration.md).
+Chi tiết integration step-by-step: [Tích hợp Router](router-integration.md). Get testnet endpoint: [Testnet info](testnet.md).
 
 ## Stack overview
 
@@ -62,17 +64,20 @@ Chi tiết integration step-by-step: [Tích hợp Router](router-integration.md)
 
 | Env | Indexer API | Backend API |
 |---|---|---|
-| **Mainnet** | `https://indexer.predix.app` | `https://api.predix.app` |
-| **Testnet** | TBA (xem [Testnet info](testnet.md)) | TBA |
+| **Testnet** (live) | Gated access — xem [Testnet info](testnet.md) | Gated access — xem [Testnet info](testnet.md) |
+| **Mainnet** (TBA) | `https://indexer.predix.app` | `https://api.predix.app` |
+
+> Testnet endpoint hiện gated qua Discord #testnet-access (chống abuse). Mainnet endpoint sẽ public khi launch.
 
 ## Chain info
 
-| | Mainnet | Testnet |
+| | Testnet (live now) | Mainnet (TBA) |
 |---|---|---|
-| **Network** | Unichain | Unichain Sepolia |
-| **Chain ID** | 130 | 1301 |
-| **RPC public** | `https://mainnet.unichain.org` | `https://sepolia.unichain.org` |
-| **Explorer** | [uniscan.xyz](https://uniscan.xyz) | [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz) |
+| **Network** | Unichain Sepolia | Unichain |
+| **Chain ID** | `1301` | `130` |
+| **RPC public** | `https://sepolia.unichain.org` | `https://mainnet.unichain.org` |
+| **Explorer** | [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz) | [uniscan.xyz](https://uniscan.xyz) |
+| **Status** | ✅ Beta live | 🟡 TBA — sau audit |
 
 ## Rate limits
 

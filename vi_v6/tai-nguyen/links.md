@@ -8,10 +8,13 @@
 
 ## On-chain
 
-- **Explorer**: [uniscan.xyz](https://uniscan.xyz)
-- **RPC public**: `https://mainnet.unichain.org`
-- **Multisig (Gnosis Safe)**: TBA
-- **Treasury wallet**: TBA
+| | Testnet (live now) | Mainnet (TBA) |
+|---|---|---|
+| **Explorer** | [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz) | [uniscan.xyz](https://uniscan.xyz) |
+| **RPC public** | `https://sepolia.unichain.org` | `https://mainnet.unichain.org` |
+| **Chain ID** | `1301` | `130` |
+| **Multisig** | 1-EOA shortcut (test only) | Gnosis Safe — TBA |
+| **Treasury wallet** | N/A | TBA |
 
 ## Code
 

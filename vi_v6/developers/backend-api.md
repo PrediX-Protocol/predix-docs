@@ -4,8 +4,10 @@ NestJS API v2 — view model cho FE / app. Wrap Indexer + overlay metadata từ 
 
 ## Base URL
 
-- **Mainnet**: `https://api.predix.app`
-- **Testnet**: TBA — xem [Testnet info](testnet.md)
+- **Testnet** (live now): Gated access — xem [Testnet info](testnet.md) để get endpoint qua Discord #testnet-access.
+- **Mainnet** (sau launch): `https://api.predix.app`
+
+Schema + endpoint shape giống nhau cả 2 environment — chuyển từ testnet → mainnet chỉ đổi base URL.
 
 ## Khi nào dùng BE thay vì Indexer
 

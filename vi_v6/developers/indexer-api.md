@@ -4,8 +4,10 @@ REST API cung cấp market data, portfolio, price history. Ponder + PostgreSQL b
 
 ## Base URL
 
-- **Mainnet**: `https://indexer.predix.app`
-- **Testnet**: TBA — xem [Testnet info](testnet.md)
+- **Testnet** (live now): Gated access — xem [Testnet info](testnet.md) để get endpoint qua Discord #testnet-access.
+- **Mainnet** (sau launch): `https://indexer.predix.app`
+
+Schema + endpoint shape giống nhau cả 2 environment — chuyển từ testnet → mainnet chỉ đổi base URL.
 
 ## Authentication
 

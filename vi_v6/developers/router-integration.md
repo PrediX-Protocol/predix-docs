@@ -4,7 +4,11 @@ Router là single entry cho mọi swap. Cho user trade qua app của bạn bằn
 
 ## ABI
 
-Address mainnet: TBA (xem [Contract addresses](../giao-thuc/addresses.md)).
+Router address:
+- **Testnet** (Unichain Sepolia, live): `0x6698253F38F4A4bbBC4A223309B4E560d83D7ee0`
+- **Mainnet** (TBA, sau launch)
+
+Full address list: [Contract addresses](../giao-thuc/addresses.md).
 
 Core function:
 
@@ -56,20 +60,22 @@ View function, free. Dùng để show user preview trước khi ký.
 
 ```typescript
 import { createPublicClient, createWalletClient, custom, http, parseUnits } from 'viem';
-import { unichain } from 'viem/chains';
+import { unichainSepolia } from 'viem/chains';  // testnet hiện tại
+// import { unichain } from 'viem/chains';      // mainnet sau launch
 import { routerAbi } from '@predix/abi';
 
 const publicClient = createPublicClient({
-  chain: unichain,
-  transport: http('https://mainnet.unichain.org'),
+  chain: unichainSepolia,
+  transport: http('https://sepolia.unichain.org'),
 });
 
 const walletClient = createWalletClient({
-  chain: unichain,
+  chain: unichainSepolia,
   transport: custom(window.ethereum),
 });
 
-const ROUTER = '0x...'; // mainnet Router address
+// Testnet Router (mainnet TBA)
+const ROUTER = '0x6698253F38F4A4bbBC4A223309B4E560d83D7ee0';
 const marketId = '0x000000...0001'; // 32-byte hex
 
 // 1. Quote
@@ -278,8 +284,11 @@ Mặc định nên dùng `PrediXRouter` — tối ưu giá hybrid.
 ## Test trên local fork
 
 ```bash
-# Anvil fork Unichain mainnet
-anvil --fork-url https://mainnet.unichain.org
+# Anvil fork Unichain Sepolia (testnet hiện tại)
+anvil --fork-url https://sepolia.unichain.org
+
+# Hoặc fork mainnet sau launch
+# anvil --fork-url https://mainnet.unichain.org
 
 # Deploy test contract hoặc direct call
 forge script test/Integration.s.sol --fork-url http://localhost:8545
