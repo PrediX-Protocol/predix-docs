@@ -2,7 +2,7 @@
 
 Hiểu PrediX hoạt động ra sao. Đọc theo thứ tự nếu mới, hoặc nhảy tới mục cần.
 
-![Core concepts mindmap](../_design/27-mindmap-concepts.svg)
+![Core concepts: Market (binary, time-bounded), Token (ERC-20 YES/NO, 6 decimals), Trading (CLOB+AMM, single-tx), Resolution (oracle-driven, dispute), Fee (dynamic, adaptive 4-phase)](../_design/27-mindmap-concepts.svg)
 
 ## Đọc theo thứ tự
 

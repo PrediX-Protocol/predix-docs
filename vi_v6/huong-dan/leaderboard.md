@@ -23,7 +23,7 @@ Filter:
 
 Click vào tên trader → trang `/profile/[address]`:
 
-![Trader profile](../_design/50-trader-profile.svg)
+![Public trader profile: Hero KPIs (Volume, PnL, Win rate, Accuracy) + active positions + trade history + calibration + badges + follow](../_design/50-trader-profile.svg)
 
 ### Public vs private
 
@@ -50,7 +50,7 @@ Click **Follow** trên profile:
 
 ## Copy trading
 
-![Copy trading flow](../_design/51-copy-trading-flow.svg)
+![Copy trading: follower set config (10% size, cap $100) → lead trades → engine detect → auto/manual mirror → trade mirrored](../_design/51-copy-trading-flow.svg)
 
 ### Setup copy
 

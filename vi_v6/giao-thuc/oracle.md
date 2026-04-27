@@ -13,13 +13,13 @@ Cần **nguồn ngoài** đưa data on-chain. Oracle sai = market resolve sai = 
 
 ## 4 phases, 4 loại oracle
 
-![Oracle types](../_design/25-oracle-types.svg)
+![4 loại oracle: ChainlinkOracle (price, auto), ManualOracle (subjective, multisig 3/5), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)](../_design/25-oracle-types.svg)
 
 ## ChainlinkOracle
 
 Tự động, permissionless.
 
-![ChainlinkOracle flow](../_design/37-chainlink-oracle-flow.svg)
+![ChainlinkOracle: creator register(feed, threshold, snapshotAt) → endTime pass → anyone resolve(roundIdHint) → verify adjacency + sequencer uptime → outcome = price ≥ threshold](../_design/37-chainlink-oracle-flow.svg)
 
 **Use case**: Price-threshold market (BTC, ETH, asset prices, FX rates).
 
@@ -44,7 +44,7 @@ Multisig 3/5 đọc kết quả từ nguồn off-chain, ký tx.
 
 ### Flow
 
-![ManualOracle flow](../_design/56-manual-oracle-flow.svg)
+![ManualOracle: real-world event → multisig verify ≥2 sources → 3/5 sign report(outcome) → OracleReportCreated event → anyone resolveMarket → MarketResolved](../_design/56-manual-oracle-flow.svg)
 
 ### Risk mitigation
 
@@ -62,7 +62,7 @@ Admin có thể `revoke(marketId)` clear pending report khi:
 
 Permissionless propose + 48h dispute window.
 
-![UMAOracle flow](../_design/38-uma-oracle-flow.svg)
+![UMAOracle: proposer propose(outcome, bond) → 48h dispute window → no dispute: finalize + refund bond; dispute: DVM vote → loser loses bond → market resolved](../_design/38-uma-oracle-flow.svg)
 
 ### Bond sizing
 
@@ -105,7 +105,7 @@ Cross-chain governance outcome, complex composite event.
 
 Khi không oracle nào resolve được:
 
-![Refund mode](../_design/39-refund-mode.svg)
+![Refund mode: oracle fail → admin propose enableRefundMode → 48h timelock → refundModeActive=true → user burn min(YES,NO) pairs → USDC pro-rata](../_design/39-refund-mode.svg)
 
 Detail: [Redeem & refund](../huong-dan/redeem-va-claim.md).
 

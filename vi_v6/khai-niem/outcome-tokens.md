@@ -16,7 +16,7 @@ YES.totalSupply == NO.totalSupply == market.totalCollateral
 
 Tổng supply YES = Tổng supply NO = USDC đang lock trong market. **Luôn luôn**.
 
-![Outcome token invariant](../_design/40-outcome-tokens.svg)
+![Outcome token $1 invariant: 100 USDC → Diamond mint 100 YES + 100 NO. Split/merge/redeem giữ YES.supply == NO.supply == totalCollateral luôn](../_design/40-outcome-tokens.svg)
 
 Đảm bảo: **khi resolve, protocol luôn đủ USDC trả người giữ token đúng**. Không thể insolvent.
 

@@ -4,7 +4,7 @@ Một market cần nguồn *sự thật* để quyết định YES hay NO thắn
 
 ## Lifecycle market
 
-![Market lifecycle](../_design/04-market-lifecycle.svg)
+![Market lifecycle states: Created → Trading → EndTime → Resolved → Redeemable. Alternative: EndTime → RefundMode → Refunded](../_design/04-market-lifecycle.svg)
 
 | Stage | Mô tả |
 |---|---|
@@ -18,13 +18,13 @@ Một market cần nguồn *sự thật* để quyết định YES hay NO thắn
 
 ## 4 loại oracle
 
-![Oracle types](../_design/36-oracle-types.svg)
+![4 loại oracle: ChainlinkOracle (price, auto), ManualOracle (subjective, multisig 3/5), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)](../_design/36-oracle-types.svg)
 
 ### ChainlinkOracle
 
 Tự động, permissionless.
 
-![ChainlinkOracle flow](../_design/37-chainlink-oracle-flow.svg)
+![ChainlinkOracle: creator register(feed, threshold, snapshotAt) → endTime pass → anyone resolve(roundIdHint) → verify adjacency + sequencer uptime → outcome = price ≥ threshold](../_design/37-chainlink-oracle-flow.svg)
 
 **Use case**: Price-threshold market (BTC, ETH, asset prices, FX rates).
 
@@ -47,7 +47,7 @@ Multisig 3/5 đọc kết quả từ nguồn off-chain, ký tx.
 
 Permissionless propose + 48h dispute window.
 
-![UMAOracle flow](../_design/38-uma-oracle-flow.svg)
+![UMAOracle: proposer propose(outcome, bond) → 48h dispute window → no dispute: finalize + refund bond; dispute: DVM vote → loser loses bond → market resolved](../_design/38-uma-oracle-flow.svg)
 
 **Bond sizing**: `max(min_bond, min(market_tvl × 0.5%, max_bond))`. Range $500 - $50,000 USDC.
 

@@ -4,7 +4,7 @@ Xem tất cả vị thế, history, P&L tại `/portfolio`.
 
 ## Màn hình tổng
 
-![Portfolio overview](../_design/44-portfolio-overview.svg)
+![Portfolio layout: Hero KPIs (total value, PnL, win rate, accuracy) + 6 tabs (Active, Orders, LP, History, Calibration, Replay)](../_design/44-portfolio-overview.svg)
 
 ## Active positions
 
@@ -22,7 +22,7 @@ Mỗi row:
 
 ## Realized vs unrealized P&L
 
-![PnL calculation](../_design/45-pnl-calc.svg)
+![PnL: Buy 100 YES @ $0.50 → sell 40 @ $0.60 = realized +$4; hold 60 @ spot $0.55 = unrealized +$3](../_design/45-pnl-calc.svg)
 
 - **Realized** = P&L đã đóng vị thế hoặc redeem.
 - **Unrealized** = chưa chốt, phụ thuộc spot hiện tại.
@@ -84,7 +84,7 @@ Tool dạy bạn nhận biết bias của chính mình.
 
 ## Streak & badge
 
-![Badges](../_design/28-mindmap-badges.svg)
+![Badge categories: Volume ($1K-$100K), Accuracy (70%-90% win), Streak (7-365 day), Special (beta tester, community hero)](../_design/28-mindmap-badges.svg)
 
 Badge là NFT — sang shareable, profile signature. Chi tiết: [Rewards & gamification](../kinh-te/rewards.md).
 

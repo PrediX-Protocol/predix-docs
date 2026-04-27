@@ -28,7 +28,7 @@ Total supply: **1,000,000,000 PRX** (1B). Hard cap, không mint thêm sau TGE.
 
 ## Lịch unlock
 
-![Vesting schedule](../_design/10-vesting-gantt.svg)
+![Vesting gantt: Community 6 seasons (36mo), Investors 6mo cliff + 24mo linear, Team 12mo cliff + 36mo linear, Treasury 6mo cliff + 48mo linear, Marketing 3mo cliff + 24mo, Liquidity 100% TGE](../_design/10-vesting-gantt.svg)
 
 ## Community — 6-season emission
 

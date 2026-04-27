@@ -4,7 +4,7 @@ PrediX có 4 loại fee. User thấy đầy đủ breakdown trước khi confirm
 
 ## Tóm tắt
 
-![Fee distribution](../_design/31-fee-distribution-pie.svg)
+![Fee distribution donut: Treasury 15-60%, Staker yield 20-35%, Buyback-burn 15-50%, Insurance 5%. Phase-dependent: Bootstrap → Scale → Mature → Dominance](../_design/31-fee-distribution-pie.svg)
 
 ## 1. AMM swap fee — dynamic theo time-to-end
 
@@ -27,7 +27,7 @@ Phân bổ AMM fee:
 
 ## 2. CLOB fee
 
-![CLOB fee tiers](../_design/32-clob-fee-tiers.svg)
+![CLOB fee: Maker 0% always. Taker dynamic by time-to-end: >7d=0% bootstrap, 3-7d=0.5%, 1-3d=0.75%, <24h=1.0% cap](../_design/32-clob-fee-tiers.svg)
 
 - **Maker**: 0% mãi mãi.
 - **Taker**: 0-1% dynamic. Bootstrap window first 7 days post-launch là 0% để build liquidity.
@@ -82,7 +82,7 @@ Mặc định **cả 2 phương pháp wallet user đều tự trả gas**. Predi
 
 PrediX dùng **adaptive split** thay flat — % thay đổi theo growth phase:
 
-![Adaptive fee split](../_design/33-adaptive-fee-split.svg)
+![Adaptive fee split: Protocol fee → phase-based split → Treasury (15-60%) + Staker USDC (20-35%) + Buyback-burn PRX (15-50%) + Insurance (5% fixed)](../_design/33-adaptive-fee-split.svg)
 
 | Phase | Treasury | Staker | Buyback | Insurance |
 |---|---|---|---|---|

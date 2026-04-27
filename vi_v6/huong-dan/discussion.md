@@ -6,7 +6,7 @@ Trao đổi insight về market với community ngay trong app.
 
 Mỗi market có thread comment riêng (tab **Discussion** trên market detail).
 
-![Discussion features](../_design/47-discussion-features.svg)
+![Market discussion: comment list (sort newest/top), post comment, reply 2 levels, up/down vote, @mention](../_design/47-discussion-features.svg)
 
 ### Đặc điểm
 
@@ -39,7 +39,7 @@ Giúp đánh giá độ tin cậy của comment.
 
 Trang `/feed` — global activity stream.
 
-![Social feed](../_design/48-social-feed.svg)
+![Social feed: on-chain activity (trade, LP, resolve) + off-chain (comment, follow, badge) → filter (following/trending/latest) → realtime cards](../_design/48-social-feed.svg)
 
 ### Filter
 
@@ -98,7 +98,7 @@ Phase 2: direct message giữa users. Sẽ có:
 
 PrediX dùng **community moderation** model:
 
-![Moderation flow](../_design/49-moderation-flow.svg)
+![Moderation: spam detected → user report → community mod review → valid: hide + warn, repeat 3+: ban 7-30 days](../_design/49-moderation-flow.svg)
 
 - **Mod recruitment**: vePRX holder + good standing apply.
 - **Mod compensation**: PRX from treasury.

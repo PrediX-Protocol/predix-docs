@@ -6,7 +6,7 @@ Lock PRX → nhận share **20-35% phí protocol** (adaptive theo growth phase) 
 
 ## Cơ chế
 
-![Staking flow](../_design/07-staking-flow.svg)
+![Staking: deposit PRX → mint stkPRX (non-transferable) → mỗi week protocol distribute adaptive% fee USDC pro-rata → claim USDC](../_design/07-staking-flow.svg)
 
 1. Deposit N PRX vào `StakingVault`.
 2. Vault mint N **stkPRX** (non-transferable) cho bạn — claim share fee.
@@ -28,7 +28,7 @@ Yield float theo volume thật. Volume tăng → yield tăng. Volume giảm → 
 
 Lock PRX để nhận **boost yield + governance weight**:
 
-![Lock boost tiers](../_design/59-lock-boost-tiers.svg)
+![Lock boost: no lock 1.0×, 3mo 1.1×, 6mo 1.25×, 12mo 1.5×, 24mo 2.0×, 48mo max 2.5× yield + vePRX weight tương ứng](../_design/59-lock-boost-tiers.svg)
 
 | Lock | Yield boost | vePRX weight |
 |---|---|---|
@@ -67,4 +67,4 @@ Discount active ngay khi stake, apply tự động trong mỗi tx.
 
 ## Unstake flow
 
-![Unstake cooldown](../_design/24-unstake-cooldown.svg)
+![Unstake: Staked → request unstake → Cooldown 7 ngày (vẫn nhận yield) → Withdrawable → claim PRX về ví](../_design/24-unstake-cooldown.svg)

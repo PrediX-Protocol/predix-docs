@@ -2,7 +2,7 @@
 
 PRX là token quản trị + revenue share của PrediX. Hard cap **1 tỷ**, không mint thêm. ERC-20 trên Unichain.
 
-![PRX Allocation](../_design/01-prx-allocation.svg)
+![PRX allocation 1B total: Community 30% (300M, 6 seasons), Investors 20% (200M), Team 18% (180M, 12mo cliff), Treasury 17% (170M), Marketing 10% (100M), Liquidity 5% (50M, 100% TGE)](../_design/01-prx-allocation.svg)
 
 ## Token utility
 
@@ -16,7 +16,7 @@ PRX là token quản trị + revenue share của PrediX. Hard cap **1 tỷ**, kh
 
 Phí thu từ AMM + CLOB + redemption → chia theo growth phase:
 
-![PRX Token mindmap](../_design/26-mindmap-prx-token.svg)
+![PRX token: Allocation (Community 30%, Investors 20%, Team 18%, Treasury 17%), Utility (stake yield, vePRX vote, fee discount), Demand sinks (buyback, veToken lock, gauge), Governance (protocol params, treasury spend)](../_design/26-mindmap-prx-token.svg)
 
 | Phase | Treasury | Staker | Buyback-burn | Insurance |
 |---|---|---|---|---|

@@ -4,7 +4,7 @@ Kiến trúc kỹ thuật của PrediX. Cho advanced user, researcher, developer
 
 ## 4 lớp
 
-![Architecture 4-layer](../_design/03-architecture-4layer.svg)
+![4-layer stack: User → FE (Next.js) → BE (NestJS) → Indexer (Ponder) → Smart Contracts (Solidity, Unichain). Data flow một chiều, user ký tx trực tiếp SC](../_design/03-architecture-4layer.svg)
 
 Data flow **một chiều**: SC emit events → Indexer sync → BE serialize → FE render. BE không ghi ngược Indexer/SC. User ký tx trực tiếp với SC qua ví — không qua BE.
 

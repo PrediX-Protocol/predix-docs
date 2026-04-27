@@ -42,7 +42,7 @@ Router sẽ:
 
 Đối xứng YES. Router có thể dùng **virtual-NO trick** nếu pool NO-USDC thiếu liquidity:
 
-![Router waterfall](../_design/15-router-waterfall.svg)
+![Router waterfall: quote → CLOB fillMarketOrder try → AMM swap fallback → virtual-NO two-pass → cleanup dust → assert balance=0](../_design/15-router-waterfall.svg)
 
 Bạn không cần care — UI chỉ hiện "Buy NO" và amount cuối.
 

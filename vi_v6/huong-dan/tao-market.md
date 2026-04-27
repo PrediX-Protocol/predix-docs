@@ -13,7 +13,7 @@ Apply for `CREATOR_ROLE`: form on [Discord](../tai-nguyen/links.md) #creator-app
 
 ## Quyết định trước khi tạo
 
-![Market creation decision](../_design/46-market-creation-decision.svg)
+![Chọn loại market: Price threshold → ChainlinkOracle, Subjective → ManualOracle, Multi-outcome → Event, Range → Scalar](../_design/46-market-creation-decision.svg)
 
 ## Parameters cần quyết định
 
@@ -68,7 +68,7 @@ Set qua admin BE endpoint sau khi tạo on-chain.
 
 ## Bước — tạo binary market với Chainlink
 
-![Create market flow](../_design/18-create-market.svg)
+![Create market: fill form → chọn oracle → set params → deploy on-chain → PoolManager init pool → market live](../_design/18-create-market.svg)
 
 ### Chi tiết
 

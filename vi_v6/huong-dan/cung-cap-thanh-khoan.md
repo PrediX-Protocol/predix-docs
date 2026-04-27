@@ -11,7 +11,7 @@ Cung cấp liquidity vào AMM pool của một market. Earn fee từ mỗi swap 
 
 ## Risk vs reward
 
-![LP risk vs reward](../_design/52-lp-risk-reward.svg)
+![LP risk/reward: earn fee mỗi swap (positive) vs impermanent loss (risk). Sau resolve: YES wins=$1 hoặc NO wins=$0. Net PnL = final - initial + fees](../_design/52-lp-risk-reward.svg)
 
 LP là **directional bet** — bạn lose nếu market resolve về phía bạn không expect. Đảm bảo hiểu IL + outcome risk trước khi LP.
 
@@ -50,7 +50,7 @@ Có thể compound: re-deposit fee vào pool để tăng position.
 
 Pool đóng — không trade được, không add liquidity được.
 
-![LP after resolve](../_design/19-lp-after-resolve.svg)
+![LP sau resolve: Hook block pool → LP remove liquidity → nhận USDC + YES → redeem YES=$1 → total USDC về ví](../_design/19-lp-after-resolve.svg)
 
 Bạn có thể:
 - **Remove liquidity** lấy USDC + outcome token còn lại.

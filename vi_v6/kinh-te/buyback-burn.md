@@ -4,7 +4,7 @@ PrediX mua PRX từ thị trường bằng phí protocol + burn vĩnh viễn. % 
 
 ## Cơ chế
 
-![Buyback-burn flow](../_design/05-buyback-burn.svg)
+![Buyback-burn: mỗi tuần protocol collect fees USDC → swap USDC→PRX (random timing, split tx) → burn 0x...dEaD → supply giảm vĩnh viễn](../_design/05-buyback-burn.svg)
 
 Event `BuybackExecuted(usdcSpent, prxBurned)` emit on-chain. Burn không reversible.
 

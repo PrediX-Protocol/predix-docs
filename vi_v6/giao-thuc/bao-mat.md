@@ -4,7 +4,7 @@ PrediX defense-in-depth. Không "magic" — nhiều lớp, mỗi lớp 1 việc 
 
 ## 5 lớp phòng thủ
 
-![Security 5-layer defense](../_design/09-security-5layer.svg)
+![5 lớp bảo mật: Bug bounty → External audit → Static analysis (Slither) → Fuzz + invariant test → On-chain invariants (7 INV hard-enforce)](../_design/09-security-5layer.svg)
 
 ## 7 invariants hard-enforce
 
@@ -47,7 +47,7 @@ Mọi upgrade có blast radius đi qua timelock 48h.
 
 ### Diamond facet upgrade
 
-![Diamond facet upgrade](../_design/54-diamond-upgrade-flow.svg)
+![Diamond upgrade: Multisig 3/5 schedule diamondCut → TimelockController 48h → community verify → execute → DiamondCut event. CUT_EXECUTOR_ROLE = chỉ Timelock](../_design/54-diamond-upgrade-flow.svg)
 
 `CUT_EXECUTOR_ROLE` = **chỉ TimelockController contract**. Không EOA nào bypass.
 
@@ -109,7 +109,7 @@ Good-faith researcher có safe harbor — không bị kiện pháp lý nếu:
 
 ### Severity tiers
 
-![Severity tiers](../_design/55-severity-tiers.svg)
+![Incident severity: P0 critical (page <15min, pause module, disclose 72h), P1 high (alert <1h), P2 medium (Slack <24h), P3 low (backlog)](../_design/55-severity-tiers.svg)
 
 ### P0 response flow
 

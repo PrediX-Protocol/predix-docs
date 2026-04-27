@@ -4,7 +4,7 @@ Stay updated trên các market quan trọng + activity của portfolio.
 
 ## Channels
 
-![Notification channels](../_design/42-notification-channels.svg)
+![5 kênh notification: push browser/mobile, email digest, Discord webhook, Telegram bot, in-app center](../_design/42-notification-channels.svg)
 
 | Channel | Realtime | Setup | Best for |
 |---|---|---|---|
@@ -59,7 +59,7 @@ Stay updated trên các market quan trọng + activity của portfolio.
 
 ## Price alerts
 
-![Price alert flow](../_design/43-price-alert-flow.svg)
+![Price alert: user set condition (YES > $0.70) → Indexer check mỗi block → trigger → push + email + in-app](../_design/43-price-alert-flow.svg)
 
 ### Setup
 

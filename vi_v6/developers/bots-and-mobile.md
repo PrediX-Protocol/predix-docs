@@ -14,7 +14,7 @@ Hai use case khác nhau dùng chung infra: API key auth + Router contract.
 
 ### Đăng ký API key
 
-![API key registration](../_design/61-dev-integration-paths.svg)
+![API key: sign in SIWE → create key in Settings → chọn scope (read-only/trade/full) → set rate limit + IP whitelist → receive key + secret](../_design/61-dev-integration-paths.svg)
 
 1. Sign in PrediX qua SIWE.
 2. **Settings → Developer → API keys** → **Create new key**.

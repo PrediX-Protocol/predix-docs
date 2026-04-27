@@ -122,7 +122,7 @@ Response sample:
 
 ## Develop flow
 
-![Testnet dev flow](../_design/62-testnet-dev-flow.svg)
+![Dev flow: local dev (anvil fork) → test integrate testnet → test edge cases faucet → self-audit errors → deploy/connect mainnet](../_design/62-testnet-dev-flow.svg)
 
 ### Recommended sequence
 

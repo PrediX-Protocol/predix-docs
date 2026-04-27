@@ -4,7 +4,7 @@ Solidity `0.8.30`, Foundry, EVM cancun (EIP-1153 transient storage). 7 package, 
 
 ## Dependency graph
 
-![Smart contract dependency](../_design/08-sc-dependency.svg)
+![SC dependency: shared → oracle/diamond → hook/exchange → router. Cross-package import chỉ qua @predix/shared/interfaces](../_design/08-sc-dependency.svg)
 
 Rule: cross-package import **chỉ** qua `@predix/shared/interfaces/`. Không import implementation của package khác.
 
@@ -45,7 +45,7 @@ Single proxy `PrediX Diamond` với 6 facet. Mỗi facet upgrade được riêng
 
 ### Hook proxy upgrade — 48h monotonic timelock
 
-![Hook upgrade state](../_design/23-hook-upgrade-state.svg)
+![Hook proxy upgrade: Idle → Proposed (proposeUpgrade) → 48h wait → Executed (executeUpgrade) hoặc Cancelled. timelockDuration monotonic, min 48h](../_design/23-hook-upgrade-state.svg)
 
 - `proposeUpgrade(newImpl)` → `readyAt = now + timelockDuration` (min 48h).
 - Chờ ≥ timelockDuration → `executeUpgrade(newImpl, sig, readyAt)`.

@@ -4,7 +4,7 @@ Mỗi market có chart giá YES theo thời gian. Đọc chart + đổi timefram
 
 ## Chart cơ bản
 
-![Chart data sources](../_design/41-chart-sources.svg)
+![Chart data: 3 nguồn (Router.Trade canonical + Hook AMM analytics + CLOB matches) kết hợp thành YES price chart](../_design/41-chart-sources.svg)
 
 Chart tổng hợp giá từ:
 - **Router.Trade**: nguồn canonical, mỗi market order

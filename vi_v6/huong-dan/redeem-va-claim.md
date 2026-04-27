@@ -20,7 +20,7 @@ Sau market resolve, đổi token thắng thành USDC. Nếu market không resolv
 
 Nhiều market đã resolve → nút **Claim All** → batch qua **passkey smart account** (1 click, 1 tx, gas qua paymaster). EOA user: từng market 1 tx riêng (Wallet không hỗ trợ batch native). Cả 2 account types đều được sponsor cover nếu user đủ điều kiện chương trình.
 
-![Batch claim flow](../_design/16-claim-batch.svg)
+![Batch claim: Click Claim All → smart account bundle redeem(m1...mN) → 1 UserOp → Diamond burn tokens + transfer USDC tổng](../_design/16-claim-batch.svg)
 
 ### Công thức
 
@@ -86,4 +86,4 @@ Phase 2 (TBA): Có thể mở **single-sided refund** với haircut 50% — burn
 
 ## Ai quyết định enable refund
 
-![Admin refund flow](../_design/17-admin-refund.svg)
+![Admin refund: admin propose enableRefundMode → TimelockController 48h delay → execute → user burn YES+NO pairs → USDC pro-rata](../_design/17-admin-refund.svg)

@@ -19,7 +19,7 @@ Mua YES hoặc NO trên một market. ~30 giây từ click đến confirm.
 
 ## Đang xảy ra gì bên dưới
 
-![First trade flow](../_design/11-first-trade.svg)
+![First trade: connect wallet → bridge USDC → chọn market → buy YES/NO → nhận outcome tokens](../_design/11-first-trade.svg)
 
 Tất cả 1 tx atomic. Slippage > tolerance → revert, tiền không mất.
 

@@ -289,7 +289,7 @@ GET /api/v2/capabilities                  enum describe list
 
 ### SIWE auth flow
 
-![SIWE auth flow](../_design/14-siwe-auth.svg)
+![SIWE auth: GET /auth/challenge → server returns nonce → user signMessage → POST /auth/verify → BE verify ECDSA → set HTTPOnly cookie 7 days](../_design/14-siwe-auth.svg)
 
 ```typescript
 // 1. Challenge
@@ -357,7 +357,7 @@ const { data } = await api.GET('/markets/{id}', {
 
 Source of truth on-chain — bot listener, custom subgraph, monitoring service nên consume từ đây.
 
-![Event source of truth](../_design/63-event-source-truth.svg)
+![Event source: Router.Trade = canonical (volume + trades count), Hook_MarketTraded = analytics only (priceSnapshot, NOT volume), PositionSplit/Merge/Redeem/Refund = audit rows always land](../_design/63-event-source-truth.svg)
 
 - **Canonical trade**: `Router.Trade` — `protocolStats.totalVolume / totalTrades` **chỉ** tăng từ đây.
 - **AMM swap analytics**: `Hook_MarketTraded` — priceSnapshot only, không count volume (tránh double-count).

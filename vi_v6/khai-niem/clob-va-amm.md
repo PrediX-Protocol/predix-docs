@@ -14,7 +14,7 @@ PrediX kết hợp 2 cơ chế liquidity: order book on-chain (CLOB) + Uniswap v
 
 ## Router — single entry point
 
-![CLOB + AMM hybrid](../_design/06-hybrid-comparison.svg)
+![So sánh CLOB only vs AMM only vs Hybrid PrediX: hybrid kết hợp CLOB depth + AMM always-on liquidity trong cùng 1 tx qua Router](../_design/06-hybrid-comparison.svg)
 
 Router là **stateless** — bất biến `balanceOf(router) == 0` enforce on-chain sau mỗi public call. Không lưu ký, không có funds stuck.
 
@@ -28,7 +28,7 @@ Contract: `PrediXExchange`.
 
 ### 3 match type
 
-![3 match types](../_design/34-clob-3-match-types.svg)
+![3 match types CLOB: Complementary (BUY↔SELL cùng side), Mint synthetic (BUY_YES+BUY_NO≥$1, Diamond mint pair), Merge synthetic (SELL_YES+SELL_NO≤$1, Diamond burn)](../_design/34-clob-3-match-types.svg)
 
 - **Complementary**: BUY_YES ↔ SELL_YES cùng market. Phổ biến nhất.
 - **Mint** (synthetic): BUY_YES + BUY_NO ≥ $1. Diamond mint cặp, đưa YES cho buyer YES, NO cho buyer NO. Spread → protocol.
@@ -84,6 +84,6 @@ Có thể. Pool YES-USDC là v4 pool bình thường — bạn swap qua Universa
 
 PrediX Hook implement **identity commit** chống sandwich attack:
 
-![MEV protection](../_design/35-mev-protection.svg)
+![Anti-sandwich MEV: Router commitSwapIdentity (EIP-1153 transient storage) → Hook.beforeSwap verify identity → sandwich attacker không có identity → revert](../_design/35-mev-protection.svg)
 
 MEV bot không thể frontrun + backrun trade của bạn trong cùng block — Hook revert nếu identity không match.

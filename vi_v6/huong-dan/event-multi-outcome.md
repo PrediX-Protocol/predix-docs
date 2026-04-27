@@ -10,7 +10,7 @@ Event = container chứa N market con (gọi là **members**).
 - **Mutually exclusive** — khi event resolve, đúng 1 member YES = true, còn lại YES = false.
 - Có thể **groupSplit / groupMerge** — mint/burn cặp YES của tất cả members cùng lúc.
 
-![Event multi-outcome](../_design/53-event-multi-outcome.svg)
+![Event multi-outcome: Event (FIFA WC) → N members (Argentina, Brazil, France...) → mỗi member có YES+NO → resolve winningIndex → winner YES=$1](../_design/53-event-multi-outcome.svg)
 
 ## Ví dụ
 

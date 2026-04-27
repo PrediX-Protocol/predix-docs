@@ -4,7 +4,7 @@ Activity rewards lâu dài (badge, streak, daily challenge, reward box). Không 
 
 > Points / season-based emission / referral 2-phase: xem [Points & seasons](points-seasons.md).
 
-![Rewards overview](../_design/57-rewards-overview.svg)
+![4 loại rewards: Streak (daily login, win streak) + Badge (NFT milestone) + Daily Challenge (3 random/ngày) + Reward Box (5% drop, VRF random) → convert PRX/USDC/NFT](../_design/57-rewards-overview.svg)
 
 ## 1. Streak — chuỗi hành động
 
@@ -20,7 +20,7 @@ Mất streak nếu skip day. Restart từ 0.
 
 NFT badge (ERC-1155 trên Unichain) earn khi đạt milestone:
 
-![Badges mindmap](../_design/28-mindmap-badges.svg)
+![Badge categories: Volume ($1K-$100K), Accuracy (70%-90% win rate), Streak (7-365 day), Special (beta tester, community hero, event winner)](../_design/28-mindmap-badges.svg)
 
 - Badges là NFT — transferrable (đến khi locked).
 - Hiển thị trên profile, leaderboard.
@@ -45,7 +45,7 @@ Reset 00:00 UTC mỗi ngày.
 
 Sealed box mở lúc resolve, content random PRX / USDC / NFT.
 
-![Reward box VRF](../_design/20-reward-vrf.svg)
+![Reward box: trade eligible → 5% drop chance → box sealed → user open → Chainlink VRF random → 80% PRX / 15% USDC / 5% rare NFT](../_design/20-reward-vrf.svg)
 
 - **Drop rate**: ~5% mỗi trade > $10.
 - **Pool**: 80% PRX, 15% USDC, 5% rare NFT.

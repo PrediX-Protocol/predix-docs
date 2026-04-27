@@ -19,7 +19,7 @@ PrediX dùng USDC trên Unichain làm collateral. Nếu USDC của bạn đang �
 
 PrediX UI có **Bridge widget** tích hợp — không cần mở Across/Stargate ở tab riêng.
 
-![Bridge to Unichain](../_design/12-bridge-flow.svg)
+![Bridge flow: chọn source chain → connect wallet → nhập amount → approve → deposit → chờ relay → USDC đến Unichain](../_design/12-bridge-flow.svg)
 
 ## Bước
 

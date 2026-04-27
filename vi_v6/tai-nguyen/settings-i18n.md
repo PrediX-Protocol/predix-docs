@@ -6,7 +6,7 @@ Customize app PrediX theo preference của bạn.
 
 Vào `/settings`.
 
-![Settings mindmap](../_design/30-mindmap-settings.svg)
+![Settings: Profile (display name, avatar), Trading (default slippage, gas priority), Notifications (market alerts, resolution updates), Privacy (hide portfolio, anon mode), Developer (API keys, webhooks, testnet toggle)](../_design/30-mindmap-settings.svg)
 
 ## Display
 
@@ -87,7 +87,7 @@ Chi tiết: [Notifications](../huong-dan/notifications.md).
 
 ## Privacy
 
-![Privacy levels](../_design/60-privacy-levels.svg)
+![4 privacy levels: Default (public profile + positions + history), Hide positions, Hide history (aggregate only), Anonymous (pseudonym + avatar, address hidden). Note: on-chain data always public](../_design/60-privacy-levels.svg)
 
 > **Note**: On-chain data **luôn public**. App settings chỉ control UI level — privacy không hoàn toàn nếu ai đó query indexer / chain trực tiếp.
 

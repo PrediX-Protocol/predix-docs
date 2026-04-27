@@ -4,7 +4,7 @@ Tích hợp PrediX vào app, bot, data pipeline.
 
 ## Đường tích hợp
 
-![Dev integration paths](../_design/61-dev-integration-paths.svg)
+![Developer paths: App user trade → Router integration, Fetch data → API reference, Bot/mobile/web → Bots & mobile, Test → Testnet info](../_design/61-dev-integration-paths.svg)
 
 | Tôi muốn… | Đi tới |
 |---|---|
