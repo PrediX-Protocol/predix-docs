@@ -12,9 +12,9 @@ flowchart TD
     S2 --> S3["Treasury transfer PRX → burn address<br/>0x000...dEaD"]
     S3 --> End(["🔥 PRX burn vĩnh viễn<br/>Emit BuybackExecuted(usdcSpent, prxBurned)"])
 
-    classDef tick fill:#f1f5f9,stroke:#64748b,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef burn fill:#fee2e2,stroke:#dc2626,color:#0f172a
+    classDef tick fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef burn fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
     class Start tick
     class S1,S2,S3 step
     class End burn
@@ -104,6 +104,7 @@ Trade-off: ít yield short-term, supply long-term tốt hơn.
 Treasury dùng cho 4 use case:
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#1e293b","primaryTextColor":"#f1f5f9","primaryBorderColor":"#475569","lineColor":"#94a3b8","background":"transparent","mainBkg":"#334155","tertiaryColor":"#475569"}}}%%
 mindmap
   root((Treasury 20%))
     Dev funding

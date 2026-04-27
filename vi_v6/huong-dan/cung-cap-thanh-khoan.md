@@ -21,9 +21,9 @@ flowchart TD
     YesWin --> PnL[Net P&L = LP value cuối - LP value đầu + fee earned]
     NoWin --> PnL
 
-    classDef good fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef bad fill:#fee2e2,stroke:#dc2626,color:#0f172a
-    classDef neutral fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef good fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
+    classDef bad fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
+    classDef neutral fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
     class Earn good
     class IL bad
     class PnL neutral
@@ -75,9 +75,9 @@ flowchart TD
     S3 --> S4["LP gọi redeem YES<br/>(1 YES = 1 USDC vì thắng)"]
     S4 --> End(["✅ LP nhận tổng: USDC LP + USDC redeem<br/>+ uncollected fee đã accrue"])
 
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Start st
     class S1,S2,S3,S4 step
     class End ok

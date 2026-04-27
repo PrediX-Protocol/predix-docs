@@ -41,9 +41,9 @@ flowchart LR
     Time -->|1-3d| F3[0.75%]
     Time -->|< 24h| F4[1.0% cap]
 
-    classDef free fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef low fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef high fill:#fee2e2,stroke:#dc2626,color:#0f172a
+    classDef free fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
+    classDef low fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef high fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
     class OK1,F1 free
     class F2 low
     class F3,F4 high
@@ -106,8 +106,8 @@ flowchart LR
     Fee --> Buyback[🔥 $0.30<br/>Buyback + burn PRX<br/><i>Giảm supply</i>]
     Fee --> Treasury[🏛️ $0.20<br/>Treasury<br/><i>Dev · Audit · LP gauge subsidy</i>]
 
-    classDef src fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef sink fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef src fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef sink fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
     class Fee src
     class Staker,Buyback,Treasury sink
 ```

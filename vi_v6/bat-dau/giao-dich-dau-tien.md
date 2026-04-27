@@ -32,10 +32,10 @@ flowchart TD
     S6 --> S7["Router check minOut<br/>refund dust"]
     S7 --> End(["✅ X + Y YES về ví<br/>1 tx atomic"])
 
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef alt fill:#fee2e2,stroke:#dc2626,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef alt fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Start st
     class S1,S2,S3,S5,S6,S7 step
     class S4 alt

@@ -19,7 +19,7 @@ flowchart TB
     User -.->|tx ký từ ví| SC
 
     classDef ground fill:#1e293b,stroke:#0f172a,color:#fff
-    classDef layer fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    classDef layer fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
     class SC ground
     class FE,BE,IDX layer
 ```

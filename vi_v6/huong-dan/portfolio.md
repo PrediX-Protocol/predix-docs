@@ -15,7 +15,7 @@ flowchart TB
     Tabs --> Cal[Calibration<br/>Brier score + accuracy band]
     Tabs --> Replay[Performance replay<br/>Time-travel through trade decisions]
 
-    classDef hero fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef hero fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
     class Hero hero
 ```
 
@@ -42,8 +42,8 @@ flowchart LR
     Sell --> Hold[Còn 60 YES<br/>Cost basis $0.50]
     Hold -->|Spot $0.55| Unrealized[Unrealized: +$3<br/>60 × $0.05]
 
-    classDef r fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef u fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef r fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
+    classDef u fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
     class Realized r
     class Unrealized u
 ```
@@ -117,7 +117,7 @@ flowchart LR
     Trade --> Resolve[Markets resolve correct]
     Resolve --> Badge3[Badge: oracle, prophet, sage]
 
-    classDef earn fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef earn fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Badge1,Badge2,Badge3 earn
 ```
 

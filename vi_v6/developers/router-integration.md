@@ -234,9 +234,9 @@ flowchart TD
     S5 --> S6["Router execute approve + buyYes atomic"]
     S6 --> End(["✅ Trade complete · 1 tx visible on explorer"])
 
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Start st
     class S1,S2,S3,S4,S5,S6 step
     class End ok

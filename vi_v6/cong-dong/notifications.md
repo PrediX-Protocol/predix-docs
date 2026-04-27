@@ -13,7 +13,7 @@ flowchart LR
     Filter --> Telegram[Telegram bot]
     Filter --> InApp[In-app notification center]
 
-    classDef ch fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef ch fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
     class Push,Email,Discord,Telegram,InApp ch
 ```
 
@@ -80,10 +80,10 @@ flowchart TD
     Cond -->|Trigger| S2["Notification service fire alert"]
     S2 --> End(["✅ User nhận push + email + in-app"])
 
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef loop fill:#f1f5f9,stroke:#64748b,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef loop fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Setup st
     class S1,S2,Cond step
     class Loop loop

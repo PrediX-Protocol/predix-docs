@@ -3,6 +3,7 @@
 Hiểu PrediX hoạt động ra sao. Đọc theo thứ tự nếu mới, hoặc nhảy tới mục cần.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#1e293b","primaryTextColor":"#f1f5f9","primaryBorderColor":"#475569","lineColor":"#94a3b8","background":"transparent","mainBkg":"#334155","tertiaryColor":"#475569"}}}%%
 mindmap
   root((PrediX))
     Prediction market

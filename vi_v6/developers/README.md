@@ -14,7 +14,7 @@ flowchart LR
     Goal -->|Mobile / native app| M[Mobile / Wagmi]
     Goal -->|Listen events realtime| EV[Events reference]
 
-    classDef opt fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef opt fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
     class R,I,BE,BO,M,EV opt
 ```
 

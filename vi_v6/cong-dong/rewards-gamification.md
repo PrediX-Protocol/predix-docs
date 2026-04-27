@@ -16,8 +16,8 @@ flowchart TB
     RB --> R
     R --> PRX[PRX token<br/>USDC<br/>NFT collectible]
 
-    classDef act fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef rwd fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef act fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef rwd fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Trade act
     class PRX rwd
 ```
@@ -57,6 +57,7 @@ Mất streak nếu skip day. Restart từ 0.
 NFT badge (ERC-1155 trên Unichain) earn khi đạt milestone:
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#1e293b","primaryTextColor":"#f1f5f9","primaryBorderColor":"#475569","lineColor":"#94a3b8","background":"transparent","mainBkg":"#334155","tertiaryColor":"#475569"}}}%%
 mindmap
   root((Badges))
     Volume
@@ -112,11 +113,11 @@ flowchart TD
     S2 --> S3["Treasury calc reward<br/>80% PRX · 15% USDC · 5% rare NFT"]
     S3 --> End(["✅ Transfer reward về ví user"])
 
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef box fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef miss fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef box fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
+    classDef miss fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
     class Trade,Open st
     class Drop,S1,S2,S3 step
     class Box box

@@ -33,6 +33,7 @@ Decay tuyến tính theo block. Không step.
 ## Quyền vePRX
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#1e293b","primaryTextColor":"#f1f5f9","primaryBorderColor":"#475569","lineColor":"#94a3b8","background":"transparent","mainBkg":"#334155","tertiaryColor":"#475569"}}}%%
 mindmap
   root((vePRX))
     Gauge voting
@@ -69,7 +70,7 @@ flowchart LR
     Yield --> Demand[User mua PRX để stake]
     Demand --> Lock
 
-    classDef hot fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef hot fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
     class Volume,Fee,Yield hot
 ```
 
@@ -95,11 +96,11 @@ flowchart TD
     S3 --> End(["✅ Pool X depth tăng · LP earn fee + subsidy"])
     S4 --> End2(["✅ Voter nhận USDC bribe"])
 
-    classDef proj fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef voter fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef tick fill:#f1f5f9,stroke:#64748b,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef proj fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef voter fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef tick fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Project proj
     class Voter voter
     class Epoch tick

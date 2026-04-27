@@ -30,9 +30,9 @@ flowchart TD
     Done --> End([Trade thành công])
     Revert --> End2([Chỉ tốn gas])
 
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef warn fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef err fill:#fee2e2,stroke:#dc2626,color:#0f172a
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
+    classDef warn fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef err fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
     class Done,End ok
     class Virtual warn
     class Revert,End2 err
@@ -132,10 +132,10 @@ flowchart TD
     Allow --> S4["PoolManager return delta cho Router"]
     S4 --> End(["✅ Token out về User"])
 
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef bad fill:#fee2e2,stroke:#dc2626,color:#0f172a
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
+    classDef bad fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
     class User st
     class S1,S2,S3,S4,Check,Allow step
     class End ok

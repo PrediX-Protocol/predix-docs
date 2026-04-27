@@ -50,8 +50,8 @@ flowchart LR
     Direct --> Done[Bạn nhận NO]
     Virtual --> Done
 
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef tricky fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
+    classDef tricky fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
     class Direct ok
     class Virtual tricky
 ```

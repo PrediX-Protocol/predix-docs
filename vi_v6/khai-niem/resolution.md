@@ -37,9 +37,9 @@ flowchart TB
     Q -->|Decentralized<br/>không muốn multisig| UMA[UMAOracle<br/>48h dispute window]
     Q -->|Cross-chain<br/>governance vote| Committee[Committee oracle<br/>t-of-N validator]
 
-    classDef p1 fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef p2 fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef p3 fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef p1 fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
+    classDef p2 fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef p3 fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
     class Chain,Manual p1
     class UMA p2
     class Committee p3
@@ -59,10 +59,10 @@ flowchart TD
     Check --> S2["Compute outcome<br/>= (answer ≥ threshold) == gte"]
     S2 --> End(["✅ Diamond.MarketResolved event<br/>Market resolve, user redeem được"])
 
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef wait fill:#f1f5f9,stroke:#64748b,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef wait fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Creator,Anyone st
     class S1,Check,S2 step
     class Wait wait
@@ -101,11 +101,11 @@ flowchart TD
     OK1 --> End(["✅ Market.resolveMarket(outcome)"])
     Decide --> End
 
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef wait fill:#f1f5f9,stroke:#64748b,color:#0f172a
-    classDef bad fill:#fee2e2,stroke:#dc2626,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef wait fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
+    classDef bad fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Start st
     class Wait wait
     class Branch,OK1 step
@@ -148,9 +148,9 @@ flowchart LR
     Time --> Active[refundModeActive = true]
     Active --> User[User refund: burn min YES+NO<br/>→ nhận USDC pro-rata]
 
-    classDef warn fill:#fee2e2,stroke:#dc2626,color:#0f172a
-    classDef wait fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef warn fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
+    classDef wait fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Fail warn
     class Time wait
     class Active,User ok

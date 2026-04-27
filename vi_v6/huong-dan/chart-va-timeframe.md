@@ -11,8 +11,8 @@ flowchart LR
     Source3[CLOB matches<br/>price ticks] --> Combine
     Combine --> Display[Chart YES price<br/>theo thời gian]
 
-    classDef src fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef out fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef src fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef out fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Source1,Source2,Source3 src
     class Display out
 ```

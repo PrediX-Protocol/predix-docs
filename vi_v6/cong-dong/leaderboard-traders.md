@@ -32,7 +32,7 @@ flowchart TD
     P --> Badge[Badges earned]
     P --> Follow[Follow button]
 
-    classDef hero fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef hero fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
     class Hero hero
 ```
 
@@ -73,10 +73,10 @@ flowchart TD
     S4 --> End(["✅ Trade mirrored trên Follower account"])
     S5 --> End
 
-    classDef cfg fill:#f1f5f9,stroke:#64748b,color:#0f172a
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef cfg fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Setup cfg
     class Lead st
     class S1,S2,S3,S4,S5 step

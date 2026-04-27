@@ -28,9 +28,9 @@ flowchart TD
     S2 --> S3["Diamond burn winning tokens<br/>+ transfer USDC tổng"]
     S3 --> End(["✅ Total USDC về ví trong 1 tx duy nhất"])
 
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Start st
     class S1,S2,S3 step
     class End ok
@@ -110,10 +110,10 @@ flowchart TD
     S3 --> S4["Diamond.enableRefundMode(marketId)<br/>Emit RefundModeEnabled event"]
     S4 --> End(["✅ User có thể refund từ giờ<br/>burn cặp YES+NO → USDC pro-rata"])
 
-    classDef admin fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef wait fill:#fee2e2,stroke:#dc2626,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef admin fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef wait fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Start admin
     class S1,S2,S3,S4 step
     class Wait wait

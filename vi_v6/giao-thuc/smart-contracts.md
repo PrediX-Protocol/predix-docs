@@ -26,9 +26,9 @@ flowchart TB
     Exchange --> Router
     Hook --> Router
 
-    classDef base fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef core fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef leaf fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef base fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef core fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef leaf fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Shared base
     class Diamond,Oracle core
     class Hook,Exchange,Router,Paymaster leaf

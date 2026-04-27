@@ -12,8 +12,8 @@ flowchart LR
     Hook[Hook_MarketTraded<br/>analytics] --> PriceSnap[priceSnapshot table<br/>NOT volume]
     MF[PositionSplit/Merge/Redeem/Refund] --> Audit[Audit rows<br/>always land]
 
-    classDef canon fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef analy fill:#fef3c7,stroke:#d97706,color:#0f172a
+    classDef canon fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
+    classDef analy fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
     class Router,ProtoStats canon
     class Hook,PriceSnap analy
 ```

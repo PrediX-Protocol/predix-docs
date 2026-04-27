@@ -15,7 +15,7 @@ flowchart TB
     L1 --> L2 --> L3 --> L4 --> L5
 
     classDef strong fill:#1e293b,stroke:#0f172a,color:#fff
-    classDef good fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef good fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
     class L1,L2 strong
     class L3,L4,L5 good
 ```
@@ -77,10 +77,10 @@ flowchart TD
     S2 --> S3["Timelock gọi Diamond.diamondCut(facets[])"]
     S3 --> End(["✅ Emit DiamondCut event<br/>Facets updated"])
 
-    classDef admin fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef wait fill:#fee2e2,stroke:#dc2626,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef admin fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef wait fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Start admin
     class S1,S2,S3 step
     class Wait wait
@@ -155,9 +155,9 @@ flowchart TD
     Triage -->|P2 medium| P2[Slack < 24h<br/>Schedule fix]
     Triage -->|P3 low info| P3[Backlog<br/>Next sprint]
 
-    classDef crit fill:#fee2e2,stroke:#dc2626,color:#0f172a
-    classDef high fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef low fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef crit fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
+    classDef high fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef low fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
     class P0 crit
     class P1 high
     class P2,P3 low

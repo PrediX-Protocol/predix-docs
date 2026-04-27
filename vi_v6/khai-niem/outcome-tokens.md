@@ -26,9 +26,9 @@ flowchart TB
     YES -.->|YES wins| RW([Redeem 100 USDC])
     NO -.->|NO wins| RW
 
-    classDef in fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef tok fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef out fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef in fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef tok fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef out fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class USDC in
     class YES,NO,Mint tok
     class RW out
@@ -78,8 +78,8 @@ flowchart TD
     Path1 -->|nhiều người làm| Eq[YES + NO bị kéo về ~$1]
     Path2 -->|nhiều người làm| Eq
 
-    classDef arb fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef eq fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef arb fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef eq fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Path1,Path2 arb
     class Eq eq
 ```

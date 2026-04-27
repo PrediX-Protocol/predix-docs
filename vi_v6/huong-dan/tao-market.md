@@ -26,7 +26,7 @@ flowchart TD
     Scalar --> Setup
     Setup --> Deploy[Tạo on-chain]
 
-    classDef option fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef option fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
     class Bin1,Bin2,Multi,Scalar option
 ```
 
@@ -96,10 +96,10 @@ flowchart TD
     S7 --> S8["Seed initial liquidity vào pool"]
     S8 --> End(["✅ Market live · user có thể trade"])
 
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef opt fill:#f1f5f9,stroke:#64748b,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef opt fill:#52525b,stroke:#3f3f46,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Start st
     class S1,S2,S3,S4,S5,S6,S8 step
     class S7 opt

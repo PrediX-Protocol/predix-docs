@@ -22,8 +22,8 @@ flowchart TB
     Mn --> Yn[YES + NO tokens]
     Event -->|resolve winningIndex=0| Win[Argentina YES = $1<br/>Còn lại YES = $0]
 
-    classDef ev fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef win fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef ev fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef win fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Event ev
     class Win win
 ```

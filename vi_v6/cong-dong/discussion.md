@@ -15,7 +15,7 @@ flowchart TD
     Comments --> React[Up/down vote]
     Comments --> Mention[@mention user]
 
-    classDef int fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef int fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
     class Comments int
 ```
 
@@ -57,8 +57,8 @@ flowchart LR
     Feed --> Filter[Filter: Following / Trending / Latest]
     Filter --> Display[Display cards<br/>realtime stream]
 
-    classDef src fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef ui fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef src fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef ui fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
     class On,Off src
     class Feed,Display ui
 ```
@@ -129,8 +129,8 @@ flowchart TD
     Action --> Repeat{Repeat offender?}
     Repeat -->|yes 3+| Ban[Ban 7-30 days]
 
-    classDef bad fill:#fee2e2,stroke:#dc2626,color:#0f172a
-    classDef good fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef bad fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
+    classDef good fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Spam,Ban bad
     class Action,Mod good
 ```

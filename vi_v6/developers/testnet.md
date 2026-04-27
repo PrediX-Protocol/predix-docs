@@ -129,8 +129,8 @@ flowchart LR
     Stage2 --> Audit[Self-audit<br/>handle errors]
     Audit --> Mainnet[Deploy / connect mainnet<br/>khi confident]
 
-    classDef stage fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef done fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef stage fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef done fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Local,Stage1,Stage2,Audit stage
     class Mainnet done
 ```

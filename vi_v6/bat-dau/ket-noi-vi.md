@@ -10,8 +10,8 @@ flowchart TD
     Start -->|"Đơn giản như app web2<br/>không cần biết crypto"| Passkey["<b>Passkey + Smart Account</b><br/>Touch ID · Face ID · WebAuthn<br/>Tự deploy ERC-4337 account<br/>Không cần install extension"]
     Start -->|"Quen DeFi · muốn full control<br/>tự ký mỗi tx"| Wallet["<b>Crypto wallet — EOA</b><br/>MetaMask · Rainbow · WalletConnect<br/>Self-custody seed phrase BIP-39<br/>Compatible với hardware wallet"]
 
-    classDef pk fill:#dcfce7,stroke:#16a34a,color:#0f172a
-    classDef cw fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef pk fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
+    classDef cw fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
     class Passkey pk
     class Wallet cw
 ```
@@ -91,9 +91,9 @@ flowchart TD
     S4 --> S5["BE verify ECDSA signature<br/>Set-Cookie: predix_session"]
     S5 --> End(["✅ Session active 7 ngày<br/>HTTPOnly cookie · không expose JS"])
 
-    classDef st fill:#dbeafe,stroke:#2563eb,color:#0f172a
-    classDef step fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef ok fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef st fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
+    classDef step fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Start st
     class S1,S2,S3,S4,S5 step
     class End ok

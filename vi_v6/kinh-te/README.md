@@ -3,6 +3,7 @@
 PRX là token quản trị + revenue share của PrediX.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#1e293b","primaryTextColor":"#f1f5f9","primaryBorderColor":"#475569","lineColor":"#94a3b8","background":"transparent","mainBkg":"#334155","tertiaryColor":"#475569"}}}%%
 mindmap
   root((PRX Token))
     Allocation
@@ -56,8 +57,8 @@ flowchart LR
     Split -->|30%| BB[Buyback PRX<br/>+ burn vĩnh viễn]
     Split -->|20%| Treasury[Treasury<br/>Dev + Audit + LP gauge subsidy]
 
-    classDef src fill:#fef3c7,stroke:#d97706,color:#0f172a
-    classDef sink fill:#dbeafe,stroke:#2563eb,color:#0f172a
+    classDef src fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
+    classDef sink fill:#2563eb,stroke:#1d4ed8,color:#fff,stroke-width:2px
     class Source src
     class Staker,BB,Treasury sink
 ```

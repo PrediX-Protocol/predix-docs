@@ -7,6 +7,7 @@ Customize app PrediX theo preference của bạn.
 Vào `/settings`.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#1e293b","primaryTextColor":"#f1f5f9","primaryBorderColor":"#475569","lineColor":"#94a3b8","background":"transparent","mainBkg":"#334155","tertiaryColor":"#475569"}}}%%
 mindmap
   root((Settings))
     Display
@@ -124,8 +125,8 @@ flowchart TD
     Setting -->|Hide history| HH[Public profile<br/>History hidden<br/>Aggregate stats only]
     Setting -->|Anonymous| Anon[Pseudonym + avatar<br/>Address hidden in UI<br/>Aggregate stats only]
 
-    classDef strict fill:#fee2e2,stroke:#dc2626,color:#0f172a
-    classDef relaxed fill:#dcfce7,stroke:#16a34a,color:#0f172a
+    classDef strict fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
+    classDef relaxed fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
     class Public relaxed
     class Anon strict
 ```
