@@ -27,13 +27,7 @@ Khi event resolve (Argentina thắng):
 
 ### Buy YES 1 đội
 
-```mermaid
-flowchart LR
-    UI[Click member trong UI] --> Panel[Panel trading mở]
-    Panel --> Buy[Buy YES Argentina<br/>như market thường]
-    Buy --> Router[Router swap USDC → YES Argentina<br/>qua CLOB + AMM]
-    Router --> Done[Bạn nhận YES Argentina]
-```
+Click member trong event UI → panel trading mở → **Buy YES Argentina** (như market thường) → Router swap USDC → YES qua CLOB + AMM → nhận YES Argentina.
 
 ### Buy NO (short 1 đội)
 
