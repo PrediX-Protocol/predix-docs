@@ -63,10 +63,10 @@ Sau khi sign-in lần đầu, app hiển thị address. Đây là **counterfactu
 
 ### Có phải trả gas không? {#gas-co-mat-tien}
 
-Mặc định **cả 2 phương pháp user đều trả gas**. PrediX có **chương trình gas sponsor** cho user đủ điều kiện (ví dụ: new user onboarding, stake holder ngưỡng nhất định, campaign event):
+Mặc định **cả 2 phương pháp user đều tự trả gas**. PrediX có **chương trình gas sponsor** cho user đủ điều kiện (ví dụ: new user onboarding, stake holder ngưỡng nhất định, campaign event) — **áp dụng cho cả 2 account types**, không phụ thuộc loại ví:
 
-- **Passkey + Smart Account**: Tự trả gas qua paymaster. Nếu đủ điều kiện sponsor program, paymaster pay thay user — UX hoàn toàn gasless cho các action chính (swap, split, merge, redeem, place/cancel order).
-- **Crypto wallet (EOA)**: User luôn tự trả gas bằng ETH Unichain. Gas Unichain rất rẻ — thường $0.001-0.01 per tx. EOA không hỗ trợ paymaster.
+- **Passkey + Smart Account**: Trả gas qua paymaster. Đủ điều kiện sponsor → paymaster pay thay user — UX hoàn toàn gasless cho các action chính (swap, split, merge, redeem, place/cancel order).
+- **Crypto wallet (EOA)**: Trả gas bằng ETH Unichain. Đủ điều kiện sponsor → cơ chế rebate/refund (chi tiết công bố pre-launch). Gas Unichain rất rẻ — thường $0.001-0.01 per tx kể cả khi tự pay.
 
 Tiêu chí + duration của sponsor program công bố pre-launch và có thể thay đổi theo governance vote.
 
@@ -80,7 +80,7 @@ Chi tiết: [Cấu trúc fee](../khai-niem/phi.md).
 
 ### Phí cancel limit order?
 
-Không phí protocol. Gas: smart account có thể được sponsor (nếu đủ điều kiện chương trình), EOA tự trả ETH.
+Không phí protocol. Gas mặc định user trả; nếu đủ điều kiện sponsor program, PrediX cover (áp dụng cả 2 account types).
 
 ### Phí redeem khi resolve?
 
@@ -112,7 +112,7 @@ PrediX tích hợp các bridge có TVL hàng tỷ USD: Across, Stargate, LayerZe
 
 Chênh lệch giữa giá preview và giá thực tế khi tx execute. Default tolerance 0.5%.
 
-Vượt slippage → tx **revert**, tiền không mất (EOA tốn gas ETH; smart account tốn gas qua paymaster — sponsor nếu đủ điều kiện).
+Vượt slippage → tx **revert**, tiền không mất (vẫn tốn gas — sponsor cover nếu user đủ điều kiện chương trình, không phụ thuộc account type).
 
 ### Trade nhỏ nhất bao nhiêu?
 

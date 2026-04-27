@@ -34,7 +34,7 @@ Prediction market on-chain trên Unichain. Mỗi sự kiện có hai outcome tok
 - **Hybrid CLOB + AMM** — Router tự động split lệnh giữa on-chain order book và Uniswap v4 pool, lấy giá tốt nhất trong cùng tx.
 - **Real yield** — 50% phí protocol chảy về staker dưới dạng USDC thật, 30% buyback-burn PRX. Không emission.
 - **Non-custodial** — Router stateless, bất biến `balanceOf(router) == 0` enforce on-chain. Diamond + Hook upgrade qua 48h timelock, không emergency bypass.
-- **Account abstraction** — đăng nhập bằng passkey (UX web2) hoặc crypto wallet. Smart account hỗ trợ gas sponsor qua paymaster (chương trình cho user đủ điều kiện).
+- **Account abstraction** — đăng nhập bằng passkey (UX web2) hoặc crypto wallet. PrediX có chương trình gas sponsor cho user đủ điều kiện — áp dụng cả 2 account types.
 
 ---
 

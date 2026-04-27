@@ -91,12 +91,12 @@ fee   = 100 - 99            =  1 USDC
 
 ## Gas
 
-Cả 2 phương pháp wallet user đều trả gas. Cơ chế khác nhau:
+Mặc định **cả 2 phương pháp wallet user đều tự trả gas**. PrediX có **chương trình sponsor gas** cho user đủ điều kiện (new user, stake holder ngưỡng nhất định, campaign event…) — **áp dụng cả 2 account types**, không phụ thuộc loại ví. Cơ chế cụ thể:
 
-- **Passkey + Smart Account**: Gas trả qua paymaster contract. PrediX có **chương trình sponsor gas** cho user đủ điều kiện (new user, stake holder ngưỡng nhất định, campaign event…). Sponsor cover các action chính: swap, split, merge, redeem, place/cancel order. Tiêu chí + duration công bố pre-launch.
-- **Crypto wallet (EOA)**: Tự trả ETH trực tiếp. Gas Unichain rẻ — thường $0.001-0.01 per tx. EOA không hỗ trợ paymaster.
+- **Passkey + Smart Account**: Gas trả qua paymaster contract. Đủ điều kiện sponsor → paymaster cover các action chính (swap, split, merge, redeem, place/cancel order) — UX hoàn toàn gasless.
+- **Crypto wallet (EOA)**: Trả ETH trực tiếp. Đủ điều kiện sponsor → cơ chế rebate/refund off-chain (chi tiết công bố pre-launch). Gas Unichain rẻ — $0.001-0.01 per tx kể cả khi tự pay.
 
-> Sponsor program cụ thể (criteria, quota, duration) có thể thay đổi theo governance vote. UI sẽ hiển thị "sponsored" badge khi tx được paymaster cover.
+> Tiêu chí + duration sponsor program công bố pre-launch và có thể thay đổi theo governance vote. UI hiển thị "sponsored" badge khi tx được cover.
 
 ## Phí phân bổ — chi tiết
 

@@ -24,12 +24,12 @@ flowchart TD
 | **Cài extension** | Không | Có (MetaMask, Rainbow…) |
 | **Backup recovery** | Cloud sync (iCloud / Google), hoặc thiết bị thứ 2 | Seed phrase BIP-39 (12-24 từ) |
 | **Hardware wallet** | Không (private key trong Secure Enclave) | Có (Ledger, Trezor) |
-| **Phí gas** | Tự trả qua paymaster (sponsor cho user đủ điều kiện chương trình) | Tự trả ETH (Unichain rẻ ~$0.001-0.01/tx) |
+| **Phí gas** | Tự trả qua paymaster (USDC) | Tự trả ETH (Unichain rẻ ~$0.001-0.01/tx) |
 | **Batch transaction** | Có (1-click `[approve, swap]` atomic) | Không (2 tx riêng) |
 | **Đăng ký lần đầu** | ~5 giây sinh trắc học | Đã có ví → instant |
 | **Phù hợp** | User mới · onboarding nhanh | DeFi user · custody lớn · hardware wallet |
 
-> **Ghi chú gas**: Mặc định cả 2 phương pháp user đều trả gas. Smart account user có thể nhận **gas sponsor từ PrediX paymaster** nếu đủ điều kiện chương trình (vd: new user onboarding, stake holder ngưỡng X, campaign-eligible event). Tiêu chí + duration của sponsor program công bố pre-launch + có thể thay đổi theo governance vote. EOA user luôn tự trả ETH (Unichain rất rẻ).
+> **Ghi chú gas**: Mặc định cả 2 phương pháp user đều tự trả gas. PrediX có **chương trình gas sponsor** cho user đủ điều kiện (vd: new user onboarding, stake holder ngưỡng X, campaign-eligible event) — **áp dụng cho cả 2 account types**, không phụ thuộc loại ví. Cơ chế: smart account → paymaster cover trực tiếp; EOA → rebate/refund off-chain (chi tiết công bố pre-launch). Tiêu chí + duration sponsor program có thể thay đổi theo governance vote.
 
 ## Passkey + Smart Account
 

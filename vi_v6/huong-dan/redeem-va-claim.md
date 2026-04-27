@@ -18,13 +18,13 @@ Sau market resolve, đổi token thắng thành USDC. Nếu market không resolv
 
 ### Batch redeem
 
-Nhiều market đã resolve → nút **Claim All** → batch qua **passkey smart account** (1 click, 1 tx, gas qua paymaster — sponsor nếu đủ điều kiện). EOA user: từng market 1 tx riêng, tự trả gas (Wallet không hỗ trợ batch native).
+Nhiều market đã resolve → nút **Claim All** → batch qua **passkey smart account** (1 click, 1 tx, gas qua paymaster). EOA user: từng market 1 tx riêng (Wallet không hỗ trợ batch native). Cả 2 account types đều được sponsor cover nếu user đủ điều kiện chương trình.
 
 ```mermaid
 flowchart TD
     Start(["👤 User click Claim All"])
     Start --> S1["Smart Account bundle calls<br/>redeem(m1) · redeem(m2) · ... · redeem(mN)"]
-    S1 --> S2["Execute batch trong 1 UserOp<br/>Gas qua paymaster (sponsor nếu đủ điều kiện)"]
+    S1 --> S2["Execute batch trong 1 UserOp<br/>Gas qua paymaster (sponsor cover nếu đủ điều kiện)"]
     S2 --> S3["Diamond burn winning tokens<br/>+ transfer USDC tổng"]
     S3 --> End(["✅ Total USDC về ví trong 1 tx duy nhất"])
 

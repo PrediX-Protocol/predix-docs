@@ -46,7 +46,7 @@ flowchart LR
 ```
 
 - Atomic: cả 3 step trong 1 tx.
-- Free phí protocol. Gas: smart account trả qua paymaster (sponsor nếu đủ điều kiện), EOA tự trả ETH.
+- Free phí protocol. Gas mặc định user trả; sponsor cover nếu đủ điều kiện chương trình (áp dụng cả 2 account types).
 
 **Khi nào dùng**:
 - Market-make: bán YES và NO riêng với giá > $0.50 mỗi token (giá trung bình > $1, ăn spread).
