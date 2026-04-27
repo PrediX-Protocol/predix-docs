@@ -122,10 +122,10 @@ flowchart LR
 
 | Phase | Treasury | Staker | Buyback | Insurance |
 |---|---|---|---|---|
-| **Bootstrap** (M+7 → break-even) | 60% | 20% | 15% | 5% |
-| **Scale** (break-even → multi-chain) | 25% | 30% | 40% | 5% |
-| **Mature** (Y3+) | 20% | 35% | 40% | 5% |
-| **Dominance** (post-PMF, mature DAO) | 15% | 30% | 50% | 5% |
+| **Bootstrap** | 60% | 20% | 15% | 5% |
+| **Scale** | 25% | 30% | 40% | 5% |
+| **Mature** | 20% | 35% | 40% | 5% |
+| **Dominance** | 15% | 30% | 50% | 5% |
 
 Phí thu từ AMM + CLOB taker + redemption + creation. LP fee trên AMM đi riêng — thuộc về LP, không chia về treasury.
 
@@ -156,13 +156,4 @@ Nếu YES = false: mất 100 USDC, fee đã trả không refund.
 
 ## Fee discount cho staker
 
-Stake PRX → giảm fee giao dịch:
-
-| Stake threshold | CLOB taker discount | AMM discount |
-|---|---|---|
-| 1,000 PRX | 10% | 0% |
-| 10,000 PRX | 25% | 10% |
-| 100,000 PRX | 50% | 25% |
-| 1,000,000+ PRX | 50% (cap) | 50% (cap) |
-
-Active ngay khi stake. Chi tiết: [Staking](../kinh-te/staking-real-yield.md).
+Stake PRX → giảm fee giao dịch (10-50% tuỳ ngưỡng stake). Chi tiết: [Staking §Fee discount](../kinh-te/staking-real-yield.md#fee-discount-cho-staker).

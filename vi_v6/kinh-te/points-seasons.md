@@ -51,7 +51,7 @@ Ongoing: referrer earn **10% of referred user's Points**.
 | Tier | Commission | Eligibility |
 |---|---|---|
 | Standard user | 10% gross fees | ≥$500 volume |
-| KOL / Partner | 30% gross fees | Verified KOL |
+| Partner | Custom | Liên hệ [business@predix.app](mailto:business@predix.app) |
 
 Transition M6 → M7: same referral link, old refs auto-migrate, earn fee commission từ tất cả refs cũ.
 

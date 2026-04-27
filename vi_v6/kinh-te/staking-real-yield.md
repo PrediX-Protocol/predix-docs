@@ -24,8 +24,6 @@ APY_USDC     = (weekly_yield × 52) / your_stake_USD_value
 
 Yield float theo volume thật. Volume tăng → yield tăng. Volume giảm → yield giảm.
 
-Yield float theo volume thật. Volume tăng → yield tăng. Volume giảm → yield giảm.
-
 ## Lock boost
 
 Lock PRX để nhận **boost yield + governance weight**:

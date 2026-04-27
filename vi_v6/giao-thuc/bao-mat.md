@@ -24,14 +24,7 @@ Invariant fuzz 10,000+ runs trong CI. Fail → block merge.
 
 ### External audits
 
-External audit từ industry-leading firms:
-
-- **Spearbit** — comprehensive review
-- **Trail of Bits** — security-focused
-- **OpenZeppelin** — standard library expert
-- **Zellic** — formal verification
-
-Reports public ở: [Audit reports](https://docs.predix.app/audits) (link TBA sau audit complete).
+External audit trước mainnet launch — firm selection đang tiến hành. Reports sẽ public tại [docs.predix.app/audits](https://docs.predix.app/audits) sau khi hoàn tất.
 
 ### Internal review
 
@@ -187,11 +180,3 @@ Coverage:
 
 Smart contract immutable, locked vault.
 
-## Tham khảo industry
-
-- Consensys Smart Contract Best Practices
-- SCSVS — Smart Contract Security Verification Standard
-- SWC Registry (Smart Contract Weakness Classification)
-- Trail of Bits — Building Secure Contracts
-- Secureum
-- Code4rena, Sherlock contest writeups

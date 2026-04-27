@@ -80,14 +80,9 @@ flowchart TD
     class S3,End ok
 ```
 
-### Risks + mitigation
+### Risk mitigation
 
-| Risk | Mitigation |
-|---|---|
-| **Multisig compromise** (3/5 keys stolen) | HSM signer, role separation, geographic distribution, key rotation 6 tháng |
-| **Bribery** (whale bribe multisig) | Public audit trail per signature, reputation stake (Phase 2), refund mode escape hatch |
-| **Operator honest mistake** | Social challenge window, multisig discuss before sign, refund mode revert option |
-| **Coordinated capture** | Long-term: phase out manual cho UMA + committee oracle |
+Multisig members phân tán, mỗi signature có audit trail on-chain. Refund mode là escape hatch nếu oracle bị compromise. Long-term: phase out manual cho UMA + committee oracle.
 
 ### Revoke case
 

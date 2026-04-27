@@ -4,18 +4,11 @@ Theo dõi thay đổi protocol + docs.
 
 ## Documentation
 
-### 2026-04-25 — vi_v6 production release
+### 2026-04-25 — Production docs release
 
-- Production-grade rewrite: assume mainnet live, TBA placeholder cho specific addresses/dates.
-- 49 file (vs vi_v5 36 file): added LP, market creation, chart, bridge, settings/i18n, bots, mobile, testnet, community section (leaderboard, rewards, notifications, discussion).
-- 82 Mermaid diagrams (vs vi_v5 8) — flowchart, sequence, state, pie, gantt, mindmap, journey, quadrant, xychart.
+- Full documentation coverage: getting started, concepts, guides, protocol, tokenomics, developers, resources.
 - Vietnamese-English mixed style cho DeFi user familiarity.
-- Vietnamese-English mixed style cho DeFi user familiarity.
-
-### 2026-04-24 — vi_v5 first release
-
-- Concise rewrite từ vi_v4 (98 file → 36 file).
-- Persona-based navigation.
+- SVG diagrams thay thế cho key flows.
 
 ## Protocol
 

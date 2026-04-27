@@ -179,7 +179,7 @@ TBA. Theo dõi [Discord / Twitter chính thức](../tai-nguyen/links.md) cho ann
 
 ### Stake PRX để làm gì?
 
-Nhận share 50% phí protocol bằng **USDC thật**, vote governance, fee discount. Chi tiết: [Staking real yield](../kinh-te/staking-real-yield.md).
+Nhận share phí protocol bằng **USDC thật** (adaptive 20-35% theo growth phase), vote governance, fee discount. Chi tiết: [Staking real yield](../kinh-te/staking-real-yield.md).
 
 ### vePRX khác stkPRX thế nào?
 

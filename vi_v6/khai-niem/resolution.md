@@ -127,25 +127,9 @@ flowchart TD
 
 ## Refund mode — last resort
 
-Khi không oracle nào resolve được:
+Khi không oracle nào resolve được → admin enable refund mode qua 48h timelock → user burn cặp YES+NO → nhận USDC pro-rata.
 
-```mermaid
-flowchart LR
-    Fail[Oracle fail<br/>feed down, multisig không respond,<br/>UMA dispute hung]
-    Fail --> Admin[Admin propose<br/>enableRefundMode]
-    Admin --> Time[TimelockController 48h delay]
-    Time --> Active[refundModeActive = true]
-    Active --> User[User refund: burn min YES+NO<br/>→ nhận USDC pro-rata]
-
-    classDef warn fill:#dc2626,stroke:#b91c1c,color:#fff,stroke-width:2px
-    classDef wait fill:#475569,stroke:#334155,color:#fff,stroke-width:1.5px
-    classDef ok fill:#16a34a,stroke:#15803d,color:#fff,stroke-width:2px
-    class Fail warn
-    class Time wait
-    class Active,User ok
-```
-
-Detail: [Redeem & refund](../huong-dan/redeem-va-claim.md).
+Chi tiết flow: [Oracle §Refund mode](../giao-thuc/oracle.md#refund-mode--last-resort) · [Redeem & refund](../huong-dan/redeem-va-claim.md).
 
 ## Resolve sai — làm gì
 
