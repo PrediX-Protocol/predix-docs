@@ -38,7 +38,7 @@ PrediX là protocol on-chain phi tập trung. Truy cập từ bất kỳ đâu c
 
 PrediX có 2 phương pháp:
 
-- **Passkey + Smart Account** (ERC-4337): Tiện nhất, UX web2-like, không cài extension. Sinh trắc học (Touch ID / Face ID) mở khoá. Backup qua cloud sync hoặc thiết bị thứ 2. Hiện được paymaster sponsor gas. Phù hợp user mới, số dư nhỏ-vừa.
+- **Passkey + Smart Account** (ERC-4337): Tiện nhất, UX web2-like, không cài extension. Sinh trắc học (Touch ID / Face ID) mở khoá. Backup qua cloud sync hoặc thiết bị thứ 2. Hỗ trợ gas sponsor qua paymaster (cho user đủ điều kiện chương trình). Phù hợp user mới, số dư nhỏ-vừa.
 - **Crypto wallet (EOA)** — MetaMask, Rainbow, Coinbase Wallet, WalletConnect, Ledger: Khôi phục bằng seed phrase BIP-39, compatible hardware wallet. Tự trả gas ETH. Phù hợp DeFi user quen, custody lớn, hoặc tích hợp tooling khác.
 
 Cả 2 đều **non-custodial** — PrediX không bao giờ giữ private key.
@@ -63,8 +63,12 @@ Sau khi sign-in lần đầu, app hiển thị address. Đây là **counterfactu
 
 ### Có phải trả gas không? {#gas-co-mat-tien}
 
-- **Passkey + Smart Account**: Hiện tại paymaster PrediX sponsor gas cho các action chính (swap, split, merge, redeem, place/cancel order). **Free cho user trong giai đoạn bootstrap** — chính sách paymaster có thể thay đổi tương lai (theo governance vote).
-- **Crypto wallet (EOA)**: Tự trả gas bằng ETH Unichain. Gas Unichain rất rẻ — thường $0.001-0.01 per tx.
+Mặc định **cả 2 phương pháp user đều trả gas**. PrediX có **chương trình gas sponsor** cho user đủ điều kiện (ví dụ: new user onboarding, stake holder ngưỡng nhất định, campaign event):
+
+- **Passkey + Smart Account**: Tự trả gas qua paymaster. Nếu đủ điều kiện sponsor program, paymaster pay thay user — UX hoàn toàn gasless cho các action chính (swap, split, merge, redeem, place/cancel order).
+- **Crypto wallet (EOA)**: User luôn tự trả gas bằng ETH Unichain. Gas Unichain rất rẻ — thường $0.001-0.01 per tx. EOA không hỗ trợ paymaster.
+
+Tiêu chí + duration của sponsor program công bố pre-launch và có thể thay đổi theo governance vote.
 
 ### Phí maker/taker bao nhiêu?
 
@@ -76,7 +80,7 @@ Chi tiết: [Cấu trúc fee](../khai-niem/phi.md).
 
 ### Phí cancel limit order?
 
-Không phí protocol. Smart account user → gas paymaster sponsor (hiện free). EOA → trả gas ETH thường.
+Không phí protocol. Gas: smart account có thể được sponsor (nếu đủ điều kiện chương trình), EOA tự trả ETH.
 
 ### Phí redeem khi resolve?
 
@@ -108,7 +112,7 @@ PrediX tích hợp các bridge có TVL hàng tỷ USD: Across, Stargate, LayerZe
 
 Chênh lệch giữa giá preview và giá thực tế khi tx execute. Default tolerance 0.5%.
 
-Vượt slippage → tx **revert**, tiền không mất (EOA tốn gas ETH; smart account hiện được paymaster sponsor).
+Vượt slippage → tx **revert**, tiền không mất (EOA tốn gas ETH; smart account tốn gas qua paymaster — sponsor nếu đủ điều kiện).
 
 ### Trade nhỏ nhất bao nhiêu?
 

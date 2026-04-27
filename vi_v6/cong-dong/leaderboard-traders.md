@@ -90,7 +90,7 @@ sequenceDiagram
 
 - **Lead trader có thể tệ về sau** — past performance không guarantee future.
 - **Slippage gap**: Lead vào lúc giá $0.50, bạn copy 30s sau giá đã $0.55.
-- **Fee accumulation**: Copy nhiều lead nhỏ → mỗi lead 1 tx → fee gas tích luỹ (smart account hiện được paymaster sponsor giảm bớt).
+- **Fee accumulation**: Copy nhiều lead nhỏ → mỗi lead 1 tx → fee gas tích luỹ (smart account user đủ điều kiện sponsor program → giảm đáng kể; còn lại pay normal).
 
 Bắt đầu nhỏ ($50-100) test 1 tuần trước khi scale.
 

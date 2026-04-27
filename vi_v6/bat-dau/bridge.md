@@ -90,7 +90,7 @@ Nếu bạn dùng **crypto wallet (EOA)**, cần ETH Unichain để trả gas:
 
 - Bridge cùng widget: chọn **ETH** thay vì USDC.
 - Số lượng nhỏ thôi — gas Unichain rất rẻ (~$0.001-0.01 / tx).
-- **Passkey + Smart Account user**: bỏ qua bước này, paymaster sponsor gas (chính sách hiện tại).
+- **Passkey + Smart Account user**: vẫn cần gas, nhưng có thể được paymaster sponsor nếu đủ điều kiện chương trình. User không sponsor cũng có thể tự pay qua paymaster bằng USDC.
 
 ## Câu hỏi an toàn
 

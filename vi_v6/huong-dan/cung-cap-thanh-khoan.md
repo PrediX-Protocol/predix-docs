@@ -50,7 +50,7 @@ Fee accrue tự động vào position:
 
 1. Portfolio → **Liquidity** tab.
 2. Position card hiện uncollected fee (USDC + YES).
-3. Click **Collect** → claim về ví. Free phí protocol, gas paymaster sponsor cho smart account user.
+3. Click **Collect** → claim về ví. Free phí protocol. Gas: smart account qua paymaster (sponsor nếu đủ điều kiện), EOA tự trả ETH.
 
 Có thể compound: re-deposit fee vào pool để tăng position.
 
