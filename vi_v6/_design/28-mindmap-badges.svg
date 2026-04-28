@@ -1,55 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="Inter, system-ui, sans-serif">
-  <rect x="0" y="0" width="900" height="500" rx="12" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="900" height="420" rx="12" fill="#ffffff"/>
 
   <style>
     .center { font-size: 18px; font-weight: 700; fill: #1e40af; }
     .l1 { font-size: 14px; font-weight: 600; }
     .l2 { font-size: 11px; font-weight: 500; fill: #334155; }
-    .branch { fill: none; stroke-width: 2.5; stroke-linecap: round; }
-    .twig { fill: none; stroke-width: 1.5; stroke-linecap: round; }
+    .branch { fill: none; stroke-width: 2; stroke-linecap: round; }
+    .twig { fill: none; stroke-width: 1.2; stroke-linecap: round; }
     .leaf { fill: #f1f5f9; stroke: #e2e8f0; stroke-width: 1; }
   </style>
 
-  <!-- Center: edges L=375 R=525 T=210 B=262 -->
-  <rect x="375" y="210" width="150" height="52" rx="26" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
-  <text class="center" x="450" y="242" text-anchor="middle">Badges</text>
+  <!-- Center -->
+  <rect x="375" y="178" width="150" height="48" rx="24" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text class="center" x="450" y="208" text-anchor="middle">Badges</text>
 
   <!-- Volume (left) -->
-  <path class="branch" stroke="#2563eb" d="M375 222 C260 200, 180 170, 130 140"/>
-  <rect x="60" y="116" width="130" height="40" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
-  <text class="l1" fill="#1e40af" x="125" y="141" text-anchor="middle">Volume</text>
-  <path class="twig" stroke="#93c5fd" d="M85 116 Q65 92, 50 76"/>
-  <rect x="4" y="58" width="96" height="26" rx="6" class="leaf"/><text class="l2" x="52" y="76" text-anchor="middle">$1K traded</text>
-  <path class="twig" stroke="#93c5fd" d="M160 116 Q180 92, 200 76"/>
-  <rect x="150" y="58" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="204" y="76" text-anchor="middle">$100K whale</text>
+  <path class="branch" stroke="#2563eb" d="M390 192 C310 175, 240 155, 190 135"/>
+  <rect x="120" y="112" width="130" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="l1" fill="#1e40af" x="185" y="135" text-anchor="middle">Volume</text>
+  <path class="twig" stroke="#93c5fd" d="M145 112 Q125 88, 108 74"/>
+  <rect x="40" y="56" width="96" height="26" rx="6" class="leaf"/><text class="l2" x="88" y="74" text-anchor="middle">$1K traded</text>
+  <path class="twig" stroke="#93c5fd" d="M220 112 Q240 88, 260 74"/>
+  <rect x="210" y="56" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="264" y="74" text-anchor="middle">$100K whale</text>
 
   <!-- Accuracy (top) -->
-  <path class="branch" stroke="#0d9488" d="M450 210 Q450 140, 450 110"/>
-  <rect x="385" y="68" width="130" height="40" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
-  <text class="l1" fill="#134e4a" x="450" y="93" text-anchor="middle">Accuracy</text>
-  <path class="twig" stroke="#5eead4" d="M410 68 Q390 44, 365 30"/>
-  <rect x="300" y="12" width="112" height="26" rx="6" class="leaf"/><text class="l2" x="356" y="30" text-anchor="middle">70%+ win rate</text>
-  <path class="twig" stroke="#5eead4" d="M490 68 Q510 44, 535 30"/>
-  <rect x="490" y="12" width="100" height="26" rx="6" class="leaf"/><text class="l2" x="540" y="30" text-anchor="middle">90%+ oracle</text>
+  <path class="branch" stroke="#0d9488" d="M450 178 Q450 138, 450 118"/>
+  <rect x="385" y="82" width="130" height="36" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text class="l1" fill="#134e4a" x="450" y="105" text-anchor="middle">Accuracy</text>
+  <path class="twig" stroke="#5eead4" d="M410 82 Q390 58, 370 44"/>
+  <rect x="302" y="26" width="112" height="26" rx="6" class="leaf"/><text class="l2" x="358" y="44" text-anchor="middle">70%+ win rate</text>
+  <path class="twig" stroke="#5eead4" d="M490 82 Q510 58, 530 44"/>
+  <rect x="490" y="26" width="100" height="26" rx="6" class="leaf"/><text class="l2" x="540" y="44" text-anchor="middle">90%+ oracle</text>
 
   <!-- Streak (right) -->
-  <path class="branch" stroke="#8b5cf6" d="M525 222 C640 200, 720 170, 770 140"/>
-  <rect x="710" y="116" width="120" height="40" rx="10" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
-  <text class="l1" fill="#5b21b6" x="770" y="141" text-anchor="middle">Streak</text>
-  <path class="twig" stroke="#c4b5fd" d="M735 116 Q715 92, 695 76"/>
-  <rect x="642" y="58" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="696" y="76" text-anchor="middle">7-day active</text>
-  <path class="twig" stroke="#c4b5fd" d="M805 116 Q825 92, 845 76"/>
-  <rect x="792" y="58" width="104" height="26" rx="6" class="leaf"/><text class="l2" x="844" y="76" text-anchor="middle">30-day legend</text>
+  <path class="branch" stroke="#8b5cf6" d="M510 192 C590 175, 660 155, 710 135"/>
+  <rect x="650" y="112" width="120" height="36" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text class="l1" fill="#5b21b6" x="710" y="135" text-anchor="middle">Streak</text>
+  <path class="twig" stroke="#c4b5fd" d="M675 112 Q655 88, 635 74"/>
+  <rect x="578" y="56" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="632" y="74" text-anchor="middle">7-day active</text>
+  <path class="twig" stroke="#c4b5fd" d="M745 112 Q765 88, 785 74"/>
+  <rect x="732" y="56" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="786" y="74" text-anchor="middle">30-day legend</text>
 
   <!-- Special (bottom) -->
-  <path class="branch" stroke="#d97706" d="M450 262 Q450 340, 450 360"/>
-  <rect x="385" y="358" width="130" height="40" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
-  <text class="l1" fill="#92400e" x="450" y="383" text-anchor="middle">Special</text>
-  <path class="twig" stroke="#fbbf24" d="M410 398 Q375 424, 340 440"/>
-  <rect x="284" y="432" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="338" y="450" text-anchor="middle">Beta tester</text>
-  <path class="twig" stroke="#fbbf24" d="M450 398 Q450 424, 450 440"/>
-  <rect x="388" y="432" width="124" height="26" rx="6" class="leaf"/><text class="l2" x="450" y="450" text-anchor="middle">Community hero</text>
-  <path class="twig" stroke="#fbbf24" d="M490 398 Q525 424, 560 440"/>
-  <rect x="510" y="432" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="564" y="450" text-anchor="middle">Event winner</text>
+  <path class="branch" stroke="#d97706" d="M450 226 Q450 270, 450 290"/>
+  <rect x="385" y="286" width="130" height="36" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text class="l1" fill="#92400e" x="450" y="309" text-anchor="middle">Special</text>
+  <path class="twig" stroke="#fbbf24" d="M410 322 Q375 346, 340 358"/>
+  <rect x="280" y="350" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="334" y="368" text-anchor="middle">Beta tester</text>
+  <path class="twig" stroke="#fbbf24" d="M450 322 Q450 346, 450 358"/>
+  <rect x="386" y="350" width="128" height="26" rx="6" class="leaf"/><text class="l2" x="450" y="368" text-anchor="middle">Community hero</text>
+  <path class="twig" stroke="#fbbf24" d="M490 322 Q525 346, 560 358"/>
+  <rect x="512" y="350" width="108" height="26" rx="6" class="leaf"/><text class="l2" x="566" y="368" text-anchor="middle">Event winner</text>
 
 </svg>
