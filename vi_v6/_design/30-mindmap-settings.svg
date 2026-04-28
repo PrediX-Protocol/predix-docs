@@ -15,7 +15,7 @@
   <text class="center" x="450" y="200" text-anchor="middle">Settings</text>
 
   <!-- Profile (top-left) -->
-  <path class="branch" stroke="#2563eb" d="M385 178 C320 155, 260 135, 210 115"/>
+  <path class="branch" stroke="#2563eb" d="M365 178 C320 155, 260 135, 210 115"/>
   <rect x="140" y="92" width="130" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
   <text class="l1" fill="#1e40af" x="205" y="115" text-anchor="middle">Profile</text>
   <path class="twig" stroke="#93c5fd" d="M165 92 Q145 68, 125 54"/>
@@ -24,7 +24,7 @@
   <rect x="244" y="36" width="72" height="26" rx="6" class="leaf"/><text class="l2" x="280" y="54" text-anchor="middle">Avatar</text>
 
   <!-- Trading (top-right) -->
-  <path class="branch" stroke="#0d9488" d="M515 178 C580 155, 640 135, 690 115"/>
+  <path class="branch" stroke="#0d9488" d="M535 178 C580 155, 640 135, 690 115"/>
   <rect x="630" y="92" width="130" height="36" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
   <text class="l1" fill="#134e4a" x="695" y="115" text-anchor="middle">Trading</text>
   <path class="twig" stroke="#5eead4" d="M660 92 Q640 68, 618 54"/>
@@ -33,7 +33,7 @@
   <rect x="726" y="36" width="104" height="26" rx="6" class="leaf"/><text class="l2" x="778" y="54" text-anchor="middle">Gas priority</text>
 
   <!-- Notifications (bottom-left) -->
-  <path class="branch" stroke="#d97706" d="M385 212 C290 245, 190 275, 140 300"/>
+  <path class="branch" stroke="#d97706" d="M365 212 C290 245, 190 275, 140 300"/>
   <rect x="50" y="290" width="160" height="36" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
   <text class="l1" fill="#92400e" x="130" y="313" text-anchor="middle">Notifications</text>
   <path class="twig" stroke="#fbbf24" d="M80 326 Q55 350, 35 364"/>
@@ -53,7 +53,7 @@
   <rect x="510" y="348" width="112" height="26" rx="6" class="leaf"/><text class="l2" x="566" y="366" text-anchor="middle">Testnet toggle</text>
 
   <!-- Privacy (bottom-right) -->
-  <path class="branch" stroke="#dc2626" d="M515 212 C610 245, 710 275, 760 300"/>
+  <path class="branch" stroke="#dc2626" d="M535 212 C610 245, 710 275, 760 300"/>
   <rect x="700" y="290" width="130" height="36" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
   <text class="l1" fill="#991b1b" x="765" y="313" text-anchor="middle">Privacy</text>
   <path class="twig" stroke="#fca5a5" d="M730 326 Q705 350, 680 364"/>

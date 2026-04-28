@@ -14,8 +14,8 @@
   <rect x="360" y="178" width="180" height="48" rx="24" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
   <text class="center" x="450" y="208" text-anchor="middle">PRX Token</text>
 
-  <!-- Allocation (top-left) — closer to center -->
-  <path class="branch" stroke="#2563eb" d="M380 185 C320 160, 260 140, 220 120"/>
+  <!-- Allocation (top-left) — start at left edge of center -->
+  <path class="branch" stroke="#2563eb" d="M360 190 C310 165, 260 140, 220 120"/>
   <rect x="150" y="96" width="140" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
   <text class="l1" fill="#1e40af" x="220" y="119" text-anchor="middle">Allocation</text>
   <path class="twig" stroke="#93c5fd" d="M170 96 Q150 72, 130 58"/>
@@ -27,8 +27,8 @@
   <path class="twig" stroke="#93c5fd" d="M290 108 Q340 88, 380 72"/>
   <rect x="360" y="40" width="96" height="26" rx="6" class="leaf"/><text class="l2" x="408" y="58" text-anchor="middle">Treasury 17%</text>
 
-  <!-- Utility (top-right) — closer to center -->
-  <path class="branch" stroke="#8b5cf6" d="M520 185 C580 160, 640 140, 680 120"/>
+  <!-- Utility (top-right) — start at right edge of center -->
+  <path class="branch" stroke="#8b5cf6" d="M540 190 C590 165, 640 140, 680 120"/>
   <rect x="610" y="96" width="120" height="36" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
   <text class="l1" fill="#5b21b6" x="670" y="119" text-anchor="middle">Utility</text>
   <path class="twig" stroke="#c4b5fd" d="M630 96 Q615 72, 598 58"/>
@@ -38,8 +38,8 @@
   <path class="twig" stroke="#c4b5fd" d="M710 96 Q730 72, 750 58"/>
   <rect x="706" y="40" width="100" height="26" rx="6" class="leaf"/><text class="l2" x="756" y="58" text-anchor="middle">Fee discount</text>
 
-  <!-- Demand sinks (bottom-left) — closer to center -->
-  <path class="branch" stroke="#0d9488" d="M380 220 C320 245, 260 265, 220 285"/>
+  <!-- Demand sinks (bottom-left) — start at left edge bottom -->
+  <path class="branch" stroke="#0d9488" d="M360 216 C310 245, 260 265, 220 285"/>
   <rect x="130" y="278" width="170" height="36" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
   <text class="l1" fill="#134e4a" x="215" y="301" text-anchor="middle">Demand sinks</text>
   <path class="twig" stroke="#5eead4" d="M160 314 Q130 338, 105 352"/>
@@ -49,8 +49,8 @@
   <path class="twig" stroke="#5eead4" d="M270 314 Q300 338, 330 352"/>
   <rect x="282" y="344" width="104" height="26" rx="6" class="leaf"/><text class="l2" x="334" y="362" text-anchor="middle">Gauge voting</text>
 
-  <!-- Governance (bottom-right) — closer to center -->
-  <path class="branch" stroke="#d97706" d="M520 220 C580 245, 640 265, 680 285"/>
+  <!-- Governance (bottom-right) — start at right edge bottom -->
+  <path class="branch" stroke="#d97706" d="M540 216 C590 245, 640 265, 680 285"/>
   <rect x="610" y="278" width="150" height="36" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
   <text class="l1" fill="#92400e" x="685" y="301" text-anchor="middle">Governance</text>
   <path class="twig" stroke="#fbbf24" d="M640 314 Q615 338, 590 352"/>

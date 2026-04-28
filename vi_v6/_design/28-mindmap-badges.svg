@@ -15,7 +15,7 @@
   <text class="center" x="450" y="208" text-anchor="middle">Badges</text>
 
   <!-- Volume (left) -->
-  <path class="branch" stroke="#2563eb" d="M390 192 C310 175, 240 155, 190 135"/>
+  <path class="branch" stroke="#2563eb" d="M375 192 C310 175, 240 155, 190 135"/>
   <rect x="120" y="112" width="130" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
   <text class="l1" fill="#1e40af" x="185" y="135" text-anchor="middle">Volume</text>
   <path class="twig" stroke="#93c5fd" d="M145 112 Q125 88, 108 74"/>
@@ -33,7 +33,7 @@
   <rect x="490" y="26" width="100" height="26" rx="6" class="leaf"/><text class="l2" x="540" y="44" text-anchor="middle">90%+ oracle</text>
 
   <!-- Streak (right) -->
-  <path class="branch" stroke="#8b5cf6" d="M510 192 C590 175, 660 155, 710 135"/>
+  <path class="branch" stroke="#8b5cf6" d="M525 192 C590 175, 660 155, 710 135"/>
   <rect x="650" y="112" width="120" height="36" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
   <text class="l1" fill="#5b21b6" x="710" y="135" text-anchor="middle">Streak</text>
   <path class="twig" stroke="#c4b5fd" d="M675 112 Q655 88, 635 74"/>

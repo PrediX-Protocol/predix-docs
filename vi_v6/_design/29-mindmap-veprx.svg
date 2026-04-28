@@ -15,7 +15,7 @@
   <text class="center" x="450" y="200" text-anchor="middle">vePRX rights</text>
 
   <!-- Gauge (top-left) -->
-  <path class="branch" stroke="#2563eb" d="M370 178 C310 155, 250 135, 200 115"/>
+  <path class="branch" stroke="#2563eb" d="M350 178 C310 155, 250 135, 200 115"/>
   <rect x="130" y="92" width="130" height="36" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
   <text class="l1" fill="#1e40af" x="195" y="115" text-anchor="middle">Gauge</text>
   <path class="twig" stroke="#93c5fd" d="M155 92 Q135 68, 115 54"/>
@@ -24,7 +24,7 @@
   <rect x="224" y="36" width="96" height="26" rx="6" class="leaf"/><text class="l2" x="272" y="54" text-anchor="middle">Earn bribes</text>
 
   <!-- Params (top-right) -->
-  <path class="branch" stroke="#0d9488" d="M530 178 C590 155, 650 135, 700 115"/>
+  <path class="branch" stroke="#0d9488" d="M550 178 C590 155, 650 135, 700 115"/>
   <rect x="640" y="92" width="130" height="36" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
   <text class="l1" fill="#134e4a" x="705" y="115" text-anchor="middle">Params</text>
   <path class="twig" stroke="#5eead4" d="M670 92 Q650 68, 630 54"/>
@@ -33,7 +33,7 @@
   <rect x="738" y="36" width="80" height="26" rx="6" class="leaf"/><text class="l2" x="778" y="54" text-anchor="middle">Burn rate</text>
 
   <!-- Treasury (bottom-left) -->
-  <path class="branch" stroke="#d97706" d="M370 212 C290 245, 200 270, 150 290"/>
+  <path class="branch" stroke="#d97706" d="M350 212 C290 245, 200 270, 150 290"/>
   <rect x="70" y="282" width="140" height="36" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
   <text class="l1" fill="#92400e" x="140" y="305" text-anchor="middle">Treasury</text>
   <path class="twig" stroke="#fbbf24" d="M95 318 Q70 342, 50 356"/>
@@ -51,7 +51,7 @@
   <rect x="498" y="340" width="120" height="26" rx="6" class="leaf"/><text class="l2" x="558" y="358" text-anchor="middle">Milestone gates</text>
 
   <!-- Emergency (bottom-right) -->
-  <path class="branch" stroke="#8b5cf6" d="M530 212 C610 245, 700 270, 750 290"/>
+  <path class="branch" stroke="#8b5cf6" d="M550 212 C610 245, 700 270, 750 290"/>
   <rect x="680" y="282" width="140" height="36" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
   <text class="l1" fill="#5b21b6" x="750" y="305" text-anchor="middle">Emergency</text>
   <path class="twig" stroke="#c4b5fd" d="M710 318 Q685 342, 660 356"/>
