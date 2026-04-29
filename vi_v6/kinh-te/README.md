@@ -10,6 +10,8 @@ PRX là token quản trị + revenue share của PrediX. Hard cap **1 tỷ**, kh
 - **Lock vePRX** → vote gauge, boost LP rewards 1.5-2.5×, protocol params governance
 - **Market creation bond** → lock PRX để tạo permissionless market (Phase 2)
 - **Oracle dispute** → lock PRX để challenge resolution sai
+- **Collateral yield** → vePRX holder share yield từ idle USDC trong protocol (Phase 2)
+- **Perp Prediction margin** → PRX làm margin cho perpetual prediction markets (Phase 3)
 
 ## TGE — conditions-based
 

@@ -39,7 +39,7 @@ Total supply: **1,000,000,000 PRX** (1B). Hard cap, không mint thêm sau TGE.
 | S1 Genesis | 86M | M1-M6 | Mainnet launch · Points → PRX at TGE |
 | S2 Growth | 60M | M7-M12 | Fee ON · TGE · staking rewards |
 | S3 Scale | 43M | M13-M18 | Multi-chain · market creation |
-| S4 Mature | 30M | M19-M24 | DAO governance · institutional |
+| S4 Mature | 30M | M19-M24 | Perp Prediction · Institutional API · DAO |
 | S5 Expand | 21M | Y3 H1 | Regional expansion |
 | S6+ Reserve | 60M | Y3+ | DAO-locked (emergency / partnership) |
 
