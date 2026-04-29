@@ -16,6 +16,8 @@ Trade lần đầu trên PrediX trong dưới 2 phút.
 2. **[Bridge USDC](bridge.md)** — Nếu USDC của bạn đang ở chain khác, bridge sang Unichain trước.
 3. **[Trade lần đầu](giao-dich-dau-tien.md)** — Buy YES hoặc NO trong 30 giây.
 
+**Earn PRX ngay**: Mọi action trên PrediX earn [Points](points.md) — convert thành PRX token tại TGE. FIFA WC boost 2.5-3× trong M5-M6.
+
 Theo dõi vị thế realtime ở [Portfolio](../huong-dan/portfolio.md).
 
 ## Hỏi nhanh

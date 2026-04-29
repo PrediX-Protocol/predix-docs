@@ -8,6 +8,7 @@
 * [Kết nối ví](bat-dau/ket-noi-vi.md)
 * [Bridge sang Unichain](bat-dau/bridge.md)
 * [Trade lần đầu](bat-dau/giao-dich-dau-tien.md)
+* [Points — cách earn PRX](bat-dau/points.md)
 * [FAQ](bat-dau/faq.md)
 
 ## Khái niệm
