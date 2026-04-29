@@ -17,6 +17,10 @@ Data flow **một chiều**: SC emit events → Indexer sync → BE serialize �
 5. **Fail-loud** — không silent fallback. Bất biến sai → revert / throw.
 6. **Upgrade qua timelock 48h** — không emergency bypass.
 
+## 4 trụ cột kỹ thuật
+
+![Protocol features: 1. Smart Router aggregates CLOB + AMM liquidity. 2. Dynamic AMM fees 0.5→5% near expiry. 3. Pluggable oracles (Chainlink, UMA, Manual). 4. Zero gas on failed tx (Unichain)](../_design/protocol-features.png)
+
 ## Đọc theo thứ tự
 
 1. [Architecture & contracts](architecture.md) — packages, Diamond + facets, Hook, Exchange, Router, Paymaster, deployed addresses (testnet + mainnet)

@@ -11,6 +11,8 @@ Prediction market on-chain trên Unichain. Mỗi sự kiện có hai outcome tok
 | Sự kiện **xảy ra** | Nhận `$1 USDC / token` | `$0` (mất hết) |
 | Sự kiện **không xảy ra** | `$0` (mất hết) | Nhận `$1 USDC / token` |
 
+![PrediX — On-chain prediction market trên Unichain. Users predict YES/NO, trade shares, earn rewards. Transparent, tamper-proof, immutable.](_design/hero-overview.png)
+
 ---
 
 ## Đọc gì trước
