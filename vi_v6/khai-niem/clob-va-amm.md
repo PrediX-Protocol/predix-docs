@@ -24,7 +24,7 @@ Contract: `PrediXExchange`.
 
 - **Tick size**: 99 mức giá $0.01, $0.02, …, $0.99. Lưu trên bitmap nén.
 - **Limit order**: User chọn side (BUY_YES / SELL_YES / BUY_NO / SELL_NO), price, amount. Deposit token hoặc USDC bị lock tới khi khớp hoặc cancel.
-- **Maker free, taker 0-1%** dynamic.
+- **Maker** đặt limit order chờ khớp. **Taker** ăn lệnh thị trường.
 
 ### 3 match type
 
@@ -44,25 +44,12 @@ Mỗi market có 1-2 v4 pool: YES-USDC và optional NO-USDC.
 
 | Callback | Chức năng |
 |---|---|
-| `beforeSwap` | Apply dynamic fee + verify anti-sandwich identity (Router phải commit identity trước, Hook check qua transient storage EIP-1153) |
+| `beforeSwap` | Verify anti-sandwich identity (Router phải commit identity trước, Hook check qua transient storage EIP-1153) |
 | `beforeAddLiquidity` | Chặn add LP nếu market resolved / refunded |
 | `beforeRemoveLiquidity` | Track pool registration |
 | `beforeDonate` | Chặn donate sau endTime (chống brute-force payout attack) |
 
 Hook **không giữ tiền user dài hạn**. LP nhận LP token theo chuẩn v4 PositionManager. Chi tiết LP flow: [Cung cấp liquidity](../huong-dan/cung-cap-thanh-khoan.md).
-
-## Dynamic fee — tăng theo time-to-end
-
-| Thời gian tới endTime | Phí AMM | Phí CLOB taker |
-|---|---|---|
-| > 7 ngày | 0.5% | 0% (bootstrap window) |
-| 3-7 ngày | 1.0% | 0.5% |
-| 1-3 ngày | 2.0% | 0.75% |
-| < 24 giờ | 5.0% | 1.0% |
-
-**Tại sao**: gần endTime, người có inside info trade nhiều hơn (toxic flow). LP cần spread rộng hơn để không lỗ. Fee cao = LP an tâm cung cấp liquidity tới phút cuối.
-
-Chi tiết: [Cấu trúc fee](phi.md).
 
 ## Khi nào Router prefer CLOB hơn AMM
 

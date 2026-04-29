@@ -37,7 +37,7 @@ Mỗi ngày có 3 challenges random:
 | Place 1 limit order | 50 Points |
 | Hold position ít nhất 4 giờ | 75 Points |
 | Try 3 markets khác nhau | 100 Points |
-| Refer 1 bạn (Phase 1 Points / Phase 2 fee) | xem [Points & seasons](points-seasons.md#2-phase-referral-program) |
+| Refer 1 bạn | xem [Points & seasons](points-seasons.md#2-phase-referral-program) |
 
 Reset 00:00 UTC mỗi ngày.
 

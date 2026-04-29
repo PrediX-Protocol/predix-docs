@@ -13,7 +13,7 @@ PrediX defense-in-depth. Không "magic" — nhiều lớp, mỗi lớp 1 việc 
 | INV-1 | Collateral solvency | `YES.totalSupply == NO.totalSupply == market.totalCollateral` | Diamond mint/burn atomic |
 | INV-2 | Exchange solvency | `Σ order.depositLocked == USDC.balanceOf(exchange) + Σ token.balanceOf(exchange)` | Exchange invariant test fuzz |
 | INV-3 | Router non-custody | `balanceOf(router) == 0` sau mỗi public call | Router `FinalizeBalanceNonZero` revert |
-| INV-4 | Redemption fee bound | `effectiveRedemptionFeeBps ≤ 1500` (15% cap) | MarketFacet require |
+| INV-4 | Redemption fee bound | Redemption fee capped on-chain | MarketFacet require |
 | INV-5 | Hook identity commit | `beforeSwap` require identity commit via EIP-1153 | Hook verify transient storage |
 | INV-6 | Resolution monotonicity | `isResolved` set 1 lần, không revert | MarketFacet require |
 | INV-7 | Outcome token supply | Chỉ Diamond mint/burn outcome token | OutcomeToken `onlyFactory` |
@@ -83,7 +83,7 @@ Range theo severity:
 | Severity | Reward USDC | Ví dụ |
 |---|---|---|
 | **Critical** | $50k - $500k | Drain funds, break INV-1 solvency |
-| **High** | $10k - $50k | Bypass timelock, retroactive fee |
+| **High** | $10k - $50k | Bypass timelock, unauthorized state change |
 | **Medium** | $1k - $10k | DoS, griefing |
 | **Low** | $100 - $1k | Event mismatched, minor UI |
 
@@ -140,8 +140,8 @@ Good-faith researcher có safe harbor — không bị kiện pháp lý nếu:
 ## Insurance fund (Phase 2 — TBA)
 
 Top-up từ:
-- 5% staker yield.
-- 5% treasury budget.
+- Phần trăm protocol revenue (TBA).
+- Treasury budget.
 
 Coverage:
 - Partial reimbursement nếu contract exploit.

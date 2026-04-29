@@ -6,7 +6,7 @@ Cung cấp liquidity vào AMM pool của một market. Earn fee từ mỗi swap 
 
 - Pool YES-USDC (và optional NO-USDC) là pool Uniswap v4 chuẩn.
 - Bạn deposit cặp token vào range giá nhất định → nhận **LP NFT** (Uniswap v4 PositionManager).
-- Mỗi swap qua pool, một phần fee (xem [Fee structure](../khai-niem/phi.md)) chia về cho bạn pro-rata theo share.
+- Mỗi swap qua pool, bạn earn phí từ swap pro-rata theo share.
 - Có thể remove liquidity bất cứ lúc nào (trừ sau khi market resolve, pool đóng).
 
 ## Risk vs reward

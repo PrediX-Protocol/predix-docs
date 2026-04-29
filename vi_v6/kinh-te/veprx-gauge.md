@@ -32,11 +32,11 @@ Decay tuyến tính theo block. Không step.
 
 ## Quyền vePRX
 
-![vePRX rights: Gauge (direct subsidy, earn bribes), Params (fee tiers, burn rate), Treasury (spending votes, grants), Phase (transition vote, milestone gates), Emergency (pause, refund)](../_design/29-mindmap-veprx.svg)
+![vePRX rights: Gauge (direct subsidy, earn bribes), Params (protocol params, burn rate), Treasury (spending votes, grants), Phase (transition vote, milestone gates), Emergency (pause, refund)](../_design/29-mindmap-veprx.svg)
 
 ## Gauge voting — flywheel
 
-Mỗi market có **gauge**. vePRX holder vote gauge nào nhận LP subsidy từ treasury (20% fee budget).
+Mỗi market có **gauge**. vePRX holder vote gauge nào nhận LP subsidy từ treasury.
 
 ![Gauge flywheel loop: lock PRX → vePRX → vote gauge → treasury LP subsidy → LP earn more → pool depth ↑ → trader happy → volume ↑ → fee ↑ → yield ↑ → demand PRX → lock more](../_design/58-gauge-flywheel.svg)
 
@@ -81,15 +81,12 @@ vePRX vote thay đổi:
 
 | Param | Default | Range |
 |---|---|---|
-| AMM fee tier weights | 0.5/1/2/5% | Adjustable, cap 10% |
-| CLOB taker fee | 0-1% | Cap 1% |
-| Redemption fee default | 0% | Cap 15% (INV-4 hard) |
 | Oracle approve list | … | Add/remove adapter |
 | Market creation bond | TBA | 1k-100k PRX |
 | Stake unstake cooldown | 7 ngày | 1-30 ngày |
 | Buyback frequency | Weekly | Daily-Monthly |
 | **Phase transition** | Bootstrap @ TGE | Bootstrap → Scale → Mature → Dominance |
-| **Adaptive fee split** | Per-phase preset | DAO-adjustable trong constraint |
+| **Revenue split** | Per-phase preset | DAO-adjustable |
 
 ### Phase transition + S6 Reserve
 
@@ -136,7 +133,7 @@ Giảm whale dominance. Chỉ apply cho proposal > $100k spend.
 | Phase | Feature |
 |---|---|
 | **TGE** | Lock PRX → vePRX. Gauge vote basic. |
-| **TGE + 3m** | Fee boost tier kích hoạt. |
+| **TGE + 3m** | Yield boost tier kích hoạt. |
 | **TGE + 6m** | Bribe market Phase 1. |
 | **TGE + 12m** | Protocol params vote. |
 | **TGE + 18m** | Treasury spend governance. |

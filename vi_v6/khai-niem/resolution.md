@@ -12,7 +12,7 @@ Một market cần nguồn *sự thật* để quyết định YES hay NO thắn
 | **Trading** | User split / merge / trade tới `endTime` |
 | **EndTime** | Trading đóng (hook chặn add liquidity + swap). Oracle window mở |
 | **Resolved** | Oracle gọi `resolveMarket()` với outcome |
-| **Redemption** | User giữ token đúng → redeem 1:1 USDC trừ fee |
+| **Redemption** | User giữ token đúng → redeem USDC |
 | **RefundMode** | Fallback nếu oracle không resolve được (oracle down, dispute hung) |
 | **Refunded** | User burn cặp YES+NO → nhận USDC pro-rata |
 

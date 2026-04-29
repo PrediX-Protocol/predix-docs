@@ -1,6 +1,6 @@
 # Limit order (CLOB)
 
-Đặt giá chờ khớp trên on-chain order book. Bạn là **maker** — fee 0%, có price improvement.
+Đặt giá chờ khớp trên on-chain order book. Bạn là **maker** — có price improvement.
 
 ## Khi nào dùng
 
@@ -104,7 +104,7 @@ Lệnh có thể fill từng phần:
 
 ## Maker vs taker — vì sao maker được giá tốt hơn
 
-Khi match complementary, taker trả fee, maker không. Nếu lệnh của bạn match ngay trong cùng block với taker đặt ngược phía:
+Nếu lệnh của bạn match ngay trong cùng block với taker đặt ngược phía:
 
 - Taker ăn đúng giá bạn đặt, không phải mid.
 - Bạn (maker) hưởng **price improvement** — giá tốt hơn AMM spot.

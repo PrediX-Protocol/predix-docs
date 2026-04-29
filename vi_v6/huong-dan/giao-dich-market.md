@@ -20,7 +20,6 @@ Muốn chờ giá → [Limit order](dat-lenh-limit.md).
    - YES nhận được (estimate)
    - Average price
    - Slippage thực tế
-   - Fee breakdown (CLOB / AMM, mỗi cái %)
    - Tỷ lệ split CLOB / AMM
 6. Click **Buy** → ví confirm (Touch ID nếu passkey, popup MetaMask nếu EOA).
 7. Chờ ~2 giây. Tx xuất hiện trong [Portfolio](portfolio.md) → History.
@@ -55,24 +54,6 @@ Slippage = chênh lệch giá preview vs giá thực tế khi tx execute.
 - **> 5%**: Hiếm khi nên — Router cảnh báo.
 
 Vượt slippage → tx **revert**, tiền không mất (chỉ tốn gas — sponsor cover nếu user đủ điều kiện chương trình, không phụ thuộc account type).
-
-## Fee bạn trả
-
-Hiển thị breakdown trên preview:
-
-```
-AMM swap fee:    0.50 USDC  (0.5% vì market còn > 7 ngày)
-CLOB taker fee:  0.00 USDC  (0% bootstrap window)
-Gas:             ~$0.005    (sponsored nếu user đủ điều kiện chương trình)
-─────────────────────────
-Tổng chi:        100.005 USDC (đã bao gồm fee + gas)
-Nhận:            ~205 YES
-```
-
-> User đủ điều kiện sponsor program → "Gas: $0 (sponsored)" trên preview, áp dụng cả 2 account types.
-> Còn lại: gas hiển thị bằng ETH (~$0.001-0.01) hoặc qua paymaster, trả từ balance.
-
-Chi tiết fee structure: [Cấu trúc fee](../khai-niem/phi.md).
 
 ## Split / merge shortcut
 

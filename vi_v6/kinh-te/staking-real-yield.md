@@ -1,25 +1,22 @@
 # Staking real yield
 
-Lock PRX → nhận share **20-35% phí protocol** (adaptive theo growth phase) dạng **USDC thật**. Không emission.
-
-> **Adaptive split**: staker share thay đổi theo phase — Bootstrap 20% · Scale 30% · Mature 35% · Dominance 30%. Detail: [Buyback-burn §Adaptive split](buyback-burn.md#adaptive-4-phase-split).
+Lock PRX → nhận share phí protocol dạng **USDC thật**. Không emission.
 
 ## Cơ chế
 
-![Staking: deposit PRX → mint stkPRX (non-transferable) → mỗi week protocol distribute adaptive% fee USDC pro-rata → claim USDC](../_design/07-staking-flow.svg)
+![Staking: deposit PRX → mint stkPRX (non-transferable) → mỗi week protocol distribute share phí USDC pro-rata → claim USDC](../_design/07-staking-flow.svg)
 
 1. Deposit N PRX vào `StakingVault`.
 2. Vault mint N **stkPRX** (non-transferable) cho bạn — claim share fee.
-3. Mỗi week (epoch), protocol collect **adaptive % fee USDC** (20-35% per growth phase) từ AMM + CLOB + redemption + creation → distribute vault pro-rata.
+3. Mỗi week (epoch), protocol collect share phí USDC → distribute vault pro-rata.
 4. Claim USDC bất cứ lúc nào, hoặc auto-compound (convert PRX rồi re-stake).
 5. Unstake: cooldown 7 ngày (chống front-run khi event lớn).
 
 ## Tính yield
 
 ```
-staker_share = phase_pct × total_fees_USDC_weekly  (phase_pct = 20-35%)
-your_yield   = staker_share × (your_stake / total_staked)
-APY_USDC     = (weekly_yield × 52) / your_stake_USD_value
+your_yield = staker_share × (your_stake / total_staked)
+APY_USDC   = (weekly_yield × 52) / your_stake_USD_value
 ```
 
 Yield float theo volume thật. Volume tăng → yield tăng. Volume giảm → yield giảm.
@@ -39,22 +36,9 @@ Lock PRX để nhận **boost yield + governance weight**:
 | 24 tháng | 2.0× | 2.0× |
 | 48 tháng (max) | 2.5× | 4.0× |
 
-Boost từ treasury (20% phí). Lock càng lâu = yield USDC + governance power càng cao.
+Lock càng lâu = yield USDC + governance power càng cao.
 
 Chi tiết governance: [vePRX & gauge](veprx-gauge.md).
-
-## Fee discount cho staker
-
-Stake ≥ ngưỡng → giảm fee giao dịch:
-
-| Stake threshold | CLOB taker discount | AMM discount |
-|---|---|---|
-| 1,000 PRX | 10% | 0% |
-| 10,000 PRX | 25% | 10% |
-| 100,000 PRX | 50% | 25% |
-| 1,000,000 PRX | 50% (cap) | 50% (cap) |
-
-Discount active ngay khi stake, apply tự động trong mỗi tx.
 
 ## Rủi ro staker
 

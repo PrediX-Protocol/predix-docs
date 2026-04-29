@@ -34,7 +34,7 @@ Single proxy `PrediX Diamond` với 6 facet. Mỗi facet upgrade được riêng
 | `beforeInitialize` | Set permission flag + init pool state |
 | `beforeAddLiquidity` | Chặn add LP nếu market resolved / refunded |
 | `beforeRemoveLiquidity` | Track pool registration (hookPoolBinding) |
-| `beforeSwap` | Apply dynamic fee + verify anti-sandwich identity (EIP-1153 transient storage) |
+| `beforeSwap` | Verify anti-sandwich identity (EIP-1153 transient storage) |
 | `afterSwap` | No-op |
 | `beforeDonate` | Chặn donate sau endTime (chống brute-force payout attack) |
 
@@ -117,7 +117,7 @@ sellNo(...)
 
 - Owner = Gnosis Safe 2-of-3 (mainnet).
 - Signer off-chain (BE) ký verify UserOp eligibility.
-- Policy: sponsor cho user đủ điều kiện chương trình (xem [Cấu trúc fee](../khai-niem/phi.md#gas)).
+- Policy: sponsor cho user đủ điều kiện chương trình.
 
 ## Quality gates
 

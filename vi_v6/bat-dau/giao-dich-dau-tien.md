@@ -13,7 +13,7 @@ Mua YES hoặc NO trên một market. ~30 giây từ click đến confirm.
    - Amount YES / NO nhận được
    - Average price
    - Slippage estimate
-   - Fee breakdown (CLOB taker / AMM swap)
+   - Tỷ lệ split CLOB / AMM
 7. Click **Buy** → ví request confirm (Touch ID nếu passkey, popup MetaMask nếu EOA).
 8. Tx confirm trong ~2 giây trên Unichain. Vị thế xuất hiện ở [Portfolio](../huong-dan/portfolio.md).
 
@@ -25,12 +25,12 @@ Tất cả 1 tx atomic. Slippage > tolerance → revert, tiền không mất.
 
 ## Loại lệnh
 
-| Loại | Khi nào dùng | Phí |
-|---|---|---|
-| **Market** (instant) | Vào ngay theo giá hiện tại | Dynamic 0.5-5% AMM, 0-1% CLOB taker tuỳ thời gian endTime |
-| **Limit** (CLOB) | Đặt giá chờ khớp | 0% maker, 0-1% taker |
-| **Split** | Mint cặp YES+NO từ USDC để market-make | Free |
-| **Merge** | Burn cặp YES+NO lấy USDC | Free |
+| Loại | Khi nào dùng |
+|---|---|
+| **Market** (instant) | Vào ngay theo giá hiện tại |
+| **Limit** (CLOB) | Đặt giá chờ khớp |
+| **Split** | Mint cặp YES+NO từ USDC để market-make |
+| **Merge** | Burn cặp YES+NO lấy USDC |
 
 Chi tiết: [Market order](../huong-dan/giao-dich-market.md), [Limit order](../huong-dan/dat-lenh-limit.md).
 
@@ -40,15 +40,15 @@ Market: *"BTC vượt $100k trước 2027-01-01?"*. Giá YES hiện = $0.48.
 
 Bạn chi 100 USDC mua YES:
 
-| Path | Amount in | Avg price | YES out | Fee |
-|---|---|---|---|---|
-| CLOB (limit orders sẵn) | 40 USDC | $0.480 | 83.3 YES | 0% (bootstrap) |
-| AMM swap | 60 USDC | $0.485 | 122.7 YES | 0.6 USDC (1% tier 3-7d) |
-| **Tổng** | **100 USDC** | **$0.483** | **~205 YES** | **~0.6 USDC** |
+| Path | Amount in | Avg price | YES out |
+|---|---|---|---|
+| CLOB (limit orders sẵn) | 40 USDC | $0.480 | 83.3 YES |
+| AMM swap | 60 USDC | $0.485 | 122.7 YES |
+| **Tổng** | **100 USDC** | **$0.483** | **~205 YES** |
 
 Nếu BTC vượt $100k trước deadline:
 - Market resolve YES = true.
-- Bạn redeem 205 YES → nhận `205 × (1 - feeBps/10000)` USDC. Với fee 1%: **202.95 USDC**. Lợi nhuận ~103 USDC.
+- Bạn redeem 205 YES → nhận USDC. Lợi nhuận > 100 USDC.
 
 Nếu không xảy ra:
 - YES tokens = $0. Lỗ 100 USDC.

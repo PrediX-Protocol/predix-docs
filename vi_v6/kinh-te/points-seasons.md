@@ -46,14 +46,9 @@ S2-S6 pools separate — unspent S1 không carry over.
 
 Ongoing: referrer earn **10% of referred user's Points**.
 
-**Phase 2 (M7+, fee ON)**: Fee commission.
+**Phase 2 (M7+, fee ON)**: Referral commission từ phí protocol. Tỷ lệ cụ thể sẽ công bố pre-launch.
 
-| Tier | Commission | Eligibility |
-|---|---|---|
-| Standard user | 10% gross fees | ≥$500 volume |
-| Partner | Custom | Liên hệ [business@predix.app](mailto:business@predix.app) |
-
-Transition M6 → M7: same referral link, old refs auto-migrate, earn fee commission từ tất cả refs cũ.
+Transition M6 → M7: same referral link, old refs auto-migrate.
 
 ## Anti-gaming
 

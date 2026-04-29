@@ -8,24 +8,8 @@ PRX là token quản trị + revenue share của PrediX. Hard cap **1 tỷ**, kh
 
 - **Stake** → nhận share phí protocol bằng USDC (real yield, không emission)
 - **Lock vePRX** → vote gauge, boost LP rewards 1.5-2.5×, protocol params governance
-- **Fee discount** → stake threshold cho giảm 20-50% phí giao dịch
 - **Market creation bond** → lock PRX để tạo permissionless market (Phase 2)
 - **Oracle dispute** → lock PRX để challenge resolution sai
-
-## Fee distribution — adaptive
-
-Phí thu từ AMM + CLOB + redemption → chia theo growth phase:
-
-![PRX token: Allocation (Community 30%, Investors 20%, Team 18%, Treasury 17%), Utility (stake yield, vePRX vote, fee discount), Demand sinks (buyback, veToken lock, gauge), Governance (protocol params, treasury spend)](../_design/26-mindmap-prx-token.svg)
-
-| Phase | Treasury | Staker | Buyback-burn | Insurance |
-|---|---|---|---|---|
-| Bootstrap | 60% | 20% | 15% | 5% |
-| Scale | 25% | 30% | 40% | 5% |
-| Mature | 20% | 35% | 40% | 5% |
-| Dominance | 15% | 30% | 50% | 5% |
-
-Phase transition qua DAO vote. Detail: [Buyback-burn](buyback-burn.md).
 
 ## TGE — conditions-based
 
@@ -43,8 +27,8 @@ PrediX dùng conditions-based TGE (không time-based):
 | Topic | Page |
 |---|---|
 | Allocation, vesting, TGE circulating | [Allocation & vesting](allocation-vesting.md) |
-| Staking USDC yield, fee discount, lock boost | [Staking real yield](staking-real-yield.md) |
+| Staking USDC yield, lock boost | [Staking real yield](staking-real-yield.md) |
 | Lock → vePRX → vote → gauge → bribe | [vePRX & gauge](veprx-gauge.md) |
-| Buyback-burn adaptive, treasury | [Buyback-burn](buyback-burn.md) |
+| Buyback-burn, treasury | [Buyback-burn](buyback-burn.md) |
 | 6-season Points, referral program | [Points & seasons](points-seasons.md) |
 | Badge, streak, daily challenge | [Rewards](rewards.md) |

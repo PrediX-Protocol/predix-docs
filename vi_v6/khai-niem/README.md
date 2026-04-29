@@ -2,7 +2,7 @@
 
 Hiểu PrediX hoạt động ra sao. Đọc theo thứ tự nếu mới, hoặc nhảy tới mục cần.
 
-![Core concepts: Market (binary, time-bounded), Token (ERC-20 YES/NO, 6 decimals), Trading (CLOB+AMM, single-tx), Resolution (oracle-driven, dispute), Fee (dynamic, adaptive 4-phase)](../_design/27-mindmap-concepts.svg)
+![Core concepts: Market (binary, time-bounded), Token (ERC-20 YES/NO, 6 decimals), Trading (CLOB+AMM, single-tx), Resolution (oracle-driven, dispute)](../_design/27-mindmap-concepts.svg)
 
 ## Đọc theo thứ tự
 
@@ -10,7 +10,6 @@ Hiểu PrediX hoạt động ra sao. Đọc theo thứ tự nếu mới, hoặc 
 - [Outcome token](outcome-tokens.md) — YES/NO, split/merge, bất biến $1
 - [CLOB + AMM hybrid](clob-va-amm.md) — Order book on-chain + Uniswap v4 pool
 - [Resolution & oracle](resolution.md) — Ai quyết định kết quả
-- [Cấu trúc fee](phi.md) — AMM, CLOB, redemption, distribution
 
 Cần tutorial từng bước (click chỗ nào, nhập gì) → [Hướng dẫn](../huong-dan/README.md).
 

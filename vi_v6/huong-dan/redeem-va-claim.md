@@ -12,7 +12,7 @@ Sau market resolve, đổi token thắng thành USDC. Nếu market không resolv
 
 1. [Portfolio](portfolio.md) → filter **Resolved markets**.
 2. Mỗi market có nút **Redeem** nếu bạn có token thắng.
-3. Click → preview: số token, redemption fee, USDC nhận.
+3. Click → preview: số token, USDC nhận.
 4. Confirm ví → ~2s tx complete.
 5. USDC vào ví. Token thắng burn, token thua = $0.
 
@@ -21,21 +21,6 @@ Sau market resolve, đổi token thắng thành USDC. Nếu market không resolv
 Nhiều market đã resolve → nút **Claim All** → batch qua **passkey smart account** (1 click, 1 tx, gas qua paymaster). EOA user: từng market 1 tx riêng (Wallet không hỗ trợ batch native). Cả 2 account types đều được sponsor cover nếu user đủ điều kiện chương trình.
 
 ![Batch claim: Click Claim All → smart account bundle redeem(m1...mN) → 1 UserOp → Diamond burn tokens + transfer USDC tổng](../_design/16-claim-batch.svg)
-
-### Công thức
-
-```
-payout = winningAmount × (10000 - redemptionFeeBps) / 10000
-fee    = winningAmount - payout
-```
-
-Ví dụ: 205 YES đúng, fee 1% (100 bps):
-```
-payout = 205 × 9900 / 10000 = 202.95 USDC
-fee    = 205 - 202.95       =   2.05 USDC
-```
-
-`redemptionFeeBps` snapshot tại creation, không đổi retroactively. Default 0% cho hầu hết market.
 
 ### Token thua
 

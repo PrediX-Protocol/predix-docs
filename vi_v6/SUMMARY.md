@@ -17,7 +17,6 @@
 * [Outcome token (YES/NO)](khai-niem/outcome-tokens.md)
 * [CLOB + AMM hybrid](khai-niem/clob-va-amm.md)
 * [Resolution & oracle](khai-niem/resolution.md)
-* [Cấu trúc fee](khai-niem/phi.md)
 
 ## Hướng dẫn
 

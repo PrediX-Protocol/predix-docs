@@ -70,22 +70,6 @@ Mặc định **cả 2 phương pháp user đều tự trả gas**. PrediX có *
 
 Tiêu chí + duration của sponsor program công bố pre-launch và có thể thay đổi theo governance vote.
 
-### Phí maker/taker bao nhiêu?
-
-- **Maker** (đặt limit order chờ khớp): **0%** luôn.
-- **Taker** (ăn lệnh thị trường qua CLOB): 0-1% dynamic theo thời gian tới endTime.
-- **AMM swap**: 0.5-5% dynamic. Gần endTime fee cao hơn để bảo vệ LP khỏi toxic flow.
-
-Chi tiết: [Cấu trúc fee](../khai-niem/phi.md).
-
-### Phí cancel limit order?
-
-Không phí protocol. Gas mặc định user trả; nếu đủ điều kiện sponsor program, PrediX cover (áp dụng cả 2 account types).
-
-### Phí redeem khi resolve?
-
-0-1.5% (cap on-chain 15%). Snapshot tại creation của market — admin tăng fee không apply cho market đã có. Default thường 0%.
-
 ## Funding
 
 ### Nạp USDC từ Binance / Coinbase được không? {#nap-tu-cex}
@@ -179,7 +163,7 @@ TBA. Theo dõi [Discord / Twitter chính thức](../tai-nguyen/links.md) cho ann
 
 ### Stake PRX để làm gì?
 
-Nhận share phí protocol bằng **USDC thật** (adaptive 20-35% theo growth phase), vote governance, fee discount. Chi tiết: [Staking real yield](../kinh-te/staking-real-yield.md).
+Nhận share phí protocol bằng **USDC thật**, vote governance. Chi tiết: [Staking real yield](../kinh-te/staking-real-yield.md).
 
 ### vePRX khác stkPRX thế nào?
 

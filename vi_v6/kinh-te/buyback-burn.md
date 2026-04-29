@@ -1,6 +1,6 @@
 # Buyback-burn & treasury
 
-PrediX mua PRX từ thị trường bằng phí protocol + burn vĩnh viễn. % buyback adaptive theo growth phase (15% bootstrap → 50% dominance).
+PrediX mua PRX từ thị trường bằng phí protocol + burn vĩnh viễn.
 
 ## Cơ chế
 
@@ -8,26 +8,13 @@ PrediX mua PRX từ thị trường bằng phí protocol + burn vĩnh viễn. % 
 
 Event `BuybackExecuted(usdcSpent, prxBurned)` emit on-chain. Burn không reversible.
 
-## Adaptive fee split
-
-% phân bổ thay đổi theo phase — bootstrap ưu tiên treasury runway, mature shift sang buyback dominant:
-
-| Phase | Treasury | Staker | Buyback | Insurance |
-|---|---|---|---|---|
-| **Bootstrap** | 60% | 20% | 15% | 5% |
-| **Scale** | 25% | 30% | 40% | 5% |
-| **Mature** | 20% | 35% | 40% | 5% |
-| **Dominance** | 15% | 30% | 50% | 5% |
-
-Phase transition qua **DAO vote** (vePRX governance).
-
 ## Net deflationary
 
 PRX trở nên **net deflationary** khi burn/năm > emission/năm. Emission ≈ 0 sau 4 năm vest xong → post-Y4 net deflationary nếu volume duy trì.
 
-## Insurance fund — 5%
+## Insurance fund
 
-5% protocol revenue → insurance treasury trên **mọi phase**. Coverage: partial reimbursement nếu contract exploit. Payout chỉ qua DAO vote, không auto.
+Một phần protocol revenue → insurance treasury. Coverage: partial reimbursement nếu contract exploit. Payout chỉ qua DAO vote, không auto.
 
 ## Treasury
 

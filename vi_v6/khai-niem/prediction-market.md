@@ -34,7 +34,7 @@ Payout matrix khi market resolve:
 | Lưu ký tiền | House giữ (custodial) | Non-custodial, on-chain |
 | Có thể sell trước resolve | Khó / không | Có — bán lại token bất cứ lúc nào |
 | Audit được | Không | Có — explorer on-chain |
-| Phí | Bao trong odds (5-15%) | Transparent fee (0.5-5% AMM, 0-1% CLOB) |
+| Phí | Bao trong odds (ẩn) | Transparent, hiển thị trước khi confirm |
 | Censorship | House có thể ban | Permissionless |
 
 ## Loại market trên PrediX

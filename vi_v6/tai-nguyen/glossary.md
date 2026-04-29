@@ -46,10 +46,6 @@ LP cung cấp liquidity ở range giá hẹp (vs full range $0.01-$0.99). Earnin
 
 Proxy pattern cho phép 1 contract chia thành nhiều facet. PrediX dùng để vượt 24KB bytecode limit + upgrade từng module.
 
-### Dynamic fee
-
-Phí thay đổi theo điều kiện thị trường. PrediX AMM 0.5-5% tăng dần khi gần endTime.
-
 ### EOA (Externally Owned Account)
 
 Wallet truyền thống control bằng private key (MetaMask, Ledger). Đối lập smart account.
@@ -72,7 +68,7 @@ Mechanism vePRX vote phân bổ LP subsidy cho market. Pool được vote nhiề
 
 ### Hook (Uniswap v4)
 
-Smart contract plug vào v4 pool với callback (`beforeSwap`, `beforeAddLiquidity`...). PrediX Hook apply dynamic fee + anti-sandwich identity.
+Smart contract plug vào v4 pool với callback (`beforeSwap`, `beforeAddLiquidity`...). PrediX Hook apply anti-sandwich identity verification.
 
 ### Impermanent loss (IL)
 
@@ -92,7 +88,7 @@ Token đại diện LP position trên Uniswap v4 (PositionManager).
 
 ### Maker
 
-User đặt limit order chờ khớp. Fee 0% trên PrediX.
+User đặt limit order chờ khớp trên CLOB.
 
 ### Market
 
@@ -188,11 +184,11 @@ Chuỗi action liên tiếp. Win streak, daily login streak — earn badge + bon
 
 ### stkPRX
 
-Token non-transferable mint khi stake PRX. Claim share 20-35% phí protocol (adaptive theo growth phase) bằng USDC.
+Token non-transferable mint khi stake PRX. Claim share phí protocol bằng USDC.
 
 ### Taker
 
-User ăn lệnh thị trường qua CLOB. Fee 0-1% dynamic.
+User ăn lệnh thị trường qua CLOB.
 
 ### Tick (CLOB)
 

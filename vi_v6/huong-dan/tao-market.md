@@ -42,12 +42,6 @@ Timestamp market đóng trading + oracle window mở.
 | **UMAOracle** (TBA) | Decentralized resolution | Bond $500-$50,000 USDC |
 | **Custom adapter** | On-chain event (governance, TVL) | Deploy adapter, approve qua Diamond |
 
-### Redemption fee
-
-- Default: 0%.
-- Có thể set 0-15% (cap on-chain).
-- **Snapshot tại creation** — admin tăng default sau không ảnh hưởng market đã có.
-
 ### Per-market cap (optional)
 
 Giới hạn tổng collateral lock trong market. Default = global cap (config protocol).
@@ -162,4 +156,4 @@ Nếu market resolve sai:
 
 ## Revenue cho creator (Phase 3 — TBA)
 
-Phase 3 sẽ có **creator revenue share** — % fee của market đó về creator. Currently 0%. Theo dõi roadmap.
+Phase 3 sẽ có **creator revenue share** — một phần phí protocol của market đó về creator. Chi tiết sẽ công bố theo roadmap.

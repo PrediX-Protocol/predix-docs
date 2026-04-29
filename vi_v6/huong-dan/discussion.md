@@ -75,7 +75,7 @@ Post xuất hiện ở:
 
 ### Tip jar (TBA Phase 2)
 
-Reader có thể tip USDC / PRX cho author của post hữu ích. Tỷ lệ 95% to author, 5% protocol fee.
+Reader có thể tip USDC / PRX cho author của post hữu ích.
 
 ## Activity feed (per market)
 

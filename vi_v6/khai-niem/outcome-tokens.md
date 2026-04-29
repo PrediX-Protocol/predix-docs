@@ -58,7 +58,7 @@ Arbitrage tự động bởi AMM bots, không cần người vận hành.
 ## Redeem — sau khi market resolve
 
 - Market resolve, ví dụ outcome = YES.
-- User giữ YES → call `redeem(marketId)` → mỗi 1 YES đổi 1 USDC (trừ redemption fee, default 0%).
+- User giữ YES → call `redeem(marketId)` → đổi YES thành USDC.
 - NO token → $0, không redeem được, không trade được nữa.
 
 ## Refund — khi market không resolve
