@@ -120,7 +120,7 @@ Market thiếu liquidity. Có 3 lựa chọn:
 ### Bao lâu market resolve?
 
 - **Chainlink oracle**: Tự động sau snapshotAt + 1 round Chainlink (~30 giây - 1 phút).
-- **Manual oracle**: Multisig 3/5 ký, thường trong vòng 24h.
+- **Manual oracle**: Multisig 2/3 ký, thường trong vòng 24h.
 - **UMA oracle**: 48h dispute window + DVM nếu dispute.
 
 ### Phải redeem trong bao lâu?

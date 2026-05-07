@@ -18,7 +18,7 @@ Một market cần nguồn *sự thật* để quyết định YES hay NO thắn
 
 ## 4 loại oracle
 
-![4 loại oracle: ChainlinkOracle (price, auto), ManualOracle (subjective, multisig 3/5), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)](../_design/36-oracle-types.svg)
+![4 loại oracle: ChainlinkOracle (price, auto), ManualOracle (subjective, multisig 2/3), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)](../_design/36-oracle-types.svg)
 
 ### ChainlinkOracle
 
@@ -30,7 +30,7 @@ Tự động, permissionless.
 
 ### ManualOracle
 
-Multisig 3/5 đọc kết quả từ nguồn off-chain, ký tx.
+Multisig 2/3 đọc kết quả từ nguồn off-chain, ký tx.
 
 - Source: Reuters, AP, official API, on-chain data, video streaming.
 - Outcome **immutable** sau khi set (invariant INV-6).
@@ -66,7 +66,7 @@ Permissionless propose + 48h dispute window.
 
 | | Manual | Chainlink | UMA | Committee |
 |---|---|---|---|---|
-| Ai resolve | Multisig 3/5 | Anyone | Anyone propose, DVM dispute | t-of-N validator |
+| Ai resolve | Multisig 2/3 | Anyone | Anyone propose, DVM dispute | t-of-N validator |
 | Subjective event | ✅ | ❌ | ✅ | ✅ |
 | Dispute | Off-chain social | Không (data is law) | On-chain 48h | On-chain commit-reveal |
 | Latency | Tức thì sau ký | Sau 1 round (~30s-1min) | 48h default | Sau commit-reveal cycle |

@@ -38,7 +38,7 @@ Timestamp market đóng trading + oracle window mở.
 | Oracle | Khi nào dùng | Setup cost |
 |---|---|---|
 | **ChainlinkOracle** | Price threshold | Free, register feed + threshold |
-| **ManualOracle** | Subjective event | Free, multisig 3/5 sẽ resolve |
+| **ManualOracle** | Subjective event | Free, multisig 2/3 sẽ resolve |
 | **UMAOracle** (TBA) | Decentralized resolution | Bond $500-$50,000 USDC |
 | **Custom adapter** | On-chain event (governance, TVL) | Deploy adapter, approve qua Diamond |
 

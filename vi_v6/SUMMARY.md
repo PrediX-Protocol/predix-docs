@@ -42,6 +42,7 @@
 * [vePRX & gauge voting](kinh-te/veprx-gauge.md)
 * [Buyback-burn & treasury](kinh-te/buyback-burn.md)
 * [Points & seasons](kinh-te/points-seasons.md)
+* [KOL & Ambassador](kinh-te/kol-ambassador.md)
 * [Rewards & gamification](kinh-te/rewards.md)
 
 ## Giao thức

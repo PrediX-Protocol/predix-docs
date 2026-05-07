@@ -32,5 +32,6 @@ PrediX dùng conditions-based TGE (không time-based):
 | Staking USDC yield, lock boost | [Staking real yield](staking-real-yield.md) |
 | Lock → vePRX → vote → gauge → bribe | [vePRX & gauge](veprx-gauge.md) |
 | Buyback-burn, treasury | [Buyback-burn](buyback-burn.md) |
-| 6-season Points, referral program | [Points & seasons](points-seasons.md) |
+| 6-season Points, S0 testnet, 3-Wave TGE | [Points & seasons](points-seasons.md) |
+| KOL & Ambassador program (12M PRX pool) | [KOL & Ambassador](kol-ambassador.md) |
 | Badge, streak, daily challenge | [Rewards](rewards.md) |

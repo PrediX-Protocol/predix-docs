@@ -13,7 +13,7 @@ Cần **nguồn ngoài** đưa data on-chain. Oracle sai = market resolve sai = 
 
 ## 4 phases, 4 loại oracle
 
-![4 loại oracle: ChainlinkOracle (price, auto), ManualOracle (subjective, multisig 3/5), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)](../_design/25-oracle-types.svg)
+![4 loại oracle: ChainlinkOracle (price, auto), ManualOracle (subjective, multisig 2/3), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)](../_design/25-oracle-types.svg)
 
 ## ChainlinkOracle
 
@@ -30,7 +30,7 @@ Tự động, permissionless.
 
 ## ManualOracle
 
-Multisig 3/5 đọc kết quả từ nguồn off-chain, ký tx.
+Multisig 2/3 đọc kết quả từ nguồn off-chain, ký tx.
 
 ### Sources accept
 
@@ -94,7 +94,7 @@ Cross-chain governance outcome, complex composite event.
 
 | | Manual | Chainlink | UMA | Committee |
 |---|---|---|---|---|
-| Ai resolve | Multisig 3/5 | Anyone | Anyone propose, DVM dispute | t-of-N validator |
+| Ai resolve | Multisig 2/3 | Anyone | Anyone propose, DVM dispute | t-of-N validator |
 | Subjective event | ✅ | ❌ | ✅ | ✅ |
 | Dispute mechanism | Off-chain social | Không (data is law) | On-chain 48h | On-chain commit-reveal |
 | Latency | Tức thì sau ký | ~30s (1 round) | 48h default | Sau commit-reveal cycle |

@@ -104,7 +104,7 @@ Burn 1 YES + 1 NO → 1 USDC. Ngược split. Free phí, dùng arbitrage hoặc 
 
 ### Multisig
 
-Wallet cần N of M signature để execute. PrediX dùng 3/5 admin + 2/3 operator + 3/5 oracle reporter.
+Wallet cần N of M signature để execute. PrediX dùng 2/3 admin + 2/3 operator + 2/3 oracle reporter.
 
 ### Oracle
 

@@ -28,7 +28,7 @@ Treasury fund 4 use case:
 | **Insurance top-up** | Bổ sung insurance fund khi cần |
 
 Quản lý:
-- On-chain multisig 3/5 (Gnosis Safe)
+- On-chain multisig 2/3 (Gnosis Safe)
 - Spend > $10k → governance vote
 - Quarterly report public
 

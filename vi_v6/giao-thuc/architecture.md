@@ -200,10 +200,10 @@ PrediX hiện ở **testnet beta** (deploy 2026-04-20). Mainnet sẽ deploy sau 
 
 | Role | Testnet (1 EOA collapse) | Mainnet setup |
 |---|---|---|
-| **MULTISIG_ADMIN** | `0x0eC2bFb36BB59C736d7b770eacaFAa43a184De34` | Gnosis Safe 3-of-5, addr TBA |
+| **MULTISIG_ADMIN** | `0x0eC2bFb36BB59C736d7b770eacaFAa43a184De34` | Gnosis Safe 2-of-3, addr TBA |
 | **OPERATOR** | same | Gnosis Safe 2-of-3, addr TBA |
 | **PAUSER** | same | Gnosis Safe 2-of-3, addr TBA |
-| **REPORTER** (oracle) | same | Multisig 3/5, addr TBA |
+| **REPORTER** (oracle) | same | Multisig 2/3, addr TBA |
 | **REGISTRAR** | same | Admin multisig, addr TBA |
 | **FEE_RECIPIENT** | same | Treasury Safe, addr TBA |
 | **CUT_EXECUTOR** | `0x578D2a308BB0aa5d30E6BC08A7975ccA7e88af61` (TimelockController testnet) | TimelockController mainnet, addr TBA, delay 48h |
