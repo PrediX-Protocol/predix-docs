@@ -33,6 +33,8 @@ The prediction market landscape is evolving rapidly. Each platform has carved ou
 | Opinion | ~$55M | ⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐⭐ | AI-powered prediction platform |
 | **PrediX** | N/A | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | **Financialization of information** |
 
+![Positioning Map — PrediX targets top-right quadrant: deep financial infrastructure depth + mainstream accessibility. Polymarket: high infra, lower accessibility. Kalshi: high accessibility, lower infra. Opinion: lower both.](../_design/positioning-map.png)
+
 **Kalshi** dominates regulated markets with CFTC approval and traditional finance UX, but operates as a closed exchange with no DeFi composability and centralized infrastructure.
 
 **Polymarket** proved massive demand for crypto-native prediction trading and pioneered on-chain settlement, but outcome tokens remain largely siloed within its own UX and liquidity is fragmented across its CLOB.
