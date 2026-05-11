@@ -163,7 +163,7 @@ TBA. Follow [official Discord / Twitter](../resources/links.md) for announcement
 
 ### What is the purpose of staking PRX?
 
-Receive a share of protocol fees in **real USDC**, and vote on governance. Details: [Staking real yield](../economics/staking-real-yield.md).
+Receive a share of protocol fees in **real USDC**, and vote on governance. Details: [Staking real yield](../economics/staking.md).
 
 ### What is the difference between vePRX and stkPRX?
 

@@ -47,7 +47,7 @@ All upgrades with blast radius go through a 48h timelock.
 
 ### Diamond facet upgrade
 
-![Diamond upgrade: Multisig 3/5 schedules diamondCut -> TimelockController 48h -> community verifies -> execute -> DiamondCut event. CUT_EXECUTOR_ROLE = Timelock only](../_design/54-diamond-upgrade-flow.svg)
+![Diamond upgrade: Multisig 2/3 schedules diamondCut -> TimelockController 48h -> community verifies -> execute -> DiamondCut event. CUT_EXECUTOR_ROLE = Timelock only](../_design/54-diamond-upgrade-flow.svg)
 
 `CUT_EXECUTOR_ROLE` = **only the TimelockController contract**. No EOA can bypass.
 

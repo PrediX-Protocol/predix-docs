@@ -47,7 +47,7 @@ Payout matrix when the market resolves:
 | **Sports** | Pre-structured for tournaments | Premier League season winner |
 | **Grouped** | Markets grouped by theme | "AI capabilities milestones 2026" group |
 
-Multi-outcome details: [Multi-outcome events](../guides/multi-outcome-event.md).
+Multi-outcome details: [Multi-outcome events](../guides/multi-outcome.md).
 
 ## Limitations of Prediction Markets
 

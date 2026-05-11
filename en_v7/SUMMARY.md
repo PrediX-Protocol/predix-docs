@@ -28,28 +28,34 @@
 ## Guides
 
 * [Overview](guides/README.md)
-* [Market order](guides/market-order.md)
-* [Limit order (CLOB)](guides/limit-order.md)
-* [Provide liquidity (LP)](guides/provide-liquidity.md)
-* [Create market](guides/create-market.md)
-* [Portfolio & P&L](guides/portfolio.md)
-* [Redeem & refund](guides/redeem-refund.md)
-* [Chart & timeframe](guides/chart-timeframe.md)
-* [Notifications & alerts](guides/notifications.md)
-* [Discussion & social](guides/discussion.md)
-* [Leaderboard & traders](guides/leaderboard.md)
-* [Multi-outcome events](guides/multi-outcome.md)
+* Trading
+  * [Market order](guides/market-order.md)
+  * [Limit order (CLOB)](guides/limit-order.md)
+* Liquidity & market
+  * [Provide liquidity (LP)](guides/provide-liquidity.md)
+  * [Create market](guides/create-market.md)
+* Management
+  * [Portfolio & P&L](guides/portfolio.md)
+  * [Redeem & refund](guides/redeem-refund.md)
+* Features
+  * [Chart & timeframe](guides/chart-timeframe.md)
+  * [Notifications & alerts](guides/notifications.md)
+  * [Discussion & social](guides/discussion.md)
+  * [Leaderboard & traders](guides/leaderboard.md)
+  * [Multi-outcome events](guides/multi-outcome.md)
 
 ## Economics
 
 * [PRX overview](economics/README.md)
-* [Allocation & vesting](economics/allocation-vesting.md)
-* [Staking real yield](economics/staking.md)
-* [vePRX & gauge voting](economics/veprx-gauge.md)
-* [Buyback-burn & treasury](economics/buyback-burn.md)
-* [Points & seasons](economics/points-seasons.md)
-* [KOL & Ambassador](economics/kol-ambassador.md)
-* [Rewards & gamification](economics/rewards.md)
+* PRX Economy
+  * [Allocation & vesting](economics/allocation-vesting.md)
+  * [Staking real yield](economics/staking.md)
+  * [vePRX & gauge voting](economics/veprx-gauge.md)
+  * [Buyback-burn & treasury](economics/buyback-burn.md)
+* Incentive & Community
+  * [Points & seasons](economics/points-seasons.md)
+  * [KOL & Ambassador](economics/kol-ambassador.md)
+  * [Rewards & gamification](economics/rewards.md)
 
 ## Developers
 

@@ -117,4 +117,4 @@ This is why CLOB makers typically get better prices than standard AMM swaps.
   - An order fills (full or partial)
   - An order is cancelled (by you or due to market resolution)
   - An order is nearing endTime (warning to consider cancelling)
-- Webhook / API integration for bots — see [Developers](../developers/bots-and-mobile.md).
+- Webhook / API integration for bots — see [Developers](../developers/bots-mobile.md).

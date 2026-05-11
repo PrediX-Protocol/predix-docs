@@ -119,4 +119,4 @@ The app analyzes your portfolio and suggests:
 - Which markets are approaching endTime — should you close beforehand?
 - Which limit orders are stale (price far from the market)?
 
-Notifications can be toggled in [Settings](../resources/settings-i18n.md).
+Notifications can be toggled in [Settings](../resources/../getting-started/faq.md).

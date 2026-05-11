@@ -32,7 +32,7 @@ By default, trader profiles are **public**:
 - History is visible.
 - Aggregate stats are shown.
 
-Users can **opt out** in [Settings](../resources/settings-i18n.md) → Privacy:
+Users can **opt out** in [Settings](../resources/../getting-started/faq.md) → Privacy:
 - Hide active positions.
 - Hide history.
 - Hide identity (anonymous + pseudonym).
@@ -92,7 +92,7 @@ Traders with:
 - Twitter linked.
 - Optional KYC (for institutional traders).
 
-A verified badge appears next to the name — anti-impersonation. Verify in [Settings](../resources/settings-i18n.md).
+A verified badge appears next to the name — anti-impersonation. Verify in [Settings](../resources/../getting-started/faq.md).
 
 ## Privacy & data
 

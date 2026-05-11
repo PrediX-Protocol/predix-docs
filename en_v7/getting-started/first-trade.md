@@ -66,7 +66,7 @@ The Router finds the best reverse path — drains CLOB bid orders first, swaps t
 
 ## Hold Until Resolution
 
-Don't sell — hold tokens until the market resolves, then redeem 1:1 for USDC if you win. Details: [Redeem & refund](../guides/redeem-and-claim.md).
+Don't sell — hold tokens until the market resolves, then redeem 1:1 for USDC if you win. Details: [Redeem & refund](../guides/redeem-refund.md).
 
 ## Common First-Time Errors
 

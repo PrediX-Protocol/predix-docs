@@ -44,7 +44,7 @@ Multisig 2/3 reads the outcome from an off-chain source and signs the transactio
 
 ### Flow
 
-![ManualOracle: real-world event -> multisig verifies >= 2 sources -> 3/5 sign report(outcome) -> OracleReportCreated event -> anyone resolveMarket -> MarketResolved](../_design/56-manual-oracle-flow.svg)
+![ManualOracle: real-world event -> multisig verifies >= 2 sources -> 2/3 sign report(outcome) -> OracleReportCreated event -> anyone resolveMarket -> MarketResolved](../_design/56-manual-oracle-flow.svg)
 
 ### Risk mitigation
 
