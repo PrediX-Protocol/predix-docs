@@ -31,19 +31,49 @@ icon: align-justify
 
 Quick access to protocol documentation, developer resources, infrastructure architecture, and ecosystem channels across the PrediX network.
 
-#### Fundamentals
+<a href="/broken/pages/qbjzTee4WrFLuoW5r1TU" class="button primary" data-icon="layer-plus">FUNDAMENTALS</a>
 
-Understand the thesis, architecture, and market positioning.
+> Understand the thesis, architecture, and market positioning.
 
-<table data-view="cards"><thead><tr><th></th><th data-type="content-ref"></th></tr></thead><tbody><tr><td><h4></h4></td><td><a href="fundamentals/overview.md">overview.md</a></td></tr><tr><td></td><td><a href="fundamentals/core-innovations.md">core-innovations.md</a></td></tr><tr><td></td><td><a href="fundamentals/market-landscape.md">market-landscape.md</a></td></tr></tbody></table>
+{% columns %}
+{% column %}
+{% content-ref url="fundamentals/overview.md" %}
+[overview.md](fundamentals/overview.md)
+{% endcontent-ref %}
+{% endcolumn %}
 
-| You are…                         | Start from                                         |
-| -------------------------------- | -------------------------------------------------- |
-| Trader ready to go               | [Getting Started](users-guide/getting-started.md)  |
-| Want to understand the product   | [Overview](fundamentals/overview.md)               |
-| Need step-by-step tutorials      | [Guides](/broken/pages/QbHxDT1hiChZb7Io18gi)       |
-| Stake PRX + governance + rewards | [Economics](economics/)                            |
-| Builder integrating              | [Developers](developers-guide/developers.md)       |
+{% column %}
+{% content-ref url="fundamentals/core-innovations.md" %}
+[core-innovations.md](fundamentals/core-innovations.md)
+{% endcontent-ref %}
+{% endcolumn %}
+
+{% column %}
+{% content-ref url="fundamentals/market-landscape.md" %}
+[market-landscape.md](fundamentals/market-landscape.md)
+{% endcontent-ref %}
+{% endcolumn %}
+{% endcolumns %}
+
+#### Start Trading
+
+> Trade predictive markets on Unichain.
+
+{% content-ref url="users-guide/first-trade/connect-wallet.md" %}
+[connect-wallet.md](users-guide/first-trade/connect-wallet.md)
+{% endcontent-ref %}
+
+{% content-ref url="users-guide/first-trade/bridge.md" %}
+[bridge.md](users-guide/first-trade/bridge.md)
+{% endcontent-ref %}
+
+{% content-ref url="users-guide/first-trade/market-order.md" %}
+[market-order.md](users-guide/first-trade/market-order.md)
+{% endcontent-ref %}
+
+
+
+
 
 ***
 
