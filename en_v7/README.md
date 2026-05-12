@@ -4,12 +4,14 @@ description: The Financializing Information Markets
 
 # Welcome to PrediX
 
-PrediX is the On-chain Prediction Market on [Unichain](https://www.unichain.org/). Each event creates two outcome tokens `YES / NO` and the correct token redeems 1:1 USDC when the market resolves.
+PrediX is the On-chain Prediction Market on [**Unichain**](https://www.unichain.org/). Each event creates two outcome tokens `YES / NO` and the correct token redeems 1:1 USDC when the market resolves.
 
 > 🟡 **Status —** see on [**Network info**](getting-started/#network-info)**.**
 >
 > * Beta on **Unichain Sepolia testnet** (chain `1301`).&#x20;
 > * Mainnet launches after **external audit** (chain `130`).
+
+![PrediX — The Financializing Information Markets](.gitbook/assets/hero-overview.png)
 
 **Example**: Market _"Bitcoin above $100k before 2027?"_ creates YES + NO tokens. Users buy the side they believe will win.
 
@@ -17,8 +19,6 @@ PrediX is the On-chain Prediction Market on [Unichain](https://www.unichain.org/
 | ------------------------ | -------------------------- | -------------------------- |
 | Event **happens**        | Receives `$1 USDC / token` | `$0` (total loss)          |
 | Event **doesn't happen** | `$0` (total loss)          | Receives `$1 USDC / token` |
-
-![PrediX — The Financializing Information Markets](.gitbook/assets/hero-overview.png)
 
 ***
 
@@ -44,7 +44,11 @@ PrediX is the On-chain Prediction Market on [Unichain](https://www.unichain.org/
 
 ***
 
-## Links
+## PrediX Links
+
+
+
+{% embed url="https://app.predix.app" %}
 
 * **App**: [app.predix.app](https://app.predix.app) (testnet beta)
 * **Explorer testnet**: [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz)
