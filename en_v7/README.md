@@ -35,7 +35,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 <a href="/broken/pages/qbjzTee4WrFLuoW5r1TU" class="button primary" data-icon="layer-plus">FUNDAMENTALS</a>
 
-> Understand the thesis, architecture, and market positioning.
+> <mark style="color:$danger;">Understand the thesis, architecture, and market positioning.</mark>
 
 {% content-ref url="fundamentals/overview.md" %}
 [overview.md](fundamentals/overview.md)
@@ -44,6 +44,8 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 {% content-ref url="fundamentals/core-innovations.md" %}
 [core-innovations.md](fundamentals/core-innovations.md)
 {% endcontent-ref %}
+
+***
 
 #### <a href="users-guide/first-trade/" class="button primary" data-icon="chart-column">START TRADING</a>
 
@@ -60,6 +62,8 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 {% content-ref url="users-guide/first-trade/market-order.md" %}
 [market-order.md](users-guide/first-trade/market-order.md)
 {% endcontent-ref %}
+
+***
 
 <a href="/broken/pages/wCcSWgEZAwC1z4fKrfgZ" class="button primary" data-icon="square-half-stroke">CORE CONCEPTS</a>
 
@@ -81,7 +85,9 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 [resolution.md](core-concepts/resolution.md)
 {% endcontent-ref %}
 
-<a href="users-guide/liquidity-and-market/" class="button primary">LIQUIDITY &#x26; MARKET</a>
+***
+
+<a href="users-guide/liquidity-and-market/" class="button primary" data-icon="chart-column">LIQUIDITY &#x26; MARKET</a>
 
 > <mark style="color:$danger;">Provide liquidity or create markets.</mark>
 
@@ -93,19 +99,56 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 [create-market.md](users-guide/liquidity-and-market/create-market.md)
 {% endcontent-ref %}
 
-<a href="/broken/pages/8HclYTsOnU8kmDjTSXrH" class="button primary">PRX ECONOMY</a>
+***
 
+<a href="/broken/pages/8HclYTsOnU8kmDjTSXrH" class="button primary" data-icon="coin-blank">ECONOMY</a>
 
+> <mark style="color:$danger;">Explore staking, governance, and incentives.</mark>
 
+{% content-ref url="economics/prx-economy/" %}
+[prx-economy](economics/prx-economy/)
+{% endcontent-ref %}
 
+{% content-ref url="economics/veprx-gauge.md" %}
+[veprx-gauge.md](economics/veprx-gauge.md)
+{% endcontent-ref %}
+
+{% content-ref url="economics/incentive-and-community/" %}
+[incentive-and-community](economics/incentive-and-community/)
+{% endcontent-ref %}
 
 ***
 
-{% embed url="https://app.predix.app" %}
+<a href="/broken/pages/KhM4zcVEYvmzF38tqAmc" class="button primary" data-icon="code">FOR DEVOPERS</a>
 
-* **App**: [app.predix.app](https://app.predix.app) (testnet beta)
-* **Explorer testnet**: [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz)
-* **Explorer mainnet**: [uniscan.xyz](https://uniscan.xyz) (post-launch)
-* **Contract addresses**: [developers/architecture.md#contract-addresses](developers-guide/architecture.md#contract-addresses) (testnet live + mainnet TBA)
-* **Security & audit**: [developers/security.md](developers-guide/security.md)
-* **Discord, Twitter, GitHub**: [resources/links.md](resources/links.md)
+> <mark style="color:$danger;">Build on PrediX infrastructure.</mark>
+
+{% content-ref url="developers-guide/api-reference.md" %}
+[api-reference.md](developers-guide/api-reference.md)
+{% endcontent-ref %}
+
+{% content-ref url="developers-guide/architecture.md" %}
+[architecture.md](developers-guide/architecture.md)
+{% endcontent-ref %}
+
+{% content-ref url="developers-guide/security.md" %}
+[security.md](developers-guide/security.md)
+{% endcontent-ref %}
+
+***
+
+<a href="/broken/pages/ZoA2VYD6MlnH2Rwutthv" class="button primary" data-icon="arrow-up-right-from-square">RESOURCES</a>
+
+> <mark style="color:$danger;">Additional protocol resources.</mark>
+
+{% content-ref url="resources/glossary.md" %}
+[glossary.md](resources/glossary.md)
+{% endcontent-ref %}
+
+{% content-ref url="resources/links.md" %}
+[links.md](resources/links.md)
+{% endcontent-ref %}
+
+{% content-ref url="resources/faq.md" %}
+[faq.md](resources/faq.md)
+{% endcontent-ref %}
