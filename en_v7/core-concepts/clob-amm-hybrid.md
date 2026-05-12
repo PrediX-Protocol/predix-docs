@@ -49,7 +49,7 @@ Each market has 1-2 v4 pools: YES-USDC and optionally NO-USDC.
 | `beforeRemoveLiquidity` | Track pool registration                                                                                       |
 | `beforeDonate`          | Block donations after endTime (prevent brute-force payout attacks)                                            |
 
-The Hook **does not hold user funds long-term**. LPs receive LP tokens per the v4 PositionManager standard. LP flow details: [Provide liquidity](../guides/provide-liquidity.md).
+The Hook **does not hold user funds long-term**. LPs receive LP tokens per the v4 PositionManager standard. LP flow details: [Provide liquidity](../users-guide/liquidity-and-market/provide-liquidity.md).
 
 ## When Does the Router Prefer CLOB Over AMM
 

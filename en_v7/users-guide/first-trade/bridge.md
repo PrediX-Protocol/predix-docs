@@ -19,7 +19,7 @@ PrediX uses USDC on Unichain as collateral. If your USDC is on another chain, yo
 
 PrediX UI has an integrated **Bridge widget** — no need to open Across/Stargate in a separate tab.
 
-![Bridge flow: select source chain → connect wallet → enter amount → approve → deposit → wait for relay → USDC arrives on Unichain](../.gitbook/assets/12-bridge-flow.svg)
+![Bridge flow: select source chain → connect wallet → enter amount → approve → deposit → wait for relay → USDC arrives on Unichain](../../.gitbook/assets/12-bridge-flow.svg)
 
 ## Steps
 
@@ -56,7 +56,7 @@ Bridges involve **slippage** (USDC prices across chains have a small spread).
 
 * Across, Stargate: usually auto-complete within 1-30 minutes. If nothing after 1 hour: check the source chain explorer (tx confirmed?), check the destination chain (UserOp/relay arrived?).
 * Contact bridge support directly — PrediX does not operate bridges, only integrates the UI.
-* Need help: [Discord](../resources/links.md) #bridge-support.
+* Need help: [Discord](../../resources/links.md) #bridge-support.
 
 ## Reverse Bridge (Unichain → Another Chain)
 

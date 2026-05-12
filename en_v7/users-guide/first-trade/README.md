@@ -1,4 +1,4 @@
-# First trade
+# Trading
 
 Buy YES or NO on a market. \~30 seconds from click to confirmation.
 
@@ -15,11 +15,11 @@ Buy YES or NO on a market. \~30 seconds from click to confirmation.
    * Slippage estimate
    * CLOB / AMM split ratio
 7. Click **Buy** → wallet requests confirmation (Touch ID for passkey, MetaMask popup for EOA).
-8. Tx confirms in \~2 seconds on Unichain. Position appears in [Portfolio](../guides/portfolio.md).
+8. Tx confirms in \~2 seconds on Unichain. Position appears in [Portfolio](portfolio.md).
 
 ## What Happens Under the Hood
 
-![First trade: connect wallet → bridge USDC → select market → buy YES/NO → receive outcome tokens](../.gitbook/assets/11-first-trade.svg)
+![First trade: connect wallet → bridge USDC → select market → buy YES/NO → receive outcome tokens](../../.gitbook/assets/11-first-trade.svg)
 
 All in 1 atomic tx. If slippage exceeds tolerance → revert, no funds lost.
 
@@ -32,7 +32,7 @@ All in 1 atomic tx. If slippage exceeds tolerance → revert, no funds lost.
 | **Split**            | Mint a YES+NO pair from USDC for market-making |
 | **Merge**            | Burn a YES+NO pair to reclaim USDC             |
 
-Details: [Market order](../guides/market-order.md), [Limit order](../guides/limit-order.md).
+Details: [Market order](market-order.md), [Limit order](limit-order.md).
 
 ## Practical Example
 
@@ -68,7 +68,7 @@ The Router finds the best reverse path — drains CLOB bid orders first, swaps t
 
 ## Hold Until Resolution
 
-Don't sell — hold tokens until the market resolves, then redeem 1:1 for USDC if you win. Details: [Redeem & refund](../guides/redeem-refund.md).
+Don't sell — hold tokens until the market resolves, then redeem 1:1 for USDC if you win. Details: [Redeem & refund](redeem-refund.md).
 
 ## Common First-Time Errors
 

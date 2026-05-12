@@ -24,7 +24,7 @@ Filters:
 
 Click a trader's name → `/profile/[address]` page:
 
-![Public trader profile: Hero KPIs (Volume, PnL, Win rate, Accuracy) + active positions + trade history + calibration + badges + follow](../.gitbook/assets/50-trader-profile.svg)
+![Public trader profile: Hero KPIs (Volume, PnL, Win rate, Accuracy) + active positions + trade history + calibration + badges + follow](../../.gitbook/assets/50-trader-profile.svg)
 
 ### Public vs private
 
@@ -34,7 +34,7 @@ By default, trader profiles are **public**:
 * History is visible.
 * Aggregate stats are shown.
 
-Users can **opt out** in [Settings](../getting-started/faq.md) → Privacy:
+Users can **opt out** in [Settings](../../resources/faq.md) → Privacy:
 
 * Hide active positions.
 * Hide history.
@@ -54,7 +54,7 @@ Click **Follow** on a profile:
 
 ## Copy trading
 
-![Copy trading: follower set config (10% size, cap $100) → lead trades → engine detect → auto/manual mirror → trade mirrored](../.gitbook/assets/51-copy-trading-flow.svg)
+![Copy trading: follower set config (10% size, cap $100) → lead trades → engine detect → auto/manual mirror → trade mirrored](../../.gitbook/assets/51-copy-trading-flow.svg)
 
 ### Setup copy trading
 
@@ -99,7 +99,7 @@ Traders with:
 * Twitter linked.
 * Optional KYC (for institutional traders).
 
-A verified badge appears next to the name — anti-impersonation. Verify in [Settings](../getting-started/faq.md).
+A verified badge appears next to the name — anti-impersonation. Verify in [Settings](../../resources/faq.md).
 
 ## Privacy & data
 
@@ -125,4 +125,4 @@ GET /api/v2/users/:address/follows  (followed by whom)
 GET /api/v2/users/:address/following (following whom)
 ```
 
-Details: [Backend API](../developers/api-reference.md#backend-endpoints-v2).
+Details: [Backend API](../../developers-guide/api-reference.md#backend-endpoints-v2).

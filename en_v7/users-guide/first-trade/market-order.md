@@ -42,7 +42,7 @@ The Router will:
 
 Symmetric to YES. The Router may use the **virtual-NO trick** when the NO-USDC pool lacks liquidity:
 
-![Router waterfall: quote → CLOB fillMarketOrder try → AMM swap fallback → virtual-NO two-pass → cleanup dust → assert balance=0](../.gitbook/assets/15-router-waterfall.svg)
+![Router waterfall: quote → CLOB fillMarketOrder try → AMM swap fallback → virtual-NO two-pass → cleanup dust → assert balance=0](../../.gitbook/assets/15-router-waterfall.svg)
 
 You do not need to worry about the details — the UI simply shows "Buy NO" and the final amount.
 
@@ -73,4 +73,4 @@ No protocol fee. Gas is paid by the user by default; sponsor coverage applies if
 | "Insufficient liquidity" | CLOB + AMM lack sufficient depth   | Reduce size or use a [limit order](limit-order.md) |
 | "Market paused"          | Admin paused for security reasons  | Check the UI notice                                |
 | "Past endTime"           | Trading has closed for this market | Wait for resolution to redeem or get a refund      |
-| "Insufficient USDC"      | Wallet lacks USDC                  | [Bridge](../getting-started/bridge.md) or top up   |
+| "Insufficient USDC"      | Wallet lacks USDC                  | [Bridge](bridge.md) or top up                      |

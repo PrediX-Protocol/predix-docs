@@ -4,7 +4,7 @@ Stay updated on important markets and your portfolio activity.
 
 ## Channels
 
-![5 notification channels: push browser/mobile, email digest, Discord webhook, Telegram bot, in-app center](../.gitbook/assets/42-notification-channels.svg)
+![5 notification channels: push browser/mobile, email digest, Discord webhook, Telegram bot, in-app center](../../.gitbook/assets/42-notification-channels.svg)
 
 | Channel             | Realtime    | Setup              | Best for                 |
 | ------------------- | ----------- | ------------------ | ------------------------ |
@@ -59,7 +59,7 @@ Stay updated on important markets and your portfolio activity.
 
 ## Price alerts
 
-![Price alert: user set condition (YES > $0.70) → Indexer check every block → trigger → push + email + in-app](../.gitbook/assets/43-price-alert-flow.svg)
+![Price alert: user set condition (YES > $0.70) → Indexer check every block → trigger → push + email + in-app](../../.gitbook/assets/43-price-alert-flow.svg)
 
 ### Setup
 
@@ -170,4 +170,4 @@ DELETE /api/v2/users/:address/alerts/:id
 
 Realtime via WebSocket: `wss://api.predix.app/v2/ws/notifications` with an auth header.
 
-Details: [Backend API](../developers/api-reference.md#backend-endpoints-v2).
+Details: [Backend API](../../developers-guide/api-reference.md#backend-endpoints-v2).

@@ -6,7 +6,7 @@ Share market insights with the community directly within the app.
 
 Every market has its own comment thread (the **Discussion** tab on the market detail page).
 
-![Market discussion: comment list (sort newest/top), post comment, reply 2 levels, up/down vote, @mention](../.gitbook/assets/47-discussion-features.svg)
+![Market discussion: comment list (sort newest/top), post comment, reply 2 levels, up/down vote, @mention](../../.gitbook/assets/47-discussion-features.svg)
 
 ### Features
 
@@ -40,7 +40,7 @@ Helps assess the credibility of a comment.
 
 The `/feed` page — a global activity stream.
 
-![Social feed: on-chain activity (trade, LP, resolve) + off-chain (comment, follow, badge) → filter (following/trending/latest) → realtime cards](../.gitbook/assets/48-social-feed.svg)
+![Social feed: on-chain activity (trade, LP, resolve) + off-chain (comment, follow, badge) → filter (following/trending/latest) → realtime cards](../../.gitbook/assets/48-social-feed.svg)
 
 ### Filters
 
@@ -101,7 +101,7 @@ Phase 2: direct messaging between users. Planned features:
 
 PrediX uses a **community moderation** model:
 
-![Moderation: spam detected → user report → community mod review → valid: hide + warn, repeat 3+: ban 7-30 days](../.gitbook/assets/49-moderation-flow.svg)
+![Moderation: spam detected → user report → community mod review → valid: hide + warn, repeat 3+: ban 7-30 days](../../.gitbook/assets/49-moderation-flow.svg)
 
 * **Mod recruitment**: vePRX holders in good standing can apply.
 * **Mod compensation**: PRX from treasury.
@@ -136,4 +136,4 @@ GET /api/v2/markets/:id/activity?type=trade|lp|comment
 
 Realtime via WebSocket: `wss://api.predix.app/v2/ws/feed`.
 
-Details: [Backend API](../developers/api-reference.md#backend-endpoints-v2).
+Details: [Backend API](../../developers-guide/api-reference.md#backend-endpoints-v2).

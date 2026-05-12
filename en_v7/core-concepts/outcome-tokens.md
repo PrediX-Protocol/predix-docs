@@ -70,7 +70,7 @@ If the oracle fails (down, dispute hung), admin enables **refund mode** via a 48
 * Users burn YES + NO pairs → receive USDC pro-rata.
 * Burns at `min(yesBalance, noBalance)` — only the paired portion can be refunded.
 
-Details: [Resolution](resolution.md), [Redeem & refund](../guides/redeem-refund.md).
+Details: [Resolution](resolution.md), [Redeem & refund](../users-guide/first-trade/redeem-refund.md).
 
 ## Composable with DeFi
 
@@ -89,4 +89,4 @@ ERC-20 standard → compatible with every DeFi protocol out of the box, no custo
 * Amount of 1 YES = `1_000_000` (also 6 decimals).
 * Price $0.48 = `480_000` (fixed-point 6 decimals). Valid range: `10_000` to `990_000` (0.01 to 0.99).
 
-Integration details: [developers/router-integration.md](../developers/router-integration.md).
+Integration details: [developers/router-integration.md](../developers-guide/router-integration.md).

@@ -11,7 +11,7 @@ Provide liquidity to the AMM pool of a market. Earn fees from every swap through
 
 ## Risk vs reward
 
-![LP risk/reward: earn fee per swap (positive) vs impermanent loss (risk). After resolve: YES wins=$1 or NO wins=$0. Net PnL = final - initial + fees](../.gitbook/assets/52-lp-risk-reward.svg)
+![LP risk/reward: earn fee per swap (positive) vs impermanent loss (risk). After resolve: YES wins=$1 or NO wins=$0. Net PnL = final - initial + fees](../../.gitbook/assets/52-lp-risk-reward.svg)
 
 Being an LP is a **directional bet** — you lose if the market resolves toward the side you did not expect. Make sure you understand impermanent loss (IL) and outcome risk before providing liquidity.
 
@@ -50,7 +50,7 @@ You can compound by re-depositing the claimed fees into the pool to increase you
 
 The pool closes — no more trading or adding liquidity.
 
-![LP after resolve: Hook blocks pool → LP removes liquidity → receives USDC + YES → redeem YES=$1 → total USDC to wallet](../.gitbook/assets/19-lp-after-resolve.svg)
+![LP after resolve: Hook blocks pool → LP removes liquidity → receives USDC + YES → redeem YES=$1 → total USDC to wallet](../../.gitbook/assets/19-lp-after-resolve.svg)
 
 You can:
 
@@ -98,7 +98,7 @@ Deposit only USDC into a range above the current YES price. When the price rises
 
 ## Boost from gauge voting
 
-LPs can receive **subsidies** from the treasury via [gauge voting](../economics/veprx-gauge.md):
+LPs can receive **subsidies** from the treasury via [gauge voting](../../economics/veprx-gauge.md):
 
 1. vePRX holders vote on which pools receive subsidies.
 2. The treasury distributes subsidies proportional to vote share.
@@ -117,4 +117,4 @@ LP positions are accessible via:
 * Indexer: `GET /api/users/:address/lp-positions`
 * BE: `GET /api/v2/users/:address/lp-positions`
 
-Details: [Indexer API](../developers/api-reference.md#indexer-endpoints).
+Details: [Indexer API](../../developers-guide/api-reference.md#indexer-endpoints).

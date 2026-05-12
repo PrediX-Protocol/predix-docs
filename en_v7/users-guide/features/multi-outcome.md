@@ -10,7 +10,7 @@ An event is a container holding N child markets (called **members**).
 * **Mutually exclusive** — when the event resolves, exactly 1 member's YES = true; all others' YES = false.
 * Supports **groupSplit / groupMerge** — mint/burn YES tokens of all members atomically.
 
-![Event multi-outcome: Event (FIFA WC) → N members (Argentina, Brazil, France...) → each member has YES+NO → resolve winningIndex → winner YES=$1](../.gitbook/assets/53-event-multi-outcome.svg)
+![Event multi-outcome: Event (FIFA WC) → N members (Argentina, Brazil, France...) → each member has YES+NO → resolve winningIndex → winner YES=$1](../../.gitbook/assets/53-event-multi-outcome.svg)
 
 ## Example
 

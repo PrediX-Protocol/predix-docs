@@ -77,7 +77,7 @@ Permissionless propose + 48h dispute window.
 
 When no oracle can resolve → admin enables refund mode via 48h timelock → users burn YES+NO pairs → receive USDC pro-rata.
 
-Flow details: [Oracle — Refund mode](../developers/oracle.md#refund-mode--last-resort) · [Redeem & refund](../guides/redeem-refund.md).
+Flow details: [Oracle — Refund mode](../developers-guide/oracle.md#refund-mode--last-resort) · [Redeem & refund](../users-guide/first-trade/redeem-refund.md).
 
 ## Incorrect Resolution — What to Do
 
@@ -92,7 +92,7 @@ Flow details: [Oracle — Refund mode](../developers/oracle.md#refund-mode--last
 * **Phase 1**: Addresses with `CREATOR_ROLE` (admin + whitelisted creators).
 * **Phase 3 (TBA)**: Permissionless — anyone can create a market by staking a **PRX bond** (10k PRX proposed). Bond is slashed if the market is malformed or resolution is disputed.
 
-Details: [Create a market](../guides/create-market.md).
+Details: [Create a market](../users-guide/liquidity-and-market/create-market.md).
 
 ## Timing
 
@@ -100,4 +100,4 @@ Details: [Create a market](../guides/create-market.md).
 * **Redemption**: No hard deadline, 365-day grace period, after which admin may call `sweepUnclaimed` to transfer to treasury.
 * **UMA dispute**: 48h after proposal.
 
-Time parameters are configurable per-market or globally. See [Smart contracts](../developers/architecture.md).
+Time parameters are configurable per-market or globally. See [Smart contracts](../developers-guide/architecture.md).

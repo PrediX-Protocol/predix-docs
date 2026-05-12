@@ -4,7 +4,7 @@ Core terminology sorted alphabetically. Brief definition + example.
 
 ### AA (Account Abstraction)
 
-ERC-4337 standard for smart contract wallets. PrediX uses Kernel v3 smart accounts with a **passkey validator** (biometric signing). Smart accounts pay gas via paymaster — PrediX has a gas sponsorship program for eligible users (applies to both account types, see [Paymaster](#paymaster-erc-4337)).
+ERC-4337 standard for smart contract wallets. PrediX uses Kernel v3 smart accounts with a **passkey validator** (biometric signing). Smart accounts pay gas via paymaster — PrediX has a gas sponsorship program for eligible users (applies to both account types, see [Paymaster](glossary.md#paymaster-erc-4337)).
 
 ### AMM (Automated Market Maker)
 
@@ -236,4 +236,4 @@ HTTP callback that pushes events to a URL you configure. Bots listen via webhook
 
 ### YES / NO
 
-Outcome tokens for a market. See [Outcome tokens](../concepts/outcome-tokens.md).
+Outcome tokens for a market. See [Outcome tokens](../core-concepts/outcome-tokens.md).

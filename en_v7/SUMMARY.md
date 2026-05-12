@@ -1,6 +1,6 @@
 # Table of contents
 
-* [PREDIX 101 — START HERE](README.md)
+* [PREDIX 101 — QUICK START](README.md)
 
 ## FUNDAMENTALS
 
@@ -8,41 +8,33 @@
 * [Core Innovations & Moat](fundamentals/core-innovations.md)
 * [PrediX vs Existing Prediction Markets](fundamentals/market-landscape.md)
 
-## Getting Started
+## USERS GUIDE
 
-* [Quick start](getting-started/README.md)
-* [Connect wallet](getting-started/connect-wallet.md)
-* [Bridge to Unichain](getting-started/bridge.md)
-* [First trade](getting-started/first-trade.md)
-* [Points — Earn PRX](getting-started/points.md)
-* [FAQ](getting-started/faq.md)
+* [Quick start](users-guide/getting-started.md)
+* [Trading](users-guide/first-trade/README.md)
+  * [Connect wallet](users-guide/first-trade/connect-wallet.md)
+  * [Bridge to Unichain](users-guide/first-trade/bridge.md)
+  * [Market order](users-guide/first-trade/market-order.md)
+  * [Limit order (CLOB)](users-guide/first-trade/limit-order.md)
+  * [Portfolio & P\&L](users-guide/first-trade/portfolio.md)
+  * [Redeem & refund](users-guide/first-trade/redeem-refund.md)
+* [Features](users-guide/features/README.md)
+  * [Chart & timeframe](users-guide/features/chart-timeframe.md)
+  * [Notifications & alerts](users-guide/features/notifications.md)
+  * [Discussion & social](users-guide/features/discussion.md)
+  * [Leaderboard & traders](users-guide/features/leaderboard.md)
+  * [Multi-outcome events](users-guide/features/multi-outcome.md)
+* [Liquidity & market](users-guide/liquidity-and-market/README.md)
+  * [Provide liquidity (LP)](users-guide/liquidity-and-market/provide-liquidity.md)
+  * [Create market](users-guide/liquidity-and-market/create-market.md)
 
-## Concepts
+## core Concepts
 
-* [Overview](concepts/README.md)
-* [Prediction market](concepts/prediction-market.md)
-* [Outcome token (YES/NO)](concepts/outcome-tokens.md)
-* [CLOB + AMM hybrid](concepts/clob-amm-hybrid.md)
-* [Resolution & oracle](concepts/resolution.md)
-
-## Guides
-
-* [Overview](guides/README.md)
-* [Trading](guides/trading/README.md)
-  * [Market order](guides/market-order.md)
-  * [Limit order (CLOB)](guides/limit-order.md)
-* [Liquidity & market](guides/liquidity-and-market/README.md)
-  * [Provide liquidity (LP)](guides/provide-liquidity.md)
-  * [Create market](guides/create-market.md)
-* [Management](guides/management/README.md)
-  * [Portfolio & P\&L](guides/portfolio.md)
-  * [Redeem & refund](guides/redeem-refund.md)
-* [Features](guides/features/README.md)
-  * [Chart & timeframe](guides/chart-timeframe.md)
-  * [Notifications & alerts](guides/notifications.md)
-  * [Discussion & social](guides/discussion.md)
-  * [Leaderboard & traders](guides/leaderboard.md)
-  * [Multi-outcome events](guides/multi-outcome.md)
+* [Overview](core-concepts/concepts.md)
+* [Prediction market](core-concepts/prediction-market.md)
+* [Outcome token (YES/NO)](core-concepts/outcome-tokens.md)
+* [CLOB + AMM hybrid](core-concepts/clob-amm-hybrid.md)
+* [Resolution & oracle](core-concepts/resolution.md)
 
 ## Economics
 
@@ -52,24 +44,26 @@
   * [Staking real yield](economics/staking.md)
   * [vePRX & gauge voting](economics/veprx-gauge.md)
   * [Buyback-burn & treasury](economics/buyback-burn.md)
+* [Points — Earn PRX](economics/points.md)
 * [Incentive & Community](economics/incentive-and-community/README.md)
   * [Points & seasons](economics/points-seasons.md)
   * [KOL & Ambassador](economics/kol-ambassador.md)
   * [Rewards & gamification](economics/rewards.md)
 
-## Developers
+## Developers guide
 
-* [Quickstart](developers/README.md)
-* [Testnet info](developers/testnet.md)
-* [Router integration](developers/router-integration.md)
-* [API reference](developers/api-reference.md)
-* [Bots & mobile](developers/bots-mobile.md)
-* [Architecture & contracts](developers/architecture.md)
-* [Oracle](developers/oracle.md)
-* [Security & timelock](developers/security.md)
+* [Quickstart](developers-guide/developers.md)
+* [Testnet info](developers-guide/testnet.md)
+* [Router integration](developers-guide/router-integration.md)
+* [API reference](developers-guide/api-reference.md)
+* [Bots & mobile](developers-guide/bots-mobile.md)
+* [Architecture & contracts](developers-guide/architecture.md)
+* [Oracle](developers-guide/oracle.md)
+* [Security & timelock](developers-guide/security.md)
 
 ## Resources
 
 * [Glossary](resources/glossary.md)
 * [Changelog](resources/changelog.md)
 * [Links](resources/links.md)
+* [FAQ](resources/faq.md)

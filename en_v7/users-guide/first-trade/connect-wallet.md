@@ -4,7 +4,7 @@ PrediX offers **2 sign-in methods**. Both are **non-custodial** — nobody (incl
 
 ## Quick Selection
 
-![Wallet selection flow: Passkey (smart account, biometric) or Crypto wallet (EOA, MetaMask/Ledger) — both non-custodial](../.gitbook/assets/13-wallet-connect.svg)
+![Wallet selection flow: Passkey (smart account, biometric) or Crypto wallet (EOA, MetaMask/Ledger) — both non-custodial](../../.gitbook/assets/13-wallet-connect.svg)
 
 ## Comparison
 
@@ -71,4 +71,4 @@ Use a traditional wallet you already own — MetaMask, Rainbow, Coinbase Wallet,
 
 Both methods use **SIWE** (EIP-4361) to create a session with the backend:
 
-![SIWE auth flow: FE requests challenge → user signs message → BE verifies ECDSA → sets HTTPOnly cookie session for 7 days](../.gitbook/assets/14-siwe-auth.svg)
+![SIWE auth flow: FE requests challenge → user signs message → BE verifies ECDSA → sets HTTPOnly cookie session for 7 days](../../.gitbook/assets/14-siwe-auth.svg)

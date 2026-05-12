@@ -4,9 +4,9 @@ Place a price and wait for a fill on the on-chain order book. You are a **maker*
 
 ## When to use
 
-- You have a price view — want to buy YES @ $0.45 while the market is at $0.50, and wait for the price to drop.
-- Market-making: place BUY and SELL orders simultaneously, earning the spread.
-- Large trades where you want to avoid AMM slippage.
+* You have a price view — want to buy YES @ $0.45 while the market is at $0.50, and wait for the price to drop.
+* Market-making: place BUY and SELL orders simultaneously, earning the spread.
+* Large trades where you want to avoid AMM slippage.
 
 ## Steps — place a buy YES @ $0.45
 
@@ -15,8 +15,8 @@ Place a price and wait for a fill on the on-chain order book. You are a **maker*
 3. Price: `0.45`.
 4. Amount: `100 USDC` (the UI converts to YES).
 5. Preview:
-   - If filled: receive `100 / 0.45 ≈ 222.22 YES`.
-   - USDC locked: 100 USDC (released on cancel or match).
+   * If filled: receive `100 / 0.45 ≈ 222.22 YES`.
+   * USDC locked: 100 USDC (released on cancel or match).
 6. Click **Place Order** → confirm in your wallet.
 7. The order appears in [Portfolio](portfolio.md) → **Open Orders**.
 
@@ -24,8 +24,8 @@ Place a price and wait for a fill on the on-chain order book. You are a **maker*
 
 Prices must be multiples of $0.01: `0.01, 0.02, …, 0.99`.
 
-- `0.455` will be rejected or rounded.
-- 99 ticks total, stored in a compressed bitmap in the `PrediXExchange` contract.
+* `0.455` will be rejected or rounded.
+* 99 ticks total, stored in a compressed bitmap in the `PrediXExchange` contract.
 
 `0.00` and `1.00` are not supported — a price of certainty has no liquidity.
 
@@ -81,40 +81,40 @@ No protocol fee. Gas is paid by the user by default; sponsor coverage applies if
 
 Orders can be filled incrementally:
 
-- BUY YES @ $0.45, 100 USDC → someone takes 40 USDC → 60 USDC remains locked on the book.
-- Status: `OPEN` → `PENDING` (per indexer).
-- The remainder continues to wait for a match, or you can cancel it.
+* BUY YES @ $0.45, 100 USDC → someone takes 40 USDC → 60 USDC remains locked on the book.
+* Status: `OPEN` → `PENDING` (per indexer).
+* The remainder continues to wait for a match, or you can cancel it.
 
 ## Limits
 
-| | Value |
-|---|---|
-| Max open orders / user / market | 80 |
-| Min size | $1 USDC |
-| Tick size | $0.01 |
-| Stop-loss / OCO | TBA Phase 2 |
+|                                 | Value       |
+| ------------------------------- | ----------- |
+| Max open orders / user / market | 80          |
+| Min size                        | $1 USDC     |
+| Tick size                       | $0.01       |
+| Stop-loss / OCO                 | TBA Phase 2 |
 
 ## Market-making tips
 
-- **Place orders on both sides** around mid-price → earn the spread as a passive market maker.
-- **Tiered orders**: $0.40 50 USDC, $0.42 50 USDC, $0.44 50 USDC → scale in instead of going all-in.
-- **Check order book depth** before placing — if the best bid/ask is more than 5% from mid, liquidity is thin and your order may create a new tick.
-- **Watch endTime**: Limit orders are automatically cancelled when a market resolves or ends. Reset for each new market.
-- **Consider becoming an LP** instead of pure limit orders — LPs have price exposure but earn passive fees on both sides. See [Liquidity provider](provide-liquidity.md).
+* **Place orders on both sides** around mid-price → earn the spread as a passive market maker.
+* **Tiered orders**: $0.40 50 USDC, $0.42 50 USDC, $0.44 50 USDC → scale in instead of going all-in.
+* **Check order book depth** before placing — if the best bid/ask is more than 5% from mid, liquidity is thin and your order may create a new tick.
+* **Watch endTime**: Limit orders are automatically cancelled when a market resolves or ends. Reset for each new market.
+* **Consider becoming an LP** instead of pure limit orders — LPs have price exposure but earn passive fees on both sides. See [Liquidity provider](../liquidity-and-market/provide-liquidity.md).
 
 ## Maker vs taker — why makers get a better price
 
 If your order matches immediately in the same block as a taker placing the opposite side:
 
-- The taker fills at exactly your limit price, not the mid.
-- You (the maker) enjoy **price improvement** — a better price than the AMM spot.
+* The taker fills at exactly your limit price, not the mid.
+* You (the maker) enjoy **price improvement** — a better price than the AMM spot.
 
 This is why CLOB makers typically get better prices than standard AMM swaps.
 
 ## Watch your orders
 
-- The app sends notifications when:
-  - An order fills (full or partial)
-  - An order is cancelled (by you or due to market resolution)
-  - An order is nearing endTime (warning to consider cancelling)
-- Webhook / API integration for bots — see [Developers](../developers/bots-mobile.md).
+* The app sends notifications when:
+  * An order fills (full or partial)
+  * An order is cancelled (by you or due to market resolution)
+  * An order is nearing endTime (warning to consider cancelling)
+* Webhook / API integration for bots — see [Developers](../../developers-guide/bots-mobile.md).

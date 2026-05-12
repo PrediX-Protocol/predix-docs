@@ -4,7 +4,7 @@ Every market has a YES price chart over time. Read the chart, change timeframes,
 
 ## Basic chart
 
-![Chart data: 3 sources (Router.Trade canonical + Hook AMM analytics + CLOB matches) combined into YES price chart](../.gitbook/assets/41-chart-sources.svg)
+![Chart data: 3 sources (Router.Trade canonical + Hook AMM analytics + CLOB matches) combined into YES price chart](../../.gitbook/assets/41-chart-sources.svg)
 
 The chart aggregates prices from:
 
@@ -124,7 +124,7 @@ GET /api/markets/:id/price-history?from=...&to=...
 → [{ ts, yesPrice, source }]
 ```
 
-Details: [Indexer API](../developers/api-reference.md#indexer-endpoints).
+Details: [Indexer API](../../developers-guide/api-reference.md#indexer-endpoints).
 
 ## Tips for reading prediction market charts
 

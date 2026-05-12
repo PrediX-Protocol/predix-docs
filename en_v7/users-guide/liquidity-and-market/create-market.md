@@ -9,11 +9,11 @@ Guide for **creators** (holders of `CREATOR_ROLE`) to create a market or multi-o
 | **Phase 1** (current) | Addresses with `CREATOR_ROLE` | Whitelisted via governance proposal                                                            |
 | **Phase 3** (TBA)     | Permissionless                | Stake a bond of **10,000 PRX** (refunded if the market resolves cleanly, slashed if malformed) |
 
-Apply for `CREATOR_ROLE`: submit a form on [Discord](../resources/links.md) #creator-application + governance vote.
+Apply for `CREATOR_ROLE`: submit a form on [Discord](../../resources/links.md) #creator-application + governance vote.
 
 ## Decisions before creating
 
-![Choose market type: Price threshold → ChainlinkOracle, Subjective → ManualOracle, Multi-outcome → Event, Range → Scalar](../.gitbook/assets/46-market-creation-decision.svg)
+![Choose market type: Price threshold → ChainlinkOracle, Subjective → ManualOracle, Multi-outcome → Event, Range → Scalar](../../.gitbook/assets/46-market-creation-decision.svg)
 
 ## Parameters to decide
 
@@ -64,7 +64,7 @@ Set via the admin BE endpoint after on-chain creation.
 
 ## Steps — create a binary market with Chainlink
 
-![Create market: fill form → select oracle → set params → deploy on-chain → PoolManager init pool → market live](../.gitbook/assets/18-create-market.svg)
+![Create market: fill form → select oracle → set params → deploy on-chain → PoolManager init pool → market live](../../.gitbook/assets/18-create-market.svg)
 
 ### Details
 

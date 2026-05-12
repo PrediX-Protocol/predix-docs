@@ -21,7 +21,7 @@ After a market resolves, exchange winning tokens for USDC. If a market cannot be
 
 Multiple resolved markets → click **Claim All** → batched via **passkey smart account** (1 click, 1 tx, gas via paymaster). EOA users: each market requires a separate tx (wallets do not support native batching). Both account types receive sponsor coverage if the user qualifies for the program.
 
-![Batch claim: Click Claim All → smart account bundle redeem(m1...mN) → 1 UserOp → Diamond burn tokens + transfer total USDC](../.gitbook/assets/16-claim-batch.svg)
+![Batch claim: Click Claim All → smart account bundle redeem(m1...mN) → 1 UserOp → Diamond burn tokens + transfer total USDC](../../.gitbook/assets/16-claim-batch.svg)
 
 ### Losing tokens
 
@@ -75,4 +75,4 @@ Phase 2 (TBA): A **single-sided refund** with a 50% haircut may be introduced �
 
 ## Who decides to enable refund
 
-![Admin refund: admin propose enableRefundMode → TimelockController 48h delay → execute → user burn YES+NO pairs → USDC pro-rata](../.gitbook/assets/17-admin-refund.svg)
+![Admin refund: admin propose enableRefundMode → TimelockController 48h delay → execute → user burn YES+NO pairs → USDC pro-rata](../../.gitbook/assets/17-admin-refund.svg)
