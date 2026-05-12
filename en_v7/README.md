@@ -1,10 +1,15 @@
 ---
 description: The Financializing Information Markets
+icon: align-justify
 ---
 
-# Welcome to PrediX
+# PREDIX 101 — START HERE
 
-PrediX is the On-chain Prediction Market on [**Unichain**](https://www.unichain.org/). Each event creates two outcome tokens `YES / NO` and the correct token redeems 1:1 USDC when the market resolves.
+{% hint style="info" %}
+**PrediX is the On-chain Prediction Market on** [**Unichain**](https://www.unichain.org/)**. Each event creates two outcome tokens `YES / NO` and the correct token redeems 1:1 USDC when the market resolves.**
+{% endhint %}
+
+### Protocol Overview
 
 > 🟡 **Status —** see on [**Network info**](getting-started/#network-info)**.**
 >
@@ -22,7 +27,9 @@ PrediX is the On-chain Prediction Market on [**Unichain**](https://www.unichain.
 
 ***
 
-## Start here
+### Get Familiar with PrediX
+
+<table data-view="cards"><thead><tr><th></th><th data-type="content-ref"></th></tr></thead><tbody><tr><td>Fun</td><td><a href="https://docs.opinion.trade/contact-us">https://docs.opinion.trade/contact-us</a></td></tr></tbody></table>
 
 | You are…                         | Start from                           |
 | -------------------------------- | ------------------------------------ |
@@ -44,9 +51,25 @@ PrediX is the On-chain Prediction Market on [**Unichain**](https://www.unichain.
 
 ***
 
-## PrediX Links
+Quick Links
 
+### Application
 
+* App
+* Testnet
+* Explorer
+
+### Community
+
+* Discord
+* Twitter
+* GitHub
+
+### Developers
+
+* Contract Addresses
+* API Reference
+* Security
 
 {% embed url="https://app.predix.app" %}
 

@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome to PrediX](README.md)
+* [PREDIX 101 — START HERE](README.md)
 
 ## FUNDAMENTALS
 
