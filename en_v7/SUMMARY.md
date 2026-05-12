@@ -53,7 +53,7 @@
 ## Developers guide
 
 * [Quickstart](developers-guide/developers.md)
-* [Testnet info](developers-guide/testnet.md)
+* [Testnet Information](developers-guide/testnet.md)
 * [Router integration](developers-guide/router-integration.md)
 * [API reference](developers-guide/api-reference.md)
 * [Bots & mobile](developers-guide/bots-mobile.md)
