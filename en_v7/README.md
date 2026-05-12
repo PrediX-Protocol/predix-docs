@@ -35,7 +35,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 Understand the thesis, architecture, and market positioning.
 
-<table data-view="cards"><thead><tr><th></th><th data-type="content-ref"></th><th data-type="content-ref"></th><th data-type="content-ref"></th></tr></thead><tbody><tr><td><h4>Fundamentals</h4></td><td><a href="fundamentals/overview.md">overview.md</a></td><td><a href="fundamentals/core-innovations.md">core-innovations.md</a></td><td><a href="fundamentals/market-landscape.md">market-landscape.md</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-type="content-ref"></th></tr></thead><tbody><tr><td><h4></h4></td><td><a href="fundamentals/overview.md">overview.md</a></td></tr><tr><td></td><td><a href="fundamentals/core-innovations.md">core-innovations.md</a></td></tr><tr><td></td><td><a href="fundamentals/market-landscape.md">market-landscape.md</a></td></tr></tbody></table>
 
 | You are…                         | Start from                                         |
 | -------------------------------- | -------------------------------------------------- |
