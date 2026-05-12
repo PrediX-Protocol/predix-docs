@@ -29,35 +29,25 @@ icon: align-justify
 
 ### Quick Links
 
+{% hint style="info" %}
 Quick access to protocol documentation, developer resources, infrastructure architecture, and ecosystem channels across the PrediX network.
+{% endhint %}
 
 <a href="/broken/pages/qbjzTee4WrFLuoW5r1TU" class="button primary" data-icon="layer-plus">FUNDAMENTALS</a>
 
 > Understand the thesis, architecture, and market positioning.
 
-{% columns %}
-{% column %}
 {% content-ref url="fundamentals/overview.md" %}
 [overview.md](fundamentals/overview.md)
 {% endcontent-ref %}
-{% endcolumn %}
 
-{% column %}
 {% content-ref url="fundamentals/core-innovations.md" %}
 [core-innovations.md](fundamentals/core-innovations.md)
 {% endcontent-ref %}
-{% endcolumn %}
 
-{% column %}
-{% content-ref url="fundamentals/market-landscape.md" %}
-[market-landscape.md](fundamentals/market-landscape.md)
-{% endcontent-ref %}
-{% endcolumn %}
-{% endcolumns %}
+#### <a href="users-guide/first-trade/" class="button primary" data-icon="chart-column">START TRADING</a>
 
-#### Start Trading
-
-> Trade predictive markets on Unichain.
+> <mark style="color:$danger;">Trade predictive markets on Unichain.</mark>
 
 {% content-ref url="users-guide/first-trade/connect-wallet.md" %}
 [connect-wallet.md](users-guide/first-trade/connect-wallet.md)
@@ -70,6 +60,40 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 {% content-ref url="users-guide/first-trade/market-order.md" %}
 [market-order.md](users-guide/first-trade/market-order.md)
 {% endcontent-ref %}
+
+<a href="/broken/pages/wCcSWgEZAwC1z4fKrfgZ" class="button primary" data-icon="square-half-stroke">CORE CONCEPTS</a>
+
+> <mark style="color:$danger;">Learn how PrediX markets function.</mark>
+
+{% content-ref url="core-concepts/prediction-market.md" %}
+[prediction-market.md](core-concepts/prediction-market.md)
+{% endcontent-ref %}
+
+{% content-ref url="core-concepts/outcome-tokens.md" %}
+[outcome-tokens.md](core-concepts/outcome-tokens.md)
+{% endcontent-ref %}
+
+{% content-ref url="core-concepts/clob-amm-hybrid.md" %}
+[clob-amm-hybrid.md](core-concepts/clob-amm-hybrid.md)
+{% endcontent-ref %}
+
+{% content-ref url="core-concepts/resolution.md" %}
+[resolution.md](core-concepts/resolution.md)
+{% endcontent-ref %}
+
+<a href="users-guide/liquidity-and-market/" class="button primary">LIQUIDITY &#x26; MARKET</a>
+
+> <mark style="color:$danger;">Provide liquidity or create markets.</mark>
+
+{% content-ref url="users-guide/liquidity-and-market/provide-liquidity.md" %}
+[provide-liquidity.md](users-guide/liquidity-and-market/provide-liquidity.md)
+{% endcontent-ref %}
+
+{% content-ref url="users-guide/liquidity-and-market/create-market.md" %}
+[create-market.md](users-guide/liquidity-and-market/create-market.md)
+{% endcontent-ref %}
+
+<a href="/broken/pages/8HclYTsOnU8kmDjTSXrH" class="button primary">PRX ECONOMY</a>
 
 
 
