@@ -1,5 +1,5 @@
 ---
-description: Make your first trade on PrediX in minutes.
+description: Make your first trade on PrediX in under 2 minutes.
 ---
 
 # Quick start
@@ -90,7 +90,7 @@ Selected campaigns and seasonal events may receive boosted multipliers, includin
 All transactions on testnet have no real value — balances and history will be reset before mainnet launch. Testnet activity is tracked via the points campaign and converts to PRX at TGE.
 {% endhint %}
 
-<table><thead><tr><th width="229.66668701171875">Information</th><th>Testnet (live now)</th><th>Mainnet (coming soon)</th></tr></thead><tbody><tr><td><strong>Network</strong></td><td>Unichain Sepolia</td><td>Unichain</td></tr><tr><td><strong>Chain ID</strong></td><td><code>1301</code></td><td><code>130</code></td></tr><tr><td><strong>Public RPC</strong></td><td><code>https://sepolia.unichain.org</code></td><td><code>https://mainnet.unichain.org</code></td></tr><tr><td><strong>Explorer</strong></td><td><a href="https://sepolia.uniscan.xyz/">https://sepolia.uniscan.xyz/</a></td><td><a href="https://uniscan.xyz/">https://uniscan.xyz/</a></td></tr><tr><td><strong>USDC</strong></td><td><code>0x2D56777Af1B52034068Af6864741a161dEE613Ac</code> (test-USDC)</td><td>TBA</td></tr><tr><td><strong>Faucet</strong></td><td>Yes — 0.0005 ETH + 10k USDC / 24h / wallet</td><td>N/A</td></tr><tr><td><strong>Status</strong></td><td>✅ Beta live for users + devs</td><td>🟡 TBA — after external audit</td></tr></tbody></table>
+<table><thead><tr><th width="130.66668701171875">Information</th><th>Testnet (live now)</th><th>Mainnet (coming soon)</th></tr></thead><tbody><tr><td><strong>Network</strong></td><td>Unichain Sepolia</td><td>Unichain</td></tr><tr><td><strong>Chain ID</strong></td><td><code>1301</code></td><td><code>130</code></td></tr><tr><td><strong>Public RPC</strong></td><td><code>https://sepolia.unichain.org</code></td><td><code>https://mainnet.unichain.org</code></td></tr><tr><td><strong>Explorer</strong></td><td><a href="https://sepolia.uniscan.xyz/">https://sepolia.uniscan.xyz/</a></td><td><a href="https://uniscan.xyz/">https://uniscan.xyz/</a></td></tr><tr><td><strong>USDC</strong></td><td><code>0x2D56777Af1B52034068Af6864741a161dEE613Ac</code> (test-USDC)</td><td>TBA</td></tr><tr><td><strong>Faucet</strong></td><td>Yes — 0.0005 ETH + 10k USDC / 24h / wallet</td><td>N/A</td></tr><tr><td><strong>Status</strong></td><td>✅ Beta live for users + devs</td><td>🟡 TBA — after external audit</td></tr></tbody></table>
 
 
 

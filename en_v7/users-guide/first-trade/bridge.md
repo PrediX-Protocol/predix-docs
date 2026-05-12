@@ -15,7 +15,7 @@ PrediX uses USDC on Unichain as collateral. If your USDC is on another chain, yo
 
 > **Tip**: Coinbase and Binance have added or are adding Unichain network support. Direct withdrawal saves you a bridge step.
 
-## In-App Flow
+## Bridge Widget (in-app)
 
 PrediX UI has an integrated **Bridge widget** — no need to open Across/Stargate in a separate tab.
 
@@ -34,7 +34,7 @@ PrediX UI has an integrated **Bridge widget** — no need to open Across/Stargat
 
 ## Bridge Directly from CEX
 
-Many CEXs have listed Unichain. Withdrawal flow:
+Many CEXs now support Unichain withdrawal natively. This saves you a bridge step. Withdrawal flow:
 
 1. On the CEX, select USDC → Withdraw.
 2. Network: choose **Unichain** (if available). If not yet available → withdraw to Ethereum or Arbitrum, then bridge.
@@ -43,6 +43,31 @@ Many CEXs have listed Unichain. Withdrawal flow:
 5. Wait for CEX processing (5-30 min depending on the CEX).
 
 > **Important**: Test with a small amount ($10) the first time. Wrong network = lost funds with no recovery.
+
+## Gas Fees (native ETH)
+
+To pay transaction fees on Unichain you need a small amount of **ETH on Unichain**:
+
+| Wallet type                 | Gas mechanism                                                                        |
+| --------------------------- | ------------------------------------------------------------------------------------ |
+| **Passkey + Smart Account** | Paymaster auto-pays in USDC. Sponsorship covers gas if eligible — no ETH needed.     |
+| **Crypto Wallet (EOA)**     | You pay ETH directly. Bridge ETH using the same widget — select ETH instead of USDC. |
+
+{% hint style="success" %}
+**Unichain gas is extremely cheap** — typical trade tx costs **\~$0.001–0.01**. A one-time bridge of $5 worth of ETH lasts thousands of transactions for EOA users.
+{% endhint %}
+
+## Reverse Bridge (Unichain → another chain)
+
+Same UI, opposite direction:
+
+1. Click **Withdraw** in the app header
+2. Select **Bridge to another chain**
+3. Choose destination + amount
+4. Sign tx on Unichain
+5. Wait for bridge completion (2–15 min)
+
+***
 
 ## Slippage & Quote
 

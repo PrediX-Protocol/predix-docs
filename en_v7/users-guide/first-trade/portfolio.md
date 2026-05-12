@@ -124,3 +124,70 @@ The app analyzes your portfolio and suggests:
 * Which limit orders are stale (price far from the market)?
 
 Notifications can be toggled in [Settings](../../resources/faq.md).
+
+### Troubleshooting
+
+<details>
+
+<summary>Balance shows zero but I just bought shares</summary>
+
+**Reason:** Indexer lag. After a successful tx, the indexer typically catches up within 5–15 seconds.
+
+**Fix:**
+
+* Wait 15 seconds and refresh
+* If still missing after 1 minute, check the explorer with your tx hash — confirm the trade actually executed
+* Force a fresh fetch with `?nocache=1` URL param
+
+</details>
+
+<details>
+
+<summary>Unrealized P&#x26;L looks wrong</summary>
+
+**Reason:** Spot price may have just updated, or your cost basis includes a recent trade that's still being indexed.
+
+**Fix:**
+
+* Check the **Avg Cost** field — does it match what you'd compute from your fills?
+* If Avg Cost is wrong, the indexer is rebuilding — wait 30 seconds and refresh
+* If still wrong after 5 minutes, report on Discord `#bug-reports` with your wallet address
+
+</details>
+
+<details>
+
+<summary>Cannot sell — "trading closed"</summary>
+
+**Reason:** The market has passed `endTime` and is in the resolution window.
+
+**Fix:** Wait for resolution. After the oracle posts the outcome, you can redeem winning shares for $1 each via the **Claim** action.
+
+</details>
+
+<details>
+
+<summary>"Pending resolve" badge stuck for >48 hours</summary>
+
+**Reason:** Oracle dispute or delay (UMA markets can take longer if disputed).
+
+**Fix:**
+
+* Check the market's resolution status on its detail page
+* For UMA markets: see if a dispute is open on the [UMA dApp](https://oracle.uma.xyz)
+* For Chainlink markets: typically resolves within minutes — long delay means oracle issue
+* Discord `#resolution` for status updates
+
+</details>
+
+<details>
+
+<summary>CSV export missing recent trades</summary>
+
+**Reason:** Export uses the indexer which may lag by a few seconds.
+
+**Fix:** Wait 30 seconds after your most recent trade and re-download. The CSV is generated on-demand from the latest indexer snapshot.
+
+</details>
+
+***
