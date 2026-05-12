@@ -1,17 +1,17 @@
-# Liquidity provider (LP)
+# Provide liquidity (LP)
 
 Provide liquidity to the AMM pool of a market. Earn fees from every swap through that pool.
 
 ## Overview
 
-- The YES-USDC pool (and optionally NO-USDC) is a standard Uniswap v4 pool.
-- You deposit a pair of tokens into a specific price range → receive an **LP NFT** (Uniswap v4 PositionManager).
-- For each swap through the pool, you earn fees pro-rata based on your share.
-- You can remove liquidity at any time (except after a market resolves and the pool closes).
+* The YES-USDC pool (and optionally NO-USDC) is a standard Uniswap v4 pool.
+* You deposit a pair of tokens into a specific price range → receive an **LP NFT** (Uniswap v4 PositionManager).
+* For each swap through the pool, you earn fees pro-rata based on your share.
+* You can remove liquidity at any time (except after a market resolves and the pool closes).
 
 ## Risk vs reward
 
-![LP risk/reward: earn fee per swap (positive) vs impermanent loss (risk). After resolve: YES wins=$1 or NO wins=$0. Net PnL = final - initial + fees](../_design/52-lp-risk-reward.svg)
+![LP risk/reward: earn fee per swap (positive) vs impermanent loss (risk). After resolve: YES wins=$1 or NO wins=$0. Net PnL = final - initial + fees](../.gitbook/assets/52-lp-risk-reward.svg)
 
 Being an LP is a **directional bet** — you lose if the market resolves toward the side you did not expect. Make sure you understand impermanent loss (IL) and outcome risk before providing liquidity.
 
@@ -20,8 +20,8 @@ Being an LP is a **directional bet** — you lose if the market resolves toward 
 1. Go to the market detail page. Select the **Liquidity** tab.
 2. Choose a pool: **YES-USDC** or **NO-USDC** (if both are available).
 3. Select a price range:
-   - **Full range**: $0.01 - $0.99. Safest option, lower fee earnings.
-   - **Concentrated**: e.g. $0.40 - $0.60. Higher earnings, higher IL risk if the price moves out of range.
+   * **Full range**: $0.01 - $0.99. Safest option, lower fee earnings.
+   * **Concentrated**: e.g. $0.40 - $0.60. Higher earnings, higher IL risk if the price moves out of range.
 4. Enter the USDC amount + YES amount (the UI auto-balances based on the current price).
 5. If you lack YES: the app suggests **Split USDC → YES + NO** (minting both from USDC), and auto-fills the amount.
 6. Preview: total deposit, expected APR (based on historical volume), price range.
@@ -50,12 +50,13 @@ You can compound by re-depositing the claimed fees into the pool to increase you
 
 The pool closes — no more trading or adding liquidity.
 
-![LP after resolve: Hook blocks pool → LP removes liquidity → receives USDC + YES → redeem YES=$1 → total USDC to wallet](../_design/19-lp-after-resolve.svg)
+![LP after resolve: Hook blocks pool → LP removes liquidity → receives USDC + YES → redeem YES=$1 → total USDC to wallet](../.gitbook/assets/19-lp-after-resolve.svg)
 
 You can:
-- **Remove liquidity** to retrieve USDC + any remaining outcome tokens.
-- **Redeem** the winning outcome token → 1 USDC per token.
-- The losing token = $0.
+
+* **Remove liquidity** to retrieve USDC + any remaining outcome tokens.
+* **Redeem** the winning outcome token → 1 USDC per token.
+* The losing token = $0.
 
 ## Impermanent loss (IL) in prediction markets
 
@@ -112,7 +113,8 @@ LP fees are collected in USDC + outcome tokens. Each claim event counts as incom
 ## API integration
 
 LP positions are accessible via:
-- Indexer: `GET /api/users/:address/lp-positions`
-- BE: `GET /api/v2/users/:address/lp-positions`
+
+* Indexer: `GET /api/users/:address/lp-positions`
+* BE: `GET /api/v2/users/:address/lp-positions`
 
 Details: [Indexer API](../developers/api-reference.md#indexer-endpoints).

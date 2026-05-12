@@ -2,42 +2,43 @@
 
 PrediX exposes 3 layers for developers:
 
-| Layer | Purpose | When to use |
-|---|---|---|
-| **Indexer API** (Ponder + PostgreSQL + Hono) | Raw on-chain data: market, position, trade, OHLC | Bots, analytics, raw data |
-| **Backend API** (NestJS v2) | View model for FE/app: cache + metadata + i18n + auth + comments | FE / mobile app user-facing |
-| **Smart contract events** | Canonical source of truth on-chain | Custom subgraph, monitor, listener |
+| Layer                                        | Purpose                                                          | When to use                        |
+| -------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------- |
+| **Indexer API** (Ponder + PostgreSQL + Hono) | Raw on-chain data: market, position, trade, OHLC                 | Bots, analytics, raw data          |
+| **Backend API** (NestJS v2)                  | View model for FE/app: cache + metadata + i18n + auth + comments | FE / mobile app user-facing        |
+| **Smart contract events**                    | Canonical source of truth on-chain                               | Custom subgraph, monitor, listener |
 
 When to use BE vs Indexer:
 
-| Need | Indexer | Backend |
-|---|---|---|
-| Raw on-chain data | Yes | wraps Indexer |
-| Display metadata (title, category, icon) | No | Yes (MongoDB) |
-| Localized i18n | No | Yes |
-| Auth session (SIWE) | No | Yes |
-| Cache (2s hot / 60s warm) | No | Yes |
-| Notifications / comments | No | Yes |
+| Need                                     | Indexer | Backend       |
+| ---------------------------------------- | ------- | ------------- |
+| Raw on-chain data                        | Yes     | wraps Indexer |
+| Display metadata (title, category, icon) | No      | Yes (MongoDB) |
+| Localized i18n                           | No      | Yes           |
+| Auth session (SIWE)                      | No      | Yes           |
+| Cache (2s hot / 60s warm)                | No      | Yes           |
+| Notifications / comments                 | No      | Yes           |
 
 Bot/analytics raw data -> Indexer. FE/app user-facing -> Backend.
 
 ## Base URL
 
-| Env | Indexer | Backend |
-|---|---|---|
+| Env                | Indexer                                | Backend                                |
+| ------------------ | -------------------------------------- | -------------------------------------- |
 | **Testnet** (live) | Gated — see [Testnet info](testnet.md) | Gated — see [Testnet info](testnet.md) |
-| **Mainnet** (TBA) | `https://indexer.predix.app` | `https://api.predix.app` |
+| **Mainnet** (TBA)  | `https://indexer.predix.app`           | `https://api.predix.app`               |
 
 Schema is identical across both environments — switching testnet to mainnet only requires changing the base URL.
 
 ## Authentication
 
-- **Indexer**: public read-only. Pro tier (high rate limit) requires an API key — see [Bots & mobile](bots-mobile.md).
-- **Backend**: public + auth via SIWE cookie session (details in the SIWE auth flow section below).
+* **Indexer**: public read-only. Pro tier (high rate limit) requires an API key — see [Bots & mobile](bots-mobile.md).
+* **Backend**: public + auth via SIWE cookie session (details in the SIWE auth flow section below).
 
 ## Response envelope
 
 Indexer success:
+
 ```json
 {
   "data": <payload>,
@@ -46,6 +47,7 @@ Indexer success:
 ```
 
 Backend success:
+
 ```json
 {
   "data": <payload>,
@@ -56,6 +58,7 @@ Backend success:
 Single item: `"meta": null` (Indexer) or meta.list fields omitted (BE).
 
 Error (both):
+
 ```json
 {
   "error": "MarketNotFound",
@@ -65,7 +68,7 @@ Error (both):
 
 BE adds `details: [{path, message}]` for validation errors + a `code` enum (see Error codes section).
 
----
+***
 
 ## Indexer endpoints
 
@@ -82,6 +85,7 @@ GET /api/markets/:id/holders           top YES + NO holders
 ```
 
 Markets list response:
+
 ```json
 {
   "data": [{
@@ -146,20 +150,20 @@ GET /api/doc                    OpenAPI JSON
 GET /api/docs                   Swagger UI
 ```
 
----
+***
 
 ## Backend endpoints (v2)
 
 ### Primitives — strict wire format
 
-| Type | Format | Example |
-|---|---|---|
-| Address | lowercase `0x[a-f0-9]{40}` | `"0xfad5..."` |
-| MarketId | lowercase `0x[a-f0-9]{64}` | `"0xabc...64hex"` |
-| Price | decimal string | `"0.524"` |
-| Money | object | `{decimal:"10.5", raw:"10500000", decimals:6, unit:"USDC"}` |
-| Timestamp | unix seconds int | `1740100000` |
-| User string | object | `{key:"market.0xabc.title", fallback:"Will BTC..."}` |
+| Type        | Format                     | Example                                                     |
+| ----------- | -------------------------- | ----------------------------------------------------------- |
+| Address     | lowercase `0x[a-f0-9]{40}` | `"0xfad5..."`                                               |
+| MarketId    | lowercase `0x[a-f0-9]{64}` | `"0xabc...64hex"`                                           |
+| Price       | decimal string             | `"0.524"`                                                   |
+| Money       | object                     | `{decimal:"10.5", raw:"10500000", decimals:6, unit:"USDC"}` |
+| Timestamp   | unix seconds int           | `1740100000`                                                |
+| User string | object                     | `{key:"market.0xabc.title", fallback:"Will BTC..."}`        |
 
 ### Market discriminator (Stripe pattern)
 
@@ -289,7 +293,7 @@ GET /api/v2/capabilities                  enum describe list
 
 ### SIWE auth flow
 
-![SIWE auth: GET /auth/challenge -> server returns nonce -> user signMessage -> POST /auth/verify -> BE verifies ECDSA -> set HTTPOnly cookie 7 days](../_design/14-siwe-auth.svg)
+![SIWE auth: GET /auth/challenge -> server returns nonce -> user signMessage -> POST /auth/verify -> BE verifies ECDSA -> set HTTPOnly cookie 7 days](../.gitbook/assets/14-siwe-auth.svg)
 
 ```typescript
 // 1. Challenge
@@ -315,20 +319,20 @@ Response: `X-Cache: HIT | MISS`, `X-Cache-Tier: hot | warm`.
 
 ### Error codes (closed set)
 
-| Code | HTTP | Meaning |
-|---|---|---|
-| `MARKET_NOT_FOUND` | 404 | Market id does not exist |
-| `MARKET_PAUSED` | 400 | Market is currently paused |
-| `INDEXER_UNAVAILABLE` | 503 | Indexer circuit breaker tripped |
-| `INVALID_ADDRESS` | 400 | Address malformed |
-| `INVALID_MARKET_ID` | 400 | MarketId malformed |
-| `AUTH_REQUIRED` | 401 | Endpoint requires a session |
-| `AUTH_INVALID` | 401 | Session expired or invalid |
-| `FORBIDDEN` | 403 | Insufficient role |
-| `VALIDATION_FAILED` | 400 | Request body failed validation |
-| `RATE_LIMIT_EXCEEDED` | 429 | Rate limit exceeded |
-| `INSUFFICIENT_BALANCE` | 400 | Wallet has insufficient balance |
-| `SLIPPAGE_EXCEEDED` | 400 | On-chain revert due to slippage |
+| Code                   | HTTP | Meaning                         |
+| ---------------------- | ---- | ------------------------------- |
+| `MARKET_NOT_FOUND`     | 404  | Market id does not exist        |
+| `MARKET_PAUSED`        | 400  | Market is currently paused      |
+| `INDEXER_UNAVAILABLE`  | 503  | Indexer circuit breaker tripped |
+| `INVALID_ADDRESS`      | 400  | Address malformed               |
+| `INVALID_MARKET_ID`    | 400  | MarketId malformed              |
+| `AUTH_REQUIRED`        | 401  | Endpoint requires a session     |
+| `AUTH_INVALID`         | 401  | Session expired or invalid      |
+| `FORBIDDEN`            | 403  | Insufficient role               |
+| `VALIDATION_FAILED`    | 400  | Request body failed validation  |
+| `RATE_LIMIT_EXCEEDED`  | 429  | Rate limit exceeded             |
+| `INSUFFICIENT_BALANCE` | 400  | Wallet has insufficient balance |
+| `SLIPPAGE_EXCEEDED`    | 400  | On-chain revert due to slippage |
 
 Full list: `GET /api/v2/capabilities`.
 
@@ -351,17 +355,17 @@ const { data } = await api.GET('/markets/{id}', {
 });
 ```
 
----
+***
 
 ## Smart contract events
 
 Source of truth on-chain — bot listeners, custom subgraphs, and monitoring services should consume from here.
 
-![Event source: Router.Trade = canonical (volume + trades count), Hook_MarketTraded = analytics only (priceSnapshot, NOT volume), PositionSplit/Merge/Redeem/Refund = audit rows always land](../_design/63-event-source-truth.svg)
+![Event source: Router.Trade = canonical (volume + trades count), Hook\_MarketTraded = analytics only (priceSnapshot, NOT volume), PositionSplit/Merge/Redeem/Refund = audit rows always land](../.gitbook/assets/63-event-source-truth.svg)
 
-- **Canonical trade**: `Router.Trade` — `protocolStats.totalVolume / totalTrades` **only** increments from this event.
-- **AMM swap analytics**: `Hook_MarketTraded` — priceSnapshot only, does not count volume (avoids double-counting).
-- **Audit rows always land**: `PositionSplit`, `PositionMerged`, `TokensRedeemed`, `MarketRefunded` — recorded regardless of recipient.
+* **Canonical trade**: `Router.Trade` — `protocolStats.totalVolume / totalTrades` **only** increments from this event.
+* **AMM swap analytics**: `Hook_MarketTraded` — priceSnapshot only, does not count volume (avoids double-counting).
+* **Audit rows always land**: `PositionSplit`, `PositionMerged`, `TokensRedeemed`, `MarketRefunded` — recorded regardless of recipient.
 
 ### Router events
 
@@ -428,8 +432,7 @@ event Hook_MarketTraded(bytes32 indexed marketId, address indexed trader, uint25
 event Hook_PauseStatusChanged(...);
 ```
 
-`Hook_PoolRegistered` -> `hookPoolBinding` (essential lookup for filtering PoolManager events).
-`Hook_MarketTraded` -> `priceSnapshot` (source="hook_amm"), `market.lastTradeAt`. **Does NOT** count volume.
+`Hook_PoolRegistered` -> `hookPoolBinding` (essential lookup for filtering PoolManager events). `Hook_MarketTraded` -> `priceSnapshot` (source="hook\_amm"), `market.lastTradeAt`. **Does NOT** count volume.
 
 ### Oracle events
 
@@ -465,11 +468,12 @@ Each market has 1 YES + 1 NO token. Table: `holder` — canonical balance view.
 ### PoolManager (Uniswap v4)
 
 Filter by `hookPoolBinding` membership first:
-- `Initialize` -> insert `ammPoolState`
-- `Swap` -> update `sqrtPriceX96`, `liquidity`, `tick`
-- `ModifyLiquidity` -> update `liquidity += delta`
 
----
+* `Initialize` -> insert `ammPoolState`
+* `Swap` -> update `sqrtPriceX96`, `liquidity`, `tick`
+* `ModifyLiquidity` -> update `liquidity += delta`
+
+***
 
 ## Common patterns
 
@@ -522,14 +526,13 @@ Auth: include cookie or API key header.
 
 ## Limits
 
-| Tier | Public | Auth | Quota |
-|---|---|---|---|
-| Free | 60 req/min/IP | 300 req/min/user | 10,000 req/day |
-| Pro ($20/month) | 600 req/min | 3000 req/min | 1M req/day |
-| Enterprise | Custom | Custom | Custom |
+| Tier            | Public        | Auth             | Quota          |
+| --------------- | ------------- | ---------------- | -------------- |
+| Free            | 60 req/min/IP | 300 req/min/user | 10,000 req/day |
+| Pro ($20/month) | 600 req/min   | 3000 req/min     | 1M req/day     |
+| Enterprise      | Custom        | Custom           | Custom         |
 
-Auth endpoint (challenge/verify): 5/min Free, 30/min Pro.
-WebSocket: 10 connections/IP, unlimited messages.
+Auth endpoint (challenge/verify): 5/min Free, 30/min Pro. WebSocket: 10 connections/IP, unlimited messages.
 
 API key: [Bots & mobile](bots-mobile.md).
 
@@ -539,8 +542,8 @@ All on-chain amounts are `uint256` -> serialized as **decimal strings** at the b
 
 ## Indexer lag
 
-- **L2 finality**: ~12-15 min on Unichain.
-- **Indexer lag** from head: typically < 60s (`/api/health`).
-- Just traded but don't see it -> wait 10-30s, retry.
+* **L2 finality**: \~12-15 min on Unichain.
+* **Indexer lag** from head: typically < 60s (`/api/health`).
+* Just traded but don't see it -> wait 10-30s, retry.
 
 Ponder handles reorgs automatically — chain reorg -> indexer reverts + replays. Clients need no custom logic.

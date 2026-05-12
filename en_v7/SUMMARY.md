@@ -1,12 +1,12 @@
 # Table of contents
 
-* [PrediX](README.md)
+* [Welcome to PrediX](README.md)
 
-## Overview
+## FUNDAMENTALS
 
-* [PrediX Thesis](overview/README.md)
-* [Core Innovations & MOAT](overview/core-innovations.md)
-* [Market Landscape](overview/market-landscape.md)
+* [PrediX Thesis](fundamentals/overview.md)
+* [Core Innovations & Moat](fundamentals/core-innovations.md)
+* [PrediX vs Existing Prediction Markets](fundamentals/market-landscape.md)
 
 ## Getting Started
 
@@ -28,16 +28,16 @@
 ## Guides
 
 * [Overview](guides/README.md)
-* Trading
+* [Trading](guides/trading/README.md)
   * [Market order](guides/market-order.md)
   * [Limit order (CLOB)](guides/limit-order.md)
-* Liquidity & market
+* [Liquidity & market](guides/liquidity-and-market/README.md)
   * [Provide liquidity (LP)](guides/provide-liquidity.md)
   * [Create market](guides/create-market.md)
-* Management
-  * [Portfolio & P&L](guides/portfolio.md)
+* [Management](guides/management/README.md)
+  * [Portfolio & P\&L](guides/portfolio.md)
   * [Redeem & refund](guides/redeem-refund.md)
-* Features
+* [Features](guides/features/README.md)
   * [Chart & timeframe](guides/chart-timeframe.md)
   * [Notifications & alerts](guides/notifications.md)
   * [Discussion & social](guides/discussion.md)
@@ -47,12 +47,12 @@
 ## Economics
 
 * [PRX overview](economics/README.md)
-* PRX Economy
+* [PRX Economy](economics/prx-economy/README.md)
   * [Allocation & vesting](economics/allocation-vesting.md)
   * [Staking real yield](economics/staking.md)
   * [vePRX & gauge voting](economics/veprx-gauge.md)
   * [Buyback-burn & treasury](economics/buyback-burn.md)
-* Incentive & Community
+* [Incentive & Community](economics/incentive-and-community/README.md)
   * [Points & seasons](economics/points-seasons.md)
   * [KOL & Ambassador](economics/kol-ambassador.md)
   * [Rewards & gamification](economics/rewards.md)

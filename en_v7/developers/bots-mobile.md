@@ -1,20 +1,20 @@
-# Bots & mobile / Wagmi
+# Bots & mobile
 
 Two different use cases sharing the same infrastructure: API key auth + Router contract.
 
-| Use case | Primary stack |
-|---|---|
+| Use case                       | Primary stack                                      |
+| ------------------------------ | -------------------------------------------------- |
 | **Trading bot / market maker** | API key + REST/WebSocket + `@predix/bot-sdk` (TBA) |
-| **Mobile app native** | Swift / Kotlin / RN + WalletConnect + viem |
-| **Web app custom** | wagmi + viem + RainbowKit |
+| **Mobile app native**          | Swift / Kotlin / RN + WalletConnect + viem         |
+| **Web app custom**             | wagmi + viem + RainbowKit                          |
 
----
+***
 
 ## Trading bots
 
 ### Register API key
 
-![API key: sign in SIWE -> create key in Settings -> choose scope (read-only/trade/full) -> set rate limit + IP whitelist -> receive key + secret](../_design/61-dev-integration-paths.svg)
+![API key: sign in SIWE -> create key in Settings -> choose scope (read-only/trade/full) -> set rate limit + IP whitelist -> receive key + secret](../.gitbook/assets/61-dev-integration-paths.svg)
 
 1. Sign in to PrediX via SIWE.
 2. **Settings -> Developer -> API keys** -> **Create new key**.
@@ -32,22 +32,24 @@ Read-only requires only `Authorization: Bearer pk_live_abc123...`.
 
 ### Rate limits & tiers
 
-| Tier | Rate | Quota | Concurrent | Cost |
-|---|---|---|---|---|
-| **Free** | 60 req/min | 10k req/day | 5 | $0 |
-| **Pro** | 600 req/min | 1M req/day | 50 | $20/month |
-| **Enterprise** | Custom | Unlimited | Custom | Contact |
+| Tier           | Rate        | Quota       | Concurrent | Cost      |
+| -------------- | ----------- | ----------- | ---------- | --------- |
+| **Free**       | 60 req/min  | 10k req/day | 5          | $0        |
+| **Pro**        | 600 req/min | 1M req/day  | 50         | $20/month |
+| **Enterprise** | Custom      | Unlimited   | Custom     | Contact   |
 
 Stake PRX to upgrade tier for free:
-- 1k PRX -> 200 req/min
-- 10k PRX -> Pro tier free
-- 100k PRX -> Enterprise free
+
+* 1k PRX -> 200 req/min
+* 10k PRX -> Pro tier free
+* 100k PRX -> Enterprise free
 
 ### Endpoints
 
 Read endpoints: all Indexer + BE endpoints are available with an API key (see [API reference](api-reference.md)).
 
 **Place order**:
+
 ```
 POST /api/v2/bots/orders
 {
@@ -70,6 +72,7 @@ The API signs and submits via paymaster (sponsored for users eligible through th
 **Cancel**: `DELETE /api/v2/bots/orders/:orderId`.
 
 **Position management**:
+
 ```
 GET    /api/v2/bots/positions
 DELETE /api/v2/bots/positions/:id    # close = sell market order
@@ -87,6 +90,7 @@ POST /api/v2/webhooks
 ```
 
 Payload:
+
 ```json
 {
   "event": "order.filled",
@@ -96,6 +100,7 @@ Payload:
 ```
 
 Verify HMAC:
+
 ```typescript
 import { createHmac } from 'crypto';
 const sig = req.headers['x-predix-signature'];
@@ -106,6 +111,7 @@ if (sig !== expected) return res.status(401).end();
 ### Bot examples
 
 **Market maker** around mid price:
+
 ```typescript
 import { PrediXBot } from '@predix/bot-sdk';
 
@@ -125,6 +131,7 @@ setInterval(() => makeMarket('0x...'), 30_000);
 ```
 
 **Arbitrage** when YES + NO > $1:
+
 ```typescript
 async function checkArb(marketId: string) {
   const view = await bot.getPriceView(marketId);
@@ -139,37 +146,38 @@ async function checkArb(marketId: string) {
 
 ### Best practices
 
-- **Idempotency**: every place order includes a unique `clientOrderId` -> replay safe.
-- **Retry**: 5xx -> exponential backoff. 429 -> respect `Retry-After`. 4xx -> don't retry.
-- **Position size**: cap per-trade at <= 5% of balance. Keep buffer for gas + slippage.
-- **Monitor**: log every order + fill. Alert on PnL drop > 10% within 1h.
+* **Idempotency**: every place order includes a unique `clientOrderId` -> replay safe.
+* **Retry**: 5xx -> exponential backoff. 429 -> respect `Retry-After`. 4xx -> don't retry.
+* **Position size**: cap per-trade at <= 5% of balance. Keep buffer for gas + slippage.
+* **Monitor**: log every order + fill. Alert on PnL drop > 10% within 1h.
 
 ### Security
 
-- **Never** commit keys to git. Use env vars / secret manager only.
-- Rotate keys every 90 days. IP whitelist if using fixed-IP servers.
-- Scope minimization: read-only for analytics, trade for bots, full only when withdraw + 2FA is needed.
-- Audit: `/api/v2/bots/audit` — review weekly.
+* **Never** commit keys to git. Use env vars / secret manager only.
+* Rotate keys every 90 days. IP whitelist if using fixed-IP servers.
+* Scope minimization: read-only for analytics, trade for bots, full only when withdraw + 2FA is needed.
+* Audit: `/api/v2/bots/audit` — review weekly.
 
 ### Open-source bot templates
 
 [github.com/predix-protocol/bot-templates](https://github.com/predix-protocol/bot-templates):
-- `market-maker/`, `arbitrage/`, `oracle-resolver/`, `lp-manager/` (TS)
-- `scanner-py/` (Python)
 
----
+* `market-maker/`, `arbitrage/`, `oracle-resolver/`, `lp-manager/` (TS)
+* `scanner-py/` (Python)
+
+***
 
 ## Mobile / Wagmi integration
 
 ### Tech stack support
 
-| Platform | Recommended |
-|---|---|
-| iOS | Swift + WalletConnect SDK + viem-swift (TBA) |
-| Android | Kotlin + WalletConnect SDK + ethers-android |
-| React Native | wagmi/connectors + RainbowKit Mobile |
-| Flutter | walletconnect_flutter + custom contract integration |
-| Web (custom) | wagmi + viem + RainbowKit |
+| Platform     | Recommended                                          |
+| ------------ | ---------------------------------------------------- |
+| iOS          | Swift + WalletConnect SDK + viem-swift (TBA)         |
+| Android      | Kotlin + WalletConnect SDK + ethers-android          |
+| React Native | wagmi/connectors + RainbowKit Mobile                 |
+| Flutter      | walletconnect\_flutter + custom contract integration |
+| Web (custom) | wagmi + viem + RainbowKit                            |
 
 ### Web app — Wagmi / RainbowKit
 
@@ -194,6 +202,7 @@ function App() {
 ```
 
 Trade hook:
+
 ```typescript
 import { useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { routerAbi } from '@predix/abi';
@@ -221,6 +230,7 @@ function BuyYesButton({ marketId, usdcIn, minOut }) {
 ### Mobile native — WalletConnect
 
 **iOS Swift**:
+
 ```swift
 import WalletConnectSwift
 
@@ -240,6 +250,7 @@ session.sendTransaction(tx) { result in
 ```
 
 **Android Kotlin**:
+
 ```kotlin
 import com.walletconnect.sign.client.*
 
@@ -305,6 +316,7 @@ const userOpHash = await kernelClient.sendUserOperation({
 ### Passkey native
 
 **iOS** — `ASAuthorizationPlatformPublicKeyCredentialProvider`:
+
 ```swift
 import AuthenticationServices
 
@@ -318,6 +330,7 @@ ASAuthorizationController(authorizationRequests: [request]).performRequests()
 ```
 
 **Android** — Credential Manager API:
+
 ```kotlin
 import androidx.credentials.*
 
@@ -329,23 +342,24 @@ Smart account address is derived from the passkey public key — same address ac
 
 ### Performance tips
 
-- **Caching**: wagmi auto-caches with a 60s default. User-specific data (portfolio): 30s. SWR / React Query revalidate-on-focus pattern.
-- **RPC efficiency**: Multicall3 (`0xcA11bde05977b3631167028862bE2a173976CA11`) batch reads. WebSocket instead of polling. Indexer API instead of RPC `getLogs` for historical data.
-- **Gas estimation**: add 20% buffer.
-  ```typescript
-  const estimatedGas = await publicClient.estimateContractGas({...});
-  const gasLimit = (estimatedGas * 120n) / 100n;
-  ```
+* **Caching**: wagmi auto-caches with a 60s default. User-specific data (portfolio): 30s. SWR / React Query revalidate-on-focus pattern.
+* **RPC efficiency**: Multicall3 (`0xcA11bde05977b3631167028862bE2a173976CA11`) batch reads. WebSocket instead of polling. Indexer API instead of RPC `getLogs` for historical data.
+*   **Gas estimation**: add 20% buffer.
+
+    ```typescript
+    const estimatedGas = await publicClient.estimateContractGas({...});
+    const gasLimit = (estimatedGas * 120n) / 100n;
+    ```
 
 ### Common errors
 
-| Error | Cause | Fix |
-|---|---|---|
-| `User rejected request` | User cancelled in wallet | Show retry UI |
+| Error                        | Cause                                                             | Fix                                                                 |
+| ---------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `User rejected request`      | User cancelled in wallet                                          | Show retry UI                                                       |
 | `Insufficient funds for gas` | EOA lacks ETH, or smart account has no balance + tx not sponsored | Bridge ETH (EOA), or check sponsor eligibility (both account types) |
-| `Internal JSON-RPC error` | RPC down or rate limited | Fallback RPC, retry |
-| `Network mismatch` | Wallet not connected to Unichain | Auto switch via `wallet_switchEthereumChain` |
-| `Nonce too low` | Tx race condition | Refresh nonce, retry |
+| `Internal JSON-RPC error`    | RPC down or rate limited                                          | Fallback RPC, retry                                                 |
+| `Network mismatch`           | Wallet not connected to Unichain                                  | Auto switch via `wallet_switchEthereumChain`                        |
+| `Nonce too low`              | Tx race condition                                                 | Refresh nonce, retry                                                |
 
 ### Auto-add Unichain
 
@@ -368,20 +382,20 @@ await window.ethereum.request({
 
 ### Mobile push notifications
 
-- iOS APNs: register device token with BE via `/api/v2/users/:address/push/ios`.
-- Android FCM: `/api/v2/users/:address/push/android`.
-- Backend pushes via Firebase / APNs when events match alert criteria.
+* iOS APNs: register device token with BE via `/api/v2/users/:address/push/ios`.
+* Android FCM: `/api/v2/users/:address/push/android`.
+* Backend pushes via Firebase / APNs when events match alert criteria.
 
 Setup details: [Notifications](../guides/notifications.md).
 
 ### Open-source examples
 
-- [github.com/predix-protocol/mobile-app-rn](https://github.com/predix-protocol/mobile-app-rn) — React Native reference app.
-- [github.com/predix-protocol/ios-example](https://github.com/predix-protocol/ios-example) — Swift native demo.
-- [github.com/predix-protocol/android-example](https://github.com/predix-protocol/android-example) — Kotlin native demo.
+* [github.com/predix-protocol/mobile-app-rn](https://github.com/predix-protocol/mobile-app-rn) — React Native reference app.
+* [github.com/predix-protocol/ios-example](https://github.com/predix-protocol/ios-example) — Swift native demo.
+* [github.com/predix-protocol/android-example](https://github.com/predix-protocol/android-example) — Kotlin native demo.
 
 ## Support
 
-- API / bot issues: Discord #api-support or #mobile-dev.
-- Bug bounty for bot endpoints: [security@predix.app](mailto:security@predix.app).
-- Enterprise: [business@predix.app](mailto:business@predix.app).
+* API / bot issues: Discord #api-support or #mobile-dev.
+* Bug bounty for bot endpoints: [security@predix.app](mailto:security@predix.app).
+* Enterprise: [business@predix.app](mailto:business@predix.app).

@@ -5,8 +5,9 @@ The Router is the single entry point for all swaps. Let your users trade through
 ## ABI
 
 Router address:
-- **Testnet** (Unichain Sepolia, live): `0x6698253F38F4A4bbBC4A223309B4E560d83D7ee0`
-- **Mainnet** (TBA, after launch)
+
+* **Testnet** (Unichain Sepolia, live): `0x6698253F38F4A4bbBC4A223309B4E560d83D7ee0`
+* **Mainnet** (TBA, after launch)
 
 Full address list: [Contract addresses](architecture.md#contract-addresses).
 
@@ -223,7 +224,7 @@ This event is the **canonical source** for the indexer. Listen to it to update y
 
 ## Batch with Smart Account
 
-![AA UserOp batch](../_design/22-aa-userop.svg)
+![AA UserOp batch](../.gitbook/assets/22-aa-userop.svg)
 
 ```typescript
 import { createKernelClient } from '@zerodev/sdk';
@@ -259,8 +260,9 @@ Gas is paymaster-sponsored if the user has an active SIWE session via the PrediX
 ## AMM-only or CLOB-only
 
 The Router always uses hybrid routing. If you want:
-- **AMM-only** (skip CLOB): call Uniswap v4's UniversalRouter directly.
-- **CLOB-only** (skip AMM): call `PrediXExchange.fillMarketOrder` or `placeOrder`.
+
+* **AMM-only** (skip CLOB): call Uniswap v4's UniversalRouter directly.
+* **CLOB-only** (skip AMM): call `PrediXExchange.fillMarketOrder` or `placeOrder`.
 
 The default recommendation is to use `PrediXRouter` — it optimizes price across both sources.
 

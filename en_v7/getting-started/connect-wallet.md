@@ -1,23 +1,23 @@
-# Connect Wallet
+# Connect wallet
 
 PrediX offers **2 sign-in methods**. Both are **non-custodial** — nobody (including PrediX) holds your private key.
 
 ## Quick Selection
 
-![Wallet selection flow: Passkey (smart account, biometric) or Crypto wallet (EOA, MetaMask/Ledger) — both non-custodial](../_design/13-wallet-connect.svg)
+![Wallet selection flow: Passkey (smart account, biometric) or Crypto wallet (EOA, MetaMask/Ledger) — both non-custodial](../.gitbook/assets/13-wallet-connect.svg)
 
 ## Comparison
 
-| | Passkey + Smart Account | Crypto Wallet (EOA) |
-|---|---|---|
-| **Experience** | Web2-like, biometric | Traditional web3, sign each tx |
-| **Browser extension** | Not required | Required (MetaMask, Rainbow...) |
-| **Backup & recovery** | Cloud sync (iCloud / Google), or a second device | BIP-39 seed phrase (12-24 words) |
-| **Hardware wallet** | No (private key in Secure Enclave) | Yes (Ledger, Trezor) |
-| **Gas fees** | Pay via paymaster (USDC) | Pay ETH directly (Unichain is cheap ~$0.001-0.01/tx) |
-| **Batch transactions** | Yes (1-click `[approve, swap]` atomic) | No (2 separate txs) |
-| **First-time sign-up** | ~5 seconds biometric | Already have a wallet → instant |
-| **Best for** | New users · fast onboarding | DeFi users · large custody · hardware wallets |
+|                        | Passkey + Smart Account                          | Crypto Wallet (EOA)                                   |
+| ---------------------- | ------------------------------------------------ | ----------------------------------------------------- |
+| **Experience**         | Web2-like, biometric                             | Traditional web3, sign each tx                        |
+| **Browser extension**  | Not required                                     | Required (MetaMask, Rainbow...)                       |
+| **Backup & recovery**  | Cloud sync (iCloud / Google), or a second device | BIP-39 seed phrase (12-24 words)                      |
+| **Hardware wallet**    | No (private key in Secure Enclave)               | Yes (Ledger, Trezor)                                  |
+| **Gas fees**           | Pay via paymaster (USDC)                         | Pay ETH directly (Unichain is cheap \~$0.001-0.01/tx) |
+| **Batch transactions** | Yes (1-click `[approve, swap]` atomic)           | No (2 separate txs)                                   |
+| **First-time sign-up** | \~5 seconds biometric                            | Already have a wallet → instant                       |
+| **Best for**           | New users · fast onboarding                      | DeFi users · large custody · hardware wallets         |
 
 > **Gas note**: By default, both methods require users to pay their own gas. PrediX has a **gas sponsorship program** for eligible users (e.g., new user onboarding, stakers above a certain threshold, campaign-eligible events) — **applies to both account types**, regardless of wallet type. Mechanism: smart account → paymaster covers directly; EOA → off-chain rebate/refund (details announced pre-launch). Eligibility criteria and sponsorship duration may change via governance vote.
 
@@ -36,9 +36,9 @@ On sign-up, the app deploys a **Kernel smart account (ERC-4337)** — an on-chai
 
 ### Backup
 
-- **iCloud Keychain** (iPhone, Mac) — passkey syncs across Apple devices with the same Apple ID.
-- **Google Password Manager** (Android, Chrome) — syncs across devices.
-- **Hardware key** (YubiKey, Titan) — passkey stored on hardware key, plug-in to authenticate.
+* **iCloud Keychain** (iPhone, Mac) — passkey syncs across Apple devices with the same Apple ID.
+* **Google Password Manager** (Android, Chrome) — syncs across devices.
+* **Hardware key** (YubiKey, Titan) — passkey stored on hardware key, plug-in to authenticate.
 
 > **Warning**: If you only have 1 device + no cloud sync + no hardware key backup → losing the device = losing the wallet. We recommend enabling cloud sync or adding a second device right after sign-up.
 
@@ -62,13 +62,13 @@ Use a traditional wallet you already own — MetaMask, Rainbow, Coinbase Wallet,
 
 ### When to Use
 
-- You already have a DeFi workflow with MetaMask + hardware wallet.
-- Large custody balance — want standard BIP-39 seed phrase backup.
-- Integration with other tooling (Frame, Rabby, Safe multisig).
-- Prefer full control with no paymaster dependency.
+* You already have a DeFi workflow with MetaMask + hardware wallet.
+* Large custody balance — want standard BIP-39 seed phrase backup.
+* Integration with other tooling (Frame, Rabby, Safe multisig).
+* Prefer full control with no paymaster dependency.
 
 ## SIWE Session
 
 Both methods use **SIWE** (EIP-4361) to create a session with the backend:
 
-![SIWE auth flow: FE requests challenge → user signs message → BE verifies ECDSA → sets HTTPOnly cookie session for 7 days](../_design/14-siwe-auth.svg)
+![SIWE auth flow: FE requests challenge → user signs message → BE verifies ECDSA → sets HTTPOnly cookie session for 7 days](../.gitbook/assets/14-siwe-auth.svg)
