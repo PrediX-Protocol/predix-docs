@@ -386,7 +386,7 @@ await window.ethereum.request({
 * Android FCM: `/api/v2/users/:address/push/android`.
 * Backend pushes via Firebase / APNs when events match alert criteria.
 
-Setup details: [Notifications](../users-guide/features/notifications.md).
+Setup details: [Notifications](/broken/pages/VjFpu8jlXXqXJ8qF7KcN).
 
 ### Open-source examples
 

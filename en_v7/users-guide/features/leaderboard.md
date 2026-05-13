@@ -1,10 +1,18 @@
+---
+description: Discover top traders, follow public profiles, and learn from their portfolios.
+---
+
 # Leaderboard & traders
 
-Discover top traders, follow public profiles, and learn from their portfolios.
+***
 
-## Leaderboard
+Prediction markets have a rare property: trader performance is publicly verifiable. Every position, every fill, every resolution is on-chain. This makes reputation objectively measurable rather than self-claimed.
 
-The `/leaderboard` page. Sort and filter by metric:
+PrediX surfaces this signal across leaderboards, public profiles, follow feeds, and copy trading — turning on-chain history into a discovery and learning layer.
+
+### Leaderboard
+
+> The `/leaderboard` page. Sort and filter by metric.
 
 | Metric             | Description                                   | Update   |
 | ------------------ | --------------------------------------------- | -------- |
@@ -16,35 +24,43 @@ The `/leaderboard` page. Sort and filter by metric:
 
 Filters:
 
-* Period: 24h / 7d / 30d / 90d / all-time
-* Min trades: 5 / 10 / 50 (filters out accounts that got lucky by chance)
-* Category: crypto / sports / politics / ...
+* **Period**: 24h / 7d / 30d / 90d / all-time
+* **Min trades**: 5 / 10 / 50 (filters out accounts that got lucky by chance)
+* **Category**: crypto / sports / politics / ...
 
-## Trader profile
+### Trader profile
 
-Click a trader's name → `/profile/[address]` page:
+Click a trader's name → `/profile/[address]` page.
 
 ![Public trader profile: Hero KPIs (Volume, PnL, Win rate, Accuracy) + active positions + trade history + calibration + badges + follow](../../.gitbook/assets/50-trader-profile.svg)
 
-### Public vs private
+#### Public vs private
 
-By default, trader profiles are **public**:
+<details>
+
+<summary><mark style="color:orange;">By default, trader profiles are <strong>public</strong>:</mark></summary>
 
 * Active positions are visible (size, market, side, avg cost).
 * History is visible.
 * Aggregate stats are shown.
 
-Users can **opt out** in [Settings](../../resources/faq.md) → Privacy:
+</details>
+
+{% hint style="success" %}
+Users can **opt out** in [Settings](../../resources/faq.md) **→ Privacy**:
 
 * Hide active positions.
 * Hide history.
 * Hide identity (anonymous + pseudonym).
+{% endhint %}
 
-> **Note**: Even when hidden, the address is still public on-chain. The app only hides data at the UI level. Technically savvy users can still query the indexer.
+{% hint style="info" %}
+**Note**: Even when hidden, the address is still public on-chain. The app only hides data at the UI level. Technically savvy users can still query the indexer.&#x20;
+{% endhint %}
 
-## Follow a trader
+### Follow a trader
 
-Click **Follow** on a profile:
+Click **Follow** on a profile.
 
 * Notifications when this trader:
   * Opens a new position (size > threshold you set)
@@ -52,11 +68,13 @@ Click **Follow** on a profile:
   * Reaches a milestone (badge, streak)
 * A dedicated feed in the app showing your followed traders' activity.
 
-## Copy trading
+### Copy trading
+
+> Mirror a lead trader's positions automatically, with risk controls applied per follower.
 
 ![Copy trading: follower set config (10% size, cap $100) → lead trades → engine detect → auto/manual mirror → trade mirrored](../../.gitbook/assets/51-copy-trading-flow.svg)
 
-### Setup copy trading
+#### Setup copy trading
 
 1. Find the trader you want to copy.
 2. Click **Copy Trading** → settings:
@@ -67,15 +85,21 @@ Click **Follow** on a profile:
 3. Pre-fund USDC into a copy sub-account (separate from your main wallet to limit risk).
 4. Activate.
 
-### Copy trading risks
+#### Copy trading risks
+
+{% hint style="warning" %}
+**Risks to understand before activating:**
 
 * **Lead trader may underperform later** — past performance does not guarantee future results.
 * **Slippage gap**: The lead enters at $0.50; you copy 30s later when the price is already $0.55.
-* **Fee accumulation**: Copying many small leads → each lead = 1 tx → gas fees add up (significantly reduced if the user qualifies for the sponsor program — applies to both account types; otherwise normal fees apply).
+* **Fee accumulation**: Copying many small leads = each lead = 1tx → gas fees add up (significantly reduced if the user qualifies for the sponsor program — applies to both account types; otherwise normal fees apply).&#x20;
+{% endhint %}
 
+{% hint style="info" %}
 Start small ($50-100) and test for 1 week before scaling.
+{% endhint %}
 
-## Trader directory
+### Trader directory
 
 The `/traders` page — a directory of active traders with filters:
 
@@ -87,28 +111,28 @@ Each trader card shows:
 
 * Avatar (gravatar or custom)
 * Pseudonym (self-set) or truncated address
-* Top metric (e.g. +$12k 30d)
+* Top metric (e.g. \~$12k 30d)
 * Win rate / Accuracy badge
 * Quick actions: Follow / Copy / View profile
 
-## Verified traders
+### Verified traders
 
-Traders with:
+Traders with verified social identity get a verification badge — used as anti-impersonation:
 
 * ENS / Lens / Farcaster verified.
 * Twitter linked.
 * Optional KYC (for institutional traders).
 
-A verified badge appears next to the name — anti-impersonation. Verify in [Settings](../../resources/faq.md).
+Verify in [Settings](../../resources/faq.md).
 
-## Privacy & data
+### Privacy & data
 
 * Trader stats are computed from on-chain data → public by default.
 * App overlay: pseudonym, avatar, follow graph (off-chain MongoDB).
-* If you opt out → the app **does not expose** your data, but on-chain data remains public.
-* GDPR / CCPA: the right to be forgotten applies only to off-chain data (pseudonym, avatar). On-chain data is immutable.
+* If you opt out the app **does not expose** your data, but on-chain data remains public.
+* **GDPR / CCPA**: the right to be forgotten applies only to off-chain data (pseudonym, avatar). On-chain data is immutable.
 
-## Anti-sybil
+### Anti-sybil
 
 To prevent leaderboard spam from bots:
 
@@ -116,13 +140,15 @@ To prevent leaderboard spam from bots:
 * **Stake gate**: Top 100 leaderboard requires staking >= 100 PRX.
 * **Behavior detection**: Wash trading patterns and copy bots are flagged and filtered.
 
-## API
+### API
+
+For developers integrating leaderboard or trader data:
 
 ```
-GET /api/v2/leaderboard?metric=pnl&period=30d&limit=100
+GET /api/v2/leaderboard?metric=pnl&period=30d&min=10-100
 GET /api/v2/users/:address/profile
-GET /api/v2/users/:address/follows  (followed by whom)
-GET /api/v2/users/:address/following (following whom)
+GET /api/v2/users/:address/follows    (followed by whom)
+GET /api/v2/users/:address/following  (following whom)
 ```
 
 Details: [Backend API](../../developers-guide/api-reference.md#backend-endpoints-v2).

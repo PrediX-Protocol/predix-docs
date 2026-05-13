@@ -102,19 +102,19 @@ All transactions on testnet have no real value — balances and history will be 
 
 ### Task-based tutorials
 
-| I want to...                               | Go to                                                           |
-| ------------------------------------------ | --------------------------------------------------------------- |
-| Buy / sell at market price                 | [Market order](first-trade/market-order.md)                     |
-| Place a price and wait for a fill          | [Limit order (CLOB)](first-trade/limit-order.md)                |
-| Provide liquidity, earn fees               | [Liquidity provider](liquidity-and-market/provide-liquidity.md) |
-| Create a new market                        | [Create market](liquidity-and-market/create-market.md)          |
-| View positions, P\&L, history              | [Portfolio & P\&L](first-trade/portfolio.md)                    |
-| Read charts, change timeframe              | [Chart & timeframe](features/chart-timeframe.md)                |
-| Claim USDC after resolution / get a refund | [Redeem & refund](first-trade/redeem-refund.md)                 |
-| Trade in a multi-outcome event             | [Multi-outcome event](features/multi-outcome.md)                |
-| Discover top traders, copy trading         | [Leaderboard & traders](features/leaderboard.md)                |
-| Set up notifications + price alerts        | [Notifications & price alerts](features/notifications.md)       |
-| Comment + social feed in-app               | [Discussion & social feed](features/discussion.md)              |
+| I want to...                               | Go to                                                              |
+| ------------------------------------------ | ------------------------------------------------------------------ |
+| Buy / sell at market price                 | [Market order](first-trade/market-order.md)                        |
+| Place a price and wait for a fill          | [Limit order (CLOB)](first-trade/limit-order.md)                   |
+| Provide liquidity, earn fees               | [Liquidity provider](liquidity-and-market/provide-liquidity.md)    |
+| Create a new market                        | [Create market](liquidity-and-market/create-market.md)             |
+| View positions, P\&L, history              | [Portfolio & P\&L](first-trade/portfolio.md)                       |
+| Read charts, change timeframe              | [Chart & timeframe](features/chart-timeframe.md)                   |
+| Claim USDC after resolution / get a refund | [Redeem & refund](first-trade/redeem-refund.md)                    |
+| Trade in a multi-outcome event             | [Multi-outcome event](features/multi-outcome.md)                   |
+| Discover top traders, copy trading         | [Leaderboard & traders](features/leaderboard.md)                   |
+| Set up notifications + price alerts        | [Notifications & price alerts](/broken/pages/VjFpu8jlXXqXJ8qF7KcN) |
+| Comment + social feed in-app               | [Discussion & social feed](features/discussion.md)                 |
 
 Need to understand the mechanics underneath? See [Concepts](../core-concepts/concepts.md).
 

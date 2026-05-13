@@ -20,7 +20,7 @@
   * [Redeem & refund](users-guide/first-trade/redeem-refund.md)
 * [Features](users-guide/features/README.md)
   * [Chart & timeframe](users-guide/features/chart-timeframe.md)
-  * [Notifications & alerts](users-guide/features/notifications.md)
+  * [Notifications & alerts](users-guide/features/notifications-and-alerts.md)
   * [Discussion & social](users-guide/features/discussion.md)
   * [Leaderboard & traders](users-guide/features/leaderboard.md)
   * [Multi-outcome events](users-guide/features/multi-outcome.md)
