@@ -1,18 +1,20 @@
 ---
-description: Discover top traders, follow public profiles, and learn from their portfolios.
+description: >-
+  Rank traders by performance, follow public profiles, and configure copy
+  trading.
 ---
 
 # Leaderboard & traders
 
 ***
 
-Prediction markets have a rare property: trader performance is publicly verifiable. Every position, every fill, every resolution is on-chain. This makes reputation objectively measurable rather than self-claimed.
+Prediction markets have a rare property: trader performance is publicly verifiable. Every position, every fill, every resolution is on-chain. This makes reputation **objectively measurable** rather than self-claimed.
 
-PrediX surfaces this signal across leaderboards, public profiles, follow feeds, and copy trading — turning on-chain history into a discovery and learning layer.
+PrediX surfaces this signal across the leaderboard, public trader profiles, follow feeds, and copy trading.
 
 ### Leaderboard
 
-> The `/leaderboard` page. Sort and filter by metric.
+> The `/leaderboard` page ranks active traders by five metrics. Sort and filter to find the right traders to learn from or copy.
 
 | Metric             | Description                                   | Update   |
 | ------------------ | --------------------------------------------- | -------- |
@@ -28,23 +30,23 @@ Filters:
 * **Min trades**: 5 / 10 / 50 (filters out accounts that got lucky by chance)
 * **Category**: crypto / sports / politics / ...
 
+The **Min trades** filter is the most important quality gate. Without it, leaderboards reward variance over skill.
+
 ### Trader profile
 
 Click a trader's name → `/profile/[address]` page.
 
 ![Public trader profile: Hero KPIs (Volume, PnL, Win rate, Accuracy) + active positions + trade history + calibration + badges + follow](../../.gitbook/assets/50-trader-profile.svg)
 
+A profile shows hero KPIs (Volume, P\&L, Win rate, Accuracy), active positions, full trade history, calibration chart, badges, and a follow button.
+
 #### Public vs private
 
-<details>
-
-<summary><mark style="color:orange;">By default, trader profiles are <strong>public</strong>:</mark></summary>
+By default, trader profiles are **public**:
 
 * Active positions are visible (size, market, side, avg cost).
 * History is visible.
 * Aggregate stats are shown.
-
-</details>
 
 {% hint style="success" %}
 Users can **opt out** in [Settings](../../resources/faq.md) **→ Privacy**:
@@ -58,32 +60,56 @@ Users can **opt out** in [Settings](../../resources/faq.md) **→ Privacy**:
 **Note**: Even when hidden, the address is still public on-chain. The app only hides data at the UI level. Technically savvy users can still query the indexer.&#x20;
 {% endhint %}
 
-### Follow a trader
+### Following traders
 
-Click **Follow** on a profile.
+Click **Follow** on any profile. You will receive notifications when the trader:
 
-* Notifications when this trader:
-  * Opens a new position (size > threshold you set)
-  * Closes a large position
-  * Reaches a milestone (badge, streak)
-* A dedicated feed in the app showing your followed traders' activity.
+* Opens a new position above a size threshold you set.
+* Closes a large position.
+* Reaches a milestone (badge, streak).
+
+A dedicated **Following** feed inside the app aggregates all your followed traders' activity.
 
 ### Copy trading
 
-> Mirror a lead trader's positions automatically, with risk controls applied per follower.
+> Copy trading mirrors a lead trader's positions automatically, with risk controls applied per follower.
 
 ![Copy trading: follower set config (10% size, cap $100) → lead trades → engine detect → auto/manual mirror → trade mirrored](../../.gitbook/assets/51-copy-trading-flow.svg)
 
 #### Setup copy trading
 
-1. Find the trader you want to copy.
-2. Click **Copy Trading** → settings:
-   * **Size %**: what percentage of the lead's size to copy.
-   * **Max per trade**: absolute cap (e.g. $100).
-   * **Categories**: only copy trades in categories you care about (e.g. crypto only).
-   * **Auto vs manual**: auto-execute or confirm each order.
-3. Pre-fund USDC into a copy sub-account (separate from your main wallet to limit risk).
-4. Activate.
+{% stepper %}
+{% step %}
+### Step 1: Select a Lead Trader
+
+Browse the platform to find the trader whose strategy you want to replicate.
+{% endstep %}
+
+{% step %}
+### Step 2: Configure Your Settings
+
+Click Copy Trading to open the configuration panel and adjust the following:
+
+* Size %: Define what percentage of the lead trader’s position size you want to mirror.
+* Max per Trade: Set an absolute cap (e.g., $100) to limit exposure on any single trade.
+* Categories: Filter your risk by selecting only specific categories (e.g., Crypto only).
+* Auto vs. Manual: Choose between auto-execute for instant mirroring or confirm each order for manual oversight.
+{% endstep %}
+
+{% step %}
+### Step 3: Secure Your Funds
+
+* Pre-fund USDC into a dedicated Copy Sub-account.
+
+> Note: Keeping these funds separate from your main wallet helps strictly limit your financial risk.
+{% endstep %}
+
+{% step %}
+### Step 4: Activate
+
+Review your parameters and click Activate to begin following the trader's moves automatically.
+{% endstep %}
+{% endstepper %}
 
 #### Copy trading risks
 

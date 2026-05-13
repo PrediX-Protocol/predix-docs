@@ -1,18 +1,16 @@
 ---
-description: Share market insights with the community directly within the app.
+description: Comment on markets, follow the activity feed, and engage with the community.
 ---
 
 # Discussion & social
 
 ***
 
-Prediction markets price information, but information rarely arrives in clean numerical form. Traders need a place to share thesis, debate resolution criteria, and surface signal that on-chain activity alone cannot express.
-
-PrediX embeds social infrastructure at the protocol layer — discussion lives next to the market it shapes, with anti-spam and moderation enforced through economic rather than purely centralized mechanisms.
+PrediX embeds social features directly into the trading interface — comment threads on every market, a global activity feed, long-form posts, and community moderation. Discussion lives next to the market it shapes, not in an external forum.
 
 ### Comments per market
 
-> Every market has its own comment thread under the **Discussion** tab on the market detail page.
+> Every market has its own comment thread, accessed via the **Discussion** tab on the market detail page. Comments are threaded two levels deep — a top-level comment with one level of replies — and ranked by upvotes so the strongest argument rises to the top.
 
 ![Market discussion: comment list (sort newest/top), post comment, reply 2 levels, up/down vote, @mention](../../.gitbook/assets/47-discussion-features.svg)
 
@@ -21,13 +19,13 @@ PrediX embeds social infrastructure at the protocol layer — discussion lives n
 * **Threaded** 2 levels (`comment` + `reply`).
 * **Voting** — `up vote`/`down voty`; top comments rise to the top.
 * **Mention** `@username` to notify another user.
-* **Markdown support**: `bold`, `italics`, `code`, `link`, `quote`.
+* **Markdown support**: **`bold`**, _`italics`_, `code`, `link`, `quote`.
 * **Image embed** — paste an image URL and the app renders it inline.
 * **TX share** — paste a `txhash` and the app renders an explorer `link` + `summary`.
 
 #### <mark style="color:orange;">Anti-spam</mark>
 
-Anti-spam is enforced through an economic gate rather than **CAPTCHA** alone:
+PrediX enforces anti-spam through an **economic gate** rather than CAPTCHA alone:
 
 * **Min stake** of 10 PRX (post-TGE) to post.
 * **Cooldown** of 30 seconds between comments.
@@ -35,20 +33,22 @@ Anti-spam is enforced through an economic gate rather than **CAPTCHA** alone:
 * **Report button** — flag inappropriate content.
 * **Mod tools** (community moderator role): hide comments, ban users for 24h.
 
+The 10 PRX stake makes spam economically unprofitable while keeping the barrier low for genuine participants.
+
 #### <mark style="color:orange;">Trader badges in comments</mark>
 
 Usernames in comments display badges that surface the commenter's track record:
 
-* Verified (ENS / Lens / Twitter linked)
-* Top trader (top 100 leaderboard)
-* High accuracy (Brier < 0.15 with > 50 trades)
-* PRX whale (stake > 10k PRX)
+* **Verified** — ENS / Lens / Twitter linked.
+* **Top trader** — top 100 leaderboard.
+* **High accuracy** — Brier < 0.15 with > 50 trades.
+* **PRX whale** — stake > 10k PRX.
 
-Helps assess the credibility of a comment.
+Badges help readers weigh the credibility of an argument before acting on it.
 
 ### Social feed
 
-> The `/feed` page — a global activity stream that merges on-chain transactions with off-chain social actions.
+> The `/feed page` is a global activity stream that merges on-chain transactions with off-chain social actions into a single timeline.
 
 ![Social feed: on-chain activity (trade, LP, resolve) + off-chain (comment, follow, badge) → filter (following/trending/latest) → realtime cards](../../.gitbook/assets/48-social-feed.svg)
 
@@ -64,24 +64,24 @@ Helps assess the credibility of a comment.
 
 #### <mark style="color:orange;">Card types</mark>
 
-Feed items are rendered as typed cards, each linking back to its source object:
+Feed items render as typed cards, each linking back to its source object:
 
-* **Trade card**: User X bought $Y YES on market Z. Click → market detail.
-* **LP card**: User X provided $Y liquidity to pool Z.
-* **Resolve card**: Market Z resolved YES, $Y total volume traded.
-* **Comment card**: User X commented on market Z: "...". Click → discussion thread.
-* **Badge card**: User X earned the "Prophet" badge (80% accuracy).
+* **Trade card** — _User X bought $Y YES on market Z._ Click → market detail.
+* **LP card** — _User X provided $Y liquidity to pool Z._
+* **Resolve card** — _Market Z resolved YES, $Y total volume traded._
+* **Comment card** — _User X commented on market Z: "..."_ Click → discussion thread.
+* **Badge card** — _User X earned the "Prophet" badge (80% accuracy)._
 
-### Posts (write-ups)
+### Long-form posts
 
-Users can publish **posts** — Twitter thread-style long-form content for deeper analysis:
+Beyond short comments, users can publish **posts** — Twitter thread-style long-form content for deeper analysis:
 
 * Full Markdown support.
 * Tag market references (auto-linked).
 * Embed charts and images.
 * Long-form analysis (e.g. _"Why I'm buying YES on the BTC market"_).
 
-Posts appear in:
+Posts appear in three places:
 
 * The author's profile (**Posts** tab).
 * Followers' feeds.
@@ -91,18 +91,18 @@ Posts appear in:
 >
 > Readers will be able to tip USDC / PRX to the author of a useful post.
 
-### Activity feed (per market)
+### Per-market activity feed
 
-The **Activity** tab on the market detail page — a realtime activity stream scoped to that specific market.
+The **Activity** tab on the market detail page is a realtime activity stream scoped to that specific market:
 
 * Trade ticker (size, price, side).
 * Order book changes (large limit orders).
 * LP add/remove events.
 * New comments.
 
-Useful: monitor hot markets and spot whale moves.
+Useful for monitoring hot markets and spotting whale moves as they happen.
 
-### DM & private chat (TBA)
+### Direct messaging (TBA)
 
 Phase 2: direct messaging between users. Planned features:
 
@@ -111,27 +111,59 @@ Phase 2: direct messaging between users. Planned features:
 
 ### Moderation
 
-> PrediX uses a **community moderation** model — moderators are recruited from vePRX holders, not appointed centrally.
+> PrediX uses a **community moderation** model — moderators are recruited from vePRX holders in good standing, not appointed centrally.
 
 ![Moderation: spam detected → user report → community mod review → valid: hide + warn, repeat 3+: ban 7-30 days](../../.gitbook/assets/49-moderation-flow.svg)
 
-* **Mod recruitment**: vePRX holders in good standing can apply.
-* **Mod compensation**: PRX from treasury.
-* **Appeal process**: banned users can appeal via governance.
+#### <mark style="color:orange;">Content Moderation & Penalty Process</mark>
+
+{% stepper %}
+{% step %}
+### Step 1: User Reporting
+
+* The process begins when a user flags and reports specific content for review.
+{% endstep %}
+
+{% step %}
+### Step 2: Moderator Review
+
+* Our moderation team manually evaluates the reported content against community guidelines to determine its validity.
+{% endstep %}
+
+{% step %}
+### Step 3: Initial Enforcement
+
+If the report is found to be valid:
+
+* The violating content is immediately hidden from public view.
+* The author receives a formal warning.
+{% endstep %}
+
+{% step %}
+### Step 4: Escalation & Banning
+
+The system tracks recurring violations:
+
+* 3+ repeat offenses will trigger an automatic escalation.
+* The account will face a temporary ban ranging from 7 to 30 days, depending on the severity.
+{% endstep %}
+{% endstepper %}
+
+* **Mod recruitment** — vePRX holders in good standing can apply.
+* **Mod compensation** — PRX from treasury.
+* **Appeal process** — banned users can appeal via governance.
 
 ### Censorship resistance
 
-Comments and posts are stored **off-chain** (MongoDB) for fast UI rendering. A hash of the content is stored **on-chain** (post Phase 2) — proof of existence + censorship resistance.
+Comments and posts are stored **off-chain** in MongoDB for fast UI rendering. Starting Phase 2, a hash of every comment is also stored **on-chain** as proof of existence.
 
-{% hint style="warning" %}
-If PrediX UI hides a comment, the content still exists via the on-chain hash and users can publish independently on IPFS / Arweave.&#x20;
+{% hint style="info" %}
+If PrediX UI hides a comment, the original content still exists via the on-chain hash. Users can verify and re-publish it independently on IPFS or Arweave.
 {% endhint %}
 
 ### Wallet-to-wallet messaging
 
-Phase 2: integration with **XMTP** — messages between addresses. Decentralized, end-to-end encrypted.
-
-Use cases:
+Phase 2 will integrate **XMTP** — decentralized, end-to-end encrypted messaging between wallet addresses. Planned use cases include:
 
 * Negotiate OTC trades.
 * Coordinate liquidity provision.
