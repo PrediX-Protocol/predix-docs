@@ -34,7 +34,7 @@ On sign-up, the app deploys a **Kernel smart account (ERC-4337)** — an on-chai
 
 ### Create New
 
-1. Open [app.predix.app](https://app.predix.app) → click **Sign up**
+1. Open [https://app.predixpro.io](https://app.predixpro.io) → click **Sign up**
 2. Select **Continue with passkey**
 3. Browser prompts biometric authentication → confirm
 4. Smart account counterfactual address appears immediately (deployed on-chain on first action)
