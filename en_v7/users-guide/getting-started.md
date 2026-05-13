@@ -22,7 +22,7 @@ Sign in using:
 _Eligible users may receive sponsored transactions through paymaster infrastructure, reducing onboarding friction for first-time users._
 
 {% hint style="info" %}
-[How to connect wallet?](first-trade/connect-wallet.md)
+[How to connect wallet?](/broken/pages/YsPtT0l1N50qWpeQjsX7)
 {% endhint %}
 {% endstep %}
 
@@ -34,7 +34,7 @@ If your USDC is on another network, bridge assets to Unichain before trading.
 PrediX supports simplified USDC onboarding through Circle CCTP infrastructure and direct transfers from centralized exchanges.
 
 {% hint style="info" %}
-[How to bridge to Unichain?](first-trade/bridge.md)
+[How to bridge to Unichain?](/broken/pages/N6PP2E6mV0vPeJ9TkAjs)
 {% endhint %}
 {% endstep %}
 

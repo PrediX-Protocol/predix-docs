@@ -76,7 +76,7 @@ Eligibility criteria and sponsorship duration will be announced pre-launch and m
 
 Yes. Many CEXs have added Unichain network — withdraw directly.
 
-If your CEX doesn't support it yet: withdraw to Ethereum or Arbitrum, then use the [Bridge widget](../users-guide/first-trade/bridge.md) in the app. Coinbase, Binance, OKX, and Bybit mostly support Unichain or chains with easy bridging.
+If your CEX doesn't support it yet: withdraw to Ethereum or Arbitrum, then use the [Bridge widget](/broken/pages/N6PP2E6mV0vPeJ9TkAjs) in the app. Coinbase, Binance, OKX, and Bybit mostly support Unichain or chains with easy bridging.
 
 ### Is bridging safe?
 

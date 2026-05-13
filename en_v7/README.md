@@ -51,12 +51,12 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 > <mark style="color:$danger;">Trade predictive markets on Unichain.</mark>
 
-{% content-ref url="users-guide/first-trade/connect-wallet.md" %}
-[connect-wallet.md](users-guide/first-trade/connect-wallet.md)
+{% content-ref url="/broken/pages/YsPtT0l1N50qWpeQjsX7" %}
+[Broken link](/broken/pages/YsPtT0l1N50qWpeQjsX7)
 {% endcontent-ref %}
 
-{% content-ref url="users-guide/first-trade/bridge.md" %}
-[bridge.md](users-guide/first-trade/bridge.md)
+{% content-ref url="/broken/pages/N6PP2E6mV0vPeJ9TkAjs" %}
+[Broken link](/broken/pages/N6PP2E6mV0vPeJ9TkAjs)
 {% endcontent-ref %}
 
 {% content-ref url="users-guide/first-trade/market-order.md" %}

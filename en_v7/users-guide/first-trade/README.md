@@ -72,7 +72,7 @@ Don't sell — hold tokens until the market resolves, then redeem 1:1 for USDC i
 
 ## Common First-Time Errors
 
-* **"Insufficient USDC balance"** — Bridge USDC to Unichain first. See [Bridge](bridge.md).
+* **"Insufficient USDC balance"** — Bridge USDC to Unichain first. See [Bridge](/broken/pages/N6PP2E6mV0vPeJ9TkAjs).
 * **"Slippage exceeded"** — Price moved beyond tolerance while the tx was pending. Increase slippage (default 0.5% → 1%) or retry.
 * **"Wallet not connected"** — Click Sign in / Connect wallet in the header.
 * **"Market paused"** — Rare — admin paused the market for security reasons. Check the notice in the UI.

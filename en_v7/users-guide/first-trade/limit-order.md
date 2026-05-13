@@ -111,7 +111,7 @@ The app sends notifications when:
 * An order is **cancelled** (by you or due to market resolution)
 * An order is **nearing endTime** (warning to consider cancelling)
 
-For bot / API integrations, see Developers → Webhooks.
+For bot / API integrations, see [Developers](../../developers-guide/bots-mobile.md) → Webhooks.
 
 ## Market-making tips
 
@@ -120,23 +120,6 @@ For bot / API integrations, see Developers → Webhooks.
 * **Check order book depth** before placing — if the best bid/ask is more than 5% from mid, liquidity is thin and your order may create a new tick.
 * **Watch endTime**: Limit orders are automatically cancelled when a market resolves or ends. Reset for each new market.
 * **Consider becoming an LP** instead of pure limit orders — LPs have price exposure but earn passive fees on both sides. See [Liquidity provider](../liquidity-and-market/provide-liquidity.md).
-
-## Maker vs taker — why makers get a better price
-
-If your order matches immediately in the same block as a taker placing the opposite side:
-
-* The taker fills at exactly your limit price, not the mid.
-* You (the maker) enjoy **price improvement** — a better price than the AMM spot.
-
-This is why CLOB makers typically get better prices than standard AMM swaps.
-
-## Watch your orders
-
-* The app sends notifications when:
-  * An order fills (full or partial)
-  * An order is cancelled (by you or due to market resolution)
-  * An order is nearing endTime (warning to consider cancelling)
-* Webhook / API integration for bots — see [Developers](../../developers-guide/bots-mobile.md).
 
 ### Troubleshooting
 

@@ -85,91 +85,10 @@ No protocol fee. Gas is paid by the user by default; sponsor coverage applies if
 
 ## Common errors
 
-| Error                    | Reason                             | Fix                                                |
-| ------------------------ | ---------------------------------- | -------------------------------------------------- |
-| "Slippage exceeded"      | Price moved beyond tolerance       | Increase slippage or retry                         |
-| "Insufficient liquidity" | CLOB + AMM lack sufficient depth   | Reduce size or use a [limit order](limit-order.md) |
-| "Market paused"          | Admin paused for security reasons  | Check the UI notice                                |
-| "Past endTime"           | Trading has closed for this market | Wait for resolution to redeem or get a refund      |
-| "Insufficient USDC"      | Wallet lacks USDC                  | [Bridge](bridge.md) or top up                      |
-
-### Troubleshooting
-
-<details>
-
-<summary>"Slippage exceeded"</summary>
-
-**Reason:** Price moved beyond your tolerance between quote and execution (usually because of another trader filling at the same moment, or a stale quote).
-
-**Fix:**
-
-* Increase slippage tolerance to `1–2%` and retry
-* Reduce trade size (smaller orders have less price impact)
-* Wait a few seconds for the orderbook to refresh, then re-quote
-
-</details>
-
-<details>
-
-<summary>"Insufficient liquidity"</summary>
-
-**Reason:** Combined CLOB + AMM depth is not enough to fill your size.
-
-**Fix:**
-
-* Reduce size and try again
-* Use a Limit order instead — rest on the book and wait for fills
-* Split the trade into smaller chunks
-
-</details>
-
-<details>
-
-<summary>"Market paused"</summary>
-
-**Reason:** Admin paused trading on this market for security reasons (e.g., oracle issue, suspected manipulation).
-
-**Fix:** Check the UI notice on the market page. Pauses are usually short-term (minutes to hours). Follow the announcement on Discord for updates.
-
-</details>
-
-<details>
-
-<summary>"Past endTime"</summary>
-
-**Reason:** Trading has closed because the market reached its scheduled end time (resolution phase).
-
-**Fix:** Wait for resolution. Once resolved, holders of the winning side can redeem for USDC.
-
-</details>
-
-<details>
-
-<summary>"Insufficient USDC"</summary>
-
-**Reason:** Your Unichain wallet does not have enough USDC for the trade + gas.
-
-**Fix:**
-
-* Bridge USDC from another chain or CEX
-* Reduce the trade amount
-* Top up via a direct CEX withdrawal to Unichain
-
-</details>
-
-<details>
-
-<summary>Transaction stuck "pending"</summary>
-
-**Reason:** Network congestion or RPC issue. Unichain is normally fast (\~200ms blocks) but transient spikes happen.
-
-**Fix:**
-
-* Wait 30 seconds — most pendings resolve
-* Refresh the page; the transaction may have already confirmed
-* If stuck >5 minutes, check the explorer (uniscan.xyz) using your tx hash
-* As a last resort, "Speed up" or "Cancel" the tx in your wallet
-
-</details>
-
-***
+| Error                    | Reason                             | Fix                                                    |
+| ------------------------ | ---------------------------------- | ------------------------------------------------------ |
+| "Slippage exceeded"      | Price moved beyond tolerance       | Increase slippage or retry                             |
+| "Insufficient liquidity" | CLOB + AMM lack sufficient depth   | Reduce size or use a [limit order](limit-order.md)     |
+| "Market paused"          | Admin paused for security reasons  | Check the UI notice                                    |
+| "Past endTime"           | Trading has closed for this market | Wait for resolution to redeem or get a refund          |
+| "Insufficient USDC"      | Wallet lacks USDC                  | [Bridge](/broken/pages/N6PP2E6mV0vPeJ9TkAjs) or top up |

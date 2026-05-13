@@ -11,11 +11,16 @@
 ## USERS GUIDE
 
 * [Quick start](users-guide/getting-started.md)
+* [Get Ready](users-guide/get-ready/README.md)
+  * [Connect wallet](users-guide/get-ready/connect-wallet.md)
+  * [Bridge to Unichain](users-guide/get-ready/bridge-to-unichain.md)
 * [Trading](users-guide/first-trade/README.md)
-  * [Connect wallet](users-guide/first-trade/connect-wallet.md)
-  * [Bridge to Unichain](users-guide/first-trade/bridge.md)
+  * [Overview](users-guide/first-trade/overview.md)
   * [Market order](users-guide/first-trade/market-order.md)
   * [Limit order (CLOB)](users-guide/first-trade/limit-order.md)
+  * [Managing Orders](users-guide/first-trade/managing-orders.md)
+  * [Split & Merge](users-guide/first-trade/split-and-merge.md)
+  * [Multi-Outcome Markets](users-guide/first-trade/multi-outcome-markets.md)
   * [Portfolio & P\&L](users-guide/first-trade/portfolio.md)
   * [Redeem & refund](users-guide/first-trade/redeem-refund.md)
 * [Features](users-guide/features/README.md)
