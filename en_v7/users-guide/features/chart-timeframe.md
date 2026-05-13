@@ -1,10 +1,19 @@
----
-description: >-
-  Every market has a YES price chart over time. Read the chart, change
-  timeframes, and use indicators.
----
-
 # Chart & timeframe
+
+* < 24h to endTime → 5m
+* 1-7 days → 15m or 1h
+* 7 days → 1h or 4h
+* 30 days → 1D
+
+```
+─┬─  high
+ │
+ ▌   close (green if close > open)
+ │
+ ▐   open
+ │
+─┴─  low
+```
 
 ***
 
