@@ -1,3 +1,10 @@
+---
+description: >-
+  PrediX combines a Central Limit Order Book with Uniswap v4. Its Smart Router
+  automatically executes every trade at the best available price, ensuring 24/7
+  liquidity and optimal execution.
+---
+
 # Overview
 
 Trading on PrediX combines two liquidity sources in a single trade — the **Central Limit Order Book (CLOB)** where makers set prices, and the **AMM pool** (Uniswap v4) that always quotes a price. The Router automatically picks the best route per trade, so you get the best price available across both, on every order.
@@ -45,15 +52,10 @@ You don't choose CLOB vs AMM — just click **Buy** or **Sell**. The Router hand
 
 ### Order Types
 
-| Type             | Description                                                     | Best For                                         |
-| ---------------- | --------------------------------------------------------------- | ------------------------------------------------ |
-| **Market Order** | Instant execution at the best available price across CLOB + AMM | Quick trades, small size, accepting slippage     |
-| **Limit Order**  | Set your own price and rest on the orderbook until matched      | Price control, large size, earning maker rebates |
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Market Order</strong></mark></td><td>Instant execution at the best available price across CLOB + AMM</td><td>Best For<strong>:</strong> Quick trades, small size, accepting slippage</td></tr><tr><td><mark style="color:orange;"><strong>Limit Order</strong></mark></td><td>Set your own price and rest on the orderbook until matched</td><td>Best For: Price control, large size, earning maker rebates</td></tr></tbody></table>
 
 ### Advanced Features
 
-* **Split & Merge** — Convert between USDC collateral and YES+NO share pairs
-* **Managing Orders** — Cancel, edit, and track your open orders
-* **Multi-Outcome Markets** — Trade markets with 3+ possible outcomes
+<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Split &#x26; Merge</strong></mark></td><td>Convert between USDC collateral and YES+NO share pairs</td></tr><tr><td><mark style="color:orange;"><strong>Managing Orders</strong></mark></td><td>Cancel, edit, and track your open orders</td></tr><tr><td><mark style="color:orange;"><strong>Multi-Outcome Markets</strong></mark></td><td>Trade markets with 3+ possible outcomes</td></tr></tbody></table>
 
 ***

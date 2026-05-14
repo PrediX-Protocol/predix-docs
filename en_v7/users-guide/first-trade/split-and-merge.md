@@ -1,3 +1,10 @@
+---
+description: >-
+  Maximize capital efficiency with Split & Merge on PrediX. Convert 1:1 between
+  USDC and YES+NO pairs with zero fees and zero slippage. Ideal for Market
+  Making and Arbitrage.
+---
+
 # Split & Merge
 
 Convert between USDC collateral and YES + NO share pairs.
@@ -20,13 +27,40 @@ This is useful when you want to take a position on one side without buying from 
 
 <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-#### Steps
+{% stepper %}
+{% step %}
+### <mark style="color:orange;">Step 1: Open the Utility Panel</mark>
 
-1. Open the market page → click the **Split / Merge** tab
-2. Enter the USDC amount (e.g., `100`)
-3. Click **Split** → confirm in your wallet
-4. `100 YES` + `100 NO` arrive in your wallet
-5. (Optional) Sell the side you don't want via Market or Limit order
+* Navigate to the specific Market Page you are interested in.
+* Click on the Split / Merge tab (usually found in the trading or tools section).
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 2: Enter Collateral Amount</mark>
+
+* Input the amount of USDC you wish to split (e.g., 100).
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 3: Execute the Split</mark>
+
+* Click the Split button.
+* Confirm the transaction in your wallet (e.g., Touch ID for passkey or MetaMask popup).
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 4: Receive Tokens</mark>
+
+* The system will mint the outcome tokens based on your collateral.
+* You will immediately receive an equal amount of both sides: `100 YES` + `100 NO`
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 5: Manage Your Position (Optional)</mark>
+
+If you only wanted to hold one side, you can now Sell the side you don't want using a Market or Limit order to recoup a portion of your USDC.
+{% endstep %}
+{% endstepper %}
 
 {% hint style="info" %}
 **No fee, no slippage.** Splitting always gives you exactly 1:1 — `$100 USDC` becomes exactly `100 YES + 100 NO`, no matter the orderbook state.
@@ -42,13 +76,44 @@ This lets you exit both sides of a position and recover your collateral **withou
 
 <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-#### Steps
+{% stepper %}
+{% step %}
+### <mark style="color:orange;">Step 1: Open the Utility Panel</mark>
 
-1. Open the market page → click the **Split / Merge** tab
-2. Switch to **Merge** mode
-3. Enter the pair count to merge (e.g., `50` — requires `50 YES + 50 NO`)
-4. Click **Merge** → confirm in your wallet
-5. `50 USDC` returns to your wallet; the `50 YES + 50 NO` are burned
+* Navigate to the specific Market Page.
+* Click on the Split / Merge tab.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 2: Switch Modes</mark>
+
+* By default, the panel may show "Split." Click to switch to Merge mode.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 3: Enter the Merge Quantity</mark>
+
+* Input the number of pairs you wish to merge (e.g., 50).
+
+{% hint style="info" %}
+Note: To merge 50 pairs, you must hold at least `50 YES` tokens and `50 NO` tokens for that specific market.
+{% endhint %}
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 4: Execute the Merge</mark>
+
+* Click the Merge button.
+* Confirm the transaction in your wallet (e.g., via FaceID/TouchID for passkeys or a signature for EOA).
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 5: Completion</mark>
+
+* The `50 YES` + `50 NO` tokens are burned (removed from circulation).
+* 50 USDC is immediately returned to your wallet balance.
+{% endstep %}
+{% endstepper %}
 
 {% hint style="warning" %}
 **Merge requires equal amounts.** If you hold `100 YES + 80 NO`, you can only merge `80 pairs` (= `80 USDC`). The extra `20 YES` cannot be merged — sell them on the orderbook or hold to resolution.
@@ -89,7 +154,7 @@ Arbitrage forces the prices back to `YES + NO = $1`. This is the foundation of p
 
 <details>
 
-<summary>1. Market making (provide liquidity both sides)</summary>
+<summary><mark style="color:orange;">1. Market making (provide liquidity both sides)</mark></summary>
 
 You want to be a maker on both YES and NO sides of a market. Instead of:
 
@@ -109,7 +174,7 @@ This is **how professional market makers on PrediX operate**. The split is free 
 
 <details>
 
-<summary>2. Cheap exit from a directional position</summary>
+<summary><mark style="color:orange;">2. Cheap exit from a directional position</mark></summary>
 
 You bought `100 YES` for `$45` (avg `$0.45/share`). Market moves to `YES = $0.70`. You want to take profit, but the orderbook depth is thin and selling will move the price down.
 
@@ -127,7 +192,7 @@ Option B avoids selling YES (which would push the price down). Useful when **YES
 
 <details>
 
-<summary>3. Hedging an existing position</summary>
+<summary><mark style="color:orange;">3. Hedging an existing position</mark></summary>
 
 You hold `100 YES @ $0.60`. Big news drops that could push the market either direction. You want to **lock in your gain temporarily** without selling.
 
@@ -142,7 +207,7 @@ Reverse the process to un-hedge. Useful for short-term tactical hedging during v
 
 <details>
 
-<summary>4. Arbitrage when YES + NO ≠ $1</summary>
+<summary><mark style="color:orange;">4. Arbitrage when YES + NO ≠ $1</mark></summary>
 
 You notice on a market:
 
@@ -170,7 +235,7 @@ The reverse arbitrage exists when `YES + NO > $1`:
 
 <details>
 
-<summary>5. Bootstrap liquidity for a new market</summary>
+<summary><mark style="color:orange;">5. Bootstrap liquidity for a new market</mark></summary>
 
 A market just launched with no orderbook depth and no AMM liquidity yet. Even the AMM hook can quote prices, but spreads are wide.
 

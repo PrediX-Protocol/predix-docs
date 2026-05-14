@@ -119,19 +119,19 @@ Phase 2: direct messaging between users. Planned features:
 
 {% stepper %}
 {% step %}
-### Step 1: User Reporting
+### <mark style="color:orange;">Step 1: User Reporting</mark>
 
 * The process begins when a user flags and reports specific content for review.
 {% endstep %}
 
 {% step %}
-### Step 2: Moderator Review
+### <mark style="color:orange;">Step 2: Moderator Review</mark>
 
 * Our moderation team manually evaluates the reported content against community guidelines to determine its validity.
 {% endstep %}
 
 {% step %}
-### Step 3: Initial Enforcement
+### <mark style="color:orange;">Step 3: Initial Enforcement</mark>
 
 If the report is found to be valid:
 
@@ -140,7 +140,7 @@ If the report is found to be valid:
 {% endstep %}
 
 {% step %}
-### Step 4: Escalation & Banning
+### <mark style="color:orange;">Step 4: Escalation & Banning</mark>
 
 The system tracks recurring violations:
 

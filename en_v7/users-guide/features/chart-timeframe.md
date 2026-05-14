@@ -52,12 +52,6 @@ The app picks a sensible default based on time-to-end:
 * 7 days → 1h or 4h
 * 30 days → 1D
 
-### Indicators
-
-Toggle indicators in the chart settings (gear icon):
-
-<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>MA / EMA</strong></mark></td><td>moving average over 7, 25, 99 periods.</td></tr><tr><td><mark style="color:orange;"><strong>VWAP</strong></mark> </td><td>volume-weighted average price.</td></tr><tr><td><mark style="color:orange;"><strong>Bollinger Bands</strong></mark></td><td>volatility envelope.</td></tr><tr><td><mark style="color:orange;"><strong>RSI</strong></mark></td><td>momentum oscillator (0-100).</td></tr><tr><td><mark style="color:orange;"><strong>Volume profile</strong></mark></td><td>volume distribution by price.</td></tr></tbody></table>
-
 ### Compare two markets
 
 Click **Compare** then select another market. The chart overlays two YES price lines on the same axis (normalized 0-1, since both are already probabilities).

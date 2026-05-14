@@ -1,3 +1,9 @@
+---
+description: >-
+  Track P&L, analyze accuracy, and monitor all PrediX trades, orders, and LPs in
+  one dashboard.
+---
+
 # Portfolio & P\&L
 
 View all your positions, history, and P\&L at `/portfolio`.
@@ -10,10 +16,7 @@ View all your positions, history, and P\&L at `/portfolio`.
 
 Each row:
 
-| Market                  | Side | Balance | Avg cost | Spot  | Unrealized P\&L | Action        |
-| ----------------------- | ---- | ------- | -------- | ----- | --------------- | ------------- |
-| BTC > $100k before 2027 | YES  | 205.30  | $0.483   | $0.62 | +$28.20         | Sell / Redeem |
-| ETH > $5k in 2026       | NO   | 50.00   | $0.380   | $0.42 | +$2.00          | Sell          |
+<table><thead><tr><th>Market</th><th width="69">Side</th><th width="100">Balance</th><th width="105">Avg cost</th><th width="82">Spot</th><th width="118">Unrealized P&#x26;L</th><th>Action</th></tr></thead><tbody><tr><td>BTC > $100k before 2027</td><td>YES</td><td>205.30</td><td>$0.483</td><td>$0.62</td><td>+$28.20</td><td>Sell / Redeem</td></tr><tr><td>ETH > $5k in 2026</td><td>NO</td><td>50.00</td><td>$0.380</td><td>$0.42</td><td>+$2.00</td><td>Sell</td></tr></tbody></table>
 
 * **Balance**: on-chain token count of YES/NO (the indexer hydrates cost basis).
 * **Avg cost**: weighted-average purchase cost.
@@ -29,14 +32,7 @@ Each row:
 
 ## History — 6 types
 
-| Type      | Description                   | Source event                                       |
-| --------- | ----------------------------- | -------------------------------------------------- |
-| **Trade** | Buy/sell via Router           | `Router.Trade`                                     |
-| **Order** | Place/cancel/fill limit order | `Exchange.OrderPlaced/OrderMatched/OrderCancelled` |
-| **Split** | Mint a YES+NO pair            | `MarketFacet.PositionSplit`                        |
-| **Merge** | Burn YES+NO → USDC            | `MarketFacet.PositionMerged`                       |
-| **Claim** | Redeem or refund              | `TokensRedeemed / MarketRefunded`                  |
-| **LP**    | Add/remove/collect liquidity  | `PoolManager.ModifyLiquidity`                      |
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Trade</strong></mark></td><td>Buy/sell via Router</td><td><code>Router.Trade</code></td></tr><tr><td><mark style="color:orange;"><strong>Order</strong></mark></td><td>Place/cancel/fill limit order</td><td><code>Exchange.OrderPlaced/OrderMatched/OrderCancelled</code></td></tr><tr><td><mark style="color:orange;"><strong>Split</strong></mark></td><td>Mint a YES+NO pair</td><td><code>MarketFacet.PositionSplit</code></td></tr><tr><td><mark style="color:orange;"><strong>Merge</strong></mark></td><td>Burn YES+NO → USDC</td><td><code>MarketFacet.PositionMerged</code></td></tr><tr><td><mark style="color:orange;"><strong>Claim</strong></mark></td><td>Redeem or refund</td><td><code>TokensRedeemed / MarketRefunded</code></td></tr><tr><td><mark style="color:orange;"><strong>LP</strong></mark></td><td>Add/remove/collect liquidity</td><td><code>PoolManager.ModifyLiquidity</code></td></tr></tbody></table>
 
 Click any row → tx hash on the explorer.
 
@@ -44,7 +40,7 @@ Click any row → tx hash on the explorer.
 
 Applies to markets that have already resolved.
 
-### Brier score
+### <mark style="color:orange;">Brier score</mark>
 
 The mean squared deviation between the price at which you bought and the actual outcome.
 
@@ -59,7 +55,7 @@ Example:
 
 Low score = accurate pricing. High score = frequently wrong.
 
-### Accuracy band
+### <mark style="color:orange;">Accuracy band</mark>
 
 A chart measuring: when you buy at price range X, what percentage of events actually occur?
 
@@ -129,7 +125,7 @@ Notifications can be toggled in [Settings](../../resources/faq.md).
 
 <details>
 
-<summary>Balance shows zero but I just bought shares</summary>
+<summary><mark style="color:orange;">Balance shows zero but I just bought shares</mark></summary>
 
 **Reason:** Indexer lag. After a successful tx, the indexer typically catches up within 5–15 seconds.
 
@@ -143,7 +139,7 @@ Notifications can be toggled in [Settings](../../resources/faq.md).
 
 <details>
 
-<summary>Unrealized P&#x26;L looks wrong</summary>
+<summary><mark style="color:orange;">Unrealized P&#x26;L looks wrong</mark></summary>
 
 **Reason:** Spot price may have just updated, or your cost basis includes a recent trade that's still being indexed.
 
@@ -157,7 +153,7 @@ Notifications can be toggled in [Settings](../../resources/faq.md).
 
 <details>
 
-<summary>Cannot sell — "trading closed"</summary>
+<summary><mark style="color:orange;">Cannot sell — "trading closed"</mark></summary>
 
 **Reason:** The market has passed `endTime` and is in the resolution window.
 
@@ -167,7 +163,7 @@ Notifications can be toggled in [Settings](../../resources/faq.md).
 
 <details>
 
-<summary>"Pending resolve" badge stuck for >48 hours</summary>
+<summary><mark style="color:orange;">"Pending resolve" badge stuck for >48 hours</mark></summary>
 
 **Reason:** Oracle dispute or delay (UMA markets can take longer if disputed).
 
@@ -182,7 +178,7 @@ Notifications can be toggled in [Settings](../../resources/faq.md).
 
 <details>
 
-<summary>CSV export missing recent trades</summary>
+<summary><mark style="color:orange;">CSV export missing recent trades</mark></summary>
 
 **Reason:** Export uses the indexer which may lag by a few seconds.
 
@@ -191,5 +187,3 @@ Notifications can be toggled in [Settings](../../resources/faq.md).
 </details>
 
 ***
-
-done

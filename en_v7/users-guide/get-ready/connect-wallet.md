@@ -1,6 +1,13 @@
+---
+description: >-
+  Connect your wallet to access the PrediX Orderbook and AMM. You maintain full
+  control of your assets while trading at the best market prices.
+icon: wallet
+---
+
 # Connect wallet
 
-PrediX offers **2 sign-in methods**. Both are **non-custodial** — nobody (including PrediX) holds your private key.
+PrediX offers 2 sign-in methods. Both are non-custodial — nobody (including PrediX) holds your private key.
 
 ## Decision Tree
 
@@ -19,12 +26,11 @@ PrediX offers **2 sign-in methods**. Both are **non-custodial** — nobody (incl
 | **First-time sign-up** | \~5 seconds biometric                            | Already have a wallet → instant                       |
 | **Best for**           | New users · fast onboarding                      | DeFi users · large custody · hardware wallets         |
 
-> By default, both methods require users to pay their own gas. PrediX has a sponsorship program for eligible users (new user onboarding, stakers above threshold, campaign-eligible events) — **applies to both account types**:
->
-> * **Smart account** → paymaster covers gas directly
-> * **EOA** → off-chain rebate/refund (mechanism announced pre-launch)
->
-> Eligibility criteria and sponsorship duration may change via governance vote.
+By default, both methods require users to pay their own gas. PrediX has a sponsorship program for eligible users (new user onboarding, stakers above threshold, campaign-eligible events) — **applies to both account types**:
+
+<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Smart account</strong></mark> </td><td>→ paymaster covers gas directly</td></tr><tr><td><mark style="color:orange;"><strong>EOA</strong></mark> </td><td>→ off-chain rebate/refund (mechanism announced pre-launch)</td></tr></tbody></table>
+
+Eligibility criteria and sponsorship duration may change via governance vote.
 
 ## A — Passkey + Smart Account
 
@@ -32,26 +38,51 @@ Passkeys use the **WebAuthn** standard — biometric (Touch ID, Face ID, Windows
 
 On sign-up, the app deploys a **Kernel smart account (ERC-4337)** — an on-chain wallet contract that validates via passkey signature. All actions go through UserOps.
 
-### Create New
+### <mark style="color:orange;">Create New</mark>
 
-1. Open [app.predix.app](https://app.predix.app) → click **Sign up**
-2. Select **Continue with passkey**
-3. Browser prompts biometric authentication → confirm
-4. Smart account counterfactual address appears immediately (deployed on-chain on first action)
+{% stepper %}
+{% step %}
+### <mark style="color:orange;">Step 1: Access the Portal</mark>
 
-#### Backup
+* Open your browser and navigate to [_app.predix.app_](https://app.predix.app).
+* Click the **Sign up** button to begin.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 2: Choose Authentication Method</mark>
+
+* From the available options, select Continue with passkey.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 3: Biometric Verification</mark>
+
+* Your browser will trigger a system prompt for biometric authentication (such as FaceID, TouchID, or Windows Hello).
+* Confirm the prompt to verify your identity securely.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 4: Smart Account Generation</mark>
+
+* Your Smart account counterfactual address will appear immediately.
+
+{% hint style="info" %}
+Note: Your account is officially deployed on-chain the moment you perform your first action.
+{% endhint %}
+{% endstep %}
+{% endstepper %}
+
+#### <mark style="color:orange;">**Backup**</mark>
 
 Choose at least one backup method on sign-up:
 
-* **iCloud Keychain** (iPhone, Mac) — passkey syncs across Apple devices with the same Apple ID
-* **Google Password Manager** (Android, Chrome) — syncs across devices
-* **Hardware key** (YubiKey, Titan) — passkey stored on hardware key, plug-in to authenticate
+<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>iCloud Keychain</strong> (iPhone, Mac)</mark></td><td>passkey syncs across Apple devices with the same Apple ID</td></tr><tr><td><mark style="color:orange;"><strong>Google Password Manager</strong> (Android, Chrome)</mark></td><td>syncs across devices</td></tr><tr><td><mark style="color:orange;"><strong>Hardware key</strong> (YubiKey, Titan</mark></td><td>passkey stored on hardware key, plug-in to authenticate</td></tr></tbody></table>
 
 {% hint style="warning" %}
 **Single point of failure.** If you only have 1 device + no cloud sync + no hardware key backup → **losing the device = losing the wallet**. Enable cloud sync or add a second device immediately after sign-up.
 {% endhint %}
 
-#### Recovery (lost device)
+#### <mark style="color:orange;">**Recovery (lost device)**</mark>
 
 | Scenario             | What to do                                                                                       |
 | -------------------- | ------------------------------------------------------------------------------------------------ |
@@ -68,15 +99,47 @@ Choose at least one backup method on sign-up:
 
 Use a traditional wallet you already own — MetaMask, Rainbow, Coinbase Wallet, or any wallet that supports WalletConnect / hardware wallet.
 
-### Steps
+#### <mark style="color:orange;">**How to Connect and Trade via Web3 Wallet**</mark>
 
-1. Click **Connect wallet** in the app header
-2. Select your wallet (MetaMask / Rainbow / WalletConnect / Ledger…)
-3. Approve the connection request in your wallet
-4. Sign the **SIWE message** (Sign-In With Ethereum) — off-chain, no gas cost
-5. Trade directly — each tx pays gas in ETH on Unichain
+{% stepper %}
+{% step %}
+### <mark style="color:orange;">Step 1: Initiate Connection</mark>
 
-#### When to use EOA
+* Navigate to the app header and click the Connect wallet button.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 2: Select Your Provider</mark>
+
+* Choose your preferred wallet from the list (e.g., MetaMask, Rainbow, WalletConnect, or Ledger).
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 3: Approve the Request</mark>
+
+* Your wallet extension or app will trigger a pop-up.
+* Approve the connection request to link your wallet to the platform.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 4: Secure Sign-In (SIWE)</mark>
+
+* Sign the SIWE (Sign-In With Ethereum) message to verify ownership of your address.
+
+{% hint style="info" %}
+Note: This is an off-chain signature and incurs no gas cost.
+{% endhint %}
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 5: Start Trading</mark>
+
+* You are now ready to trade directly.
+* Please ensure you have sufficient funds, as each transaction requires gas fees paid in ETH on Unichain.
+{% endstep %}
+{% endstepper %}
+
+#### <mark style="color:orange;">When to use EOA</mark>
 
 * You already have a DeFi workflow with MetaMask + hardware wallet
 * Large custody balance — want standard BIP-39 seed phrase backup
@@ -95,7 +158,7 @@ Both methods use **SIWE (EIP-4361)** to create a session with the backend:
 
 <details>
 
-<summary>Passkey prompt does not appear</summary>
+<summary><mark style="color:orange;">Passkey prompt does not appear</mark></summary>
 
 Your browser may not support WebAuthn. Use Chrome, Safari, Brave, or Edge (latest version). On iOS/Android, ensure device biometrics (Face ID / Touch ID / fingerprint) are enabled in system settings.
 
@@ -103,7 +166,7 @@ Your browser may not support WebAuthn. Use Chrome, Safari, Brave, or Edge (lates
 
 <details>
 
-<summary>"Passkey not found" on a new device</summary>
+<summary><mark style="color:orange;">"Passkey not found" on a new device</mark></summary>
 
 Sign in with the same Apple ID (iCloud Keychain) or Google account (Password Manager) used at sign-up. If you didn't enable cloud sync, use a second paired device or your hardware security key.
 
@@ -111,7 +174,7 @@ Sign in with the same Apple ID (iCloud Keychain) or Google account (Password Man
 
 <details>
 
-<summary>MetaMask not detected</summary>
+<summary><mark style="color:orange;">MetaMask not detected</mark></summary>
 
 Make sure the MetaMask extension is installed and unlocked. Refresh the page after unlocking. On mobile, use MetaMask's in-app browser instead of Safari/Chrome.
 
@@ -119,7 +182,7 @@ Make sure the MetaMask extension is installed and unlocked. Refresh the page aft
 
 <details>
 
-<summary>Wrong network — "Switch to Unichain" prompt</summary>
+<summary><mark style="color:orange;">Wrong network — "Switch to Unichain" prompt</mark></summary>
 
 Click the prompt to switch automatically, or manually add Unichain to your wallet:
 
@@ -131,7 +194,7 @@ Click the prompt to switch automatically, or manually add Unichain to your walle
 
 <details>
 
-<summary>WalletConnect QR code not scanning</summary>
+<summary><mark style="color:orange;">WalletConnect QR code not scanning</mark></summary>
 
 Make sure your wallet app is updated to the latest version. If the QR doesn't load, click "Copy to clipboard" and paste into your wallet's WalletConnect input.
 
@@ -139,7 +202,7 @@ Make sure your wallet app is updated to the latest version. If the QR doesn't lo
 
 <details>
 
-<summary>SIWE signature rejected by wallet</summary>
+<summary><mark style="color:orange;">SIWE signature rejected by wallet</mark></summary>
 
 Some wallets block SIWE messages by default. In MetaMask, ensure "Sign typed data" warnings are not blocking — accept the message. The SIWE message is safe and contains no transaction data.
 

@@ -35,7 +35,7 @@ In-app notifications are ON by default and require no setup. All other channels 
 
 PrediX groups notifications into six categories. Each category can be toggled independently per channel — for example, order fills via push, rewards via email only.
 
-#### Trading
+#### <mark style="color:orange;">Trading</mark>
 
 Events tied to your orders and open positions.
 
@@ -44,7 +44,7 @@ Events tied to your orders and open positions.
 * **Slippage exceeded** — transaction failed due to slippage.
 * **Position underwater** — position > $50 with unrealized loss > 20%.
 
-#### Market events
+#### <mark style="color:orange;">Market events</mark>
 
 Lifecycle changes on markets where you hold tokens.
 
@@ -53,7 +53,7 @@ Lifecycle changes on markets where you hold tokens.
 * **Pause** — a market you hold tokens in has been paused.
 * **EndTime warning** — a market you hold tokens in is < 24h, < 1h, or < 10 minutes from endTime.
 
-#### LP
+#### <mark style="color:orange;">LP</mark>
 
 Events for liquidity provider positions.
 
@@ -61,7 +61,7 @@ Events for liquidity provider positions.
 * **Out of range** — a concentrated LP position has moved out of its price range.
 * **Pool paused** — pool closed due to market resolution.
 
-#### Social
+#### <mark style="color:orange;">Social</mark>
 
 Interactions from other users.
 
@@ -70,7 +70,7 @@ Interactions from other users.
 * **Comment / reply** on a market you commented on.
 * **Mention** in a discussion.
 
-#### Rewards
+#### <mark style="color:orange;">Rewards</mark>
 
 Incentive and program milestones.
 
@@ -79,7 +79,7 @@ Incentive and program milestones.
 * **Weekly PRX distribution** ready to claim.
 * **Referral commission** received.
 
-#### Governance
+#### <mark style="color:orange;">Governance</mark>
 
 Protocol-level voting and decision events.
 
@@ -93,18 +93,18 @@ Protocol-level voting and decision events.
 
 ![Price alert: user set condition (YES > $0.70) → Indexer check every block → trigger → push + email + in-app](../../.gitbook/assets/43-price-alert-flow.svg)
 
-#### Setting up an alert
+#### <mark style="color:orange;">Setting up an alert</mark>
 
 {% stepper %}
 {% step %}
-### Step 1: Access the Alert Menu
+### <mark style="color:orange;">Step 1: Access the Alert Menu</mark>
 
 * Navigate to the Market Detail Page.
 * Click on the Bell Icon to open the notification settings.
 {% endstep %}
 
 {% step %}
-### Step 2: Choose a Condition
+### <mark style="color:orange;">Step 2: Choose a Condition</mark>
 
 Select the specific market trigger you want to monitor:
 
@@ -115,7 +115,7 @@ Select the specific market trigger you want to monitor:
 {% endstep %}
 
 {% step %}
-### Step 3: Select a Notification Channel
+### <mark style="color:orange;">Step 3: Select a Notification Channel</mark>
 
 Choose where you would like to receive your alerts:
 
@@ -125,7 +125,7 @@ Choose where you would like to receive your alerts:
 {% endstep %}
 
 {% step %}
-### Step 4: Save and Activate
+### <mark style="color:orange;">Step 4: Save and Activate</mark>
 
 * Review your settings to ensure accuracy.
 * Click Save to activate your alert.
@@ -141,7 +141,7 @@ Choose where you would like to receive your alerts:
 * **Bulk actions** — delete all alerts for a resolved market.
 {% endhint %}
 
-#### Limits
+#### <mark style="color:orange;">Limits</mark>
 
 Active alert capacity scales with PRX stake:
 
@@ -151,7 +151,7 @@ Active alert capacity scales with PRX stake:
 | Stake 1k+ PRX  | 200           |
 | Stake 10k+ PRX | Unlimited     |
 
-### Notification preferences
+### <mark style="color:orange;">Notification preferences</mark>
 
 Visit `/settings/notifications` for the full granular control matrix.
 
@@ -167,7 +167,7 @@ Visit `/settings/notifications` for the full granular control matrix.
 Granular customization per type. **Marketing is OFF by default** — only ON if you explicitly opt in.&#x20;
 {% endhint %}
 
-### Email digest
+### <mark style="color:orange;">Email digest</mark>
 
 Two digest formats deliver passive monitoring without continuous attention.
 
@@ -241,28 +241,28 @@ Connect via the official PrediX bot for realtime mobile alerts and quick portfol
 
 {% stepper %}
 {% step %}
-### Step 1: Find the Bot
+### <mark style="color:orange;">Step 1: Find the Bot</mark>
 
 * Open the Telegram app.
 * Search for the handle `@predix_alert_bot` and select it to open the chat
 {% endstep %}
 
 {% step %}
-### Step 2: Initiate Connection
+### <mark style="color:orange;">Step 2: Initiate Connection</mark>
 
 * Start a chat with the bot.
 * Enter the command `/connect` followed by your wallet address (e.g., `/connect 0x123...`).
 {% endstep %}
 
 {% step %}
-### Step 3: Verify Ownership
+### <mark style="color:orange;">Step 3: Verify Ownership</mark>
 
 * Switch to the PrediX app to find the unique verification code generated for you.
 * Paste that code directly into the Telegram bot chat.
 {% endstep %}
 
 {% step %}
-### Step 4: Confirmation
+### <mark style="color:orange;">Step 4: Confirmation</mark>
 
 Once the code is processed, the setup is Done and your wallet is successfully linked for alerts.
 {% endstep %}

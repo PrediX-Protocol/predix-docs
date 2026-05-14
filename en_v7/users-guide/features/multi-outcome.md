@@ -38,27 +38,27 @@ An event is a container holding N child markets (called **members**). The member
 
 {% stepper %}
 {% step %}
-### Step 1: Open the Trading Panel
+### <mark style="color:orange;">Step 1: Open the Trading Panel</mark>
 
 * Locate and click on a specific member within the Event UI.
 * The trading panel will automatically open, pre-configured for that selection (e.g., Buy YES Argentina), functioning exactly like a standard market.
 {% endstep %}
 
 {% step %}
-### Step 2: Execute the Swap
+### <mark style="color:orange;">Step 2: Execute the Swap</mark>
 
 * Once you confirm your trade, the Router intelligently handles the transaction.
 * It automatically swaps your USDC to execute the purchase.
 {% endstep %}
 
 {% step %}
-### Step 3: Liquidity Routing
+### <mark style="color:orange;">Step 3: Liquidity Routing</mark>
 
 * The system sources the best available price by buying YES tokens through a combination of the CLOB (Central Limit Order Book) and the AMM (Automated Market Maker).
 {% endstep %}
 
 {% step %}
-### Step 4: Receive Tokens
+### <mark style="color:orange;">Step 4: Receive Tokens</mark>
 
 Upon successful execution, you will receive the specific outcome tokens (e.g., YES Argentina tokens) directly into your wallet.
 {% endstep %}

@@ -1,3 +1,10 @@
+---
+description: >-
+  Guide to PrediX Multi-Outcome Markets (3+ events): Learn about MarketGroup
+  architecture, "Sum to $1" pricing, GroupSplit/Merge, and pure ERC-20 DeFi
+  composability.
+---
+
 # Multi-Outcome Markets
 
 Trade markets with 3+ possible outcomes — elections, championships, tournaments.
@@ -43,9 +50,7 @@ Imagine a market: **"Which country wins the 2026 World Cup?"**
 
 You can:
 
-* **Buy Brazil-YES at `$0.22`** — if Brazil wins, pays `$1` (4.5× return)
-* **Buy France-NO at `$0.82`** — if France doesn't win, pays `$1` (1.22× return)
-* **Sell shares of any outcome** the same way you would on a binary market
+<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Buy Brazil-YES at <code>$0.22</code></strong></mark> </td><td>if Brazil wins, pays <code>$1</code> (4.5× return)</td></tr><tr><td><mark style="color:orange;"><strong>Buy France-NO at</strong><strong> </strong><strong><code>$0.82</code></strong></mark></td><td> if France doesn't win, pays <code>$1</code> (1.22× return)</td></tr><tr><td><mark style="color:orange;"><strong>Sell shares of any outcome</strong></mark></td><td>the same way you would on a binary marke</td></tr></tbody></table>
 
 Each outcome trades on its own Market Order, Limit Order, or via the AMM — exactly like binary markets.
 
@@ -53,7 +58,7 @@ Each outcome trades on its own Market Order, Limit Order, or via the AMM — exa
 
 For multi-outcome markets, PrediX provides **GroupSplit** and **GroupMerge** — capital-efficient versions of Split & Merge for multiple outcomes at once.
 
-#### GroupSplit
+#### <mark style="color:orange;">GroupSplit</mark>
 
 **Deposit `$1 USDC` → receive `1 YES + 1 NO` for every outcome in the group.**
 
@@ -65,7 +70,7 @@ Because **only the winning YES + 31 losing NO** pay. The 31 losing YES = `$0`, a
 
 In practice, traders use GroupSplit to **sell the YES tokens they don't believe in** at market prices and hold the YES they do believe in.
 
-#### GroupMerge
+#### <mark style="color:orange;">GroupMerge</mark>
 
 **Deposit `1 YES on every outcome` → receive `$1 USDC` back.**
 
@@ -81,7 +86,7 @@ This is useful for:
 
 Because **all YES prices should sum to `$1`** (probabilities total to 100%), any deviation creates **risk-free profit**.
 
-#### Scenario 1 — Sum < $1 (Undervalued)
+#### <mark style="color:orange;">Scenario 1 — Sum < $1 (Undervalued)</mark>
 
 If sum of all YES prices = `$0.92`:
 
@@ -89,7 +94,7 @@ If sum of all YES prices = `$0.92`:
 2. At resolution, exactly one of those pays `$1`
 3. **Profit: `$0.08`** (less gas)
 
-#### Scenario 2 — Sum > $1 (Overvalued)
+#### <mark style="color:orange;">Scenario 2 — Sum > $1 (Overvalued)</mark>
 
 If sum of all YES prices = `$1.07`:
 
@@ -132,7 +137,7 @@ After resolution:
 
 <details>
 
-<summary>1. Concentrated bet on a favorite</summary>
+<summary><mark style="color:orange;"><strong>1. Concentrated bet on a favorite</strong></mark></summary>
 
 You think Brazil is significantly undervalued at `$0.22`. Real probability is `~35%` in your view.
 
@@ -149,7 +154,7 @@ This is a high-conviction directional bet.
 
 <details>
 
-<summary>2. Diversified portfolio across favorites</summary>
+<summary><mark style="color:orange;"><strong>2. Diversified portfolio across favorites</strong></mark></summary>
 
 You think the top 4 favorites are all reasonable but you can't pick one. Spread `$1,000` across them.
 
@@ -164,7 +169,7 @@ If any one of them wins, you profit. Combined probability `~68%`. Lower variance
 
 <details>
 
-<summary>3. Fade the longshot</summary>
+<summary><mark style="color:orange;"><strong>3. Fade the longshot</strong></mark></summary>
 
 You think Germany has zero chance at `$0.08`. Sell Germany-YES (or equivalently, buy Germany-NO).
 
@@ -179,7 +184,7 @@ Low-upside high-conviction fade. Effective when the longshot is overpriced.
 
 <details>
 
-<summary>4. Group arbitrage</summary>
+<summary><mark style="color:orange;"><strong>4. Group arbitrage</strong></mark></summary>
 
 After scanning all outcomes, you notice the sum of all YES prices is `$0.96` (instead of `$1`).
 
@@ -193,7 +198,7 @@ Note: this requires buying many small positions — only profitable at significa
 
 <details>
 
-<summary>5. Hedging an existing concentrated bet</summary>
+<summary><mark style="color:orange;"><strong>5. Hedging an existing concentrated bet</strong></mark></summary>
 
 You bought `$1,000` of Brazil-YES. As tournament progresses, Brazil narrowly survives Round of 16 — you want to lock in some profit without selling Brazil-YES (price has moved to `$0.45`).
 
@@ -208,13 +213,7 @@ You bought `$1,000` of Brazil-YES. As tournament progresses, Brazil narrowly sur
 
 PrediX supports several multi-outcome formats:
 
-| Type                  | Example                                                                                |
-| --------------------- | -------------------------------------------------------------------------------------- |
-| **Tournament winner** | FIFA World Cup, NBA Finals, Wimbledon                                                  |
-| **Election outcome**  | US Presidential 2028, EU Parliament 2029                                               |
-| **Award winners**     | Oscars Best Picture, MVP Awards                                                        |
-| **Price ranges**      | "BTC price on Dec 31, 2026" with brackets `<$50k`, `$50k-100k`, `$100k-150k`, `>$150k` |
-| **Categorical**       | "Which K-pop group has #1 album in Q4?"                                                |
+<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Tournament winner</strong></mark></td><td>FIFA World Cup, NBA Finals, Wimbledon,...</td></tr><tr><td><mark style="color:orange;"><strong>Election outcome</strong></mark></td><td>US Presidential 2028, EU Parliament 2029,...</td></tr><tr><td><mark style="color:orange;"><strong>Award winners</strong></mark></td><td>Oscars Best Picture, MVP Awards,...</td></tr><tr><td><mark style="color:orange;"><strong>Price ranges</strong></mark></td><td>BTC price on Dec 31, 2026" with brackets <code>&#x3C;$50k</code>, <code>$50k-100k</code>, <code>$100k-150k</code>, <code>>$150k</code></td></tr><tr><td><mark style="color:orange;"><strong>Categorical</strong></mark></td><td>"Which K-pop group has #1 album in Q4?"</td></tr></tbody></table>
 
 Each follows the same MarketGroup pattern under the hood.
 
@@ -230,4 +229,4 @@ Polymarket implements multi-outcome markets using their **NegRisk** adapter on t
 | **Liquidity per outcome**     | Shared via NegRisk AMM       | Independent (each outcome has its own pool) |
 | **Multi-outcome resolution**  | Atomic via CTF               | Atomic via MarketGroup                      |
 
-PrediX outcome tokens are fully composable — you can use Brazil-YES as collateral on Aave, wrap it in an index, or trade it on any DEX that supports ERC-20.
+**PrediX outcome tokens are fully composable** — you can use Brazil-YES as collateral on Aave, wrap it in an index, or trade it on any DEX that supports ERC-20.

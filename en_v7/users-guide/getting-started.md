@@ -6,11 +6,11 @@ description: Make your first trade on PrediX in under 2 minutes.
 
 ### First Trade
 
-> Learn how to access PrediX, fund your account, and begin trading predictive markets on Unichain.
+> _Learn how to access PrediX, fund your account, and begin trading predictive markets on Unichain._
 
 {% stepper %}
 {% step %}
-#### <mark style="color:$danger;">Connect Wallet</mark>
+#### <mark style="color:orange;">Step 1: Connect Wallet</mark>
 
 Sign in using:
 
@@ -27,7 +27,7 @@ _Eligible users may receive sponsored transactions through paymaster infrastruct
 {% endstep %}
 
 {% step %}
-#### <mark style="color:$danger;">Bridge USDC (optional)</mark>
+#### <mark style="color:orange;">Step 2: Bridge USDC (optional)</mark>
 
 If your USDC is on another network, bridge assets to Unichain before trading.
 
@@ -39,7 +39,7 @@ PrediX supports simplified USDC onboarding through Circle CCTP infrastructure an
 {% endstep %}
 
 {% step %}
-#### <mark style="color:$danger;">Start Trading</mark>
+#### <mark style="color:orange;">Step 3: Start Trading</mark>
 
 Browse prediction markets and trade YES or NO outcome tokens in realtime.
 
@@ -58,7 +58,7 @@ Learn more about:&#x20;
 {% endstep %}
 
 {% step %}
-#### <mark style="color:$danger;">Track Your Positions</mark>
+#### <mark style="color:orange;">Step 4: Track Your Positions</mark>
 
 Monitor open positions, realized PnL, settlement history, and market activity in realtime through the portfolio dashboard.
 
@@ -76,9 +76,7 @@ Every interaction on PrediX contributes to protocol Points, which convert into P
 
 Selected campaigns and seasonal events may receive boosted multipliers, including ecosystem activations and major global event markets.
 
-{% content-ref url="../economics/points.md" %}
-[points.md](../economics/points.md)
-{% endcontent-ref %}
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Points - Earn PRX</strong></mark></td><td><em>PrediX rewards users with <strong>Points</strong> — a unit measuring contribution. Points convert into <strong>PRX tokens</strong> on a pro-rata basis. The earlier you participate, the more you earn.</em></td></tr></tbody></table>
 
 ***
 
@@ -94,27 +92,15 @@ All transactions on testnet have no real value — balances and history will be 
 
 
 
-> **Tip**: The app automatically adds the network to your wallet on first connection. No manual setup needed.
+{% hint style="info" %}
+**Tip**: The app automatically adds the network to your wallet on first connection. No manual setup needed.
+{% endhint %}
 
-{% content-ref url="../developers-guide/testnet.md" %}
-[testnet.md](../developers-guide/testnet.md)
-{% endcontent-ref %}
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Testnet Information</strong></mark></td><td><em>PrediX maintains a testnet deployment on <strong>Unichain Sepolia</strong> for developers to integrate before mainnet launch.</em></td><td><a href="../developers-guide/testnet.md">testnet.md</a></td></tr></tbody></table>
 
 ### Task-based tutorials
 
-| I want to...                               | Go to                                                              |
-| ------------------------------------------ | ------------------------------------------------------------------ |
-| Buy / sell at market price                 | [Market order](first-trade/market-order.md)                        |
-| Place a price and wait for a fill          | [Limit order (CLOB)](first-trade/limit-order.md)                   |
-| Provide liquidity, earn fees               | [Liquidity provider](liquidity-and-market/provide-liquidity.md)    |
-| Create a new market                        | [Create market](liquidity-and-market/create-market.md)             |
-| View positions, P\&L, history              | [Portfolio & P\&L](first-trade/portfolio.md)                       |
-| Read charts, change timeframe              | [Chart & timeframe](features/chart-timeframe.md)                   |
-| Claim USDC after resolution / get a refund | [Redeem & refund](first-trade/redeem-refund.md)                    |
-| Trade in a multi-outcome event             | [Multi-outcome event](features/multi-outcome.md)                   |
-| Discover top traders, copy trading         | [Leaderboard & traders](features/leaderboard.md)                   |
-| Set up notifications + price alerts        | [Notifications & price alerts](/broken/pages/VjFpu8jlXXqXJ8qF7KcN) |
-| Comment + social feed in-app               | [Discussion & social feed](features/discussion.md)                 |
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:orange;">Buy/sell at market price</mark></td><td><a href="first-trade/market-order.md">market-order.md</a></td></tr><tr><td><mark style="color:orange;">Place a price and wait for a fill</mark></td><td><a href="first-trade/limit-order.md">limit-order.md</a></td></tr><tr><td><mark style="color:orange;">Provide liquidity, earn fees</mark></td><td><a href="liquidity-and-market/">liquidity-and-market</a></td></tr><tr><td><mark style="color:orange;">Create a new market</mark></td><td><a href="liquidity-and-market/create-market.md">create-market.md</a></td></tr><tr><td><mark style="color:orange;">View positions, P&#x26;L, history</mark></td><td><a href="first-trade/portfolio.md">portfolio.md</a></td></tr><tr><td><mark style="color:orange;">Read charts, change timeframe</mark></td><td><a href="features/chart-timeframe.md">chart-timeframe.md</a></td></tr><tr><td><mark style="color:orange;">Claim USDC after resolution / get a refund</mark></td><td><a href="first-trade/redeem-refund.md">redeem-refund.md</a></td></tr><tr><td><mark style="color:orange;">Trade in a multi-outcome event</mark></td><td><a href="features/multi-outcome.md">multi-outcome.md</a></td></tr><tr><td><mark style="color:orange;">Discover top traders, copy trading</mark></td><td><a href="features/leaderboard.md">leaderboard.md</a></td></tr><tr><td><mark style="color:orange;">Set up notifications + price alerts</mark></td><td><a href="features/notifications-and-alerts.md">notifications-and-alerts.md</a></td></tr><tr><td><mark style="color:orange;">Comment + social feed in-app</mark></td><td><a href="features/discussion.md">discussion.md</a></td></tr></tbody></table>
 
 Need to understand the mechanics underneath? See [Concepts](../core-concepts/concepts.md).
 

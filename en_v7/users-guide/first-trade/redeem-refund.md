@@ -1,3 +1,9 @@
+---
+description: >-
+  Claim your winnings or get a refund on PrediX. Redeem winning tokens for $1
+  each, or burn YES+NO pairs to reclaim your USDC on unresolved markets.
+---
+
 # Redeem & refund
 
 After a market resolves, exchange winning tokens for USDC. If a market cannot be resolved, use the refund flow.
@@ -16,26 +22,62 @@ After a market resolves, exchange winning tokens for USDC. If a market cannot be
 
 ## Redeem — market has resolved
 
-**Conditions**:
+**Conditions:**
 
 * `market.isResolved == true`
 * You hold the winning token (YES if outcome=true, NO if outcome=false)
 
-### Steps
+#### <mark style="color:orange;">How to Redeem Your Winnings</mark>
 
-1. [Portfolio](portfolio.md) → filter **Resolved markets**.
-2. Each market shows a **Redeem** button if you hold the winning token.
-3. Click → preview: token count, USDC to receive.
-4. Confirm in your wallet → \~2s transaction complete.
-5. USDC arrives in your wallet. Winning tokens are burned; losing tokens = $0.
+{% stepper %}
+{% step %}
+### <mark style="color:orange;">Step 1: Locate Finished Markets</mark>
 
-### Batch redeem
+* Navigate to your [Portfolio](portfolio.md).
+* Use the filters to select Resolved markets. This will show you all events that have officially concluded.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 2: Check for Eligibility</mark>
+
+* Look for the Redeem button next to each market.
+
+{% hint style="info" %}
+Note: This button will only appear if you hold the winning token (the side that correctly predicted the outcome).
+{% endhint %}
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 3: Review the Preview</mark>
+
+Click the Redeem button to open a preview window showing:
+
+* Token Count: The total number of winning tokens you are turning in.
+* USDC to Receive: The total amount of USDC that will be credited to your account.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 4: Confirm in Wallet</mark>
+
+* Click Confirm and authorize the transaction in your wallet (e.g., biometric authentication for passkeys or a signature for EOA).
+* The transaction typically completes in \~2 seconds on Unichain.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 5: Settlement Complete</mark>
+
+* The USDC is deposited directly into your wallet balance.
+* Winning tokens are burned (removed from circulation), while losing tokens automatically drop to a value of $0.
+{% endstep %}
+{% endstepper %}
+
+### <mark style="color:orange;">Batch redeem</mark>
 
 Multiple resolved markets → click **Claim All** → batched via **passkey smart account** (1 click, 1 tx, gas via paymaster). EOA users: each market requires a separate tx (wallets do not support native batching). Both account types receive sponsor coverage if the user qualifies for the program.
 
 ![Batch claim: Click Claim All → smart account bundle redeem(m1...mN) → 1 UserOp → Diamond burn tokens + transfer total USDC](../../.gitbook/assets/16-claim-batch.svg)
 
-### Losing tokens
+### <mark style="color:orange;">Losing tokens</mark>
 
 * **No longer have value**.
 * Cannot be redeemed or traded (pool is drained).
@@ -48,16 +90,41 @@ Multiple resolved markets → click **Claim All** → batched via **passkey smar
 **Conditions**:
 
 * `market.refundModeActive == true`
-* You hold **both YES and NO**
+* You hold **both `YES` and `NO`**
 
-### Steps
+#### <mark style="color:orange;">How to Claim a Refund</mark>
 
-1. Portfolio → the market displays a **Refund available** badge.
-2. Click **Refund** → preview: `min(yesBalance, noBalance)`, USDC to receive.
-3. Confirm → tx \~2s.
-4. USDC returns to your wallet. The YES+NO pair is burned.
+{% stepper %}
+{% step %}
+### <mark style="color:orange;">Step 1: Identify Refundable Markets</mark>
 
-### Formula
+* Navigate to your Portfolio.
+* Look for markets displaying a Refund available badge. This indicates the event was cancelled or voided.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 2: Initiate the Refund</mark>
+
+* Click the Refund button to open the preview panel.
+* Preview details: The system calculates the number of full pairs you hold—`min(yesBalance, noBalance)`—and shows the exact amount of USDC to be returned.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 3: Confirm in Wallet</mark>
+
+* Click Confirm and authorize the transaction in your wallet (e.g., Touch ID for passkey or MetaMask popup).
+* The transaction typically processes in \~2 seconds.
+{% endstep %}
+
+{% step %}
+### <mark style="color:orange;">Step 4: Completion</mark>
+
+* The USDC is returned directly to your wallet balance.
+* The corresponding YES + NO token pairs are burned (removed from your holdings) as the collateral is released.
+{% endstep %}
+{% endstepper %}
+
+### <mark style="color:orange;">Formula</mark>
 
 ```
 refundAmount = min(yesBalance, noBalance)
@@ -69,7 +136,7 @@ Example: you hold 100 YES + 80 NO:
 * Refund 80 pairs → receive 80 USDC.
 * 20 YES remaining → **no NO to pair with**, cannot be refunded.
 
-### Note: refund is pair-based only
+### :page\_with\_curl: <mark style="color:orange;">Note: refund is pair-based only</mark>
 
 If you hold only one side (e.g. bought 100 YES via the Router, no NO held), you **cannot claim** USDC through the standard refund flow.
 
@@ -79,7 +146,7 @@ If you hold only one side (e.g. bought 100 YES via the Router, no NO held), you 
 * Pair with your YES to refund.
 * Your loss is the NO purchase price.
 
-### This is a design trade-off
+### <mark style="color:orange;">This is a design trade-off</mark>
 
 Refund mode prioritizes **pro-rata fairness** over first-come-first-serve. This prevents a scenario where early claimers drain all USDC, leaving nothing for later users.
 
@@ -93,7 +160,7 @@ Phase 2 (TBA): A **single-sided refund** with a 50% haircut may be introduced �
 
 <details>
 
-<summary>Redeem button not appearing for a resolved market</summary>
+<summary><mark style="color:orange;">Redeem button not appearing for a resolved market</mark></summary>
 
 **Reason:** Either you don't hold the winning side, or the indexer hasn't caught up to the resolution event.
 
@@ -107,7 +174,7 @@ Phase 2 (TBA): A **single-sided refund** with a 50% haircut may be introduced �
 
 <details>
 
-<summary>"Insufficient balance" on redeem</summary>
+<summary><mark style="color:orange;">"Insufficient balance" on redeem</mark></summary>
 
 **Reason:** Your token balance is lower than the contract expects (possibly due to a recent transfer or pending indexer sync).
 
@@ -121,7 +188,7 @@ Phase 2 (TBA): A **single-sided refund** with a 50% haircut may be introduced �
 
 <details>
 
-<summary>Batch redeem failed mid-way (EOA wallets)</summary>
+<summary><mark style="color:orange;">Batch redeem failed mid-way (EOA wallets)</mark></summary>
 
 **Reason:** EOA wallets process each market as a separate tx. If one fails (e.g., gas spike), the remaining will still process — but you may need to retry the failed ones.
 
@@ -135,7 +202,7 @@ Phase 2 (TBA): A **single-sided refund** with a 50% haircut may be introduced �
 
 <details>
 
-<summary>Refund button shows "Insufficient pair"</summary>
+<summary><mark style="color:orange;">Refund button shows "Insufficient pair"</mark></summary>
 
 **Reason:** You hold only one side of the market (e.g., 100 YES, 0 NO) and refund requires pairs.
 
@@ -145,7 +212,7 @@ Phase 2 (TBA): A **single-sided refund** with a 50% haircut may be introduced �
 
 <details>
 
-<summary>Refund mode active but no sellers for the opposite side</summary>
+<summary><mark style="color:orange;">Refund mode active but no sellers for the opposite side</mark></summary>
 
 **Reason:** All holders may also be single-sided (everyone bought the same direction via Router). Liquidity dries up when refund mode is active.
 
@@ -159,7 +226,7 @@ Phase 2 (TBA): A **single-sided refund** with a 50% haircut may be introduced �
 
 <details>
 
-<summary>Resolved market still shows as "Pending" in Portfolio</summary>
+<summary><mark style="color:orange;">Resolved market still shows as "Pending" in Portfolio</mark></summary>
 
 **Reason:** Resolution oracle posted the outcome on-chain but indexer is still syncing.
 
@@ -172,3 +239,4 @@ Phase 2 (TBA): A **single-sided refund** with a 50% haircut may be introduced �
 </details>
 
 ***
+

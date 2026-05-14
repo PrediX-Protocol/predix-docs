@@ -40,7 +40,7 @@ Click a trader's name → `/profile/[address]` page.
 
 A profile shows hero KPIs (Volume, P\&L, Win rate, Accuracy), active positions, full trade history, calibration chart, badges, and a follow button.
 
-#### Public vs private
+#### <mark style="color:orange;">Public vs private</mark>
 
 By default, trader profiles are **public**:
 
@@ -60,7 +60,7 @@ Users can **opt out** in [Settings](../../resources/faq.md) **→ Privacy**:
 **Note**: Even when hidden, the address is still public on-chain. The app only hides data at the UI level. Technically savvy users can still query the indexer.&#x20;
 {% endhint %}
 
-### Following traders
+### <mark style="color:orange;">Following traders</mark>
 
 Click **Follow** on any profile. You will receive notifications when the trader:
 
@@ -70,7 +70,7 @@ Click **Follow** on any profile. You will receive notifications when the trader:
 
 A dedicated **Following** feed inside the app aggregates all your followed traders' activity.
 
-### Copy trading
+### <mark style="color:orange;">Copy trading</mark>
 
 > Copy trading mirrors a lead trader's positions automatically, with risk controls applied per follower.
 
@@ -80,13 +80,13 @@ A dedicated **Following** feed inside the app aggregates all your followed trade
 
 {% stepper %}
 {% step %}
-### Step 1: Select a Lead Trader
+### <mark style="color:orange;">Step 1: Select a Lead Trader</mark>
 
 Browse the platform to find the trader whose strategy you want to replicate.
 {% endstep %}
 
 {% step %}
-### Step 2: Configure Your Settings
+### <mark style="color:orange;">Step 2: Configure Your Settings</mark>
 
 Click Copy Trading to open the configuration panel and adjust the following:
 
@@ -97,15 +97,17 @@ Click Copy Trading to open the configuration panel and adjust the following:
 {% endstep %}
 
 {% step %}
-### Step 3: Secure Your Funds
+### <mark style="color:orange;">Step 3: Secure Your Funds</mark>
 
 * Pre-fund USDC into a dedicated Copy Sub-account.
 
-> Note: Keeping these funds separate from your main wallet helps strictly limit your financial risk.
+{% hint style="info" %}
+Note: Keeping these funds separate from your main wallet helps strictly limit your financial risk.
+{% endhint %}
 {% endstep %}
 
 {% step %}
-### Step 4: Activate
+### <mark style="color:orange;">Step 4: Activate</mark>
 
 Review your parameters and click Activate to begin following the trader's moves automatically.
 {% endstep %}

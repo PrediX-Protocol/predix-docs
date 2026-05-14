@@ -1,3 +1,7 @@
+---
+icon: play
+---
+
 # Get Ready
 
 Set up your wallet and fund your account — everything you need before placing your first trade.
@@ -6,8 +10,7 @@ Set up your wallet and fund your account — everything you need before placing 
 
 Before you can trade on PrediX, you need to complete two one-time setup steps:
 
-1. **Connect a wallet** — choose between Passkey (recommended for new users) or a crypto wallet like MetaMask
-2. **Get USDC on Unichain** — bridge from another chain, or deposit directly from a CEX
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><ol><li><mark style="color:orange;"><strong>Connect a wallet</strong></mark></li></ol></td><td><em>Choose between Passkey (recommended for new users) or a crypto wallet like MetaMask</em></td></tr><tr><td><ol start="2"><li><mark style="color:orange;"><strong>Get USDC on Unichain</strong></mark></li></ol></td><td><em>Bridge from another chain, or deposit directly from a CEX.</em></td></tr></tbody></table>
 
 The whole setup takes **\~2 minutes**. After this, you're ready to trade and won't need to repeat these steps unless you switch wallets or run out of USDC.
 
@@ -37,19 +40,25 @@ flowchart LR
 
 ### Setup Steps
 
-#### Step 1 — Connect Wallet
+{% stepper %}
+{% step %}
+### <mark style="color:orange;">Step 1 — Connect Wallet</mark>
 
 Choose how you want to sign in:
 
 * **Passkey** — biometric authentication (Face ID, Touch ID, Windows Hello). Web2-like UX, no seed phrase.
 * **Crypto wallet** — MetaMask, Rainbow, Coinbase Wallet, or any WalletConnect-compatible wallet.
+{% endstep %}
 
-#### Step 2 — Bridge to Unichain
+{% step %}
+### <mark style="color:orange;">Step 2 — Bridge to Unichain</mark>
 
 Get USDC on the Unichain network. Two options:
 
 * **Bridge from another chain** — if you have USDC on Ethereum, Base, Arbitrum, Optimism, or Polygon
 * **Direct CEX withdrawal** — withdraw USDC directly from Binance, Coinbase, OKX, or other CEXs that support Unichain network.
+{% endstep %}
+{% endstepper %}
 
 ### After Setup
 
