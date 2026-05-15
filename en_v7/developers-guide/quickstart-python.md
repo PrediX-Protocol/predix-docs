@@ -2,6 +2,8 @@
 
 Buy YES tokens on a PrediX market using web3.py.
 
+![Quickstart flow: Setup → Approve → Quote → Trade → Done. Router handles CLOB → AMM routing automatically.](assets/quickstart-flow.svg)
+
 ## Prerequisites
 
 ```bash

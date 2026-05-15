@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" font-family="Inter, system-ui, sans-serif">
+  <rect x="0" y="0" width="800" height="320" rx="12" fill="#ffffff"/>
+
+  <!-- Title -->
+  <rect x="300" y="20" width="200" height="44" rx="22" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="400" y="48" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">Developer</text>
+
+  <!-- Split line -->
+  <line x1="400" y1="64" x2="400" y2="90" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="200" y1="90" x2="600" y2="90" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="200" y1="90" x2="200" y2="110" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="600" y1="90" x2="600" y2="110" stroke="#64748b" stroke-width="1.5"/>
+
+  <!-- Path 1: Trade yourself -->
+  <rect x="80" y="110" width="240" height="44" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="200" y="138" text-anchor="middle" font-size="14" font-weight="600" fill="#1e40af">Path 1: Trade yourself</text>
+
+  <rect x="80" y="170" width="240" height="30" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="200" y="190" text-anchor="middle" font-size="12" font-weight="500" fill="#334155">Wallet + viem/web3.py</text>
+
+  <rect x="80" y="208" width="240" height="30" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="200" y="228" text-anchor="middle" font-size="12" font-weight="500" fill="#334155">Router contract (on-chain)</text>
+
+  <rect x="80" y="246" width="240" height="30" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="200" y="266" text-anchor="middle" font-size="12" font-weight="500" fill="#334155">No API key needed</text>
+
+  <!-- Path 2: Build platform -->
+  <rect x="480" y="110" width="240" height="44" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+  <text x="600" y="138" text-anchor="middle" font-size="14" font-weight="600" fill="#134e4a">Path 2: Build platform</text>
+
+  <rect x="480" y="170" width="240" height="30" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="600" y="190" text-anchor="middle" font-size="12" font-weight="500" fill="#334155">REST API + WebSocket</text>
+
+  <rect x="480" y="208" width="240" height="30" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="600" y="228" text-anchor="middle" font-size="12" font-weight="500" fill="#334155">SIWE auth + AA onboarding</text>
+
+  <rect x="480" y="246" width="240" height="30" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="600" y="266" text-anchor="middle" font-size="12" font-weight="500" fill="#334155">Real-time data streaming</text>
+
+  <!-- Bottom labels -->
+  <text x="200" y="300" text-anchor="middle" font-size="11" fill="#64748b">Bot · Analytics · Personal strategy</text>
+  <text x="600" y="300" text-anchor="middle" font-size="11" fill="#64748b">Frontend · Mobile app · Trading platform</text>
+</svg>

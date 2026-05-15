@@ -2,6 +2,8 @@
 
 PrediX provides two paths for programmatic integration, depending on your use case.
 
+![Two developer paths: Path 1 Trade yourself (wallet + viem, Router contract, no API key) for bots/analytics. Path 2 Build platform (REST API + WebSocket, SIWE auth + AA, real-time streaming) for frontends/mobile apps.](assets/dev-two-paths.svg)
+
 ## Path 1 — Trade for yourself
 
 Build a trading bot, analytics tool, or personal strategy that interacts directly with PrediX smart contracts on Unichain.
