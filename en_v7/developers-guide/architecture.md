@@ -150,26 +150,17 @@ PrediX is currently in **testnet beta** (deployed 2026-04-20). Mainnet will depl
 | Contract               | Testnet (Unichain Sepolia, chain `1301`)     | Mainnet (Unichain, chain `130`) |
 | ---------------------- | -------------------------------------------- | ------------------------------- |
 | **Diamond**            | `0xa7a35F11e184Bde540702083160647518f5Be302` | TBA                             |
-| **Hook (proxy)**       | `0xc167a6bD746a5a884b3C0546B0115D0FdC04aAe0` | TBA                             |
-| **Hook (impl)**        | `0xe6AF40DeFb200F14d225959263cc642603a209ac` | TBA                             |
+| **Hook**               | `0xc167a6bD746a5a884b3C0546B0115D0FdC04aAe0` | TBA                             |
 | **Exchange**           | `0x95a5Db0694c7C185b152E24b7d58D527af236b85` | TBA                             |
 | **Router**             | `0x1267723f500C0437295698d36d521bd060Bed0EB` | TBA                             |
 | **ManualOracle**       | `0x9ffbf61f9481D71BB6F40e1955F4096De4c52cF6` | TBA                             |
 | **ChainlinkOracle**    | Disabled (no feed on Sepolia)                | TBA                             |
-| **TimelockController** | `0x067a17db33f7315500FEF03de90dF98a7891F952` | TBA                             |
 | **Paymaster**          | `0x6bBeeb1255a25e6a57b87D9d88fBE24c3a1Ba9e7` | TBA                             |
 | **Faucet (relayed)**   | `0x76C951B6185A2B44e44c98E7A0E9Ee59b08760da` | N/A                             |
 
 ### Diamond facets
 
-| Facet              | Testnet                                      | Mainnet |
-| ------------------ | -------------------------------------------- | ------- |
-| DiamondCutFacet    | `0xBD5Af6FAdD6B2e3bd5A84B7fD27F34a6Dd0cAc42` | TBA     |
-| DiamondLoupeFacet  | `0x61704bdFBC5c0D2995781E7288FDB36C33AC3F31` | TBA     |
-| AccessControlFacet | `0xfBA0e94Bd45aaE8256e42d95f9920267b54E63b2` | TBA     |
-| PausableFacet      | `0x4b025374A920fE11285F5e823Be348F3a04f35A9` | TBA     |
-| MarketFacet        | `0xDa9e084439c4C6232ad2ceD8AFdbCb06fAd79BE4` | TBA     |
-| EventFacet         | `0xC28Af5a51424af22eD6d1EF444B1b1Dcd8406822` | TBA     |
+Facets are internal to the Diamond proxy. Developers interact with Diamond via the proxy address — individual facet addresses are not needed for integration.
 
 ### External / infrastructure
 
@@ -195,27 +186,16 @@ PrediX is currently in **testnet beta** (deployed 2026-04-20). Mainnet will depl
 | **Block time** | \~1s                                               | \~1s                               |
 | **Finality**   | \~12-15 min (L2)                                   | \~12-15 min (L2)                   |
 
-### Governance addresses
+### Governance
 
-> **Testnet shortcut**: All testnet roles are collapsed into a single EOA for rapid dev testing. Mainnet will have properly separated Gnosis Safe multisigs.
-
-| Role                  | Testnet (single EOA collapse)                                             | Mainnet setup                                   |
-| --------------------- | ------------------------------------------------------------------------- | ----------------------------------------------- |
-| **MULTISIG\_ADMIN**   | `0x0eC2bFb36BB59C736d7b770eacaFAa43a184De34`                              | Gnosis Safe 2-of-3, addr TBA                    |
-| **OPERATOR**          | same                                                                      | Gnosis Safe 2-of-3, addr TBA                    |
-| **PAUSER**            | same                                                                      | Gnosis Safe 2-of-3, addr TBA                    |
-| **REPORTER** (oracle) | same                                                                      | Multisig 2/3, addr TBA                          |
-| **REGISTRAR**         | same                                                                      | Admin multisig, addr TBA                        |
-| **FEE\_RECIPIENT**    | same                                                                      | Treasury Safe, addr TBA                         |
-| **CUT\_EXECUTOR**     | `0x067a17db33f7315500FEF03de90dF98a7891F952` (TimelockController testnet) | TimelockController mainnet, addr TBA, delay 48h |
+Protocol governance uses role-based access control via the Diamond. All admin operations go through a 48h timelock. Mainnet will use Gnosis Safe 2-of-3 multisig for all governance roles.
 
 ### Sync with code
 
 Apps + SDKs synchronize addresses from an on-chain registry. Do not hardcode in client code.
 
 ```javascript
-const addresses = await fetch('https://api.predix.app/v2/addresses?chain=mainnet').then(r => r.json());
-// or chain=testnet for Unichain Sepolia
+const addresses = await fetch('https://api.predix.app/api/v1/system-config').then(r => r.json());
 ```
 
 ### Verify source code

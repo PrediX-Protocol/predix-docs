@@ -58,7 +58,7 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 | **Router** | `0x1267723f500C0437295698d36d521bd060Bed0EB` |
 | **Diamond** | `0xa7a35F11e184Bde540702083160647518f5Be302` |
 | **Exchange** | `0x95a5Db0694c7C185b152E24b7d58D527af236b85` |
-| **Hook (proxy)** | `0xc167a6bD746a5a884b3C0546B0115D0FdC04aAe0` |
+| **Hook** | `0xc167a6bD746a5a884b3C0546B0115D0FdC04aAe0` |
 | **ManualOracle** | `0x9ffbf61f9481D71BB6F40e1955F4096De4c52cF6` |
 | **USDC (test)** | `0x5a9153c368946B5b252c32921EbB3c16c692D7D4` |
 | **Permit2** | `0x000000000022D473030F116dDEE9F6B43aC78BA3` |
