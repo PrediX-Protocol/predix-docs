@@ -44,7 +44,7 @@ Instead of optimizing for a single layer of the prediction market experience, ea
 * <mark style="background-color:green;">**PrediX**</mark> <mark style="background-color:green;"></mark><mark style="background-color:green;">is purpose-built to fill the infrastructure gap — hybrid execution, ERC-20 composable outcome assets, multi-modular oracle resolution, and consumer-grade access from day one.</mark>
 *
 
-    <figure><img src="../.gitbook/assets/ChatGPT Image 12_04_25 12 thg 5, 2026.png" alt="PrediX Positioning Map"><figcaption><p>PrediX Positioning Map</p></figcaption></figure>
+    <figure><img src="../.gitbook/assets/predix-positioning-map-full.png" alt="PrediX Positioning Map"><figcaption><p>PrediX Positioning Map</p></figcaption></figure>
 
 > **PrediX is designed around the belief that prediction markets require a fundamentally different infrastructure model in order to evolve into scalable financial systems.**
 

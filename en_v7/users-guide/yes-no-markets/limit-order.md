@@ -78,7 +78,7 @@ Note: These funds are released immediately if you cancel the order or when a mat
 
 ### 3 match types
 
-When someone places a market order or an opposing limit order, Predix matches in one of three ways:
+When someone places a market order or an opposing limit order, PrediX matches in one of three ways:
 
 <details>
 
@@ -175,7 +175,7 @@ Orders can be filled incrementally:
 
 |                                 | Value         |
 | ------------------------------- | ------------- |
-| Max open orders / user / market | 80            |
+| Max open orders / user / market | 50            |
 | Min size                        | $1 USDC       |
 | Tick size                       | $0.01         |
 | Stop-loss / OCO                 | TBA - Phase 2 |

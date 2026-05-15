@@ -147,7 +147,7 @@ You'll receive a notification when this happens. Check Portfolio → History to 
 
 | Parameter                    | Value                                     |
 | ---------------------------- | ----------------------------------------- |
-| **Max open orders per user** | `100` per market                          |
+| **Max open orders per user** | `50` per market                           |
 | **Max total open orders**    | `500` across all markets                  |
 | **Min order size**           | `1 USDC` (BUY) or `1 share` (SELL)        |
 | **Tick size**                | `$0.01` (prices like `0.45`, not `0.455`) |

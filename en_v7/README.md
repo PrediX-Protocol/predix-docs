@@ -33,7 +33,7 @@ icon: align-justify
 Quick access to protocol documentation, developer resources, infrastructure architecture, and ecosystem channels across the PrediX network.
 {% endhint %}
 
-<a href="/broken/pages/qbjzTee4WrFLuoW5r1TU" class="button primary" data-icon="layer-plus">FUNDAMENTALS</a>
+<a href="fundamentals/overview.md" class="button primary" data-icon="layer-plus">FUNDAMENTALS</a>
 
 > <mark style="color:$success;">Understand the thesis, architecture, and market positioning.</mark>
 
@@ -47,16 +47,16 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 ***
 
-#### <a href="/broken/pages/JLUquJm12K7tRo7L8w49" class="button primary" data-icon="chart-column">START TRADING</a>
+#### <a href="users-guide/getting-started.md" class="button primary" data-icon="chart-column">START TRADING</a>
 
 > <mark style="color:$success;">Trade predictive markets on Unichain.</mark>
 
-{% content-ref url="/broken/pages/YsPtT0l1N50qWpeQjsX7" %}
-[Broken link](/broken/pages/YsPtT0l1N50qWpeQjsX7)
+{% content-ref url="users-guide/wallet-setup/connect-wallet.md" %}
+[connect-wallet.md](users-guide/wallet-setup/connect-wallet.md)
 {% endcontent-ref %}
 
-{% content-ref url="/broken/pages/N6PP2E6mV0vPeJ9TkAjs" %}
-[Broken link](/broken/pages/N6PP2E6mV0vPeJ9TkAjs)
+{% content-ref url="users-guide/wallet-setup/bridge-to-unichain.md" %}
+[bridge-to-unichain.md](users-guide/wallet-setup/bridge-to-unichain.md)
 {% endcontent-ref %}
 
 {% content-ref url="users-guide/yes-no-markets/market-order.md" %}
@@ -65,7 +65,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 ***
 
-<a href="/broken/pages/wCcSWgEZAwC1z4fKrfgZ" class="button primary" data-icon="square-half-stroke">CORE CONCEPTS</a>
+<a href="core-concepts/overview.md" class="button primary" data-icon="square-half-stroke">CORE CONCEPTS</a>
 
 > <mark style="color:$success;">Learn how PrediX markets function.</mark>
 
@@ -101,7 +101,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 ***
 
-<a href="/broken/pages/8HclYTsOnU8kmDjTSXrH" class="button primary" data-icon="coin-blank">ECONOMY</a>
+<a href="economics/README.md" class="button primary" data-icon="coin-blank">ECONOMY</a>
 
 > <mark style="color:$success;">Explore staking, governance, and incentives.</mark>
 
@@ -119,7 +119,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 ***
 
-<a href="/broken/pages/KhM4zcVEYvmzF38tqAmc" class="button primary" data-icon="code">FOR DEVOPERS</a>
+<a href="developers-guide/introduction.md" class="button primary" data-icon="code">FOR DEVELOPERS</a>
 
 > <mark style="color:$success;">Build on PrediX infrastructure.</mark>
 
@@ -137,7 +137,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 ***
 
-<a href="/broken/pages/ZoA2VYD6MlnH2Rwutthv" class="button primary" data-icon="arrow-up-right-from-square">RESOURCES</a>
+<a href="resources/glossary.md" class="button primary" data-icon="arrow-up-right-from-square">RESOURCES</a>
 
 > <mark style="color:$success;">Additional protocol resources.</mark>
 

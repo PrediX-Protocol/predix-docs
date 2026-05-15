@@ -16,6 +16,8 @@ PrediX uses **6-season emission** instead of a one-time airdrop. Community pool 
 
 S1 is the largest because cold-start is the hardest. Early users earn \~20x more than late joiners. Decay is \~30%/season.
 
+> **Note**: S0's 10M is carved **from** S1's 86M allocation (not additive). Total community pool = 300M.
+
 ## S0 — Testnet
 
 **Pool**: 10M PRX (from S1 allocation) - **Target**: 50K-100K wallets - **Cap**: 50K PRX/wallet.

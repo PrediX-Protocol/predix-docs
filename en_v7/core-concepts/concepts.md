@@ -11,6 +11,6 @@ Understand how PrediX works. Read in order if you're new, or jump to the section
 * [CLOB + AMM hybrid](clob-amm-hybrid.md) — On-chain order book + Uniswap v4 pool
 * [Resolution & oracle](resolution.md) — Who decides the outcome
 
-Need step-by-step tutorials (where to click, what to enter) → [Guides](/broken/pages/QbHxDT1hiChZb7Io18gi).
+Need step-by-step tutorials (where to click, what to enter) → [Guides](../users-guide/getting-started.md).
 
-Need technical details (smart contracts, events, storage) → [Developers](../developers-guide/developers.md).
+Need technical details (smart contracts, events, storage) → [Developers](../developers-guide/introduction.md).

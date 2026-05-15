@@ -108,7 +108,7 @@ SignClient.request(
         sessionTopic = sessionTopic,
         method = "eth_sendTransaction",
         params = Json.encodeToString(tx),
-        chainId = "eip155:130"
+        chainId = "eip155:1301" // Unichain Sepolia testnet (mainnet: "eip155:130")
     )
 ) { error -> /* handle */ }
 ```

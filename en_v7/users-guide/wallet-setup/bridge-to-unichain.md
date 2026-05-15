@@ -16,7 +16,7 @@ PrediX uses USDC on Unichain as collateral via our in-app widget, direct CEX wit
 | **Arbitrum**                           | <ul><li>Across, Stargate</li></ul>                                                                                      | <ul><li>2-5 minutes</li></ul>    | <ul><li>$0.5-2</li></ul>             |
 | **Optimism**                           | <ul><li>Across, Superbridge</li></ul>                                                                                   | <ul><li>2-5 minutes</li></ul>    | <ul><li>$0.5-2</li></ul>             |
 | **Polygon**                            | <ul><li>LayerZero, Across</li></ul>                                                                                     | <ul><li>5-10 minutes</li></ul>   | <ul><li>$1-3</li></ul>               |
-| **CEX** (Binance, Coinbase, OKX, etc.) | <ul><li>Withdraw directly to Unichain (if supported by your CEX) or withdraw to Ethereum/Arbitrum then bridge</li></ul> | <ul><li>Depend on DEXs</li></ul> | <ul><li>CEX withdrawal fee</li></ul> |
+| **CEX** (Binance, Coinbase, OKX, etc.) | <ul><li>Withdraw directly to Unichain (if supported by your CEX) or withdraw to Ethereum/Arbitrum then bridge</li></ul> | <ul><li>Depends on CEX</li></ul> | <ul><li>CEX withdrawal fee</li></ul> |
 
 {% hint style="info" %}
 **Tip:** Coinbase, Binance and some exchanges have added Unichain network support. Direct withdrawal saves you a bridge step.

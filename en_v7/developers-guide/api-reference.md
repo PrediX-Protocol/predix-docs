@@ -272,13 +272,13 @@ GET /docs-json                            OpenAPI spec (JSON)
 
 ```typescript
 // 1. Challenge
-const { message } = await fetch(`${API}/auth/challenge?address=${addr}`).then(r => r.json());
+const { message } = await fetch(`${API}/api/v1/auth/challenge?address=${addr}`).then(r => r.json());
 
 // 2. Sign
 const signature = await walletClient.signMessage({ message });
 
 // 3. Verify
-await fetch(`${API}/auth/verify`, {
+await fetch(`${API}/api/v1/auth/verify`, {
   method: 'POST',
   credentials: 'include',
   headers: { 'Content-Type': 'application/json' },

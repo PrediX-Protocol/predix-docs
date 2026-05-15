@@ -210,13 +210,12 @@ After a swap, the Router emits:
 
 ```solidity
 event Trade(
+    uint256 indexed marketId,
     address indexed trader,
     address indexed recipient,
-    uint256 indexed marketId,
-    uint8 tradeType,        // 0=BUY_YES, 1=SELL_YES, 2=BUY_NO, 3=SELL_NO
+    TradeType tradeType,    // 0=BUY_YES, 1=SELL_YES, 2=BUY_NO, 3=SELL_NO
     uint256 amountIn,
     uint256 amountOut,
-    uint256 yesPrice,       // 6 decimals
     uint256 clobFilled,
     uint256 ammFilled
 );

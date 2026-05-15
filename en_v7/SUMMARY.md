@@ -34,8 +34,8 @@
 
 ## core Concepts
 
-* [Overview](core-concepts/overview.md)
-* [Overview](core-concepts/concepts.md)
+* [Trading overview](core-concepts/overview.md)
+* [Reading guide](core-concepts/concepts.md)
 * [Prediction market](core-concepts/prediction-market.md)
 * [Outcome token (YES/NO)](core-concepts/outcome-tokens.md)
 * [CLOB + AMM hybrid](core-concepts/clob-amm-hybrid.md)

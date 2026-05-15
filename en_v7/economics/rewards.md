@@ -37,7 +37,7 @@ NFT badges (ERC-1155 on Unichain) earned upon reaching milestones:
 | Place 1 limit order                  | 50 Points                                                          |
 | Hold a position for at least 4 hours | 75 Points                                                          |
 | Try 3 different markets              | 100 Points                                                         |
-| Refer 1 friend                       | see [Points & seasons](points-seasons.md#2-phase-referral-program) |
+| Refer 1 friend                       | see [Points](points.md) (2-gate referral)                          |
 
 Resets at 00:00 UTC daily.
 
@@ -54,7 +54,7 @@ Sealed boxes open at resolution, containing random PRX / USDC / NFT.
 
 ## Converting points to PRX
 
-**S1 (M1-M6, free period)**: Points convert at TGE. See [Points & seasons — S1 Genesis](points-seasons.md#s1-genesis-m1-m6--points-system).
+**S1 (M1-M6, free period)**: Points convert at TGE. See [Points & seasons — S1 Genesis](points-seasons.md#s1--genesis-sub-pool-breakdown).
 
 **Post-TGE**: Points from activity rewards (streaks, daily challenges) convert weekly:
 

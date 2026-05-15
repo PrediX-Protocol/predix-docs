@@ -94,7 +94,7 @@ Step-by-step: [Router integration](router-integration.md). Get testnet endpoint:
 | Pro        | 600 req/min   | 3000 req/min     | $20/month, API key |
 | Enterprise | Custom        | Custom           | Contact            |
 
-WebSocket: 10 conn/IP, unlimited messages.
+WebSocket: 20 conn/IP, unlimited messages.
 
 ## SDK (TBA)
 

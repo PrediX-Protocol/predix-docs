@@ -6,8 +6,8 @@ title: Untitled
 [chart-timeframe.md](../../users-guide/features/chart-timeframe.md)
 {% endcontent-ref %}
 
-{% content-ref url="/broken/pages/VjFpu8jlXXqXJ8qF7KcN" %}
-[Broken link](/broken/pages/VjFpu8jlXXqXJ8qF7KcN)
+{% content-ref url="../../users-guide/features/notifications-and-alerts.md" %}
+[notifications-and-alerts.md](../../users-guide/features/notifications-and-alerts.md)
 {% endcontent-ref %}
 
 {% content-ref url="../../users-guide/features/discussion.md" %}

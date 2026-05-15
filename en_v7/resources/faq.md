@@ -76,7 +76,7 @@ Eligibility criteria and sponsorship duration will be announced pre-launch and m
 
 Yes. Many CEXs have added Unichain network — withdraw directly.
 
-If your CEX doesn't support it yet: withdraw to Ethereum or Arbitrum, then use the [Bridge widget](/broken/pages/N6PP2E6mV0vPeJ9TkAjs) in the app. Coinbase, Binance, OKX, and Bybit mostly support Unichain or chains with easy bridging.
+If your CEX doesn't support it yet: withdraw to Ethereum or Arbitrum, then use the [Bridge widget](../users-guide/wallet-setup/bridge-to-unichain.md) in the app. Coinbase, Binance, OKX, and Bybit mostly support Unichain or chains with easy bridging.
 
 ### Is bridging safe?
 
@@ -277,7 +277,7 @@ No. The bridge contracts belong to third parties (Across, Stargate). PrediX only
 
 ## Common First-Time Errors
 
-* **"Insufficient USDC balance"** — Bridge USDC to Unichain first. See [Bridge](/broken/pages/N6PP2E6mV0vPeJ9TkAjs).
+* **"Insufficient USDC balance"** — Bridge USDC to Unichain first. See [Bridge](../users-guide/wallet-setup/bridge-to-unichain.md).
 * **"Slippage exceeded"** — Price moved beyond tolerance while the tx was pending. Increase slippage (default 0.5% → 1%) or retry.
 * **"Wallet not connected"** — Click Sign in / Connect wallet in the header.
 * **"Market paused"** — Rare — admin paused the market for security reasons. Check the notice in the UI.
@@ -290,7 +290,7 @@ No. The bridge contracts belong to third parties (Across, Stargate). PrediX only
 | "Insufficient liquidity" | CLOB + AMM lack sufficient depth   | Reduce size or use a [limit order](../users-guide/yes-no-markets/limit-order.md) |
 | "Market paused"          | Admin paused for security reasons  | Check the UI notice                                                              |
 | "Past endTime"           | Trading has closed for this market | Wait for resolution to redeem or get a refund                                    |
-| "Insufficient USDC"      | Wallet lacks USDC                  | [Bridge](/broken/pages/N6PP2E6mV0vPeJ9TkAjs) or top up                           |
+| "Insufficient USDC"      | Wallet lacks USDC                  | [Bridge](../users-guide/wallet-setup/bridge-to-unichain.md) or top up                           |
 
 ### Troubleshooting
 

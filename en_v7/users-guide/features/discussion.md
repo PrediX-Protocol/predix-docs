@@ -17,7 +17,7 @@ PrediX embeds social features directly into the trading interface — comment th
 #### <mark style="color:orange;">Features</mark>
 
 * **Threaded** 2 levels (`comment` + `reply`).
-* **Voting** — `up vote`/`down voty`; top comments rise to the top.
+* **Voting** — `up vote`/`down vote`; top comments rise to the top.
 * **Mention** `@username` to notify another user.
 * **Markdown support**: **`bold`**, _`italics`_, `code`, `link`, `quote`.
 * **Image embed** — paste an image URL and the app renders it inline.

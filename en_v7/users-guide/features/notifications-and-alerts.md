@@ -298,4 +298,4 @@ DELETE /api/v1/users/:address/alerts/:id
 
 Realtime updates via WebSocket: `wss://api.predix.app/v2/me/notifications` with an auth header.
 
-Details: [Backend API](https://claude.ai/local_sessions/local_014253ac-266f-4a66-a2da-52fef452673c).
+Details: [API reference](../../developers-guide/api-reference.md).
