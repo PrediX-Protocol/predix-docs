@@ -346,15 +346,15 @@ mapping(address => bool) public trustedRouters;
 ```solidity
 function getHookPermissions() external pure returns (Hooks.Permissions memory) {
     return Hooks.Permissions({
-        beforeInitialize: true,
-        afterInitialize: true,
-        beforeAddLiquidity: false,
+        beforeInitialize: true,       // enforce dynamic fee + pool registered
+        afterInitialize: false,
+        beforeAddLiquidity: true,     // block JIT into resolved / refund / expired markets
         afterAddLiquidity: false,
-        beforeRemoveLiquidity: false,
+        beforeRemoveLiquidity: true,  // track pool registration (LP exit always allowed)
         afterRemoveLiquidity: false,
-        beforeSwap: true,
-        afterSwap: true,
-        beforeDonate: false,
+        beforeSwap: true,             // anti-sandwich + identity commit verification
+        afterSwap: true,              // dynamic fee application
+        beforeDonate: true,           // block donate after endTime / resolved / refund
         afterDonate: false,
         beforeSwapReturnDelta: false,
         afterSwapReturnDelta: false,
@@ -364,7 +364,7 @@ function getHookPermissions() external pure returns (Hooks.Permissions memory) {
 }
 ```
 
-Address must have salt-mined flag bits matching this permission set.
+Code bật **6 callback** (thay vì 4 như draft spec ban đầu) để defense-in-depth: `beforeAddLiquidity` chặn JIT vào market đã resolve / refund / expired; `beforeRemoveLiquidity` track pool registration (LP exit luôn được cho phép, không bị block); `beforeDonate` chặn donate sau `endTime` / resolved / refund (xem §H3 / M-NEW-01 trong `SC_BIG_UPDATE_AUDIT_20260423.md`). PoolManager là authoritative — địa chỉ hook **phải** có salt-mined flag bits khớp đúng permission set trên, nếu không PoolManager revert khi pool `initialize`. Ground truth: `packages/hook/src/hooks/PrediXHookV2.sol:419` — khi spec và code drift, code thắng.
 
 **Identity commit (anti-sandwich):**
 
