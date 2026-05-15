@@ -6,7 +6,7 @@ The Router is the single entry point for all swaps. Let your users trade through
 
 Router address:
 
-* **Testnet** (Unichain Sepolia, live): `0x6698253F38F4A4bbBC4A223309B4E560d83D7ee0`
+* **Testnet** (Unichain Sepolia, live): `0x1267723f500C0437295698d36d521bd060Bed0EB`
 * **Mainnet** (TBA, after launch)
 
 Full address list: [Contract addresses](architecture.md#contract-addresses).
@@ -76,7 +76,7 @@ const walletClient = createWalletClient({
 });
 
 // Testnet Router (mainnet TBA)
-const ROUTER = '0x6698253F38F4A4bbBC4A223309B4E560d83D7ee0';
+const ROUTER = '0x1267723f500C0437295698d36d521bd060Bed0EB';
 const marketId = '0x000000...0001'; // 32-byte hex
 
 // 1. Quote

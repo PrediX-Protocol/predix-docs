@@ -55,16 +55,26 @@
   * [KOL & Ambassador](economics/kol-ambassador.md)
   * [Rewards & gamification](economics/rewards.md)
 
-## Developers guide
+## Developers Guide
 
-* [Quickstart](developers-guide/developers.md)
-* [Testnet Information](developers-guide/testnet.md)
-* [Router integration](developers-guide/router-integration.md)
-* [API reference](developers-guide/api-reference.md)
-* [Bots & mobile](developers-guide/bots-mobile.md)
-* [Architecture & contracts](developers-guide/architecture.md)
-* [Oracle](developers-guide/oracle.md)
-* [Security & timelock](developers-guide/security.md)
+* [Introduction](developers-guide/introduction.md)
+* Getting Started
+  * [Quickstart — TypeScript](developers-guide/quickstart-typescript.md)
+  * [Quickstart — Python](developers-guide/quickstart-python.md)
+  * [Testnet Information](developers-guide/testnet.md)
+* Integration
+  * [Router integration](developers-guide/router-integration.md)
+  * [API reference](developers-guide/api-reference.md)
+  * [WebSocket](developers-guide/websocket.md)
+  * [Bots & mobile](developers-guide/bots-mobile.md)
+* SDKs
+  * [TypeScript SDK](developers-guide/sdk-typescript.md)
+  * [Python SDK](developers-guide/sdk-python.md)
+* Protocol
+  * [Architecture & contracts](developers-guide/architecture.md)
+  * [Oracle](developers-guide/oracle.md)
+  * [Security & timelock](developers-guide/security.md)
+* [PrediX vs alternatives](developers-guide/comparison.md)
 
 ## Resources
 
