@@ -274,3 +274,90 @@ No. The bridge contracts belong to third parties (Across, Stargate). PrediX only
 &#x20;To the relayers / LPs of the respective bridge protocol. PrediX does not charge bridge fees.
 
 </details>
+
+## Common First-Time Errors
+
+* **"Insufficient USDC balance"** — Bridge USDC to Unichain first. See [Bridge](/broken/pages/N6PP2E6mV0vPeJ9TkAjs).
+* **"Slippage exceeded"** — Price moved beyond tolerance while the tx was pending. Increase slippage (default 0.5% → 1%) or retry.
+* **"Wallet not connected"** — Click Sign in / Connect wallet in the header.
+* **"Market paused"** — Rare — admin paused the market for security reasons. Check the notice in the UI.
+
+## Common errors
+
+| Error                    | Reason                             | Fix                                                                              |
+| ------------------------ | ---------------------------------- | -------------------------------------------------------------------------------- |
+| "Slippage exceeded"      | Price moved beyond tolerance       | Increase slippage or retry                                                       |
+| "Insufficient liquidity" | CLOB + AMM lack sufficient depth   | Reduce size or use a [limit order](../users-guide/yes-no-markets/limit-order.md) |
+| "Market paused"          | Admin paused for security reasons  | Check the UI notice                                                              |
+| "Past endTime"           | Trading has closed for this market | Wait for resolution to redeem or get a refund                                    |
+| "Insufficient USDC"      | Wallet lacks USDC                  | [Bridge](/broken/pages/N6PP2E6mV0vPeJ9TkAjs) or top up                           |
+
+### Troubleshooting
+
+<details>
+
+<summary><mark style="color:orange;"><strong>"Order rejected — invalid tick size"</strong></mark></summary>
+
+**Reason:** Price has more than 2 decimals or is `0.00` / `1.00`.
+
+**Fix:** Round to the nearest `$0.01` and resubmit. Valid prices are `0.01, 0.02, ..., 0.99`.
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;"><strong>"Order rejected — insufficient balance"</strong></mark></summary>
+
+**Reason:** Your wallet does not have enough USDC (for BUY) or YES/NO shares (for SELL) to cover the order, factoring in existing open orders.
+
+**Fix:**
+
+* For BUY: Bridge more USDC or cancel an existing open order to free locked funds
+* For SELL: check Portfolio for share balance, or use a Market order to acquire shares first
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;"><strong>"Order rejected — insufficient allowance"</strong></mark></summary>
+
+**Reason:** The Exchange contract is not yet authorized to spend your tokens.
+
+**Fix:** Approve once per token via the prompt that appears on first order. Uses Permit2 where supported (single-signature approval, no separate tx).
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;"><strong>Order never fills</strong></mark></summary>
+
+**Reason:** Your limit price is too far from current market.
+
+**Fix:**
+
+* Check the orderbook depth — is your price even close to the best bid/ask?
+* Re-quote closer to mid (cancel and replace at a tighter price)
+* If you need immediate execution, switch to Market order
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;"><strong>Order disappeared without filling</strong></mark></summary>
+
+**Reason:** Market reached `endTime` — all open orders auto-cancel on resolution start. Locked funds are returned automatically.
+
+**Fix:** Check Portfolio → History for the cancellation event. The market is now in resolution phase — wait for outcome, then redeem if applicable.
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;"><strong>Partial fill but remainder not matching</strong></mark></summary>
+
+**Reason:** Only part of your order was at a price the taker accepted; rest is too far from mid.
+
+**Fix:** Cancel the remainder and re-place at a better price, or let it sit until the market moves to your level.
+
+</details>
+

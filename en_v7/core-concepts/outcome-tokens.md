@@ -70,7 +70,7 @@ If the oracle fails (down, dispute hung), admin enables **refund mode** via a 48
 * Users burn YES + NO pairs → receive USDC pro-rata.
 * Burns at `min(yesBalance, noBalance)` — only the paired portion can be refunded.
 
-Details: [Resolution](resolution.md), [Redeem & refund](../users-guide/first-trade/redeem-refund.md).
+Details: [Resolution](resolution.md), [Redeem & refund](../users-guide/redeem-refund.md).
 
 ## Composable with DeFi
 

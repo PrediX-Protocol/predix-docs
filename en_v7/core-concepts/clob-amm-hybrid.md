@@ -74,3 +74,14 @@ PrediX Hook implements **identity commit** to prevent sandwich attacks:
 ![Anti-sandwich MEV: Router commitSwapIdentity (EIP-1153 transient storage) → Hook.beforeSwap verifies identity → sandwich attacker has no identity → revert](../.gitbook/assets/35-mev-protection.svg)
 
 MEV bots cannot frontrun + backrun your trade within the same block — the Hook reverts if identity doesn't match.
+
+### <mark style="color:orange;">How the Execution Router Works</mark>
+
+When you sell, the PrediX Router automatically finds the most efficient path to give you the best price by following this hierarchy:
+
+1. CLOB Liquidity: It first "drains" existing bid orders on the Central Limit Order Book (matching you with users waiting to buy YES).
+2. AMM Swap: If the order book depth is insufficient, it swaps the remaining tokens through the Automated Market Maker (Liquidity Pool).
+3. Synthetic Routing: In specific scenarios, the router uses a synthetic route to maximize your return:
+   * It buys NO tokens using fresh USDC.
+   * It merges those NO tokens with your YES tokens (which equals 1 unit of the underlying collateral).
+   * It pays out the resulting USDC to you.

@@ -110,7 +110,7 @@ When no oracle can resolve the market:
 
 ![Refund mode: oracle fails -> admin proposes enableRefundMode -> 48h timelock -> refundModeActive=true -> user burns min(YES,NO) pairs -> USDC pro-rata](../.gitbook/assets/39-refund-mode.svg)
 
-Details: [Redeem & refund](../users-guide/first-trade/redeem-refund.md).
+Details: [Redeem & refund](../users-guide/redeem-refund.md).
 
 ## Incorrect resolution — handling flow
 

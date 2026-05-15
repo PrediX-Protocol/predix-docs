@@ -15,7 +15,7 @@ Not every question has a yes/no answer. **"Who wins the 2026 FIFA World Cup?"** 
 
 PrediX implements multi-outcome markets as a **group of binary markets** — each outcome is its own YES/NO market, all linked under one **MarketGroup**. When the event resolves, the winning outcome's YES pays `$1`, every other outcome's NO pays `$1`, and the rest pay `$0`.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 This design has a key property: **only one outcome wins**. If Brazil wins, Brazil-YES = `$1`, all other countries' YES = `$0`. The MarketGroup contract enforces this — you can't have two winners.
 
@@ -62,7 +62,7 @@ For multi-outcome markets, PrediX provides **GroupSplit** and **GroupMerge** —
 
 **Deposit `$1 USDC` → receive `1 YES + 1 NO` for every outcome in the group.**
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 But wait — that doesn't sum to `$1`. Why?
 
@@ -122,7 +122,7 @@ You can also place orders **across multiple outcomes simultaneously** — for ex
 
 When a multi-outcome market resolves, the MarketGroup contract settles **all sub-markets in a single transaction**:
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 After resolution:
 

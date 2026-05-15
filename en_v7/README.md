@@ -47,7 +47,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 ***
 
-#### <a href="users-guide/first-trade/" class="button primary" data-icon="chart-column">START TRADING</a>
+#### <a href="/broken/pages/JLUquJm12K7tRo7L8w49" class="button primary" data-icon="chart-column">START TRADING</a>
 
 > <mark style="color:$success;">Trade predictive markets on Unichain.</mark>
 
@@ -59,8 +59,8 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 [Broken link](/broken/pages/N6PP2E6mV0vPeJ9TkAjs)
 {% endcontent-ref %}
 
-{% content-ref url="users-guide/first-trade/market-order.md" %}
-[market-order.md](users-guide/first-trade/market-order.md)
+{% content-ref url="users-guide/yes-no-markets/market-order.md" %}
+[market-order.md](users-guide/yes-no-markets/market-order.md)
 {% endcontent-ref %}
 
 ***

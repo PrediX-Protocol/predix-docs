@@ -1,13 +1,10 @@
 ---
-description: >-
-  Maximize capital efficiency with Split & Merge on PrediX. Convert 1:1 between
-  USDC and YES+NO pairs with zero fees and zero slippage. Ideal for Market
-  Making and Arbitrage.
+description: Convert between USDC collateral and YES + NO share pairs.
 ---
 
 # Split & Merge
 
-Convert between USDC collateral and YES + NO share pairs.
+Maximize capital efficiency with Split & Merge on PrediX. Convert 1:1 between USDC and YES+NO pairs with zero fees and zero slippage. Ideal for Market Making and Arbitrage.
 
 ### Overview
 

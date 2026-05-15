@@ -77,7 +77,7 @@ Permissionless propose + 48h dispute window.
 
 When no oracle can resolve → admin enables refund mode via 48h timelock → users burn YES+NO pairs → receive USDC pro-rata.
 
-Flow details: [Oracle — Refund mode](../developers-guide/oracle.md#refund-mode--last-resort) · [Redeem & refund](../users-guide/first-trade/redeem-refund.md).
+Flow details: [Oracle — Refund mode](../developers-guide/oracle.md#refund-mode--last-resort) · [Redeem & refund](../users-guide/redeem-refund.md).
 
 ## Incorrect Resolution — What to Do
 

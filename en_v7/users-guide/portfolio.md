@@ -10,7 +10,7 @@ View all your positions, history, and P\&L at `/portfolio`.
 
 ## Overview screen
 
-![Portfolio layout: Hero KPIs (total value, PnL, win rate, accuracy) + 6 tabs (Active, Orders, LP, History, Calibration, Replay)](../../.gitbook/assets/44-portfolio-overview.svg)
+![Portfolio layout: Hero KPIs (total value, PnL, win rate, accuracy) + 6 tabs (Active, Orders, LP, History, Calibration, Replay)](../.gitbook/assets/44-portfolio-overview.svg)
 
 ## Active positions
 
@@ -25,7 +25,7 @@ Each row:
 
 ## Realized vs unrealized P\&L
 
-![PnL: Buy 100 YES @ $0.50 → sell 40 @ $0.60 = realized +$4; hold 60 @ spot $0.55 = unrealized +$3](../../.gitbook/assets/45-pnl-calc.svg)
+![PnL: Buy 100 YES @ $0.50 → sell 40 @ $0.60 = realized +$4; hold 60 @ spot $0.55 = unrealized +$3](../.gitbook/assets/45-pnl-calc.svg)
 
 * **Realized** = P\&L from closed positions or redeemed tokens.
 * **Unrealized** = not yet locked in; depends on the current spot price.
@@ -81,9 +81,9 @@ A tool to help you recognize your own biases.
 
 ## Streaks & badges
 
-![Badge categories: Volume ($1K-$100K), Accuracy (70%-90% win), Streak (7-365 day), Special (beta tester, community hero)](../../.gitbook/assets/28-mindmap-badges.svg)
+![Badge categories: Volume ($1K-$100K), Accuracy (70%-90% win), Streak (7-365 day), Special (beta tester, community hero)](../.gitbook/assets/28-mindmap-badges.svg)
 
-Badges are NFTs — shareable and serve as profile signatures. Details: [Rewards & gamification](../../economics/rewards.md).
+Badges are NFTs — shareable and serve as profile signatures. Details: [Rewards & gamification](../economics/rewards.md).
 
 ## LP positions
 
@@ -93,7 +93,7 @@ The **Liquidity** tab in your portfolio:
 * Displays: pool, range, deposit value, current value, accrued fees, APR.
 * Actions: **Collect** fees, **Add more**, **Remove**.
 
-Details: [Liquidity provider](../liquidity-and-market/provide-liquidity.md).
+Details: [Liquidity provider](liquidity-and-market/provide-liquidity.md).
 
 ## Export & API
 
@@ -119,7 +119,7 @@ The app analyzes your portfolio and suggests:
 * Which markets are approaching endTime — should you close beforehand?
 * Which limit orders are stale (price far from the market)?
 
-Notifications can be toggled in [Settings](../../resources/faq.md).
+Notifications can be toggled in [Settings](../resources/faq.md).
 
 ### Troubleshooting
 
