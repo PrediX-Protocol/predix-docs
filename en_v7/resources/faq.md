@@ -194,3 +194,83 @@ There is a testnet points campaign that converts to PRX at TGE. Conversion ratio
 * [What if I lose the device with my passkey?](faq.md#lost-passkey)
 
 Discord, Twitter, Telegram — see [Links](links.md).
+
+### Troubleshooting
+
+<details>
+
+<summary><mark style="color:orange;">Passkey prompt does not appear</mark></summary>
+
+Your browser may not support WebAuthn. Use Chrome, Safari, Brave, or Edge (latest version). On iOS/Android, ensure device biometrics (Face ID / Touch ID / fingerprint) are enabled in system settings.
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">"Passkey not found" on a new device</mark></summary>
+
+Sign in with the same Apple ID (iCloud Keychain) or Google account (Password Manager) used at sign-up. If you didn't enable cloud sync, use a second paired device or your hardware security key.
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">MetaMask not detected</mark></summary>
+
+Make sure the MetaMask extension is installed and unlocked. Refresh the page after unlocking. On mobile, use MetaMask's in-app browser instead of Safari/Chrome.
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">Wrong network — "Switch to Unichain" prompt</mark></summary>
+
+Click the prompt to switch automatically, or manually add Unichain to your wallet:
+
+* **Network:** Unichain (or Unichain Sepolia for testnet)
+* **Chain ID:** `130` (mainnet) / `1301` (testnet)
+* **RPC:** `https://mainnet.unichain.org` / `https://sepolia.unichain.org`
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">WalletConnect QR code not scanning</mark></summary>
+
+Make sure your wallet app is updated to the latest version. If the QR doesn't load, click "Copy to clipboard" and paste into your wallet's WalletConnect input.
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">SIWE signature rejected by wallet</mark></summary>
+
+Some wallets block SIWE messages by default. In MetaMask, ensure "Sign typed data" warnings are not blocking — accept the message. The SIWE message is safe and contains no transaction data.
+
+</details>
+
+## Safety Questions
+
+<details>
+
+<summary><mark style="color:orange;"><strong>Is bridging safe?</strong></mark> </summary>
+
+PrediX integrates bridges with billions in TVL that have undergone multiple audit rounds (Across, Stargate, LayerZero). However, cross-chain bridges are **the largest attack vector in DeFi history** ($2B+ exploited 2022-2024). Only bridge the amount you need — do not hold funds long-term on bridge contracts.
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;"><strong>Does PrediX hold my funds during bridging?</strong></mark></summary>
+
+No. The bridge contracts belong to third parties (Across, Stargate). PrediX only provides the UI for convenience.
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;"><strong>Where do bridge fees go?</strong></mark></summary>
+
+&#x20;To the relayers / LPs of the respective bridge protocol. PrediX does not charge bridge fees.
+
+</details>

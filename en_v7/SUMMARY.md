@@ -10,12 +10,12 @@
 
 ## USERS GUIDE
 
-* [Quick start](users-guide/getting-started.md)
-* [Wallet Onboarding](users-guide/wallet-onboarding/README.md)
-  * [Connect wallet](users-guide/wallet-onboarding/connect-wallet.md)
-  * [Bridge to Unichain](users-guide/wallet-onboarding/bridge-to-unichain.md)
+* [Onboarding](users-guide/getting-started.md)
+* [Wallet Setup](users-guide/wallet-setup/README.md)
+  * [Connect wallet](users-guide/wallet-setup/connect-wallet.md)
+  * [Bridge to Unichain](users-guide/wallet-setup/bridge-to-unichain.md)
 * [Trading](users-guide/first-trade/README.md)
-  * [Overview](users-guide/first-trade/overview.md)
+  * [Place Your YES/NO Trade](users-guide/first-trade/place-your-yes-no-trade.md)
   * [Market order](users-guide/first-trade/market-order.md)
   * [Limit order (CLOB)](users-guide/first-trade/limit-order.md)
   * [Managing Orders](users-guide/first-trade/managing-orders.md)
@@ -35,6 +35,7 @@
 
 ## core Concepts
 
+* [Overview](core-concepts/overview.md)
 * [Overview](core-concepts/concepts.md)
 * [Prediction market](core-concepts/prediction-market.md)
 * [Outcome token (YES/NO)](core-concepts/outcome-tokens.md)
