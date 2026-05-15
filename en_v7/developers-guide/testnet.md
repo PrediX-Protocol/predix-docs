@@ -46,7 +46,7 @@ PrediX operates a faucet relayed via the backend:
 #### Via API
 
 ```bash
-curl -X POST https://api.testnet.predix.app/v2/faucet \
+curl -X POST https://api.testnet.predix.app/api/v1/faucet \
   -H "Content-Type: application/json" \
   -d '{"address": "0x..."}'
 ```
@@ -65,7 +65,7 @@ Response:
 #### Check cooldown
 
 ```
-GET /v2/faucet/cooldown?address=0x...
+GET /api/v1/faucet/status?address=0x...
 ```
 
 ## API endpoints (testnet)
@@ -80,13 +80,7 @@ Schema and endpoint shape are identical to mainnet — switching from testnet to
 
 ## Contract addresses (testnet)
 
-Latest deploy. Sync via API:
-
-```bash
-curl https://api.testnet.predix.app/v2/addresses
-```
-
-Response sample:
+Latest deploy addresses:
 
 ```json
 {

@@ -101,9 +101,8 @@ WebSocket: 10 conn/IP, unlimited messages.
 Official SDK roadmap:
 
 ```bash
-npm install @predix/sdk        # TypeScript / JavaScript
-pip install predix-sdk         # Python
-cargo add predix-sdk           # Rust
+npm install @predix/sdk        # TypeScript / JavaScript (TBA)
+pip install predix-sdk         # Python (TBA)
 ```
 
 Pre-launch: use the REST API + viem directly.

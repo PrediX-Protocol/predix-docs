@@ -32,7 +32,7 @@ Schema is identical across both environments — switching testnet to mainnet on
 
 ## Authentication
 
-* **Indexer**: public read-only. Pro tier (high rate limit) requires an API key — see [Bots & mobile](bots-mobile.md).
+* **Indexer**: public read-only.
 * **Backend**: public + auth via SIWE cookie session (details in the SIWE auth flow section below).
 
 ## Response envelope
@@ -132,8 +132,6 @@ GET /api/events/:id              detail with marketIds + winningIndex
 GET /api/users/:address/portfolio?includeResolved=true
 GET /api/users/:address/stats              aggregated PnL, accuracy, volume
 GET /api/users                             leaderboard (sort=pnl|volume|accuracy)
-GET /api/users/:address/lp-positions       LP NFTs
-GET /api/users/:address/badges             earned badges
 ```
 
 ### Protocol stats
@@ -208,11 +206,9 @@ GET  /api/v1/users/:address/portfolio
 GET  /api/v1/users/:address/trades
 GET  /api/v1/users/:address/pnl
 GET  /api/v1/users/:address/profile
-GET  /api/v1/users/:address/lp-positions
-GET  /api/v1/users/:address/badges
 GET  /api/v1/users/:address/calibration
 GET  /api/v1/users/:address/follows
-GET  /api/v1/users/:address/following
+GET  /api/v1/users/:address/followers
 ```
 
 ### Auth (SIWE)
@@ -235,25 +231,21 @@ POST /api/v1/aa/bundler                 Pimlico bundler proxy
 POST /api/v1/aa/paymaster/sponsor       sponsor UserOp
 ```
 
-### Notifications & alerts
+### Notifications
 
 ```
-GET    /api/v1/users/:address/notifications?unread=true
-POST   /api/v1/users/:address/notifications/:id/read
-GET    /api/v1/users/:address/alerts
-POST   /api/v1/users/:address/alerts
-DELETE /api/v1/users/:address/alerts/:id
+GET    /api/v1/notifications?unread=true
+PATCH  /api/v1/notifications/:id/read
+POST   /api/v1/notifications/read-all
 ```
 
 ### Rewards & gamification
 
 ```
-GET  /api/v1/users/:address/rewards
-GET  /api/v1/users/:address/badges
-GET  /api/v1/users/:address/streaks
-GET  /api/v1/daily-challenges
+GET  /api/v1/rewards/boxes
+GET  /api/v1/rewards/challenges
+GET  /api/v1/users/:address/achievements
 GET  /api/v1/leaderboard
-GET  /api/v1/leaderboard/rewards
 ```
 
 ### Comments & social
@@ -261,34 +253,17 @@ GET  /api/v1/leaderboard/rewards
 ```
 GET  /api/v1/markets/:id/comments?sort=top|new&limit=50
 POST /api/v1/markets/:id/comments        [auth]
-GET  /api/v1/users/:address/posts
-POST /api/v1/posts                        [auth]
-GET  /api/v1/feed?filter=following|trending|latest
-```
-
-### Bots / API key
-
-```
-POST   /api/v1/api-keys                   create (Pro tier)
-GET    /api/v1/api-keys                   list
-DELETE /api/v1/api-keys/:id
-POST   /api/v1/bots/orders                place order via API key
 ```
 
 ### Governance
 
-```
-GET  /api/v1/governance/proposals
-GET  /api/v1/gauges
-POST /api/v1/governance/vote              returns calldata
-```
+> **Planned**: Governance endpoints for vePRX voting will be available in Phase 2.
 
 ### System
 
 ```
 GET /health                               mongo + indexer probe
 GET /docs-json                            OpenAPI spec (JSON)
-GET /api/v1/capabilities                  enum describe list
 ```
 
 ### SIWE auth flow
@@ -334,8 +309,6 @@ Response: `X-Cache: HIT | MISS`, `X-Cache-Tier: hot | warm`.
 | `INSUFFICIENT_BALANCE` | 400  | Wallet has insufficient balance |
 | `SLIPPAGE_EXCEEDED`    | 400  | On-chain revert due to slippage |
 
-Full list: `GET /api/v1/capabilities`.
-
 ### OpenAPI typed client
 
 BE publishes OpenAPI 3.1. FE generates types automatically:
@@ -370,19 +343,9 @@ Source of truth on-chain — bot listeners, custom subgraphs, and monitoring ser
 ### Router events
 
 ```solidity
-event Trade(
-    address indexed trader,
-    address indexed recipient,
-    bytes32 indexed marketId,
-    uint8 tradeType,        // 0=BUY_YES, 1=SELL_YES, 2=BUY_NO, 3=SELL_NO
-    uint256 amountIn,
-    uint256 amountOut,
-    uint256 yesPrice,       // 6 decimals
-    uint256 clobFilled,
-    uint256 ammFilled
-);
-event DustRefunded(address indexed trader, uint256 amount);
-event ClobSkipped(bytes32 indexed marketId, bytes4 selector);
+event Trade(uint256 indexed marketId, address indexed trader, address indexed recipient, TradeType tradeType, uint256 amountIn, uint256 amountOut, uint256 clobFilled, uint256 ammFilled);
+event DustRefunded(address indexed recipient, address indexed token, uint256 amount);
+event ClobSkipped(uint256 indexed marketId, address indexed recipient, bytes4 reason);
 ```
 
 `Trade` -> tables: `trade`, `position` (if recipient is not a protocol contract), `market.volume`, `market.tradeCount`, `priceSnapshot` (source="router"), `protocolStats`, `user`, `userStats`.
@@ -390,10 +353,11 @@ event ClobSkipped(bytes32 indexed marketId, bytes4 selector);
 ### Exchange events
 
 ```solidity
-event OrderPlaced(uint256 indexed orderId, address indexed owner, bytes32 indexed marketId, uint8 side, uint32 price, uint128 amount);
-event OrderMatched(uint256 indexed takerOrderId, uint256 indexed makerOrderId, bytes32 indexed marketId, uint8 matchType, uint128 fillAmount, uint32 fillPrice);
-event OrderCancelled(uint256 indexed orderId);
-event OrderFilled(uint256 indexed orderId);
+event OrderPlaced(bytes32 indexed orderId, uint256 indexed marketId, address indexed owner, Side side, uint256 price, uint256 amount, bytes32 builder);
+event OrderMatched(bytes32 indexed makerOrderId, bytes32 indexed takerOrderId, uint256 indexed marketId, MatchType matchType, uint256 amount, uint256 price, bytes32 makerBuilder, bytes32 takerBuilder);
+event OrderCancelled(bytes32 indexed orderId);
+event TakerFilled(uint256 indexed marketId, address indexed taker, address indexed recipient, Side takerSide, uint256 totalFilled, uint256 totalCost, uint256 matchCount);
+event FeeCollected(uint256 indexed marketId, uint256 amount);
 ```
 
 Tables: `exchangeOrder`, `orderMatch`, `takerFill`, `position` (non-protocol).
@@ -401,15 +365,14 @@ Tables: `exchangeOrder`, `orderMatch`, `takerFill`, `position` (non-protocol).
 ### MarketFacet events
 
 ```solidity
-event MarketCreated(bytes32 indexed marketId, address indexed creator, string question, uint256 endTime, address oracle, address yesToken, address noToken, uint256 eventId, uint32 redemptionFeeBps);
-event PositionSplit(bytes32 indexed marketId, address indexed user, uint256 amount);
-event PositionMerged(bytes32 indexed marketId, address indexed user, uint256 amount);
-event MarketResolved(bytes32 indexed marketId, bool outcome, uint256 resolvedAt);
-event TokensRedeemed(bytes32 indexed marketId, address indexed user, uint256 winningBurned, uint256 losingBurned, uint256 payout, uint256 fee);
-event MarketRefunded(bytes32 indexed marketId, address indexed user, uint256 yesBurned, uint256 noBurned, uint256 payout);
-event MarketEmergencyResolved(bytes32 indexed marketId, bool outcome);
-event RefundModeEnabled(bytes32 indexed marketId);
-event PerMarketRedemptionFeeUpdated(bytes32 indexed marketId, uint32 newFeeBps);
+event MarketCreated(uint256 indexed marketId, address indexed creator, address indexed oracle, address yesToken, address noToken, uint256 endTime, string question);
+event PositionSplit(uint256 indexed marketId, address indexed user, uint256 amount);
+event PositionMerged(uint256 indexed marketId, address indexed user, uint256 amount);
+event MarketResolved(uint256 indexed marketId, bool outcome, address indexed resolver);
+event MarketEmergencyResolved(uint256 indexed marketId, bool outcome, address indexed resolver);
+event TokensRedeemed(uint256 indexed marketId, address indexed user, uint256 winningBurned, uint256 losingBurned, uint256 fee, uint256 payout);
+event RefundModeEnabled(uint256 indexed marketId, address indexed enabler);
+event MarketRefunded(uint256 indexed marketId, address indexed user, uint256 yesBurned, uint256 noBurned, uint256 payout);
 ```
 
 Tables: `market`, `outcomeToken`, `positionSplit`, `positionMerge`, `redemption`, `refundClaim`, `feeConfigChange`.
@@ -417,8 +380,8 @@ Tables: `market`, `outcomeToken`, `positionSplit`, `positionMerge`, `redemption`
 ### EventFacet events
 
 ```solidity
-event EventGroupCreated(uint256 indexed eventId, string name, uint256 endTime, bytes32[] marketIds);
-event EventGroupResolved(uint256 indexed eventId, uint8 winningIndex);
+event EventCreated(uint256 indexed eventId, address indexed creator, uint256 endTime, string name, uint256[] marketIds, address oracle);
+event EventResolved(uint256 indexed eventId, address indexed resolver);
 event EventRefundModeEnabled(uint256 indexed eventId);
 ```
 
@@ -427,9 +390,8 @@ Table: `eventGroup`.
 ### Hook events
 
 ```solidity
-event Hook_PoolRegistered(bytes32 indexed poolId, bytes32 indexed marketId, bool yesIsCurrency0);
-event Hook_MarketTraded(bytes32 indexed marketId, address indexed trader, uint256 yesPrice, uint256 volume, bool isBuyYes);
-event Hook_PauseStatusChanged(...);
+event Hook_PoolRegistered(uint256 indexed marketId, PoolId indexed poolId, address yesToken, address quoteToken, bool yesIsCurrency0);
+event Hook_MarketTraded(uint256 indexed marketId, address indexed trader, bool isBuy, uint256 usdcVolume, uint256 yesVolume, uint256 yesPrice, uint256 noPrice);
 ```
 
 `Hook_PoolRegistered` -> `hookPoolBinding` (essential lookup for filtering PoolManager events). `Hook_MarketTraded` -> `priceSnapshot` (source="hook\_amm"), `market.lastTradeAt`. **Does NOT** count volume.
@@ -475,6 +437,10 @@ Filter by `hookPoolBinding` membership first:
 
 ***
 
+## WebSocket
+
+For real-time data, see [WebSocket](websocket.md).
+
 ## Common patterns
 
 ### Fetch top 10 markets by volume
@@ -502,39 +468,13 @@ client.watchContractEvent({
 });
 ```
 
-### Subscribe to BE WebSocket
-
-```typescript
-const ws = new WebSocket('wss://api.predix.app/v2/ws');
-
-ws.send(JSON.stringify({
-  type: 'subscribe',
-  channels: [
-    'market:0xabc...:trades',
-    'user:0xdef...:notifications',
-    'feed:trending',
-  ],
-}));
-
-ws.onmessage = (e) => {
-  const msg = JSON.parse(e.data);
-  // { channel, type, data, timestamp }
-};
-```
-
-Auth: include cookie or API key header.
-
 ## Limits
 
-| Tier            | Public        | Auth             | Quota          |
-| --------------- | ------------- | ---------------- | -------------- |
-| Free            | 60 req/min/IP | 300 req/min/user | 10,000 req/day |
-| Pro ($20/month) | 600 req/min   | 3000 req/min     | 1M req/day     |
-| Enterprise      | Custom        | Custom           | Custom         |
+| Tier   | Public        | Auth             | Quota          |
+| ------ | ------------- | ---------------- | -------------- |
+| Free   | 60 req/min/IP | 300 req/min/user | 10,000 req/day |
 
-Auth endpoint (challenge/verify): 5/min Free, 30/min Pro. WebSocket: 10 connections/IP, unlimited messages.
-
-API key: [Bots & mobile](bots-mobile.md).
+Auth endpoint (challenge/verify): 5/min.
 
 ## BigInt serialization
 

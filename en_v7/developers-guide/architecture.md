@@ -1,6 +1,6 @@
 # Architecture & contracts
 
-Solidity `0.8.34`, Foundry, EVM cancun (EIP-1153 transient storage). 7 packages, monorepo. Deployed addresses (testnet + mainnet TBA) at the bottom of this page.
+Solidity `0.8.30`, Foundry, EVM cancun (EIP-1153 transient storage). 7 packages, monorepo. Deployed addresses (testnet + mainnet TBA) at the bottom of this page.
 
 ## Dependency graph
 
@@ -33,9 +33,9 @@ Single proxy `PrediX Diamond` with 6 facets. Each facet is independently upgrade
 | ----------------------- | --------------------------------------------------------------- |
 | `beforeInitialize`      | Set permission flag + init pool state                           |
 | `beforeAddLiquidity`    | Block adding LP if market is resolved / refunded                |
-| `beforeRemoveLiquidity` | Track pool registration (hookPoolBinding)                       |
+| `beforeRemoveLiquidity` | Block LP modification on resolved/refunded markets              |
 | `beforeSwap`            | Verify anti-sandwich identity (EIP-1153 transient storage)      |
-| `afterSwap`             | No-op                                                           |
+| `afterSwap`             | Enforce post-swap price band check + emit Hook_MarketTraded event |
 | `beforeDonate`          | Block donate after endTime (prevents brute-force payout attack) |
 
 **Key functions**:
@@ -64,7 +64,7 @@ struct Order {
   uint40 timestamp;    // 5 bytes
   uint8 side;          // BUY_YES/SELL_YES/BUY_NO/SELL_NO
   bool cancelled;
-  bytes32 marketId;
+  uint256 marketId;
   uint32 price;        // fixed-point 6 decimals, range 10_000-990_000
   uint128 amount;
   uint128 filled;
@@ -192,11 +192,7 @@ Protocol governance uses role-based access control via the Diamond. All admin op
 
 ### Sync with code
 
-Apps + SDKs synchronize addresses from an on-chain registry. Do not hardcode in client code.
-
-```javascript
-const addresses = await fetch('https://api.predix.app/api/v1/system-config').then(r => r.json());
-```
+Contract addresses are available from verified source on the block explorer. Do not hardcode in client code — refer to the address table above or the explorer links below.
 
 ### Verify source code
 
@@ -209,11 +205,7 @@ https://uniscan.xyz/address/<ADDRESS>#code            # mainnet (after deploy)
 
 ### ABI files
 
-ABIs are publicly available at:
-
-* npm: `@predix/abi` (TBA)
-* GitHub: `github.com/predix-protocol/abi`
-* Direct: `https://api.predix.app/v2/abi/<contract>`
+ABI files can be obtained from verified contract source code on [Uniscan explorer](https://sepolia.uniscan.xyz).
 
 Integration details: [Router integration](router-integration.md).
 

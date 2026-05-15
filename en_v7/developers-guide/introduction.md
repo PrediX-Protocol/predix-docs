@@ -21,6 +21,8 @@ Build a trading bot, analytics tool, or personal strategy that interacts directl
 
 No API key required for on-chain trading. Start immediately.
 
+> **Coming soon**: API key authentication for programmatic trading (24/7 bot operation without browser wallet) is planned for a future release.
+
 → [Quickstart — TypeScript](quickstart-typescript.md) · [Quickstart — Python](quickstart-python.md)
 
 ## Path 2 — Build a platform

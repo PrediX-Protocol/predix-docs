@@ -1,169 +1,10 @@
-# Bots & mobile
+# Bots & Mobile
 
-Two different use cases sharing the same infrastructure: API key auth + Router contract.
+## Programmatic trading
 
-| Use case                       | Primary stack                                      |
-| ------------------------------ | -------------------------------------------------- |
-| **Trading bot / market maker** | API key + REST/WebSocket + `@predix/bot-sdk` (TBA) |
-| **Mobile app native**          | Swift / Kotlin / RN + WalletConnect + viem         |
-| **Web app custom**             | wagmi + viem + RainbowKit                          |
+Currently, programmatic trading is done by calling Router contract functions directly via viem (TypeScript) or web3.py (Python). See [Quickstart — TypeScript](quickstart-typescript.md) and [Quickstart — Python](quickstart-python.md).
 
-***
-
-## Trading bots
-
-### Register API key
-
-![API key: sign in SIWE -> create key in Settings -> choose scope (read-only/trade/full) -> set rate limit + IP whitelist -> receive key + secret](../.gitbook/assets/61-dev-integration-paths.svg)
-
-1. Sign in to PrediX via SIWE.
-2. **Settings -> Developer -> API keys** -> **Create new key**.
-3. Choose scope (read-only / trade / full), IP whitelist (optional), expiry (30/90/365 days).
-4. Save **API key** + **secret** — the secret will not be shown again.
-
-### Authentication
-
-```
-X-API-Key: pk_live_abc123...
-X-API-Signature: <HMAC SHA256 of body with secret>
-```
-
-Read-only requires only `Authorization: Bearer pk_live_abc123...`.
-
-### Rate limits & tiers
-
-| Tier           | Rate        | Quota       | Concurrent | Cost      |
-| -------------- | ----------- | ----------- | ---------- | --------- |
-| **Free**       | 60 req/min  | 10k req/day | 5          | $0        |
-| **Pro**        | 600 req/min | 1M req/day  | 50         | $20/month |
-| **Enterprise** | Custom      | Unlimited   | Custom     | Contact   |
-
-Stake PRX to upgrade tier for free:
-
-* 1k PRX -> 200 req/min
-* 10k PRX -> Pro tier free
-* 100k PRX -> Enterprise free
-
-### Endpoints
-
-Read endpoints: all Indexer + BE endpoints are available with an API key (see [API reference](api-reference.md)).
-
-**Place order**:
-
-```
-POST /api/v1/bots/orders
-{
-  "marketId": "0x...",
-  "side": "BUY_YES",
-  "type": "limit",        // limit | market
-  "price": "0.45",        // required if limit
-  "amount": "100.00",
-  "deadline": 1740100000,
-  "slippageBps": 50,      // optional, market only
-  "clientOrderId": "uuid" // idempotency
-}
--> { orderId, txHash, status: "pending" }
-```
-
-The API signs and submits via paymaster (sponsored for users eligible through the program). No private key exposure. Scope `trade` is required to place orders.
-
-**Bulk place** (atomic, max 50): `POST /api/v1/bots/orders/bulk`.
-
-**Cancel**: `DELETE /api/v1/bots/orders/:orderId`.
-
-**Position management**:
-
-```
-GET    /api/v1/bots/positions
-DELETE /api/v1/bots/positions/:id    # close = sell market order
-```
-
-### Webhooks
-
-```json
-POST /api/v1/webhooks
-{
-  "url": "https://your-server.com/webhook",
-  "events": ["order.filled", "order.cancelled", "market.resolve"],
-  "secret": "your-webhook-secret"
-}
-```
-
-Payload:
-
-```json
-{
-  "event": "order.filled",
-  "timestamp": 1740100000,
-  "data": { "orderId": "...", "marketId": "...", "fillPrice": "0.48", "fillAmount": "100.0", "side": "BUY_YES" }
-}
-```
-
-Verify HMAC:
-
-```typescript
-import { createHmac } from 'crypto';
-const sig = req.headers['x-predix-signature'];
-const expected = createHmac('sha256', WEBHOOK_SECRET).update(req.rawBody).digest('hex');
-if (sig !== expected) return res.status(401).end();
-```
-
-### Bot examples
-
-**Market maker** around mid price:
-
-```typescript
-import { PrediXBot } from '@predix/bot-sdk';
-
-const bot = new PrediXBot({ apiKey: process.env.PREDIX_API_KEY, secret: process.env.PREDIX_SECRET });
-
-async function makeMarket(marketId: string) {
-  const orderbook = await bot.getOrderbook(marketId);
-  const mid = (orderbook.bestBid + orderbook.bestAsk) / 2;
-  await bot.cancelMyOrders(marketId);
-  await bot.bulkPlace([
-    { marketId, side: 'BUY_YES',  type: 'limit', price: mid - 0.02, amount: '100' },
-    { marketId, side: 'SELL_YES', type: 'limit', price: mid + 0.02, amount: '100' },
-  ]);
-}
-
-setInterval(() => makeMarket('0x...'), 30_000);
-```
-
-**Arbitrage** when YES + NO > $1:
-
-```typescript
-async function checkArb(marketId: string) {
-  const view = await bot.getPriceView(marketId);
-  const spread = parseFloat(view.yesPrice) + parseFloat(view.noPrice);
-  if (spread > 1.005) {
-    await bot.split(marketId, '100');
-    await bot.placeMarket(marketId, 'SELL_YES', '100');
-    await bot.placeMarket(marketId, 'SELL_NO',  '100');
-  }
-}
-```
-
-### Best practices
-
-* **Idempotency**: every place order includes a unique `clientOrderId` -> replay safe.
-* **Retry**: 5xx -> exponential backoff. 429 -> respect `Retry-After`. 4xx -> don't retry.
-* **Position size**: cap per-trade at <= 5% of balance. Keep buffer for gas + slippage.
-* **Monitor**: log every order + fill. Alert on PnL drop > 10% within 1h.
-
-### Security
-
-* **Never** commit keys to git. Use env vars / secret manager only.
-* Rotate keys every 90 days. IP whitelist if using fixed-IP servers.
-* Scope minimization: read-only for analytics, trade for bots, full only when withdraw + 2FA is needed.
-* Audit: `/api/v1/bots/audit` — review weekly.
-
-### Open-source bot templates
-
-[github.com/predix-protocol/bot-templates](https://github.com/predix-protocol/bot-templates):
-
-* `market-maker/`, `arbitrage/`, `oracle-resolver/`, `lp-manager/` (TS)
-* `scanner-py/` (Python)
+> **Planned**: API key system and webhook notifications for bot developers are planned for a future release. Currently, all trading goes through on-chain Router contract calls with standard wallet signing.
 
 ***
 
@@ -205,7 +46,7 @@ Trade hook:
 
 ```typescript
 import { useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
-import { routerAbi } from '@predix/abi';
+// import Router ABI from source or explorer
 
 function BuyYesButton({ marketId, usdcIn, minOut }) {
   const { writeContract, data: hash } = useWriteContract();
@@ -300,8 +141,8 @@ const publicClient = createPublicClient({
 
 const kernelClient = createKernelClient({
   publicClient,
-  bundlerTransport:    http(`${TESTNET_BE_URL}/v2/aa/bundler`),
-  paymasterTransport:  http(`${TESTNET_BE_URL}/v2/aa/paymaster/sponsor`),
+  bundlerTransport:    http(`${TESTNET_BE_URL}/api/v1/aa/bundler`),
+  paymasterTransport:  http(`${TESTNET_BE_URL}/api/v1/aa/paymaster/sponsor`),
   validator: passkeyValidator,
 });
 
@@ -379,20 +220,6 @@ await window.ethereum.request({
 // Mainnet — Unichain (after launch)
 // chainId: '0x82' (130), rpcUrls: ['https://mainnet.unichain.org'], explorer: uniscan.xyz
 ```
-
-### Mobile push notifications
-
-* iOS APNs: register device token with BE via `/api/v1/users/:address/push/ios`.
-* Android FCM: `/api/v1/users/:address/push/android`.
-* Backend pushes via Firebase / APNs when events match alert criteria.
-
-Setup details: [Notifications](/broken/pages/VjFpu8jlXXqXJ8qF7KcN).
-
-### Open-source examples
-
-* [github.com/predix-protocol/mobile-app-rn](https://github.com/predix-protocol/mobile-app-rn) — React Native reference app.
-* [github.com/predix-protocol/ios-example](https://github.com/predix-protocol/ios-example) — Swift native demo.
-* [github.com/predix-protocol/android-example](https://github.com/predix-protocol/android-example) — Kotlin native demo.
 
 ## Support
 

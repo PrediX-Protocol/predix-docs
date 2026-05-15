@@ -15,7 +15,7 @@ Core function:
 
 ```solidity
 function buyYes(
-    bytes32 marketId,
+    uint256 marketId,
     uint256 usdcIn,
     uint256 minYesOut,
     address recipient,
@@ -28,7 +28,7 @@ function buyYes(
 );
 
 function sellYes(
-    bytes32 marketId,
+    uint256 marketId,
     uint256 yesIn,
     uint256 minUsdcOut,
     address recipient,
@@ -46,16 +46,18 @@ function sellYes(
 ## Quote before swap
 
 ```solidity
-function quoteBuyYesExactIn(
-    bytes32 marketId,
-    uint256 usdcIn
-) external view returns (
+function quoteBuyYes(
+    uint256 marketId,
+    uint256 usdcIn,
+    uint256 maxFills
+) external returns (
     uint256 expectedYesOut,
-    uint256 priceImpactBps
+    uint256 clobPortion,
+    uint256 ammPortion
 );
 ```
 
-View function, free to call. Use it to show a preview to users before they sign.
+Non-view function (modifies transient state). Use `simulateContract` (not `readContract`) to call it off-chain. Use it to show a preview to users before they sign.
 
 ## Viem / TypeScript example
 
@@ -63,7 +65,7 @@ View function, free to call. Use it to show a preview to users before they sign.
 import { createPublicClient, createWalletClient, custom, http, parseUnits } from 'viem';
 import { unichainSepolia } from 'viem/chains';  // current testnet
 // import { unichain } from 'viem/chains';      // mainnet after launch
-import { routerAbi } from '@predix/abi';
+// Define Router ABI inline or import from source
 
 const publicClient = createPublicClient({
   chain: unichainSepolia,
@@ -77,17 +79,17 @@ const walletClient = createWalletClient({
 
 // Testnet Router (mainnet TBA)
 const ROUTER = '0x1267723f500C0437295698d36d521bd060Bed0EB';
-const marketId = '0x000000...0001'; // 32-byte hex
+const marketId = 1n; // uint256
 
-// 1. Quote
-const [expectedOut, priceImpactBps] = await publicClient.readContract({
+// 1. Quote (non-view, use simulateContract)
+const { result: [expectedOut, clobPortion, ammPortion] } = await publicClient.simulateContract({
   address: ROUTER,
   abi: routerAbi,
-  functionName: 'quoteBuyYesExactIn',
-  args: [marketId, parseUnits('100', 6)], // 100 USDC
+  functionName: 'quoteBuyYes',
+  args: [marketId, parseUnits('100', 6), 10n], // 100 USDC, maxFills=10
 });
 
-console.log(`Expected: ${expectedOut} YES, impact: ${priceImpactBps/100}%`);
+console.log(`Expected: ${expectedOut} YES, CLOB: ${clobPortion}, AMM: ${ammPortion}`);
 
 // 2. Compute minOut with 0.5% slippage
 const minOut = (expectedOut * 995n) / 1000n;
@@ -167,14 +169,14 @@ Permit2 details: [docs.uniswap.org/contracts/permit2](https://docs.uniswap.org/c
 
 ## Encode marketId
 
-Market ID is a **bytes32 hex** (64 chars after `0x`). The Indexer and FE use **decimal strings** for URLs.
+Market ID is a **uint256**. The Indexer, BE, and FE use **decimal strings** for URLs and wire format.
 
 ```typescript
-// Decimal -> hex (BE wire format -> contract input)
-const marketIdHex = '0x' + BigInt(decimalString).toString(16).padStart(64, '0');
+// Decimal string -> BigInt (for contract calls)
+const marketId = BigInt(decimalString);
 
 // Reverse
-const decimal = BigInt(marketIdHex).toString();
+const decimal = marketId.toString();
 ```
 
 ## Handle errors
@@ -182,10 +184,10 @@ const decimal = BigInt(marketIdHex).toString();
 The Router reverts with custom errors. Decode using the 4-byte selector:
 
 ```solidity
-error SlippageExceeded(uint256 actual, uint256 min);
+error InsufficientOutput(uint256 actual, uint256 min);
 error DeadlineExpired();
 error MarketPaused();
-error MarketNotActive();
+error MarketExpired();
 error InsufficientLiquidity(uint256 requested, uint256 available);
 error FinalizeBalanceNonZero(); // internal bug, report if encountered
 ```
@@ -196,7 +198,7 @@ In viem:
 try {
   await walletClient.writeContract({ ... });
 } catch (err: any) {
-  if (err.cause?.data?.errorName === 'SlippageExceeded') {
+  if (err.cause?.data?.errorName === 'InsufficientOutput') {
     // handle slippage
   }
 }
@@ -210,7 +212,7 @@ After a swap, the Router emits:
 event Trade(
     address indexed trader,
     address indexed recipient,
-    bytes32 indexed marketId,
+    uint256 indexed marketId,
     uint8 tradeType,        // 0=BUY_YES, 1=SELL_YES, 2=BUY_NO, 3=SELL_NO
     uint256 amountIn,
     uint256 amountOut,
@@ -278,8 +280,6 @@ anvil --fork-url https://sepolia.unichain.org
 # Deploy test contract or call directly
 forge script test/Integration.s.sol --fork-url http://localhost:8545
 ```
-
-Full examples: [github.com/predix-protocol/integration-examples](https://github.com/predix-protocol/integration-examples).
 
 ## Common patterns
 
