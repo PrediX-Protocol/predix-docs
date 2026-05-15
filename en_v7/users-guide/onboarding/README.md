@@ -1,12 +1,8 @@
 ---
-icon: play
+description: Set up your wallet and fund your account
 ---
 
-# Get Ready
-
-Set up your wallet and fund your account — everything you need before placing your first trade.
-
-### Overview
+# Onboarding
 
 Before you can trade on PrediX, you need to complete two one-time setup steps:
 

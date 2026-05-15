@@ -35,7 +35,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 <a href="/broken/pages/qbjzTee4WrFLuoW5r1TU" class="button primary" data-icon="layer-plus">FUNDAMENTALS</a>
 
-> <mark style="color:$danger;">Understand the thesis, architecture, and market positioning.</mark>
+> <mark style="color:$success;">Understand the thesis, architecture, and market positioning.</mark>
 
 {% content-ref url="fundamentals/overview.md" %}
 [overview.md](fundamentals/overview.md)
@@ -49,7 +49,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 #### <a href="users-guide/first-trade/" class="button primary" data-icon="chart-column">START TRADING</a>
 
-> <mark style="color:$danger;">Trade predictive markets on Unichain.</mark>
+> <mark style="color:$success;">Trade predictive markets on Unichain.</mark>
 
 {% content-ref url="/broken/pages/YsPtT0l1N50qWpeQjsX7" %}
 [Broken link](/broken/pages/YsPtT0l1N50qWpeQjsX7)
@@ -67,7 +67,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 <a href="/broken/pages/wCcSWgEZAwC1z4fKrfgZ" class="button primary" data-icon="square-half-stroke">CORE CONCEPTS</a>
 
-> <mark style="color:$danger;">Learn how PrediX markets function.</mark>
+> <mark style="color:$success;">Learn how PrediX markets function.</mark>
 
 {% content-ref url="core-concepts/prediction-market.md" %}
 [prediction-market.md](core-concepts/prediction-market.md)
@@ -89,7 +89,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 <a href="users-guide/liquidity-and-market/" class="button primary" data-icon="chart-column">LIQUIDITY &#x26; MARKET</a>
 
-> <mark style="color:$danger;">Provide liquidity or create markets.</mark>
+> <mark style="color:$success;">Provide liquidity or create markets.</mark>
 
 {% content-ref url="users-guide/liquidity-and-market/provide-liquidity.md" %}
 [provide-liquidity.md](users-guide/liquidity-and-market/provide-liquidity.md)
@@ -103,7 +103,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 <a href="/broken/pages/8HclYTsOnU8kmDjTSXrH" class="button primary" data-icon="coin-blank">ECONOMY</a>
 
-> <mark style="color:$danger;">Explore staking, governance, and incentives.</mark>
+> <mark style="color:$success;">Explore staking, governance, and incentives.</mark>
 
 {% content-ref url="economics/prx-economy/" %}
 [prx-economy](economics/prx-economy/)
@@ -121,7 +121,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 <a href="/broken/pages/KhM4zcVEYvmzF38tqAmc" class="button primary" data-icon="code">FOR DEVOPERS</a>
 
-> <mark style="color:$danger;">Build on PrediX infrastructure.</mark>
+> <mark style="color:$success;">Build on PrediX infrastructure.</mark>
 
 {% content-ref url="developers-guide/api-reference.md" %}
 [api-reference.md](developers-guide/api-reference.md)
@@ -139,7 +139,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 <a href="/broken/pages/ZoA2VYD6MlnH2Rwutthv" class="button primary" data-icon="arrow-up-right-from-square">RESOURCES</a>
 
-> <mark style="color:$danger;">Additional protocol resources.</mark>
+> <mark style="color:$success;">Additional protocol resources.</mark>
 
 {% content-ref url="resources/glossary.md" %}
 [glossary.md](resources/glossary.md)

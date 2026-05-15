@@ -16,7 +16,7 @@ Unlike social platforms, media systems, or algorithmic feeds, prediction markets
 
 PrediX is built around the belief that these probability markets will evolve far beyond event speculation and become financial infrastructure.
 
-### **Beyond Traditional Prediction Markets**
+### **`Beyond Traditional Prediction Markets`**
 
 > **Most prediction market platforms today still operate as isolated trading systems.**
 

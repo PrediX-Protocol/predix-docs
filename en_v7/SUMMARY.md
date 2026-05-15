@@ -11,9 +11,9 @@
 ## USERS GUIDE
 
 * [Quick start](users-guide/getting-started.md)
-* [Get Ready](users-guide/get-ready/README.md)
-  * [Connect wallet](users-guide/get-ready/connect-wallet.md)
-  * [Bridge to Unichain](users-guide/get-ready/bridge-to-unichain.md)
+* [Onboarding](users-guide/onboarding/README.md)
+  * [Connect wallet](users-guide/onboarding/connect-wallet.md)
+  * [Bridge to Unichain](users-guide/onboarding/bridge-to-unichain.md)
 * [Trading](users-guide/first-trade/README.md)
   * [Overview](users-guide/first-trade/overview.md)
   * [Market order](users-guide/first-trade/market-order.md)
