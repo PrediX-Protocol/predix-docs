@@ -290,10 +290,10 @@ Once the code is processed, the setup is Done and your wallet is successfully li
 For developers integrating PrediX notifications into external systems:
 
 ```
-GET    /api/v2/users/:address/notifications?unread=true
-POST   /api/v2/users/:address/notifications/:id/read
-POST   /api/v2/users/:address/alerts
-DELETE /api/v2/users/:address/alerts/:id
+GET    /api/v1/users/:address/notifications?unread=true
+POST   /api/v1/users/:address/notifications/:id/read
+POST   /api/v1/users/:address/alerts
+DELETE /api/v1/users/:address/alerts/:id
 ```
 
 Realtime updates via WebSocket: `wss://api.predix.app/v2/me/notifications` with an auth header.

@@ -115,6 +115,6 @@ LP fees are collected in USDC + outcome tokens. Each claim event counts as incom
 LP positions are accessible via:
 
 * Indexer: `GET /api/users/:address/lp-positions`
-* BE: `GET /api/v2/users/:address/lp-positions`
+* BE: `GET /api/v1/users/:address/lp-positions`
 
 Details: [Indexer API](../../developers-guide/api-reference.md#indexer-endpoints).

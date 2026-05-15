@@ -1,6 +1,6 @@
 # Architecture & contracts
 
-Solidity `0.8.30`, Foundry, EVM cancun (EIP-1153 transient storage). 7 packages, monorepo. Deployed addresses (testnet + mainnet TBA) at the bottom of this page.
+Solidity `0.8.34`, Foundry, EVM cancun (EIP-1153 transient storage). 7 packages, monorepo. Deployed addresses (testnet + mainnet TBA) at the bottom of this page.
 
 ## Dependency graph
 

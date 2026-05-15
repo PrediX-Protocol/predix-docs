@@ -164,6 +164,18 @@ console.log(positions);
 
 Permit2 variants: `buyYesWithPermit`, `sellYesWithPermit`, `buyNoWithPermit`, `sellNoWithPermit` — same params + `permitSingle` + `signature`.
 
+## Limits
+
+| Parameter | Value |
+|---|---|
+| Min trade (Router) | `1000` ($0.001 USDC) |
+| Min order (Exchange CLOB) | `1e6` ($1.00 USDC) |
+| Max open orders per user | 50 |
+| Max fills per place order | 20 |
+| Max batch cancel | 50 |
+| Price range | $0.01 – $0.99 (step $0.01) |
+| Price precision | `1e6` = 100% = $1.00 |
+
 ## Common errors
 
 | Error | Cause | Fix |

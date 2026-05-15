@@ -105,7 +105,7 @@ Set via the admin BE endpoint after on-chain creation.
 6.  **Set metadata** (UI title, category, image) via the BE admin endpoint:
 
     ```
-    POST /api/v2/admin/markets/:id/display
+    POST /api/v1/admin/markets/:id/display
     {
       title: { vi: "...", en: "...", ja: "...", ko: "..." },
       category: "crypto",

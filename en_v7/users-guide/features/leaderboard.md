@@ -173,10 +173,10 @@ To prevent leaderboard spam from bots:
 For developers integrating leaderboard or trader data:
 
 ```
-GET /api/v2/leaderboard?metric=pnl&period=30d&min=10-100
-GET /api/v2/users/:address/profile
-GET /api/v2/users/:address/follows    (followed by whom)
-GET /api/v2/users/:address/following  (following whom)
+GET /api/v1/leaderboard?metric=pnl&period=30d&min=10-100
+GET /api/v1/users/:address/profile
+GET /api/v1/users/:address/follows    (followed by whom)
+GET /api/v1/users/:address/following  (following whom)
 ```
 
 Details: [Backend API](../../developers-guide/api-reference.md#backend-endpoints-v2).

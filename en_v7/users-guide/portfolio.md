@@ -100,7 +100,7 @@ Details: [Liquidity provider](liquidity-and-market/provide-liquidity.md).
 * **Export** tab → download a CSV of all history (for tax / accounting purposes).
 * Developers can access directly:
   * Indexer: `GET /api/users/:address/portfolio`
-  * BE: `GET /api/v2/users/:address/portfolio`
+  * BE: `GET /api/v1/users/:address/portfolio`
 
 ## After endTime, not yet resolved
 

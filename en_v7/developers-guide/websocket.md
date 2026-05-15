@@ -57,15 +57,20 @@ Require `subject` = user wallet address. Must match authenticated session.
 // Subscription confirmed
 { "type": "subscribed", "topic": "orderbook", "marketId": "1" }
 
-// Data push
-{ "type": "data", "topic": "orderbook", "marketId": "1", "data": { ... } }
+// Full snapshot (initial state after subscribe)
+{ "type": "snapshot", "topic": "orderbook", "marketId": "1", "seq": 1, "data": { ... } }
 
-// Ping (client must respond with pong)
+// Delta update (incremental changes)
+{ "type": "delta", "topic": "orderbook", "marketId": "1", "seq": 2, "changes": [ ... ] }
+
+// Ping (client must respond with pong within 10s)
 { "type": "ping" }
 
 // Error
-{ "type": "error", "message": "Invalid topic" }
+{ "type": "error", "code": "INVALID_TOPIC", "message": "Invalid topic" }
 ```
+
+> **Note**: Data delivery is poller-based (1s interval), not event-driven push. The server polls the indexer, diffs snapshots, and broadcasts deltas.
 
 ### Client → Server
 
@@ -110,8 +115,11 @@ ws.onmessage = (event) => {
     return;
   }
 
-  if (msg.type === 'data') {
-    console.log(`[${msg.topic}]`, msg.data);
+  if (msg.type === 'snapshot') {
+    console.log(`[${msg.topic}] full:`, msg.data);
+  }
+  if (msg.type === 'delta') {
+    console.log(`[${msg.topic}] update:`, msg.changes);
   }
 };
 ```
@@ -137,8 +145,10 @@ async def listen():
             msg = json.loads(message)
             if msg["type"] == "ping":
                 await ws.send(json.dumps({"type": "pong"}))
-            elif msg["type"] == "data":
-                print(f"[{msg['topic']}]", msg["data"])
+            elif msg["type"] == "snapshot":
+                print(f"[{msg['topic']}] full:", msg["data"])
+            elif msg["type"] == "delta":
+                print(f"[{msg['topic']}] update:", msg["changes"])
 
 asyncio.run(listen())
 ```

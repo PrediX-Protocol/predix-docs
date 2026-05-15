@@ -61,7 +61,7 @@ Step-by-step: [Router integration](router-integration.md). Get testnet endpoint:
 
 | Layer           | Stack                                     | Language                       |
 | --------------- | ----------------------------------------- | ------------------------------ |
-| Smart contracts | Foundry + Solidity 0.8.30                 | Solidity                       |
+| Smart contracts | Foundry + Solidity 0.8.34                 | Solidity                       |
 | Indexer         | Ponder + PostgreSQL + Hono                | TypeScript                     |
 | Backend         | NestJS + Fastify + MongoDB + zod          | TypeScript                     |
 | Frontend        | Next.js + React + Tailwind + viem + wagmi | TypeScript                     |

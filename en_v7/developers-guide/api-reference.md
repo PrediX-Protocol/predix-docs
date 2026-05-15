@@ -181,114 +181,114 @@ FE: `market[market.kind]` — exhaustive switch.
 ### Markets & events
 
 ```
-GET  /api/v2/markets                  list with filters + pagination
-GET  /api/v2/markets/:id              single (id = hex bytes32)
-GET  /api/v2/markets/:id/orderbook
-GET  /api/v2/markets/:id/trades
-GET  /api/v2/markets/:id/holders
-GET  /api/v2/markets/:id/comments
-GET  /api/v2/events
-GET  /api/v2/events/:id
+GET  /api/v1/markets                  list with filters + pagination
+GET  /api/v1/markets/:id              single (id = hex bytes32)
+GET  /api/v1/markets/:id/orderbook
+GET  /api/v1/markets/:id/trades
+GET  /api/v1/markets/:id/holders
+GET  /api/v1/markets/:id/comments
+GET  /api/v1/events
+GET  /api/v1/events/:id
 ```
 
 ### Pricing
 
 ```
-POST /api/v2/markets/:id/pricing/quote     quote before swap
-GET  /api/v2/markets/:id/pricing/view      combined CLOB + AMM view
-POST /api/v2/markets-batch/price-views     batch up to 50
-GET  /api/v2/markets/:id/candles           OHLC
+POST /api/v1/markets/:id/pricing/quote     quote before swap
+GET  /api/v1/markets/:id/pricing/view      combined CLOB + AMM view
+POST /api/v1/markets-batch/price-views     batch up to 50
+GET  /api/v1/markets/:id/candles           OHLC
 ```
 
 ### User & portfolio
 
 ```
-GET  /api/v2/users/:address/orders
-GET  /api/v2/users/:address/portfolio
-GET  /api/v2/users/:address/trades
-GET  /api/v2/users/:address/pnl
-GET  /api/v2/users/:address/profile
-GET  /api/v2/users/:address/lp-positions
-GET  /api/v2/users/:address/badges
-GET  /api/v2/users/:address/calibration
-GET  /api/v2/users/:address/follows
-GET  /api/v2/users/:address/following
+GET  /api/v1/users/:address/orders
+GET  /api/v1/users/:address/portfolio
+GET  /api/v1/users/:address/trades
+GET  /api/v1/users/:address/pnl
+GET  /api/v1/users/:address/profile
+GET  /api/v1/users/:address/lp-positions
+GET  /api/v1/users/:address/badges
+GET  /api/v1/users/:address/calibration
+GET  /api/v1/users/:address/follows
+GET  /api/v1/users/:address/following
 ```
 
 ### Auth (SIWE)
 
 ```
-GET  /api/v2/auth/challenge?address=0x...
-POST /api/v2/auth/verify
-GET  /api/v2/auth/me            [auth required]
-PATCH /api/v2/auth/me           [auth required]
-POST /api/v2/auth/logout
+GET  /api/v1/auth/challenge?address=0x...
+POST /api/v1/auth/verify
+GET  /api/v1/auth/me            [auth required]
+PATCH /api/v1/auth/me           [auth required]
+POST /api/v1/auth/logout
 ```
 
 ### Account abstraction
 
 ```
-POST /api/v2/aa/auth/passkey/register/challenge
-POST /api/v2/aa/auth/passkey/register/verify
-POST /api/v2/aa/auth/passkey/login
-POST /api/v2/aa/bundler                 Pimlico bundler proxy
-POST /api/v2/aa/paymaster/sponsor       sponsor UserOp
+POST /api/v1/aa/auth/passkey/register/challenge
+POST /api/v1/aa/auth/passkey/register/verify
+POST /api/v1/aa/auth/passkey/login
+POST /api/v1/aa/bundler                 Pimlico bundler proxy
+POST /api/v1/aa/paymaster/sponsor       sponsor UserOp
 ```
 
 ### Notifications & alerts
 
 ```
-GET    /api/v2/users/:address/notifications?unread=true
-POST   /api/v2/users/:address/notifications/:id/read
-GET    /api/v2/users/:address/alerts
-POST   /api/v2/users/:address/alerts
-DELETE /api/v2/users/:address/alerts/:id
+GET    /api/v1/users/:address/notifications?unread=true
+POST   /api/v1/users/:address/notifications/:id/read
+GET    /api/v1/users/:address/alerts
+POST   /api/v1/users/:address/alerts
+DELETE /api/v1/users/:address/alerts/:id
 ```
 
 ### Rewards & gamification
 
 ```
-GET  /api/v2/users/:address/rewards
-GET  /api/v2/users/:address/badges
-GET  /api/v2/users/:address/streaks
-GET  /api/v2/daily-challenges
-GET  /api/v2/leaderboard
-GET  /api/v2/leaderboard/rewards
+GET  /api/v1/users/:address/rewards
+GET  /api/v1/users/:address/badges
+GET  /api/v1/users/:address/streaks
+GET  /api/v1/daily-challenges
+GET  /api/v1/leaderboard
+GET  /api/v1/leaderboard/rewards
 ```
 
 ### Comments & social
 
 ```
-GET  /api/v2/markets/:id/comments?sort=top|new&limit=50
-POST /api/v2/markets/:id/comments        [auth]
-GET  /api/v2/users/:address/posts
-POST /api/v2/posts                        [auth]
-GET  /api/v2/feed?filter=following|trending|latest
+GET  /api/v1/markets/:id/comments?sort=top|new&limit=50
+POST /api/v1/markets/:id/comments        [auth]
+GET  /api/v1/users/:address/posts
+POST /api/v1/posts                        [auth]
+GET  /api/v1/feed?filter=following|trending|latest
 ```
 
 ### Bots / API key
 
 ```
-POST   /api/v2/api-keys                   create (Pro tier)
-GET    /api/v2/api-keys                   list
-DELETE /api/v2/api-keys/:id
-POST   /api/v2/bots/orders                place order via API key
+POST   /api/v1/api-keys                   create (Pro tier)
+GET    /api/v1/api-keys                   list
+DELETE /api/v1/api-keys/:id
+POST   /api/v1/bots/orders                place order via API key
 ```
 
 ### Governance
 
 ```
-GET  /api/v2/governance/proposals
-GET  /api/v2/gauges
-POST /api/v2/governance/vote              returns calldata
+GET  /api/v1/governance/proposals
+GET  /api/v1/gauges
+POST /api/v1/governance/vote              returns calldata
 ```
 
 ### System
 
 ```
 GET /health                               mongo + indexer probe
-GET /api/v2/openapi.json                  OpenAPI 3.1 spec
-GET /api/v2/capabilities                  enum describe list
+GET /docs-json                            OpenAPI spec (JSON)
+GET /api/v1/capabilities                  enum describe list
 ```
 
 ### SIWE auth flow
@@ -334,7 +334,7 @@ Response: `X-Cache: HIT | MISS`, `X-Cache-Tier: hot | warm`.
 | `INSUFFICIENT_BALANCE` | 400  | Wallet has insufficient balance |
 | `SLIPPAGE_EXCEEDED`    | 400  | On-chain revert due to slippage |
 
-Full list: `GET /api/v2/capabilities`.
+Full list: `GET /api/v1/capabilities`.
 
 ### OpenAPI typed client
 

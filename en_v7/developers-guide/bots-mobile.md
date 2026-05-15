@@ -51,7 +51,7 @@ Read endpoints: all Indexer + BE endpoints are available with an API key (see [A
 **Place order**:
 
 ```
-POST /api/v2/bots/orders
+POST /api/v1/bots/orders
 {
   "marketId": "0x...",
   "side": "BUY_YES",
@@ -67,21 +67,21 @@ POST /api/v2/bots/orders
 
 The API signs and submits via paymaster (sponsored for users eligible through the program). No private key exposure. Scope `trade` is required to place orders.
 
-**Bulk place** (atomic, max 50): `POST /api/v2/bots/orders/bulk`.
+**Bulk place** (atomic, max 50): `POST /api/v1/bots/orders/bulk`.
 
-**Cancel**: `DELETE /api/v2/bots/orders/:orderId`.
+**Cancel**: `DELETE /api/v1/bots/orders/:orderId`.
 
 **Position management**:
 
 ```
-GET    /api/v2/bots/positions
-DELETE /api/v2/bots/positions/:id    # close = sell market order
+GET    /api/v1/bots/positions
+DELETE /api/v1/bots/positions/:id    # close = sell market order
 ```
 
 ### Webhooks
 
 ```json
-POST /api/v2/webhooks
+POST /api/v1/webhooks
 {
   "url": "https://your-server.com/webhook",
   "events": ["order.filled", "order.cancelled", "market.resolve"],
@@ -156,7 +156,7 @@ async function checkArb(marketId: string) {
 * **Never** commit keys to git. Use env vars / secret manager only.
 * Rotate keys every 90 days. IP whitelist if using fixed-IP servers.
 * Scope minimization: read-only for analytics, trade for bots, full only when withdraw + 2FA is needed.
-* Audit: `/api/v2/bots/audit` — review weekly.
+* Audit: `/api/v1/bots/audit` — review weekly.
 
 ### Open-source bot templates
 
@@ -382,8 +382,8 @@ await window.ethereum.request({
 
 ### Mobile push notifications
 
-* iOS APNs: register device token with BE via `/api/v2/users/:address/push/ios`.
-* Android FCM: `/api/v2/users/:address/push/android`.
+* iOS APNs: register device token with BE via `/api/v1/users/:address/push/ios`.
+* Android FCM: `/api/v1/users/:address/push/android`.
 * Backend pushes via Firebase / APNs when events match alert criteria.
 
 Setup details: [Notifications](/broken/pages/VjFpu8jlXXqXJ8qF7KcN).

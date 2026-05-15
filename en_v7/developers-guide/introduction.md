@@ -45,7 +45,7 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 
 | Layer | Technology | Purpose |
 |---|---|---|
-| Smart contracts | Solidity 0.8.30 · Foundry · Unichain L2 | On-chain execution: Diamond, Hook, Exchange, Router |
+| Smart contracts | Solidity 0.8.34 · Foundry · Unichain L2 | On-chain execution: Diamond, Hook, Exchange, Router |
 | Indexer | Ponder · PostgreSQL · Hono REST | Index on-chain events → queryable REST API |
 | Backend | NestJS · Fastify · MongoDB | View model: cache + metadata + auth + social |
 | Frontend | Next.js · React · viem · wagmi | Web app UI |
@@ -63,6 +63,7 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 | **USDC (test)** | `0x5a9153c368946B5b252c32921EbB3c16c692D7D4` |
 | **Permit2** | `0x000000000022D473030F116dDEE9F6B43aC78BA3` |
 | **Faucet** | `0x76C951B6185A2B44e44c98E7A0E9Ee59b08760da` |
+| **MarketFactory** | `0xf1cF0Ae6d8C5073244FED485824D1a6624F75451` |
 | **Paymaster** | `0x6bBeeb1255a25e6a57b87D9d88fBE24c3a1Ba9e7` |
 | **PoolManager** | `0x00b036b58a818b1bc34d502d3fe730db729e62ac` |
 

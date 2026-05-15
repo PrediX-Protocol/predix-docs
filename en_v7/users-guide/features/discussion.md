@@ -174,12 +174,12 @@ Phase 2 will integrate **XMTP** — decentralized, end-to-end encrypted messagin
 For developers building social integrations or external clients:
 
 ```
-GET  /api/v2/markets/:id/comments?sort=top&limit=50
-POST /api/v2/markets/:id/comments        (auth)
-GET  /api/v2/users/:address/posts
-POST /api/v2/posts                       (auth)
-GET  /api/v2/feed?filter=following|trending|latest
-POST /api/v2/markets/:id/activity?type=trade|comment
+GET  /api/v1/markets/:id/comments?sort=top&limit=50
+POST /api/v1/markets/:id/comments        (auth)
+GET  /api/v1/users/:address/posts
+POST /api/v1/posts                       (auth)
+GET  /api/v1/feed?filter=following|trending|latest
+POST /api/v1/markets/:id/activity?type=trade|comment
 ```
 
 Realtime via WebSocket: `wss://api.predix.app/v2/me/feed`.
