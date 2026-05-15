@@ -34,7 +34,7 @@ If your USDC is on another network, bridge assets to Unichain before trading.
 PrediX supports simplified USDC onboarding through Circle CCTP infrastructure and direct transfers from centralized exchanges.
 
 {% hint style="info" %}
-[How to bridge to Unichain?](onboarding/bridge-to-unichain.md)
+[How to bridge to Unichain?](wallet-onboarding/bridge-to-unichain.md)
 {% endhint %}
 {% endstep %}
 
