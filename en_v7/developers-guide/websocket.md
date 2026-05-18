@@ -2,7 +2,7 @@
 
 Real-time streaming for orderbook updates, price changes, trades, and user portfolio events.
 
-![WebSocket flow: Client connects → subscribes to topic (orderbook, trades) → server confirms → pushes data updates → ping/pong keepalive](assets/websocket-flow.svg)
+![WebSocket flow: Client connects → subscribes to topic (orderbook, trades) → server confirms → pushes data updates → ping/pong keepalive](../.gitbook/assets/websocket-flow.svg)
 
 ## Connection
 
@@ -32,22 +32,22 @@ Authenticated connection required for user-specific topics (positions, orders, p
 
 Require `marketId` parameter.
 
-| Topic | Data | Description |
-|---|---|---|
-| `orderbook` | Bid/ask levels | Real-time orderbook depth updates |
-| `prices` | Latest YES/NO price | Price tick on every trade |
-| `trades` | Trade events | New trades as they happen |
+| Topic       | Data                | Description                       |
+| ----------- | ------------------- | --------------------------------- |
+| `orderbook` | Bid/ask levels      | Real-time orderbook depth updates |
+| `prices`    | Latest YES/NO price | Price tick on every trade         |
+| `trades`    | Trade events        | New trades as they happen         |
 
 ### User topics (authenticated)
 
 Require `subject` = user wallet address. Must match authenticated session.
 
-| Topic | Data | Description |
-|---|---|---|
-| `user-trades` | User's trades | When your orders fill |
-| `user-orders` | Order status | Place, fill, cancel events |
-| `user-positions` | Position changes | Balance updates |
-| `user-portfolio` | Portfolio value | Aggregate P&L updates |
+| Topic            | Data             | Description                |
+| ---------------- | ---------------- | -------------------------- |
+| `user-trades`    | User's trades    | When your orders fill      |
+| `user-orders`    | Order status     | Place, fill, cancel events |
+| `user-positions` | Position changes | Balance updates            |
+| `user-portfolio` | Portfolio value  | Aggregate P\&L updates     |
 
 ## Message format
 
@@ -80,11 +80,11 @@ Require `subject` = user wallet address. Must match authenticated session.
 
 ## Limits
 
-| Limit | Value |
-|---|---|
-| Subscriptions per connection | 50 |
-| Connections per IP | 20 |
-| Global connections | 5,000 |
+| Limit                        | Value |
+| ---------------------------- | ----- |
+| Subscriptions per connection | 50    |
+| Connections per IP           | 20    |
+| Global connections           | 5,000 |
 
 ## Example — TypeScript
 

@@ -28,7 +28,7 @@ PrediX offers 2 sign-in methods, you maintain full control of your assets while 
 
 ***
 
-### Method 1:  Passkey + Smart Account
+### Method 1: Passkey + Smart Account
 
 Passkeys use the **WebAuthn** standard — biometric (Touch ID, Face ID, Windows Hello) or your device PIN for authentication. The private key is generated and stored in the **Secure Enclave / TPM** and cannot be exported.
 
@@ -36,34 +36,34 @@ Passkeys use the **WebAuthn** standard — biometric (Touch ID, Face ID, Windows
 
 {% stepper %}
 {% step %}
-<mark style="color:$primary;">**Step 1: Access the Portal**</mark>
+<mark style="color:$warning;">**Step 1: Access the Portal**</mark>
 
 * Open your browser and navigate to [_app.predix.app_](https://app.predix.app).
 * Click the "**Sign up"** button to begin.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 2: Choose Authentication Method**</mark>
+<mark style="color:$warning;">**Step 2: Choose Authentication Method**</mark>
 
 * From the available options, select "**Continue with Passkey**".
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 3: Biometric Verification**</mark>
+<mark style="color:$warning;">**Step 3: Biometric Verification**</mark>
 
 * Your browser will trigger a system prompt for biometric authentication (such as FaceID, TouchID, or Windows Hello).
 * Confirm the prompt to verify your identity securely.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 4: Smart Account Generation**</mark>
+<mark style="color:$warning;">**Step 4: Smart Account Generation**</mark>
 
 * Your Smart account counterfactual address will appear immediately.
 {% endstep %}
 {% endstepper %}
 
 {% hint style="warning" %}
-**Note:**&#x20;
+**Note:**
 
 * [x] Your account is officially deployed on-chain the moment you perform your first action.
 * [x] On sign-up, the app deploys a **Kernel smart account (ERC-4337)** — an on-chain wallet contract that validates via passkey signature. All actions go through UserOps.
@@ -75,7 +75,7 @@ Choose at least one **backup method** on sign-up:
 
 {% tabs %}
 {% tab title="iCloud Keychain" %}
-#### **Apple-native passkey sync**
+**Apple-native passkey sync**
 
 Using the same Apple ID via iCloud Keychain.Passkeys automatically sync across:
 
@@ -91,7 +91,7 @@ Using the same Apple ID via iCloud Keychain.Passkeys automatically sync across:
 {% endtab %}
 
 {% tab title="Google Password Manager" %}
-#### Cross-device passkey access
+**Cross-device passkey access**
 
 Allowing fast sign-in across desktop and mobile, Passkeys sync automatically across:
 
@@ -107,7 +107,7 @@ Allowing fast sign-in across desktop and mobile, Passkeys sync automatically acr
 {% endtab %}
 
 {% tab title="Hardware Key" %}
-#### Physical security authentication
+**Physical security authentication**
 
 Authentication requires plugging in or tapping the hardware key, Passkeys are stored directly on:
 
@@ -141,10 +141,10 @@ Authentication requires plugging in or tapping the hardware key, Passkeys are st
 {% hint style="info" %}
 **Social recovery — TBA post-mainnet**
 
-* Designate N trusted guardians; any M-of-N can co-sign to restore access.&#x20;
+* Designate N trusted guardians; any M-of-N can co-sign to restore access.
 {% endhint %}
 
-### Method 2:  Crypto Wallet (EOA)
+### Method 2: Crypto Wallet (EOA)
 
 Use your existing Web3 wallet — MetaMask, Rainbow, Coinbase Wallet, or any wallet that supports WalletConnect/Hardware Wallet.
 
@@ -152,26 +152,26 @@ Use your existing Web3 wallet — MetaMask, Rainbow, Coinbase Wallet, or any wal
 
 {% stepper %}
 {% step %}
-<mark style="color:$primary;">**Step 1: Initiate Connection**</mark>
+<mark style="color:$warning;">**Step 1: Initiate Connection**</mark>
 
 * Navigate to the app header and click the "Connect Wallet" button.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 2: Select Your Provider**</mark>
+<mark style="color:$warning;">**Step 2: Select Your Provider**</mark>
 
 * Choose your preferred wallet from the list (e.g., MetaMask, Rainbow, WalletConnect, or Ledger).
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 3: Approve the Request**</mark>
+<mark style="color:$warning;">**Step 3: Approve the Request**</mark>
 
 * Your wallet extension or app will trigger a pop-up.
 * Approve the connection request to link your wallet to the platform.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 4: Secure Sign-In (SIWE)**</mark>
+<mark style="color:$warning;">**Step 4: Secure Sign-In (SIWE)**</mark>
 
 * Sign the SIWE (Sign-In With Ethereum) message to verify ownership of your address.
 
@@ -181,7 +181,7 @@ Note: This is an off-chain signature and incurs no gas cost.
 {% endstep %}
 {% endstepper %}
 
-#### <mark style="background-color:orange;">2. When to use</mark> <mark style="background-color:$warning;">Web3</mark> <mark style="background-color:orange;">Wallet ?</mark>
+#### <mark style="background-color:$warning;">2. When to use Web3 Wallet ?</mark>
 
 * You already have a DeFi workflow with MetaMask + hardware wallet.
 * Large custody balance — want standard BIP-39 seed phrase backup.
@@ -202,7 +202,7 @@ The client requests a challenge, the user signs the EIP-4361 message, and the ba
 **Additional Gas Fee:**
 
 * By default, both methods require users to **pay their own gas**. Please ensure you have sufficient funds, as each transaction requires gas fees paid in **ETH on Unichain**.
-* PrediX has a **sponsorship program** for eligible users (new user onboarding, stakers above threshold, campaign-eligible events) — applies to both account types:&#x20;
+* PrediX has a **sponsorship program** for eligible users (new user onboarding, stakers above threshold, campaign-eligible events) — applies to both account types:
 
 - [x] Paymaster covers gas directly
 - [x] Off-chain rebate/refund (mechanism announced pre-launch)

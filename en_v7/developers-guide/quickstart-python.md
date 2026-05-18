@@ -2,7 +2,7 @@
 
 Buy YES tokens on a PrediX market using web3.py.
 
-![Quickstart flow: Setup → Approve → Quote → Trade → Done. Router handles CLOB → AMM routing automatically.](assets/quickstart-flow.svg)
+![Quickstart flow: Setup → Approve → Quote → Trade → Done. Router handles CLOB → AMM routing automatically.](../.gitbook/assets/quickstart-flow.svg)
 
 ## Prerequisites
 
@@ -11,8 +11,9 @@ pip install web3 requests
 ```
 
 You need:
-- A wallet private key with ETH on Unichain Sepolia (for gas)
-- USDC on Unichain Sepolia (get from [Faucet](testnet.md))
+
+* A wallet private key with ETH on Unichain Sepolia (for gas)
+* USDC on Unichain Sepolia (get from [Faucet](testnet.md))
 
 ## Complete working example
 
@@ -153,12 +154,12 @@ python quickstart.py
 
 ## Key notes
 
-- **Price precision**: `1e6` = 100%. Prices range `$0.01–$0.99`.
-- **USDC**: 6 decimals. `100 * 10**6 = 100 USDC`.
-- **Quote functions** are NOT `view` — they must be called via `eth_call` (`.call()` in web3.py). They return `(0, 0, 0)` on invalid market state, never revert.
-- **marketId** is `uint256` (not bytes32).
-- **maxFills**: how many CLOB orders to try matching. `10` is a good default.
-- **Routing**: Router tries CLOB first, then AMM (Uniswap v4) for remainder. Unused input refunded automatically.
+* **Price precision**: `1e6` = 100%. Prices range `$0.01–$0.99`.
+* **USDC**: 6 decimals. `100 * 10**6 = 100 USDC`.
+* **Quote functions** are NOT `view` — they must be called via `eth_call` (`.call()` in web3.py). They return `(0, 0, 0)` on invalid market state, never revert.
+* **marketId** is `uint256` (not bytes32).
+* **maxFills**: how many CLOB orders to try matching. `10` is a good default.
+* **Routing**: Router tries CLOB first, then AMM (Uniswap v4) for remainder. Unused input refunded automatically.
 
 ## Exchange functions (CLOB direct)
 
@@ -182,6 +183,6 @@ See [Router integration](router-integration.md) for detailed Exchange API.
 
 ## Next steps
 
-- [Router integration](router-integration.md) — Permit2, batch trading, CLOB direct
-- [API reference](api-reference.md) — REST API for market data
-- [WebSocket](websocket.md) — real-time streaming
+* [Router integration](router-integration.md) — Permit2, batch trading, CLOB direct
+* [API reference](api-reference.md) — REST API for market data
+* [WebSocket](websocket.md) — real-time streaming

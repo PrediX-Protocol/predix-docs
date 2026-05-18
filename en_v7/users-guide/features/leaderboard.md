@@ -57,7 +57,7 @@ Users can **opt out** in [Settings](../../resources/faq.md) **→ Privacy**:
 {% endhint %}
 
 {% hint style="info" %}
-**Note**: Even when hidden, the address is still public on-chain. The app only hides data at the UI level. Technically savvy users can still query the indexer.&#x20;
+**Note**: Even when hidden, the address is still public on-chain. The app only hides data at the UI level. Technically savvy users can still query the indexer.
 {% endhint %}
 
 ### <mark style="color:orange;">Following traders</mark>
@@ -80,13 +80,13 @@ A dedicated **Following** feed inside the app aggregates all your followed trade
 
 {% stepper %}
 {% step %}
-### <mark style="color:orange;">Step 1: Select a Lead Trader</mark>
+#### <mark style="color:orange;">Step 1: Select a Lead Trader</mark>
 
 Browse the platform to find the trader whose strategy you want to replicate.
 {% endstep %}
 
 {% step %}
-### <mark style="color:orange;">Step 2: Configure Your Settings</mark>
+#### <mark style="color:orange;">Step 2: Configure Your Settings</mark>
 
 Click Copy Trading to open the configuration panel and adjust the following:
 
@@ -97,7 +97,7 @@ Click Copy Trading to open the configuration panel and adjust the following:
 {% endstep %}
 
 {% step %}
-### <mark style="color:orange;">Step 3: Secure Your Funds</mark>
+#### <mark style="color:orange;">Step 3: Secure Your Funds</mark>
 
 * Pre-fund USDC into a dedicated Copy Sub-account.
 
@@ -107,7 +107,7 @@ Note: Keeping these funds separate from your main wallet helps strictly limit yo
 {% endstep %}
 
 {% step %}
-### <mark style="color:orange;">Step 4: Activate</mark>
+#### <mark style="color:orange;">Step 4: Activate</mark>
 
 Review your parameters and click Activate to begin following the trader's moves automatically.
 {% endstep %}
@@ -120,7 +120,7 @@ Review your parameters and click Activate to begin following the trader's moves 
 
 * **Lead trader may underperform later** — past performance does not guarantee future results.
 * **Slippage gap**: The lead enters at $0.50; you copy 30s later when the price is already $0.55.
-* **Fee accumulation**: Copying many small leads = each lead = 1tx → gas fees add up (significantly reduced if the user qualifies for the sponsor program — applies to both account types; otherwise normal fees apply).&#x20;
+* **Fee accumulation**: Copying many small leads = each lead = 1tx → gas fees add up (significantly reduced if the user qualifies for the sponsor program — applies to both account types; otherwise normal fees apply).
 {% endhint %}
 
 {% hint style="info" %}

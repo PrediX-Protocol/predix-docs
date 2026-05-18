@@ -21,13 +21,12 @@
 * [Multi-Outcome Markets](users-guide/multi-outcome-markets.md)
 * [Managing Orders](users-guide/managing-orders.md)
 * [Portfolio & P\&L](users-guide/portfolio.md)
-* [Redeem & refund](users-guide/redeem-refund.md)
+* [Redeem & Refund](users-guide/redeem-refund.md)
 * [Features](users-guide/features/README.md)
-  * [Chart & timeframe](users-guide/features/chart-timeframe.md)
-  * [Notifications & alerts](users-guide/features/notifications-and-alerts.md)
-  * [Discussion & social](users-guide/features/discussion.md)
+  * [Chart & Timeframe](users-guide/features/chart-timeframe.md)
+  * [Notifications & Alerts](users-guide/features/notifications-and-alerts.md)
+  * [Discussion & Social](users-guide/features/discussion.md)
   * [Leaderboard & traders](users-guide/features/leaderboard.md)
-  * [Multi-outcome events](users-guide/features/multi-outcome.md)
 * [Liquidity & market](users-guide/liquidity-and-market/README.md)
   * [Provide liquidity (LP)](users-guide/liquidity-and-market/provide-liquidity.md)
   * [Create market](users-guide/liquidity-and-market/create-market.md)
@@ -58,19 +57,19 @@
 ## Developers Guide
 
 * [Introduction](developers-guide/introduction.md)
-* Getting Started
+* [Getting Started](developers-guide/getting-started/README.md)
   * [Quickstart — TypeScript](developers-guide/quickstart-typescript.md)
   * [Quickstart — Python](developers-guide/quickstart-python.md)
   * [Testnet Information](developers-guide/testnet.md)
-* Integration
+* [Integration](developers-guide/integration/README.md)
   * [Router integration](developers-guide/router-integration.md)
-  * [API reference](developers-guide/api-reference.md)
+  * [API Reference](developers-guide/api-reference.md)
   * [WebSocket](developers-guide/websocket.md)
   * [Bots & mobile](developers-guide/bots-mobile.md)
-* SDKs
+* [SDKs](developers-guide/sdks/README.md)
   * [TypeScript SDK](developers-guide/sdk-typescript.md)
   * [Python SDK](developers-guide/sdk-python.md)
-* Protocol
+* [Protocol](developers-guide/protocol/README.md)
   * [Architecture & contracts](developers-guide/architecture.md)
   * [Oracle](developers-guide/oracle.md)
   * [Security & timelock](developers-guide/security.md)

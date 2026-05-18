@@ -23,13 +23,13 @@ Place a price and wait for a fill on the **On-chain Order Book**. You become a *
 
 {% stepper %}
 {% step %}
-<mark style="color:$primary;">**Step 1: Open the Limit Panel**</mark>
+<mark style="color:$warning;">**Step 1: Open the Limit Panel**</mark>
 
 * Navigate to the market trading panel and select the **Limit** tab.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 2: Configure Your Order**</mark>
+<mark style="color:$warning;">**Step 2: Configure Your Order**</mark>
 
 * Side: Select YES.
 * Direction: Ensure Buy is selected.
@@ -38,7 +38,7 @@ Place a price and wait for a fill on the **On-chain Order Book**. You become a *
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 3: Preview your Order**</mark>
+<mark style="color:$warning;">**Step 3: Preview your Order**</mark>
 
 Before finalizing, verify the potential outcome:
 
@@ -51,7 +51,7 @@ Note: These funds are released immediately if you cancel the order or when a mat
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 4: Execute and Confirm**</mark>
+<mark style="color:$warning;">**Step 4: Execute and Confirm**</mark>
 
 * Click Place Order.
 * Confirm the request in your wallet:
@@ -60,7 +60,7 @@ Note: These funds are released immediately if you cancel the order or when a mat
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 5: Monitor Your Order**</mark>
+<mark style="color:$warning;">**Step 5: Monitor Your Order**</mark>
 
 * Wait approximately 2 seconds for the transaction to process.
 * Once confirmed, your order is active. You can view the trade in your [Portfolio](../portfolio.md) under the History tab.
@@ -68,9 +68,9 @@ Note: These funds are released immediately if you cancel the order or when a mat
 {% endstepper %}
 
 {% hint style="success" %}
-#### **Maker price improvement**
+**Maker price improvement**
 
-* If a taker fills your order in the same block as you place it, the taker pays your limit price, not the mid. You — the maker — **enjoy a better price than the AMM spot** would give.&#x20;
+* If a taker fills your order in the same block as you place it, the taker pays your limit price, not the mid. You — the maker — **enjoy a better price than the AMM spot** would give.
 * This is the structural advantage CLOB makers have over AMM swappers.
 {% endhint %}
 
@@ -82,7 +82,7 @@ When someone places a market order or an opposing limit order, PrediX matches in
 
 <details>
 
-<summary><mark style="color:orange;"><strong>1. Complementary (most common)</strong></mark></summary>
+<summary><mark style="color:$primary;"><strong>1. Complementary (most common)</strong></mark></summary>
 
 ```
 You:     BUY YES @ $0.45 — 100 USDC
@@ -96,7 +96,7 @@ Match:   Taker sells YES to you @ $0.44 (better than your limit)
 
 <details>
 
-<summary><mark style="color:orange;"><strong>2. Mint (synthetic)</strong></mark></summary>
+<summary><mark style="color:$primary;"><strong>2. Mint (synthetic)</strong></mark></summary>
 
 ```
 You:     BUY YES @ $0.60
@@ -113,7 +113,7 @@ _Both parties receive the token they want; the protocol earns the spread._
 
 <details>
 
-<summary><mark style="color:orange;"><strong>3. Merge (synthetic)</strong></mark></summary>
+<summary><mark style="color:$primary;"><strong>3. Merge (synthetic)</strong></mark></summary>
 
 ```
 You:     SELL YES @ $0.40
@@ -134,21 +134,21 @@ _You do not need to calculate any of this — the matching engine optimizes auto
 
 {% stepper %}
 {% step %}
-<mark style="color:$primary;">**Step 1: Access Your Open Orders**</mark>
+<mark style="color:$warning;">**Step 1: Access Your Open Orders**</mark>
 
 * Navigate to your [Portfolio](../portfolio.md) section.
 * Select the Open Orders tab to view all currently active limit orders.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 2: Initiate Cancellation**</mark>
+<mark style="color:$warning;">**Step 2: Initiate Cancellation**</mark>
 
 * Locate the specific order you wish to stop.
 * Click the Cancel button next to that order.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 3: Confirm and Release Funds**</mark>
+<mark style="color:$warning;">**Step 3: Confirm and Release Funds**</mark>
 
 * Confirm the request in your wallet (e.g., biometric authentication for passkeys or a signature for EOA).
 * Once the transaction is signed, your locked USDC or tokens are automatically released back to your wallet in the same transaction.
@@ -189,7 +189,7 @@ Orders can be filled incrementally:
 ***
 
 {% hint style="info" %}
-#### **Market-making tips**
+**Market-making tips**
 
 * **Place orders on both sides** around mid-price → earn the spread as a passive market maker.
 * **Tiered orders**: $0.40 50 USDC, $0.42 50 USDC, $0.44 50 USDC → scale in instead of going all-in.

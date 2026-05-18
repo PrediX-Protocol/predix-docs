@@ -253,7 +253,7 @@ Some wallets block SIWE messages by default. In MetaMask, ensure "Sign typed dat
 
 <details>
 
-<summary><mark style="color:orange;"><strong>Is bridging safe?</strong></mark> </summary>
+<summary><mark style="color:orange;"><strong>Is bridging safe?</strong></mark></summary>
 
 PrediX integrates bridges with billions in TVL that have undergone multiple audit rounds (Across, Stargate, LayerZero). However, cross-chain bridges are **the largest attack vector in DeFi history** ($2B+ exploited 2022-2024). Only bridge the amount you need — do not hold funds long-term on bridge contracts.
 
@@ -271,7 +271,7 @@ No. The bridge contracts belong to third parties (Across, Stargate). PrediX only
 
 <summary><mark style="color:orange;"><strong>Where do bridge fees go?</strong></mark></summary>
 
-&#x20;To the relayers / LPs of the respective bridge protocol. PrediX does not charge bridge fees.
+To the relayers / LPs of the respective bridge protocol. PrediX does not charge bridge fees.
 
 </details>
 
@@ -290,7 +290,7 @@ No. The bridge contracts belong to third parties (Across, Stargate). PrediX only
 | "Insufficient liquidity" | CLOB + AMM lack sufficient depth   | Reduce size or use a [limit order](../users-guide/yes-no-markets/limit-order.md) |
 | "Market paused"          | Admin paused for security reasons  | Check the UI notice                                                              |
 | "Past endTime"           | Trading has closed for this market | Wait for resolution to redeem or get a refund                                    |
-| "Insufficient USDC"      | Wallet lacks USDC                  | [Bridge](../users-guide/wallet-setup/bridge-to-unichain.md) or top up                           |
+| "Insufficient USDC"      | Wallet lacks USDC                  | [Bridge](../users-guide/wallet-setup/bridge-to-unichain.md) or top up            |
 
 ### Troubleshooting
 
@@ -361,3 +361,149 @@ No. The bridge contracts belong to third parties (Across, Stargate). PrediX only
 
 </details>
 
+### Troubleshooting
+
+<details>
+
+<summary><mark style="color:orange;">Balance shows zero but I just bought shares</mark></summary>
+
+**Reason:** Indexer lag. After a successful tx, the indexer typically catches up within 5–15 seconds.
+
+**Fix:**
+
+* Wait 15 seconds and refresh
+* If still missing after 1 minute, check the explorer with your tx hash — confirm the trade actually executed
+* Force a fresh fetch with `?nocache=1` URL param
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">Unrealized P&#x26;L looks wrong</mark></summary>
+
+**Reason:** Spot price may have just updated, or your cost basis includes a recent trade that's still being indexed.
+
+**Fix:**
+
+* Check the **Avg Cost** field — does it match what you'd compute from your fills?
+* If Avg Cost is wrong, the indexer is rebuilding — wait 30 seconds and refresh
+* If still wrong after 5 minutes, report on Discord `#bug-reports` with your wallet address
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">Cannot sell — "trading closed"</mark></summary>
+
+**Reason:** The market has passed `endTime` and is in the resolution window.
+
+**Fix:** Wait for resolution. After the oracle posts the outcome, you can redeem winning shares for $1 each via the **Claim** action.
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">"Pending resolve" badge stuck for >48 hours</mark></summary>
+
+**Reason:** Oracle dispute or delay (UMA markets can take longer if disputed).
+
+**Fix:**
+
+* Check the market's resolution status on its detail page
+* For UMA markets: see if a dispute is open on the [UMA dApp](https://oracle.uma.xyz)
+* For Chainlink markets: typically resolves within minutes — long delay means oracle issue
+* Discord `#resolution` for status updates
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">CSV export missing recent trades</mark></summary>
+
+**Reason:** Export uses the indexer which may lag by a few seconds.
+
+**Fix:** Wait 30 seconds after your most recent trade and re-download. The CSV is generated on-demand from the latest indexer snapshot.
+
+</details>
+
+### Troubleshooting
+
+<details>
+
+<summary><mark style="color:orange;">Redeem button not appearing for a resolved market</mark></summary>
+
+**Reason:** Either you don't hold the winning side, or the indexer hasn't caught up to the resolution event.
+
+**Fix:**
+
+* Check the market's resolved outcome — do you hold YES (if outcome = true) or NO (if outcome = false)?
+* If outcome matches your holdings, wait 30 seconds and refresh
+* Force a fresh fetch with `?nocache=1` URL param
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">"Insufficient balance" on redeem</mark></summary>
+
+**Reason:** Your token balance is lower than the contract expects (possibly due to a recent transfer or pending indexer sync).
+
+**Fix:**
+
+* Verify your token balance on the explorer
+* Wait 30 seconds for indexer to sync, then retry
+* If balance is genuinely insufficient, you cannot redeem more than you hold
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">Batch redeem failed mid-way (EOA wallets)</mark></summary>
+
+**Reason:** EOA wallets process each market as a separate tx. If one fails (e.g., gas spike), the remaining will still process — but you may need to retry the failed ones.
+
+**Fix:**
+
+* Refresh Portfolio — successful redemptions are reflected
+* For the failed market(s), click **Redeem** individually
+* Consider switching to Passkey for atomic batching
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">Refund button shows "Insufficient pair"</mark></summary>
+
+**Reason:** You hold only one side of the market (e.g., 100 YES, 0 NO) and refund requires pairs.
+
+**Fix:** See Single-sided holders — workaround above. Buy the missing side at near-zero price from active sellers, then refund the pair.
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">Refund mode active but no sellers for the opposite side</mark></summary>
+
+**Reason:** All holders may also be single-sided (everyone bought the same direction via Router). Liquidity dries up when refund mode is active.
+
+**Fix:**
+
+* Post a limit order on the opposite side at a very low price (`$0.01`)
+* Wait for the orderbook to develop — usually sellers appear within 24h
+* Discord `#refund-coordination` for matching with counterparties
+
+</details>
+
+<details>
+
+<summary><mark style="color:orange;">Resolved market still shows as "Pending" in Portfolio</mark></summary>
+
+**Reason:** Resolution oracle posted the outcome on-chain but indexer is still syncing.
+
+**Fix:**
+
+* Wait 1–2 minutes for indexer sync
+* Verify the resolution on-chain via the explorer
+* If stuck >10 minutes, report on Discord `#bug-reports`
+
+</details>

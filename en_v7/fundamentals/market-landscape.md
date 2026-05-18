@@ -13,8 +13,6 @@ However, despite growing adoption, most prediction market systems still inherit 
 {% hint style="danger" %}
 **These limitations constrain:**
 
-
-
 * ~~Liquidity efficiency~~
 * ~~Composability~~
 * ~~Market scalability~~
@@ -29,8 +27,6 @@ Instead of optimizing for a single layer of the prediction market experience, ea
 {% hint style="success" %}
 **PrediX is positioned differently by combining:**
 
-
-
 * [x] Composable financial assets
 * [x] Scalable market architecture
 * [x] Consumer accessibility
@@ -41,10 +37,12 @@ Instead of optimizing for a single layer of the prediction market experience, ea
 * **Kalshi** dominates regulated markets with CFTC approval and traditional finance UX, but operates as a closed exchange with no DeFi composability and centralized infrastructure.
 * **Polymarket** proved massive demand for crypto-native prediction trading and pioneered on-chain settlement, but outcome tokens remain largely siloed within its own UX and liquidity is fragmented across its CLOB.
 * **Opinion** explores AI-assisted market creation and analysis, but lacks the trading infrastructure depth and financial composability needed for institutional-grade operations.
-* <mark style="background-color:green;">**PrediX**</mark> <mark style="background-color:green;"></mark><mark style="background-color:green;">is purpose-built to fill the infrastructure gap — hybrid execution, ERC-20 composable outcome assets, multi-modular oracle resolution, and consumer-grade access from day one.</mark>
+* <mark style="background-color:green;">**PrediX**</mark> <mark style="background-color:green;">is purpose-built to fill the infrastructure gap — hybrid execution, ERC-20 composable outcome assets, multi-modular oracle resolution, and consumer-grade access from day one.</mark>
 *
 
-    <figure><img src="../.gitbook/assets/predix-positioning-map-full.png" alt="PrediX Positioning Map"><figcaption><p>PrediX Positioning Map</p></figcaption></figure>
+```
+<figure><img src="../.gitbook/assets/predix-positioning-map-full.png" alt="PrediX Positioning Map"><figcaption><p>PrediX Positioning Map</p></figcaption></figure>
+```
 
 > **PrediX is designed around the belief that prediction markets require a fundamentally different infrastructure model in order to evolve into scalable financial systems.**
 
@@ -60,19 +58,19 @@ The prediction market industry is undergoing a structural transition:
 
 {% stepper %}
 {% step %}
-### <mark style="color:$primary;">**Proof of Concept (2014-2020)**</mark>
+#### <mark style="color:$primary;">**Proof of Concept (2014-2020)**</mark>
 
 Augur, Gnosis, and early platforms proved on-chain prediction markets were technically feasible. Low liquidity, poor UX, and high gas costs limited adoption to crypto-native early adopters.
 {% endstep %}
 
 {% step %}
-### <mark style="color:$primary;">**Consumer Breakthrough (2021-2025)**</mark>
+#### <mark style="color:$primary;">**Consumer Breakthrough (2021-2025)**</mark>
 
 Polymarket and Kalshi demonstrated mainstream demand. Billions in volume proved that people will trade on real-world events when the experience is good enough. But both platforms operate as **closed venues** — liquidity stays inside, positions are not composable, and infrastructure is vertically integrated but not extensible.
 {% endstep %}
 
 {% step %}
-### <mark style="color:$success;">**Financial Infrastructure (2026+)**</mark>
+#### <mark style="color:$success;">**Financial Infrastructure (2026+)**</mark>
 
 The next evolution is not another prediction market app. It is the **infrastructure layer** that makes predictive information a first-class financial primitive — composable, liquid, and accessible. <mark style="background-color:green;">**This is the phase PrediX is built for.**</mark>
 {% endstep %}
@@ -82,8 +80,6 @@ As predictive markets expand across crypto, macroeconomics, AI, sports, and real
 
 {% hint style="success" %}
 **PrediX is designed around the belief that prediction markets should evolve into composable financial infrastructure where:**
-
-
 
 * [x] Liquidity can persist across markets,
 * [x] Predictive assets can integrate across protocols,
@@ -102,7 +98,7 @@ However, reaching that scale requires more than market interfaces alone and Pred
 
 <details>
 
-<summary><mark style="color:$primary;"><strong>DeFi Composability Demand</strong></mark> </summary>
+<summary><mark style="color:$primary;"><strong>DeFi Composability Demand</strong></mark></summary>
 
 The DeFi ecosystem increasingly values assets that can flow freely between protocols. ERC-20 outcome tokens unlock entirely new categories of structured products, hedging strategies, and yield opportunities.
 

@@ -12,7 +12,7 @@ description: >-
 
 {% stepper %}
 {% step %}
-<mark style="color:$primary;">**Step 1: Find a Market**</mark>
+<mark style="color:$warning;">**Step 1: Find a Market**</mark>
 
 * Navigate to the [Markets page](https://app.predix.app/markets).
 * Browse the list or use the search bar to find an event you are interested in.
@@ -20,13 +20,13 @@ description: >-
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 2: Access Trading Panel**</mark>
+<mark style="color:$warning;">**Step 2: Access Trading Panel**</mark>
 
 * On the right-hand side of the page, ensure the Buy tab is selected.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 3: Choose Your Position**</mark>
+<mark style="color:$warning;">**Step 3: Choose Your Position**</mark>
 
 Select your side based on your prediction:
 
@@ -35,19 +35,19 @@ Select your side based on your prediction:
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 4: Enter USDC Amount**</mark>
+<mark style="color:$warning;">**Step 4: Enter USDC Amount**</mark>
 
 * Input the USDC amount you want to spend (e.g., $$ $100$ $$).
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 5:  Preview the Trade**</mark>
+<mark style="color:$warning;">**Step 5: Preview the Trade**</mark>
 
 * Before confirming, check the preview details:
 
 <details>
 
-<summary><strong>Tokens Received</strong></summary>
+<summary><mark style="color:$primary;"><strong>Tokens Received</strong></mark></summary>
 
 * The total amount of YES or NO tokens you will get.
 
@@ -55,7 +55,7 @@ Select your side based on your prediction:
 
 <details>
 
-<summary><strong>Average Price</strong></summary>
+<summary><mark style="color:$primary;"><strong>Average Price</strong></mark></summary>
 
 * The cost per token based on current liquidity.
 
@@ -63,7 +63,7 @@ Select your side based on your prediction:
 
 <details>
 
-<summary><strong>Slippage Estimate</strong></summary>
+<summary><mark style="color:$primary;"><strong>Slippage Estimate</strong></mark></summary>
 
 * The expected price impact of your trade.
 
@@ -71,7 +71,7 @@ Select your side based on your prediction:
 
 <details>
 
-<summary><strong>Execution Split</strong></summary>
+<summary><mark style="color:$primary;"><strong>Execution Split</strong></mark></summary>
 
 * The ratio of the trade filled via CLOB vs. AMM.
 
@@ -79,7 +79,7 @@ Select your side based on your prediction:
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 6: Confirm and Execute**</mark>
+<mark style="color:$warning;">**Step 6: Confirm and Execute**</mark>
 
 * Click the Buy button.
 * Confirm the request in your wallet:
@@ -88,7 +88,7 @@ Select your side based on your prediction:
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 7: Completion**</mark>
+<mark style="color:$warning;">**Step 7: Completion**</mark>
 
 * The transaction typically confirms in \~2 seconds on Unichain.
 * Your new position will immediately appear in your [Portfolio](../portfolio.md).
@@ -101,27 +101,27 @@ Select your side based on your prediction:
 
 {% stepper %}
 {% step %}
-<mark style="color:$primary;">**Step 1: Switch to the Sell Tab**</mark>
+<mark style="color:$warning;">**Step 1: Switch to the Sell Tab**</mark>
 
 * Open the trading panel on the right side of the market detail page.
 * Select the Sell tab.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 2: Select Your Asset**</mark>
+<mark style="color:$warning;">**Step 2: Select Your Asset**</mark>
 
 * Choose the specific tokens you currently hold (YES or NO) that you wish to liquidate.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 3: Enter the Amount**</mark>
+<mark style="color:$warning;">**Step 3: Enter the Amount**</mark>
 
 * Input the quantity of tokens you want to sell.
 * You can also use the percentage shortcuts (e.g., 25%, 50%, Max) to quickly fill the amount.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 4: Review and Confirm**</mark>
+<mark style="color:$warning;">**Step 4: Review and Confirm**</mark>
 
 * Preview USDC received: Check the estimated amount of USDC that will be credited to your wallet after the sale.
 * Confirm: Click the Sell button and approve the transaction in your wallet to complete the trade.
@@ -148,7 +148,7 @@ If you choose to **hold until the market resolves**, winning outcome tokens can 
 
 ### Yes/No Markets Example
 
-* Market context: _"BTC above $100k before 2027-01-01?"_.&#x20;
+* Market context: _"BTC above $100k before 2027-01-01?"_.
 * Current **YES price = $0.48**.
 * You spend **100 USDC** to buy YES:
 

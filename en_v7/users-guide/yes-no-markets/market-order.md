@@ -38,21 +38,21 @@ Use **Market** when you want to enter/exit a position **now** and are okay with 
 
 {% stepper %}
 {% step %}
-<mark style="color:$primary;">**Step 1: Access the Trading Panel**</mark>
+<mark style="color:$warning;">**Step 1: Access the Trading Panel**</mark>
 
 * Navigate to the Market Detail Page of your chosen event.
 * On the right-hand panel, ensure the Buy tab is selected.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 2: Select Your Side & Amount**</mark>
+<mark style="color:$warning;">**Step 2: Select Your Side & Amount**</mark>
 
 * Choose the YES side (indicating you believe the event will happen).
 * Enter the USDC amount you wish to spend (e.g., $$ $100$ $$).
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 3: Adjust Slippage Tolerance**</mark>
+<mark style="color:$warning;">**Step 3: Adjust Slippage Tolerance**</mark>
 
 * Set your preferred slippage tolerance.
 
@@ -62,7 +62,7 @@ Tip: While the default is 0.5%, you may want to increase this to 1-2% when tradi
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 4: Preview your Trade**</mark>
+<mark style="color:$warning;">**Step 4: Preview your Trade**</mark>
 
 Before clicking buy, verify the following details:
 
@@ -73,7 +73,7 @@ Before clicking buy, verify the following details:
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 5: Execute and Confirm**</mark>
+<mark style="color:$warning;">**Step 5: Execute and Confirm**</mark>
 
 * Click the Buy button.
 * Confirm the request in your wallet:
@@ -82,7 +82,7 @@ Before clicking buy, verify the following details:
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 6: Success**</mark>
+<mark style="color:$warning;">**Step 6: Success**</mark>
 
 * Wait approximately 2 seconds for the transaction to process.
 * Once confirmed, you can view the trade in your [Portfolio](../portfolio.md) under the History tab.
@@ -95,21 +95,21 @@ Same flow but under the **Sell** tab:
 
 {% stepper %}
 {% step %}
-<mark style="color:$primary;">**Step 1: Switch to the Sell Tab**</mark>
+<mark style="color:$warning;">**Step 1: Switch to the Sell Tab**</mark>
 
 * Navigate to the trading panel on the market detail page.
 * Select the Sell tab.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 2: Configure Your Sale**</mark>
+<mark style="color:$warning;">**Step 2: Configure Your Sale**</mark>
 
 * Ensure YES is selected.
 * Enter the amount of tokens you wish to sell.
 {% endstep %}
 
 {% step %}
-<mark style="color:$primary;">**Step 3: Review and Confirm**</mark>
+<mark style="color:$warning;">**Step 3: Review and Confirm**</mark>
 
 * Preview: Check the estimated USDC you will receive after fees and slippage.
 * Confirm: Click the Sell button and approve the transaction in your wallet.

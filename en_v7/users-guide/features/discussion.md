@@ -2,7 +2,7 @@
 description: Comment on markets, follow the activity feed, and engage with the community.
 ---
 
-# Discussion & social
+# Discussion & Social
 
 ***
 
@@ -87,7 +87,7 @@ Posts appear in three places:
 * Followers' feeds.
 * Market detail (if a market is tagged).
 
-> #### <mark style="color:orange;">Tip jar (TBA Phase 2)</mark>
+> <mark style="color:orange;">**Tip jar (TBA Phase 2)**</mark>
 >
 > Readers will be able to tip USDC / PRX to the author of a useful post.
 
@@ -119,19 +119,19 @@ Phase 2: direct messaging between users. Planned features:
 
 {% stepper %}
 {% step %}
-### <mark style="color:orange;">Step 1: User Reporting</mark>
+#### <mark style="color:orange;">Step 1: User Reporting</mark>
 
 * The process begins when a user flags and reports specific content for review.
 {% endstep %}
 
 {% step %}
-### <mark style="color:orange;">Step 2: Moderator Review</mark>
+#### <mark style="color:orange;">Step 2: Moderator Review</mark>
 
 * Our moderation team manually evaluates the reported content against community guidelines to determine its validity.
 {% endstep %}
 
 {% step %}
-### <mark style="color:orange;">Step 3: Initial Enforcement</mark>
+#### <mark style="color:orange;">Step 3: Initial Enforcement</mark>
 
 If the report is found to be valid:
 
@@ -140,7 +140,7 @@ If the report is found to be valid:
 {% endstep %}
 
 {% step %}
-### <mark style="color:orange;">Step 4: Escalation & Banning</mark>
+#### <mark style="color:orange;">Step 4: Escalation & Banning</mark>
 
 The system tracks recurring violations:
 

@@ -2,7 +2,7 @@
 
 Buy YES tokens on a PrediX market in under 5 minutes using viem.
 
-![Quickstart flow: Setup (connect wallet) → Approve (USDC to Permit2) → Quote (quoteBuyYes) → Trade (buyYes) → Done (YES tokens). Router handles CLOB → AMM routing automatically.](assets/quickstart-flow.svg)
+![Quickstart flow: Setup (connect wallet) → Approve (USDC to Permit2) → Quote (quoteBuyYes) → Trade (buyYes) → Done (YES tokens). Router handles CLOB → AMM routing automatically.](../.gitbook/assets/quickstart-flow.svg)
 
 ## Prerequisites
 
@@ -11,8 +11,9 @@ npm install viem
 ```
 
 You need:
-- A wallet private key with ETH on Unichain Sepolia (for gas)
-- USDC on Unichain Sepolia (get from [Faucet](testnet.md))
+
+* A wallet private key with ETH on Unichain Sepolia (for gas)
+* USDC on Unichain Sepolia (get from [Faucet](testnet.md))
 
 ## 1. Setup client
 
@@ -151,44 +152,44 @@ console.log(positions);
 
 ## Router functions reference
 
-| Function | Input | Output | Description |
-|---|---|---|---|
-| `buyYes` | marketId, usdcIn, minYesOut, recipient, maxFills, deadline | yesOut, clobFilled, ammFilled | Buy YES tokens with USDC |
-| `sellYes` | marketId, yesIn, minUsdcOut, recipient, maxFills, deadline | usdcOut, clobFilled, ammFilled | Sell YES tokens for USDC |
-| `buyNo` | marketId, usdcIn, minNoOut, recipient, maxFills, deadline | noOut, clobFilled, ammFilled | Buy NO tokens with USDC |
-| `sellNo` | marketId, noIn, minUsdcOut, recipient, maxFills, deadline | usdcOut, clobFilled, ammFilled | Sell NO tokens for USDC |
-| `quoteBuyYes` | marketId, usdcIn, maxFills | expectedOut, clob, amm | Quote (non-view, use eth_call) |
-| `quoteSellYes` | marketId, yesIn, maxFills | expectedOut, clob, amm | Quote |
-| `quoteBuyNo` | marketId, usdcIn, maxFills | expectedOut, clob, amm | Quote |
-| `quoteSellNo` | marketId, noIn, maxFills | expectedOut, clob, amm | Quote |
+| Function       | Input                                                      | Output                         | Description                     |
+| -------------- | ---------------------------------------------------------- | ------------------------------ | ------------------------------- |
+| `buyYes`       | marketId, usdcIn, minYesOut, recipient, maxFills, deadline | yesOut, clobFilled, ammFilled  | Buy YES tokens with USDC        |
+| `sellYes`      | marketId, yesIn, minUsdcOut, recipient, maxFills, deadline | usdcOut, clobFilled, ammFilled | Sell YES tokens for USDC        |
+| `buyNo`        | marketId, usdcIn, minNoOut, recipient, maxFills, deadline  | noOut, clobFilled, ammFilled   | Buy NO tokens with USDC         |
+| `sellNo`       | marketId, noIn, minUsdcOut, recipient, maxFills, deadline  | usdcOut, clobFilled, ammFilled | Sell NO tokens for USDC         |
+| `quoteBuyYes`  | marketId, usdcIn, maxFills                                 | expectedOut, clob, amm         | Quote (non-view, use eth\_call) |
+| `quoteSellYes` | marketId, yesIn, maxFills                                  | expectedOut, clob, amm         | Quote                           |
+| `quoteBuyNo`   | marketId, usdcIn, maxFills                                 | expectedOut, clob, amm         | Quote                           |
+| `quoteSellNo`  | marketId, noIn, maxFills                                   | expectedOut, clob, amm         | Quote                           |
 
 Permit2 variants: `buyYesWithPermit`, `sellYesWithPermit`, `buyNoWithPermit`, `sellNoWithPermit` — same params + `permitSingle` + `signature`.
 
 ## Limits
 
-| Parameter | Value |
-|---|---|
-| Min trade (Router) | `1000` ($0.001 USDC) |
-| Min order (Exchange CLOB) | `1e6` ($1.00 USDC) |
-| Max open orders per user | 50 |
-| Max fills per place order | 20 |
-| Max batch cancel | 50 |
-| Price range | $0.01 – $0.99 (step $0.01) |
-| Price precision | `1e6` = 100% = $1.00 |
+| Parameter                 | Value                      |
+| ------------------------- | -------------------------- |
+| Min trade (Router)        | `1000` ($0.001 USDC)       |
+| Min order (Exchange CLOB) | `1e6` ($1.00 USDC)         |
+| Max open orders per user  | 50                         |
+| Max fills per place order | 20                         |
+| Max batch cancel          | 50                         |
+| Price range               | $0.01 – $0.99 (step $0.01) |
+| Price precision           | `1e6` = 100% = $1.00       |
 
 ## Common errors
 
-| Error | Cause | Fix |
-|---|---|---|
-| `SlippageExceeded` | Price moved past tolerance | Increase slippage or retry |
-| `DeadlineExpired` | Tx took too long | Increase deadline |
-| `MarketPaused` | Market paused by admin | Wait for resume |
-| `MarketNotActive` | Market ended or resolved | Cannot trade |
-| `InsufficientLiquidity` | Not enough depth | Reduce size |
-| `FinalizeBalanceNonZero` | Internal error | Report as bug |
+| Error                    | Cause                      | Fix                        |
+| ------------------------ | -------------------------- | -------------------------- |
+| `SlippageExceeded`       | Price moved past tolerance | Increase slippage or retry |
+| `DeadlineExpired`        | Tx took too long           | Increase deadline          |
+| `MarketPaused`           | Market paused by admin     | Wait for resume            |
+| `MarketNotActive`        | Market ended or resolved   | Cannot trade               |
+| `InsufficientLiquidity`  | Not enough depth           | Reduce size                |
+| `FinalizeBalanceNonZero` | Internal error             | Report as bug              |
 
 ## Next steps
 
-- [Router integration](router-integration.md) — Permit2 flow, batch with Smart Account, AMM-only / CLOB-only
-- [API reference](api-reference.md) — REST endpoints for market data
-- [Testnet info](testnet.md) — faucet, RPC endpoints
+* [Router integration](router-integration.md) — Permit2 flow, batch with Smart Account, AMM-only / CLOB-only
+* [API reference](api-reference.md) — REST endpoints for market data
+* [Testnet info](testnet.md) — faucet, RPC endpoints
