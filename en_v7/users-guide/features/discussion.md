@@ -2,9 +2,7 @@
 description: Comment on markets, follow the activity feed, and engage with the community.
 ---
 
-# Discussion & Social
-
-***
+# Social & Discussion
 
 PrediX embeds social features directly into the trading interface — comment threads on every market, a global activity feed, long-form posts, and community moderation. Discussion lives next to the market it shapes, not in an external forum.
 
@@ -14,7 +12,7 @@ PrediX embeds social features directly into the trading interface — comment th
 
 ![Market discussion: comment list (sort newest/top), post comment, reply 2 levels, up/down vote, @mention](../../.gitbook/assets/47-discussion-features.svg)
 
-#### <mark style="color:orange;">Features</mark>
+#### <mark style="color:orange;">1. Features</mark>
 
 * **Threaded** 2 levels (`comment` + `reply`).
 * **Voting** — `up vote`/`down vote`; top comments rise to the top.
@@ -23,7 +21,7 @@ PrediX embeds social features directly into the trading interface — comment th
 * **Image embed** — paste an image URL and the app renders it inline.
 * **TX share** — paste a `txhash` and the app renders an explorer `link` + `summary`.
 
-#### <mark style="color:orange;">Anti-spam</mark>
+#### <mark style="color:orange;">2. Anti-spam</mark>
 
 PrediX enforces anti-spam through an **economic gate** rather than CAPTCHA alone:
 
@@ -35,7 +33,7 @@ PrediX enforces anti-spam through an **economic gate** rather than CAPTCHA alone
 
 The 10 PRX stake makes spam economically unprofitable while keeping the barrier low for genuine participants.
 
-#### <mark style="color:orange;">Trader badges in comments</mark>
+#### <mark style="color:orange;">3. Trader badges in comments</mark>
 
 Usernames in comments display badges that surface the commenter's track record:
 
@@ -46,23 +44,25 @@ Usernames in comments display badges that surface the commenter's track record:
 
 Badges help readers weigh the credibility of an argument before acting on it.
 
+***
+
 ### Social feed
 
 > The `/feed page` is a global activity stream that merges on-chain transactions with off-chain social actions into a single timeline.
 
 ![Social feed: on-chain activity (trade, LP, resolve) + off-chain (comment, follow, badge) → filter (following/trending/latest) → realtime cards](../../.gitbook/assets/48-social-feed.svg)
 
-#### <mark style="color:orange;">Filters</mark>
+#### <mark style="color:orange;">1. Filters</mark>
 
-| Filter         | Description                                             |
-| -------------- | ------------------------------------------------------- |
-| **Following**  | Activity from users you follow                          |
-| **Trending**   | Comments + markets with high engagement in the last 24h |
-| **Latest**     | Everything, newest first                                |
-| **Markets**    | Trade / LP activity only, no social                     |
-| **Discussion** | Comments only, no transactions                          |
+| Filter         | Description                                                               |
+| -------------- | ------------------------------------------------------------------------- |
+| **Following**  | <ul><li>Activity from users you follow</li></ul>                          |
+| **Trending**   | <ul><li>Comments + markets with high engagement in the last 24h</li></ul> |
+| **Latest**     | <ul><li>Everything, newest first</li></ul>                                |
+| **Markets**    | <ul><li>Trade / LP activity only, no social</li></ul>                     |
+| **Discussion** | <ul><li>Comments only, no transactions</li></ul>                          |
 
-#### <mark style="color:orange;">Card types</mark>
+#### <mark style="color:orange;">2. Card types</mark>
 
 Feed items render as typed cards, each linking back to its source object:
 
@@ -72,7 +72,9 @@ Feed items render as typed cards, each linking back to its source object:
 * **Comment card** — _User X commented on market Z: "..."_ Click → discussion thread.
 * **Badge card** — _User X earned the "Prophet" badge (80% accuracy)._
 
-### Long-form posts
+***
+
+### Long-form Posts
 
 Beyond short comments, users can publish **posts** — Twitter thread-style long-form content for deeper analysis:
 
@@ -87,9 +89,13 @@ Posts appear in three places:
 * Followers' feeds.
 * Market detail (if a market is tagged).
 
-> <mark style="color:orange;">**Tip jar (TBA Phase 2)**</mark>
->
-> Readers will be able to tip USDC / PRX to the author of a useful post.
+{% hint style="info" %}
+**Tip jar (TBA - Phase 2)**
+
+Readers will be able to tip USDC / PRX to the author of a useful post.
+{% endhint %}
+
+***
 
 ### Per-market activity feed
 
@@ -102,36 +108,31 @@ The **Activity** tab on the market detail page is a realtime activity stream sco
 
 Useful for monitoring hot markets and spotting whale moves as they happen.
 
-### Direct messaging (TBA)
-
-Phase 2: direct messaging between users. Planned features:
-
-* E2E encryption (XMTP protocol).
-* Group chat (DAO subgroups).
+***
 
 ### Moderation
 
-> PrediX uses a **community moderation** model — moderators are recruited from vePRX holders in good standing, not appointed centrally.
+PrediX uses a **community moderation** model — moderators are recruited from vePRX holders in good standing, not appointed centrally.
 
 ![Moderation: spam detected → user report → community mod review → valid: hide + warn, repeat 3+: ban 7-30 days](../../.gitbook/assets/49-moderation-flow.svg)
 
-#### <mark style="color:orange;">Content Moderation & Penalty Process</mark>
+#### Content Moderation & Penalty Process
 
 {% stepper %}
 {% step %}
-#### <mark style="color:orange;">Step 1: User Reporting</mark>
+<mark style="color:orange;">**Step 1: User Reporting**</mark>
 
 * The process begins when a user flags and reports specific content for review.
 {% endstep %}
 
 {% step %}
-#### <mark style="color:orange;">Step 2: Moderator Review</mark>
+<mark style="color:orange;">**Step 2: Moderator Review**</mark>
 
 * Our moderation team manually evaluates the reported content against community guidelines to determine its validity.
 {% endstep %}
 
 {% step %}
-#### <mark style="color:orange;">Step 3: Initial Enforcement</mark>
+<mark style="color:orange;">**Step 3: Initial Enforcement**</mark>
 
 If the report is found to be valid:
 
@@ -140,7 +141,7 @@ If the report is found to be valid:
 {% endstep %}
 
 {% step %}
-#### <mark style="color:orange;">Step 4: Escalation & Banning</mark>
+<mark style="color:orange;">**Step 4: Escalation & Banning**</mark>
 
 The system tracks recurring violations:
 
@@ -149,11 +150,15 @@ The system tracks recurring violations:
 {% endstep %}
 {% endstepper %}
 
-* **Mod recruitment** — vePRX holders in good standing can apply.
-* **Mod compensation** — PRX from treasury.
-* **Appeal process** — banned users can appeal via governance.
+> **Note**:&#x20;
+>
+> * **Mod recruitment** — vePRX holders in good standing can apply.
+> * **Mod compensation** — PRX from treasury.
+> * **Appeal process** — banned users can appeal via governance.
 
-### Censorship resistance
+***
+
+### Censorship Resistance
 
 Comments and posts are stored **off-chain** in MongoDB for fast UI rendering. Starting Phase 2, a hash of every comment is also stored **on-chain** as proof of existence.
 
@@ -161,7 +166,24 @@ Comments and posts are stored **off-chain** in MongoDB for fast UI rendering. St
 If PrediX UI hides a comment, the original content still exists via the on-chain hash. Users can verify and re-publish it independently on IPFS or Arweave.
 {% endhint %}
 
-### Wallet-to-wallet messaging
+***
+
+### Phase 2 - TBA&#x20;
+
+<details>
+
+<summary><strong>Direct Messaging</strong></summary>
+
+Direct messaging between users. Planned features:
+
+* E2E encryption (XMTP protocol).
+* Group chat (DAO subgroups).
+
+</details>
+
+<details>
+
+<summary><strong>Wallet-to-wallet Messaging</strong></summary>
 
 Phase 2 will integrate **XMTP** — decentralized, end-to-end encrypted messaging between wallet addresses. Planned use cases include:
 
@@ -169,7 +191,11 @@ Phase 2 will integrate **XMTP** — decentralized, end-to-end encrypted messagin
 * Coordinate liquidity provision.
 * Private discussions within working groups.
 
-### API
+</details>
+
+***
+
+### API Intergration
 
 For developers building social integrations or external clients:
 
@@ -184,4 +210,6 @@ POST /api/v1/markets/:id/activity?type=trade|comment
 
 Realtime via WebSocket: `wss://api.predix.app/v2/me/feed`.
 
+{% hint style="info" %}
 Details: [Backend API](../../developers-guide/api-reference.md#backend-endpoints-v2).
+{% endhint %}

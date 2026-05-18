@@ -22,14 +22,14 @@
 * [Managing Orders](users-guide/managing-orders.md)
 * [Portfolio & P\&L](users-guide/portfolio.md)
 * [Redeem & Refund](users-guide/redeem-refund.md)
-* [Features](users-guide/features/README.md)
+* [Additional Features](users-guide/features/README.md)
   * [Chart & Timeframe](users-guide/features/chart-timeframe.md)
   * [Notifications & Alerts](users-guide/features/notifications-and-alerts.md)
-  * [Discussion & Social](users-guide/features/discussion.md)
-  * [Leaderboard & traders](users-guide/features/leaderboard.md)
-* [Liquidity & market](users-guide/liquidity-and-market/README.md)
+  * [Social & Discussion](users-guide/features/discussion.md)
+  * [Leaderboard & Traders](users-guide/features/leaderboard.md)
+* [Liquidity & Market](users-guide/liquidity-and-market/README.md)
   * [Provide liquidity (LP)](users-guide/liquidity-and-market/provide-liquidity.md)
-  * [Create market](users-guide/liquidity-and-market/create-market.md)
+  * [Create Market](users-guide/liquidity-and-market/create-market.md)
 
 ## core Concepts
 

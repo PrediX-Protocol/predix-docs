@@ -4,9 +4,7 @@ description: >-
   trading.
 ---
 
-# Leaderboard & traders
-
-***
+# Leaderboard & Traders
 
 Prediction markets have a rare property: trader performance is publicly verifiable. Every position, every fill, every resolution is on-chain. This makes reputation **objectively measurable** rather than self-claimed.
 
@@ -14,17 +12,17 @@ PrediX surfaces this signal across the leaderboard, public trader profiles, foll
 
 ### Leaderboard
 
-> The `/leaderboard` page ranks active traders by five metrics. Sort and filter to find the right traders to learn from or copy.
+The `/leaderboard` page ranks active traders by five metrics. Sort and filter to find the right traders to learn from or copy.
 
-| Metric             | Description                                   | Update   |
-| ------------------ | --------------------------------------------- | -------- |
-| **Realized P\&L**  | Profit locked in (USDC)                       | Realtime |
-| **Volume**         | Total trade volume                            | Realtime |
-| **Win rate**       | % of markets won / total resolved             | Daily    |
-| **Accuracy score** | Inverted Brier score (higher = more accurate) | Daily    |
-| **Streak**         | Consecutive winning streak                    | Realtime |
+| Metric             | Description                                                     | Update                     |
+| ------------------ | --------------------------------------------------------------- | -------------------------- |
+| **Realized P\&L**  | <ul><li>Profit locked in (USDC)</li></ul>                       | <ul><li>Realtime</li></ul> |
+| **Volume**         | <ul><li>Total trade volume</li></ul>                            | <ul><li>Realtime</li></ul> |
+| **Win rate**       | <ul><li>% of markets won / total resolved</li></ul>             | <ul><li>Daily</li></ul>    |
+| **Accuracy score** | <ul><li>Inverted Brier score (higher = more accurate)</li></ul> | <ul><li>Daily</li></ul>    |
+| **Streak**         | <ul><li>Consecutive winning streak</li></ul>                    | <ul><li>Realtime</li></ul> |
 
-Filters:
+**Filters:**
 
 * **Period**: 24h / 7d / 30d / 90d / all-time
 * **Min trades**: 5 / 10 / 50 (filters out accounts that got lucky by chance)
@@ -32,15 +30,17 @@ Filters:
 
 The **Min trades** filter is the most important quality gate. Without it, leaderboards reward variance over skill.
 
-### Trader profile
+***
+
+### Trader Profile
 
 Click a trader's name → `/profile/[address]` page.
 
-![Public trader profile: Hero KPIs (Volume, PnL, Win rate, Accuracy) + active positions + trade history + calibration + badges + follow](../../.gitbook/assets/50-trader-profile.svg)
+![Public trader profile](../../.gitbook/assets/50-trader-profile.svg)
 
 A profile shows hero KPIs (Volume, P\&L, Win rate, Accuracy), active positions, full trade history, calibration chart, badges, and a follow button.
 
-#### <mark style="color:orange;">Public vs private</mark>
+#### <mark style="color:orange;">1. Public vs Private</mark>
 
 By default, trader profiles are **public**:
 
@@ -60,7 +60,7 @@ Users can **opt out** in [Settings](../../resources/faq.md) **→ Privacy**:
 **Note**: Even when hidden, the address is still public on-chain. The app only hides data at the UI level. Technically savvy users can still query the indexer.
 {% endhint %}
 
-### <mark style="color:orange;">Following traders</mark>
+#### <mark style="color:orange;">2. Following Traders</mark>
 
 Click **Follow** on any profile. You will receive notifications when the trader:
 
@@ -70,23 +70,23 @@ Click **Follow** on any profile. You will receive notifications when the trader:
 
 A dedicated **Following** feed inside the app aggregates all your followed traders' activity.
 
-### <mark style="color:orange;">Copy trading</mark>
+#### <mark style="color:orange;">3. Copy Trading</mark>
 
-> Copy trading mirrors a lead trader's positions automatically, with risk controls applied per follower.
+Copy trading mirrors a lead trader's positions automatically, with risk controls applied per follower.
 
-![Copy trading: follower set config (10% size, cap $100) → lead trades → engine detect → auto/manual mirror → trade mirrored](../../.gitbook/assets/51-copy-trading-flow.svg)
+![Copy trading Process](../../.gitbook/assets/51-copy-trading-flow.svg)
 
 #### Setup copy trading
 
 {% stepper %}
 {% step %}
-#### <mark style="color:orange;">Step 1: Select a Lead Trader</mark>
+<mark style="color:orange;">**Step 1: Select a Lead Trader**</mark>
 
 Browse the platform to find the trader whose strategy you want to replicate.
 {% endstep %}
 
 {% step %}
-#### <mark style="color:orange;">Step 2: Configure Your Settings</mark>
+<mark style="color:orange;">**Step 2: Configure Your Settings**</mark>
 
 Click Copy Trading to open the configuration panel and adjust the following:
 
@@ -97,7 +97,7 @@ Click Copy Trading to open the configuration panel and adjust the following:
 {% endstep %}
 
 {% step %}
-#### <mark style="color:orange;">Step 3: Secure Your Funds</mark>
+<mark style="color:orange;">**Step 3: Secure Your Funds**</mark>
 
 * Pre-fund USDC into a dedicated Copy Sub-account.
 
@@ -107,7 +107,7 @@ Note: Keeping these funds separate from your main wallet helps strictly limit yo
 {% endstep %}
 
 {% step %}
-#### <mark style="color:orange;">Step 4: Activate</mark>
+<mark style="color:orange;">**Step 4: Activate**</mark>
 
 Review your parameters and click Activate to begin following the trader's moves automatically.
 {% endstep %}
@@ -115,19 +115,19 @@ Review your parameters and click Activate to begin following the trader's moves 
 
 #### Copy trading risks
 
-{% hint style="warning" %}
-**Risks to understand before activating:**
+Risks to understand before activating:
 
 * **Lead trader may underperform later** — past performance does not guarantee future results.
 * **Slippage gap**: The lead enters at $0.50; you copy 30s later when the price is already $0.55.
 * **Fee accumulation**: Copying many small leads = each lead = 1tx → gas fees add up (significantly reduced if the user qualifies for the sponsor program — applies to both account types; otherwise normal fees apply).
-{% endhint %}
 
-{% hint style="info" %}
+{% hint style="warning" %}
 Start small ($50-100) and test for 1 week before scaling.
 {% endhint %}
 
-### Trader directory
+***
+
+### Trader Directory
 
 The `/traders` page — a directory of active traders with filters:
 
@@ -143,24 +143,29 @@ Each trader card shows:
 * Win rate / Accuracy badge
 * Quick actions: Follow / Copy / View profile
 
-### Verified traders
+***
+
+### Privacy & Data
+
+<details>
+
+<summary><strong>Verified Traders</strong></summary>
 
 Traders with verified social identity get a verification badge — used as anti-impersonation:
 
 * ENS / Lens / Farcaster verified.
 * Twitter linked.
 * Optional KYC (for institutional traders).
-
-Verify in [Settings](../../resources/faq.md).
-
-### Privacy & data
-
 * Trader stats are computed from on-chain data → public by default.
 * App overlay: pseudonym, avatar, follow graph (off-chain MongoDB).
 * If you opt out the app **does not expose** your data, but on-chain data remains public.
 * **GDPR / CCPA**: the right to be forgotten applies only to off-chain data (pseudonym, avatar). On-chain data is immutable.
 
-### Anti-sybil
+</details>
+
+<details>
+
+<summary><strong>Anti-sybil</strong></summary>
 
 To prevent leaderboard spam from bots:
 
@@ -168,7 +173,11 @@ To prevent leaderboard spam from bots:
 * **Stake gate**: Top 100 leaderboard requires staking >= 100 PRX.
 * **Behavior detection**: Wash trading patterns and copy bots are flagged and filtered.
 
-### API
+</details>
+
+***
+
+### API Intergration
 
 For developers integrating leaderboard or trader data:
 
@@ -179,4 +188,6 @@ GET /api/v1/users/:address/follows    (followed by whom)
 GET /api/v1/users/:address/following  (following whom)
 ```
 
+{% hint style="info" %}
 Details: [Backend API](../../developers-guide/api-reference.md#backend-endpoints-v2).
+{% endhint %}

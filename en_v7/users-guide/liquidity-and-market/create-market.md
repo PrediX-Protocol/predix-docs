@@ -1,23 +1,31 @@
-# Create market
+---
+description: >-
+  Guide for creators (holders of CREATOR_ROLE) to create a market or
+  multi-outcome event.
+---
 
-Guide for **creators** (holders of `CREATOR_ROLE`) to create a market or multi-outcome event.
+# Create Market
 
-## Who can create
+Apply for **`CREATOR_ROLE`**: submit a form on [**`Discord`**](../../resources/links.md) **`#creator-application`** + governance vote.
 
-| Phase                 | Who                           | Requirements                                                                                   |
-| --------------------- | ----------------------------- | ---------------------------------------------------------------------------------------------- |
-| **Phase 1** (current) | Addresses with `CREATOR_ROLE` | Whitelisted via governance proposal                                                            |
-| **Phase 3** (TBA)     | Permissionless                | Stake a bond of **10,000 PRX** (refunded if the market resolves cleanly, slashed if malformed) |
+| Phase                 | Who                                                        | Requirements                                                                                                                  |
+| --------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Phase 1 - Current** | <ul><li>Addresses with <code>CREATOR_ROLE</code></li></ul> | <ul><li>Whitelisted via governance proposal</li></ul>                                                                         |
+| **Phase 3 - TBA**     | <ul><li>Permissionless</li></ul>                           | <ul><li>Stake a bond of <strong>10,000 PRX</strong> (refunded if the market resolves cleanly, slashed if malformed)</li></ul> |
 
-Apply for `CREATOR_ROLE`: submit a form on [Discord](../../resources/links.md) #creator-application + governance vote.
+***
 
-## Decisions before creating
+### Decisions Before Creating
 
-![Choose market type: Price threshold → ChainlinkOracle, Subjective → ManualOracle, Multi-outcome → Event, Range → Scalar](../../.gitbook/assets/46-market-creation-decision.svg)
+![Creating Decisions Flow](../../.gitbook/assets/46-market-creation-decision.svg)
 
-## Parameters to decide
+***
 
-### Question
+### Parameters To Decide
+
+<details>
+
+<summary><mark style="color:$primary;"><strong>Question</strong></mark></summary>
 
 The main question for the market — it must be:
 
@@ -26,7 +34,11 @@ The main question for the market — it must be:
 * **Time-bound**: Has a clear endTime.
 * **Unambiguous**: Avoid "maybe", "approximately", "around".
 
-### endTime
+</details>
+
+<details>
+
+<summary><mark style="color:$primary;"><strong>endTime</strong></mark></summary>
 
 The timestamp when trading closes and the oracle resolution window opens.
 
@@ -34,7 +46,11 @@ The timestamp when trading closes and the oracle resolution window opens.
 * Min: 1 hour from creation (prevents front-running).
 * Max: 5 years (UI cap).
 
-### Oracle
+</details>
+
+<details>
+
+<summary><mark style="color:$primary;"><strong>Oracle</strong></mark></summary>
 
 | Oracle              | When to use                      | Setup cost                          |
 | ------------------- | -------------------------------- | ----------------------------------- |
@@ -43,14 +59,24 @@ The timestamp when trading closes and the oracle resolution window opens.
 | **UMAOracle** (TBA) | Decentralized resolution         | Bond $500-$50,000 USDC              |
 | **Custom adapter**  | On-chain event (governance, TVL) | Deploy adapter, approve via Diamond |
 
-### Per-market cap (optional)
+
+
+</details>
+
+<details>
+
+<summary><mark style="color:$primary;"><strong>Per-market cap (optional)</strong></mark></summary>
 
 Limits the total collateral locked in the market. Default = global cap (protocol config).
 
 * Set 0 = unlimited.
 * Set X = max X USDC collateral. Provides protection when a market is high-risk.
 
-### Category + metadata
+</details>
+
+<details>
+
+<summary><mark style="color:$primary;"><strong>Category + Metadata</strong></mark></summary>
 
 Off-chain metadata for a polished UI display:
 
@@ -62,61 +88,71 @@ Off-chain metadata for a polished UI display:
 
 Set via the admin BE endpoint after on-chain creation.
 
-## Steps — create a binary market with Chainlink
+</details>
 
-![Create market: fill form → select oracle → set params → deploy on-chain → PoolManager init pool → market live](../../.gitbook/assets/18-create-market.svg)
+***
 
-### Details
+### Create a Binary Market with Chainlink
 
-1.  **Create the on-chain market**:
+![Binary  Market with Chainlink](../../.gitbook/assets/18-create-market.svg)
 
-    ```
-    diamond.createMarket(
-      question: "Will BTC exceed $100k before 2027-01-01?",
-      endTime: 1798752000,  // Unix sec
-      oracle: ChainlinkOracle.address
-    )
-    ```
+{% stepper %}
+{% step %}
+<mark style="color:$warning;">**Step 1: Create the On-chain Market**</mark>
 
-    Returns `marketId` + addresses of the YES and NO ERC-20 tokens.
-2.  **Register the Chainlink feed**:
+```
+diamond.createMarket(
+  question: "Will BTC exceed $100k before 2027-01-01?",
+  endTime: 1798752000,  // Unix sec
+  oracle: ChainlinkOracle.address
+)
+```
 
-    ```
-    chainlinkOracle.register(marketId, {
-      feed: 0xA39434A63A52E749F02807ae27335515BA4b07F7,  // BTC/USD Unichain
-      threshold: 100_000_000_000_000,  // $100k with 6 decimals + 8 decimals feed
-      gte: true,                        // YES if price >= threshold
-      snapshotAt: 1798752000            // = endTime
-    })
-    ```
-3.  **Register the pool with Hook**:
+Returns `marketId` + addresses of the YES and NO ERC-20 tokens.
+{% endstep %}
 
-    ```
-    hook.registerMarketPool(marketId, {
-      currency0: USDC,
-      currency1: yesToken,
-      fee: DYNAMIC_FEE_FLAG,            // hook decides
-      tickSpacing: 60,
-      hooks: PrediXHook.address
-    }, yesIsCurrency0: false)
-    ```
-4. **Initialize the v4 pool** (handled automatically by the hook during registration).
-5. **Seed initial liquidity** (see [Liquidity provider](provide-liquidity.md)).
-6.  **Set metadata** (UI title, category, image) via the BE admin endpoint:
+{% step %}
+<mark style="color:$warning;">**Step 2: Register the pool with Hook**</mark>
 
-    ```
-    POST /api/v1/admin/markets/:id/display
-    {
-      title: { vi: "...", en: "...", ja: "...", ko: "..." },
-      category: "crypto",
-      image: "ipfs://...",
-      isFeatured: false
-    }
-    ```
+```
+hook.registerMarketPool(marketId, {
+  currency0: USDC,
+  currency1: yesToken,
+  fee: DYNAMIC_FEE_FLAG,            // hook decides
+  tickSpacing: 60,
+  hooks: PrediXHook.address
+}, yesIsCurrency0: false)
+```
+{% endstep %}
 
-## Steps — create a multi-outcome event
+{% step %}
+<mark style="color:$warning;">**Step 3: Seed Initial Liquidity**</mark>
 
-An event is a container holding N child markets. Upon resolution, exactly 1 member resolves YES = true; the rest resolve YES = false.
+* See details: [Liquidity Provider](provide-liquidity.md).
+{% endstep %}
+
+{% step %}
+<mark style="color:$warning;">**Step 4: Set Metadata**</mark>
+
+**Set metadata** (UI title, category, image) via the BE admin endpoint:
+
+```
+POST /api/v1/admin/markets/:id/display
+{
+  title: { vi: "...", en: "...", ja: "...", ko: "..." },
+  category: "crypto",
+  image: "ipfs://...",
+  isFeatured: false
+}
+```
+{% endstep %}
+{% endstepper %}
+
+***
+
+### Create a multi-outcome event
+
+An event is a container holding N child markets. Upon resolution, exactly 1 member resolves **YES = true**; the rest resolve **YES = false**.
 
 ```
 diamond.createEvent(
@@ -142,7 +178,9 @@ eventFacet.resolveEvent(eventId, winningIndex: 0)  // Argentina wins
 
 Atomic — all members resolve in the same block; exactly 1 outcome = true.
 
-## Best practices
+***
+
+### Best Practices
 
 * **Question wording**: Test with 5 people unfamiliar with the context. Can they answer YES/NO?
 * **endTime buffer**: Set at least 1-2 hours after the actual event so data can finalize before resolution.
@@ -150,7 +188,9 @@ Atomic — all members resolve in the same block; exactly 1 outcome = true.
 * **Liquidity seeding**: Minimum $500-$1000 USDC + corresponding YES/NO. A pool that is too shallow drives users away.
 * **Featured marketing**: Coordinate with the community team before launching a large market.
 
-## Resolve dispute — you are the creator
+***
+
+### Resolve dispute — you are the creator
 
 If a market resolves incorrectly:
 
@@ -158,6 +198,8 @@ If a market resolves incorrectly:
 * **Phase 2 UMAOracle**: Anyone can propose a dispute with a bond.
 * **Phase 1 ChainlinkOracle**: Resolution is automatic — disputes are only possible if the Chainlink feed was manipulated; escalate via Chainlink directly.
 
-## Revenue for creators (Phase 3 — TBA)
+***
+
+### Revenue for creators (Phase 3 — TBA)
 
 Phase 3 will introduce **creator revenue share** — a portion of the protocol fees from that market goes to the creator. Details will be announced per the roadmap.

@@ -165,11 +165,11 @@ Visit `/settings/notifications` for the full granular control matrix.
 
 | Type           | In-app | Push | Email | Discord | Telegram |
 | -------------- | ------ | ---- | ----- | ------- | -------- |
-| Order fill     | Yes    | Yes  | No    | Yes     | Yes      |
-| Market resolve | Yes    | Yes  | Yes   | Yes     | Yes      |
-| Price alert    | Yes    | Yes  | Yes   | Yes     | Yes      |
-| Daily digest   | No     | No   | Yes   | No      | No       |
-| Marketing      | No     | No   | No    | No      | No       |
+| Order fill     | ✅      | ✅    | ❌     | ✅       | ✅        |
+| Market resolve | ✅      | ✅    | ✅     | Yes     | ✅        |
+| Price alert    | ✅      | ✅    | ✅     | ✅       | ✅        |
+| Daily digest   | ❌      | ❌    | ✅     | ❌       | ❌        |
+| Marketing      | ❌      | ❌    | ❌     | ❌       | ❌        |
 
 {% hint style="info" %}
 Granular customization per type. **Marketing is OFF by default** — only ON if you explicitly opt in.
@@ -316,4 +316,6 @@ DELETE /api/v1/users/:address/alerts/:id
 
 Realtime updates via WebSocket: `wss://api.predix.app/v2/me/notifications` with an auth header.
 
+{% hint style="info" %}
 Details: [API Reference](../../developers-guide/api-reference.md).
+{% endhint %}

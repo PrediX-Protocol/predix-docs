@@ -86,6 +86,10 @@ The chart is full-width on mobile with full gesture support:
 
 ### Developer API
 
+{% hint style="info" %}
+Details: [API Reference](../../developers-guide/api-reference.md).
+{% endhint %}
+
 Chart data from the Indexer endpoint:
 
 ```
@@ -103,11 +107,9 @@ GET /api/markets/:id/price-history?from=...&to=...
 → [{ ts, yesPrice, source }]
 ```
 
-Details: [API Reference](../../developers-guide/api-reference.md).
-
 ***
 
-{% hint style="info" %}
+{% hint style="success" %}
 ### Tips for reading prediction market charts
 
 * **Volume spike after endTime** — unusual activity, likely arbitrage as resolution approaches.
