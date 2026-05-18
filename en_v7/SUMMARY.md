@@ -79,4 +79,3 @@
 * [Glossary](resources/glossary.md)
 * [Changelog](resources/changelog.md)
 * [Links](resources/links.md)
-* [FAQ](resources/faq.md)

@@ -26,6 +26,8 @@ Being an LP is a **directional bet** — you lose if the market resolves toward 
 
 ### How to Provide LP
 
+<mark style="color:yellow;background-color:yellow;">**\[Insert tutorial video]**</mark>
+
 {% stepper %}
 {% step %}
 <mark style="color:$warning;">**Step 1: Open Liquidity Tab**</mark>
@@ -87,6 +89,8 @@ Need Review:
 
 ### How to Claim Fees
 
+<mark style="color:yellow;background-color:yellow;">**\[Insert tutorial video]**</mark>
+
 {% stepper %}
 {% step %}
 <mark style="color:$warning;">**Step 1: Open Liquidity Portfolio**</mark>
@@ -115,6 +119,8 @@ Need Review:
 ***
 
 ### How to Remove LP
+
+<mark style="color:yellow;background-color:yellow;">**\[Insert tutorial video]**</mark>
 
 {% stepper %}
 {% step %}

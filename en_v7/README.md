@@ -149,6 +149,6 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 [links.md](resources/links.md)
 {% endcontent-ref %}
 
-{% content-ref url="resources/faq.md" %}
-[faq.md](resources/faq.md)
+{% content-ref url="/broken/pages/G9He9bYDl0TlDnxLAEHl" %}
+[Broken link](/broken/pages/G9He9bYDl0TlDnxLAEHl)
 {% endcontent-ref %}

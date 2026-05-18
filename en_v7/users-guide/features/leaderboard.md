@@ -50,7 +50,7 @@ By default, trader profiles are **public**:
 * Aggregate stats are shown.
 
 {% hint style="success" %}
-Users can **opt out** in [Settings](../../resources/faq.md) **→ Privacy**:
+Users can **opt out** in [Settings](/broken/pages/G9He9bYDl0TlDnxLAEHl) **→ Privacy**:
 
 * Hide active positions.
 * Hide history.

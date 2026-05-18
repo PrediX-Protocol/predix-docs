@@ -8,7 +8,7 @@ A market for trading tokens that reflect the **probability** of a future event o
 
 ![Prediction Core Concepts](../.gitbook/assets/27-mindmap-concepts.svg)
 
-### Example
+### dExample
 
 ```
 Event: "Bitcoin above $100,000 before 2027-01-01?"
