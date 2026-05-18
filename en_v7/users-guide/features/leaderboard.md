@@ -79,6 +79,8 @@ Copy trading mirrors a lead trader's positions automatically, with risk controls
 
 #### Setup copy trading
 
+<mark style="color:yellow;background-color:yellow;">**\[Insert video]**</mark>
+
 {% stepper %}
 {% step %}
 <mark style="color:orange;">**Step 1: Select a Lead Trader**</mark>

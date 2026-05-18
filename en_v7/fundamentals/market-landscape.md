@@ -38,13 +38,8 @@ Instead of optimizing for a single layer of the prediction market experience, ea
 * **Polymarket** proved massive demand for crypto-native prediction trading and pioneered on-chain settlement, but outcome tokens remain largely siloed within its own UX and liquidity is fragmented across its CLOB.
 * **Opinion** explores AI-assisted market creation and analysis, but lacks the trading infrastructure depth and financial composability needed for institutional-grade operations.
 * <mark style="background-color:green;">**PrediX**</mark> <mark style="background-color:green;">is purpose-built to fill the infrastructure gap — hybrid execution, ERC-20 composable outcome assets, multi-modular oracle resolution, and consumer-grade access from day one.</mark>
-*
 
-```
-<figure><img src="../.gitbook/assets/predix-positioning-map-full.png" alt="PrediX Positioning Map"><figcaption><p>PrediX Positioning Map</p></figcaption></figure>
-```
-
-> **PrediX is designed around the belief that prediction markets require a fundamentally different infrastructure model in order to evolve into scalable financial systems.**
+<figure><img src="../.gitbook/assets/ChatGPT Image 09_21_05 12 thg 5, 2026.png" alt=""><figcaption></figcaption></figure>
 
 ***
 

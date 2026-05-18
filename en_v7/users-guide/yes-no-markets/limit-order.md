@@ -22,6 +22,8 @@ Place a price and wait for a fill on the **On-chain Order Book**. You become a *
 
 ### How to Place a Limit Order
 
+<mark style="color:yellow;background-color:yellow;">**\[insert video]**</mark>
+
 {% stepper %}
 {% step %}
 <mark style="color:$warning;">**Step 1: Open the Limit Panel**</mark>
@@ -132,6 +134,8 @@ _You do not need to calculate any of this — the matching engine optimizes auto
 ***
 
 ### Cancel an Order
+
+<mark style="color:yellow;background-color:yellow;">**\[insert video]**</mark>
 
 {% stepper %}
 {% step %}

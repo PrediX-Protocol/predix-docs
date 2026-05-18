@@ -6,8 +6,6 @@ description: >-
 
 # Portfolio & P\&L
 
-![View all your positions, history, and P\&L at /portfolio.](../.gitbook/assets/44-portfolio-overview.svg)
-
 ### Active positions
 
 Each row:

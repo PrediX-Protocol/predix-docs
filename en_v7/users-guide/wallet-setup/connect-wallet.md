@@ -32,6 +32,8 @@ PrediX offers 2 sign-in methods, you maintain full control of your assets while 
 
 Passkeys use the **WebAuthn** standard — biometric (Touch ID, Face ID, Windows Hello) or your device PIN for authentication. The private key is generated and stored in the **Secure Enclave / TPM** and cannot be exported.
 
+<mark style="color:yellow;background-color:yellow;">**\[Insert Video Here]**</mark>
+
 #### <mark style="background-color:$warning;">1. How to login?</mark>
 
 {% stepper %}
@@ -147,6 +149,8 @@ Authentication requires plugging in or tapping the hardware key, Passkeys are st
 ### Method 2: Crypto Wallet (EOA)
 
 Use your existing Web3 wallet — MetaMask, Rainbow, Coinbase Wallet, or any wallet that supports WalletConnect/Hardware Wallet.
+
+<mark style="color:yellow;background-color:yellow;">**\[Insert Video Here]**</mark>
 
 #### <mark style="background-color:$warning;">1. How to connect Web3 wallet?</mark>
 

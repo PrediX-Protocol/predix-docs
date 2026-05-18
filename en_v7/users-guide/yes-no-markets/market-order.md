@@ -37,6 +37,8 @@ Use **Market** when you want to enter/exit a position **now** and are okay with 
 
 ### How to Buy YES
 
+<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
+
 {% stepper %}
 {% step %}
 <mark style="color:$warning;">**Step 1: Access the Trading Panel**</mark>
@@ -91,6 +93,8 @@ Before clicking buy, verify the following details:
 {% endstepper %}
 
 ### How to Sell YES
+
+<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
 
 Same flow but under the **Sell** tab:
 

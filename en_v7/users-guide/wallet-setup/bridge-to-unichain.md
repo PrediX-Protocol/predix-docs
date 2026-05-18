@@ -110,6 +110,8 @@ Note: This is usually a one-time action per token. The system uses Permit2 if su
 
 Many major exchanges (such as Coinbase) now support native withdrawals to Unichain, allowing you to skip the manual bridging process and save on fees.
 
+<mark style="color:yellow;background-color:yellow;">\[insert video here]</mark>
+
 {% stepper %}
 {% step %}
 <mark style="color:$warning;">**Step 1: Start the Withdrawal**</mark>
@@ -157,6 +159,8 @@ Note: If Unichain is not yet listed on your specific CEX, you will need to withd
 ***
 
 ### Reverse Bridge (Unichain → Another Chain)
+
+<mark style="color:yellow;background-color:yellow;">\[insert video here]</mark>
 
 Same UI, opposite direction:
 

@@ -10,6 +10,8 @@ description: >-
 
 ### How to Trade (Buy YES/NO Tokens)
 
+<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
+
 {% stepper %}
 {% step %}
 <mark style="color:$warning;">**Step 1: Find a Market**</mark>
@@ -98,6 +100,8 @@ Select your side based on your prediction:
 ***
 
 ### How to Sell a Position
+
+<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
 
 {% stepper %}
 {% step %}

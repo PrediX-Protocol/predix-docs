@@ -21,6 +21,8 @@ Redeem winning tokens for $1 each, or burn YES+NO pairs to reclaim your USDC on 
 
 #### How to Redeem Your Winnings
 
+<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
+
 {% stepper %}
 {% step %}
 <mark style="color:orange;">**Step 1: Locate Finished Markets**</mark>
@@ -87,6 +89,8 @@ Multiple resolved markets → click **Claim All** → batched via **passkey smar
 * You hold **both `YES` and `NO`**
 
 #### How to Claim a Refund
+
+<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
 
 {% stepper %}
 {% step %}

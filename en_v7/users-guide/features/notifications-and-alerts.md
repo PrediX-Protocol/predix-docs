@@ -19,8 +19,6 @@ All notifications respect a strict per-channel preferences matrix. Marketing is 
 
 PrediX supports five delivery channels covering web, mobile, and external messaging platforms.
 
-![Five delivery channels in PrediX](../../.gitbook/assets/42-notification-channels.svg)
-
 | Channel             | Realtime | Setup                                           | Best for                                   |
 | ------------------- | -------- | ----------------------------------------------- | ------------------------------------------ |
 | **In-app**          | ✅        | <ul><li>Default ON</li></ul>                    | <ul><li>All users</li></ul>                |
@@ -96,11 +94,13 @@ Protocol-level voting and decision events.
 
 ### Price Alerts
 
-> Price alerts let you set custom triggers on any market. Conditions are evaluated every block by the indexer, and the alert fires the moment the condition becomes true.
+Price alerts let you set custom triggers on any market. Conditions are evaluated every block by the indexer, and the alert fires the moment the condition becomes true.
 
-![Price alert: user set condition (YES > $0.70) → Indexer check every block → trigger → push + email + in-app](../../.gitbook/assets/43-price-alert-flow.svg)
+![Price alert setting PrediX](../../.gitbook/assets/43-price-alert-flow.svg)
 
 #### Setting up an alert
+
+<mark style="color:yellow;background-color:yellow;">\[Insert tutorial video]</mark>
 
 {% stepper %}
 {% step %}

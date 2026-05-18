@@ -11,8 +11,6 @@ PrediX embeds social features directly into the trading interface — comment th
 
 > Every market has its own comment thread, accessed via the **Discussion** tab on the market detail page. Comments are threaded two levels deep — a top-level comment with one level of replies — and ranked by upvotes so the strongest argument rises to the top.
 
-![Market discussion: comment list (sort newest/top), post comment, reply 2 levels, up/down vote, @mention](../../.gitbook/assets/47-discussion-features.svg)
-
 #### <mark style="color:orange;">1. Features</mark>
 
 * **Threaded** 2 levels (`comment` + `reply`).
@@ -50,8 +48,6 @@ Badges help readers weigh the credibility of an argument before acting on it.
 ### Social feed
 
 > The `/feed page` is a global activity stream that merges on-chain transactions with off-chain social actions into a single timeline.
-
-![Social feed: on-chain activity (trade, LP, resolve) + off-chain (comment, follow, badge) → filter (following/trending/latest) → realtime cards](../../.gitbook/assets/48-social-feed.svg)
 
 #### <mark style="color:orange;">1. Filters</mark>
 
@@ -114,8 +110,6 @@ Useful for monitoring hot markets and spotting whale moves as they happen.
 ### Moderation
 
 PrediX uses a **community moderation** model — moderators are recruited from vePRX holders in good standing, not appointed centrally.
-
-![Moderation: spam detected → user report → community mod review → valid: hide + warn, repeat 3+: ban 7-30 days](../../.gitbook/assets/49-moderation-flow.svg)
 
 #### Content Moderation & Penalty Process
 

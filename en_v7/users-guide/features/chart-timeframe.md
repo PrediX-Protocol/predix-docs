@@ -13,8 +13,6 @@ The chart aggregates prices from three on-chain sources into a single canonical 
 
 <table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Router.Trade</strong></mark></td><td>Canonical source, every market order.</td></tr><tr><td><mark style="color:orange;"><strong>Hook AMM swaps</strong></mark></td><td>Tick-by-tick AMM prices for analytics.</td></tr><tr><td><mark style="color:orange;"><strong>CLOB matches</strong></mark></td><td>Price at each limit fill.</td></tr></tbody></table>
 
-![3 data sources for the chart](../../.gitbook/assets/41-chart-sources.svg)
-
 ***
 
 #### <mark style="color:$warning;">1. Reading OHLC candles</mark>
