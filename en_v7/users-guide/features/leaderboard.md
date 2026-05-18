@@ -2,7 +2,7 @@
 description: >-
   Rank traders by performance, follow public profiles, and configure copy
   trading.
-icon: dumpster-fire
+icon: bullseye-pointer
 ---
 
 # Leaderboard & Traders

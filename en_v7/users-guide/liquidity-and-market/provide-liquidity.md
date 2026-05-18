@@ -1,5 +1,6 @@
 ---
 description: Provide liquidity and earn fees from every swap.
+icon: water-arrow-down
 ---
 
 # Provide liquidity (LP)

@@ -2,6 +2,7 @@
 description: >-
   Guide for creators (holders of CREATOR_ROLE) to create a market or
   multi-outcome event.
+icon: calendar-check
 ---
 
 # Create Market
