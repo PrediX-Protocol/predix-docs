@@ -31,14 +31,13 @@
   * [Provide liquidity (LP)](users-guide/liquidity-and-market/provide-liquidity.md)
   * [Create Market](users-guide/liquidity-and-market/create-market.md)
 
-## core Concepts
+## Core Concepts
 
-* [Trading overview](core-concepts/overview.md)
-* [Reading guide](core-concepts/concepts.md)
-* [Prediction market](core-concepts/prediction-market.md)
+* [Prediction Context](core-concepts/concepts.md)
+* [PrediX Market](core-concepts/overview.md)
 * [Outcome token (YES/NO)](core-concepts/outcome-tokens.md)
 * [CLOB + AMM hybrid](core-concepts/clob-amm-hybrid.md)
-* [Resolution & oracle](core-concepts/resolution.md)
+* [Resolution & Oracle](core-concepts/resolution.md)
 
 ## Economics
 

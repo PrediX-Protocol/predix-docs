@@ -1,10 +1,14 @@
+---
+description: Hybrid Liquidity mechanisms from PrediX
+---
+
 # CLOB + AMM hybrid
 
 PrediX combines 2 liquidity mechanisms: an on-chain order book (CLOB) + Uniswap v4 pool (AMM). The Router automatically selects the best path within the same transaction.
 
-## Why Hybrid
+### Why Hybrid
 
-|                 | CLOB only (Polymarket)             | AMM only (Uniswap)           | **Hybrid (PrediX)**                                   |
+|                 | **CLOB only (Polymarket)**         | **AMM only (Uniswap)**       | Hybrid (PrediX)                                       |
 | --------------- | ---------------------------------- | ---------------------------- | ----------------------------------------------------- |
 | Small trades    | OK but wide slippage if few makers | Smooth, low slippage         | Smooth + price improvement when makers are present    |
 | Large trades    | Depends on maker depth             | Slippage increases with size | Drain CLOB first, AMM for the remainder               |

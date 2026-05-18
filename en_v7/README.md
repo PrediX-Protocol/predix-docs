@@ -13,7 +13,7 @@ icon: align-justify
 
 > 🟡 **Status —** see on [**Network info**](users-guide/getting-started.md#network-info)**.**
 >
-> * Beta on **Unichain Sepolia testnet** (chain `1301`).&#x20;
+> * Beta on **Unichain Sepolia testnet** (chain `1301`).
 > * Mainnet launches after **external audit** (chain `130`).
 
 ![PrediX — The Financializing Information Markets](.gitbook/assets/hero-overview.png)
@@ -69,8 +69,8 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 > <mark style="color:$success;">Learn how PrediX markets function.</mark>
 
-{% content-ref url="core-concepts/prediction-market.md" %}
-[prediction-market.md](core-concepts/prediction-market.md)
+{% content-ref url="/broken/pages/ObphWLKRIu7e7qz2Ilam" %}
+[Broken link](/broken/pages/ObphWLKRIu7e7qz2Ilam)
 {% endcontent-ref %}
 
 {% content-ref url="core-concepts/outcome-tokens.md" %}
@@ -101,7 +101,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 ***
 
-<a href="economics/README.md" class="button primary" data-icon="coin-blank">ECONOMY</a>
+<a href="economics/" class="button primary" data-icon="coin-blank">ECONOMY</a>
 
 > <mark style="color:$success;">Explore staking, governance, and incentives.</mark>
 
