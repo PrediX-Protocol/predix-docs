@@ -69,8 +69,8 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 > <mark style="color:$success;">Learn how PrediX markets function.</mark>
 
-{% content-ref url="/broken/pages/ObphWLKRIu7e7qz2Ilam" %}
-[Broken link](/broken/pages/ObphWLKRIu7e7qz2Ilam)
+{% content-ref url="core-concepts/overview.md" %}
+[overview.md](core-concepts/overview.md)
 {% endcontent-ref %}
 
 {% content-ref url="core-concepts/outcome-tokens.md" %}
