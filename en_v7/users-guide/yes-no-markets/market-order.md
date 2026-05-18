@@ -2,6 +2,7 @@
 description: >-
   Instant execution, optimized CLOB & AMM routing, and automated slippage
   control.
+icon: list
 ---
 
 # Market Order

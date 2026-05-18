@@ -1,5 +1,6 @@
 ---
 description: Set your own price and avoid slippage with PrediX Limit Orders.
+icon: temperature-list
 ---
 
 # Limit Order (CLOB)

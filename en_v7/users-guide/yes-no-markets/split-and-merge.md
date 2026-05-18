@@ -1,5 +1,6 @@
 ---
 description: Convert between USDC collateral and YES + NO share pairs.
+icon: split
 ---
 
 # Split & Merge

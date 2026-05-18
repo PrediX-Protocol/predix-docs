@@ -1,5 +1,6 @@
 ---
 description: Comment on markets, follow the activity feed, and engage with the community.
+icon: share-nodes
 ---
 
 # Social & Discussion

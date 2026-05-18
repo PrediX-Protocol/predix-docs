@@ -1,5 +1,6 @@
 ---
 description: Read prediction market charts, change timeframes, and apply indicators.
+icon: chart-line-up-down
 ---
 
 # Chart & Timeframe

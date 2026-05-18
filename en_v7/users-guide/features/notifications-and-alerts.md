@@ -1,5 +1,6 @@
 ---
 description: Configure channels, alerts, and digests to stay updated on market activity.
+icon: alarm-exclamation
 ---
 
 # Notifications & Alerts
