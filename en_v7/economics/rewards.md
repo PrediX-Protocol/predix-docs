@@ -1,4 +1,8 @@
-# Rewards & gamification
+---
+icon: cricket-bat-ball
+---
+
+# Rewards & Gamification
 
 Long-term activity rewards (badges, streaks, daily challenges, reward boxes). Independent of the Season pool — engagement-driven, throughout the protocol's lifetime.
 
@@ -31,13 +35,13 @@ NFT badges (ERC-1155 on Unichain) earned upon reaching milestones:
 
 3 random challenges each day:
 
-| Example challenge                    | Reward                                                             |
-| ------------------------------------ | ------------------------------------------------------------------ |
-| Trade volume >= $50 today            | 100 Points                                                         |
-| Place 1 limit order                  | 50 Points                                                          |
-| Hold a position for at least 4 hours | 75 Points                                                          |
-| Try 3 different markets              | 100 Points                                                         |
-| Refer 1 friend                       | see [Points](points.md) (2-gate referral)                          |
+| Example challenge                    | Reward                                                            |
+| ------------------------------------ | ----------------------------------------------------------------- |
+| Trade volume >= $50 today            | 100 Points                                                        |
+| Place 1 limit order                  | 50 Points                                                         |
+| Hold a position for at least 4 hours | 75 Points                                                         |
+| Try 3 different markets              | 100 Points                                                        |
+| Refer 1 friend                       | see [Points](incentive-and-community/points.md) (2-gate referral) |
 
 Resets at 00:00 UTC daily.
 

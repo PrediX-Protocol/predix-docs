@@ -38,20 +38,23 @@
 * [Outcome token (YES/NO)](core-concepts/outcome-tokens.md)
 * [CLOB + AMM hybrid](core-concepts/clob-amm-hybrid.md)
 * [Resolution & Oracle](core-concepts/resolution.md)
+* [Economic Architecture](core-concepts/economic-architecture.md)
+* [Business Model & Flywheel](core-concepts/business-model-and-flywheel.md)
 
 ## Economics
 
-* [PRX overview](economics/README.md)
-* [PRX Economy](economics/prx-economy/README.md)
-  * [Allocation & vesting](economics/allocation-vesting.md)
-  * [Staking real yield](economics/staking.md)
-  * [vePRX & gauge voting](economics/veprx-gauge.md)
-  * [Buyback-burn & treasury](economics/buyback-burn.md)
-* [Points — Earn PRX](economics/points.md)
+* [The PRX Token](economics/economics/README.md)
+  * [PRX Utility](economics/economics/prx-utility.md)
+  * [Allocation & Vesting](economics/economics/allocation-vesting.md)
+* [PRX Governance](economics/prx-economy/README.md)
+  * [Real Yield Staking](economics/staking.md)
+  * [vePRX & Gauge Voting](economics/veprx-gauge.md)
+  * [Deflationary & Treasury](economics/buyback-burn.md)
 * [Incentive & Community](economics/incentive-and-community/README.md)
-  * [Points & seasons](economics/points-seasons.md)
+  * [Points — Earn PRX](economics/incentive-and-community/points.md)
+  * [Points & Seasons](economics/points-seasons.md)
   * [KOL & Ambassador](economics/kol-ambassador.md)
-  * [Rewards & gamification](economics/rewards.md)
+  * [Rewards & Gamification](economics/rewards.md)
 
 ## Developers Guide
 
@@ -79,3 +82,4 @@
 * [Glossary](resources/glossary.md)
 * [Changelog](resources/changelog.md)
 * [Links](resources/links.md)
+* [Disclaimers & Risks](resources/disclaimers-and-risks.md)

@@ -1,4 +1,8 @@
-# Staking real yield
+---
+icon: seedling
+---
+
+# Real Yield Staking
 
 Lock PRX to receive a share of protocol fees in **real USDC**. No emissions.
 

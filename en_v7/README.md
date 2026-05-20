@@ -101,7 +101,7 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 ***
 
-<a href="economics/" class="button primary" data-icon="coin-blank">ECONOMY</a>
+<a href="economics/economics/" class="button primary" data-icon="coin-blank">ECONOMY</a>
 
 > <mark style="color:$success;">Explore staking, governance, and incentives.</mark>
 

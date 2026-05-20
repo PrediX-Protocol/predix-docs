@@ -1,3 +1,7 @@
+---
+icon: hundred-points
+---
+
 # Points — Earn PRX
 
 PrediX rewards users with **Points** — a unit measuring contribution. Points convert into **PRX tokens** on a pro-rata basis. The earlier you participate, the more you earn.
@@ -51,7 +55,7 @@ PRX received = (Your Points / Total S1 Points) x 56,000,000 PRX
 * **No carry-over**: S0 / S1 Points are separate. Each Season = separate pool.
 * **Cap**: 100K PRX/wallet (S1).
 
-Details on 3-Wave + season roadmap: [Points & seasons](points-seasons.md).
+Details on 3-Wave + season roadmap: [Points & seasons](../points-seasons.md).
 
 ## Anti-Gaming
 
@@ -72,4 +76,4 @@ App UI: **Profile → Points** tab.
 
 ## KOL & Ambassador
 
-If you're a content creator (≥1K followers): join the [KOL & Ambassador program](kol-ambassador.md) — separate pool of 12M PRX, milestone-based.
+If you're a content creator (≥1K followers): join the [KOL & Ambassador program](../kol-ambassador.md) — separate pool of 12M PRX, milestone-based.

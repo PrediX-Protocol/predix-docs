@@ -1,4 +1,8 @@
-# Buyback-burn & treasury
+---
+icon: gem
+---
+
+# Deflationary & Treasury
 
 PrediX buys PRX from the open market using protocol fees and burns it permanently.
 

@@ -1,4 +1,8 @@
-# Points & seasons
+---
+icon: money-bill-trend-up
+---
+
+# Points & Seasons
 
 PrediX uses **6-season emission** instead of a one-time airdrop. Community pool = **300M PRX (30%)** spread over 3 years, declining \~30%/season.
 
@@ -24,7 +28,7 @@ S1 is the largest because cold-start is the hardest. Early users earn \~20x more
 
 Testnet activity is tracked off-chain (PostgreSQL). At mainnet launch: snapshot -> calculate allocation pro-rata -> generate Merkle tree -> publish on-chain. Users claim PRX at TGE using a Merkle proof.
 
-**How to earn Points S0** -> see [Points — how to earn PRX](points.md#s0--testnet).
+**How to earn Points S0** -> see [Points — how to earn PRX](incentive-and-community/points.md#s0--testnet).
 
 ## S1 — Genesis sub-pool breakdown
 
@@ -80,4 +84,4 @@ Volume milestone rewards (S2-S3):
 
 All votes are on-chain with a public dashboard.
 
-**How to earn Points S0 + S1** -> see [Points — how to earn PRX](points.md).
+**How to earn Points S0 + S1** -> see [Points — how to earn PRX](incentive-and-community/points.md).

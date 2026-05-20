@@ -1,4 +1,8 @@
-# vePRX & gauge voting
+---
+icon: briefcase
+---
+
+# vePRX & Gauge Voting
 
 Lock PRX -> vePRX (vote-escrowed) -> vote on gauges + boost yield + governance.
 
