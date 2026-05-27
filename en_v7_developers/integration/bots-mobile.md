@@ -1,8 +1,8 @@
-# Bots & Mobile
+# Bots & mobile
 
 ## Programmatic trading
 
-Currently, programmatic trading is done by calling Router contract functions directly via viem (TypeScript) or web3.py (Python). See [Quickstart — TypeScript](quickstart-typescript.md) and [Quickstart — Python](quickstart-python.md).
+Currently, programmatic trading is done by calling Router contract functions directly via viem (TypeScript) or web3.py (Python). See [Quickstart — TypeScript](../getting-started/quickstart-typescript.md) and [Quickstart — Python](../getting-started/quickstart-python.md).
 
 > **Planned**: API key system and webhook notifications for bot developers are planned for a future release. Currently, all trading goes through on-chain Router contract calls with standard wallet signing.
 

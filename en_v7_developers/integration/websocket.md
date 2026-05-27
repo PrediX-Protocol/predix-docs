@@ -2,7 +2,7 @@
 
 Real-time streaming for orderbook updates, price changes, trades, and user portfolio events.
 
-![WebSocket flow: Client connects → subscribes to topic (orderbook, trades) → server confirms → pushes data updates → ping/pong keepalive](.gitbook/assets/websocket-flow.svg)
+![WebSocket flow: Client connects → subscribes to topic (orderbook, trades) → server confirms → pushes data updates → ping/pong keepalive](../.gitbook/assets/websocket-flow.svg)
 
 ## Connection
 

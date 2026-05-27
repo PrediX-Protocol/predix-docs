@@ -36,8 +36,8 @@ client.ws.on('data', (msg) => console.log(msg));
 
 Use [viem](https://viem.sh) directly with Router contract:
 
-→ [Quickstart — TypeScript](quickstart-typescript.md)
+→ [Quickstart — TypeScript](../getting-started/quickstart-typescript.md)
 
-→ [Router integration](router-integration.md)
+→ [Router integration](../integration/router-integration.md)
 
-→ [API reference](api-reference.md) — REST endpoints via `fetch`
+→ [API reference](../integration/api-reference.md) — REST endpoints via `fetch`

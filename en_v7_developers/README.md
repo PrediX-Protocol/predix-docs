@@ -25,7 +25,7 @@ No API key required for on-chain trading. Start immediately.
 
 > **Coming soon**: API key authentication for programmatic trading (24/7 bot operation without browser wallet) is planned for a future release.
 
-→ [Quickstart — TypeScript](quickstart-typescript.md) · [Quickstart — Python](quickstart-python.md)
+→ [Quickstart — TypeScript](getting-started/quickstart-typescript.md) · [Quickstart — Python](getting-started/quickstart-python.md)
 
 ## Path 2 — Build a platform
 
@@ -45,7 +45,7 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 3. User signs tx via wallet → Router contract executes on-chain
 4. Track positions via `GET /api/v1/users/:address/portfolio`
 
-→ [API reference](api-reference.md) · [WebSocket](websocket.md) · [Bots & mobile](bots-mobile.md)
+→ [API reference](integration/api-reference.md) · [WebSocket](integration/websocket.md) · [Bots & mobile](integration/bots-mobile.md)
 
 ## Stack overview
 
@@ -77,15 +77,15 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 
 ## API base URLs
 
-| Environment        | Indexer                                | Backend                                |
-| ------------------ | -------------------------------------- | -------------------------------------- |
-| **Testnet** (live) | Gated — see [Testnet info](testnet.md) | Gated — see [Testnet info](testnet.md) |
-| **Mainnet** (TBA)  | `https://indexer.predix.app`           | `https://api.predix.app`               |
+| Environment        | Indexer                                                | Backend                                                |
+| ------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| **Testnet** (live) | Gated — see [Testnet info](getting-started/testnet.md) | Gated — see [Testnet info](getting-started/testnet.md) |
+| **Mainnet** (TBA)  | `https://indexer.predix.app`                           | `https://api.predix.app`                               |
 
 ## Next steps
 
-* [Quickstart — TypeScript](quickstart-typescript.md) — buy YES in 5 minutes
-* [Quickstart — Python](quickstart-python.md) — full working example
-* [Router integration](router-integration.md) — deep dive on-chain trading
-* [API reference](api-reference.md) — REST endpoints
-* [Testnet info](testnet.md) — faucet, RPC, deploy flow
+* [Quickstart — TypeScript](getting-started/quickstart-typescript.md) — buy YES in 5 minutes
+* [Quickstart — Python](getting-started/quickstart-python.md) — full working example
+* [Router integration](integration/router-integration.md) — deep dive on-chain trading
+* [API reference](integration/api-reference.md) — REST endpoints
+* [Testnet info](getting-started/testnet.md) — faucet, RPC, deploy flow

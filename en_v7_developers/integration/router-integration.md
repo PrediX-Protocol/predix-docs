@@ -9,7 +9,7 @@ Router address:
 * **Testnet** (Unichain Sepolia, live): `0x1267723f500C0437295698d36d521bd060Bed0EB`
 * **Mainnet** (TBA, after launch)
 
-Full address list: [Contract addresses](architecture.md#contract-addresses).
+Full address list: [Contract addresses](../protocol/architecture.md#contract-addresses).
 
 Core function:
 
@@ -225,7 +225,7 @@ This event is the **canonical source** for the indexer. Listen to it to update y
 
 ## Batch with Smart Account
 
-![AA UserOp batch](.gitbook/assets/22-aa-userop.svg)
+![AA UserOp batch](../.gitbook/assets/22-aa-userop.svg)
 
 ```typescript
 import { createKernelClient } from '@zerodev/sdk';

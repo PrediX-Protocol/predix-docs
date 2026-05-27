@@ -2,7 +2,7 @@
 
 Buy YES tokens on a PrediX market using web3.py.
 
-![Quickstart flow: Setup → Approve → Quote → Trade → Done. Router handles CLOB → AMM routing automatically.](.gitbook/assets/quickstart-flow.svg)
+![Quickstart flow: Setup → Approve → Quote → Trade → Done. Router handles CLOB → AMM routing automatically.](../.gitbook/assets/quickstart-flow.svg)
 
 ## Prerequisites
 
@@ -179,10 +179,10 @@ For advanced users who want to interact with the CLOB directly:
 # getBestPrices(marketId) → bestBidYes, bestAskYes, bestBidNo, bestAskNo
 ```
 
-See [Router integration](router-integration.md) for detailed Exchange API.
+See [Router integration](../integration/router-integration.md) for detailed Exchange API.
 
 ## Next steps
 
-* [Router integration](router-integration.md) — Permit2, batch trading, CLOB direct
-* [API reference](api-reference.md) — REST API for market data
-* [WebSocket](websocket.md) — real-time streaming
+* [Router integration](../integration/router-integration.md) — Permit2, batch trading, CLOB direct
+* [API reference](../integration/api-reference.md) — REST API for market data
+* [WebSocket](../integration/websocket.md) — real-time streaming

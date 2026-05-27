@@ -1,4 +1,4 @@
-# API reference
+# API Reference
 
 PrediX exposes 3 layers for developers:
 
@@ -23,10 +23,10 @@ Bot/analytics raw data -> Indexer. FE/app user-facing -> Backend.
 
 ## Base URL
 
-| Env                | Indexer                                | Backend                                |
-| ------------------ | -------------------------------------- | -------------------------------------- |
-| **Testnet** (live) | Gated — see [Testnet info](testnet.md) | Gated — see [Testnet info](testnet.md) |
-| **Mainnet** (TBA)  | `https://indexer.predix.app`           | `https://api.predix.app`               |
+| Env                | Indexer                                                   | Backend                                                   |
+| ------------------ | --------------------------------------------------------- | --------------------------------------------------------- |
+| **Testnet** (live) | Gated — see [Testnet info](../getting-started/testnet.md) | Gated — see [Testnet info](../getting-started/testnet.md) |
+| **Mainnet** (TBA)  | `https://indexer.predix.app`                              | `https://api.predix.app`                                  |
 
 Schema is identical across both environments — switching testnet to mainnet only requires changing the base URL.
 
@@ -268,7 +268,7 @@ GET /docs-json                            OpenAPI spec (JSON)
 
 ### SIWE auth flow
 
-![SIWE auth: GET /auth/challenge -> server returns nonce -> user signMessage -> POST /auth/verify -> BE verifies ECDSA -> set HTTPOnly cookie 7 days](.gitbook/assets/14-siwe-auth.svg)
+![SIWE auth: GET /auth/challenge -> server returns nonce -> user signMessage -> POST /auth/verify -> BE verifies ECDSA -> set HTTPOnly cookie 7 days](../.gitbook/assets/14-siwe-auth.svg)
 
 ```typescript
 // 1. Challenge
@@ -334,7 +334,7 @@ const { data } = await api.GET('/markets/{id}', {
 
 Source of truth on-chain — bot listeners, custom subgraphs, and monitoring services should consume from here.
 
-![Event source: Router.Trade = canonical (volume + trades count), Hook\_MarketTraded = analytics only (priceSnapshot, NOT volume), PositionSplit/Merge/Redeem/Refund = audit rows always land](.gitbook/assets/63-event-source-truth.svg)
+![Event source: Router.Trade = canonical (volume + trades count), Hook\_MarketTraded = analytics only (priceSnapshot, NOT volume), PositionSplit/Merge/Redeem/Refund = audit rows always land](../.gitbook/assets/63-event-source-truth.svg)
 
 * **Canonical trade**: `Router.Trade` — `protocolStats.totalVolume / totalTrades` **only** increments from this event.
 * **AMM swap analytics**: `Hook_MarketTraded` — priceSnapshot only, does not count volume (avoids double-counting).
@@ -470,9 +470,9 @@ client.watchContractEvent({
 
 ## Limits
 
-| Tier   | Public        | Auth             | Quota          |
-| ------ | ------------- | ---------------- | -------------- |
-| Free   | 60 req/min/IP | 300 req/min/user | 10,000 req/day |
+| Tier | Public        | Auth             | Quota          |
+| ---- | ------------- | ---------------- | -------------- |
+| Free | 60 req/min/IP | 300 req/min/user | 10,000 req/day |
 
 Auth endpoint (challenge/verify): 5/min.
 

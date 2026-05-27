@@ -4,31 +4,27 @@
 
 ## Getting Started
 
-* [Overview](getting-started/README.md)
-  * [Quickstart — TypeScript](quickstart-typescript.md)
-  * [Quickstart — Python](quickstart-python.md)
-  * [Testnet Information](testnet.md)
+* [Quickstart — TypeScript](getting-started/quickstart-typescript.md)
+* [Quickstart — Python](getting-started/quickstart-python.md)
+* [Testnet Information](getting-started/testnet.md)
 
 ## Integration
 
-* [Overview](integration/README.md)
-  * [Router integration](router-integration.md)
-  * [API Reference](api-reference.md)
-  * [WebSocket](websocket.md)
-  * [Bots & mobile](bots-mobile.md)
+* [Router integration](integration/router-integration.md)
+* [API Reference](integration/api-reference.md)
+* [WebSocket](integration/websocket.md)
+* [Bots & mobile](integration/bots-mobile.md)
 
 ## SDKs
 
-* [Overview](sdks/README.md)
-  * [TypeScript SDK](sdk-typescript.md)
-  * [Python SDK](sdk-python.md)
+* [Python SDK](sdks/sdk-python.md)
+* [TypeScript SDK](sdks/sdk-typescript.md)
 
 ## Protocol
 
-* [Overview](protocol/README.md)
-  * [Architecture & contracts](architecture.md)
-  * [Oracle](oracle.md)
-  * [Security & timelock](security.md)
+* [Architecture & contracts](protocol/architecture.md)
+* [Oracle](protocol/oracle.md)
+* [Security & timelock](protocol/security.md)
 
 ## Resources
 

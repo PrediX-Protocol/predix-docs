@@ -1,4 +1,4 @@
-# Testnet info
+# Testnet Information
 
 PrediX maintains a testnet deployment on **Unichain Sepolia** for developers to integrate before mainnet launch.
 
@@ -118,7 +118,7 @@ Latest deploy addresses:
 
 ## Development flow
 
-![Dev flow: local dev (anvil fork) -> test integrate testnet -> test edge cases faucet -> self-audit errors -> deploy/connect mainnet](.gitbook/assets/62-testnet-dev-flow.svg)
+![Dev flow: local dev (anvil fork) -> test integrate testnet -> test edge cases faucet -> self-audit errors -> deploy/connect mainnet](../.gitbook/assets/62-testnet-dev-flow.svg)
 
 ### Recommended sequence
 

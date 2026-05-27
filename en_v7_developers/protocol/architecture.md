@@ -4,7 +4,7 @@ Solidity `0.8.34`, Foundry, EVM cancun (EIP-1153 transient storage). 7 packages,
 
 ## Dependency graph
 
-![SC dependency: shared -> oracle/diamond -> hook/exchange -> router. Cross-package import only via @predix/shared/interfaces](.gitbook/assets/08-sc-dependency.svg)
+![SC dependency: shared -> oracle/diamond -> hook/exchange -> router. Cross-package import only via @predix/shared/interfaces](../.gitbook/assets/08-sc-dependency.svg)
 
 Rule: cross-package imports are **only** allowed via `@predix/shared/interfaces/`. No importing implementations from other packages.
 
@@ -29,14 +29,14 @@ Single proxy `PrediX Diamond` with 6 facets. Each facet is independently upgrade
 
 **Callbacks** set via permissions flag in the hook address (salt-mined):
 
-| Callback                | Responsibility                                                  |
-| ----------------------- | --------------------------------------------------------------- |
-| `beforeInitialize`      | Set permission flag + init pool state                           |
-| `beforeAddLiquidity`    | Block adding LP if market is resolved / refunded                |
-| `beforeRemoveLiquidity` | Block LP modification on resolved/refunded markets              |
-| `beforeSwap`            | Verify anti-sandwich identity (EIP-1153 transient storage)      |
-| `afterSwap`             | Enforce post-swap price band check + emit Hook_MarketTraded event |
-| `beforeDonate`          | Block donate after endTime (prevents brute-force payout attack) |
+| Callback                | Responsibility                                                     |
+| ----------------------- | ------------------------------------------------------------------ |
+| `beforeInitialize`      | Set permission flag + init pool state                              |
+| `beforeAddLiquidity`    | Block adding LP if market is resolved / refunded                   |
+| `beforeRemoveLiquidity` | Block LP modification on resolved/refunded markets                 |
+| `beforeSwap`            | Verify anti-sandwich identity (EIP-1153 transient storage)         |
+| `afterSwap`             | Enforce post-swap price band check + emit Hook\_MarketTraded event |
+| `beforeDonate`          | Block donate after endTime (prevents brute-force payout attack)    |
 
 **Key functions**:
 
@@ -46,7 +46,7 @@ Single proxy `PrediX Diamond` with 6 facets. Each facet is independently upgrade
 
 ### Hook proxy upgrade — 48h monotonic timelock
 
-![Hook proxy upgrade: Idle -> Proposed (proposeUpgrade) -> 48h wait -> Executed (executeUpgrade) or Cancelled. timelockDuration monotonic, min 48h](.gitbook/assets/23-hook-upgrade-state.svg)
+![Hook proxy upgrade: Idle -> Proposed (proposeUpgrade) -> 48h wait -> Executed (executeUpgrade) or Cancelled. timelockDuration monotonic, min 48h](../.gitbook/assets/23-hook-upgrade-state.svg)
 
 * `proposeUpgrade(newImpl)` -> `readyAt = now + timelockDuration` (min 48h).
 * Wait >= timelockDuration -> `executeUpgrade(newImpl, sig, readyAt)`.
@@ -147,16 +147,16 @@ PrediX is currently in **testnet beta** (deployed 2026-04-20). Mainnet will depl
 
 ### Core PrediX
 
-| Contract               | Testnet (Unichain Sepolia, chain `1301`)     | Mainnet (Unichain, chain `130`) |
-| ---------------------- | -------------------------------------------- | ------------------------------- |
-| **Diamond**            | `0xa7a35F11e184Bde540702083160647518f5Be302` | TBA                             |
-| **Hook**               | `0xc167a6bD746a5a884b3C0546B0115D0FdC04aAe0` | TBA                             |
-| **Exchange**           | `0x95a5Db0694c7C185b152E24b7d58D527af236b85` | TBA                             |
-| **Router**             | `0x1267723f500C0437295698d36d521bd060Bed0EB` | TBA                             |
-| **ManualOracle**       | `0x9ffbf61f9481D71BB6F40e1955F4096De4c52cF6` | TBA                             |
-| **ChainlinkOracle**    | Disabled (no feed on Sepolia)                | TBA                             |
-| **Paymaster**          | `0x6bBeeb1255a25e6a57b87D9d88fBE24c3a1Ba9e7` | TBA                             |
-| **Faucet (relayed)**   | `0x76C951B6185A2B44e44c98E7A0E9Ee59b08760da` | N/A                             |
+| Contract             | Testnet (Unichain Sepolia, chain `1301`)     | Mainnet (Unichain, chain `130`) |
+| -------------------- | -------------------------------------------- | ------------------------------- |
+| **Diamond**          | `0xa7a35F11e184Bde540702083160647518f5Be302` | TBA                             |
+| **Hook**             | `0xc167a6bD746a5a884b3C0546B0115D0FdC04aAe0` | TBA                             |
+| **Exchange**         | `0x95a5Db0694c7C185b152E24b7d58D527af236b85` | TBA                             |
+| **Router**           | `0x1267723f500C0437295698d36d521bd060Bed0EB` | TBA                             |
+| **ManualOracle**     | `0x9ffbf61f9481D71BB6F40e1955F4096De4c52cF6` | TBA                             |
+| **ChainlinkOracle**  | Disabled (no feed on Sepolia)                | TBA                             |
+| **Paymaster**        | `0x6bBeeb1255a25e6a57b87D9d88fBE24c3a1Ba9e7` | TBA                             |
+| **Faucet (relayed)** | `0x76C951B6185A2B44e44c98E7A0E9Ee59b08760da` | N/A                             |
 
 ### Diamond facets
 
@@ -207,10 +207,10 @@ https://uniscan.xyz/address/<ADDRESS>#code            # mainnet (after deploy)
 
 ABI files can be obtained from verified contract source code on [Uniscan explorer](https://sepolia.uniscan.xyz).
 
-Integration details: [Router integration](router-integration.md).
+Integration details: [Router integration](../integration/router-integration.md).
 
 ### Multi-chain (TBA)
 
 Phase 3 — multi-chain deployment (Base / Arbitrum / Optimism / Polygon) via bridge (Wormhole / LayerZero). Details in the roadmap.
 
-For pre-mainnet integration testing, see [Testnet info](testnet.md).
+For pre-mainnet integration testing, see [Testnet info](../getting-started/testnet.md).
