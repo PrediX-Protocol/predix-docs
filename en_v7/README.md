@@ -119,20 +119,20 @@ Quick access to protocol documentation, developer resources, infrastructure arch
 
 ***
 
-<a href="developers-guide/introduction.md" class="button primary" data-icon="code">FOR DEVELOPERS</a>
+<a href="/broken/pages/oL7MH3YFVBVoNqOE204N" class="button primary" data-icon="code">FOR DEVELOPERS</a>
 
 > <mark style="color:$success;">Build on PrediX infrastructure.</mark>
 
-{% content-ref url="developers-guide/api-reference.md" %}
-[api-reference.md](developers-guide/api-reference.md)
+{% content-ref url="/broken/pages/NaTE7epVHDvl0K9Pol1r" %}
+[Broken link](/broken/pages/NaTE7epVHDvl0K9Pol1r)
 {% endcontent-ref %}
 
-{% content-ref url="developers-guide/architecture.md" %}
-[architecture.md](developers-guide/architecture.md)
+{% content-ref url="/broken/pages/ERPtu7loCex6MXMc5YjQ" %}
+[Broken link](/broken/pages/ERPtu7loCex6MXMc5YjQ)
 {% endcontent-ref %}
 
-{% content-ref url="developers-guide/security.md" %}
-[security.md](developers-guide/security.md)
+{% content-ref url="/broken/pages/X62chRP2ACaMi4cphekc" %}
+[Broken link](/broken/pages/X62chRP2ACaMi4cphekc)
 {% endcontent-ref %}
 
 ***

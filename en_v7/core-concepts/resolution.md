@@ -76,7 +76,7 @@ PrediX uses Committee Oracle with Cross-chain governance outcomes, complex compo
 When no oracle can resolve → admin enables refund mode via 48h timelock → users burn YES+NO pairs → receive USDC pro-rata.
 
 {% hint style="info" %}
-**Flow details:** [**Oracle — Refund mode**](../developers-guide/oracle.md#refund-mode--last-resort) **·** [**Redeem & refund**](../users-guide/redeem-refund.md)**.**
+**Flow details:** [**Oracle — Refund mode**](/broken/pages/ChJv6jHOoCscxuz8XAzC#refund-mode--last-resort) **·** [**Redeem & refund**](../users-guide/redeem-refund.md)**.**
 {% endhint %}
 
 ***
@@ -108,8 +108,8 @@ When no oracle can resolve → admin enables refund mode via 48h timelock → us
 * **Redemption**: No hard deadline, 365-day grace period, after which admin may call `sweepUnclaimed` to transfer to treasury.
 * **UMA dispute**: 48h after proposal.
 
-Time parameters are configurable per-market or globally.&#x20;
+Time parameters are configurable per-market or globally.
 
 {% hint style="info" %}
-**See more:** [**Architecture & Contracts**](../developers-guide/architecture.md)**.**
+**See more:** [**Architecture & Contracts**](/broken/pages/ERPtu7loCex6MXMc5YjQ)**.**
 {% endhint %}

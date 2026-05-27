@@ -26,6 +26,8 @@ Each row:
 * **Realized** = P\&L from closed positions or redeemed tokens.
 * **Unrealized** = not yet locked in; depends on the current spot price.
 
+<figure><img src="../.gitbook/assets/9.jpg" alt=""><figcaption></figcaption></figure>
+
 ***
 
 ### History — 6 types
@@ -88,6 +90,8 @@ A tool to help you recognize your own biases.
 ![Badge categories: Volume ($1K-$100K), Accuracy (70%-90% win), Streak (7-365 day), Special (beta tester, community hero)](../.gitbook/assets/28-mindmap-badges.svg)
 
 Badges are NFTs — shareable and serve as profile signatures. Details: [Rewards & gamification](../economics/rewards.md).
+
+<figure><img src="../.gitbook/assets/10.png" alt=""><figcaption></figcaption></figure>
 
 ***
 

@@ -86,7 +86,7 @@ The chart is full-width on mobile with full gesture support:
 ### Developer API
 
 {% hint style="info" %}
-Details: [API Reference](../../developers-guide/api-reference.md).
+Details: [API Reference](/broken/pages/NaTE7epVHDvl0K9Pol1r).
 {% endhint %}
 
 Chart data from the Indexer endpoint:

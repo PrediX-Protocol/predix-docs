@@ -144,7 +144,7 @@ Need Review:
 {% step %}
 <mark style="color:$warning;">**Step 4: Confirm Removal**</mark>
 
-* Confirm the transaction.&#x20;
+* Confirm the transaction.
 * Tokens are returned to your wallet in the same transaction; the LP NFT is burned (or its liquidity is reduced for partial withdrawals).
 {% endstep %}
 {% endstepper %}
@@ -241,7 +241,7 @@ _Track gauge rankings in **Liquidity** → **Gauge** tab._
 
 <summary><mark style="color:$primary;"><strong>Tax &#x26; Accounting</strong></mark></summary>
 
-* LP fees are collected in USDC + outcome tokens. Each claim event counts as income (for tax purposes, depending on jurisdiction).&#x20;
+* LP fees are collected in USDC + outcome tokens. Each claim event counts as income (for tax purposes, depending on jurisdiction).
 * Export CSV from your portfolio.
 
 </details>
@@ -256,5 +256,5 @@ LP positions are accessible via:
 * BE: `GET /api/v1/users/:address/lp-positions`
 
 {% hint style="info" %}
-Details: [Indexer API](../../developers-guide/api-reference.md#indexer-endpoints).
+Details: [Indexer API](/broken/pages/NaTE7epVHDvl0K9Pol1r#indexer-endpoints).
 {% endhint %}

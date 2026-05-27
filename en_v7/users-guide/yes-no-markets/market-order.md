@@ -125,6 +125,8 @@ Same flow but under the **Sell** tab:
 
 ### How to Buy / Sell NO
 
+<figure><img src="../../.gitbook/assets/4.png" alt=""><figcaption></figcaption></figure>
+
 Buying or selling NO works the same way as YES. The Router automatically searches for the best available execution path between the on-chain order book (CLOB) and Uniswap v4 liquidity pools.
 
 ![Automatic Router Mechanism](../../.gitbook/assets/15-router-waterfall.svg)

@@ -2,7 +2,9 @@
 description: Set up your wallet and fund your account
 ---
 
-# Wallet Onboarding
+# Wallet Setup
+
+<figure><img src="../../.gitbook/assets/1.png" alt=""><figcaption></figcaption></figure>
 
 Before you can trade on PrediX, you need to complete 2 setup steps. After this, you're ready to trade and won't need to repeat these steps unless you switch wallets or run out of USDC.
 
@@ -11,7 +13,7 @@ Before you can trade on PrediX, you need to complete 2 setup steps. After this, 
 The whole setup takes **\~2 minutes**. After this, you're ready to trade and won't need to repeat these steps unless you switch wallets or run out of USDC.
 
 {% hint style="info" %}
-**No crypto background needed.**&#x20;
+**No crypto background needed.**
 
 If you're new to crypto, use **Passkey** — Sign in with **Face ID or Touch ID**, no seed phrase, no browser extension. You can buy USDC directly in the app.
 {% endhint %}

@@ -318,5 +318,5 @@ DELETE /api/v1/users/:address/alerts/:id
 Realtime updates via WebSocket: `wss://api.predix.app/v2/me/notifications` with an auth header.
 
 {% hint style="info" %}
-Details: [API Reference](../../developers-guide/api-reference.md).
+Details: [API Reference](/broken/pages/NaTE7epVHDvl0K9Pol1r).
 {% endhint %}

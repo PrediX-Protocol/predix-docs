@@ -192,5 +192,5 @@ GET /api/v1/users/:address/following  (following whom)
 ```
 
 {% hint style="info" %}
-Details: [Backend API](../../developers-guide/api-reference.md#backend-endpoints-v2).
+Details: [Backend API](/broken/pages/NaTE7epVHDvl0K9Pol1r#backend-endpoints-v2).
 {% endhint %}

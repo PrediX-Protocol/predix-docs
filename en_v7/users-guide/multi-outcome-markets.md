@@ -6,6 +6,8 @@ description: >-
 
 # Multi-Outcome Markets
 
+<figure><img src="../.gitbook/assets/6.png" alt=""><figcaption></figcaption></figure>
+
 Not every question has a yes/no answer. **"Who wins the 2026 FIFA World Cup?"** has 32 possible answers, not 2. Multi-outcome markets let you trade events where exactly **one out of many** possible outcomes will be true.
 
 PrediX implements multi-outcome markets as a **group of binary markets** — each outcome is its own YES/NO market, all linked under one **MarketGroup**. When the event resolves, the winning outcome's YES pays `$1`, every other outcome's NO pays `$1`, and the rest pay `$0`.
@@ -58,6 +60,8 @@ Each outcome trades on its own Market Order, Limit Order, or via the AMM — exa
 For multi-outcome markets, PrediX provides **GroupSplit** and **GroupMerge** — capital-efficient versions of Split & Merge for multiple outcomes at once.
 
 #### <mark style="color:orange;">GroupSplit</mark>
+
+<figure><img src="../.gitbook/assets/7.png" alt=""><figcaption></figcaption></figure>
 
 **Deposit `$1 USDC` → receive `1 YES + 1 NO` for every outcome in the group.**
 
@@ -136,6 +140,8 @@ You can also place orders **across multiple outcomes simultaneously** — for ex
 When a multi-outcome market resolves, the MarketGroup contract settles **all sub-markets in a single transaction**:
 
 <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/8.png" alt=""><figcaption></figcaption></figure>
 
 After resolution:
 

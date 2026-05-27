@@ -145,7 +145,7 @@ The system tracks recurring violations:
 {% endstep %}
 {% endstepper %}
 
-> **Note**:&#x20;
+> **Note**:
 >
 > * **Mod recruitment** — vePRX holders in good standing can apply.
 > * **Mod compensation** — PRX from treasury.
@@ -163,7 +163,7 @@ If PrediX UI hides a comment, the original content still exists via the on-chain
 
 ***
 
-### Phase 2 - TBA&#x20;
+### Phase 2 - TBA
 
 <details>
 
@@ -206,5 +206,5 @@ POST /api/v1/markets/:id/activity?type=trade|comment
 Realtime via WebSocket: `wss://api.predix.app/v2/me/feed`.
 
 {% hint style="info" %}
-Details: [Backend API](../../developers-guide/api-reference.md#backend-endpoints-v2).
+Details: [Backend API](/broken/pages/NaTE7epVHDvl0K9Pol1r#backend-endpoints-v2).
 {% endhint %}

@@ -5,6 +5,8 @@ icon: split
 
 # Split & Merge
 
+<figure><img src="../../.gitbook/assets/5.png" alt=""><figcaption></figcaption></figure>
+
 Prediction markets have two **native mechanisms** that don't exist in traditional financial instruments: **Splitting** and **Merging** shares. They're the protocol-level primitives that make prediction markets work — and they give you a way to enter or exit positions **without touching the orderbook**.
 
 <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>

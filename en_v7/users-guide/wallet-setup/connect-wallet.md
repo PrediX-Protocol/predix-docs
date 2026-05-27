@@ -11,6 +11,8 @@ PrediX offers 2 sign-in methods, you maintain full control of your assets while 
 **Both are non-custodial — nobody (including PrediX) holds your private key.**
 {% endhint %}
 
+<figure><img src="../../.gitbook/assets/1 (1).png" alt=""><figcaption></figcaption></figure>
+
 ### Choose connect method
 
 |                        | Passkey + Smart Account                          | Crypto Wallet (EOA)                                   |
@@ -150,8 +152,6 @@ Authentication requires plugging in or tapping the hardware key, Passkeys are st
 
 Use your existing Web3 wallet — MetaMask, Rainbow, Coinbase Wallet, or any wallet that supports WalletConnect/Hardware Wallet.
 
-<mark style="color:yellow;background-color:yellow;">**\[Insert Video Here]**</mark>
-
 #### <mark style="background-color:$warning;">1. How to connect Web3 wallet?</mark>
 
 {% stepper %}
@@ -198,7 +198,9 @@ Note: This is an off-chain signature and incurs no gas cost.
 
 Both methods use **SIWE (EIP-4361)** to create authenticated backend sessions through wallet signatures.
 
-The client requests a challenge, the user signs the EIP-4361 message, and the backend verifies the ECDSA signature before creating a secure HTTPOnly session cookie valid for 7 days.
+<figure><img src="../../.gitbook/assets/2.png" alt=""><figcaption></figcaption></figure>
+
+The client requests a challenge, the user signs the EIP-4361 message, and the backend verifies the ECDSA signature before creating a secure HTTP Only session cookie valid for 7 days.
 
 ![SIWE Authentication Flow](../../.gitbook/assets/14-siwe-auth.svg)
 

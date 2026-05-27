@@ -10,7 +10,7 @@ description: >-
 
 ### How to Trade (Buy YES/NO Tokens)
 
-<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
+<figure><img src="../../.gitbook/assets/3.png" alt=""><figcaption></figcaption></figure>
 
 {% stepper %}
 {% step %}

@@ -55,7 +55,7 @@ The protocol charges taker fees on trades executed through the Central Limit Ord
 > * ppp = implied probability price
 >
 > \
-> **\***_**Example:** Sports markets apply a standard fee rate of 2.0%._
+> &#xNAN;**\***_**Example:** Sports markets apply a standard fee rate of 2.0%._
 
 The pricing structure naturally reduces fees near probability extremes (0 or 1) while maximizing efficiency around highly contested markets.
 

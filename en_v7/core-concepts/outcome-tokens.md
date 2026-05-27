@@ -4,7 +4,7 @@ description: Understand ERC-20 tokens via PrediX core mechanism.
 
 # Outcome token (YES/NO)
 
-YES and NO are standard ERC-20 outcome tokens using 6 decimals, matching USDC precision. Each market has its own isolated YES/NO pair, meaning outcome tokens are only valid within their specific market.&#x20;
+YES and NO are standard ERC-20 outcome tokens using 6 decimals, matching USDC precision. Each market has its own isolated YES/NO pair, meaning outcome tokens are only valid within their specific market.
 
 {% hint style="info" %}
 Token minting is restricted to the Diamond contract through the `onlyFactory` permission model.
@@ -115,5 +115,5 @@ ERC-20 standard → compatible with every DeFi protocol out of the box, no custo
 * Price $0.48 = `480_000` (fixed-point 6 decimals). Valid range: `10_000` to `990_000` (0.01 to 0.99).
 
 {% hint style="info" %}
-Integration details: [developers/router-integration.md](../developers-guide/router-integration.md).
+Integration details: [developers/router-integration.md](/broken/pages/sW2m7BqYaPzkkbFdCP7L).
 {% endhint %}

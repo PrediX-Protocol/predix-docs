@@ -33,7 +33,7 @@
 * **PGP key**: TBA
 * **Audit reports**: [docs.predix.app/audits](https://docs.predix.app/audits) — TBA
 * **Incident response**: [incident@predix.app](mailto:incident@predix.app)
-* **Bug bounty program** details: [Security & timelock](../developers-guide/security.md)
+* **Bug bounty program** details: [Security & timelock](/broken/pages/X62chRP2ACaMi4cphekc)
 
 ## Community
 
