@@ -35,25 +35,6 @@
 | **Multisig**        | 1-EOA shortcut (test only)                         | Gnosis Safe — TBA                  |
 | **Treasury wallet** | N/A                                                | TBA                                |
 
-## Code
-
-* **GitHub org**: [github.com/predix-protocol](https://github.com/predix-protocol)
-* **Smart contracts**: TBA (open-source post-mainnet)
-* **Indexer**: TBA
-* **Backend + Frontend**: TBA
-* **SDK**: `@predix/sdk` npm (TBA)
-* **ABI**: `@predix/abi` npm (TBA)
-* **Bot templates**: [github.com/predix-protocol/bot-templates](https://github.com/predix-protocol/bot-templates)
-* **Mobile examples**: [github.com/predix-protocol/mobile-app-rn](https://github.com/predix-protocol/mobile-app-rn)
-
-## Security
-
-* **Bug bounty**: TBA
-* **PGP key**: TBA
-* **Audit reports**: TBA
-* **Incident response**: TBA
-* **Bug bounty program** details: TBA
-
 ## Brand & media
 
 * **Brand kit**: TBA
