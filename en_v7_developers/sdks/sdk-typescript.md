@@ -12,8 +12,8 @@ npm install @predix/sdk
 import { PrediXClient } from '@predix/sdk';
 
 const client = new PrediXClient({
-  chain: 'testnet',
-  rpcUrl: 'https://sepolia.unichain.org',
+  chain: 'beta',                                  // 'beta' | 'production'
+  rpcUrl: 'https://mainnet.unichain.org',
 });
 
 // Markets

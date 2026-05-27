@@ -10,16 +10,17 @@ Build a trading bot, analytics tool, or personal strategy that interacts directl
 
 **What you need:**
 
-* A wallet (EOA or smart account) with USDC on Unichain Sepolia
+* A wallet (EOA or smart account) with test-USDC on Unichain mainnet (beta)
 * The Router contract address
 * viem (TypeScript) or web3.py (Python) to call contract functions
 
 **Workflow:**
 
-1. Connect wallet to Unichain Sepolia (chain `1301`)
-2. Approve USDC to Router via Permit2
-3. Call `Router.buyYes()` / `sellYes()` / `buyNo()` / `sellNo()`
-4. Monitor positions via Indexer API
+1. Connect wallet to Unichain mainnet (chain `130`)
+2. Claim 10,000 test-USDC from the faucet UI (one-shot, per address)
+3. Approve test-USDC to Router via Permit2
+4. Call `Router.buyYes()` / `sellYes()` / `buyNo()` / `sellNo()`
+5. Monitor positions via Indexer API
 
 No API key required for on-chain trading. Start immediately.
 
@@ -40,10 +41,10 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 
 **Workflow:**
 
-1. Fetch markets via `GET /api/v1/markets`
-2. Get pricing quotes via `POST /api/v1/markets/:id/pricing/quote`
+1. Fetch markets via `GET /api/markets`
+2. Get pricing quotes via `POST /api/markets/:id/pricing/quote`
 3. User signs tx via wallet → Router contract executes on-chain
-4. Track positions via `GET /api/v1/users/:address/portfolio`
+4. Track positions via `GET /api/portfolio/:address`
 
 → [API reference](integration/api-reference.md) · [WebSocket](integration/websocket.md) · [Bots & mobile](integration/bots-mobile.md)
 
@@ -57,30 +58,31 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 | Frontend        | Next.js · React · viem · wagmi          | Web app UI                                          |
 | Paymaster       | ERC-4337 v0.7 · Pimlico bundler         | Gas sponsorship for eligible users                  |
 
-## Contract addresses — Staging (Unichain Sepolia, chain `1301`)
+## Contract addresses — Beta (Unichain mainnet, chain `130`)
 
-| Contract          | Address                                      |
-| ----------------- | -------------------------------------------- |
-| **Router**        | `0x1267723f500C0437295698d36d521bd060Bed0EB` |
-| **Diamond**       | `0xa7a35F11e184Bde540702083160647518f5Be302` |
-| **Exchange**      | `0x95a5Db0694c7C185b152E24b7d58D527af236b85` |
-| **Hook**          | `0xc167a6bD746a5a884b3C0546B0115D0FdC04aAe0` |
-| **ManualOracle**  | `0x9ffbf61f9481D71BB6F40e1955F4096De4c52cF6` |
-| **USDC (test)**   | `0x5a9153c368946B5b252c32921EbB3c16c692D7D4` |
-| **Permit2**       | `0x000000000022D473030F116dDEE9F6B43aC78BA3` |
-| **Faucet**        | `0x76C951B6185A2B44e44c98E7A0E9Ee59b08760da` |
-| **MarketFactory** | `0xf1cF0Ae6d8C5073244FED485824D1a6624F75451` |
-| **Paymaster**     | `0x6bBeeb1255a25e6a57b87D9d88fBE24c3a1Ba9e7` |
-| **PoolManager**   | `0x00b036b58a818b1bc34d502d3fe730db729e62ac` |
+| Contract            | Address                                      |
+| ------------------- | -------------------------------------------- |
+| **Router**          | `0xf7D11488B6B0DAc511aE637AB02876dbE36cAdD6` |
+| **Diamond**         | `0xC8F12AF2a396c9C906ac36Bc0AC2279BBb69Ef96` |
+| **Exchange**        | `0x506367C7c48C95A4843F45d5C2F177B35e69594E` |
+| **Hook**            | `0x2EA5EaC8A4E31F0889e86fc135C5eAE8e0b16AE0` |
+| **ManualOracle**    | `0x8EDD86CC637FA1ca178ac16f85b6777F05AC0ca7` |
+| **ChainlinkOracle** | `0x87c425523Bc2890Ec624D39492CdBbBd9E74eaA2` |
+| **TestUSDC (beta)** | `0xB3FCA863dD0F6b496cCDDf6497Da5Dad67857F56` |
+| **Permit2**         | `0x000000000022D473030F116dDEE9F6B43aC78BA3` |
+| **Faucet**          | `0x335166bb5cf402b02b58904de5b8bf18c92ba10e` |
+| **MarketFactory**   | `0x360fbf66dac5ca90c4e9fe1e57b6025192fa10cc` |
+| **Paymaster**       | `0x569ff8c104dc03651777a8c85b7f98722ab68135` |
+| **PoolManager**     | `0x1F98400000000000000000000000000000000004` |
 
-> **Mainnet addresses** will be published after external audit completes.
+> **Production mainnet addresses** (real Circle USDC) will be published when production launches. The beta uses a walled-garden TestUSDC so anyone can experiment without holding real USDC; the contracts themselves are identical to production.
 
 ## API base URLs
 
-| Environment        | Indexer                                                | Backend                                                |
-| ------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| **Testnet** (live) | Gated — see [Testnet info](getting-started/testnet.md) | Gated — see [Testnet info](getting-started/testnet.md) |
-| **Mainnet** (TBA)  | `https://indexer.predix.app`                           | `https://api.predix.app`                               |
+| Environment           | Indexer | Backend |
+| --------------------- | ------- | ------- |
+| **Beta** (live)       | TBA     | TBA     |
+| **Production** (TBA)  | TBA     | TBA     |
 
 ## Next steps
 
@@ -88,4 +90,4 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 * [Quickstart — Python](getting-started/quickstart-python.md) — full working example
 * [Router integration](integration/router-integration.md) — deep dive on-chain trading
 * [API reference](integration/api-reference.md) — REST endpoints
-* [Testnet info](getting-started/testnet.md) — faucet, RPC, deploy flow
+* [Beta info](getting-started/beta.md) — faucet, RPC, deploy flow

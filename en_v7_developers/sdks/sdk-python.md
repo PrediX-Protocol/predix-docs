@@ -11,7 +11,7 @@ pip install predix-sdk
 ```python
 from predix import PrediXClient
 
-client = PrediXClient(chain="testnet")
+client = PrediXClient(chain="beta")   # "beta" | "production"
 
 # Markets
 markets = await client.markets.list(status="active")

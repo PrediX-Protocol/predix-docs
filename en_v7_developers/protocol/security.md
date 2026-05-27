@@ -24,7 +24,7 @@ Invariant fuzz testing runs 10,000+ iterations in CI. Failure blocks merge.
 
 ### External audits
 
-External audit before mainnet launch — firm selection is underway. Reports will be published at [docs.predix.app/audits](https://docs.predix.app/audits) once completed.
+External audit before production launch — firm selection is underway. Reports will be published at [docs.predix.app/audits](https://docs.predix.app/audits) once completed.
 
 ### Internal review
 
@@ -37,7 +37,7 @@ Continuous internal review:
 
 ### Audit cadence
 
-* **Pre-mainnet**: 2 full audit rounds from >= 2 different firms.
+* **Pre-production**: 2 full audit rounds from >= 2 different firms before flipping the protocol to real USDC.
 * **Major upgrade**: 1 audit round + intensive bug bounty.
 * **Annual review**: Refresh audit every year.
 

@@ -8,10 +8,10 @@ Real-time streaming for orderbook updates, price changes, trades, and user portf
 
 ```
 Endpoint: wss://<host>/ws/realtime
-Auth (optional): wss://<host>/ws/realtime?token=<session_token>
+Auth (optional): Sec-WebSocket-Protocol: predix.bearer, <session_token>
 ```
 
-Authenticated connection required for user-specific topics (positions, orders, portfolio).
+Authenticated connection required for user-specific topics (positions, orders, portfolio). The session token is passed via the `Sec-WebSocket-Protocol` header in the WebSocket upgrade — the browser surfaces this as the second argument to the `WebSocket` constructor.
 
 ## Subscribe / Unsubscribe
 
@@ -89,7 +89,7 @@ Require `subject` = user wallet address. Must match authenticated session.
 ## Example — TypeScript
 
 ```typescript
-const ws = new WebSocket('wss://api.predix.app/ws/realtime');
+const ws = new WebSocket(`${WS_BASE_URL}/ws/realtime`);
 
 ws.onopen = () => {
   // Subscribe to market orderbook
@@ -132,7 +132,7 @@ import json
 import websockets
 
 async def listen():
-    uri = "wss://api.predix.app/ws/realtime"
+    uri = f"{WS_BASE_URL}/ws/realtime"
     async with websockets.connect(uri) as ws:
         # Subscribe
         await ws.send(json.dumps({
@@ -157,17 +157,18 @@ asyncio.run(listen())
 
 ```typescript
 // Get session token via SIWE
-const challengeRes = await fetch('/api/v1/auth/challenge');
+const challengeRes = await fetch('/api/auth/challenge');
 const { nonce } = await challengeRes.json();
 
 const signature = await wallet.signMessage({ message: siweMessage(nonce) });
 
-const verifyRes = await fetch('/api/v1/auth/verify', {
+const verifyRes = await fetch('/api/auth/verify', {
   method: 'POST',
   body: JSON.stringify({ address, signature }),
 });
 const { token } = await verifyRes.json();
 
-// Connect with auth
-const ws = new WebSocket(`wss://api.predix.app/ws/realtime?token=${token}`);
+// Connect with auth — pass the token via the Sec-WebSocket-Protocol header.
+// In the browser, the second argument to `WebSocket` becomes that header.
+const ws = new WebSocket(`${WS_BASE_URL}/ws/realtime`, ['predix.bearer', token]);
 ```

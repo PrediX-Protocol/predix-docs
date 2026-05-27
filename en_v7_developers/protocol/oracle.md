@@ -14,25 +14,24 @@ An **external source** must deliver data on-chain. If the oracle is wrong, the m
 
 ## 4 phases, 4 oracle types
 
-![4 oracle types: ChainlinkOracle (price, auto), ManualOracle (subjective, multisig 2/3), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)](../.gitbook/assets/25-oracle-types.svg)
+![4 oracle types: ChainlinkOracle (price, auto), ManualOracle (subjective, REPORTER role + optional challenge window), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)](../.gitbook/assets/25-oracle-types.svg)
 
 ## ChainlinkOracle
 
 Automated, permissionless.
 
-![ChainlinkOracle: creator register(feed, threshold, snapshotAt) -> endTime passes -> anyone resolve(roundIdHint) -> verify adjacency + sequencer uptime -> outcome = price >= threshold](../.gitbook/assets/37-chainlink-oracle-flow.svg)
+![ChainlinkOracle: creator register(feed, threshold, snapshotAt) -> endTime passes -> anyone resolve(roundIdHint, prevRoundIdHint) -> verify adjacency + sequencer uptime -> outcome = price >= threshold](../.gitbook/assets/37-chainlink-oracle-flow.svg)
 
 **Use case**: Price-threshold markets (BTC, ETH, asset prices, FX rates).
 
 **Strict checks**:
 
-* Round adjacency — ensures the correct round at-snapshot is used, not stale, not skipped.
-* L2 sequencer uptime — does not resolve during the grace period after an outage (avoids bad data).
-* Feed staleness threshold — rejects if the round is too old relative to realtime.
+* Round adjacency — the resolver supplies `(roundIdHint, prevRoundIdHint)`; the oracle asserts the hinted round is the unique one whose `updatedAt >= snapshotAt` and whose predecessor's `updatedAt < snapshotAt`. Stale and skipped rounds revert.
+* L2 sequencer uptime — when a sequencer uptime feed is configured, `resolve` reverts if the sequencer is currently down OR has been up for less than `SEQUENCER_GRACE_PERIOD` (1 hour). Avoids resolving against stale data immediately after a sequencer recovery.
 
 ## ManualOracle
 
-Multisig 2/3 reads the outcome from an off-chain source and signs the transaction.
+Role-gated `REPORTER` publishes the outcome from an off-chain source. Beta uses a single hot wallet for fast resolution; production may rotate the role to a multisig.
 
 ### Acceptable sources
 
@@ -46,20 +45,22 @@ Multisig 2/3 reads the outcome from an off-chain source and signs the transactio
 
 ### Flow
 
-![ManualOracle: real-world event -> multisig verifies >= 2 sources -> 2/3 sign report(outcome) -> OracleReportCreated event -> anyone resolveMarket -> MarketResolved](../.gitbook/assets/56-manual-oracle-flow.svg)
+![ManualOracle: real-world event -> REPORTER verifies >= 2 sources -> report(marketId, outcome) -> OutcomeReported event -> optional challenge window elapses -> anyone resolveMarket -> MarketResolved](../.gitbook/assets/56-manual-oracle-flow.svg)
+
+A reported outcome becomes consumable only after `finalizesAt = reportedAt + challengeDelay`. The `challengeDelay` is admin-controlled, defaults to `0` (immediate resolution), and is capped at 7 days.
 
 ### Risk mitigation
 
-Multisig members are geographically distributed, and each signature has an on-chain audit trail. Refund mode serves as an escape hatch if the oracle is compromised. Long-term: phase out manual in favor of UMA + committee oracle.
+The REPORTER role can be rotated to a hardware wallet, KMS-backed signer, or multisig at any time without redeploying the oracle. Each report emits an on-chain audit trail (`OutcomeReported`). Refund mode serves as an escape hatch if the oracle is compromised. Long-term: phase out manual in favor of UMA + committee oracle.
 
-### Revoke case
+### Revoke and reopen
 
-Admin can `revoke(marketId)` to clear a pending report when:
+Admin operations on a pending report (before `finalizesAt`):
 
-* A report was set incorrectly due to a bug.
-* A dispute requires re-examination.
+* `revoke(marketId)` — tombstones the slot: clears the answer AND freezes it so the reporter cannot re-publish. Admin playbook is revoke → `enableRefundMode` for the affected market.
+* `reopenReport(marketId)` — clears the slot WITHOUT freezing, letting the reporter publish a corrected outcome in a fresh challenge window. Only callable while the challenge window is still open.
 
-**Warning**: revoke **does not revert** `isResolved`. It only clears a pending report **before** resolution. After resolution, revoke is not possible (immutable invariant INV-6).
+**Warning**: once `isResolved` flips to `true` (challenge window closed and the outcome was consumed), neither path is available — the resolution is immutable (hard invariant INV-6).
 
 ## UMAOracle (Phase 2 — TBA)
 
@@ -95,14 +96,14 @@ Cross-chain governance outcomes, complex composite events.
 
 ## Oracle type comparison
 
-|                   | Manual                  | Chainlink          | UMA                           | Committee                 |
-| ----------------- | ----------------------- | ------------------ | ----------------------------- | ------------------------- |
-| Who resolves      | Multisig 2/3            | Anyone             | Anyone proposes, DVM disputes | t-of-N validators         |
-| Subjective events | Yes                     | No                 | Yes                           | Yes                       |
-| Dispute mechanism | Off-chain social        | None (data is law) | On-chain 48h                  | On-chain commit-reveal    |
-| Latency           | Immediate after signing | \~30s (1 round)    | 48h default                   | After commit-reveal cycle |
-| Decentralization  | Low                     | Medium             | High                          | High                      |
-| Bond required     | No                      | No                 | Yes                           | Validator stake           |
+|                   | Manual                          | Chainlink          | UMA                           | Committee                 |
+| ----------------- | ------------------------------- | ------------------ | ----------------------------- | ------------------------- |
+| Who resolves      | REPORTER role (EOA or multisig) | Anyone             | Anyone proposes, DVM disputes | t-of-N validators         |
+| Subjective events | Yes                             | No                 | Yes                           | Yes                       |
+| Dispute mechanism | Optional challenge window       | None (data is law) | On-chain 48h                  | On-chain commit-reveal    |
+| Latency           | Immediate or up to 7d window    | \~30s (1 round)    | 48h default                   | After commit-reveal cycle |
+| Decentralization  | Low                             | Medium             | High                          | High                      |
+| Bond required     | No                              | No                 | Yes                           | Validator stake           |
 
 ## Refund mode — last resort
 
@@ -114,11 +115,11 @@ Details: [Redeem & refund](../../users-guide/redeem-refund.md).
 
 ## Incorrect resolution — handling flow
 
-| Phase              | Mechanism                                                                          |
-| ------------------ | ---------------------------------------------------------------------------------- |
-| **Phase 1 Manual** | Multisig discussion, social consensus -> enable refund mode if confirmed incorrect |
-| **Phase 2 UMA**    | Dispute via UMA, DVM is final                                                      |
-| **All phases**     | `isResolved=true` is never reverted (INV-6 hard invariant)                         |
+| Phase              | Mechanism                                                                                          |
+| ------------------ | -------------------------------------------------------------------------------------------------- |
+| **Phase 1 Manual** | Admin `revoke` / `reopenReport` during challenge window; otherwise enable refund mode if confirmed incorrect |
+| **Phase 2 UMA**    | Dispute via UMA, DVM is final                                                                      |
+| **All phases**     | `isResolved=true` is never reverted (INV-6 hard invariant)                                         |
 
 ## Oracle approval list
 

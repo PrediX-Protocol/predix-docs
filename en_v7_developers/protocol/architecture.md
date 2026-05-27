@@ -1,6 +1,6 @@
 # Architecture & contracts
 
-Solidity `0.8.34`, Foundry, EVM cancun (EIP-1153 transient storage). 7 packages, monorepo. Deployed addresses (testnet + mainnet TBA) at the bottom of this page.
+Solidity `0.8.34`, Foundry, EVM cancun (EIP-1153 transient storage). 7 packages, monorepo. Deployed addresses (beta + production TBA) at the bottom of this page.
 
 ## Dependency graph
 
@@ -116,7 +116,7 @@ sellNo(...)
 
 **Contract**: `PrediXPaymaster`. Sponsors gas via EntryPoint v0.7.
 
-* Owner = Gnosis Safe 2-of-3 (mainnet).
+* Owner = Safe multisig (team Safe in beta; four-Safe layout in production).
 * Off-chain signer (BE) signs to verify UserOp eligibility.
 * Policy: sponsor for users eligible through the program.
 
@@ -143,20 +143,20 @@ Exchange and Router have no proxy. Changes require redeployment + migration (one
 
 ## Contract addresses
 
-PrediX is currently in **testnet beta** (deployed 2026-04-20). Mainnet will deploy after external audit completion — addresses will be populated when available.
+PrediX is currently in **beta on Unichain mainnet** (chain `130`). Production mainnet will deploy behind the full four-Safe governance layout — addresses will be populated when production launches.
 
 ### Core PrediX
 
-| Contract             | Testnet (Unichain Sepolia, chain `1301`)     | Mainnet (Unichain, chain `130`) |
-| -------------------- | -------------------------------------------- | ------------------------------- |
-| **Diamond**          | `0xa7a35F11e184Bde540702083160647518f5Be302` | TBA                             |
-| **Hook**             | `0xc167a6bD746a5a884b3C0546B0115D0FdC04aAe0` | TBA                             |
-| **Exchange**         | `0x95a5Db0694c7C185b152E24b7d58D527af236b85` | TBA                             |
-| **Router**           | `0x1267723f500C0437295698d36d521bd060Bed0EB` | TBA                             |
-| **ManualOracle**     | `0x9ffbf61f9481D71BB6F40e1955F4096De4c52cF6` | TBA                             |
-| **ChainlinkOracle**  | Disabled (no feed on Sepolia)                | TBA                             |
-| **Paymaster**        | `0x6bBeeb1255a25e6a57b87D9d88fBE24c3a1Ba9e7` | TBA                             |
-| **Faucet (relayed)** | `0x76C951B6185A2B44e44c98E7A0E9Ee59b08760da` | N/A                             |
+| Contract             | Beta (Unichain mainnet, chain `130`)         | Production (Unichain, chain `130`) |
+| -------------------- | -------------------------------------------- | ---------------------------------- |
+| **Diamond**          | `0xC8F12AF2a396c9C906ac36Bc0AC2279BBb69Ef96` | TBA                                |
+| **Hook**             | `0x2EA5EaC8A4E31F0889e86fc135C5eAE8e0b16AE0` | TBA                                |
+| **Exchange**         | `0x506367C7c48C95A4843F45d5C2F177B35e69594E` | TBA                                |
+| **Router**           | `0xf7D11488B6B0DAc511aE637AB02876dbE36cAdD6` | TBA                                |
+| **ManualOracle**     | `0x8EDD86CC637FA1ca178ac16f85b6777F05AC0ca7` | TBA                                |
+| **ChainlinkOracle**  | `0x87c425523Bc2890Ec624D39492CdBbBd9E74eaA2` | TBA                                |
+| **Paymaster**        | `0x569ff8c104dc03651777a8c85b7f98722ab68135` | TBA                                |
+| **Faucet (relayed)** | `0x335166bb5cf402b02b58904de5b8bf18c92ba10e` | N/A                                |
 
 ### Diamond facets
 
@@ -164,31 +164,31 @@ Facets are internal to the Diamond proxy. Developers interact with Diamond via t
 
 ### External / infrastructure
 
-| Contract                   | Testnet                                                  | Mainnet                                      |
-| -------------------------- | -------------------------------------------------------- | -------------------------------------------- |
-| **USDC**                   | `0x5a9153c368946B5b252c32921EbB3c16c692D7D4` (test-USDC) | TBA                                          |
-| **PRX token**              | Not deployed                                             | TBA (mint after TGE)                         |
-| **Staking Vault**          | Not deployed                                             | TBA                                          |
-| **vePRX**                  | Not deployed                                             | TBA                                          |
-| **Uniswap v4 PoolManager** | `0x00b036b58a818b1bc34d502d3fe730db729e62ac`             | TBA                                          |
-| **Permit2**                | `0x000000000022D473030F116dDEE9F6B43aC78BA3`             | `0x000000000022D473030F116dDEE9F6B43aC78BA3` |
-| **EntryPoint v0.7**        | `0x0000000071727De22E5E9d8BAf0edAc6f37da032`             | `0x0000000071727De22E5E9d8BAf0edAc6f37da032` |
+| Contract                   | Beta                                                       | Production                                                |
+| -------------------------- | ---------------------------------------------------------- | --------------------------------------------------------- |
+| **USDC**                   | `0xB3FCA863dD0F6b496cCDDf6497Da5Dad67857F56` (TestUSDC)    | `0x078D782b760474a361dDA0AF3839290b0EF57AD6` (Circle USDC) |
+| **PRX token**              | Not deployed                                               | TBA (mint after TGE)                                      |
+| **Staking Vault**          | Not deployed                                               | TBA                                                       |
+| **vePRX**                  | Not deployed                                               | TBA                                                       |
+| **Uniswap v4 PoolManager** | `0x1F98400000000000000000000000000000000004`               | `0x1F98400000000000000000000000000000000004`              |
+| **Permit2**                | `0x000000000022D473030F116dDEE9F6B43aC78BA3`               | `0x000000000022D473030F116dDEE9F6B43aC78BA3`              |
+| **EntryPoint v0.7**        | `0x0000000071727De22E5E9d8BAf0edAc6f37da032`               | `0x0000000071727De22E5E9d8BAf0edAc6f37da032`              |
 
-> Permit2 + EntryPoint are canonical addresses — identical across all chains.
+> Permit2, EntryPoint, and the Uniswap v4 PoolManager are canonical addresses — identical across beta and production since both run on Unichain mainnet (chain `130`).
 
 ### Chain config
 
-|                | Testnet                                            | Mainnet                            |
-| -------------- | -------------------------------------------------- | ---------------------------------- |
-| **Chain ID**   | `1301`                                             | `130`                              |
-| **RPC public** | `https://sepolia.unichain.org`                     | `https://mainnet.unichain.org`     |
-| **Explorer**   | [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz) | [uniscan.xyz](https://uniscan.xyz) |
-| **Block time** | \~1s                                               | \~1s                               |
-| **Finality**   | \~12-15 min (L2)                                   | \~12-15 min (L2)                   |
+|                | Beta                               | Production                         |
+| -------------- | ---------------------------------- | ---------------------------------- |
+| **Chain ID**   | `130`                              | `130`                              |
+| **RPC public** | `https://mainnet.unichain.org`     | `https://mainnet.unichain.org`     |
+| **Explorer**   | [uniscan.xyz](https://uniscan.xyz) | [uniscan.xyz](https://uniscan.xyz) |
+| **Block time** | \~1s                               | \~1s                               |
+| **Finality**   | \~12-15 min (L2)                   | \~12-15 min (L2)                   |
 
 ### Governance
 
-Protocol governance uses role-based access control via the Diamond. All admin operations go through a 48h timelock. Mainnet will use Gnosis Safe 2-of-3 multisig for all governance roles.
+Protocol governance uses role-based access control via the Diamond. All admin operations go through a timelock (1h on beta, 48h+ in production). Beta uses a single team Safe for every admin role except PAUSER (a separate hot wallet for fast emergency response); production will rotate roles into a four-Safe layout per the protocol's key management policy.
 
 ### Sync with code
 
@@ -199,13 +199,12 @@ Contract addresses are available from verified source on the block explorer. Do 
 All contract sources are verified on Uniscan:
 
 ```
-https://sepolia.uniscan.xyz/address/<ADDRESS>#code   # testnet
-https://uniscan.xyz/address/<ADDRESS>#code            # mainnet (after deploy)
+https://uniscan.xyz/address/<ADDRESS>#code
 ```
 
 ### ABI files
 
-ABI files can be obtained from verified contract source code on [Uniscan explorer](https://sepolia.uniscan.xyz).
+ABI files can be obtained from verified contract source code on [Uniscan explorer](https://uniscan.xyz).
 
 Integration details: [Router integration](../integration/router-integration.md).
 
@@ -213,4 +212,4 @@ Integration details: [Router integration](../integration/router-integration.md).
 
 Phase 3 — multi-chain deployment (Base / Arbitrum / Optimism / Polygon) via bridge (Wormhole / LayerZero). Details in the roadmap.
 
-For pre-mainnet integration testing, see [Testnet info](../getting-started/testnet.md).
+For beta integration testing, see [Beta info](../getting-started/beta.md).

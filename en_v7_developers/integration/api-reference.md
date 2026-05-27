@@ -25,10 +25,10 @@ Bot/analytics raw data -> Indexer. FE/app user-facing -> Backend.
 
 | Env                | Indexer                                                   | Backend                                                   |
 | ------------------ | --------------------------------------------------------- | --------------------------------------------------------- |
-| **Testnet** (live) | Gated — see [Testnet info](../getting-started/testnet.md) | Gated — see [Testnet info](../getting-started/testnet.md) |
-| **Mainnet** (TBA)  | `https://indexer.predix.app`                              | `https://api.predix.app`                                  |
+| **Beta** (live)      | TBA — see [Beta info](../getting-started/beta.md) | TBA — see [Beta info](../getting-started/beta.md) |
+| **Production** (TBA) | TBA                                               | TBA                                               |
 
-Schema is identical across both environments — switching testnet to mainnet only requires changing the base URL.
+Schema is identical across both environments — switching beta to production only requires changing the base URL.
 
 ## Authentication
 
@@ -78,10 +78,10 @@ BE adds `details: [{path, message}]` for validation errors + a `code` enum (see 
 GET /api/markets                       list (status, limit, offset, sort, category, featured)
 GET /api/markets/:id                   single (id = decimal string)
 GET /api/markets/:id/trades            Union Router trades + CLOB taker fills
+GET /api/markets/:id/prices            price + open-interest time series
 GET /api/markets/:id/positions         per-user positions (filter by address)
-GET /api/markets/:id/orders            CLOB orders (status, side)
 GET /api/markets/:id/orderbook         current snapshot grouped by tick
-GET /api/markets/:id/holders           top YES + NO holders
+GET /api/markets/:id/liquidity         AMM liquidity book
 ```
 
 Markets list response:
@@ -129,9 +129,43 @@ GET /api/events/:id              detail with marketIds + winningIndex
 ### Portfolio
 
 ```
-GET /api/users/:address/portfolio?includeResolved=true
-GET /api/users/:address/stats              aggregated PnL, accuracy, volume
-GET /api/users                             leaderboard (sort=pnl|volume|accuracy)
+GET /api/portfolio/:address                portfolio snapshot (positions, P&L)
+GET /api/portfolio/:address/history        historical portfolio series
+GET /api/portfolio/:address/pnl            aggregated PnL
+GET /api/user-stats                        leaderboard (sort=pnl|volume|accuracy)
+GET /api/user-stats/:address               per-user aggregate stats
+GET /api/users/:address/accuracy           resolved-position accuracy score
+GET /api/users/:address/resolved-positions resolved positions
+GET /api/users/:address/maker-fills        maker fills (CLOB)
+```
+
+### Exchange (CLOB)
+
+```
+GET /api/exchange/orders                   list (marketId, owner, status filters)
+GET /api/exchange/orders/:orderId          single order
+GET /api/exchange/matches                  match records
+GET /api/trades/:txHash/breakdown          per-tx CLOB vs AMM breakdown
+```
+
+### Liquidity (AMM)
+
+```
+GET /api/liquidity/positions/:address      LP positions by provider
+GET /api/liquidity/events                  add/remove liquidity events
+```
+
+### Oracles + admin
+
+```
+GET /api/oracles/approved
+GET /api/oracles/manual/:oracleContract/reports
+GET /api/oracles/chainlink/:oracleContract/markets
+GET /api/admin/role-changes
+GET /api/admin/pauses
+GET /api/admin/diamond-cuts
+GET /api/admin/fee-changes
+GET /api/admin/hook-proxy-upgrades
 ```
 
 ### Protocol stats
@@ -144,13 +178,11 @@ GET /api/stats                  totalMarkets, totalVolume, totalTrades, totalUse
 
 ```
 GET /api/health                 latestIndexedBlock, lagBlocks
-GET /api/doc                    OpenAPI JSON
-GET /api/docs                   Swagger UI
 ```
 
 ***
 
-## Backend endpoints (v2)
+## Backend endpoints
 
 ### Primitives — strict wire format
 
@@ -179,80 +211,89 @@ FE: `market[market.kind]` — exhaustive switch.
 ### Markets & events
 
 ```
-GET  /api/v1/markets                  list with filters + pagination
-GET  /api/v1/markets/:id              single (id = hex bytes32)
-GET  /api/v1/markets/:id/orderbook
-GET  /api/v1/markets/:id/trades
-GET  /api/v1/markets/:id/holders
-GET  /api/v1/markets/:id/comments
-GET  /api/v1/events
-GET  /api/v1/events/:id
+GET  /api/markets                          list with filters + pagination
+GET  /api/markets/resolve                  resolve idOrSlug → canonical id
+GET  /api/markets/hot                      curated hot list
+GET  /api/markets/:idOrSlug                single (lookup by id or slug)
+GET  /api/markets/:idOrSlug/outcomes/:outcomeSlug
+GET  /api/markets/:idOrSlug/orderbook
+GET  /api/markets/:idOrSlug/trades
+GET  /api/markets/:idOrSlug/prices
+GET  /api/markets/:idOrSlug/candles
+GET  /api/markets/:idOrSlug/comments
+POST /api/markets/:idOrSlug/comments       [auth]
+PATCH /api/markets/:idOrSlug/comments/:commentId  [auth]
 ```
 
 ### Pricing
 
 ```
-POST /api/v1/markets/:id/pricing/quote     quote before swap
-GET  /api/v1/markets/:id/pricing/view      combined CLOB + AMM view
-POST /api/v1/markets-batch/price-views     batch up to 50
-GET  /api/v1/markets/:id/candles           OHLC
+GET  /api/markets/:id/pricing/view         combined CLOB + AMM view
+POST /api/markets/:id/pricing/quote        quote before swap
+POST /api/markets-batch/price-views        batch up to 50
+POST /api/markets-batch/candles            batch OHLC
 ```
 
-### User & portfolio
+### Trading & portfolio
 
 ```
-GET  /api/v1/users/:address/orders
-GET  /api/v1/users/:address/portfolio
-GET  /api/v1/users/:address/trades
-GET  /api/v1/users/:address/pnl
-GET  /api/v1/users/:address/profile
-GET  /api/v1/users/:address/calibration
-GET  /api/v1/users/:address/follows
-GET  /api/v1/users/:address/followers
+GET  /api/users/:address/profile
+GET  /api/trading/:address/orders
+GET  /api/trading/:address/portfolio
+GET  /api/trading/:address/positions/:marketId
+GET  /api/trading/:address/trades
+GET  /api/trading/:address/pnl
+GET  /api/trading/:address/redemption-quote/:marketId
+GET  /api/trades/:txHash/breakdown
+GET  /api/orders/:orderId/fills
 ```
 
 ### Auth (SIWE)
 
 ```
-GET  /api/v1/auth/challenge?address=0x...
-POST /api/v1/auth/verify
-GET  /api/v1/auth/me            [auth required]
-PATCH /api/v1/auth/me           [auth required]
-POST /api/v1/auth/logout
+GET  /api/auth/challenge?address=0x...
+POST /api/auth/verify
+GET  /api/auth/me                          [auth required]
+GET  /api/auth/me/settings                 [auth required]
+POST /api/auth/logout
 ```
 
 ### Account abstraction
 
 ```
-POST /api/v1/aa/auth/passkey/register/challenge
-POST /api/v1/aa/auth/passkey/register/verify
-POST /api/v1/aa/auth/passkey/login
-POST /api/v1/aa/bundler                 Pimlico bundler proxy
-POST /api/v1/aa/paymaster/sponsor       sponsor UserOp
+POST /api/aa/auth/passkey/register/challenge
+POST /api/aa/auth/passkey/register/verify
+POST /api/aa/auth/passkey/login
+POST /api/aa/auth/ecdsa/...                ECDSA fallback flow
+POST /api/aa/bundler                       Pimlico bundler proxy
+POST /api/aa/paymaster/sponsor             sponsor UserOp
+```
+
+### Faucet
+
+```
+POST /api/faucet                           [auth] empty body; destination = session user
+GET  /api/faucet/status?address=0x...      per-address claim status
 ```
 
 ### Notifications
 
 ```
-GET    /api/v1/notifications?unread=true
-PATCH  /api/v1/notifications/:id/read
-POST   /api/v1/notifications/read-all
+GET    /api/notifications?unread=true
+GET    /api/notifications/unread-count
+PATCH  /api/notifications/:id/read
+POST   /api/notifications/read-all
 ```
 
 ### Rewards & gamification
 
 ```
-GET  /api/v1/rewards/boxes
-GET  /api/v1/rewards/challenges
-GET  /api/v1/users/:address/achievements
-GET  /api/v1/leaderboard
-```
-
-### Comments & social
-
-```
-GET  /api/v1/markets/:id/comments?sort=top|new&limit=50
-POST /api/v1/markets/:id/comments        [auth]
+GET  /api/rewards
+GET  /api/leaderboard
+GET  /api/traders
+GET  /api/point
+GET  /api/referral
+GET  /api/tags
 ```
 
 ### Governance
@@ -262,8 +303,9 @@ POST /api/v1/markets/:id/comments        [auth]
 ### System
 
 ```
-GET /health                               mongo + indexer probe
-GET /docs-json                            OpenAPI spec (JSON)
+GET /health                                mongo + indexer probe
+GET /ready                                 readiness probe
+GET /version                               build version + git sha
 ```
 
 ### SIWE auth flow
@@ -272,13 +314,13 @@ GET /docs-json                            OpenAPI spec (JSON)
 
 ```typescript
 // 1. Challenge
-const { message } = await fetch(`${API}/api/v1/auth/challenge?address=${addr}`).then(r => r.json());
+const { message } = await fetch(`${API}/api/auth/challenge?address=${addr}`).then(r => r.json());
 
 // 2. Sign
 const signature = await walletClient.signMessage({ message });
 
 // 3. Verify
-await fetch(`${API}/api/v1/auth/verify`, {
+await fetch(`${API}/api/auth/verify`, {
   method: 'POST',
   credentials: 'include',
   headers: { 'Content-Type': 'application/json' },
@@ -322,7 +364,7 @@ npm run check:schemas-sync
 import type { paths } from '@predix/api-types';
 import createClient from 'openapi-fetch';
 
-const api = createClient<paths>({ baseUrl: 'https://api.predix.app' });
+const api = createClient<paths>({ baseUrl: BACKEND_BASE_URL });
 const { data } = await api.GET('/markets/{id}', {
   params: { path: { id: '0x0001...' } },
 });
@@ -400,12 +442,20 @@ event Hook_MarketTraded(uint256 indexed marketId, address indexed trader, bool i
 
 ```solidity
 // ManualOracle
-event OracleReportCreated(bytes32 indexed marketId, bool outcome, address reporter);
-event OracleReportRevoked(bytes32 indexed marketId, address operator);
+event OutcomeReported(uint256 indexed marketId, bool outcome, address indexed reporter);
+event OutcomeRevoked(uint256 indexed marketId, address indexed admin);
+event ReportReopened(uint256 indexed marketId, address indexed admin);
+event ChallengeDelayUpdated(uint256 previous, uint256 current);
+
+// ManualOracle — multi-outcome event variants
+event EventOutcomeReported(uint256 indexed eventId, uint256 winningIndex, address indexed reporter);
+event EventOutcomeRevoked(uint256 indexed eventId, address indexed admin);
+event EventReportReopened(uint256 indexed eventId, address indexed admin);
 
 // ChainlinkOracle
-event OracleMarketRegistered(bytes32 indexed marketId, address feed, uint256 threshold, bool gte, uint256 snapshotAt);
-event OracleMarketResolved(bytes32 indexed marketId, bool outcome);
+event MarketRegistered(uint256 indexed marketId, address indexed feed, int256 threshold, bool gte, uint64 snapshotAt);
+event MarketResolved(uint256 indexed marketId, int256 price, bool outcome);
+event MarketUnregistered(uint256 indexed marketId);
 ```
 
 ### Diamond admin events
@@ -446,7 +496,7 @@ For real-time data, see [WebSocket](websocket.md).
 ### Fetch top 10 markets by volume
 
 ```typescript
-const res = await fetch('https://indexer.predix.app/api/markets?sort=volume&limit=10');
+const res = await fetch(`${INDEXER_BASE_URL}/api/markets?sort=volume&limit=10`);
 const { data: markets } = await res.json();
 markets.forEach(m => console.log(`${m.question} — $${m.volume}`));
 ```
@@ -455,9 +505,9 @@ markets.forEach(m => console.log(`${m.question} — $${m.volume}`));
 
 ```typescript
 import { createPublicClient, http } from 'viem';
-import { unichainSepolia } from 'viem/chains';
+import { unichain } from 'viem/chains';
 
-const client = createPublicClient({ chain: unichainSepolia, transport: http() });
+const client = createPublicClient({ chain: unichain, transport: http() });
 
 client.watchContractEvent({
   address: ROUTER,
@@ -482,7 +532,7 @@ All on-chain amounts are `uint256` -> serialized as **decimal strings** at the b
 
 ## Indexer lag
 
-* **L2 finality**: \~12-15 min on Unichain.
+* **L2 finality**: \~12-15 min on Unichain mainnet (chain `130`).
 * **Indexer lag** from head: typically < 60s (`/api/health`).
 * Just traded but don't see it -> wait 10-30s, retry.
 

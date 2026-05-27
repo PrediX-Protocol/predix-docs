@@ -108,7 +108,7 @@ SignClient.request(
         sessionTopic = sessionTopic,
         method = "eth_sendTransaction",
         params = Json.encodeToString(tx),
-        chainId = "eip155:1301" // Unichain Sepolia testnet (mainnet: "eip155:130")
+        chainId = "eip155:130" // Unichain mainnet (beta + production)
     )
 ) { error -> /* handle */ }
 ```
@@ -131,18 +131,17 @@ Same hooks API as web wagmi.
 ```typescript
 import { createKernelClient } from '@zerodev/sdk';
 import { createPublicClient, http } from 'viem';
-import { unichainSepolia } from 'viem/chains';  // current testnet
-// import { unichain } from 'viem/chains';      // mainnet after launch
+import { unichain } from 'viem/chains';  // beta + production on Unichain mainnet
 
 const publicClient = createPublicClient({
-  chain: unichainSepolia,
-  transport: http('https://sepolia.unichain.org'),
+  chain: unichain,
+  transport: http('https://mainnet.unichain.org'),
 });
 
 const kernelClient = createKernelClient({
   publicClient,
-  bundlerTransport:    http(`${TESTNET_BE_URL}/api/v1/aa/bundler`),
-  paymasterTransport:  http(`${TESTNET_BE_URL}/api/v1/aa/paymaster/sponsor`),
+  bundlerTransport:    http(`${BACKEND_BASE_URL}/api/aa/bundler`),
+  paymasterTransport:  http(`${BACKEND_BASE_URL}/api/aa/paymaster/sponsor`),
   validator: passkeyValidator,
 });
 
@@ -205,20 +204,17 @@ Smart account address is derived from the passkey public key — same address ac
 ### Auto-add Unichain
 
 ```typescript
-// Testnet — Unichain Sepolia (live)
+// Unichain mainnet (beta + production)
 await window.ethereum.request({
   method: 'wallet_addEthereumChain',
   params: [{
-    chainId: '0x515', // 1301 hex
-    chainName: 'Unichain Sepolia',
-    rpcUrls: ['https://sepolia.unichain.org'],
-    blockExplorerUrls: ['https://sepolia.uniscan.xyz'],
+    chainId: '0x82', // 130 hex
+    chainName: 'Unichain',
+    rpcUrls: ['https://mainnet.unichain.org'],
+    blockExplorerUrls: ['https://uniscan.xyz'],
     nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   }],
 });
-
-// Mainnet — Unichain (after launch)
-// chainId: '0x82' (130), rpcUrls: ['https://mainnet.unichain.org'], explorer: uniscan.xyz
 ```
 
 ## Support

@@ -6,7 +6,7 @@
 
 * [Quickstart — TypeScript](getting-started/quickstart-typescript.md)
 * [Quickstart — Python](getting-started/quickstart-python.md)
-* [Testnet Information](getting-started/testnet.md)
+* [Beta Information](getting-started/beta.md)
 
 ## Integration
 

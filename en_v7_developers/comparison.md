@@ -78,4 +78,4 @@ Unichain does not charge gas for failed transactions — developers and users ne
 | EIP-712 order signing | Standard tx via Router (`buyYes/sellYes`) |
 | API key (`lmts_`)     | SIWE session token                        |
 | Sub-accounts          | Smart account (ERC-4337)                  |
-| `GET /markets/:slug`  | `GET /api/v1/markets/:id`                 |
+| `GET /markets/:slug`  | `GET /api/markets/:idOrSlug`              |

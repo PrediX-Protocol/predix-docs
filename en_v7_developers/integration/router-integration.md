@@ -6,8 +6,8 @@ The Router is the single entry point for all swaps. Let your users trade through
 
 Router address:
 
-* **Testnet** (Unichain Sepolia, live): `0x1267723f500C0437295698d36d521bd060Bed0EB`
-* **Mainnet** (TBA, after launch)
+* **Beta** (Unichain mainnet, live): `0xf7D11488B6B0DAc511aE637AB02876dbE36cAdD6`
+* **Production** (TBA, after launch)
 
 Full address list: [Contract addresses](../protocol/architecture.md#contract-addresses).
 
@@ -63,22 +63,21 @@ Non-view function (modifies transient state). Use `simulateContract` (not `readC
 
 ```typescript
 import { createPublicClient, createWalletClient, custom, http, parseUnits } from 'viem';
-import { unichainSepolia } from 'viem/chains';  // current testnet
-// import { unichain } from 'viem/chains';      // mainnet after launch
+import { unichain } from 'viem/chains';  // current beta on mainnet
 // Define Router ABI inline or import from source
 
 const publicClient = createPublicClient({
-  chain: unichainSepolia,
-  transport: http('https://sepolia.unichain.org'),
+  chain: unichain,
+  transport: http('https://mainnet.unichain.org'),
 });
 
 const walletClient = createWalletClient({
-  chain: unichainSepolia,
+  chain: unichain,
   transport: custom(window.ethereum),
 });
 
-// Testnet Router (mainnet TBA)
-const ROUTER = '0x1267723f500C0437295698d36d521bd060Bed0EB';
+// Beta Router (production TBA)
+const ROUTER = '0xf7D11488B6B0DAc511aE637AB02876dbE36cAdD6';
 const marketId = 1n; // uint256
 
 // 1. Quote (non-view, use simulateContract)
@@ -161,9 +160,11 @@ await walletClient.writeContract({
   address: ROUTER,
   abi: routerAbi,
   functionName: 'buyYesWithPermit',
-  args: [marketId, usdcIn, minOut, recipient, permit, signature, ...],
+  args: [marketId, usdcIn, minOut, recipient, maxFills, deadline, permit, signature],
 });
 ```
+
+The Router requires **exact-amount** permits: `permitSingle.details.amount` must equal `usdcIn`, and `permitSingle.spender` must equal the Router address. A mismatch reverts with `InvalidPermitAmount` / `InvalidPermitSpender`. Sign a fresh per-trade permit for each call.
 
 Permit2 details: [docs.uniswap.org/contracts/permit2](https://docs.uniswap.org/contracts/permit2/overview).
 
@@ -184,12 +185,19 @@ const decimal = marketId.toString();
 The Router reverts with custom errors. Decode using the 4-byte selector:
 
 ```solidity
-error InsufficientOutput(uint256 actual, uint256 min);
-error DeadlineExpired();
-error MarketPaused();
+error InsufficientOutput(uint256 actual, uint256 minimum);
+error DeadlineExpired(uint256 deadline, uint256 currentTime);
+error MarketModulePaused();
 error MarketExpired();
-error InsufficientLiquidity(uint256 requested, uint256 available);
-error FinalizeBalanceNonZero(); // internal bug, report if encountered
+error MarketResolved();
+error MarketInRefundMode();
+error MarketNotFound();
+error InvalidRecipient();
+error InsufficientLiquidity();           // hybrid CLOB+AMM cannot cover the trade
+error ExactInUnfilled(uint256 amountIn); // neither CLOB nor AMM filled any portion
+error InvalidPermitAmount();             // Permit2 amount != usdcIn
+error InvalidPermitSpender();            // Permit2 spender != Router
+error FinalizeBalanceNonZero();          // internal bug, report if encountered
 ```
 
 In viem:
@@ -219,9 +227,15 @@ event Trade(
     uint256 clobFilled,
     uint256 ammFilled
 );
+
+event ClobSkipped(
+    uint256 indexed marketId,
+    address indexed recipient,
+    bytes4 reason           // 4-byte selector of the CLOB revert (or 0x0)
+);
 ```
 
-This event is the **canonical source** for the indexer. Listen to it to update your UI after tx confirmation.
+`Trade` is the **canonical source** for the indexer. Listen to it to update your UI after tx confirmation. `ClobSkipped` fires when the CLOB leg reverted and the trade fell back to the AMM — useful as an observability signal in your dashboards.
 
 ## Batch with Smart Account
 
@@ -270,11 +284,8 @@ The default recommendation is to use `PrediXRouter` — it optimizes price acros
 ## Test on local fork
 
 ```bash
-# Anvil fork Unichain Sepolia (current testnet)
-anvil --fork-url https://sepolia.unichain.org
-
-# Or fork mainnet after launch
-# anvil --fork-url https://mainnet.unichain.org
+# Anvil fork Unichain mainnet (current beta runs here)
+anvil --fork-url https://mainnet.unichain.org
 
 # Deploy test contract or call directly
 forge script test/Integration.s.sol --fork-url http://localhost:8545

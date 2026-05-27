@@ -12,26 +12,26 @@ npm install viem
 
 You need:
 
-* A wallet private key with ETH on Unichain Sepolia (for gas)
-* USDC on Unichain Sepolia (get from [Faucet](testnet.md))
+* A wallet private key on Unichain mainnet — gas is sponsored via paymaster for eligible users, so no ETH balance required for the beta path
+* test-USDC on Unichain (get from [Faucet](beta.md), 10,000 per address)
 
 ## 1. Setup client
 
 ```typescript
 import { createPublicClient, createWalletClient, http, parseUnits } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
-import { unichainSepolia } from 'viem/chains';
+import { unichain } from 'viem/chains';
 
-const RPC = 'https://sepolia.unichain.org';
+const RPC = 'https://mainnet.unichain.org';
 
 const publicClient = createPublicClient({
-  chain: unichainSepolia,
+  chain: unichain,
   transport: http(RPC),
 });
 
 const account = privateKeyToAccount('0x...');  // your private key
 const walletClient = createWalletClient({
-  chain: unichainSepolia,
+  chain: unichain,
   transport: http(RPC),
   account,
 });
@@ -40,8 +40,8 @@ const walletClient = createWalletClient({
 ## 2. Contract addresses
 
 ```typescript
-const ROUTER = '0x1267723f500C0437295698d36d521bd060Bed0EB' as const;
-const USDC   = '0x5a9153c368946B5b252c32921EbB3c16c692D7D4' as const;
+const ROUTER  = '0xf7D11488B6B0DAc511aE637AB02876dbE36cAdD6' as const;
+const USDC    = '0xB3FCA863dD0F6b496cCDDf6497Da5Dad67857F56' as const;  // beta TestUSDC
 const PERMIT2 = '0x000000000022D473030F116dDEE9F6B43aC78BA3' as const;
 ```
 
@@ -181,15 +181,18 @@ Permit2 variants: `buyYesWithPermit`, `sellYesWithPermit`, `buyNoWithPermit`, `s
 
 | Error                    | Cause                      | Fix                        |
 | ------------------------ | -------------------------- | -------------------------- |
-| `SlippageExceeded`       | Price moved past tolerance | Increase slippage or retry |
+| `InsufficientOutput`     | Price moved past tolerance | Increase slippage or retry |
 | `DeadlineExpired`        | Tx took too long           | Increase deadline          |
-| `MarketPaused`           | Market paused by admin     | Wait for resume            |
-| `MarketNotActive`        | Market ended or resolved   | Cannot trade               |
-| `InsufficientLiquidity`  | Not enough depth           | Reduce size                |
+| `MarketModulePaused`     | Diamond MARKET module paused | Wait for resume          |
+| `MarketResolved`         | Market already resolved    | Cannot trade               |
+| `MarketExpired`          | `block.timestamp >= endTime` | Cannot trade             |
+| `MarketInRefundMode`     | Refund mode active         | Use redeem/refund instead  |
+| `InsufficientLiquidity`  | Not enough depth across CLOB + AMM | Reduce size        |
+| `InvalidPermitAmount`    | Permit2 amount != usdcIn   | Sign exact-amount permit   |
 | `FinalizeBalanceNonZero` | Internal error             | Report as bug              |
 
 ## Next steps
 
 * [Router integration](../integration/router-integration.md) — Permit2 flow, batch with Smart Account, AMM-only / CLOB-only
 * [API reference](../integration/api-reference.md) — REST endpoints for market data
-* [Testnet info](testnet.md) — faucet, RPC endpoints
+* [Beta info](beta.md) — faucet, RPC endpoints

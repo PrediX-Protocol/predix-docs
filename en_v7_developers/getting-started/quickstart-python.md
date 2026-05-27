@@ -12,8 +12,8 @@ pip install web3 requests
 
 You need:
 
-* A wallet private key with ETH on Unichain Sepolia (for gas)
-* USDC on Unichain Sepolia (get from [Faucet](testnet.md))
+* A wallet private key on Unichain mainnet — gas is sponsored via paymaster for eligible users
+* test-USDC on Unichain (get from [Faucet](beta.md), 10,000 per address)
 
 ## Complete working example
 
@@ -27,13 +27,13 @@ import time
 from web3 import Web3
 
 # --- Config ---
-RPC_URL = "https://sepolia.unichain.org"
+RPC_URL = "https://mainnet.unichain.org"
 PRIVATE_KEY = "0x..."  # your private key
-CHAIN_ID = 1301  # Unichain Sepolia
+CHAIN_ID = 130  # Unichain mainnet
 
-# Contract addresses (staging)
-ROUTER = "0x1267723f500C0437295698d36d521bd060Bed0EB"
-USDC = "0x5a9153c368946B5b252c32921EbB3c16c692D7D4"
+# Contract addresses (beta)
+ROUTER  = "0xf7D11488B6B0DAc511aE637AB02876dbE36cAdD6"
+USDC    = "0xB3FCA863dD0F6b496cCDDf6497Da5Dad67857F56"  # beta TestUSDC
 PERMIT2 = "0x000000000022D473030F116dDEE9F6B43aC78BA3"
 
 # --- Setup ---
