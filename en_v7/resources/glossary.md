@@ -1,239 +1,178 @@
+---
+description: >-
+  Core PrediX terminology, sorted alphabetically. Each entry includes a short
+  definition plus an example or a cross-reference to the relevant page. When you
+  hit an unfamiliar term anywhere in the docs,
+---
+
 # Glossary
 
-Core terminology sorted alphabetically. Brief definition + example.
+***
 
-### AA (Account Abstraction)
+### A
 
-ERC-4337 standard for smart contract wallets. PrediX uses Kernel v3 smart accounts with a **passkey validator** (biometric signing). Smart accounts pay gas via paymaster — PrediX has a gas sponsorship program for eligible users (applies to both account types, see [Paymaster](glossary.md#paymaster-erc-4337)).
+**AA (Account Abstraction)** The ERC-4337 standard for smart-contract wallets. PrediX uses Kernel v3 smart accounts with a passkey validator (biometric signing). Smart accounts pay gas through a paymaster. → See: _Wallet Setup_, _Paymaster_.
 
-### AMM (Automated Market Maker)
+**AMM (Automated Market Maker)** A liquidity pool that prices swaps using a mathematical formula. PrediX uses Uniswap v4 for YES-USDC and NO-USDC pools. Fee is 0.30% per swap, paid to LPs. → See: _CLOB + AMM Hybrid_, _Provide Liquidity_.
 
-Liquidity pool using a mathematical formula for swap pricing. PrediX uses Uniswap v4 for YES-USDC and NO-USDC pools.
+**Arbitrage** A risk-free trade that exploits price discrepancies. Example: when YES + NO < $1 → buy both → merge into $1 USDC → profit the difference. Arbitrage bots run continuously, keeping YES + NO ≈ $1.
 
-### Arbitrage
+### B
 
-Risk-free trade based on price discrepancies. Example: YES + NO > $1 -> split USDC, sell both.
+**Badge** An NFT (ERC-1155) earned upon reaching a milestone (volume, accuracy, streak). Displayed on profile and leaderboard. Some badges are locked (non-transferable) to prevent wash trading. → See: _Rewards & Gamification_.
 
-### Badge
+**Bond** Collateral staked to propose an oracle resolution (UMA) or to create a market (Phase 3). Valid → bond refunded; incorrect/spam → bond slashed. → See: _Oracle_, _Create Market_.
 
-NFT earned upon reaching a milestone (volume, accuracy, streak). Displayed on profile + leaderboard.
+**Bridge** Transfers tokens between chains. PrediX integrates Across, Stargate, and LayerZero to move USDC to Unichain. → See: _Bridge to Unichain_.
 
-### Bond
+**Bundler** An ERC-4337 service that collects UserOps and submits them on-chain. PrediX uses the Pimlico bundler.
 
-Staked collateral to propose an oracle resolution (UMA) or create a market (Phase 3). Slashed if incorrect.
+### C
 
-### Bridge
+**CLOB (Central Limit Order Book)** An on-chain order book where makers post prices and takers match them. PrediXExchange has 99 ticks ($0.01–$0.99), stored in a compressed bitmap. → See: _Limit Order_, _PrediX Market_.
 
-Transfers tokens between chains. PrediX integrates Across, Stargate, LayerZero.
+**Cliff** A period during which no tokens are released in a vesting schedule. The PRX team allocation has a 12-month cliff. → See: _Allocation & Vesting_.
 
-### Bundler
+**Concentrated liquidity** LP liquidity provided within a narrow price range (instead of the full $0.01–$0.99 range). Higher fee earnings, but higher IL risk. → See: _Provide Liquidity_.
 
-ERC-4337 service that collects UserOps and submits them on-chain. PrediX uses the Pimlico bundler.
+### D
 
-### CLOB (Central Limit Order Book)
+**Diamond (EIP-2535)** A proxy pattern that splits a single contract into multiple facets. PrediX uses it to exceed the 24KB bytecode limit and to upgrade individual modules independently. → See: _Architecture & Contracts_.
 
-On-chain order book. Makers post prices, takers match. PrediX `PrediXExchange` has 99 ticks ($0.01-$0.99).
+### E
 
-### Cliff
+**endTime** The timestamp at which a market closes for trading. After endTime, the oracle resolution window opens.
 
-Period during which no tokens are received in a vesting schedule. PRX team allocation has a 12-month cliff.
+**EOA (Externally Owned Account)** A traditional wallet controlled by a private key (MetaMask, Ledger). The opposite of a smart account.
 
-### Concentrated liquidity
+**Event (Multi-outcome)** A container holding N mutually-exclusive child markets — exactly one member resolves YES = true. Example: "FIFA WC 2026 Winner" with 48 teams. → See: _Multi-Outcome Markets_.
 
-LP provides liquidity within a narrow price range (vs full range $0.01-$0.99). Higher earnings + higher IL risk.
+### F
 
-### Diamond (EIP-2535)
+**Faucet** A dispenser of free test tokens for testnet. The PrediX faucet provides 0.0005 ETH + 10,000 test-USDC per 24h per wallet. → See: _Testnet Information_.
 
-Proxy pattern that allows a single contract to be divided into multiple facets. PrediX uses it to exceed the 24KB bytecode limit + upgrade individual modules.
+### G
 
-### EOA (Externally Owned Account)
+**Gauge voting** A mechanism where vePRX holders vote to allocate LP subsidies to specific markets. Pools with more votes earn higher fees for their LPs. → See: _vePRX & Gauge Voting_.
 
-Traditional wallet controlled by a private key (MetaMask, Ledger). Contrasts with smart account.
+### H
 
-### endTime
+**Hook (Uniswap v4)** A smart contract that plugs into a v4 pool via callbacks (beforeSwap, beforeAddLiquidity, etc.). The PrediX Hook applies anti-sandwich identity verification and dynamic fees. → See: _CLOB + AMM Hybrid_.
 
-The point at which a market closes for trading. After endTime, the oracle window opens.
+### I
 
-### Event (multi-outcome)
+**IL (Impermanent Loss)** The loss an LP incurs relative to simply holding, caused by AMM rebalancing as prices move. In prediction markets, outcome-token prices are bounded ($0.01–$0.99), so IL follows a distinct pattern. IL is offset by fees — if volume is high enough, fees > IL → net profit. → See: _Provide Liquidity_.
 
-Container of N child markets that are mutually exclusive — exactly 1 member resolves YES = true. Example: "FIFA WC 2026 Winner" with 48 teams.
+**Invariant** A rule that is hard-enforced on-chain. PrediX has 7 critical invariants (INV-1 through INV-7). For example, INV-1: `YES.totalSupply == NO.totalSupply == totalCollateral`. → See: _Security & Timelock_.
 
-### Faucet
+### L
 
-Dispenser providing free test tokens for testnet users. PrediX faucet: 0.0005 ETH + 10k USDC / 24h / wallet.
+**LP (Liquidity Provider)** A user who provides liquidity to an AMM pool, receives an LP NFT, and earns swap fees. LPs on PrediX supply USDC + YES/NO.
 
-### Gauge voting
+**LP NFT** A token representing an LP position on Uniswap v4 (PositionManager). Managed in Portfolio → Liquidity tab.
 
-Mechanism where vePRX votes allocate LP subsidy to markets. Pools with more votes = LPs earn more.
+### M
 
-### Hook (Uniswap v4)
+**Maker** A user who places a limit order that rests on the CLOB awaiting a match. Enjoys price improvement when matched by a taker.
 
-Smart contract that plugs into a v4 pool with callbacks (`beforeSwap`, `beforeAddLiquidity`...). The PrediX Hook applies anti-sandwich identity verification.
+**Market** The fundamental trading unit: a YES/NO question + an outcome-token pair + an oracle + an endTime.
 
-### Impermanent loss (IL)
+**Match type (CLOB)** Three matching types on the Exchange:
 
-LP loss vs holding due to AMM rebalancing when prices move. Offset by earned fees.
+* _Complementary_ — BUY\_YES ↔ SELL\_YES (most common)
+* _Mint_ (synthetic) — BUY\_YES + BUY\_NO ≥ $1, mints a new pair
+* _Merge_ (synthetic) — SELL\_YES + SELL\_NO ≤ $1, burns a pair
 
-### Invariant
+**Merge** Burns 1 YES + 1 NO → returns 1 USDC. The reverse of Split. Zero-fee; used for arbitrage or exiting a two-sided position. → See: _Split & Merge_.
 
-Hard-enforced on-chain rule. PrediX has 7 critical invariants (INV-1 through INV-7).
+**Multisig** A wallet requiring N-of-M signatures to execute. PrediX uses 2/3 admin + 2/3 operator + 2/3 oracle reporter (Gnosis Safe on mainnet).
 
-### LP (Liquidity Provider)
+### O
 
-Provides liquidity to an AMM pool, receives an LP NFT, and earns swap fees. PrediX LPs supply USDC + YES/NO.
+**Oracle** A source that reports real-world event outcomes on-chain. PrediX supports four types: Manual, Chainlink, UMA, and Committee. If the oracle is wrong, the market resolves incorrectly and users lose funds. → See: _Resolution & Oracle_.
 
-### LP NFT
+**Outcome token (YES/NO)** An ERC-20 token representing one side of a market (YES or NO), with 6 decimals (matching USDC). A correct YES = $1, an incorrect YES = $0. Composable with DeFi. → See: _Outcome Token_.
 
-Token representing an LP position on Uniswap v4 (PositionManager).
+### P
 
-### Maker
+**Passkey** The WebAuthn authentication standard using biometrics (Touch ID, Face ID, Windows Hello). The private key lives in the Secure Enclave / TPM and cannot be exported. → See: _Wallet Setup_.
 
-User who places a limit order awaiting matching on the CLOB.
+**Paymaster (ERC-4337)** An intermediary contract that pays gas for UserOps on behalf of the user. Smart accounts can pay gas via paymaster (USDC, sponsorship, etc.). PrediX runs a gas-sponsorship program for eligible users.
 
-### Market
+**Permit2** A Uniswap contract enabling a one-time ERC-20 approve plus off-chain signing for subsequent transactions (gasless approval). The PrediX Router uses Permit2. Canonical address: `0x000000000022D473030F116dDEE9F6B43aC78BA3`.
 
-The fundamental trading unit — a YES/NO question + outcome token pair + oracle + endTime.
+**Points** Activity rewards tracked off-chain (volume, accuracy, LP, referral, etc.). Convert to PRX on a pro-rata basis. Earlier participation earns more. → See: _Points — Earn PRX_.
 
-### Match type (CLOB)
+**Prediction market** An exchange for tokens that reflect the probability of an event. Example: a YES price of $0.68 means the market prices a 68% probability of the event occurring. → See: _Prediction Context_.
 
-3 matching types on Exchange: complementary (YES<->YES), mint (BUY+BUY >= $1), merge (SELL+SELL <= $1).
+**PRX** The governance and revenue-sharing token of PrediX. Total supply is 1 billion (1B), hard-capped, with no minting after TGE. → See: _PRX Utility_.
 
-### Merge
+### Q
 
-Burns 1 YES + 1 NO -> returns 1 USDC. The reverse of split. Fee-free, used for arbitrage or exiting multi-directional positions.
+**Quadratic voting** A voting mechanism where `voting_power = sqrt(vePRX_weight)` — reducing whale dominance. Planned for Phase 2, applied to proposals over $100k.
 
-### Multisig
+### R
 
-Wallet requiring N of M signatures to execute. PrediX uses 2/3 admin + 2/3 operator + 2/3 oracle reporter.
+**Refund mode** An emergency state triggered when an oracle fails (down, dispute hung). Users burn YES+NO pairs to receive USDC pro-rata. Admin enables it via a 48h timelock. → See: _Redeem & Refund_.
 
-### Oracle
+**Reorg (Reorganization)** A blockchain reorganization caused by a fork. The Ponder indexer handles it automatically — it reverts and replays, so clients need no custom logic.
 
-Source that reports real-world event outcomes on-chain. PrediX supports Manual, Chainlink, UMA, Committee.
+**Router (PrediXRouter)** A stateless aggregator — the single entry point for all swaps. It automatically splits an order between the CLOB and the AMM. Invariant: `balanceOf(router) == 0` after every public call. No custody, no stuck funds. → See: _CLOB + AMM Hybrid_, _Router Integration_.
 
-### Outcome token
+### S
 
-ERC-20 representing one side of a market (YES or NO). 1 YES correct = $1, 1 YES incorrect = $0. Composable with DeFi.
+**Sequencer** The L2 component that orders transactions. Chainlink monitors sequencer uptime for the oracle — it does not resolve during the grace period after an outage.
 
-### Passkey
+**SIWE (Sign-In With Ethereum — EIP-4361)** A standard for web sign-in using a wallet. The user signs a message off-chain, the backend verifies the ECDSA signature, and a session is created (HTTPOnly cookie valid for 7 days). → See: _Wallet Setup_.
 
-WebAuthn authentication standard using biometrics (Touch ID, Face ID). Private key lives in the Secure Enclave.
+**Slippage** The difference between the previewed price and the actual execution price. The default tolerance is 0.5%. If exceeded, the transaction reverts and no funds are lost (only gas is consumed).
 
-### Paymaster (ERC-4337)
+**Smart account (ERC-4337)** A contract wallet supporting batch transactions, paymaster, and passkey. PrediX uses Kernel v3 smart accounts with a passkey validator. The opposite of an EOA.
 
-Intermediary contract that pays gas for UserOps on behalf of the user. Smart account users can pay gas via paymaster in multiple ways (USDC, sponsorship, etc). PrediX has a **gas sponsorship program** for eligible users — **applies to both account types** (smart account: paymaster covers directly; EOA: off-chain rebate/refund). Eligibility criteria (new user, staker, campaign event) will be published pre-launch and may change via governance vote.
+**Split** Mints 1 YES + 1 NO from 1 USDC. The reverse of Merge. Used for market making or arbitrage. Zero-fee, zero-slippage. → See: _Split & Merge_.
 
-### Permit2
+**Stake** Lock PRX into the vault → receive stkPRX (non-transferable) + a share of USDC fee yield. → See: _Real Yield Staking_.
 
-Uniswap contract enabling a one-time ERC-20 approve + offline signing for subsequent txs. The PrediX Router uses Permit2 for gasless approvals.
+**stkPRX** A non-transferable token minted when staking PRX. Represents a claim on the protocol's USDC fee share.
 
-### Points
+**Streak** A chain of consecutive actions — win streak, daily login streak. Earns badges + bonus rewards. Missing a single day resets it to 0.
 
-Off-chain tracked activity rewards (trade volume, accuracy, LP, ...). Convert to PRX at weekly distribution.
+### T
 
-### Prediction market
+**Taker** A user who fills a market order on the CLOB (matching against a resting maker order).
 
-Exchange for tokens reflecting event probabilities. YES price = $0.68 -> the market prices a 68% probability of occurrence.
+**TBA (To Be Announced)** A placeholder for information not yet published (dates, addresses, parameters).
 
-### PRX
+**Tick (CLOB)** A discrete price level in the order book. PrediX has 99 ticks from $0.01 to $0.99, with a tick size of $0.01. Prices must be multiples of $0.01 (0.455 is rejected or rounded).
 
-Governance + revenue-sharing token of PrediX. Total supply 1B.
+**Timelock** A contract that delays the execution of admin actions (48h on PrediX). Diamond and Hook upgrades both pass through the timelock — preventing an admin rugpull. `timelockDuration` is monotonic (can only increase, minimum 48h). → See: _Security & Timelock_.
 
-### Quadratic voting
+**TVL (Total Value Locked)** The total USDC locked in the protocol (market collateral + LP + staker).
 
-Voting mechanism where power = sqrt(stake) — reduces whale dominance. Phase 2 of PrediX.
+### U
 
-### Refund mode
+**UMA oracle** A permissionless oracle with a 48h dispute window plus a DVM (Data Verification Mechanism). Planned for Phase 2. Bond = `max(min_bond, min(tvl × 0.5%, max_bond))`, ranging $500–$50,000.
 
-Emergency state when the oracle fails. Users burn YES+NO pairs -> receive USDC pro-rata.
+**Unichain** An L2 EVM chain built by Uniswap Labs. PrediX is currently deployed on Unichain Sepolia testnet (chain 1301); mainnet (chain 130) launches after external audit.
 
-### Reorg (reorganization)
+**USDC** USD Coin — a stablecoin pegged 1:1 to USD, with 6 decimals. PrediX uses USDC as the sole collateral for every market. Encoding: 1 USDC = 1,000,000 (6 decimals).
 
-Blockchain reorganization due to a fork. The Ponder indexer handles this automatically.
+**UserOp (User Operation)** A pseudo-transaction in ERC-4337. Smart accounts submit UserOps via a bundler instead of standard transactions.
 
-### Router (PrediXRouter)
+### V
 
-Stateless aggregator — single entry for all swaps. Automatically splits between CLOB + AMM. Invariant: `balanceOf == 0` post-call.
+**vePRX (vote-escrowed PRX)** PRX locked to gain governance weight + a yield boost. Non-transferable, with weight that decays linearly over time. Formula: `vePRX_weight = PRX_locked × (remaining_lock_time / max_lock_time)`, where max\_lock\_time = 4 years. → See: _vePRX & Gauge Voting_.
 
-### Sequencer
+**VRF (Verifiable Random Function)** A verifiable on-chain random number. PrediX uses Chainlink VRF for reward boxes.
 
-L2 component that sequences transactions. Chainlink monitors sequencer uptime for the oracle.
+### W
 
-### SIWE (Sign-In With Ethereum)
+**Webhook** An HTTP callback that pushes events to a URL you configure. Bots listen via webhooks instead of polling.
 
-EIP-4361 standard for web sign-in using a wallet. User signs a message off-chain, BE verifies, mints a session.
+### Y
 
-### Slippage
+**YES / NO** The outcome tokens of a market. A correct YES = $1, an incorrect YES = $0. Price relationship: `YES_price + NO_price = $1` (always, enforced by the Split/Merge mechanism). → See: _Outcome Token_.
 
-Difference between the previewed price and the actual execution price. Default tolerance 0.5%.
+***
 
-### Smart account (ERC-4337)
-
-Contract wallet supporting batch txs, paymaster, passkey. PrediX uses Kernel v3 smart accounts with a passkey validator. Contrasts with EOA (externally-owned account) such as standard MetaMask.
-
-### Split
-
-Mints 1 YES + 1 NO from 1 USDC. The reverse of merge. Used for market making or arbitrage.
-
-### Stake
-
-Lock PRX into vault -> receive stkPRX (non-transferable) + USDC yield share.
-
-### Streak
-
-Chain of consecutive actions. Win streak, daily login streak — earn badges + bonus rewards.
-
-### stkPRX
-
-Non-transferable token minted when staking PRX. Represents a claim on the protocol's USDC fee share.
-
-### Taker
-
-User who fills market orders on the CLOB.
-
-### Tick (CLOB)
-
-Discrete price level in the order book. PrediX has 99 ticks $0.01-$0.99, tick size $0.01.
-
-### Timelock
-
-Contract that delays execution of admin actions (48h on PrediX). Diamond + Hook upgrades go through timelock — prevents admin rugpull.
-
-### TVL (Total Value Locked)
-
-Total USDC locked in the protocol (market collateral + LP + staker).
-
-### TBA (To Be Announced)
-
-Placeholder for information not yet published (dates, addresses, parameters).
-
-### UMA oracle
-
-Permissionless oracle with a 48h dispute window + DVM (Data Verification Mechanism). Phase 2 of PrediX.
-
-### Unichain
-
-L2 EVM chain built by Uniswap Labs. PrediX is currently deployed on **Unichain Sepolia testnet** (chain `1301`); **mainnet** (chain `130`) will launch after external audit completion.
-
-### USDC
-
-USD Coin, stablecoin pegged 1:1 to USD, 6 decimals. PrediX uses USDC as the sole collateral for all markets.
-
-### UserOp (User Operation)
-
-Pseudo-transaction in ERC-4337. Smart accounts submit UserOps via a bundler instead of standard transactions.
-
-### vePRX
-
-Vote-escrowed PRX. Lock PRX -> receive vePRX (governance weight + yield boost). Weight decays over time.
-
-### VRF (Verifiable Random Function)
-
-Verifiable on-chain random number. PrediX uses Chainlink VRF for reward boxes.
-
-### Webhook
-
-HTTP callback that pushes events to a URL you configure. Bots listen via webhooks instead of polling.
-
-### YES / NO
-
-Outcome tokens for a market. See [Outcome tokens](../core-concepts/outcome-tokens.md).
+> **Can't find a term?** Ask in Discord `#help-desk`, or check the related concept page under _Core Concepts_.
