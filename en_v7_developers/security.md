@@ -4,7 +4,7 @@ PrediX employs defense-in-depth. No "magic" — multiple layers, each doing one 
 
 ## 5 defense layers
 
-![5 security layers: Bug bounty -> External audit -> Static analysis (Slither) -> Fuzz + invariant test -> On-chain invariants (7 INV hard-enforce)](../.gitbook/assets/09-security-5layer.svg)
+![5 security layers: Bug bounty -> External audit -> Static analysis (Slither) -> Fuzz + invariant test -> On-chain invariants (7 INV hard-enforce)](.gitbook/assets/09-security-5layer.svg)
 
 ## 7 hard-enforced invariants
 
@@ -47,7 +47,7 @@ All upgrades with blast radius go through a 48h timelock.
 
 ### Diamond facet upgrade
 
-![Diamond upgrade: Multisig 2/3 schedules diamondCut -> TimelockController 48h -> community verifies -> execute -> DiamondCut event. CUT\_EXECUTOR\_ROLE = Timelock only](../.gitbook/assets/54-diamond-upgrade-flow.svg)
+![Diamond upgrade: Multisig 2/3 schedules diamondCut -> TimelockController 48h -> community verifies -> execute -> DiamondCut event. CUT\_EXECUTOR\_ROLE = Timelock only](.gitbook/assets/54-diamond-upgrade-flow.svg)
 
 `CUT_EXECUTOR_ROLE` = **only the TimelockController contract**. No EOA can bypass.
 
@@ -109,7 +109,7 @@ Good-faith researchers have safe harbor — no legal action will be taken if:
 
 ### Severity tiers
 
-![Incident severity: P0 critical (page <15min, pause module, disclose 72h), P1 high (alert <1h), P2 medium (Slack <24h), P3 low (backlog)](../.gitbook/assets/55-severity-tiers.svg)
+![Incident severity: P0 critical (page <15min, pause module, disclose 72h), P1 high (alert <1h), P2 medium (Slack <24h), P3 low (backlog)](.gitbook/assets/55-severity-tiers.svg)
 
 ### P0 response flow
 

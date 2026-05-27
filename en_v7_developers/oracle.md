@@ -14,13 +14,13 @@ An **external source** must deliver data on-chain. If the oracle is wrong, the m
 
 ## 4 phases, 4 oracle types
 
-![4 oracle types: ChainlinkOracle (price, auto), ManualOracle (subjective, multisig 2/3), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)](../.gitbook/assets/25-oracle-types.svg)
+![4 oracle types: ChainlinkOracle (price, auto), ManualOracle (subjective, multisig 2/3), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)](.gitbook/assets/25-oracle-types.svg)
 
 ## ChainlinkOracle
 
 Automated, permissionless.
 
-![ChainlinkOracle: creator register(feed, threshold, snapshotAt) -> endTime passes -> anyone resolve(roundIdHint) -> verify adjacency + sequencer uptime -> outcome = price >= threshold](../.gitbook/assets/37-chainlink-oracle-flow.svg)
+![ChainlinkOracle: creator register(feed, threshold, snapshotAt) -> endTime passes -> anyone resolve(roundIdHint) -> verify adjacency + sequencer uptime -> outcome = price >= threshold](.gitbook/assets/37-chainlink-oracle-flow.svg)
 
 **Use case**: Price-threshold markets (BTC, ETH, asset prices, FX rates).
 
@@ -46,7 +46,7 @@ Multisig 2/3 reads the outcome from an off-chain source and signs the transactio
 
 ### Flow
 
-![ManualOracle: real-world event -> multisig verifies >= 2 sources -> 2/3 sign report(outcome) -> OracleReportCreated event -> anyone resolveMarket -> MarketResolved](../.gitbook/assets/56-manual-oracle-flow.svg)
+![ManualOracle: real-world event -> multisig verifies >= 2 sources -> 2/3 sign report(outcome) -> OracleReportCreated event -> anyone resolveMarket -> MarketResolved](.gitbook/assets/56-manual-oracle-flow.svg)
 
 ### Risk mitigation
 
@@ -65,7 +65,7 @@ Admin can `revoke(marketId)` to clear a pending report when:
 
 Permissionless propose + 48h dispute window.
 
-![UMAOracle: proposer propose(outcome, bond) -> 48h dispute window -> no dispute: finalize + refund bond; dispute: DVM vote -> loser loses bond -> market resolved](../.gitbook/assets/38-uma-oracle-flow.svg)
+![UMAOracle: proposer propose(outcome, bond) -> 48h dispute window -> no dispute: finalize + refund bond; dispute: DVM vote -> loser loses bond -> market resolved](.gitbook/assets/38-uma-oracle-flow.svg)
 
 ### Bond sizing
 
@@ -108,7 +108,7 @@ Cross-chain governance outcomes, complex composite events.
 
 When no oracle can resolve the market:
 
-![Refund mode: oracle fails -> admin proposes enableRefundMode -> 48h timelock -> refundModeActive=true -> user burns min(YES,NO) pairs -> USDC pro-rata](../.gitbook/assets/39-refund-mode.svg)
+![Refund mode: oracle fails -> admin proposes enableRefundMode -> 48h timelock -> refundModeActive=true -> user burns min(YES,NO) pairs -> USDC pro-rata](.gitbook/assets/39-refund-mode.svg)
 
 Details: [Redeem & refund](../users-guide/redeem-refund.md).
 

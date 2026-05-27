@@ -225,7 +225,7 @@ This event is the **canonical source** for the indexer. Listen to it to update y
 
 ## Batch with Smart Account
 
-![AA UserOp batch](../.gitbook/assets/22-aa-userop.svg)
+![AA UserOp batch](.gitbook/assets/22-aa-userop.svg)
 
 ```typescript
 import { createKernelClient } from '@zerodev/sdk';

@@ -4,7 +4,7 @@ Integrate PrediX into your app, bot, or data pipeline — and understand the pro
 
 ## 4-layer stack
 
-![4-layer stack: User -> FE (Next.js) -> BE (NestJS) -> Indexer (Ponder) -> Smart Contracts (Solidity, Unichain). One-way data flow, users sign txs directly with SC](../.gitbook/assets/03-architecture-4layer.svg)
+![4-layer stack: User -> FE (Next.js) -> BE (NestJS) -> Indexer (Ponder) -> Smart Contracts (Solidity, Unichain). One-way data flow, users sign txs directly with SC](.gitbook/assets/03-architecture-4layer.svg)
 
 Data flows **one way**: SC emits events -> Indexer syncs -> BE serializes -> FE renders. BE never writes back to the Indexer or SC. Users sign transactions directly with smart contracts via their wallet — never through BE.
 
@@ -19,11 +19,11 @@ Data flows **one way**: SC emits events -> Indexer syncs -> BE serializes -> FE 
 
 ## 4 technical pillars
 
-![Protocol features: 1. Smart Router aggregates CLOB + AMM liquidity. 2. Dynamic AMM fees 0.5->5% near expiry. 3. Pluggable oracles (Chainlink, UMA, Manual). 4. Zero gas on failed tx (Unichain)](../.gitbook/assets/protocol-features.png)
+![Protocol features: 1. Smart Router aggregates CLOB + AMM liquidity. 2. Dynamic AMM fees 0.5->5% near expiry. 3. Pluggable oracles (Chainlink, UMA, Manual). 4. Zero gas on failed tx (Unichain)](.gitbook/assets/protocol-features.png)
 
 ## Integration paths
 
-![Developer paths: App user trade -> Router integration, Fetch data -> API reference, Bot/mobile/web -> Bots & mobile, Test -> Testnet info](../.gitbook/assets/61-dev-integration-paths.svg)
+![Developer paths: App user trade -> Router integration, Fetch data -> API reference, Bot/mobile/web -> Bots & mobile, Test -> Testnet info](.gitbook/assets/61-dev-integration-paths.svg)
 
 | I want to...                                       | Go to                                       |
 | -------------------------------------------------- | ------------------------------------------- |

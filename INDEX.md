@@ -8,7 +8,8 @@
 
 | Locale | Active directory | Status |
 |---|---|---|
-| English | [`en_v7/`](en_v7/) | **ACTIVE** — current production docs. |
+| English (Documentation) | [`en_v7/`](en_v7/) | **ACTIVE** — current production user docs. Tab "Documentation" of the GitBook Site. |
+| English (Developers) | [`en_v7_developers/`](en_v7_developers/) | **ACTIVE** — current production developer docs. Tab "Developers" of the GitBook Site. Split from `en_v7/developers-guide/` on 2026-05-27. |
 | Vietnamese | [`vi_v6/`](vi_v6/) | **ACTIVE** — current production docs. |
 | Japanese | [`ja/`](ja/) | **ACTIVE** — only Japanese version. |
 | Korean | [`ko_3/`](ko_3/) | **ACTIVE** — current Korean version. |

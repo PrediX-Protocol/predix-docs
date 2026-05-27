@@ -2,7 +2,7 @@
 
 PrediX provides two paths for programmatic integration, depending on your use case.
 
-![Two developer paths: Path 1 Trade yourself (wallet + viem, Router contract, no API key) for bots/analytics. Path 2 Build platform (REST API + WebSocket, SIWE auth + AA, real-time streaming) for frontends/mobile apps.](../.gitbook/assets/dev-two-paths.svg)
+![Two developer paths: Path 1 Trade yourself (wallet + viem, Router contract, no API key) for bots/analytics. Path 2 Build platform (REST API + WebSocket, SIWE auth + AA, real-time streaming) for frontends/mobile apps.](.gitbook/assets/dev-two-paths.svg)
 
 ## Path 1 — Trade for yourself
 

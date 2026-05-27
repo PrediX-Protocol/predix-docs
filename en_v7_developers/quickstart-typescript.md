@@ -2,7 +2,7 @@
 
 Buy YES tokens on a PrediX market in under 5 minutes using viem.
 
-![Quickstart flow: Setup (connect wallet) → Approve (USDC to Permit2) → Quote (quoteBuyYes) → Trade (buyYes) → Done (YES tokens). Router handles CLOB → AMM routing automatically.](../.gitbook/assets/quickstart-flow.svg)
+![Quickstart flow: Setup (connect wallet) → Approve (USDC to Permit2) → Quote (quoteBuyYes) → Trade (buyYes) → Done (YES tokens). Router handles CLOB → AMM routing automatically.](.gitbook/assets/quickstart-flow.svg)
 
 ## Prerequisites
 
