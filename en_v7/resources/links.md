@@ -84,11 +84,7 @@ The PrediX team **does not** provide:
 
 ## Verify before sharing
 
-Any link not in this list is **not official**. When in doubt:
-
-1. Check the official Twitter [@PrediXproio](https://x.com/PrediXproio)&#x20;
-2. Check pinned messages in the official Discord.
-3. Cross-reference with these docs.
+Any link not in this list is **not official**. Check the official Twitter [@PrediXproio](https://x.com/PrediXproio)&#x20;
 
 The PrediX team will **never**:
 
