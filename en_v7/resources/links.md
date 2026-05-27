@@ -18,12 +18,12 @@
 
 ### Traction
 
-* **Bug Bounty submissions:** 32,471+
+* **Bug Bounty submissions:** 32K+
 * **Ambassadors & Creators:** 250+ applications
 * **In-house KOLs (owned):** 50+
 * **External KOLs / Communities:** 200+ (VN / KR / JP)
 * **Active communities:** Vietnam, Korea, Japan
-* **Distribution partners:** Affiliate partnerships with multiple CEX and DEX platforms — direct access to active traders and proven distribution channels
+* **Distribution partners:** Affiliate partnerships with multiple CEX and DEX platforms, direct access to active traders and proven distribution channels
 
 ## On-chain
 
