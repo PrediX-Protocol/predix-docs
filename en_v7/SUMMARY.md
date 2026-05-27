@@ -59,6 +59,5 @@
 ## Resources
 
 * [Glossary](resources/glossary.md)
-* [Changelog](resources/changelog.md)
 * [Links](resources/links.md)
 * [Disclaimers & Risks](resources/disclaimers-and-risks.md)
