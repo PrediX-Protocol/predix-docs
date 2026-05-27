@@ -56,16 +56,15 @@
 
 ## Brand & media
 
-* **Brand kit**: [predix.app/brand](https://predix.app/brand)
-* **Logos + assets**: [github.com/predix-protocol/brand](https://github.com/predix-protocol/brand)
-* **Press kit**: [predix.app/press](https://predix.app/press)
+* **Brand kit**: TBA
+* **Logos + assets**: TBA
+* **Press kit**: TBA
 
 ## Legal
 
-* **Terms of Service**: [predix.app/terms](https://predix.app/terms)
-* **Privacy Policy**: [predix.app/privacy](https://predix.app/privacy)
-* **Risk disclosures**: [predix.app/risks](https://predix.app/risks)
-* **Acceptable use**: [predix.app/aup](https://predix.app/aup)
+* **Terms of Service**: TBA
+* **Privacy Policy**: TBA
+* **Risk disclosures**: TBA
 
 ## Disclaimers
 
