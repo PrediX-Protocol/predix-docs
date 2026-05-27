@@ -121,4 +121,4 @@ Entry: Silver S4 - Team invite (>= 50K followers). Gold is the maximum tier.
 3. Begin milestones - tokens activate when milestones are verified.
 4. Track progress in the **KOL Dashboard** on the app.
 
-Contact: [business@predixpro.io](mailto:business@predixpro.io) for Direct Entry or team invite.
+Contact: [contact@predixpro.io](mailto:contact@predixpro.io) for Direct Entry or team invite.

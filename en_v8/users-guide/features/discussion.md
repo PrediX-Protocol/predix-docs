@@ -203,7 +203,7 @@ GET  /api/v1/feed?filter=following|trending|latest
 POST /api/v1/markets/:id/activity?type=trade|comment
 ```
 
-Realtime via WebSocket: `wss://api.predixpro.io/v2/me/feed`.
+Realtime via WebSocket: `wss://api-staging.predixpro.io/v2/me/feed` (beta). Production endpoint at `wss://api.predixpro.io/v2/me/feed` - TBA.
 
 {% hint style="info" %}
 Details: [Backend API](/broken/pages/NaTE7epVHDvl0K9Pol1r#backend-endpoints-v2).

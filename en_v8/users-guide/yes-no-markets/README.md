@@ -16,7 +16,7 @@ description: >-
 {% step %}
 <mark style="color:$warning;">**Step 1: Find a Market**</mark>
 
-* Navigate to the [Markets page](https://app.predixpro.io/markets).
+* Navigate to [beta.predixpro.io](https://beta.predixpro.io) to explore markets.
 * Browse the list or use the search bar to find an event you are interested in.
 * Click on the market card to open the Detail Page.
 {% endstep %}

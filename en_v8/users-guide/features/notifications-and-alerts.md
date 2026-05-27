@@ -315,7 +315,7 @@ POST   /api/v1/users/:address/alerts
 DELETE /api/v1/users/:address/alerts/:id
 ```
 
-Realtime updates via WebSocket: `wss://api.predixpro.io/v2/me/notifications` with an auth header.
+Realtime updates via WebSocket: `wss://api-staging.predixpro.io/v2/me/notifications` (beta) with an auth header. Production endpoint at `wss://api.predixpro.io/v2/me/notifications` - TBA.
 
 {% hint style="info" %}
 Details: [API Reference](/broken/pages/NaTE7epVHDvl0K9Pol1r).
