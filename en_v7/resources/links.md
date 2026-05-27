@@ -1,10 +1,29 @@
 # Links
 
-## Product
+### Product
 
-* **App**: [app.predix.app](https://app.predix.app)
-* **Docs**: [docs.predix.app](https://docs.predix.app) (you are here)
-* **Status**: [status.predix.app](https://status.predix.app)
+* **Beta Test:** [https://beta.predixpro.io](https://beta.predixpro.io)
+* **Docs:** [docs.predix.app](https://docs.predix.app) _(you are here)_
+* **Demo Video:** [Watch on YouTube](https://youtu.be/hrUJF7wTslY)
+* **Website:** [https://predixpro.io](https://predixpro.io)
+
+## Community
+
+* **Twitter / X**: [@PrediXproio](https://x.com/PrediXproio)
+* **Telegram (VN)**: [https://t.me/megaspacechat](https://t.me/megaspacechat)
+* **Telegram (KR):** [https://t.me/KrMegaSpace](https://t.me/KrMegaSpace)&#x20;
+* **Telegram (EN)**: [https://t.me/CoinCrazeCentral](https://t.me/CoinCrazeCentral)
+
+> **Scam warning**: Verify official channels via the official Twitter before joining. Never respond to unsolicited DMs. Any "airdrop", "private sale", or "free PRX" claim is a scam.
+
+### Traction
+
+* **Bug Bounty submissions:** 32,471+
+* **Ambassadors & Creators:** 250+ applications
+* **In-house KOLs (owned):** 50+
+* **External KOLs / Communities:** 200+ (VN / KR / JP)
+* **Active communities:** Vietnam, Korea, Japan
+* **Distribution partners:** Affiliate partnerships with multiple CEX and DEX platforms — direct access to active traders and proven distribution channels
 
 ## On-chain
 
@@ -29,68 +48,17 @@
 
 ## Security
 
-* **Bug bounty**: [security@predix.app](mailto:security@predix.app)
+* **Bug bounty**: TBA
 * **PGP key**: TBA
-* **Audit reports**: [docs.predix.app/audits](https://docs.predix.app/audits) — TBA
-* **Incident response**: [incident@predix.app](mailto:incident@predix.app)
-* **Bug bounty program** details: [Security & timelock](/broken/pages/X62chRP2ACaMi4cphekc)
-
-## Community
-
-* **Discord**: [discord.gg/predix](https://discord.gg/predix)
-* **Twitter / X**: [@predix\_protocol](https://twitter.com/predix_protocol)
-* **Telegram (VN)**: [t.me/predix\_vn](https://t.me/predix_vn)
-* **Telegram (EN)**: [t.me/predix\_official](https://t.me/predix_official)
-* **Telegram (JP)**: [t.me/predix\_japan](https://t.me/predix_japan)
-* **Telegram (KR)**: [t.me/predix\_korea](https://t.me/predix_korea)
-* **Farcaster**: [/predix](https://warpcast.com/~/channel/predix)
-* **Lens**: TBA
-* **Forum**: [gov.predix.app](https://gov.predix.app)
-
-> **Scam warning**: Verify official channels via the official Twitter before joining. Never respond to unsolicited DMs. Any "airdrop", "private sale", or "free PRX" claim is a scam.
-
-## Governance
-
-* **Forum discussion**: [gov.predix.app](https://gov.predix.app)
-* **Snapshot voting**: [snapshot.org/#/predix.eth](https://snapshot.org/#/predix.eth) (TBA)
-* **vePRX dashboard**: [app.predix.app/governance](https://app.predix.app/governance)
-* **Treasury report quarterly**: [docs.predix.app/treasury](https://docs.predix.app/treasury) (TBA)
-
-## Data & analytics
-
-* **Dune dashboard**: [dune.com/predix](https://dune.com/predix) — TBA
-* **DefiLlama**: [defillama.com/protocol/predix](https://defillama.com/protocol/predix) — TBA
-* **CoinGecko**: TBA (post-listing)
-* **CoinMarketCap**: TBA (post-listing)
-* **Token Terminal**: TBA
+* **Audit reports**: TBA
+* **Incident response**: TBA
+* **Bug bounty program** details: TBA
 
 ## Brand & media
 
 * **Brand kit**: [predix.app/brand](https://predix.app/brand)
 * **Logos + assets**: [github.com/predix-protocol/brand](https://github.com/predix-protocol/brand)
 * **Press kit**: [predix.app/press](https://predix.app/press)
-
-## Partnerships
-
-* **Uniswap Foundation** — Unichain ecosystem grant
-* **Pimlico** — AA bundler + paymaster infra
-* **ZeroDev** — Kernel smart account SDK
-* **Chainlink** — price feed oracle
-* **Across / Stargate / LayerZero** — bridge infrastructure
-
-Full list post-launch: TBA.
-
-## Contact
-
-| Purpose                    | Email                                             |
-| -------------------------- | ------------------------------------------------- |
-| **Support (user)**         | Discord #help-desk (preferred)                    |
-| **Business / partnership** | [business@predix.app](mailto:business@predix.app) |
-| **Press / media**          | [press@predix.app](mailto:press@predix.app)       |
-| **Security disclosure**    | [security@predix.app](mailto:security@predix.app) |
-| **Incident**               | [incident@predix.app](mailto:incident@predix.app) |
-| **Legal**                  | [legal@predix.app](mailto:legal@predix.app)       |
-| **Privacy / GDPR**         | [privacy@predix.app](mailto:privacy@predix.app)   |
 
 ## Legal
 
@@ -119,7 +87,7 @@ The PrediX team **does not** provide:
 
 Any link not in this list is **not official**. When in doubt:
 
-1. Check the official Twitter [@predix\_protocol](https://twitter.com/predix_protocol).
+1. Check the official Twitter [@PrediXproio](https://x.com/PrediXproio)&#x20;
 2. Check pinned messages in the official Discord.
 3. Cross-reference with these docs.
 
