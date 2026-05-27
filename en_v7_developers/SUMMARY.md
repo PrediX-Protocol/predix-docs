@@ -4,8 +4,8 @@
 
 ## Getting Started
 
-* [Quickstart — TypeScript](getting-started/quickstart-typescript.md)
-* [Quickstart — Python](getting-started/quickstart-python.md)
+* [Quickstart - TypeScript](getting-started/quickstart-typescript.md)
+* [Quickstart - Python](getting-started/quickstart-python.md)
 * [Beta Information](getting-started/beta.md)
 
 ## Integration

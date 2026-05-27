@@ -2,7 +2,7 @@
 
 Real-time streaming for orderbook updates, price changes, trades, and user portfolio events.
 
-![WebSocket flow: Client connects → subscribes to topic (orderbook, trades) → server confirms → pushes data updates → ping/pong keepalive](../.gitbook/assets/websocket-flow.svg)
+![WebSocket flow: Client connects -> subscribes to topic (orderbook, trades) -> server confirms -> pushes data updates -> ping/pong keepalive](../.gitbook/assets/websocket-flow.svg)
 
 ## Connection
 
@@ -11,7 +11,7 @@ Endpoint: wss://<host>/ws/realtime
 Auth (optional): Sec-WebSocket-Protocol: predix.bearer, <session_token>
 ```
 
-Authenticated connection required for user-specific topics (positions, orders, portfolio). The session token is passed via the `Sec-WebSocket-Protocol` header in the WebSocket upgrade — the browser surfaces this as the second argument to the `WebSocket` constructor.
+Authenticated connection required for user-specific topics (positions, orders, portfolio). The session token is passed via the `Sec-WebSocket-Protocol` header in the WebSocket upgrade - the browser surfaces this as the second argument to the `WebSocket` constructor.
 
 ## Subscribe / Unsubscribe
 
@@ -51,7 +51,7 @@ Require `subject` = user wallet address. Must match authenticated session.
 
 ## Message format
 
-### Server → Client
+### Server -> Client
 
 ```json
 // Subscription confirmed
@@ -72,7 +72,7 @@ Require `subject` = user wallet address. Must match authenticated session.
 
 > **Note**: Data delivery is poller-based (1s interval), not event-driven push. The server polls the indexer, diffs snapshots, and broadcasts deltas.
 
-### Client → Server
+### Client -> Server
 
 ```json
 { "type": "pong" }
@@ -86,7 +86,7 @@ Require `subject` = user wallet address. Must match authenticated session.
 | Connections per IP           | 20    |
 | Global connections           | 5,000 |
 
-## Example — TypeScript
+## Example - TypeScript
 
 ```typescript
 const ws = new WebSocket(`${WS_BASE_URL}/ws/realtime`);
@@ -124,7 +124,7 @@ ws.onmessage = (event) => {
 };
 ```
 
-## Example — Python
+## Example - Python
 
 ```python
 import asyncio
@@ -168,7 +168,7 @@ const verifyRes = await fetch('/api/auth/verify', {
 });
 const { token } = await verifyRes.json();
 
-// Connect with auth — pass the token via the Sec-WebSocket-Protocol header.
+// Connect with auth - pass the token via the Sec-WebSocket-Protocol header.
 // In the browser, the second argument to `WebSocket` becomes that header.
 const ws = new WebSocket(`${WS_BASE_URL}/ws/realtime`, ['predix.bearer', token]);
 ```

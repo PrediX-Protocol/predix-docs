@@ -1,6 +1,6 @@
 # Oracle
 
-The oracle is the layer that reports real-world event outcomes on-chain. PrediX uses a pluggable architecture — multiple oracle types coexist.
+The oracle is the layer that reports real-world event outcomes on-chain. PrediX uses a pluggable architecture - multiple oracle types coexist.
 
 ## The core problem
 
@@ -26,8 +26,8 @@ Automated, permissionless.
 
 **Strict checks**:
 
-* Round adjacency — the resolver supplies `(roundIdHint, prevRoundIdHint)`; the oracle asserts the hinted round is the unique one whose `updatedAt >= snapshotAt` and whose predecessor's `updatedAt < snapshotAt`. Stale and skipped rounds revert.
-* L2 sequencer uptime — when a sequencer uptime feed is configured, `resolve` reverts if the sequencer is currently down OR has been up for less than `SEQUENCER_GRACE_PERIOD` (1 hour). Avoids resolving against stale data immediately after a sequencer recovery.
+* Round adjacency - the resolver supplies `(roundIdHint, prevRoundIdHint)`; the oracle asserts the hinted round is the unique one whose `updatedAt >= snapshotAt` and whose predecessor's `updatedAt < snapshotAt`. Stale and skipped rounds revert.
+* L2 sequencer uptime - when a sequencer uptime feed is configured, `resolve` reverts if the sequencer is currently down OR has been up for less than `SEQUENCER_GRACE_PERIOD` (1 hour). Avoids resolving against stale data immediately after a sequencer recovery.
 
 ## ManualOracle
 
@@ -57,12 +57,12 @@ The REPORTER role can be rotated to a hardware wallet, KMS-backed signer, or mul
 
 Admin operations on a pending report (before `finalizesAt`):
 
-* `revoke(marketId)` — tombstones the slot: clears the answer AND freezes it so the reporter cannot re-publish. Admin playbook is revoke → `enableRefundMode` for the affected market.
-* `reopenReport(marketId)` — clears the slot WITHOUT freezing, letting the reporter publish a corrected outcome in a fresh challenge window. Only callable while the challenge window is still open.
+* `revoke(marketId)` - tombstones the slot: clears the answer AND freezes it so the reporter cannot re-publish. Admin playbook is revoke -> `enableRefundMode` for the affected market.
+* `reopenReport(marketId)` - clears the slot WITHOUT freezing, letting the reporter publish a corrected outcome in a fresh challenge window. Only callable while the challenge window is still open.
 
-**Warning**: once `isResolved` flips to `true` (challenge window closed and the outcome was consumed), neither path is available — the resolution is immutable (hard invariant INV-6).
+**Warning**: once `isResolved` flips to `true` (challenge window closed and the outcome was consumed), neither path is available - the resolution is immutable (hard invariant INV-6).
 
-## UMAOracle (Phase 2 — TBA)
+## UMAOracle (Phase 2 - TBA)
 
 Permissionless propose + 48h dispute window.
 
@@ -71,7 +71,7 @@ Permissionless propose + 48h dispute window.
 ### Bond sizing
 
 ```
-bond = max(min_bond, min(market_tvl × 0.5%, max_bond))
+bond = max(min_bond, min(market_tvl * 0.5%, max_bond))
 min_bond = $500 USDC
 max_bond = $50,000 USDC
 ```
@@ -82,7 +82,7 @@ Bond scales with market size -> disincentivizes spam, aligns incentives.
 
 Events requiring decentralized resolution without reliance on a multisig.
 
-## Committee oracle (Phase 3 — TBA)
+## Committee oracle (Phase 3 - TBA)
 
 * **t-of-N threshold signature** (e.g. 5-of-9 validators).
 * **Commit-reveal voting** prevents front-running.
@@ -105,7 +105,7 @@ Cross-chain governance outcomes, complex composite events.
 | Decentralization  | Low                             | Medium             | High                          | High                      |
 | Bond required     | No                              | No                 | Yes                           | Validator stake           |
 
-## Refund mode — last resort
+## Refund mode - last resort
 
 When no oracle can resolve the market:
 
@@ -113,7 +113,7 @@ When no oracle can resolve the market:
 
 Details: [Redeem & refund](../../users-guide/redeem-refund.md).
 
-## Incorrect resolution — handling flow
+## Incorrect resolution - handling flow
 
 | Phase              | Mechanism                                                                                          |
 | ------------------ | -------------------------------------------------------------------------------------------------- |
@@ -125,9 +125,9 @@ Details: [Redeem & refund](../../users-guide/redeem-refund.md).
 
 Diamond maintains a set of approved oracles:
 
-* `approveOracle(addr)` — admin adds a new adapter (instant).
-* `revokeOracle(addr)` — admin removes (instant) — only prevents use for **new** markets.
-* Markets already created with that oracle **continue to use it** — avoids retroactive breakage.
+* `approveOracle(addr)` - admin adds a new adapter (instant).
+* `revokeOracle(addr)` - admin removes (instant) - only prevents use for **new** markets.
+* Markets already created with that oracle **continue to use it** - avoids retroactive breakage.
 
 ## Oracle selection per market
 

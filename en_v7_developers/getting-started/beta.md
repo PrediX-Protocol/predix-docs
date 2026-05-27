@@ -33,7 +33,7 @@ PrediX operates a faucet relayed via the backend:
 
 * **10,000 test-USDC** per claim
 * **One claim per address** (one-shot)
-* Gas is sponsored via the paymaster — no ETH needed to claim or trade
+* Gas is sponsored via the paymaster - no ETH needed to claim or trade
 
 ### How to claim
 
@@ -54,7 +54,7 @@ curl -X POST ${BACKEND_BASE_URL}/api/faucet \
   -d '{}'
 ```
 
-Body is empty — the destination is always the authenticated user's smart-account address (so a third party cannot burn another user's faucet allocation).
+Body is empty - the destination is always the authenticated user's smart-account address (so a third party cannot burn another user's faucet allocation).
 
 Response:
 
@@ -82,7 +82,7 @@ GET /api/faucet/status?address=0x...
 | Backend API | TBA |
 | WebSocket   | TBA |
 
-Schema and endpoint shape will stay identical from beta to production — switching only requires changing the base URL.
+Schema and endpoint shape will stay identical from beta to production - switching only requires changing the base URL.
 
 ## Contract addresses (beta)
 
@@ -151,14 +151,14 @@ Resets are announced **2 weeks** in advance via Discord + Twitter. Previous stat
 ## Beta bug reports
 
 * Logic / data bugs: Discord #beta-bugs.
-* Security bugs: same channel as production — [security@predix.app](mailto:security@predix.app). Bounty is lower (10-20% of production rate) since beta holds no real funds, but payouts are still issued.
+* Security bugs: same channel as production - [security@predix.app](mailto:security@predix.app). Bounty is lower (10-20% of production rate) since beta holds no real funds, but payouts are still issued.
 
 ## Get beta access
 
 The web app and faucet are open to anyone. The REST + WebSocket endpoints will be public at launch; until then they are coordinated via Discord:
 
 1. Join Discord.
-2. Channel #beta-access — share your use case + GitHub.
+2. Channel #beta-access - share your use case + GitHub.
 3. Receive beta API endpoint + key.
 
 Free for any legitimate development use case (bot, integration test, learning).

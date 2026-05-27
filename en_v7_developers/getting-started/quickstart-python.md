@@ -1,8 +1,8 @@
-# Quickstart — Python
+# Quickstart - Python
 
 Buy YES tokens on a PrediX market using web3.py.
 
-![Quickstart flow: Setup → Approve → Quote → Trade → Done. Router handles CLOB → AMM routing automatically.](../.gitbook/assets/quickstart-flow.svg)
+![Quickstart flow: Setup -> Approve -> Quote -> Trade -> Done. Router handles CLOB -> AMM routing automatically.](../.gitbook/assets/quickstart-flow.svg)
 
 ## Prerequisites
 
@@ -12,14 +12,14 @@ pip install web3 requests
 
 You need:
 
-* A wallet private key on Unichain mainnet — gas is sponsored via paymaster for eligible users
+* A wallet private key on Unichain mainnet - gas is sponsored via paymaster for eligible users
 * test-USDC on Unichain (get from [Faucet](beta.md), 10,000 per address)
 
 ## Complete working example
 
 ```python
 """
-PrediX — Python Quickstart
+PrediX - Python Quickstart
 Buy YES tokens on a prediction market via Router contract.
 """
 import json
@@ -100,7 +100,7 @@ def approve_usdc():
 
 
 def quote_buy_yes(market_id: int, usdc_amount: int) -> int:
-    """Get expected YES output (non-view — uses eth_call)."""
+    """Get expected YES output (non-view - uses eth_call)."""
     result = router.functions.quoteBuyYes(
         market_id, usdc_amount, 10
     ).call({"from": account.address})
@@ -154,9 +154,9 @@ python quickstart.py
 
 ## Key notes
 
-* **Price precision**: `1e6` = 100%. Prices range `$0.01–$0.99`.
+* **Price precision**: `1e6` = 100%. Prices range `$0.01-$0.99`.
 * **USDC**: 6 decimals. `100 * 10**6 = 100 USDC`.
-* **Quote functions** are NOT `view` — they must be called via `eth_call` (`.call()` in web3.py). They return `(0, 0, 0)` on invalid market state, never revert.
+* **Quote functions** are NOT `view` - they must be called via `eth_call` (`.call()` in web3.py). They return `(0, 0, 0)` on invalid market state, never revert.
 * **marketId** is `uint256` (not bytes32).
 * **maxFills**: how many CLOB orders to try matching. `10` is a good default.
 * **Routing**: Router tries CLOB first, then AMM (Uniswap v4) for remainder. Unused input refunded automatically.
@@ -172,17 +172,17 @@ For advanced users who want to interact with the CLOB directly:
 # price: 1e6 = 100%, e.g. 450000 = $0.45
 
 # Cancel order
-# cancelOrder(orderId)  — orderId is bytes32
+# cancelOrder(orderId)  - orderId is bytes32
 
 # View orderbook
-# getOrderBook(marketId, depth) → yesBids, yesAsks, noBids, noAsks
-# getBestPrices(marketId) → bestBidYes, bestAskYes, bestBidNo, bestAskNo
+# getOrderBook(marketId, depth) -> yesBids, yesAsks, noBids, noAsks
+# getBestPrices(marketId) -> bestBidYes, bestAskYes, bestBidNo, bestAskNo
 ```
 
 See [Router integration](../integration/router-integration.md) for detailed Exchange API.
 
 ## Next steps
 
-* [Router integration](../integration/router-integration.md) — Permit2, batch trading, CLOB direct
-* [API reference](../integration/api-reference.md) — REST API for market data
-* [WebSocket](../integration/websocket.md) — real-time streaming
+* [Router integration](../integration/router-integration.md) - Permit2, batch trading, CLOB direct
+* [API reference](../integration/api-reference.md) - REST API for market data
+* [WebSocket](../integration/websocket.md) - real-time streaming

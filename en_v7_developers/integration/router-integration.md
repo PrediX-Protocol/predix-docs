@@ -133,7 +133,7 @@ await walletClient.writeContract({
 // See @uniswap/permit2-sdk docs for detailed encoding
 ```
 
-### Option 2: Direct approve to Router (less recommended — not gasless)
+### Option 2: Direct approve to Router (less recommended - not gasless)
 
 ```typescript
 await walletClient.writeContract({
@@ -235,7 +235,7 @@ event ClobSkipped(
 );
 ```
 
-`Trade` is the **canonical source** for the indexer. Listen to it to update your UI after tx confirmation. `ClobSkipped` fires when the CLOB leg reverted and the trade fell back to the AMM — useful as an observability signal in your dashboards.
+`Trade` is the **canonical source** for the indexer. Listen to it to update your UI after tx confirmation. `ClobSkipped` fires when the CLOB leg reverted and the trade fell back to the AMM - useful as an observability signal in your dashboards.
 
 ## Batch with Smart Account
 
@@ -279,7 +279,7 @@ The Router always uses hybrid routing. If you want:
 * **AMM-only** (skip CLOB): call Uniswap v4's UniversalRouter directly.
 * **CLOB-only** (skip AMM): call `PrediXExchange.fillMarketOrder` or `placeOrder`.
 
-The default recommendation is to use `PrediXRouter` — it optimizes price across both sources.
+The default recommendation is to use `PrediXRouter` - it optimizes price across both sources.
 
 ## Test on local fork
 

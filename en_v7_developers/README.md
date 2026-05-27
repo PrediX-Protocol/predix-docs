@@ -4,7 +4,7 @@ PrediX provides two paths for programmatic integration, depending on your use ca
 
 ![Two developer paths: Path 1 Trade yourself (wallet + viem, Router contract, no API key) for bots/analytics. Path 2 Build platform (REST API + WebSocket, SIWE auth + AA, real-time streaming) for frontends/mobile apps.](.gitbook/assets/dev-two-paths.svg)
 
-## Path 1 — Trade for yourself
+## Path 1 - Trade for yourself
 
 Build a trading bot, analytics tool, or personal strategy that interacts directly with PrediX smart contracts on Unichain.
 
@@ -26,9 +26,9 @@ No API key required for on-chain trading. Start immediately.
 
 > **Coming soon**: API key authentication for programmatic trading (24/7 bot operation without browser wallet) is planned for a future release.
 
-→ [Quickstart — TypeScript](getting-started/quickstart-typescript.md) · [Quickstart — Python](getting-started/quickstart-python.md)
+-> [Quickstart - TypeScript](getting-started/quickstart-typescript.md) , [Quickstart - Python](getting-started/quickstart-python.md)
 
-## Path 2 — Build a platform
+## Path 2 - Build a platform
 
 Build a frontend, mobile app, or trading platform where other users trade through your interface.
 
@@ -43,22 +43,22 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 
 1. Fetch markets via `GET /api/markets`
 2. Get pricing quotes via `POST /api/markets/:id/pricing/quote`
-3. User signs tx via wallet → Router contract executes on-chain
+3. User signs tx via wallet -> Router contract executes on-chain
 4. Track positions via `GET /api/portfolio/:address`
 
-→ [API reference](integration/api-reference.md) · [WebSocket](integration/websocket.md) · [Bots & mobile](integration/bots-mobile.md)
+-> [API reference](integration/api-reference.md) , [WebSocket](integration/websocket.md) , [Bots & mobile](integration/bots-mobile.md)
 
 ## Stack overview
 
 | Layer           | Technology                              | Purpose                                             |
 | --------------- | --------------------------------------- | --------------------------------------------------- |
-| Smart contracts | Solidity 0.8.34 · Foundry · Unichain L2 | On-chain execution: Diamond, Hook, Exchange, Router |
-| Indexer         | Ponder · PostgreSQL · Hono REST         | Index on-chain events → queryable REST API          |
-| Backend         | NestJS · Fastify · MongoDB              | View model: cache + metadata + auth + social        |
-| Frontend        | Next.js · React · viem · wagmi          | Web app UI                                          |
-| Paymaster       | ERC-4337 v0.7 · Pimlico bundler         | Gas sponsorship for eligible users                  |
+| Smart contracts | Solidity 0.8.34 , Foundry , Unichain L2 | On-chain execution: Diamond, Hook, Exchange, Router |
+| Indexer         | Ponder , PostgreSQL , Hono REST         | Index on-chain events -> queryable REST API          |
+| Backend         | NestJS , Fastify , MongoDB              | View model: cache + metadata + auth + social        |
+| Frontend        | Next.js , React , viem , wagmi          | Web app UI                                          |
+| Paymaster       | ERC-4337 v0.7 , Pimlico bundler         | Gas sponsorship for eligible users                  |
 
-## Contract addresses — Beta (Unichain mainnet, chain `130`)
+## Contract addresses - Beta (Unichain mainnet, chain `130`)
 
 | Contract            | Address                                      |
 | ------------------- | -------------------------------------------- |
@@ -86,8 +86,8 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 
 ## Next steps
 
-* [Quickstart — TypeScript](getting-started/quickstart-typescript.md) — buy YES in 5 minutes
-* [Quickstart — Python](getting-started/quickstart-python.md) — full working example
-* [Router integration](integration/router-integration.md) — deep dive on-chain trading
-* [API reference](integration/api-reference.md) — REST endpoints
-* [Beta info](getting-started/beta.md) — faucet, RPC, deploy flow
+* [Quickstart - TypeScript](getting-started/quickstart-typescript.md) - buy YES in 5 minutes
+* [Quickstart - Python](getting-started/quickstart-python.md) - full working example
+* [Router integration](integration/router-integration.md) - deep dive on-chain trading
+* [API reference](integration/api-reference.md) - REST endpoints
+* [Beta info](getting-started/beta.md) - faucet, RPC, deploy flow

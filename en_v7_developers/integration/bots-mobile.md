@@ -2,7 +2,7 @@
 
 ## Programmatic trading
 
-Currently, programmatic trading is done by calling Router contract functions directly via viem (TypeScript) or web3.py (Python). See [Quickstart — TypeScript](../getting-started/quickstart-typescript.md) and [Quickstart — Python](../getting-started/quickstart-python.md).
+Currently, programmatic trading is done by calling Router contract functions directly via viem (TypeScript) or web3.py (Python). See [Quickstart - TypeScript](../getting-started/quickstart-typescript.md) and [Quickstart - Python](../getting-started/quickstart-python.md).
 
 > **Planned**: API key system and webhook notifications for bot developers are planned for a future release. Currently, all trading goes through on-chain Router contract calls with standard wallet signing.
 
@@ -20,7 +20,7 @@ Currently, programmatic trading is done by calling Router contract functions dir
 | Flutter      | walletconnect\_flutter + custom contract integration |
 | Web (custom) | wagmi + viem + RainbowKit                            |
 
-### Web app — Wagmi / RainbowKit
+### Web app - Wagmi / RainbowKit
 
 ```typescript
 import { WagmiConfig } from 'wagmi';
@@ -68,7 +68,7 @@ function BuyYesButton({ marketId, usdcIn, minOut }) {
 }
 ```
 
-### Mobile native — WalletConnect
+### Mobile native - WalletConnect
 
 **iOS Swift**:
 
@@ -113,7 +113,7 @@ SignClient.request(
 ) { error -> /* handle */ }
 ```
 
-### React Native — RainbowKit Mobile
+### React Native - RainbowKit Mobile
 
 ```typescript
 import { RainbowKitMobileProvider } from '@rainbow-me/rainbowkit-mobile';
@@ -155,7 +155,7 @@ const userOpHash = await kernelClient.sendUserOperation({
 
 ### Passkey native
 
-**iOS** — `ASAuthorizationPlatformPublicKeyCredentialProvider`:
+**iOS** - `ASAuthorizationPlatformPublicKeyCredentialProvider`:
 
 ```swift
 import AuthenticationServices
@@ -169,7 +169,7 @@ let request = provider.createCredentialRegistrationRequest(
 ASAuthorizationController(authorizationRequests: [request]).performRequests()
 ```
 
-**Android** — Credential Manager API:
+**Android** - Credential Manager API:
 
 ```kotlin
 import androidx.credentials.*
@@ -178,7 +178,7 @@ val request = CreatePublicKeyCredentialRequest(requestJson = passkeyRequestJson)
 credentialManager.createCredentialAsync(request, activity, null, executor, callback)
 ```
 
-Smart account address is derived from the passkey public key — same address across devices if cloud-synced.
+Smart account address is derived from the passkey public key - same address across devices if cloud-synced.
 
 ### Performance tips
 

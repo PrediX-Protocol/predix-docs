@@ -17,11 +17,11 @@ Single proxy `PrediX Diamond` with 6 facets. Each facet is independently upgrade
 | **MarketFacet**        | createMarket - split - merge - resolve - redeem - emergencyResolve - refundMode - sweep                    |
 | **EventFacet**         | createEvent - resolveEvent - groupSplit - groupMerge - refundMode event                                    |
 | **AccessControlFacet** | grantRole - revokeRole - 6 roles: DEFAULT\_ADMIN - OPERATOR - PAUSER - CUT\_EXECUTOR - CREATOR - REGISTRAR |
-| **PausableFacet**      | pause(module) - unpause(module) — per-module pause: MARKET - DIAMOND                                       |
-| **DiamondCutFacet**    | diamondCut — add/replace/remove facets, gated by `CUT_EXECUTOR_ROLE` via TimelockController 48h            |
-| **DiamondLoupeFacet**  | facets() - facetAddresses() - facetFunctionSelectors() — introspection                                     |
+| **PausableFacet**      | pause(module) - unpause(module) - per-module pause: MARKET - DIAMOND                                       |
+| **DiamondCutFacet**    | diamondCut - add/replace/remove facets, gated by `CUT_EXECUTOR_ROLE` via TimelockController 48h            |
+| **DiamondLoupeFacet**  | facets() - facetAddresses() - facetFunctionSelectors() - introspection                                     |
 
-**Storage**: Diamond storage pattern. Each facet has a `Layout` struct at slot `keccak256("predix.storage.<module>")`. **Append-only** — no reordering or removing fields.
+**Storage**: Diamond storage pattern. Each facet has a `Layout` struct at slot `keccak256("predix.storage.<module>")`. **Append-only** - no reordering or removing fields.
 
 ## Hook (Uniswap v4)
 
@@ -40,11 +40,11 @@ Single proxy `PrediX Diamond` with 6 facets. Each facet is independently upgrade
 
 **Key functions**:
 
-* `registerMarketPool(marketId, poolKey, yesIsCurrency0)` — binds market to v4 pool, verifies canonical PoolKey (lpFee + tickSpacing match)
-* `commitSwapIdentityFor(...)` — Router commits identity before swap, Hook verifies in `beforeSwap`
-* `proposeTrustedRouter` / `executeTrustedRouter` — 2-step Router rotation (48h timelock)
+* `registerMarketPool(marketId, poolKey, yesIsCurrency0)` - binds market to v4 pool, verifies canonical PoolKey (lpFee + tickSpacing match)
+* `commitSwapIdentityFor(...)` - Router commits identity before swap, Hook verifies in `beforeSwap`
+* `proposeTrustedRouter` / `executeTrustedRouter` - 2-step Router rotation (48h timelock)
 
-### Hook proxy upgrade — 48h monotonic timelock
+### Hook proxy upgrade - 48h monotonic timelock
 
 ![Hook proxy upgrade: Idle -> Proposed (proposeUpgrade) -> 48h wait -> Executed (executeUpgrade) or Cancelled. timelockDuration monotonic, min 48h](../.gitbook/assets/23-hook-upgrade-state.svg)
 
@@ -75,8 +75,8 @@ struct Order {
 ### Entry points
 
 * `placeOrder(order)` + auto-match loop
-* `cancelOrder(orderId)` — owner only
-* `fillMarketOrder(marketId, side, amountIn, maxFills)` — permissionless, `taker == msg.sender` gate
+* `cancelOrder(orderId)` - owner only
+* `fillMarketOrder(marketId, side, amountIn, maxFills)` - permissionless, `taker == msg.sender` gate
 
 ### 3 match types
 
@@ -102,7 +102,7 @@ sellNo(...)
 ### Waterfall
 
 1. Pull USDC from Permit2.
-2. **CLOB leg**: `exchange.fillMarketOrder(...)` — attempt to fill against limit orders.
+2. **CLOB leg**: `exchange.fillMarketOrder(...)` - attempt to fill against limit orders.
    * CLOB reverts -> emit `ClobSkipped(reason)` event, fall back to full AMM.
 3. **AMM leg**: `hook.commitSwapIdentityFor(...)` -> `poolManager.swap(...)` -> `unlockCallback(...)` extracts amount.
 4. **Virtual-NO two-pass**: if pool lacks depth -> reduce size with 3% safety margin.
@@ -110,7 +110,7 @@ sellNo(...)
 
 ## Oracle (overview)
 
-**Contracts**: `ManualOracle` + `ChainlinkOracle`. Plugin architecture — adding a new oracle = deploy an adapter, `approveOracle(addr)`. Per-source detail: [Oracle](oracle.md).
+**Contracts**: `ManualOracle` + `ChainlinkOracle`. Plugin architecture - adding a new oracle = deploy an adapter, `approveOracle(addr)`. Per-source detail: [Oracle](oracle.md).
 
 ## Paymaster (ERC-4337)
 
@@ -123,7 +123,7 @@ sellNo(...)
 ## Quality gates
 
 * **Compile**: `forge build`, EVM cancun, `via_ir=true`, `optimizer_runs=200`, `bytecode_hash=none`.
-* **Test**: `forge test` — unit + fuzz + invariant.
+* **Test**: `forge test` - unit + fuzz + invariant.
 * **7 critical invariants** (details in [Security & timelock](security.md)).
 * **Format**: `forge fmt --check`.
 * **Static analysis**: Slither with 0 critical findings.
@@ -143,7 +143,7 @@ Exchange and Router have no proxy. Changes require redeployment + migration (one
 
 ## Contract addresses
 
-PrediX is currently in **beta on Unichain mainnet** (chain `130`). Production mainnet will deploy behind the full four-Safe governance layout — addresses will be populated when production launches.
+PrediX is currently in **beta on Unichain mainnet** (chain `130`). Production mainnet will deploy behind the full four-Safe governance layout - addresses will be populated when production launches.
 
 ### Core PrediX
 
@@ -160,7 +160,7 @@ PrediX is currently in **beta on Unichain mainnet** (chain `130`). Production ma
 
 ### Diamond facets
 
-Facets are internal to the Diamond proxy. Developers interact with Diamond via the proxy address — individual facet addresses are not needed for integration.
+Facets are internal to the Diamond proxy. Developers interact with Diamond via the proxy address - individual facet addresses are not needed for integration.
 
 ### External / infrastructure
 
@@ -174,7 +174,7 @@ Facets are internal to the Diamond proxy. Developers interact with Diamond via t
 | **Permit2**                | `0x000000000022D473030F116dDEE9F6B43aC78BA3`               | `0x000000000022D473030F116dDEE9F6B43aC78BA3`              |
 | **EntryPoint v0.7**        | `0x0000000071727De22E5E9d8BAf0edAc6f37da032`               | `0x0000000071727De22E5E9d8BAf0edAc6f37da032`              |
 
-> Permit2, EntryPoint, and the Uniswap v4 PoolManager are canonical addresses — identical across beta and production since both run on Unichain mainnet (chain `130`).
+> Permit2, EntryPoint, and the Uniswap v4 PoolManager are canonical addresses - identical across beta and production since both run on Unichain mainnet (chain `130`).
 
 ### Chain config
 
@@ -192,7 +192,7 @@ Protocol governance uses role-based access control via the Diamond. All admin op
 
 ### Sync with code
 
-Contract addresses are available from verified source on the block explorer. Do not hardcode in client code — refer to the address table above or the explorer links below.
+Contract addresses are available from verified source on the block explorer. Do not hardcode in client code - refer to the address table above or the explorer links below.
 
 ### Verify source code
 
@@ -210,6 +210,6 @@ Integration details: [Router integration](../integration/router-integration.md).
 
 ### Multi-chain (TBA)
 
-Phase 3 — multi-chain deployment (Base / Arbitrum / Optimism / Polygon) via bridge (Wormhole / LayerZero). Details in the roadmap.
+Phase 3 - multi-chain deployment (Base / Arbitrum / Optimism / Polygon) via bridge (Wormhole / LayerZero). Details in the roadmap.
 
 For beta integration testing, see [Beta info](../getting-started/beta.md).

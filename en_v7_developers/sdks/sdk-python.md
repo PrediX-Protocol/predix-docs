@@ -29,6 +29,6 @@ positions = await client.portfolio.get("0x...")
 
 Use [web3.py](https://web3py.readthedocs.io/) directly with Router contract:
 
-→ [Quickstart — Python](../getting-started/quickstart-python.md)
+-> [Quickstart - Python](../getting-started/quickstart-python.md)
 
-→ [API reference](../integration/api-reference.md) — REST endpoints via `requests`
+-> [API reference](../integration/api-reference.md) - REST endpoints via `requests`

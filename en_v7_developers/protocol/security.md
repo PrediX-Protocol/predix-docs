@@ -1,6 +1,6 @@
 # Security & timelock
 
-PrediX employs defense-in-depth. No "magic" — multiple layers, each doing one simple verifiable job.
+PrediX employs defense-in-depth. No "magic" - multiple layers, each doing one simple verifiable job.
 
 ## 5 defense layers
 
@@ -24,7 +24,7 @@ Invariant fuzz testing runs 10,000+ iterations in CI. Failure blocks merge.
 
 ### External audits
 
-External audit before production launch — firm selection is underway. Reports will be published at [docs.predix.app/audits](https://docs.predix.app/audits) once completed.
+External audit before production launch - firm selection is underway. Reports will be published at [docs.predix.app/audits](https://docs.predix.app/audits) once completed.
 
 ### Internal review
 
@@ -41,7 +41,7 @@ Continuous internal review:
 * **Major upgrade**: 1 audit round + intensive bug bounty.
 * **Annual review**: Refresh audit every year.
 
-## Timelock — 48h delay
+## Timelock - 48h delay
 
 All upgrades with blast radius go through a 48h timelock.
 
@@ -91,7 +91,7 @@ Payouts from treasury. Contact: [security@predix.app](mailto:security@predix.app
 
 ### Safe harbor
 
-Good-faith researchers have safe harbor — no legal action will be taken if:
+Good-faith researchers have safe harbor - no legal action will be taken if:
 
 * Disclosure is private before public.
 * No funds drained beyond POC amount (< $1k).
@@ -103,7 +103,7 @@ Good-faith researchers have safe harbor — no legal action will be taken if:
 * DoS that does not cause fund loss (UI lag, RPC overload).
 * Theoretical attacks that are not reproducible.
 * Issues already known + being fixed.
-* Third-party dependencies (e.g. Chainlink downtime) — flag to the relevant party.
+* Third-party dependencies (e.g. Chainlink downtime) - flag to the relevant party.
 
 ## Incident response
 
@@ -113,12 +113,12 @@ Good-faith researchers have safe harbor — no legal action will be taken if:
 
 ### P0 response flow
 
-1. **Detect** — Prometheus alert / user report / bug bounty submission.
-2. **Triage** — verify exploit within 30 min. Team Discord emergency channel.
-3. **Contain** — Pause module (`PausableFacet.pause(MARKET)`) to stop the bleeding.
-4. **Fix** — patch code, audit fix internally.
-5. **Deploy** — timelock 48h (no bypass) OR instant config fix (oracle revoke).
-6. **Postmortem** — public disclosure within 72h, blog post, root cause analysis.
+1. **Detect** - Prometheus alert / user report / bug bounty submission.
+2. **Triage** - verify exploit within 30 min. Team Discord emergency channel.
+3. **Contain** - Pause module (`PausableFacet.pause(MARKET)`) to stop the bleeding.
+4. **Fix** - patch code, audit fix internally.
+5. **Deploy** - timelock 48h (no bypass) OR instant config fix (oracle revoke).
+6. **Postmortem** - public disclosure within 72h, blog post, root cause analysis.
 
 ## Monitoring stack
 
@@ -135,9 +135,9 @@ Good-faith researchers have safe harbor — no legal action will be taken if:
 * **No** admin emergency withdraw from Exchange / Router / Pool.
 * **No** pausable withdraw paths (users can always withdraw their own tokens).
 * **No** user blacklisting at the protocol level. Geo-blocking is FE-level only, per compliance.
-* **No** upgrading the tx path without timelock — all state-changing admin actions go through 48h.
+* **No** upgrading the tx path without timelock - all state-changing admin actions go through 48h.
 
-## Insurance fund (Phase 2 — TBA)
+## Insurance fund (Phase 2 - TBA)
 
 Top-up from:
 

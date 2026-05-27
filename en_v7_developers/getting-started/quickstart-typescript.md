@@ -1,8 +1,8 @@
-# Quickstart — TypeScript
+# Quickstart - TypeScript
 
 Buy YES tokens on a PrediX market in under 5 minutes using viem.
 
-![Quickstart flow: Setup (connect wallet) → Approve (USDC to Permit2) → Quote (quoteBuyYes) → Trade (buyYes) → Done (YES tokens). Router handles CLOB → AMM routing automatically.](../.gitbook/assets/quickstart-flow.svg)
+![Quickstart flow: Setup (connect wallet) -> Approve (USDC to Permit2) -> Quote (quoteBuyYes) -> Trade (buyYes) -> Done (YES tokens). Router handles CLOB -> AMM routing automatically.](../.gitbook/assets/quickstart-flow.svg)
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ npm install viem
 
 You need:
 
-* A wallet private key on Unichain mainnet — gas is sponsored via paymaster for eligible users, so no ETH balance required for the beta path
+* A wallet private key on Unichain mainnet - gas is sponsored via paymaster for eligible users, so no ETH balance required for the beta path
 * test-USDC on Unichain (get from [Faucet](beta.md), 10,000 per address)
 
 ## 1. Setup client
@@ -68,7 +68,7 @@ const routerAbi = [
   {
     name: 'quoteBuyYes',
     type: 'function',
-    stateMutability: 'nonpayable',  // NOT view — use eth_call
+    stateMutability: 'nonpayable',  // NOT view - use eth_call
     inputs: [
       { name: 'marketId', type: 'uint256' },
       { name: 'usdcIn', type: 'uint256' },
@@ -85,7 +85,7 @@ const routerAbi = [
 const marketId = 1n;  // market ID (uint256)
 const usdcIn = parseUnits('100', 6);  // 100 USDC
 
-// Quote is non-view — use simulate (eth_call)
+// Quote is non-view - use simulate (eth_call)
 const { result } = await publicClient.simulateContract({
   address: ROUTER,
   abi: routerAbi,
@@ -98,7 +98,7 @@ const [expectedYesOut, clobPortion, ammPortion] = result;
 console.log(`Expected: ${expectedYesOut} YES (CLOB: ${clobPortion}, AMM: ${ammPortion})`);
 ```
 
-> **Important**: Quote functions are NOT `view` — they must be called via `eth_call` (simulateContract). They return `(0, 0, 0)` on invalid market state, never revert.
+> **Important**: Quote functions are NOT `view` - they must be called via `eth_call` (simulateContract). They return `(0, 0, 0)` on invalid market state, never revert.
 
 ## 5. Execute trade
 
@@ -163,7 +163,7 @@ console.log(positions);
 | `quoteBuyNo`   | marketId, usdcIn, maxFills                                 | expectedOut, clob, amm         | Quote                           |
 | `quoteSellNo`  | marketId, noIn, maxFills                                   | expectedOut, clob, amm         | Quote                           |
 
-Permit2 variants: `buyYesWithPermit`, `sellYesWithPermit`, `buyNoWithPermit`, `sellNoWithPermit` — same params + `permitSingle` + `signature`.
+Permit2 variants: `buyYesWithPermit`, `sellYesWithPermit`, `buyNoWithPermit`, `sellNoWithPermit` - same params + `permitSingle` + `signature`.
 
 ## Limits
 
@@ -174,7 +174,7 @@ Permit2 variants: `buyYesWithPermit`, `sellYesWithPermit`, `buyNoWithPermit`, `s
 | Max open orders per user  | 50                         |
 | Max fills per place order | 20                         |
 | Max batch cancel          | 50                         |
-| Price range               | $0.01 – $0.99 (step $0.01) |
+| Price range               | $0.01 - $0.99 (step $0.01) |
 | Price precision           | `1e6` = 100% = $1.00       |
 
 ## Common errors
@@ -193,6 +193,6 @@ Permit2 variants: `buyYesWithPermit`, `sellYesWithPermit`, `buyNoWithPermit`, `s
 
 ## Next steps
 
-* [Router integration](../integration/router-integration.md) — Permit2 flow, batch with Smart Account, AMM-only / CLOB-only
-* [API reference](../integration/api-reference.md) — REST endpoints for market data
-* [Beta info](beta.md) — faucet, RPC endpoints
+* [Router integration](../integration/router-integration.md) - Permit2 flow, batch with Smart Account, AMM-only / CLOB-only
+* [API reference](../integration/api-reference.md) - REST endpoints for market data
+* [Beta info](beta.md) - faucet, RPC endpoints

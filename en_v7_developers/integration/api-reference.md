@@ -25,10 +25,10 @@ Bot/analytics raw data -> Indexer. FE/app user-facing -> Backend.
 
 | Env                | Indexer                                                   | Backend                                                   |
 | ------------------ | --------------------------------------------------------- | --------------------------------------------------------- |
-| **Beta** (live)      | TBA — see [Beta info](../getting-started/beta.md) | TBA — see [Beta info](../getting-started/beta.md) |
+| **Beta** (live)      | TBA - see [Beta info](../getting-started/beta.md) | TBA - see [Beta info](../getting-started/beta.md) |
 | **Production** (TBA) | TBA                                               | TBA                                               |
 
-Schema is identical across both environments — switching beta to production only requires changing the base URL.
+Schema is identical across both environments - switching beta to production only requires changing the base URL.
 
 ## Authentication
 
@@ -184,7 +184,7 @@ GET /api/health                 latestIndexedBlock, lagBlocks
 
 ## Backend endpoints
 
-### Primitives — strict wire format
+### Primitives - strict wire format
 
 | Type        | Format                     | Example                                                     |
 | ----------- | -------------------------- | ----------------------------------------------------------- |
@@ -206,13 +206,13 @@ type Market =
   | { kind: 'grouped', grouped: GroupedData, /* ... */ };
 ```
 
-FE: `market[market.kind]` — exhaustive switch.
+FE: `market[market.kind]` - exhaustive switch.
 
 ### Markets & events
 
 ```
 GET  /api/markets                          list with filters + pagination
-GET  /api/markets/resolve                  resolve idOrSlug → canonical id
+GET  /api/markets/resolve                  resolve idOrSlug -> canonical id
 GET  /api/markets/hot                      curated hot list
 GET  /api/markets/:idOrSlug                single (lookup by id or slug)
 GET  /api/markets/:idOrSlug/outcomes/:outcomeSlug
@@ -374,13 +374,13 @@ const { data } = await api.GET('/markets/{id}', {
 
 ## Smart contract events
 
-Source of truth on-chain — bot listeners, custom subgraphs, and monitoring services should consume from here.
+Source of truth on-chain - bot listeners, custom subgraphs, and monitoring services should consume from here.
 
 ![Event source: Router.Trade = canonical (volume + trades count), Hook\_MarketTraded = analytics only (priceSnapshot, NOT volume), PositionSplit/Merge/Redeem/Refund = audit rows always land](../.gitbook/assets/63-event-source-truth.svg)
 
-* **Canonical trade**: `Router.Trade` — `protocolStats.totalVolume / totalTrades` **only** increments from this event.
-* **AMM swap analytics**: `Hook_MarketTraded` — priceSnapshot only, does not count volume (avoids double-counting).
-* **Audit rows always land**: `PositionSplit`, `PositionMerged`, `TokensRedeemed`, `MarketRefunded` — recorded regardless of recipient.
+* **Canonical trade**: `Router.Trade` - `protocolStats.totalVolume / totalTrades` **only** increments from this event.
+* **AMM swap analytics**: `Hook_MarketTraded` - priceSnapshot only, does not count volume (avoids double-counting).
+* **Audit rows always land**: `PositionSplit`, `PositionMerged`, `TokensRedeemed`, `MarketRefunded` - recorded regardless of recipient.
 
 ### Router events
 
@@ -447,7 +447,7 @@ event OutcomeRevoked(uint256 indexed marketId, address indexed admin);
 event ReportReopened(uint256 indexed marketId, address indexed admin);
 event ChallengeDelayUpdated(uint256 previous, uint256 current);
 
-// ManualOracle — multi-outcome event variants
+// ManualOracle - multi-outcome event variants
 event EventOutcomeReported(uint256 indexed eventId, uint256 winningIndex, address indexed reporter);
 event EventOutcomeRevoked(uint256 indexed eventId, address indexed admin);
 event EventReportReopened(uint256 indexed eventId, address indexed admin);
@@ -475,7 +475,7 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 event Approval(address indexed owner, address indexed spender, uint256 value);
 ```
 
-Each market has 1 YES + 1 NO token. Table: `holder` — canonical balance view.
+Each market has 1 YES + 1 NO token. Table: `holder` - canonical balance view.
 
 ### PoolManager (Uniswap v4)
 
@@ -498,7 +498,7 @@ For real-time data, see [WebSocket](websocket.md).
 ```typescript
 const res = await fetch(`${INDEXER_BASE_URL}/api/markets?sort=volume&limit=10`);
 const { data: markets } = await res.json();
-markets.forEach(m => console.log(`${m.question} — $${m.volume}`));
+markets.forEach(m => console.log(`${m.question} - $${m.volume}`));
 ```
 
 ### Listen to `Trade` events in realtime
@@ -536,4 +536,4 @@ All on-chain amounts are `uint256` -> serialized as **decimal strings** at the b
 * **Indexer lag** from head: typically < 60s (`/api/health`).
 * Just traded but don't see it -> wait 10-30s, retry.
 
-Ponder handles reorgs automatically — chain reorg -> indexer reverts + replays. Clients need no custom logic.
+Ponder handles reorgs automatically - chain reorg -> indexer reverts + replays. Clients need no custom logic.
