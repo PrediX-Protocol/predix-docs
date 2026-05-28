@@ -26,7 +26,9 @@ PrediX offers 2 sign-in methods, you maintain full control of your assets while 
 | **First-time sign-up** | \~5 seconds biometric                            | Already have a wallet → instant                       |
 | **Best for**           | New users · fast onboarding                      | DeFi users · large custody · hardware wallets         |
 
-![Choose connect method: Passkey or Crypto Wallet — both non-custodial](../../.gitbook/assets/13-wallet-connect.svg)
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+<sub>Choose connect method: Passkey or Crypto Wallet — both non-custodial</sub>
 
 ***
 
@@ -202,7 +204,9 @@ Both methods use **SIWE (EIP-4361)** to create authenticated backend sessions th
 
 The client requests a challenge, the user signs the EIP-4361 message, and the backend verifies the ECDSA signature before creating a secure HTTP Only session cookie valid for 7 days.
 
-![SIWE Authentication Flow](../../.gitbook/assets/14-siwe-auth.svg)
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+<sub>SIWE Authentication Flow</sub>
 
 {% hint style="info" %}
 **Additional Gas Fee:**

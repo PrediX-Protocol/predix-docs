@@ -16,7 +16,9 @@ Token minting is restricted to the Diamond contract through the `onlyFactory` pe
 YES.totalSupply == NO.totalSupply == market.totalCollateral
 ```
 
-![PrediX Core Invarient](../.gitbook/assets/40-outcome-tokens.svg)
+<figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+
+<sub>PrediX Core Invarient</sub>
 
 {% hint style="success" %}
 **Always guarantee:**

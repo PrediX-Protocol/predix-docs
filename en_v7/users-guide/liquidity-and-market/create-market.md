@@ -18,7 +18,7 @@ Apply for **`CREATOR_ROLE`**: submit a form on [**`Discord`**](../../resources/l
 
 ### Decisions Before Creating
 
-![Creating Decisions Flow](../../.gitbook/assets/46-market-creation-decision.svg)
+<figure><img src="../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -59,8 +59,6 @@ The timestamp when trading closes and the oracle resolution window opens.
 | **ManualOracle**    | Subjective event                 | Free, 2/3 multisig resolves         |
 | **UMAOracle** (TBA) | Decentralized resolution         | Bond $500-$50,000 USDC              |
 | **Custom adapter**  | On-chain event (governance, TVL) | Deploy adapter, approve via Diamond |
-
-
 
 </details>
 

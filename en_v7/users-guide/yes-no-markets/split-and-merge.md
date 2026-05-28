@@ -9,7 +9,7 @@ icon: split
 
 Prediction markets have two **native mechanisms** that don't exist in traditional financial instruments: **Splitting** and **Merging** shares. They're the protocol-level primitives that make prediction markets work — and they give you a way to enter or exit positions **without touching the orderbook**.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 Both operations are **zero-fee** and **zero-slippage** — the protocol mints or burns shares 1:1 against USDC collateral locked in the Diamond contract.
 
@@ -21,7 +21,7 @@ Both operations are **zero-fee** and **zero-slippage** — the protocol mints or
 
 This is useful when you want to take a position on one side without buying from the orderbook — split collateral, then sell the side you don't want at your own price (via Limit Order) or instantly (via Market Order).
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 #### How It Works
 
@@ -72,7 +72,7 @@ If you only wanted to hold one side, you can now Sell the side you don't want us
 
 This lets you exit both sides of a position and recover your collateral **without selling on the orderbook**.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 #### How It Works
 

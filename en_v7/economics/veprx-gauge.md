@@ -36,13 +36,19 @@ Decay is linear per block. No steps.
 
 ## vePRX rights
 
-![vePRX rights: Gauge (direct subsidy, earn bribes), Params (protocol params, burn rate), Treasury (spending votes, grants), Phase (transition vote, milestone gates), Emergency (pause, refund)](../.gitbook/assets/29-mindmap-veprx.svg)
+<figure><img src="../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+
+<sub>vePRX rights: Gauge (direct subsidy, earn bribes), Params (protocol params, burn rate), Treasury (spending votes, grants), Phase (transition vote, milestone gates), Emergency (pause, refund)</sub>
 
 ## Gauge voting — flywheel
 
 Each market has a **gauge**. vePRX holders vote on which gauges receive LP subsidy from the treasury.
 
-![Gauge flywheel loop: lock PRX -> vePRX -> vote gauge -> treasury LP subsidy -> LP earn more -> pool depth up -> trader happy -> volume up -> fee up -> yield up -> demand PRX -> lock more](../.gitbook/assets/58-gauge-flywheel.svg)
+<figure><img src="../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Gauge flywheel loop: lock PRX -> vePRX -> vote gauge -> treasury LP subsidy -> LP earn more -> pool depth up -> trader happy -> volume up -> fee up -> yield up -> demand PRX -> lock more</sub>
+
+
 
 A gauge corresponds to the YES-USDC (or NO-USDC) pool of a specific market. Pools with more votes = LPs earn more.
 
@@ -54,7 +60,9 @@ A gauge corresponds to the YES-USDC (or NO-USDC) pool of a specific market. Pool
 
 ## Bribe market
 
-![Bribe market: project deposits bribe (PRX/USDC) -> vePRX holders vote gauge -> epoch end -> pool receives subsidy + voters receive bribe pro-rata](../.gitbook/assets/21-bribe-market.svg)
+<figure><img src="../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Bribe market: project deposits bribe (PRX/USDC) -> vePRX holders vote gauge -> epoch end -> pool receives subsidy + voters receive bribe pro-rata</sub>
 
 External projects pay PRX/USDC to vePRX holders who vote for their pool — creating a liquid vote market.
 

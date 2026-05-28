@@ -43,7 +43,9 @@ To pay transaction fees on Unichain you need a small amount of **ETH on Unichain
 
 PrediX UI has an integrated **Bridge widget** — no need to open **Across/Stargate** in a separate tab.
 
-![PrediX Bridge Widget](../../.gitbook/assets/12-bridge-flow.svg)
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+<sub>PrediX Bridge Widget</sub>
 
 #### How to Bridge USDC to Unichain
 
@@ -214,10 +216,8 @@ Bridges involve **slippage** (USDC prices across chains have a small spread).
 ### If the Bridge Gets Stuck
 
 * Across, Stargate: usually auto-complete within 1-30 minutes. If nothing after 1 hour: check the source chain explorer (tx confirmed?), check the destination chain (UserOp/relay arrived?).
-* [Contact bridge support directly — PrediX does not operate bridges, only integrates the UI.](#user-content-fn-1)[^1]
+* Contact bridge support directly — PrediX does not operate bridges, only integrates the UI.
 
 {% hint style="info" %}
 **Need help:** [**Discord**](../../resources/links.md) **#bridge-support.**
 {% endhint %}
-
-[^1]: 

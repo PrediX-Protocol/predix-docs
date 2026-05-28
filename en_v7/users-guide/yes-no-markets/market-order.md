@@ -129,7 +129,9 @@ Same flow but under the **Sell** tab:
 
 Buying or selling NO works the same way as YES. The Router automatically searches for the best available execution path between the on-chain order book (CLOB) and Uniswap v4 liquidity pools.
 
-![Automatic Router Mechanism](../../.gitbook/assets/15-router-waterfall.svg)
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Automatic Router Mechanism</sub>
 
 If direct NO liquidity is insufficient, the Router may use an internal “virtual-NO” routing flow to complete the trade through the YES side and settle the final output automatically. This process happens entirely in the background — the UI simply displays the final execution price and amount.
 

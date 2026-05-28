@@ -22,7 +22,9 @@ PrediX combines 2 liquidity mechanisms: an on-chain order book (CLOB) + Uniswap 
 
 The Router is **stateless** — the invariant `balanceOf(router) == 0` is enforced on-chain after every public call. No custody, no stuck funds.
 
-![Comparison of CLOB vs AMM vs Hybrid PrediX](../.gitbook/assets/06-hybrid-comparison.svg)
+<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Comparison of CLOB vs AMM vs Hybrid PrediX</sub>
 
 #### <mark style="color:orange;">How the Execution Router Works</mark>
 
@@ -49,7 +51,11 @@ Contract: `PrediXExchange`.
 
 All 3 satisfy: **no one is disadvantaged** — each side accepts their own price.
 
-![3 CLOB match types PrediX](../.gitbook/assets/34-clob-3-match-types.svg)
+<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+
+<sub>3 CLOB match types PrediX</sub>
+
+
 
 * **Complementary**: BUY\_YES ↔ SELL\_YES in the same market. Most common.
 * **Mint** (synthetic): BUY\_YES + BUY\_NO ≥ $1. Diamond mints a pair, delivers YES to the YES buyer and NO to the NO buyer. Spread → protocol.
@@ -68,7 +74,7 @@ Each market has 1-2 v4 pools: YES-USDC and optionally NO-USDC. **PrediX Hook** p
 | `beforeRemoveLiquidity` | Track pool registration                                                                                       |
 | `beforeDonate`          | Block donations after endTime (prevent brute-force payout attacks)                                            |
 
-The Hook **does not hold user funds long-term**. LPs receive LP tokens per the v4 PositionManager standard.&#x20;
+The Hook **does not hold user funds long-term**. LPs receive LP tokens per the v4 PositionManager standard.
 
 {% hint style="info" %}
 ### Trading Directly on AMM
@@ -95,6 +101,8 @@ Users don't need to worry — the Router always returns the best price within th
 
 PrediX Hook implements **identity commit** to prevent sandwich attacks:
 
-![Anti-sandwich MEV PrediX](../.gitbook/assets/35-mev-protection.svg)
+<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Anti-sandwich MEV PrediX</sub>
 
 MEV bots cannot frontrun + backrun your trade within the same block — the Hook reverts if identity doesn't match.

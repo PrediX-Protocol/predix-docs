@@ -37,7 +37,7 @@ The **Min trades** filter is the most important quality gate. Without it, leader
 
 Click a trader's name → `/profile/[address]` page.
 
-![Public trader profile](../../.gitbook/assets/50-trader-profile.svg)
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 A profile shows hero KPIs (Volume, P\&L, Win rate, Accuracy), active positions, full trade history, calibration chart, badges, and a follow button.
 
@@ -75,7 +75,7 @@ A dedicated **Following** feed inside the app aggregates all your followed trade
 
 Copy trading mirrors a lead trader's positions automatically, with risk controls applied per follower.
 
-![Copy trading Process](../../.gitbook/assets/51-copy-trading-flow.svg)
+<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 #### Setup copy trading
 

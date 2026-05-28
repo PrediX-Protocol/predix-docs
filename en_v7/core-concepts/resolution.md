@@ -6,7 +6,9 @@ description: A market needs a source of truth to determine whether YES or NO win
 
 ### Market Lifecycle
 
-![PrediX market lifecycle states](../.gitbook/assets/04-market-lifecycle.svg)
+<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+
+<sub>PrediX market lifecycle states</sub>
 
 <table><thead><tr><th width="374">Stage</th><th>Description</th></tr></thead><tbody><tr><td><strong>Created</strong></td><td>Creator (with <code>CREATOR_ROLE</code>) creates a market, sets <code>endTime</code> + selects oracle</td></tr><tr><td><strong>Trading</strong></td><td>Users split / merge / trade until <code>endTime</code></td></tr><tr><td><strong>EndTime</strong></td><td>Trading closes (hook blocks add liquidity + swap). Oracle window opens</td></tr><tr><td><strong>Resolved</strong></td><td>Oracle calls <code>resolveMarket()</code> with the outcome</td></tr><tr><td><strong>Redemption</strong></td><td>Users holding the winning token → redeem for USDC</td></tr><tr><td><strong>RefundMode</strong></td><td>Fallback if oracle cannot resolve (oracle down, dispute hung)</td></tr><tr><td><strong>Refunded</strong></td><td>Users burn YES+NO pairs → receive USDC pro-rata</td></tr></tbody></table>
 
@@ -14,13 +16,17 @@ description: A market needs a source of truth to determine whether YES or NO win
 
 ### 4 Oracle Types
 
-![PrediX 4 oracle types](../.gitbook/assets/36-oracle-types.svg)
+<figure><img src="../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+
+<sub>PrediX 4 oracle types</sub>
 
 #### <mark style="color:$warning;">1. ChainlinkOracle — Automatic, permissionless.</mark>
 
 PrediX uses ChainlinkOracle when Price-threshold markets (BTC, ETH, asset prices, FX rates).
 
-![ChainlinkOracle PrediX](../.gitbook/assets/37-chainlink-oracle-flow.svg)
+<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+
+<sub>ChainlinkOracle PrediX</sub>
 
 #### <mark style="color:$warning;">2. ManualOracle</mark>
 
@@ -44,7 +50,9 @@ Multisig 2/3 reads the result from an off-chain source and signs the transaction
 
 PrediX uses UMAOracle with Events requiring decentralized resolution without multisig dependency (Permissionless propose + 48h dispute window).
 
-![UMAOracle PrediX](../.gitbook/assets/38-uma-oracle-flow.svg)
+<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+
+<sub>UMAOracle PrediX</sub>
 
 **Bond sizing**: `max(min_bond, min(market_tvl x 0.5%, max_bond))`. Range $500 - $50,000 USDC.
 

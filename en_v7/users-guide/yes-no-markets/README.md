@@ -6,7 +6,9 @@ description: >-
 
 # Yes/No Markets
 
-![All in 1 atomic tx. If slippage exceeds tolerance → revert, no funds lost.](../../.gitbook/assets/11-first-trade.svg)
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+<sub>All in 1 atomic tx. If slippage exceeds tolerance → revert, no funds lost.</sub>
 
 ### How to Trade (Buy YES/NO Tokens)
 
