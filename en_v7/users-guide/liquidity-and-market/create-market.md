@@ -175,7 +175,7 @@ After event resolution:
 eventFacet.resolveEvent(eventId, winningIndex: 0)  // Argentina wins
 ```
 
-Atomic — all members resolve in the same block; exactly 1 outcome = true.
+Atomic - all members resolve in the same block; exactly 1 outcome = true.
 
 ***
 
@@ -189,13 +189,13 @@ Atomic — all members resolve in the same block; exactly 1 outcome = true.
 
 ***
 
-### Resolve dispute — you are the creator
+### Resolve dispute - you are the creator
 
 If a market resolves incorrectly:
 
-* **Phase 1 ManualOracle**: You are not a multisig member — flag on Discord and the multisig will review. If incorrect → refund mode is enabled.
+* **Phase 1 ManualOracle**: You are not a multisig member - flag on Discord and the multisig will review. If incorrect → refund mode is enabled.
 * **Phase 2 UMAOracle**: Anyone can propose a dispute with a bond.
-* **Phase 1 ChainlinkOracle**: Resolution is automatic — disputes are only possible if the Chainlink feed was manipulated; escalate via Chainlink directly.
+* **Phase 1 ChainlinkOracle**: Resolution is automatic - disputes are only possible if the Chainlink feed was manipulated; escalate via Chainlink directly.
 
 ***
 

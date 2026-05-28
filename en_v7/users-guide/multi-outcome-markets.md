@@ -1,6 +1,6 @@
 ---
 description: >-
-  Trade markets with 3+ possible outcomes — elections, championships,
+  Trade markets with 3+ possible outcomes - elections, championships,
   tournaments.
 ---
 
@@ -10,11 +10,11 @@ description: >-
 
 Not every question has a yes/no answer. **"Who wins the 2026 FIFA World Cup?"** has 32 possible answers, not 2. Multi-outcome markets let you trade events where exactly **one out of many** possible outcomes will be true.
 
-PrediX implements multi-outcome markets as a **group of binary markets** — each outcome is its own YES/NO market, all linked under one **MarketGroup**. When the event resolves, the winning outcome's YES pays `$1`, every other outcome's NO pays `$1`, and the rest pay `$0`.
+PrediX implements multi-outcome markets as a **group of binary markets** - each outcome is its own YES/NO market, all linked under one **MarketGroup**. When the event resolves, the winning outcome's YES pays `$1`, every other outcome's NO pays `$1`, and the rest pay `$0`.
 
 <figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
-This design has a key property: **only one outcome wins**. If Brazil wins, Brazil-YES = `$1`, all other countries' YES = `$0`. The MarketGroup contract enforces this — you can't have two winners.
+This design has a key property: **only one outcome wins**. If Brazil wins, Brazil-YES = `$1`, all other countries' YES = `$0`. The MarketGroup contract enforces this - you can't have two winners.
 
 ***
 
@@ -30,26 +30,6 @@ This design has a key property: **only one outcome wins**. If Brazil wins, Brazi
 | **Price sum constraint** | YES + NO = `$1` (per market) | All YES prices ≈ `$1` (total) |
 
 The biggest mental shift: in a multi-outcome market, the **sum of all YES prices ≈ $1** (it represents 100% probability distributed across outcomes).
-
-### Example — 2026 FIFA World Cup
-
-Imagine a market: **"Which country wins the 2026 World Cup?"**
-
-| Outcome              | YES Price | Implied Probability |
-| -------------------- | --------- | ------------------- |
-| **Brazil**           | `$0.22`   | 22%                 |
-| **France**           | `$0.18`   | 18%                 |
-| **Argentina**        | `$0.16`   | 16%                 |
-| **England**          | `$0.12`   | 12%                 |
-| **Spain**            | `$0.10`   | 10%                 |
-| **Germany**          | `$0.08`   | 8%                  |
-| **Netherlands**      | `$0.05`   | 5%                  |
-| **Other (25 teams)** | `$0.09`   | 9% (combined)       |
-| **Total**            | `$1.00`   | 100%                |
-
-You can:
-
-<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Buy Brazil-YES at</strong><strong> </strong><strong><code>$0.22</code></strong></mark></td><td>if Brazil wins, pays <code>$1</code> (4.5× return)</td></tr><tr><td><mark style="color:orange;"><strong>Buy France-NO at</strong><strong> </strong><strong><code>$0.82</code></strong></mark></td><td>if France doesn't win, pays <code>$1</code> (1.22× return)</td></tr><tr><td><mark style="color:orange;"><strong>Sell shares of any outcome</strong></mark></td><td>the same way you would on a binary marke</td></tr></tbody></table>
 
 Each outcome trades on its own Market Order, Limit Order, or via the AMM — exactly like binary markets.
 
@@ -67,7 +47,7 @@ For multi-outcome markets, PrediX provides **GroupSplit** and **GroupMerge** —
 
 <figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
-But wait — that doesn't sum to `$1`. Why?
+But wait - that doesn't sum to `$1`. Why?
 
 Because **only the winning YES + 31 losing NO** pay. The 31 losing YES = `$0`, and the 1 winning NO = `$0`. Net effect: you get exactly your `$1 USDC` back (minus the winning YES which is the one you'd actually "want").
 
@@ -93,7 +73,7 @@ Because **all YES prices should sum to `$1`** (probabilities total to 100%), any
 
 <details>
 
-<summary><mark style="color:$primary;"><strong>Scenario 1 — Sum &#x3C; $1 (Undervalued)</strong></mark></summary>
+<summary><mark style="color:$primary;"><strong>Scenario 1 - Sum &#x3C; $1 (Undervalued)</strong></mark></summary>
 
 If sum of all YES prices = `$0.92`:
 
@@ -105,7 +85,7 @@ If sum of all YES prices = `$0.92`:
 
 <details>
 
-<summary><mark style="color:$primary;"><strong>Scenario 2 — Sum > $1 (Overvalued)</strong></mark></summary>
+<summary><mark style="color:$primary;"><strong>Scenario 2 - Sum > $1 (Overvalued)</strong></mark></summary>
 
 If sum of all YES prices = `$1.07`:
 
@@ -121,7 +101,7 @@ These arbitrages keep prices honest. Bots run them continuously, so manual oppor
 
 ### Trading on Multi-Outcome Markets
 
-Trading each outcome works **exactly like a binary market** — same Market Order, Limit Order, Split, Merge operations:
+Trading each outcome works **exactly like a binary market** - same Market Order, Limit Order, Split, Merge operations:
 
 | Action                          | What happens                                                                |
 | ------------------------------- | --------------------------------------------------------------------------- |
@@ -131,7 +111,7 @@ Trading each outcome works **exactly like a binary market** — same Market Orde
 | **Split on a specific outcome** | Convert USDC → YES + NO on one outcome (not all)                            |
 | **GroupSplit**                  | Convert USDC → YES + NO on every outcome at once                            |
 
-You can also place orders **across multiple outcomes simultaneously** — for example, "Buy Brazil-YES AND France-YES" as a diversified position.
+You can also place orders **across multiple outcomes simultaneously** - for example, "Buy Brazil-YES AND France-YES" as a diversified position.
 
 ***
 
@@ -237,7 +217,7 @@ You bought `$1,000` of Brazil-YES. As tournament progresses, Brazil narrowly sur
 
 PrediX supports several multi-outcome formats, each follows the same MarketGroup pattern under the hood.:
 
-<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Tournament winner</strong></mark></td><td>FIFA World Cup, NBA Finals, Wimbledon,...</td></tr><tr><td><mark style="color:orange;"><strong>Election outcome</strong></mark></td><td>US Presidential 2028, EU Parliament 2029,...</td></tr><tr><td><mark style="color:orange;"><strong>Award winners</strong></mark></td><td>Oscars Best Picture, MVP Awards,...</td></tr><tr><td><mark style="color:orange;"><strong>Price ranges</strong></mark></td><td>BTC price on Dec 31, 2026" with brackets <code>&#x3C;$50k</code>, <code>$50k-100k</code>, <code>$100k-150k</code>, <code>>$150k</code></td></tr><tr><td><mark style="color:orange;"><strong>Categorical</strong></mark></td><td>"Which K-pop group has #1 album in Q4?"</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Tournament winner</strong></mark></td><td>FIFA World Cup, NBA Finals, Wimbledon,...</td><td><a href="../.gitbook/assets/22.png">22.png</a></td></tr><tr><td><mark style="color:orange;"><strong>Multi outcome</strong></mark></td><td>Colombia Presidential Election 1st round: Most votes from Bogota,...</td><td><a href="../.gitbook/assets/23.png">23.png</a></td></tr><tr><td><mark style="color:orange;"><strong>Multi-choice</strong></mark></td><td>"Which K-pop group has #1 album in Q4?"</td><td><a href="../.gitbook/assets/24.png">24.png</a></td></tr></tbody></table>
 
 ***
 
@@ -253,4 +233,4 @@ Polymarket implements multi-outcome markets using their **NegRisk** adapter on t
 | **Liquidity per outcome**     | Shared via NegRisk AMM       | Independent (each outcome has its own pool) |
 | **Multi-outcome resolution**  | Atomic via CTF               | Atomic via MarketGroup                      |
 
-**PrediX outcome tokens are fully composable** — you can use Brazil-YES as collateral on Aave, wrap it in an index, or trade it on any DEX that supports ERC-20.
+**PrediX outcome tokens are fully composable** - you can use Brazil-YES as collateral on Aave, wrap it in an index, or trade it on any DEX that supports ERC-20.

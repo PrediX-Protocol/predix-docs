@@ -51,10 +51,15 @@
   * [vePRX & Gauge Voting](economics/veprx-gauge.md)
   * [Deflationary & Treasury](economics/buyback-burn.md)
 * [Incentive & Community](economics/incentive-and-community/README.md)
-  * [Points — Earn PRX](economics/incentive-and-community/points.md)
+  * [Points - Earn PRX](economics/incentive-and-community/points.md)
   * [Points & Seasons](economics/points-seasons.md)
   * [KOL & Ambassador](economics/kol-ambassador.md)
   * [Rewards & Gamification](economics/rewards.md)
+
+## LEGAL
+
+* [Privacy Policy](legal/privacy-policy.md)
+* [Terms of Service](legal/terms-of-service.md)
 
 ## Resources
 

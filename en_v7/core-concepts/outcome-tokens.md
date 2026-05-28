@@ -10,7 +10,7 @@ YES and NO are standard ERC-20 outcome tokens using 6 decimals, matching USDC pr
 Token minting is restricted to the Diamond contract through the `onlyFactory` permission model.
 {% endhint %}
 
-### Core Invariant — $1 Invariant
+### Core Invariant - $1 Invariant
 
 ```
 YES.totalSupply == NO.totalSupply == market.totalCollateral
@@ -29,11 +29,11 @@ YES.totalSupply == NO.totalSupply == market.totalCollateral
 
 ***
 
-### Split — Mint YES + NO from USDC
+### Split - Mint YES + NO from USDC
 
 ```
-You  ──deposit 100 USDC──▶  Diamond  ──mint 100 YES──▶  You
-                                     ──mint 100 NO───▶  You
+You - deposit 100 USDC ──▶  Diamond - mint 100 YES──▶  You
+                                     - mint 100 NO───▶  You
 ```
 
 * Atomic: all 3 steps in 1 tx.
@@ -46,10 +46,10 @@ You  ──deposit 100 USDC──▶  Diamond  ──mint 100 YES──▶  You
 
 ***
 
-### Merge — Burn YES + NO → USDC
+### Merge - Burn YES + NO → USDC
 
 ```
-You  ──burn 100 YES + 100 NO──▶  Diamond  ──payout 100 USDC──▶  You
+You  -burn 100 YES + 100 NO──▶  Diamond  -payout 100 USDC──▶  You
 ```
 
 The reverse of split. Requires holding equal amounts of both tokens.
@@ -72,7 +72,7 @@ Arbitrage is automated by AMM bots, requiring no manual intervention.
 
 ***
 
-### Redeem — After Market Resolution
+### Redeem - After Market Resolution
 
 * Market resolves, e.g., outcome = YES.
 * User holding YES → calls `redeem(marketId)` → exchanges YES for USDC.
@@ -80,12 +80,12 @@ Arbitrage is automated by AMM bots, requiring no manual intervention.
 
 ***
 
-### Refund — When a Market Cannot Be Resolved
+### Refund - When a Market Cannot Be Resolved
 
 If the oracle fails (down, dispute hung), admin enables **refund mode** via a 48h timelock:
 
 * Users burn YES + NO pairs → receive USDC pro-rata.
-* Burns at `min(yesBalance, noBalance)` — only the paired portion can be refunded.
+* Burns at `min(yesBalance, noBalance)` - only the paired portion can be refunded.
 
 {% hint style="info" %}
 **Details:** [**Resolution**](resolution.md)**,** [**Redeem & refund**](../users-guide/redeem-refund.md)**.**

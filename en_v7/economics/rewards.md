@@ -4,7 +4,7 @@ icon: cricket-bat-ball
 
 # Rewards & Gamification
 
-Long-term activity rewards (badges, streaks, daily challenges, reward boxes). Independent of the Season pool — engagement-driven, throughout the protocol's lifetime.
+Long-term activity rewards (badges, streaks, daily challenges, reward boxes). Independent of the Season pool - engagement-driven, throughout the protocol's lifetime.
 
 > Points / season-based emission / referral 2-phase: see [Points & seasons](points-seasons.md).
 
@@ -14,7 +14,7 @@ Long-term activity rewards (badges, streaks, daily challenges, reward boxes). In
 
 <sub>lestone) + Daily Challenge (3 random/day) + Reward Box (5% drop, VRF random) -> convert to PRX/USDC/NFT</sub>
 
-## 1. Streaks — action chains
+## 1. Streaks - action chains
 
 | Streak type        | Criteria                           | Reward                                            |
 | ------------------ | ---------------------------------- | ------------------------------------------------- |
@@ -24,7 +24,7 @@ Long-term activity rewards (badges, streaks, daily challenges, reward boxes). In
 
 Missing a day breaks the streak. Restarts from 0.
 
-## 2. Badges — NFT milestones
+## 2. Badges - NFT milestones
 
 NFT badges (ERC-1155 on Unichain) earned upon reaching milestones:
 
@@ -34,7 +34,7 @@ NFT badges (ERC-1155 on Unichain) earned upon reaching milestones:
 
 
 
-* Badges are NFTs — transferable (until locked).
+* Badges are NFTs - transferable (until locked).
 * Displayed on profile and leaderboard.
 * Some badges are **locked** (non-transferable) to prevent wash trading.
 * Rare badges may serve as collateral for lending in Phase 2.
@@ -53,7 +53,7 @@ NFT badges (ERC-1155 on Unichain) earned upon reaching milestones:
 
 Resets at 00:00 UTC daily.
 
-## 4. Reward boxes — random drops
+## 4. Reward boxes - random drops
 
 Sealed boxes open at resolution, containing random PRX / USDC / NFT.
 
@@ -66,11 +66,11 @@ Sealed boxes open at resolution, containing random PRX / USDC / NFT.
 * **Drop rate**: \~5% per trade > $10.
 * **Pool**: 80% PRX, 15% USDC, 5% rare NFT.
 * **Range**: 1-1000 PRX (median \~10), $0.10-$50 USDC (median $1), NFT special edition.
-* **Randomness**: Chainlink VRF — verifiable, cannot be manipulated.
+* **Randomness**: Chainlink VRF - verifiable, cannot be manipulated.
 
 ## Converting points to PRX
 
-**S1 (M1-M6, free period)**: Points convert at TGE. See [Points & seasons — S1 Genesis](points-seasons.md#s1--genesis-sub-pool-breakdown).
+**S1 (M1-M6, free period)**: Points convert at TGE. See [Points & seasons - S1 Genesis](points-seasons.md#s1--genesis-sub-pool-breakdown).
 
 **Post-TGE**: Points from activity rewards (streaks, daily challenges) convert weekly:
 
@@ -88,7 +88,7 @@ To prevent bot farming of rewards:
 
 * **Min stake post-TGE**: Accounts must stake >= 10 PRX to earn rewards above a threshold.
 * **Verification**: Email + (optional) phone reduces rate for unverified accounts.
-* **Behavior pattern**: Wash trade detector — rapid buy + sell patterns reduce or zero out volume points.
+* **Behavior pattern**: Wash trade detector - rapid buy + sell patterns reduce or zero out volume points.
 * **Cap per wallet**: Tier rewards have an absolute cap (e.g. max 10,000 pts/day).
 * **Random snapshot**: Occasional snapshots at non-standard times to prevent last-minute gaming.
 

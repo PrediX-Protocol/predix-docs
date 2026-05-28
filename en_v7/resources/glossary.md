@@ -153,7 +153,7 @@ All upgrades go through a **48-hour timelock** to prevent unauthorized changes.
 
 `endTime` is the on-chain timestamp at which a market **closes for trading**. After this point, no new orders can be placed or filled.
 
-Once `endTime` is reached, the oracle resolution window opens — the designated oracle will report the real-world outcome and resolve the market.
+Once `endTime` is reached, the oracle resolution window opens - the designated oracle will report the real-world outcome and resolve the market.
 
 ***
 
@@ -171,7 +171,7 @@ EOAs contrast with **Smart Accounts**: they cannot batch transactions, cannot us
 
 A multi-outcome Event is a container that groups multiple related markets where **exactly one outcome will resolve YES**.
 
-> **Example:** "FIFA World Cup 2026 Winner" is an Event with 48 child markets — one per team. Only one team will win, so only one market resolves YES = $1; all others resolve NO = $0.
+> **Example:** "FIFA World Cup 2026 Winner" is an Event with 48 child markets - one per team. Only one team will win, so only one market resolves YES = $1; all others resolve NO = $0.
 
 This structure lets traders take positions across competing outcomes within the same event.
 

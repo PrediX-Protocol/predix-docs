@@ -12,15 +12,15 @@ PrediX combines 2 liquidity mechanisms: an on-chain order book (CLOB) + Uniswap 
 | --------------- | ---------------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------------- |
 | Small trades    | OK but wide slippage if few makers                         | Smooth, low slippage                               | Smooth + price improvement when makers are present       |
 | Large trades    | Depends on maker depth                                     | Slippage increases with size                       | Drain CLOB first, AMM for the remainder                  |
-| Maker incentive | Limit order (no fee)                                       | Only LPs earn fees                                 | **Both** — makers place orders, LPs provide liquidity    |
+| Maker incentive | Limit order (no fee)                                       | Only LPs earn fees                                 | **Both** - makers place orders, LPs provide liquidity    |
 | Fair pricing    | Makers set their own                                       | AMM curve                                          | AMM = floor, CLOB = price improvement                    |
 | MEV protection  | Order book harder to frontrun                              | Pool vulnerable to sandwich                        | Hook anti-sandwich + identity commit                     |
 
 ***
 
-### Router — Single Entry Point
+### Router - Single Entry Point
 
-The Router is **stateless** — the invariant `balanceOf(router) == 0` is enforced on-chain after every public call. No custody, no stuck funds.
+The Router is **stateless** - the invariant `balanceOf(router) == 0` is enforced on-chain after every public call. No custody, no stuck funds.
 
 <figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
@@ -39,7 +39,7 @@ When you sell, the PrediX Router automatically finds the most efficient path to 
 
 ***
 
-### CLOB — On-Chain Order Book
+### CLOB - On-Chain Order Book
 
 Contract: `PrediXExchange`.
 
@@ -49,7 +49,7 @@ Contract: `PrediXExchange`.
 
 #### <mark style="color:$warning;">3 CLOB Match Types</mark>
 
-All 3 satisfy: **no one is disadvantaged** — each side accepts their own price.
+All 3 satisfy: **no one is disadvantaged** - each side accepts their own price.
 
 <figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
@@ -63,7 +63,7 @@ All 3 satisfy: **no one is disadvantaged** — each side accepts their own price
 
 ***
 
-### AMM — Uniswap v4 Pool
+### AMM - Uniswap v4 Pool
 
 Each market has 1-2 v4 pools: YES-USDC and optionally NO-USDC. **PrediX Hook** plugs into v4:
 
@@ -79,7 +79,7 @@ The Hook **does not hold user funds long-term**. LPs receive LP tokens per the v
 {% hint style="info" %}
 ### Trading Directly on AMM
 
-* The YES-USDC pool is a standard v4 pool — you can swap via UniversalRouter, Uniswap web, or PoolManager directly.
+* The YES-USDC pool is a standard v4 pool - you can swap via UniversalRouter, Uniswap web, or PoolManager directly.
 * **However**: bypassing CLOB liquidity → price may be worse. Always use `PrediXRouter` to take advantage of both.
 {% endhint %}
 
@@ -93,13 +93,15 @@ The Router **always** checks CLOB first:
 2. Partially fills CLOB, routes the remainder to AMM if CLOB depth is insufficient.
 3. If CLOB reverts (insufficient token match, price deviation) → Router skips, emits `ClobSkipped(reason)` event, falls back entirely to AMM.
 
-Users don't need to worry — the Router always returns the best price within the same tx.
+Users don't need to worry - the Router always returns the best price within the same tx.
 
 ***
 
 ### MEV Protection
 
 PrediX Hook implements **identity commit** to prevent sandwich attacks:
+
+MEV bots cannot frontrun + backrun your trade within the same block - the Hook reverts if identity doesn't match.
 
 <figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 

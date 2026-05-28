@@ -22,7 +22,7 @@ S1 is the largest because cold-start is the hardest. Early users earn \~20x more
 
 > **Note**: S0's 10M is carved **from** S1's 86M allocation (not additive). Total community pool = 300M.
 
-## S0 — Testnet
+## S0 - Testnet
 
 **Pool**: 10M PRX (from S1 allocation) - **Target**: 50K-100K wallets - **Cap**: 50K PRX/wallet.
 
@@ -30,7 +30,7 @@ Testnet activity is tracked off-chain (PostgreSQL). At mainnet launch: snapshot 
 
 **How to earn Points S0** -> see [Points — how to earn PRX](incentive-and-community/points.md#s0--testnet).
 
-## S1 — Genesis sub-pool breakdown
+## S1 - Genesis sub-pool breakdown
 
 86M PRX split into 5 sub-pools:
 
@@ -58,7 +58,7 @@ PRX is **not distributed all at once** at TGE. The S1 General Trading pool (56M)
 
 **Why 3 waves**: reduces sell pressure at TGE. Wave 1 (\~22M) instead of 56M all at once. Users who stake W1 to boost W2 -> further reduces selling.
 
-## S2-S5 — Revenue seasons
+## S2-S5 - Revenue seasons
 
 Starting from S2 (M7+), the protocol collects fees and allocates them to staker yield (USDC), buyback-burn, and treasury. Details: [Buyback-burn](buyback-burn.md) - [Staking](staking.md).
 

@@ -103,8 +103,6 @@ Select your side based on your prediction:
 
 ### How to Sell a Position
 
-<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
-
 {% stepper %}
 {% step %}
 <mark style="color:$warning;">**Step 1: Switch to the Sell Tab**</mark>
@@ -177,4 +175,4 @@ If the event doesn't happen:
 
 ### Trading Order Types
 
-<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><a href="market-order.md"><mark style="color:$warning;"><strong>Market Order</strong></mark></a></td><td>Enter immediately at current price</td></tr><tr><td><a href="limit-order.md"><mark style="color:$warning;"><strong>Limit Order</strong></mark></a></td><td>Set a price and wait for it to fill</td></tr><tr><td><a href="split-and-merge.md"><mark style="color:$warning;"><strong>Split &#x26; Merge</strong></mark></a></td><td>Mint / Burn a YES+NO pair for market-making or reclaim USDC</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><a href="market-order.md"><mark style="color:$warning;"><strong>Market Order</strong></mark></a></td><td>Enter immediately at current price</td><td><a href="../../.gitbook/assets/20.png">20.png</a></td></tr><tr><td><a href="limit-order.md"><mark style="color:$warning;"><strong>Limit Order</strong></mark></a></td><td>Set a price and wait for it to fill</td><td><a href="../../.gitbook/assets/21.png">21.png</a></td></tr><tr><td><a href="split-and-merge.md"><mark style="color:$warning;"><strong>Split &#x26; Merge</strong></mark></a></td><td>Mint / Burn a YES+NO pair for market-making or reclaim USDC</td><td><a href="../../.gitbook/assets/19.png">19.png</a></td></tr></tbody></table>

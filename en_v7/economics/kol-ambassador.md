@@ -4,7 +4,7 @@ icon: microphone
 
 # KOL & Ambassador
 
-Dedicated pool of **12M PRX** from S1 (86M). Milestone-based — tokens are only distributed when milestones are met, not time-based.
+Dedicated pool of **12M PRX** from S1 (86M). Milestone-based - tokens are only distributed when milestones are met, not time-based.
 
 ## 2 tracks
 
@@ -13,11 +13,11 @@ Dedicated pool of **12M PRX** from S1 (86M). Milestone-based — tokens are only
 | **Track 1 — Open Funnel**  | >= 1K followers, ER >= 5%      | Trial -> Active -> Qualified | 8,000 PRX   | Ambassadors, micro-influencers |
 | **Track 2 — Direct Entry** | >= 2K followers or Team invite | Bronze -> Silver -> Gold     | 300,000 PRX | KOLs, macro-influencers        |
 
-## Track 1 — Open Funnel
+## Track 1 - Open Funnel
 
 Anyone can participate with >= 1K followers + engagement rate >= 5%. Requires linking an X/Twitter account with a wallet (OAuth).
 
-### Tier 1: Trial — 1,000 PRX
+### Tier 1: Trial - 1,000 PRX
 
 | Milestone | Requirement                                           | PRX | Deadline | Cumulative |
 | --------- | ----------------------------------------------------- | --- | -------- | ---------- |
@@ -25,9 +25,9 @@ Anyone can participate with >= 1K followers + engagement rate >= 5%. Requires li
 | T2        | 3 referrals complete a trade >= $10                   | 300 | 14 days  | 500        |
 | T3        | Active continuously for 14 days                       | 500 | 14 days  | 1,000      |
 
-Failure to complete within 14 days = auto-drop. Tokens are not distributed — they remain in the pool.
+Failure to complete within 14 days = auto-drop. Tokens are not distributed - they remain in the pool.
 
-### Tier 2: Active — 2,000 PRX (total 3,000)
+### Tier 2: Active - 2,000 PRX (total 3,000)
 
 Entry: complete Trial. Auto-qualify.
 
@@ -40,7 +40,7 @@ Entry: complete Trial. Auto-qualify.
 
 Failure to complete = freeze. Allocation from Trial is retained.
 
-### Tier 3: Qualified — 5,000 PRX (total 8,000)
+### Tier 3: Qualified - 5,000 PRX (total 8,000)
 
 Entry: complete Active + (>= 2K followers OR ER >= 5%).
 
@@ -54,9 +54,9 @@ Completing Q3 -> eligible for Direct Entry Bronze (Track 2).
 
 **Total Track 1**: 10 milestones, \~5-6 months, up to 8,000 PRX.
 
-## Track 2 — Direct Entry KOL
+## Track 2 - Direct Entry KOL
 
-### Bronze — 20,000 PRX
+### Bronze - 20,000 PRX
 
 Entry: Qualified graduate - Team invite (>= 2K, ER >= 3%) - Self-apply (>= 2K, ER >= 3%).
 
@@ -70,7 +70,7 @@ Entry: Qualified graduate - Team invite (>= 2K, ER >= 3%) - Self-apply (>= 2K, E
 
 Completing B5 -> eligible for Silver. \~3 months.
 
-### Silver — 60,000 PRX delta (total 80,000)
+### Silver - 60,000 PRX delta (total 80,000)
 
 Entry: Bronze B5 - Direct (>= 10K followers, team verified).
 
@@ -83,7 +83,7 @@ Entry: Bronze B5 - Direct (>= 10K followers, team verified).
 
 Completing S4 -> eligible for Gold. \~3-4 months.
 
-### Gold — 220,000 PRX delta (total 300,000)
+### Gold - 220,000 PRX delta (total 300,000)
 
 Entry: Silver S4 - Team invite (>= 50K followers). Gold is the maximum tier.
 
@@ -94,7 +94,7 @@ Entry: Silver S4 - Team invite (>= 50K followers). Gold is the maximum tier.
 | G3        | 300 referrals first trade          | 55,000 | 90 days  | 245,000    |
 | G4        | Ref volume $1M                     | 55,000 | 90 days  | 300,000    |
 
-## Direct Entry paths — summary
+## Direct Entry paths - summary
 
 | Path                       | Followers            | Total PRX | Milestones    | Timeline     |
 | -------------------------- | -------------------- | --------- | ------------- | ------------ |

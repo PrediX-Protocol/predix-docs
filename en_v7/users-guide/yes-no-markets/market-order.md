@@ -14,7 +14,7 @@ Buy or sell instantly at the current market price. The **Router** automatically 
 * ✅ Enter a position **immediately**, accepting the prevailing market price
 * ✅ Small trades (< 1% of liquidity) where slippage is acceptable
 * ✅ You have no strong view on a better price ahead
-* ❌ Avoid for large size in thin markets — use a limit order instead
+* ❌ Avoid for large size in thin markets - use a limit order instead
 
 {% hint style="info" %}
 **Market vs Limit**
@@ -30,14 +30,12 @@ Use **Market** when you want to enter/exit a position **now** and are okay with 
 | **Sell YES / NO** | Number of shares to sell (e.g. `200 YES`) | Variable USDC amount               |
 
 {% hint style="warning" %}
-**Asymmetric input.** Buy is denominated in **USDC**, Sell is denominated in **shares**. The UI labels each field correctly — but if you integrate via API, be sure to use `amountIn` (USDC for buy) vs `sharesIn` (shares for sell).
+**Asymmetric input.** Buy is denominated in **USDC**, Sell is denominated in **shares**. The UI labels each field correctly - but if you integrate via API, be sure to use `amountIn` (USDC for buy) vs `sharesIn` (shares for sell).
 {% endhint %}
 
 ***
 
 ### How to Buy YES
-
-<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
 
 {% stepper %}
 {% step %}
@@ -93,8 +91,6 @@ Before clicking buy, verify the following details:
 {% endstepper %}
 
 ### How to Sell YES
-
-<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
 
 Same flow but under the **Sell** tab:
 

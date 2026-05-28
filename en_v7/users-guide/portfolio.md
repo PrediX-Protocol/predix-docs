@@ -30,15 +30,15 @@ Each row:
 
 ***
 
-### History — 6 types
+### History - 6 types
 
 Click any row → tx hash on the explorer.
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Trade</strong></mark></td><td>Buy/sell via Router</td><td><code>Router.Trade</code></td></tr><tr><td><mark style="color:orange;"><strong>Order</strong></mark></td><td>Place/cancel/fill limit order</td><td><code>Exchange.OrderPlaced/OrderMatched/OrderCancelled</code></td></tr><tr><td><mark style="color:orange;"><strong>Split</strong></mark></td><td>Mint a YES+NO pair</td><td><code>MarketFacet.PositionSplit</code></td></tr><tr><td><mark style="color:orange;"><strong>Merge</strong></mark></td><td>Burn YES+NO → USDC</td><td><code>MarketFacet.PositionMerged</code></td></tr><tr><td><mark style="color:orange;"><strong>Claim</strong></mark></td><td>Redeem or refund</td><td><code>TokensRedeemed / MarketRefunded</code></td></tr><tr><td><mark style="color:orange;"><strong>LP</strong></mark></td><td>Add/remove/collect liquidity</td><td><code>PoolManager.ModifyLiquidity</code></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Trade</strong></mark></td><td>Buy/sell via Router</td><td><code>Router.Trade</code></td><td><a href="../.gitbook/assets/32.png">32.png</a></td></tr><tr><td><mark style="color:orange;"><strong>Order</strong></mark></td><td>Place/cancel/fill limit order</td><td><code>Exchange.OrderPlaced/OrderMatched/OrderCancelled</code></td><td><a href="../.gitbook/assets/35.png">35.png</a></td></tr><tr><td><mark style="color:orange;"><strong>Split</strong></mark></td><td>Mint a YES+NO pair</td><td><code>MarketFacet.PositionSplit</code></td><td><a href="../.gitbook/assets/36.png">36.png</a></td></tr><tr><td><mark style="color:orange;"><strong>Merge</strong></mark></td><td>Burn YES+NO → USDC</td><td><code>MarketFacet.PositionMerged</code></td><td></td></tr><tr><td><mark style="color:orange;"><strong>Claim</strong></mark></td><td>Redeem or refund</td><td><code>TokensRedeemed / MarketRefunded</code></td><td><a href="../.gitbook/assets/37.jpg">37.jpg</a></td></tr><tr><td><mark style="color:orange;"><strong>LP</strong></mark></td><td>Add/remove/collect liquidity</td><td><code>PoolManager.ModifyLiquidity</code></td><td><a href="../.gitbook/assets/38.png">38.png</a></td></tr></tbody></table>
 
 ***
 
-### Calibration — measure prediction accuracy
+### Calibration - measure prediction accuracy
 
 Applies to markets that have already resolved.
 
@@ -64,9 +64,9 @@ A chart measuring: when you buy at price range X, what percentage of events actu
 | Your buy price            | Actual win rate | Assessment                                                          |
 | ------------------------- | --------------- | ------------------------------------------------------------------- |
 | `$0.30` (low confidence)  | 30%             | Well-calibrated                                                     |
-| `$0.30` (low confidence)  | 70%             | **Underconfident** — you are too cautious; consider trading larger  |
+| `$0.30` (low confidence)  | 70%             | **Underconfident** - you are too cautious; consider trading larger  |
 | `$0.70` (high confidence) | 70%             | Well-calibrated                                                     |
-| `$0.70` (high confidence) | 30%             | **Overconfident** — you are too confident; consider trading smaller |
+| `$0.70` (high confidence) | 30%             | **Overconfident** - you are too confident; consider trading smaller |
 
 The app plots your points on a scatter chart against the ideal diagonal (buy at $0.X → win X%). The closer to the diagonal, the more accurate your pricing.
 
@@ -89,7 +89,7 @@ A tool to help you recognize your own biases.
 
 <figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
-Badges are NFTs — shareable and serve as profile signatures. Details: [Rewards & gamification](../economics/rewards.md).
+Badges are NFTs - shareable and serve as profile signatures. Details: [Rewards & gamification](../economics/rewards.md).
 
 <figure><img src="../.gitbook/assets/10.png" alt=""><figcaption></figcaption></figure>
 
@@ -132,7 +132,7 @@ When a market passes endTime but has not been resolved:
 The app analyzes your portfolio and suggests:
 
 * Which positions have excessive exposure (concentration risk)?
-* Which markets are approaching endTime — should you close beforehand?
+* Which markets are approaching endTime - should you close beforehand?
 * Which limit orders are stale (price far from the market)?
 
 Notifications can be toggled in [Notifications & Alerts](features/notifications-and-alerts.md).

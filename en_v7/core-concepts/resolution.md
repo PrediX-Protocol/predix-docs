@@ -20,7 +20,7 @@ description: A market needs a source of truth to determine whether YES or NO win
 
 <sub>PrediX 4 oracle types</sub>
 
-#### <mark style="color:$warning;">1. ChainlinkOracle — Automatic, permissionless.</mark>
+#### <mark style="color:$warning;">1. ChainlinkOracle - Automatic, permissionless.</mark>
 
 PrediX uses ChainlinkOracle when Price-threshold markets (BTC, ETH, asset prices, FX rates).
 
@@ -46,7 +46,7 @@ Multisig 2/3 reads the result from an off-chain source and signs the transaction
 * [x] Refund mode escape hatch if an error is discovered after the fact
 {% endhint %}
 
-#### <mark style="color:$warning;">3. UMAOracle (Phase 2 — TBA)</mark>
+#### <mark style="color:$warning;">3. UMAOracle (Phase 2 - TBA)</mark>
 
 PrediX uses UMAOracle with Events requiring decentralized resolution without multisig dependency (Permissionless propose + 48h dispute window).
 
@@ -56,7 +56,7 @@ PrediX uses UMAOracle with Events requiring decentralized resolution without mul
 
 **Bond sizing**: `max(min_bond, min(market_tvl x 0.5%, max_bond))`. Range $500 - $50,000 USDC.
 
-#### <mark style="color:$warning;">4. Committee Oracle (Phase 3 — TBA)</mark>
+#### <mark style="color:$warning;">4. Committee Oracle (Phase 3 - TBA)</mark>
 
 PrediX uses Committee Oracle with Cross-chain governance outcomes, complex composite events.
 
@@ -79,7 +79,7 @@ PrediX uses Committee Oracle with Cross-chain governance outcomes, complex compo
 
 ***
 
-### Refund Mode — Last Resort
+### Refund Mode - Last Resort
 
 When no oracle can resolve → admin enables refund mode via 48h timelock → users burn YES+NO pairs → receive USDC pro-rata.
 
@@ -89,7 +89,7 @@ When no oracle can resolve → admin enables refund mode via 48h timelock → us
 
 ***
 
-### Incorrect Resolution — What to Do
+### Incorrect Resolution - What to Do
 
 | Phase                | Mechanism                                                                                           |
 | -------------------- | --------------------------------------------------------------------------------------------------- |
@@ -102,7 +102,7 @@ When no oracle can resolve → admin enables refund mode via 48h timelock → us
 ### Who Can Create Markets
 
 * **Phase 1**: Addresses with `CREATOR_ROLE` (admin + whitelisted creators).
-* **Phase 3 (TBA)**: Permissionless — anyone can create a market by staking a **PRX bond** (10k PRX proposed). Bond is slashed if the market is malformed or resolution is disputed.
+* **Phase 3 (TBA)**: Permissionless - anyone can create a market by staking a **PRX bond** (10k PRX proposed). Bond is slashed if the market is malformed or resolution is disputed.
 
 {% hint style="info" %}
 **Details:** [**Create a market**](../users-guide/liquidity-and-market/create-market.md)**.**

@@ -5,18 +5,16 @@ icon: share-nodes
 
 # Social & Discussion
 
-PrediX embeds social features directly into the trading interface — comment threads on every market, a global activity feed, long-form posts, and community moderation. Discussion lives next to the market it shapes, not in an external forum.
+PrediX embeds social features directly into the trading interface - comment threads on every market, a global activity feed, long-form posts, and community moderation. Discussion lives next to the market it shapes, not in an external forum.
 
 ### Comments per market
 
-> Every market has its own comment thread, accessed via the **Discussion** tab on the market detail page. Comments are threaded two levels deep — a top-level comment with one level of replies — and ranked by upvotes so the strongest argument rises to the top.
+> Every market has its own comment thread, accessed via the **Discussion** tab on the market detail page. Comments are threaded two levels deep - a top-level comment with one level of replies - and ranked by upvotes so the strongest argument rises to the top.
 
 #### <mark style="color:orange;">1. Features</mark>
 
 * **Threaded** 2 levels (`comment` + `reply`).
 * **Voting** — `up vote`/`down vote`; top comments rise to the top.
-* **Mention** `@username` to notify another user.
-* **Markdown support**: **`bold`**, _`italics`_, `code`, `link`, `quote`.
 * **Image embed** — paste an image URL and the app renders it inline.
 * **TX share** — paste a `txhash` and the app renders an explorer `link` + `summary`.
 
@@ -63,17 +61,17 @@ Badges help readers weigh the credibility of an argument before acting on it.
 
 Feed items render as typed cards, each linking back to its source object:
 
-* **Trade card** — _User X bought $Y YES on market Z._ Click → market detail.
-* **LP card** — _User X provided $Y liquidity to pool Z._
-* **Resolve card** — _Market Z resolved YES, $Y total volume traded._
-* **Comment card** — _User X commented on market Z: "..."_ Click → discussion thread.
-* **Badge card** — _User X earned the "Prophet" badge (80% accuracy)._
+* **Trade card** - _User X bought $Y YES on market Z._ Click → market detail.
+* **LP card** - _User X provided $Y liquidity to pool Z._
+* **Resolve card** - _Market Z resolved YES, $Y total volume traded._
+* **Comment card** - _User X commented on market Z: "..."_ Click → discussion thread.
+* **Badge card** - _User X earned the "Prophet" badge (80% accuracy)._
 
 ***
 
 ### Long-form Posts
 
-Beyond short comments, users can publish **posts** — Twitter thread-style long-form content for deeper analysis:
+Beyond short comments, users can publish **posts** - Twitter thread-style long-form content for deeper analysis:
 
 * Full Markdown support.
 * Tag market references (auto-linked).
@@ -147,9 +145,9 @@ The system tracks recurring violations:
 
 > **Note**:
 >
-> * **Mod recruitment** — vePRX holders in good standing can apply.
-> * **Mod compensation** — PRX from treasury.
-> * **Appeal process** — banned users can appeal via governance.
+> * **Mod recruitment** - vePRX holders in good standing can apply.
+> * **Mod compensation** - PRX from treasury.
+> * **Appeal process** - banned users can appeal via governance.
 
 ***
 

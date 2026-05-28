@@ -7,11 +7,11 @@ icon: split
 
 <figure><img src="../../.gitbook/assets/5.png" alt=""><figcaption></figcaption></figure>
 
-Prediction markets have two **native mechanisms** that don't exist in traditional financial instruments: **Splitting** and **Merging** shares. They're the protocol-level primitives that make prediction markets work — and they give you a way to enter or exit positions **without touching the orderbook**.
+Prediction markets have two **native mechanisms** that don't exist in traditional financial instruments: **Splitting** and **Merging** shares. They're the protocol-level primitives that make prediction markets work - and they give you a way to enter or exit positions **without touching the orderbook**.
 
 <figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
-Both operations are **zero-fee** and **zero-slippage** — the protocol mints or burns shares 1:1 against USDC collateral locked in the Diamond contract.
+Both operations are **zero-fee** and **zero-slippage** - the protocol mints or burns shares 1:1 against USDC collateral locked in the Diamond contract.
 
 ***
 
@@ -19,7 +19,7 @@ Both operations are **zero-fee** and **zero-slippage** — the protocol mints or
 
 **Split `$1 USDC` into `1 YES share` + `1 NO share`.**
 
-This is useful when you want to take a position on one side without buying from the orderbook — split collateral, then sell the side you don't want at your own price (via Limit Order) or instantly (via Market Order).
+This is useful when you want to take a position on one side without buying from the orderbook - split collateral, then sell the side you don't want at your own price (via Limit Order) or instantly (via Market Order).
 
 <figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
@@ -61,7 +61,7 @@ If you only wanted to hold one side, you can now Sell the side you don't want us
 {% endstepper %}
 
 {% hint style="info" %}
-**No fee, no slippage.** Splitting always gives you exactly 1:1 — `$100 USDC` becomes exactly `100 YES + 100 NO`, no matter the orderbook state.
+**No fee, no slippage.** Splitting always gives you exactly 1:1 - `$100 USDC` becomes exactly `100 YES + 100 NO`, no matter the orderbook state.
 {% endhint %}
 
 ***
@@ -116,12 +116,12 @@ Note: To merge 50 pairs, you must hold at least `50 YES` tokens and `50 NO` toke
 {% endstepper %}
 
 {% hint style="warning" %}
-**Merge requires equal amounts.** If you hold `100 YES + 80 NO`, you can only merge `80 pairs` (= `80 USDC`). The extra `20 YES` cannot be merged — sell them on the orderbook or hold to resolution.
+**Merge requires equal amounts.** If you hold `100 YES + 80 NO`, you can only merge `80 pairs` (= `80 USDC`). The extra `20 YES` cannot be merged - sell them on the orderbook or hold to resolution.
 {% endhint %}
 
 ***
 
-### The Math — Why YES + NO = $1
+### The Math - Why YES + NO = $1
 
 Every market on PrediX is **fully collateralized**. For each `$1 USDC` locked in the Diamond, exactly `1 YES + 1 NO` exists in circulation. This creates a mathematical guarantee:
 
@@ -134,13 +134,13 @@ Before resolution:
   - YES_price + NO_price = $1 (always)
 ```
 
-**Why?** Because anyone can split or merge at 1:1, the prices stay tied. If `YES = $0.40` and `NO = $0.50`, the total is `$0.90` — below `$1`. An arbitrageur can:
+**Why?** Because anyone can split or merge at 1:1, the prices stay tied. If `YES = $0.40` and `NO = $0.50`, the total is `$0.90` - below `$1`. An arbitrageur can:
 
 1. Buy `1 YES + 1 NO` for `$0.90`
 2. Merge into `$1 USDC`
 3. Profit `$0.10` risk-free
 
-Arbitrage forces the prices back to `YES + NO = $1`. This is the foundation of prediction market pricing — and it's enforced by the **Split/Merge primitives** at the protocol level.
+Arbitrage forces the prices back to `YES + NO = $1`. This is the foundation of prediction market pricing - and it's enforced by the **Split/Merge primitives** at the protocol level.
 
 ### Why Use Split / Merge?
 
@@ -285,7 +285,7 @@ Split and Merge operations are **always 1:1**:
 
 * `$N USDC` ↔ `N YES + N NO`
 * **No protocol fee** on either operation
-* **No slippage** — the rate is fixed by smart contract math
+* **No slippage** - the rate is fixed by smart contract math
 * Gas is paid by the user (or paymaster if eligible)
 {% endhint %}
 

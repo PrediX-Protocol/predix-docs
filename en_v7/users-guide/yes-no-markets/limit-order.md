@@ -5,12 +5,12 @@ icon: temperature-list
 
 # Limit Order (CLOB)
 
-Place a price and wait for a fill on the **On-chain Order Book**. You become a **maker** — and enjoy price improvement when matched.
+Place a price and wait for a fill on the **On-chain Order Book**. You become a **maker** - and enjoy price improvement when matched.
 
 ### When to use
 
-* ✅ You have a **price view** — e.g., buy YES @ $0.45 while the market is at $0.50, wait for the price to drop
-* ✅ **Market making** — place BUY and SELL orders simultaneously, earn the spread
+* ✅ You have a **price view** - e.g., buy YES @ $0.45 while the market is at $0.50, wait for the price to drop
+* ✅ **Market making** - place BUY and SELL orders simultaneously, earn the spread
 * ✅ **Large trades** where you want to avoid AMM slippage
 * ❌ Avoid when you need **immediate execution** — the order may never fill
 
@@ -21,8 +21,6 @@ Place a price and wait for a fill on the **On-chain Order Book**. You become a *
 ***
 
 ### How to Place a Limit Order
-
-<mark style="color:yellow;background-color:yellow;">**\[insert video]**</mark>
 
 {% stepper %}
 {% step %}
@@ -73,7 +71,7 @@ Note: These funds are released immediately if you cancel the order or when a mat
 {% hint style="success" %}
 **Maker price improvement**
 
-* If a taker fills your order in the same block as you place it, the taker pays your limit price, not the mid. You — the maker — **enjoy a better price than the AMM spot** would give.
+* If a taker fills your order in the same block as you place it, the taker pays your limit price, not the mid. You - the maker - **enjoy a better price than the AMM spot** would give.
 * This is the structural advantage CLOB makers have over AMM swappers.
 {% endhint %}
 
@@ -135,8 +133,6 @@ _You do not need to calculate any of this — the matching engine optimizes auto
 
 ### Cancel an Order
 
-<mark style="color:yellow;background-color:yellow;">**\[insert video]**</mark>
-
 {% stepper %}
 {% step %}
 <mark style="color:$warning;">**Step 1: Access Your Open Orders**</mark>
@@ -189,7 +185,7 @@ Orders can be filled incrementally:
 >
 > * `0.455` will be rejected or rounded.
 > * 99 ticks total, stored in a compressed bitmap in the `PrediXExchange` contract.
-> * `0.00` and `1.00` are not supported — a price of certainty has no liquidity.
+> * `0.00` and `1.00` are not supported - a price of certainty has no liquidity.
 
 ***
 
@@ -198,7 +194,7 @@ Orders can be filled incrementally:
 
 * **Place orders on both sides** around mid-price → earn the spread as a passive market maker.
 * **Tiered orders**: $0.40 50 USDC, $0.42 50 USDC, $0.44 50 USDC → scale in instead of going all-in.
-* **Check order book depth** before placing — if the best bid/ask is more than 5% from mid, liquidity is thin and your order may create a new tick.
+* **Check order book depth** before placing - if the best bid/ask is more than 5% from mid, liquidity is thin and your order may create a new tick.
 * **Watch endTime**: Limit orders are automatically cancelled when a market resolves or ends. Reset for each new market.
-* **Consider becoming an LP** instead of pure limit orders — LPs have price exposure but earn passive fees on both sides. See [Liquidity provider](../liquidity-and-market/provide-liquidity.md).
+* **Consider becoming an LP** instead of pure limit orders - LPs have price exposure but earn passive fees on both sides. See [Liquidity provider](../liquidity-and-market/provide-liquidity.md).
 {% endhint %}

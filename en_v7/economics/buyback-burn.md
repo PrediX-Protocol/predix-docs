@@ -20,7 +20,7 @@ PRX becomes **net deflationary** when annual burns exceed annual emissions. Emis
 
 ## Insurance fund
 
-A portion of protocol revenue flows to the insurance treasury. Coverage: partial reimbursement in the event of a contract exploit. Payouts require a DAO vote only — no automatic disbursement.
+A portion of protocol revenue flows to the insurance treasury. Coverage: partial reimbursement in the event of a contract exploit. Payouts require a DAO vote only - no automatic disbursement.
 
 ## Treasury
 
@@ -30,7 +30,7 @@ The treasury fund serves 4 use cases:
 | -------------------- | ----------------------------------------------------------- |
 | **Dev funding**      | Post-vest team compensation, contributor grants, hackathons |
 | **Audit**            | External audit firms, >= 1 round/year                       |
-| **LP subsidy**       | Gauge voting — pools receiving vePRX votes receive subsidy  |
+| **LP subsidy**       | Gauge voting - pools receiving vePRX votes receive subsidy  |
 | **Insurance top-up** | Replenish the insurance fund when needed                    |
 
 Management:

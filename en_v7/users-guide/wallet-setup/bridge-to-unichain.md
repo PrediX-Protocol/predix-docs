@@ -29,7 +29,7 @@ PrediX uses USDC on Unichain as collateral via our in-app widget, direct CEX wit
 To pay transaction fees on Unichain you need a small amount of **ETH on Unichain**:
 
 {% hint style="success" %}
-**Unichain gas is extremely cheap** — typical trade tx costs **\~$0.001–0.01**. A one-time bridge of $5 worth of ETH lasts thousands of transactions for EOA users.
+**Unichain gas is extremely cheap** - typical trade tx costs **\~$0.001–0.01**. A one-time bridge of $5 worth of ETH lasts thousands of transactions for EOA users.
 {% endhint %}
 
 | Wallet type                                                                      | Gas mechanism                                                                                          |
@@ -162,8 +162,6 @@ Note: If Unichain is not yet listed on your specific CEX, you will need to withd
 
 ### Reverse Bridge (Unichain → Another Chain)
 
-<mark style="color:yellow;background-color:yellow;">\[insert video here]</mark>
-
 Same UI, opposite direction:
 
 {% stepper %}
@@ -216,8 +214,4 @@ Bridges involve **slippage** (USDC prices across chains have a small spread).
 ### If the Bridge Gets Stuck
 
 * Across, Stargate: usually auto-complete within 1-30 minutes. If nothing after 1 hour: check the source chain explorer (tx confirmed?), check the destination chain (UserOp/relay arrived?).
-* Contact bridge support directly — PrediX does not operate bridges, only integrates the UI.
-
-{% hint style="info" %}
-**Need help:** [**Discord**](../../resources/links.md) **#bridge-support.**
-{% endhint %}
+* Contact bridge support directly - PrediX does not operate bridges, only integrates the UI.

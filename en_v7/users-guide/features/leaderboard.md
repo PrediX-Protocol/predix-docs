@@ -79,8 +79,6 @@ Copy trading mirrors a lead trader's positions automatically, with risk controls
 
 #### Setup copy trading
 
-<mark style="color:yellow;background-color:yellow;">**\[Insert video]**</mark>
-
 {% stepper %}
 {% step %}
 <mark style="color:orange;">**Step 1: Select a Lead Trader**</mark>
@@ -132,7 +130,7 @@ Start small ($50-100) and test for 1 week before scaling.
 
 ### Trader Directory
 
-The `/traders` page — a directory of active traders with filters:
+The `/traders` page - a directory of active traders with filters:
 
 * Sort by metric (same as leaderboard).
 * Filter by category, activity period (active in 24h/7d).

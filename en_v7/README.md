@@ -13,8 +13,6 @@ icon: align-justify
 
 ### Protocol Overview
 
-> 🟡 **Status —** see on [**Network info**](users-guide/getting-started.md#network-info)**.**
->
 > * Beta on **Unichain Sepolia testnet** (chain `1301`).
 > * Mainnet launches after **external audit** (chain `130`).
 

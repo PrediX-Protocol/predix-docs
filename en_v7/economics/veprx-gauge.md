@@ -10,8 +10,8 @@ Lock PRX -> vePRX (vote-escrowed) -> vote on gauges + boost yield + governance.
 
 **vePRX** = "vote-escrowed PRX". Lock PRX and receive vePRX (non-transferable) representing your governance weight.
 
-* **No additional tokens are issued** — it only records your rights.
-* **Weight decays linearly** over time — as the lock nears expiry, weight decreases.
+* **No additional tokens are issued** - it only records your rights.
+* **Weight decays linearly** over time - as the lock nears expiry, weight decreases.
 * **Lock expires**: vePRX = 0, PRX unlocks and becomes withdrawable.
 
 ## Weight formula
@@ -40,7 +40,7 @@ Decay is linear per block. No steps.
 
 <sub>vePRX rights: Gauge (direct subsidy, earn bribes), Params (protocol params, burn rate), Treasury (spending votes, grants), Phase (transition vote, milestone gates), Emergency (pause, refund)</sub>
 
-## Gauge voting — flywheel
+## Gauge voting - flywheel
 
 Each market has a **gauge**. vePRX holders vote on which gauges receive LP subsidy from the treasury.
 
@@ -64,7 +64,7 @@ A gauge corresponds to the YES-USDC (or NO-USDC) pool of a specific market. Pool
 
 <sub>Bribe market: project deposits bribe (PRX/USDC) -> vePRX holders vote gauge -> epoch end -> pool receives subsidy + voters receive bribe pro-rata</sub>
 
-External projects pay PRX/USDC to vePRX holders who vote for their pool — creating a liquid vote market.
+External projects pay PRX/USDC to vePRX holders who vote for their pool - creating a liquid vote market.
 
 PrediX will self-host the bribe layer (Phase 2).
 
@@ -102,7 +102,7 @@ vePRX votes on changes to:
 
 ### Phase transition + S6 Reserve
 
-vePRX votes on phase upgrades (Bootstrap -> Scale -> Mature -> Dominance) based on publicly available metrics (volume, runway). S6 Reserve (60M PRX) is DAO-locked — unlockable only via vePRX vote.
+vePRX votes on phase upgrades (Bootstrap -> Scale -> Mature -> Dominance) based on publicly available metrics (volume, runway). S6 Reserve (60M PRX) is DAO-locked - unlockable only via vePRX vote.
 
 Proposal flow:
 
@@ -139,7 +139,7 @@ Reduces whale dominance. Only applies to proposals > $100k spend.
 | Risk                                                            | Mitigation                                                            |
 | --------------------------------------------------------------- | --------------------------------------------------------------------- |
 | **Vote concentration** (whale locks large amount)               | Quadratic voting in Phase 2                                           |
-| **Bribe corruption** (voters choose based on bribes, not merit) | Accepted trade-off — bribes create market demand for vePRX            |
+| **Bribe corruption** (voters choose based on bribes, not merit) | Accepted trade-off - bribes create market demand for vePRX            |
 | **Low participation** (few voters)                              | Default fallback (equal across pools) + small PRX emission for voters |
 
 ## Timeline rollout

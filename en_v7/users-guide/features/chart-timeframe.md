@@ -5,13 +5,13 @@ icon: chart-line-up-down
 
 # Chart & Timeframe
 
-Prediction market charts are not crypto charts. The Y-axis is bounded between $0 and $1 — a probability, not an unbounded asset price. PrediX renders prediction market data accurately while preserving the tooling traders expect from professional interfaces.
+Prediction market charts are not crypto charts. The Y-axis is bounded between $0 and $1 - a probability, not an unbounded asset price. PrediX renders prediction market data accurately while preserving the tooling traders expect from professional interfaces.
 
 ### Understanding the chart
 
 The chart aggregates prices from three on-chain sources into a single canonical YES price / time series, All three feed into a unified combined chart on the _**Market detail page.**_
 
-<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Router.Trade</strong></mark></td><td>Canonical source, every market order.</td></tr><tr><td><mark style="color:orange;"><strong>Hook AMM swaps</strong></mark></td><td>Tick-by-tick AMM prices for analytics.</td></tr><tr><td><mark style="color:orange;"><strong>CLOB matches</strong></mark></td><td>Price at each limit fill.</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Hook AMM swaps</strong></mark></td><td>Tick-by-tick AMM prices for analytics.</td><td><a href="../../.gitbook/assets/44.jpg">44.jpg</a></td></tr><tr><td><mark style="color:orange;"><strong>CLOB matches</strong></mark></td><td>Price at each limit fill.</td><td><a href="../../.gitbook/assets/43.jpg">43.jpg</a></td></tr></tbody></table>
 
 ***
 
@@ -62,7 +62,7 @@ The **Depth** tab next to the chart shows:
 * Bids (BUY orders) on the left, asks (SELL orders) on the right.
 * Cumulative volume as walls of liquidity.
 
-Useful for spotting a **liquidity wall** — a large limit order that may stall the price.
+Useful for spotting a **liquidity wall** - a large limit order that may stall the price.
 
 #### <mark style="color:$warning;">5. Recent trades</mark>
 
@@ -111,11 +111,11 @@ GET /api/markets/:id/price-history?from=...&to=...
 {% hint style="success" %}
 ### Tips for reading prediction market charts
 
-* **Volume spike after endTime** — unusual activity, likely arbitrage as resolution approaches.
-* **Price pinned at $0.50** — the market lacks conviction; information is unclear.
-* **Sharp move** — new information has hit; check the news.
-* **Price near $0.95-$0.99** — approaching YES resolution. Low risk-reward (gain only 5%, risk losing 95%).
-* **Price near $0.01-$0.05** — tail event; high risk-reward but low probability.
+* **Volume spike after endTime** - unusual activity, likely arbitrage as resolution approaches.
+* **Price pinned at $0.50** - the market lacks conviction; information is unclear.
+* **Sharp move** - new information has hit; check the news.
+* **Price near $0.95-$0.99** - approaching YES resolution. Low risk-reward (gain only 5%, risk losing 95%).
+* **Price near $0.01-$0.05** - tail event; high risk-reward but low probability.
 {% endhint %}
 
 {% hint style="warning" %}

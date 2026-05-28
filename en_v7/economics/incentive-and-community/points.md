@@ -2,11 +2,11 @@
 icon: hundred-points
 ---
 
-# Points — Earn PRX
+# Points - Earn PRX
 
-PrediX rewards users with **Points** — a unit measuring contribution. Points convert into **PRX tokens** on a pro-rata basis. The earlier you participate, the more you earn.
+PrediX rewards users with **Points** - a unit measuring contribution. Points convert into **PRX tokens** on a pro-rata basis. The earlier you participate, the more you earn.
 
-## S0 — Testnet (Ongoing)
+## S0 - Testnet (Ongoing)
 
 **Pool: 10M PRX** · 2-3 months before mainnet · Cap 50K PRX/wallet.
 
@@ -14,21 +14,21 @@ PrediX rewards users with **Points** — a unit measuring contribution. Points c
 
 **Conversion**: S0 Points → PRX via Merkle proof at TGE. Formula: `(Your Points / Total S0 Points) x 10M PRX`, cap 50K PRX/wallet.
 
-## S1 — Genesis (Mainnet)
+## S1 - Genesis (Mainnet)
 
-**Pool: 56M PRX** (general trading) · M1-M6 · **Free period** — no trading fees.
+**Pool: 56M PRX** (general trading) · M1-M6 · **Free period** - no trading fees.
 
 | ID    | Activity                          | Points    | Condition               | Frequency |
 | ----- | --------------------------------- | --------- | ----------------------- | --------- |
 | Q1.1  | Connect wallet                    | 10        | Once                    | Once      |
 | Q1.2  | First real-money trade            | 100       | Min $10 USDC            | Once      |
 | Q1.3  | Per $100 volume                   | 10        | Any market              | Ongoing   |
-| Q1.4  | Referral — friend connects wallet | 50        | Cap 100 refs            | Ongoing   |
-| Q1.5  | Referral — friend trades ≥$10     | 100       | Funded wallet gate      | Ongoing   |
+| Q1.4  | Referral - friend connects wallet | 50        | Cap 100 refs            | Ongoing   |
+| Q1.5  | Referral - friend trades ≥$10     | 100       | Funded wallet gate      | Ongoing   |
 | Q1.6  | Provide LP ≥$100                  | 150       | Hold LP ≥7 days         | Once      |
 | Q1.7  | 7-day streak                      | 50        | 1 trade/day min $5      | Weekly    |
 | Q1.8  | 14-day streak (bonus)             | 120       | Extends 7-day streak    | Bi-weekly |
-| Q1.9  | Win streak — 3 correct            | 30        | 3 correct predictions   | Ongoing   |
+| Q1.9  | Win streak - 3 correct            | 30        | 3 correct predictions   | Ongoing   |
 | Q1.10 | Market diversity                  | 20/market | ≥$50/new market, cap 10 | Ongoing   |
 
 **2-gate referral**: Referring a friend requires **2 steps**. Step 1: friend connects wallet (+50 pts). Step 2: friend trades ≥$10 (+100 pts). Both steps must be completed.
@@ -41,8 +41,8 @@ During months 5-6 (FIFA WC), Points are **boosted 2.5-3x**:
 | ---------------------------------------- | --------------- | --------------------------------- |
 | Refer a friend                           | 50 + 100 Points | **125 + 250 Points (2.5x)**       |
 | Being referred                           | 100 Points      | **300 Points (3x)**               |
-| Referred friend trades $500+ during FIFA | —               | **+200 referrer / +100 referred** |
-| Tier 2 referral (indirect)               | —               | **+100 Points**                   |
+| Referred friend trades $500+ during FIFA | -               | **+200 referrer / +100 referred** |
+| Tier 2 referral (indirect)               | -               | **+100 Points**                   |
 
 ### Converting Points → PRX
 
@@ -59,10 +59,10 @@ Details on 3-Wave + season roadmap: [Points & seasons](../points-seasons.md).
 
 ## Anti-Gaming
 
-* **Cost gate**: S1 first trade min $10 USDC — blocks free sybil accounts
+* **Cost gate**: S1 first trade min $10 USDC - blocks free sybil accounts
 * **2-gate referral**: Reward only when referee funds + trades ≥$10
 * **Wash trade detection**: Volume from counterparty overlap is flagged
-* **Duration lock**: LP must hold ≥7 days (S1) — no flash deposits
+* **Duration lock**: LP must hold ≥7 days (S1) - no flash deposits
 * **Cap per wallet**: Max Points/day + max 100 refs/wallet
 
 ## Tracking Points
@@ -76,4 +76,4 @@ App UI: **Profile → Points** tab.
 
 ## KOL & Ambassador
 
-If you're a content creator (≥1K followers): join the [KOL & Ambassador program](../kol-ambassador.md) — separate pool of 12M PRX, milestone-based.
+If you're a content creator (≥1K followers): join the [KOL & Ambassador program](../kol-ambassador.md) - separate pool of 12M PRX, milestone-based.

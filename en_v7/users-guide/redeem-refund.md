@@ -12,7 +12,7 @@ Redeem winning tokens for $1 each, or burn YES+NO pairs to reclaim your USDC on 
 
 ***
 
-### Redeem — market has resolved
+### Redeem - market has resolved
 
 **Conditions:**
 
@@ -20,8 +20,6 @@ Redeem winning tokens for $1 each, or burn YES+NO pairs to reclaim your USDC on 
 * You hold the winning token (YES if outcome=true, NO if outcome=false)
 
 #### How to Redeem Your Winnings
-
-<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
 
 {% stepper %}
 {% step %}
@@ -81,7 +79,7 @@ Multiple resolved markets → click **Claim All** → batched via **passkey smar
 
 ***
 
-### Refund mode — market cannot be resolved
+### Refund mode - market cannot be resolved
 
 **When**: Oracle is down, dispute is hung, multisig is unresponsive → admin enables refund mode via a 48h timelock.
 
@@ -91,8 +89,6 @@ Multiple resolved markets → click **Claim All** → batched via **passkey smar
 * You hold **both `YES` and `NO`**
 
 #### How to Claim a Refund
-
-<mark style="color:yellow;background-color:yellow;">\[Insert video]</mark>
 
 {% stepper %}
 {% step %}
@@ -106,7 +102,7 @@ Multiple resolved markets → click **Claim All** → batched via **passkey smar
 <mark style="color:orange;">**Step 2: Initiate the Refund**</mark>
 
 * Click the Refund button to open the preview panel.
-* Preview details: The system calculates the number of full pairs you hold—`min(yesBalance, noBalance)`—and shows the exact amount of USDC to be returned.
+* Preview details: The system calculates the number of full pairs you hold—`min(yesBalance, noBalance)` and shows the exact amount of USDC to be returned.
 {% endstep %}
 
 {% step %}

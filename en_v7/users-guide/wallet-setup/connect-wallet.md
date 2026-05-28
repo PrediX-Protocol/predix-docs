@@ -44,7 +44,7 @@ Passkeys use the **WebAuthn** standard — biometric (Touch ID, Face ID, Windows
 {% step %}
 <mark style="color:$warning;">**Step 1: Access the Portal**</mark>
 
-* Open your browser and navigate to [_app.predix.app_](https://app.predix.app).
+* Open your browser and navigate to [https://app.predixpro.io](https://app.predixpro.io)&#x20;
 * Click the "**Sign up"** button to begin.
 {% endstep %}
 
