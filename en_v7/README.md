@@ -13,8 +13,10 @@ icon: align-justify
 
 ### Protocol Overview
 
-> * Beta on **Unichain Sepolia testnet** (chain `1301`).
-> * Mainnet launches after **external audit** (chain `130`).
+> 🟡 **Status -** see on [**Network info**](/broken/pages/It6qfi8FL3I2fGvFZtYs#network-info)**.**
+>
+> * Beta on **Unichain mainnet** (chain `130`).
+> * Production launches after **external audit** (chain `130`).
 
 ![PrediX - The Financializing Information Markets](.gitbook/assets/hero-overview.png)
 

@@ -73,12 +73,12 @@ Monitor open positions, realized PnL, settlement history, and market activity in
 ### Network Information
 
 {% hint style="info" %}
-**You are currently on TESTNET BETA**.
+**You are currently on PUBLIC BETA**.
 
-All transactions on testnet have no real value - balances and history will be reset before mainnet launch. Testnet activity is tracked via the points campaign and converts to PRX at TGE.
+Beta runs on Unichain mainnet but trades use a walled-garden TestUSDC (no real-money risk). Beta state may reset before production launch with Circle USDC. Beta activity is tracked via the points campaign and converts to PRX at TGE.
 {% endhint %}
 
-<table><thead><tr><th width="130.66668701171875">Information</th><th>Testnet (live now)</th><th>Mainnet (coming soon)</th></tr></thead><tbody><tr><td><strong>Network</strong></td><td>Unichain Sepolia</td><td>Unichain</td></tr><tr><td><strong>Chain ID</strong></td><td><code>1301</code></td><td><code>130</code></td></tr><tr><td><strong>Public RPC</strong></td><td><code>https://sepolia.unichain.org</code></td><td><code>https://mainnet.unichain.org</code></td></tr><tr><td><strong>Explorer</strong></td><td><a href="https://sepolia.uniscan.xyz/">https://sepolia.uniscan.xyz/</a></td><td><a href="https://uniscan.xyz/">https://uniscan.xyz/</a></td></tr><tr><td><strong>USDC</strong></td><td><code>0x5a9153c368946B5b252c32921EbB3c16c692D7D4</code> (test-USDC)</td><td>TBA</td></tr><tr><td><strong>Faucet</strong></td><td>Yes - 0.0005 ETH + 10k USDC / 24h / wallet</td><td>N/A</td></tr><tr><td><strong>Status</strong></td><td>✅ Beta live for users + devs</td><td>🟡 TBA - after external audit</td></tr></tbody></table>
+<table><thead><tr><th width="130.66668701171875">Information</th><th>Beta (live now)</th><th>Production (TBA)</th></tr></thead><tbody><tr><td><strong>Network</strong></td><td>Unichain mainnet</td><td>Unichain mainnet</td></tr><tr><td><strong>Chain ID</strong></td><td><code>130</code></td><td><code>130</code></td></tr><tr><td><strong>Public RPC</strong></td><td><code>https://mainnet.unichain.org</code></td><td><code>https://mainnet.unichain.org</code></td></tr><tr><td><strong>Explorer</strong></td><td><a href="https://uniscan.xyz/">https://uniscan.xyz/</a></td><td><a href="https://uniscan.xyz/">https://uniscan.xyz/</a></td></tr><tr><td><strong>USDC</strong></td><td><code>0xB3FCA863dD0F6b496cCDDf6497Da5Dad67857F56</code> (walled-garden TestUSDC)</td><td><code>0x078D782b760474a361dDA0AF3839290b0EF57AD6</code> (Circle USDC)</td></tr><tr><td><strong>Faucet</strong></td><td>Yes - 10,000 test-USDC per address (one-shot). Gas sponsored via paymaster.</td><td>N/A</td></tr><tr><td><strong>Status</strong></td><td>✅ Beta live for users + devs</td><td>🟡 TBA - after external audit</td></tr></tbody></table>
 
 {% hint style="info" %}
 **Tip**: The app automatically adds the network to your wallet on first connection. No manual setup needed.
