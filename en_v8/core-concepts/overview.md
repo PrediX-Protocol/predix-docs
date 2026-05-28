@@ -69,7 +69,6 @@ The AMM ensures you can always trade, no matter the orderbook depth. This is Pre
 
 When you place an order, the **Router** queries both CLOB and AMM, then routes your trade to the best price available via [CLOB + AMM Hybrid](clob-amm-hybrid.md).
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 You don't choose CLOB vs AMM - just click **Buy** or **Sell**. The Router handles routing automatically and delivers the best execution.
-

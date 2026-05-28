@@ -6,7 +6,7 @@ description: A market needs a source of truth to determine whether YES or NO win
 
 ### Market Lifecycle
 
-![PrediX market lifecycle states](../.gitbook/assets/04-market-lifecycle.svg)
+<figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
 <table><thead><tr><th width="374">Stage</th><th>Description</th></tr></thead><tbody><tr><td><strong>Created</strong></td><td>Creator (with <code>CREATOR_ROLE</code>) creates a market, sets <code>endTime</code> + selects oracle</td></tr><tr><td><strong>Trading</strong></td><td>Users split / merge / trade until <code>endTime</code></td></tr><tr><td><strong>EndTime</strong></td><td>Trading closes (hook blocks add liquidity + swap). Oracle window opens</td></tr><tr><td><strong>Resolved</strong></td><td>Oracle calls <code>resolveMarket()</code> with the outcome</td></tr><tr><td><strong>Redemption</strong></td><td>Users holding the winning token -> redeem for USDC</td></tr><tr><td><strong>RefundMode</strong></td><td>Fallback if oracle cannot resolve (oracle down, dispute hung)</td></tr><tr><td><strong>Refunded</strong></td><td>Users burn YES+NO pairs -> receive USDC pro-rata</td></tr></tbody></table>
 
@@ -14,13 +14,15 @@ description: A market needs a source of truth to determine whether YES or NO win
 
 ### 4 Oracle Types
 
-![PrediX 4 oracle types](../.gitbook/assets/36-oracle-types.svg)
+<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+
+
 
 #### <mark style="color:$warning;">1. ChainlinkOracle - Automatic, permissionless.</mark>
 
 PrediX uses ChainlinkOracle when Price-threshold markets (BTC, ETH, asset prices, FX rates).
 
-![ChainlinkOracle PrediX](../.gitbook/assets/37-chainlink-oracle-flow.svg)
+<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 #### <mark style="color:$warning;">2. ManualOracle</mark>
 
@@ -45,7 +47,7 @@ Role-gated REPORTER reads the result from an off-chain source and signs the tran
 
 PrediX uses UMAOracle with Events requiring decentralized resolution without multisig dependency (Permissionless propose + 48h dispute window).
 
-![UMAOracle PrediX](../.gitbook/assets/38-uma-oracle-flow.svg)
+<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 **Bond sizing**: `max(min_bond, min(market_tvl x 0.5%, max_bond))`. Range $500 - $50,000 USDC.
 
@@ -62,13 +64,13 @@ PrediX uses Committee Oracle with Cross-chain governance outcomes, complex compo
 
 ### Oracles Comparison
 
-|                   | Manual                | Chainlink                  | UMA                           | Committee                 |
-| ----------------- | --------------------- | -------------------------- | ----------------------------- | ------------------------- |
+|                   | Manual                          | Chainlink                  | UMA                           | Committee                 |
+| ----------------- | ------------------------------- | -------------------------- | ----------------------------- | ------------------------- |
 | Who resolves      | REPORTER role (EOA or multisig) | Anyone                     | Anyone proposes, DVM disputes | t-of-N validators         |
-| Subjective events | ✅                              | ❌                          | ✅                             | ✅                         |
-| Dispute           | Optional challenge window      | None (data is law)         | On-chain 48h                  | On-chain commit-reveal    |
-| Latency           | Immediate or up to 7d window   | After 1 round (\~30s-1min) | 48h default                   | After commit-reveal cycle |
-| Decentralization  | Low                            | Medium                     | High                          | High                      |
+| Subjective events | ✅                               | ❌                          | ✅                             | ✅                         |
+| Dispute           | Optional challenge window       | None (data is law)         | On-chain 48h                  | On-chain commit-reveal    |
+| Latency           | Immediate or up to 7d window    | After 1 round (\~30s-1min) | 48h default                   | After commit-reveal cycle |
+| Decentralization  | Low                             | Medium                     | High                          | High                      |
 
 ***
 
@@ -84,11 +86,11 @@ When no oracle can resolve -> admin enables refund mode via 48h timelock -> user
 
 ### Incorrect Resolution - What to Do
 
-| Phase                | Mechanism                                                                                           |
-| -------------------- | --------------------------------------------------------------------------------------------------- |
+| Phase                | Mechanism                                                                                            |
+| -------------------- | ---------------------------------------------------------------------------------------------------- |
 | **Phase 1** (Manual) | Multisig discussion, social consensus. If majority agrees resolution was wrong -> enable refund mode |
-| **Phase 2** (UMA)    | Dispute via UMA protocol, DVM vote                                                                  |
-| **All phases**       | `isResolved=true` is never reverted (INV-6 hard invariant)                                          |
+| **Phase 2** (UMA)    | Dispute via UMA protocol, DVM vote                                                                   |
+| **All phases**       | `isResolved=true` is never reverted (INV-6 hard invariant)                                           |
 
 ***
 

@@ -8,7 +8,7 @@ Lock PRX to receive a share of protocol fees in **real USDC**. No emissions.
 
 ## Mechanism
 
-![Staking: deposit PRX -> mint stkPRX (non-transferable) -> each week protocol distributes fee share USDC pro-rata -> claim USDC](../.gitbook/assets/07-staking-flow.svg)
+<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
 
 1. Deposit N PRX into `StakingVault`.
 2. Vault mints N **stkPRX** (non-transferable) representing your fee share.
@@ -29,7 +29,9 @@ Yield floats with actual volume. Volume up = yield up. Volume down = yield down.
 
 Lock PRX to receive **boosted yield + governance weight**:
 
-![Lock boost: no lock 1.0x, 3mo 1.1x, 6mo 1.25x, 12mo 1.5x, 24mo 2.0x, 48mo max 2.5x yield + corresponding vePRX weight](../.gitbook/assets/59-lock-boost-tiers.svg)
+<figure><img src="../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+
+<sub>_Lock boost: no lock 1.0x, 3mo 1.1x, 6mo 1.25x, 12mo 1.5x, 24mo 2.0x, 48mo max 2.5x yield + corresponding vePRX weight_</sub>
 
 | Lock             | Yield boost | vePRX weight |
 | ---------------- | ----------- | ------------ |
@@ -55,4 +57,6 @@ Governance details: [vePRX & gauge](veprx-gauge.md).
 
 ## Unstake flow
 
-![Unstake: Staked -> request unstake -> Cooldown 7 days (still earning yield) -> Withdrawable -> claim PRX to wallet](../.gitbook/assets/24-unstake-cooldown.svg)
+<figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Unstake: Staked -> request unstake -> Cooldown 7 days (still earning yield) -> Withdrawable -> claim PRX to wallet</sub>

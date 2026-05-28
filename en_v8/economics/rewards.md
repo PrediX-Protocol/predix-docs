@@ -8,7 +8,9 @@ Long-term activity rewards (badges, streaks, daily challenges, reward boxes). In
 
 > Points / season-based emission / referral 2-phase: see [Points & seasons](points-seasons.md).
 
-![4 reward types: Streak (daily login, win streak) + Badge (NFT milestone) + Daily Challenge (3 random/day) + Reward Box (5% drop, VRF random) -> convert to PRX/USDC/NFT](../.gitbook/assets/57-rewards-overview.svg)
+<figure><img src="../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+
+<sub>4 reward types: Streak (daily login, win streak) + Badge (NFT milestone) + Daily Challenge (3 random/day) + Reward Box (5% drop, VRF random) -> convert to PRX/USDC/NFT</sub>
 
 ## 1. Streaks - action chains
 
@@ -24,7 +26,11 @@ Missing a day breaks the streak. Restarts from 0.
 
 NFT badges (ERC-1155 on Unichain) earned upon reaching milestones:
 
-![Badge categories: Volume ($1K-$100K), Accuracy (70%-90% win rate), Streak (7-365 day), Special (beta tester, community hero, event winner)](../.gitbook/assets/28-mindmap-badges.svg)
+<figure><img src="../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Badge categories: Volume ($1K-$100K), Accuracy (70%-90% win rate), Streak (7-365 day), Special (beta tester, community hero, event winner)</sub>
+
+
 
 * Badges are NFTs - transferable (until locked).
 * Displayed on profile and leaderboard.
@@ -49,7 +55,11 @@ Resets at 00:00 UTC daily.
 
 Sealed boxes open at resolution, containing random PRX / USDC / NFT.
 
-![Reward box: eligible trade -> 5% drop chance -> box sealed -> user opens -> Chainlink VRF random -> 80% PRX / 15% USDC / 5% rare NFT](../.gitbook/assets/20-reward-vrf.svg)
+<figure><img src="../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Reward box: eligible trade -> 5% drop chance -> box sealed -> user opens -> Chainlink VRF random -> 80% PRX / 15% USDC / 5% rare NFT</sub>
+
+
 
 * **Drop rate**: \~5% per trade > $10.
 * **Pool**: 80% PRX, 15% USDC, 5% rare NFT.

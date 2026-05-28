@@ -96,7 +96,7 @@ Protocol-level voting and decision events.
 
 Price alerts let you set custom triggers on any market. Conditions are evaluated every block by the indexer, and the alert fires the moment the condition becomes true.
 
-![Price alert setting PrediX](../../.gitbook/assets/43-price-alert-flow.svg)
+<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 #### Setting up an alert
 

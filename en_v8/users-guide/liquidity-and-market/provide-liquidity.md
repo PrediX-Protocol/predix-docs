@@ -20,7 +20,7 @@ Unlike traditional AMMs, liquidity in prediction markets carries directional out
 
 Being an LP is a **directional bet** - you lose if the market resolves toward the side you did not expect. Make sure you understand impermanent loss (IL) and outcome risk before providing liquidity.
 
-![LP risk/reward model](../../.gitbook/assets/52-lp-risk-reward.svg)
+<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -155,7 +155,7 @@ Need Review:
 
 The pool closes - no more trading or adding liquidity.
 
-![LP after resolve flow](../../.gitbook/assets/19-lp-after-resolve.svg)
+<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 You can:
 

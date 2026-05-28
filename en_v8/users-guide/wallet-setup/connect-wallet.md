@@ -11,7 +11,7 @@ PrediX offers 2 sign-in methods, you maintain full control of your assets while 
 **Both are non-custodial - nobody (including PrediX) holds your private key.**
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/1.png" alt=""><figcaption></figcaption></figure>
 
 ### Choose connect method
 
@@ -23,7 +23,7 @@ PrediX offers 2 sign-in methods, you maintain full control of your assets while 
 | **Hardware wallet**    | No (private key in Secure Enclave)               | Yes (Ledger, Trezor)                                  |
 | **Gas fees**           | Pay via paymaster (USDC)                         | Pay ETH directly (Unichain is cheap \~$0.001-0.01/tx) |
 | **Batch transactions** | Yes (1-click `[approve, swap]` atomic)           | No (2 separate txs)                                   |
-| **First-time sign-up** | \~5 seconds biometric                            | Already have a wallet -> instant                       |
+| **First-time sign-up** | \~5 seconds biometric                            | Already have a wallet -> instant                      |
 | **Best for**           | New users , fast onboarding                      | DeFi users , large custody , hardware wallets         |
 
 ![Choose connect method: Passkey or Crypto Wallet - both non-custodial](../../.gitbook/assets/13-wallet-connect.svg)

@@ -21,7 +21,7 @@ Each row:
 
 ### Realized vs unrealized P\&L
 
-![PnL: Buy 100 YES @ $0.50 -> sell 40 @ $0.60 = realized +$4; hold 60 @ spot $0.55 = unrealized +$3](../.gitbook/assets/45-pnl-calc.svg)
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 * **Realized** = P\&L from closed positions or redeemed tokens.
 * **Unrealized** = not yet locked in; depends on the current spot price.
@@ -87,7 +87,7 @@ A tool to help you recognize your own biases.
 
 ### Streaks & badges
 
-![Badge categories: Volume ($1K-$100K), Accuracy (70%-90% win), Streak (7-365 day), Special (beta tester, community hero)](../.gitbook/assets/28-mindmap-badges.svg)
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 Badges are NFTs - shareable and serve as profile signatures. Details: [Rewards & gamification](../economics/rewards.md).
 

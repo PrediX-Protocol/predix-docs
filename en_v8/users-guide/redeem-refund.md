@@ -69,7 +69,7 @@ Click the Redeem button to open a preview window showing:
 
 Multiple resolved markets -> click **Claim All** -> batched via **passkey smart account** (1 click, 1 tx, gas via paymaster). EOA users: each market requires a separate tx (wallets do not support native batching). Both account types receive sponsor coverage if the user qualifies for the program.
 
-![Batch redeeming process](../.gitbook/assets/16-claim-batch.svg)
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 #### Losing tokens
 
@@ -152,7 +152,7 @@ If you hold only one side (e.g. bought 100 YES via the Router, no NO held), you 
 
 Refund mode prioritizes **pro-rata fairness** over first-come-first-serve. This prevents a scenario where early claimers drain all USDC, leaving nothing for later users.
 
-![Refund decision model](../.gitbook/assets/17-admin-refund.svg)
+<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Phase 2 (TBA)**

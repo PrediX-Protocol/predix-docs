@@ -9,7 +9,7 @@ icon: split
 
 Prediction markets have two **native mechanisms** that don't exist in traditional financial instruments: **Splitting** and **Merging** shares. They're the protocol-level primitives that make prediction markets work - and they give you a way to enter or exit positions **without touching the orderbook**.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 Both operations are **zero-fee** and **zero-slippage** - the protocol mints or burns shares 1:1 against USDC collateral locked in the Diamond contract.
 
@@ -21,7 +21,7 @@ Both operations are **zero-fee** and **zero-slippage** - the protocol mints or b
 
 This is useful when you want to take a position on one side without buying from the orderbook - split collateral, then sell the side you don't want at your own price (via Limit Order) or instantly (via Market Order).
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 #### How It Works
 
@@ -72,7 +72,7 @@ If you only wanted to hold one side, you can now Sell the side you don't want us
 
 This lets you exit both sides of a position and recover your collateral **without selling on the orderbook**.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 #### How It Works
 
@@ -150,7 +150,7 @@ Arbitrage forces the prices back to `YES + NO = $1`. This is the foundation of p
 | **Better execution**          | Avoid paying the spread (no maker/taker fees on split/merge)          |
 | **Always available**          | Works even when the orderbook is empty or the AMM has thin liquidity  |
 | **Liquidity defragmentation** | Under the hood, enables better orderbook matching across YES/NO sides |
-| **Arbitrage opportunities**   | Exploit `YES + NO != $1` pricing inefficiencies                        |
+| **Arbitrage opportunities**   | Exploit `YES + NO != $1` pricing inefficiencies                       |
 
 ### Real-World Use Cases
 
@@ -262,8 +262,8 @@ In the market detail page, the right panel has 4 tabs:
 | --------- | ---------------------------------------- |
 | **Buy**   | Buy YES or NO via Market or Limit order  |
 | **Sell**  | Sell YES or NO via Market or Limit order |
-| **Split** | Convert USDC -> YES + NO pair             |
-| **Merge** | Convert YES + NO pair -> USDC             |
+| **Split** | Convert USDC -> YES + NO pair            |
+| **Merge** | Convert YES + NO pair -> USDC            |
 
 Click **Split** or **Merge** to use the respective flow.
 
@@ -271,8 +271,8 @@ Click **Split** or **Merge** to use the respective flow.
 
 For Multi-Outcome Markets with 3+ possible outcomes (e.g., "Who wins the 2028 election?"), PrediX provides **GroupSplit** and **GroupMerge** for capital-efficient multi-position operations.
 
-| Operation      | Mechanism                                                                                |
-| -------------- | ---------------------------------------------------------------------------------------- |
+| Operation      | Mechanism                                                                                 |
+| -------------- | ----------------------------------------------------------------------------------------- |
 | **GroupSplit** | `$1 USDC` -> `1 YES on every outcome` in the group (you get N YES tokens, one per market) |
 | **GroupMerge** | `1 YES on every outcome` -> `$1 USDC` (requires owning all sides)                         |
 

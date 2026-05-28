@@ -8,7 +8,9 @@ PrediX buys PRX from the open market using protocol fees and burns it permanentl
 
 ## Mechanism
 
-![Buyback-burn: each week the protocol collects fees in USDC -> swap USDC to PRX (random timing, split txs) -> burn to 0x...dEaD -> supply reduced permanently](../.gitbook/assets/05-buyback-burn.svg)
+<figure><img src="../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Buyback-burn: each week the protocol collects fees in USDC -> swap USDC to PRX (random timing, split txs) -> burn to 0x...dEaD -> supply reduced permanently</sub>
 
 Event `BuybackExecuted(usdcSpent, prxBurned)` is emitted on-chain. Burns are irreversible.
 

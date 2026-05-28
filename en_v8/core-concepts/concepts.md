@@ -6,7 +6,7 @@ description: Understand what is Prediction Market and how PrediX works.
 
 A market for trading tokens that reflect the **probability** of a future event occurring. Prices update in realtime based on supply and demand.
 
-![Prediction Core Concepts](../.gitbook/assets/27-mindmap-concepts.svg)
+<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 ### dExample
 
@@ -19,7 +19,7 @@ Total YES + NO ≈ $1.00
 ```
 
 {% hint style="info" %}
-**Why total YES + NO ≈ `$1.00`?**&#x20;
+**Why total YES + NO ≈ `$1.00`?**
 
 * See [Outcome\_Tokens](outcome-tokens.md)
 {% endhint %}
@@ -62,7 +62,7 @@ Payout matrix when the market resolves:
 
 <summary><mark style="color:$primary;"><strong>Oracle Dependence</strong></mark></summary>
 
-* Requires a source to report the outcome on-chain. Oracles can be wrong, disputed, or delayed. PrediX uses pluggable oracles to mitigate single point of failure risk.&#x20;
+* Requires a source to report the outcome on-chain. Oracles can be wrong, disputed, or delayed. PrediX uses pluggable oracles to mitigate single point of failure risk.
 * **Read more:** [**Resolution**](resolution.md)**.**
 
 </details>
@@ -88,7 +88,7 @@ Payout matrix when the market resolves:
 
 <summary><mark style="color:$primary;"><strong>Black Swan Events</strong></mark></summary>
 
-* &#x20;Extremely rare events may not be priced correctly. Markets self-correct over time as information becomes public.
+* Extremely rare events may not be priced correctly. Markets self-correct over time as information becomes public.
 
 </details>
 
@@ -98,4 +98,4 @@ Payout matrix when the market resolves:
 
 Read in order if you're new, or jump to the section you need.
 
-<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><a href="overview.md"><strong>PrediX Market</strong></a> </td><td>CLOB with Uniswap v4.</td></tr><tr><td><a href="outcome-tokens.md"><strong>Outcome Tokens</strong></a> </td><td>YES/NO, split/merge, $1 invariant.</td></tr><tr><td><a href="clob-amm-hybrid.md"><strong>CLOB + AMM hybrid</strong></a></td><td>combines 2 liquidity mechanisms.</td></tr><tr><td><a href="resolution.md"><strong>Resolution &#x26; Oracle</strong></a></td><td>Who decides the outcome.</td></tr><tr><td><a href="../users-guide/getting-started.md"><strong>Trading Tutorials</strong></a></td><td>Need step-by-step tutorials.</td></tr><tr><td><a href="/broken/pages/KhM4zcVEYvmzF38tqAmc"><strong>Developer Guide</strong></a></td><td>Technical details (smart contracts, events, storage)</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><a href="overview.md"><strong>PrediX Market</strong></a></td><td>CLOB with Uniswap v4.</td></tr><tr><td><a href="outcome-tokens.md"><strong>Outcome Tokens</strong></a></td><td>YES/NO, split/merge, $1 invariant.</td></tr><tr><td><a href="clob-amm-hybrid.md"><strong>CLOB + AMM hybrid</strong></a></td><td>combines 2 liquidity mechanisms.</td></tr><tr><td><a href="resolution.md"><strong>Resolution &#x26; Oracle</strong></a></td><td>Who decides the outcome.</td></tr><tr><td><a href="../users-guide/getting-started.md"><strong>Trading Tutorials</strong></a></td><td>Need step-by-step tutorials.</td></tr><tr><td><a href="/broken/pages/KhM4zcVEYvmzF38tqAmc"><strong>Developer Guide</strong></a></td><td>Technical details (smart contracts, events, storage)</td></tr></tbody></table>

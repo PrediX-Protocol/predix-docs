@@ -12,7 +12,7 @@ Not every question has a yes/no answer. **"Who wins the 2026 FIFA World Cup?"** 
 
 PrediX implements multi-outcome markets as a **group of binary markets** - each outcome is its own YES/NO market, all linked under one **MarketGroup**. When the event resolves, the winning outcome's YES pays `$1`, every other outcome's NO pays `$1`, and the rest pay `$0`.
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 This design has a key property: **only one outcome wins**. If Brazil wins, Brazil-YES = `$1`, all other countries' YES = `$0`. The MarketGroup contract enforces this - you can't have two winners.
 
@@ -65,7 +65,7 @@ For multi-outcome markets, PrediX provides **GroupSplit** and **GroupMerge** - c
 
 **Deposit `$1 USDC` -> receive `1 YES + 1 NO` for every outcome in the group.**
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 But wait - that doesn't sum to `$1`. Why?
 
@@ -128,8 +128,8 @@ Trading each outcome works **exactly like a binary market** - same Market Order,
 | **Buy Brazil-YES**              | Buy YES shares on Brazil's binary sub-market (its own orderbook + AMM pool) |
 | **Sell Brazil-NO**              | Sell NO shares on Brazil's binary sub-market                                |
 | **Limit order on France-YES**   | Rest on France's CLOB at your price                                         |
-| **Split on a specific outcome** | Convert USDC -> YES + NO on one outcome (not all)                            |
-| **GroupSplit**                  | Convert USDC -> YES + NO on every outcome at once                            |
+| **Split on a specific outcome** | Convert USDC -> YES + NO on one outcome (not all)                           |
+| **GroupSplit**                  | Convert USDC -> YES + NO on every outcome at once                           |
 
 You can also place orders **across multiple outcomes simultaneously** - for example, "Buy Brazil-YES AND France-YES" as a diversified position.
 
@@ -139,7 +139,7 @@ You can also place orders **across multiple outcomes simultaneously** - for exam
 
 When a multi-outcome market resolves, the MarketGroup contract settles **all sub-markets in a single transaction**:
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/8.png" alt=""><figcaption></figcaption></figure>
 
@@ -165,7 +165,7 @@ You think Brazil is significantly undervalued at `$0.22`. Real probability is `~
 
 **Strategy**: Buy `$1,000` of Brazil-YES at `$0.22` = `4,545 shares`.
 
-* If Brazil wins: receive `$4,545` (4.5* return)
+* If Brazil wins: receive `$4,545` (4.5\* return)
 * If Brazil loses: lose `$1,000`
 
 Expected value = `0.35 * $4,545 - 0.65 * $1,000 = $1,591 - $650 = +$941`

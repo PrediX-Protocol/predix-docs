@@ -18,7 +18,7 @@ Apply for **`CREATOR_ROLE`**: submit a form on [**`Discord`**](../../resources/l
 
 ### Decisions Before Creating
 
-![Creating Decisions Flow](../../.gitbook/assets/46-market-creation-decision.svg)
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -60,8 +60,6 @@ The timestamp when trading closes and the oracle resolution window opens.
 | **UMAOracle** (TBA) | Decentralized resolution         | Bond $500-$50,000 USDC              |
 | **Custom adapter**  | On-chain event (governance, TVL) | Deploy adapter, approve via Diamond |
 
-
-
 </details>
 
 <details>
@@ -95,7 +93,7 @@ Set via the admin BE endpoint after on-chain creation.
 
 ### Create a Binary Market with Chainlink
 
-![Binary  Market with Chainlink](../../.gitbook/assets/18-create-market.svg)
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 {% stepper %}
 {% step %}
