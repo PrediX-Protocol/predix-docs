@@ -10,7 +10,7 @@ A market for trading tokens that reflect the **probability** of a future event o
 
 <sub>Prediction Core Concepts</sub>
 
-### dExample
+### Example
 
 ```
 Event: "Bitcoin above $100,000 before 2027-01-01?"
@@ -51,8 +51,8 @@ Payout matrix when the market resolves:
 | Counterparty           | House (the platform)          | Other users (peer-to-peer)             |
 | Pricing                | House sets it, wide spread    | Market-driven, AMM + CLOB              |
 | Custody                | House holds funds (custodial) | Non-custodial, on-chain                |
-| Sell before resolution | Difficult / impossible        | Yes — resell tokens anytime            |
-| Auditable              | No                            | Yes — on-chain explorer                |
+| Sell before resolution | Difficult / impossible        | Yes - resell tokens anytime            |
+| Auditable              | No                            | Yes - on-chain explorer                |
 | Fees                   | Baked into odds (hidden)      | Transparent, shown before confirmation |
 | Censorship             | House can ban users           | Permissionless                         |
 

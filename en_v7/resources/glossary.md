@@ -603,7 +603,7 @@ UMA is a **permissionless oracle** that allows anyone to report market outcomes 
 How it works:
 
 1. A reporter proposes an outcome and posts a **bond**
-2. A **48-hour dispute window** opens — anyone can challenge the result
+2. A **48-hour dispute window** opens - anyone can challenge the result
 3. If disputed, UMA's **Data Verification Mechanism (DVM)** mediates and decides
 4. Honest reporters get their bond back; incorrect reporters lose it
 

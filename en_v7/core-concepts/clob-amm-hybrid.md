@@ -107,4 +107,4 @@ MEV bots cannot frontrun + backrun your trade within the same block - the Hook r
 
 <sub>Anti-sandwich MEV PrediX</sub>
 
-MEV bots cannot frontrun + backrun your trade within the same block — the Hook reverts if identity doesn't match.
+MEV bots cannot frontrun + backrun your trade within the same block - the Hook reverts if identity doesn't match.

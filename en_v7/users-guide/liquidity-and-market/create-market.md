@@ -199,6 +199,6 @@ If a market resolves incorrectly:
 
 ***
 
-### Revenue for creators (Phase 3 — TBA)
+### Revenue for creators (Phase 3 - TBA)
 
-Phase 3 will introduce **creator revenue share** — a portion of the protocol fees from that market goes to the creator. Details will be announced per the roadmap.
+Phase 3 will introduce **creator revenue share** - a portion of the protocol fees from that market goes to the creator. Details will be announced per the roadmap.

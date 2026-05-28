@@ -173,5 +173,5 @@ Visit `/settings/notifications` for the full granular control matrix.
 | Marketing      | ❌      | ❌    | ❌     | ❌       | ❌        |
 
 {% hint style="info" %}
-Granular customization per type. **Marketing is OFF by default** — only ON if you explicitly opt in.
+Granular customization per type. **Marketing is OFF by default** - only ON if you explicitly opt in.
 {% endhint %}

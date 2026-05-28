@@ -28,7 +28,7 @@ S1 is the largest because cold-start is the hardest. Early users earn \~20x more
 
 Testnet activity is tracked off-chain (PostgreSQL). At mainnet launch: snapshot -> calculate allocation pro-rata -> generate Merkle tree -> publish on-chain. Users claim PRX at TGE using a Merkle proof.
 
-**How to earn Points S0** -> see [Points — how to earn PRX](incentive-and-community/points.md#s0--testnet).
+**How to earn Points S0** -> see [Points - how to earn PRX](incentive-and-community/points.md#s0--testnet).
 
 ## S1 - Genesis sub-pool breakdown
 
@@ -50,11 +50,11 @@ PRX is **not distributed all at once** at TGE. The S1 General Trading pool (56M)
 
 | Wave       | %   | PRX     | Timing        | Stake boost                  |
 | ---------- | --- | ------- | ------------- | ---------------------------- |
-| **Wave 1** | 40% | \~22.4M | TGE (M7)      | —                            |
+| **Wave 1** | 40% | \~22.4M | TGE (M7)      | -                            |
 | **Wave 2** | 30% | \~16.8M | TGE + 30 days | Stake W1 -> weight x1.1      |
 | **Wave 3** | 30% | \~16.8M | TGE + 60 days | Stake W1 + W2 -> weight x1.2 |
 
-**Boost is zero-sum**: stakers receive a larger share from the same pool; non-stakers receive less. The total distributed remains the same — no additional PRX is created.
+**Boost is zero-sum**: stakers receive a larger share from the same pool; non-stakers receive less. The total distributed remains the same - no additional PRX is created.
 
 **Why 3 waves**: reduces sell pressure at TGE. Wave 1 (\~22M) instead of 56M all at once. Users who stake W1 to boost W2 -> further reduces selling.
 
@@ -84,4 +84,4 @@ Volume milestone rewards (S2-S3):
 
 All votes are on-chain with a public dashboard.
 
-**How to earn Points S0 + S1** -> see [Points — how to earn PRX](incentive-and-community/points.md).
+**How to earn Points S0 + S1** -> see [Points - how to earn PRX](incentive-and-community/points.md).

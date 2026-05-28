@@ -14,9 +14,9 @@ PrediX embeds social features directly into the trading interface - comment thre
 #### <mark style="color:orange;">1. Features</mark>
 
 * **Threaded** 2 levels (`comment` + `reply`).
-* **Voting** — `up vote`/`down vote`; top comments rise to the top.
-* **Image embed** — paste an image URL and the app renders it inline.
-* **TX share** — paste a `txhash` and the app renders an explorer `link` + `summary`.
+* **Voting** - `up vote`/`down vote`; top comments rise to the top.
+* **Image embed** - paste an image URL and the app renders it inline.
+* **TX share** - paste a `txhash` and the app renders an explorer `link` + `summary`.
 
 #### <mark style="color:orange;">2. Anti-spam</mark>
 
@@ -25,7 +25,7 @@ PrediX enforces anti-spam through an **economic gate** rather than CAPTCHA alone
 * **Min stake** of 10 PRX (post-TGE) to post.
 * **Cooldown** of 30 seconds between comments.
 * **Rate limit** of 50 comments / day / user.
-* **Report button** — flag inappropriate content.
+* **Report button** - flag inappropriate content.
 * **Mod tools** (community moderator role): hide comments, ban users for 24h.
 
 The 10 PRX stake makes spam economically unprofitable while keeping the barrier low for genuine participants.
@@ -34,10 +34,10 @@ The 10 PRX stake makes spam economically unprofitable while keeping the barrier 
 
 Usernames in comments display badges that surface the commenter's track record:
 
-* **Verified** — ENS / Lens / Twitter linked.
-* **Top trader** — top 100 leaderboard.
-* **High accuracy** — Brier < 0.15 with > 50 trades.
-* **PRX whale** — stake > 10k PRX.
+* **Verified** - ENS / Lens / Twitter linked.
+* **Top trader** - top 100 leaderboard.
+* **High accuracy** - Brier < 0.15 with > 50 trades.
+* **PRX whale** - stake > 10k PRX.
 
 Badges help readers weigh the credibility of an argument before acting on it.
 
@@ -107,7 +107,7 @@ Useful for monitoring hot markets and spotting whale moves as they happen.
 
 ### Moderation
 
-PrediX uses a **community moderation** model — moderators are recruited from vePRX holders in good standing, not appointed centrally.
+PrediX uses a **community moderation** model - moderators are recruited from vePRX holders in good standing, not appointed centrally.
 
 #### Content Moderation & Penalty Process
 

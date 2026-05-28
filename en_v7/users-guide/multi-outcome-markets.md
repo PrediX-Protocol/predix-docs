@@ -31,13 +31,13 @@ This design has a key property: **only one outcome wins**. If Brazil wins, Brazi
 
 The biggest mental shift: in a multi-outcome market, the **sum of all YES prices ≈ $1** (it represents 100% probability distributed across outcomes).
 
-Each outcome trades on its own Market Order, Limit Order, or via the AMM — exactly like binary markets.
+Each outcome trades on its own Market Order, Limit Order, or via the AMM - exactly like binary markets.
 
 ***
 
 ### GroupSplit & GroupMerge
 
-For multi-outcome markets, PrediX provides **GroupSplit** and **GroupMerge** — capital-efficient versions of Split & Merge for multiple outcomes at once.
+For multi-outcome markets, PrediX provides **GroupSplit** and **GroupMerge** - capital-efficient versions of Split & Merge for multiple outcomes at once.
 
 #### <mark style="color:orange;">GroupSplit</mark>
 

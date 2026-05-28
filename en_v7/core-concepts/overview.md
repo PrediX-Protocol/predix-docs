@@ -17,7 +17,7 @@ This is familiar for both traders and market makers. **Market orders** execute i
 | Kind                    | Description                                      | Example                                                           |
 | ----------------------- | ------------------------------------------------ | ----------------------------------------------------------------- |
 | **Binary**              | Simple YES / NO                                  | "BTC > $100k before 2027?"                                        |
-| **Scalar**              | Long / short with a strike, linear payout        | "Vietnam GDP 2026 (USD billion)?" — long > strike, short < strike |
+| **Scalar**              | Long / short with a strike, linear payout        | "Vietnam GDP 2026 (USD billion)?" - long > strike, short < strike |
 | **Multi-outcome event** | N sub-markets mutually exclusive, exactly 1 wins | "Who wins FIFA WC 2026?" - 48 teams, 1 market per team            |
 | **Sports**              | Pre-structured for tournaments                   | Premier League season winner                                      |
 | **Grouped**             | Markets grouped by theme                         | "AI capabilities milestones 2026" group                           |

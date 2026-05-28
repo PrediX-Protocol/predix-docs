@@ -102,7 +102,7 @@ Multiple resolved markets → click **Claim All** → batched via **passkey smar
 <mark style="color:orange;">**Step 2: Initiate the Refund**</mark>
 
 * Click the Refund button to open the preview panel.
-* Preview details: The system calculates the number of full pairs you hold—`min(yesBalance, noBalance)` and shows the exact amount of USDC to be returned.
+* Preview details: The system calculates the number of full pairs you hold - `min(yesBalance, noBalance)` and shows the exact amount of USDC to be returned.
 {% endstep %}
 
 {% step %}
@@ -148,6 +148,8 @@ If you hold only one side (e.g. bought 100 YES via the Router, no NO held), you 
 
 ## Who decides to enable refund
 
+<figure><img src="../.gitbook/assets/50.png" alt=""><figcaption></figcaption></figure>
+
 Refund mode prioritizes **pro-rata fairness** over first-come-first-serve. This prevents a scenario where early claimers drain all USDC, leaving nothing for later users.
 
 <figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
@@ -157,5 +159,5 @@ Refund mode prioritizes **pro-rata fairness** over first-come-first-serve. This 
 {% hint style="info" %}
 **Phase 2 (TBA)**
 
-* A **single-sided refund** with a 50% haircut may be introduced — burn 100 YES → receive 50 USDC.
+* A **single-sided refund** with a 50% haircut may be introduced - burn 100 YES → receive 50 USDC.
 {% endhint %}

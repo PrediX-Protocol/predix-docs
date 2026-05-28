@@ -12,7 +12,7 @@ Place a price and wait for a fill on the **On-chain Order Book**. You become a *
 * ✅ You have a **price view** - e.g., buy YES @ $0.45 while the market is at $0.50, wait for the price to drop
 * ✅ **Market making** - place BUY and SELL orders simultaneously, earn the spread
 * ✅ **Large trades** where you want to avoid AMM slippage
-* ❌ Avoid when you need **immediate execution** — the order may never fill
+* ❌ Avoid when you need **immediate execution** - the order may never fill
 
 {% hint style="info" %}
 **Limit vs Market.** Use **Limit** when you have a target price and are willing to wait for the market to reach it. Use **Market** when you want to enter or exit a position **right now**.

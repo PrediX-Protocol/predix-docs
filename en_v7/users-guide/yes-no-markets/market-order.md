@@ -129,7 +129,7 @@ Buying or selling NO works the same way as YES. The Router automatically searche
 
 <sub>Automatic Router Mechanism</sub>
 
-If direct NO liquidity is insufficient, the Router may use an internal “virtual-NO” routing flow to complete the trade through the YES side and settle the final output automatically. This process happens entirely in the background — the UI simply displays the final execution price and amount.
+If direct NO liquidity is insufficient, the Router may use an internal “virtual-NO” routing flow to complete the trade through the YES side and settle the final output automatically. This process happens entirely in the background - the UI simply displays the final execution price and amount.
 
 {% hint style="info" %}
 [**How the Execution Router Works?**](../../core-concepts/clob-amm-hybrid.md#how-the-execution-router-works)
@@ -161,7 +161,7 @@ Slippage is the difference between the previewed price and the actual execution 
 
 * **Default 0.5%**: Suitable for liquid markets.
 * **1-2%**: Increase for markets with a wide spread.
-* **> 5%**: Rarely advisable — the Router will warn you.
+* **> 5%**: Rarely advisable - the Router will warn you.
 
-If slippage is exceeded the transaction **reverts** and no funds are lost (only gas is consumed — sponsor coverage applies if the user qualifies for the program, regardless of account type).
+If slippage is exceeded the transaction **reverts** and no funds are lost (only gas is consumed - sponsor coverage applies if the user qualifies for the program, regardless of account type).
 {% endhint %}

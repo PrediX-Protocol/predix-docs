@@ -37,7 +37,7 @@ Instead of optimizing for a single layer of the prediction market experience, ea
 * **Kalshi** dominates regulated markets with CFTC approval and traditional finance UX, but operates as a closed exchange with no DeFi composability and centralized infrastructure.
 * **Polymarket** proved massive demand for crypto-native prediction trading and pioneered on-chain settlement, but outcome tokens remain largely siloed within its own UX and liquidity is fragmented across its CLOB.
 * **Opinion** explores AI-assisted market creation and analysis, but lacks the trading infrastructure depth and financial composability needed for institutional-grade operations.
-* <mark style="background-color:green;">**PrediX**</mark> <mark style="background-color:green;">is purpose-built to fill the infrastructure gap — hybrid execution, ERC-20 composable outcome assets, multi-modular oracle resolution, and consumer-grade access from day one.</mark>
+* <mark style="background-color:green;">**PrediX**</mark> <mark style="background-color:green;">is purpose-built to fill the infrastructure gap - hybrid execution, ERC-20 composable outcome assets, multi-modular oracle resolution, and consumer-grade access from day one.</mark>
 
 <figure><img src="../.gitbook/assets/ChatGPT Image 09_21_05 12 thg 5, 2026.png" alt=""><figcaption></figcaption></figure>
 
@@ -61,13 +61,13 @@ Augur, Gnosis, and early platforms proved on-chain prediction markets were techn
 {% step %}
 #### <mark style="color:$primary;">**Consumer Breakthrough (2021-2025)**</mark>
 
-Polymarket and Kalshi demonstrated mainstream demand. Billions in volume proved that people will trade on real-world events when the experience is good enough. But both platforms operate as **closed venues** — liquidity stays inside, positions are not composable, and infrastructure is vertically integrated but not extensible.
+Polymarket and Kalshi demonstrated mainstream demand. Billions in volume proved that people will trade on real-world events when the experience is good enough. But both platforms operate as **closed venues** - liquidity stays inside, positions are not composable, and infrastructure is vertically integrated but not extensible.
 {% endstep %}
 
 {% step %}
 #### <mark style="color:$success;">**Financial Infrastructure (2026+)**</mark>
 
-The next evolution is not another prediction market app. It is the **infrastructure layer** that makes predictive information a first-class financial primitive — composable, liquid, and accessible. <mark style="background-color:green;">**This is the phase PrediX is built for.**</mark>
+The next evolution is not another prediction market app. It is the **infrastructure layer** that makes predictive information a first-class financial primitive - composable, liquid, and accessible. <mark style="background-color:green;">**This is the phase PrediX is built for.**</mark>
 {% endstep %}
 {% endstepper %}
 
@@ -83,7 +83,7 @@ As predictive markets expand across crypto, macroeconomics, AI, sports, and real
 
 ***
 
-### PrediX — The Future of Predictive Finance
+### PrediX - The Future of Predictive Finance
 
 > **Prediction markets are evolving beyond isolated trading applications.**
 

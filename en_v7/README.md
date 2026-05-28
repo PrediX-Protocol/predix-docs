@@ -16,7 +16,7 @@ icon: align-justify
 > * Beta on **Unichain Sepolia testnet** (chain `1301`).
 > * Mainnet launches after **external audit** (chain `130`).
 
-![PrediX — The Financializing Information Markets](.gitbook/assets/hero-overview.png)
+![PrediX - The Financializing Information Markets](.gitbook/assets/hero-overview.png)
 
 **Example**: Market _"Bitcoin above $100k before 2027?"_ creates YES + NO tokens. Users buy the side they believe will win.
 

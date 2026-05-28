@@ -1,8 +1,8 @@
 # Privacy Policy
 
-Effective Date: May 2026\
-Last Updated: May 2026 \
-Version: 3.0 (Mainnet, Non-Custodial Protocol)
+**Effective Date: May 2026**\
+**Last Updated: May 2026** \
+**Version: 3.0 (Mainnet, Non-Custodial Protocol)**
 
 ***
 
@@ -10,15 +10,15 @@ Version: 3.0 (Mainnet, Non-Custodial Protocol)
 
 PrediXpro Labs Limited (the "Company," "PrediXpro," "we," "us," or "our") provides this Privacy Policy (the "Policy") to describe how we collect, use, disclose, store, transfer, and otherwise process personal information when you access or use our website, mobile applications, APIs, documentation, communications, marketing activities, support channels, and other digital interfaces operated by us at predixpro.io and its subdomains (collectively, the "Interface"), together with any related services that link to this Policy (the Interface and such services together, the "Services").
 
-This Policy should be read together with our \[Terms of Use], \[Risk Disclosure], \[Cookie Policy], and any other notices, terms, or supplementary disclosures we provide to you. Capitalized terms not defined in this Policy have the meaning given to them in our Terms of Use.<br>
+This Policy should be read together with our \[Terms of Use], \[Risk Disclosure], \[Cookie Policy], and any other notices, terms, or supplementary disclosures we provide to you. Capitalized terms not defined in this Policy have the meaning given to them in our Terms of Use.
 
 By accessing or using the Services, you confirm that you have read, understood, and (where consent is the applicable legal basis) consented to the collection, use, disclosure, and transfer of your personal data as described in this Policy. If you do not agree with this Policy, you must not access or use the Services.
 
 ***
 
-### 2. CRITICAL NOTICES — PLEASE READ FIRST
+### 2. CRITICAL NOTICES - PLEASE READ FIRST
 
-#### 2.1 Interface vs. Protocol — What This Policy Covers
+#### 2.1 Interface vs. Protocol - What This Policy Covers
 
 This Policy applies ONLY to your use of the Interface and our communications with you, marketing activities, support channels, and other PrediXpro services that link to this Policy.
 
@@ -32,7 +32,7 @@ This Policy does NOT apply to the underlying PrediXpro Protocol (the "Protocol")
 
 You may interact with the Protocol directly (for example, through alternative frontends, block-explorers, command-line tools, or your own integrations) without using our Interface. In that case, this Policy does not apply to that interaction. The Protocol is governed by its on-chain governance process, not by PrediXpro Labs Limited.
 
-#### 2.2 Non-Custodial — We Never Hold Your Assets
+#### 2.2 Non-Custodial - We Never Hold Your Assets
 
 PrediXpro Labs Limited does not custody, hold, control, manage, or have access to your digital assets at any time. All transactions are executed via smart contracts on public blockchains, using your self-custodial wallet that you control. We never:<br>
 
@@ -57,7 +57,7 @@ Access to and use of the Services is restricted to individuals who:
 
 Nothing on the Interface, in the Protocol, or in any PrediXpro communication constitutes financial, investment, legal, tax, accounting, or other professional advice. Use of the Services involves substantial risk, including total loss of digital assets.
 
-#### 2.5 Public Blockchain — Permanent and Public
+#### 2.5 Public Blockchain - Permanent and Public
 
 Interactions with the Protocol are broadcast to and recorded on public blockchain networks. Wallet addresses, transaction hashes, timestamps, token transfers, smart-contract interactions, and on-chain market activity are public, immutable, and outside the control of PrediXpro Labs Limited. We cannot delete, modify, restrict, obscure, or reverse blockchain data. See Section 9 for details.
 
@@ -71,7 +71,7 @@ PrediXpro is currently operating in an early phase. We are progressing through a
 
 You may contact PrediXpro Labs Limited at:
 
-General inquiries, privacy matters, security incidents, compliance, and legal: [info@predixpro.io](mailto:info@predixpro.io)
+General inquiries, privacy matters, security incidents, compliance, and legal: contact@predixpro.io&#x20;
 
 For matters concerning the Protocol itself (as opposed to the Interface), please engage with PrediXpro governance through the official governance forum referenced on the Interface. PrediXpro Labs Limited is not the operator of, and does not control, the Protocol.
 
@@ -81,19 +81,19 @@ For matters concerning the Protocol itself (as opposed to the Interface), please
 
 For the purposes of this Policy:
 
-* "Aggregated Data" — information combined or summarized such that it does not, alone or with other reasonably available information, identify a natural person.
-* "Anonymized Data" — information from which direct and indirect identifiers have been irreversibly removed.
-* "Applicable Data Protection Law" — GDPR, UK GDPR, Swiss DPA, CCPA/CPRA and other US state privacy laws, PIPEDA, LGPD, APPI, APP, PDPA Singapore, PDPL Vietnam, and any other privacy laws applicable to our processing.
-* "Blockchain Data" — information broadcast to or recorded on public blockchain networks, including wallet addresses, transaction hashes, timestamps, token transfers, smart-contract interactions, and on-chain market activity.
-* "Embedded Wallet" — a self-custodial wallet provisioned through the Interface using third-party key-management infrastructure (e.g., secure enclave, Trusted Execution Environment, or multi-party computation), access to which is gated by your passkey or other authentication factor you have set.
-* "Interface" — see Section 1.
-* "KYC Data" — personal data collected for identity verification, anti-money-laundering, counter-terrorist-financing, sanctions, fraud-prevention, and risk-assessment purposes, applicable only at and above KYC Tier 2 (Section 5.1).
-* "Passkey" — a phishing-resistant cryptographic credential based on the WebAuthn / FIDO2 standards, in which a public/private key pair is generated and stored on your device. The private key never leaves the device's secure hardware.
-* "Personal Data" or "Personal Information" — information that identifies, relates to, describes, is reasonably capable of being associated with, or could reasonably be linked, directly or indirectly, with an identified or identifiable natural person.
-* "Protocol" — see Section 2.1.
-* "Restricted Jurisdiction" and "Restricted Person" — see Section 19.
-* "Sensitive Personal Information" — categories of personal data designated as sensitive, special category, or requiring enhanced protection under Applicable Data Protection Law, including government-issued identification numbers, biometric data used for identification, precise geolocation, and account credentials.
-* "Token" — the PrediXpro utility token described in Section 21.
+* "Aggregated Data" - information combined or summarized such that it does not, alone or with other reasonably available information, identify a natural person.
+* "Anonymized Data" - information from which direct and indirect identifiers have been irreversibly removed.
+* "Applicable Data Protection Law" - GDPR, UK GDPR, Swiss DPA, CCPA/CPRA and other US state privacy laws, PIPEDA, LGPD, APPI, APP, PDPA Singapore, PDPL Vietnam, and any other privacy laws applicable to our processing.
+* "Blockchain Data" - information broadcast to or recorded on public blockchain networks, including wallet addresses, transaction hashes, timestamps, token transfers, smart-contract interactions, and on-chain market activity.
+* "Embedded Wallet" - a self-custodial wallet provisioned through the Interface using third-party key-management infrastructure (e.g., secure enclave, Trusted Execution Environment, or multi-party computation), access to which is gated by your passkey or other authentication factor you have set.
+* "Interface" - see Section 1.
+* "KYC Data" - personal data collected for identity verification, anti-money-laundering, counter-terrorist-financing, sanctions, fraud-prevention, and risk-assessment purposes, applicable only at and above KYC Tier 2 (Section 5.1).
+* "Passkey" - a phishing-resistant cryptographic credential based on the WebAuthn / FIDO2 standards, in which a public/private key pair is generated and stored on your device. The private key never leaves the device's secure hardware.
+* "Personal Data" or "Personal Information" - information that identifies, relates to, describes, is reasonably capable of being associated with, or could reasonably be linked, directly or indirectly, with an identified or identifiable natural person.
+* "Protocol" - see Section 2.1.
+* "Restricted Jurisdiction" and "Restricted Person" - see Section 19.
+* "Sensitive Personal Information" - categories of personal data designated as sensitive, special category, or requiring enhanced protection under Applicable Data Protection Law, including government-issued identification numbers, biometric data used for identification, precise geolocation, and account credentials.
+* "Token" - the PrediXpro utility token described in Section 21.
 
 ***
 
@@ -101,18 +101,18 @@ For the purposes of this Policy:
 
 The Interface uses a tiered KYC model. The personal data we collect depends entirely on which tier you choose to access. Browsing and Tier 0 use of the Interface requires minimal data; higher tiers require progressively more.
 
-#### 5.1 KYC Tier Structure — Summary
+#### 5.1 KYC Tier Structure - Summary
 
 | Tier                               | What You Can Do                                                                                                                 | Personal Data Required                                                                                                 |
 | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Tier 0 — Browse                    | View markets, read documentation, view public Protocol data                                                                     | None directly required from you (we automatically collect Section 5.6 data)                                            |
-| Tier 1 — Wallet Connect or Passkey | Connect wallet OR register a passkey-secured embedded wallet; view personalized data; interact with the Protocol at base limits | Wallet address (your own or embedded); cryptographic signature or passkey assertion for authentication; optional email |
-| Tier 2 — Verified                  | Higher transaction tiers; access to fiat on-ramp partners; certain rewards programs                                             | Tier 1 data + government-issued ID + selfie/liveness + residential country                                             |
-| Tier 3 — Enhanced                  | Highest transaction tiers; institutional features                                                                               | Tier 2 data + source-of-funds/source-of-wealth + PEP declaration + supporting documents                                |
+| Tier 0 - Browse                    | View markets, read documentation, view public Protocol data                                                                     | None directly required from you (we automatically collect Section 5.6 data)                                            |
+| Tier 1 - Wallet Connect or Passkey | Connect wallet OR register a passkey-secured embedded wallet; view personalized data; interact with the Protocol at base limits | Wallet address (your own or embedded); cryptographic signature or passkey assertion for authentication; optional email |
+| Tier 2 - Verified                  | Higher transaction tiers; access to fiat on-ramp partners; certain rewards programs                                             | Tier 1 data + government-issued ID + selfie/liveness + residential country                                             |
+| Tier 3 - Enhanced                  | Highest transaction tiers; institutional features                                                                               | Tier 2 data + source-of-funds/source-of-wealth + PEP declaration + supporting documents                                |
 
 You may choose your tier. You may use the Services at Tier 0 or Tier 1 without providing KYC Data. Higher tiers are optional and unlock additional functionality.
 
-#### 5.2 Tier 0 — Browsing the Interface
+#### 5.2 Tier 0 - Browsing the Interface
 
 When you access the Interface without connecting a wallet, you do not provide personal data directly. We automatically collect limited technical information as described in Section 5.6 (IP address, browser, device, usage).
 
@@ -122,7 +122,7 @@ We do not require, request, or collect:
 * Any cryptocurrency wallet information;
 * Any payment information.
 
-#### 5.3 Tier 1 — Wallet Connection or Passkey Authentication
+#### 5.3 Tier 1 - Wallet Connection or Passkey Authentication
 
 You may access Tier 1 features by either (A) connecting your own self-custodial wallet, or (B) authenticating with a passkey that secures an embedded wallet provided through the Interface. Both options are non-custodial: in neither case does PrediXpro Labs Limited custody, hold, or have access to your private keys.
 
@@ -130,7 +130,7 @@ You may access Tier 1 features by either (A) connecting your own self-custodial 
 
 When you connect a self-custodial wallet to the Interface, we collect or process:<br>
 
-* Public wallet address(es) — visible to anyone on the blockchain;
+* Public wallet address(es) - visible to anyone on the blockchain;
 * Wallet provider and connection method (e.g., MetaMask, Coinbase Wallet, Rainbow, Rabby, Trust Wallet, WalletConnect, Phantom, or other EVM-compatible wallet supporting Unichain);
 * Cryptographic signatures used to verify wallet ownership for authentication (no transaction is initiated by signing in);
 * Blockchain network identifier and chain ID;
@@ -145,10 +145,10 @@ As an alternative to connecting an external wallet, the Interface offers passkey
 What is collected and processed when you use a passkey:
 
 * Public key generated by your device (used to verify your future authentications);
-* Credential ID (a random identifier created by your device, unique to your relationship with the Interface — it cannot be used to track you across other websites);
+* Credential ID (a random identifier created by your device, unique to your relationship with the Interface - it cannot be used to track you across other websites);
 * Authenticator metadata (such as authenticator transports, e.g., "internal," "hybrid," "usb"; we do not request or store authenticator-attestation data that identifies your specific device model unless strictly necessary);
 * Sign counter (a number incremented by your authenticator to detect cloned credentials);
-* User handle (a random per-account identifier — not your email or any other identifying information);
+* User handle (a random per-account identifier - not your email or any other identifying information);
 * Public wallet address of the embedded wallet associated with your passkey (if you choose to provision an embedded wallet);
 * Operational metadata such as registration and last-use timestamps, device labels you assign, and the IP address from which the passkey was registered or used.
 
@@ -159,11 +159,11 @@ What is NOT collected when you use a passkey:
 * No device PIN, screen-lock pattern, or password used to unlock your device is shared with us.
 * No cross-site tracking identifier. Each passkey is unique to the Interface and cannot be correlated with any passkey you may have registered with another website or application.
 
-Embedded wallet provisioning. If you choose to provision an embedded self-custodial wallet bound to your passkey, the underlying cryptographic keys are generated and held within a third-party key-management infrastructure (see Section 8.1) using techniques such as secure enclaves, Trusted Execution Environments, or multi-party computation (MPC). PrediXpro Labs Limited does not have unilateral access to the private key of your embedded wallet; access is gated by your passkey authentication. If you lose access to all of your registered passkeys and any recovery factors you have established, you may permanently lose access to the embedded wallet — including the assets it controls. We strongly recommend registering multiple passkeys on multiple devices and following any recovery setup steps offered through the Interface.
+Embedded wallet provisioning. If you choose to provision an embedded self-custodial wallet bound to your passkey, the underlying cryptographic keys are generated and held within a third-party key-management infrastructure (see Section 8.1) using techniques such as secure enclaves, Trusted Execution Environments, or multi-party computation (MPC). PrediXpro Labs Limited does not have unilateral access to the private key of your embedded wallet; access is gated by your passkey authentication. If you lose access to all of your registered passkeys and any recovery factors you have established, you may permanently lose access to the embedded wallet - including the assets it controls. We strongly recommend registering multiple passkeys on multiple devices and following any recovery setup steps offered through the Interface.
 
 Adding, replacing, and revoking passkeys. You may add additional passkeys, revoke existing passkeys, or transfer access between devices through the Interface settings. Adding or revoking a passkey typically requires authorization with a previously registered passkey.
 
-#### 5.4 Tier 2 — Verified KYC
+#### 5.4 Tier 2 - Verified KYC
 
 If you elect to upgrade to Tier 2, PrediXpro, through our third-party identity-verification provider acting on our behalf, will collect:<br>
 
@@ -171,14 +171,14 @@ If you elect to upgrade to Tier 2, PrediXpro, through our third-party identity-v
 * Government-issued identification document details (document type, number, issue/expiry dates, issuing authority, machine-readable zone data);
 * Images or scans of identification documents (front and back where applicable);
 * Selfie or live video for facial-recognition matching and liveness detection;
-* Biometric data derived from such images (facial-geometry templates used solely to confirm document match — see Section 5.8);
+* Biometric data derived from such images (facial-geometry templates used solely to confirm document match - see Section 5.8);
 * Verification results, document-authenticity assessments, fraud signals, and risk scores returned by the provider.
 
 Tier 2 verification is performed by our designated identity-verification provider under a Data Processing Agreement with PrediXpro. The provider processes your data in accordance with its own privacy policy in addition to the safeguards under this Policy.
 
 You will be presented with separate, granular consent before Tier 2 data is collected, including specific consent for biometric processing.
 
-#### 5.5 Tier 3 — Enhanced Due Diligence
+#### 5.5 Tier 3 - Enhanced Due Diligence
 
 If you elect to upgrade to Tier 3 (typically required for institutional or high-volume use), in addition to Tier 2 data we may collect:
 
@@ -188,7 +188,7 @@ If you elect to upgrade to Tier 3 (typically required for institutional or high-
 * Tax-residency information and tax identification numbers where required by applicable tax-information-sharing laws (e.g., FATCA, CRS);
 * Expected transaction volume and use case.
 
-#### 5.6 Automatically Collected — All Tiers
+#### 5.6 Automatically Collected - All Tiers
 
 When you access the Interface (at any tier including Tier 0), we and certain service providers acting on our behalf automatically collect:
 
@@ -249,7 +249,7 @@ We use Sensitive Personal Information only for the limited compliance, security,
 
 #### 5.11 Information We Do NOT Collect
 
-To minimize legal and privacy risk and to honor our non-custodial design, we do not collect, request, or maintain:<br>
+To minimize legal and privacy risk and to honor our non-custodial design, we do not collect, request, or maintain:
 
 * Private keys, seed phrases, recovery phrases, or any wallet credentials;
 * Bank account numbers or full payment card details (payments through fiat partners are processed directly by the partner; we typically receive only confirmation status);
@@ -452,7 +452,7 @@ Third parties to whom you direct us to disclose information (e.g., via integrati
 
 #### 8.10 What We Do NOT Do
 
-For clarity, PrediXpro does not:<br>
+For clarity, PrediXpro does not:
 
 * Sell personal data for money or other valuable consideration;
 * Share personal data for cross-context behavioral advertising as defined under California law;
@@ -539,7 +539,7 @@ In limited circumstances we may rely on permitted derogations (e.g., transfers n
 
 Because the Protocol operates on public blockchain networks, certain information associated with your activity may be broadcast to, validated by, stored on, indexed from, or accessed through decentralized networks and participants located globally. PrediXpro does not initiate or control these blockchain-wide propagations and cannot impose contractual safeguards on independent network participants. This is an inherent characteristic of public blockchain technology that you accept by using the Protocol.
 
-A copy of the applicable transfer safeguards may be requested at [info@predixpro.io](mailto:info@predixpro.io), subject to redaction of confidential commercial information.
+A copy of the applicable transfer safeguards may be requested at contact@predixpro.io , subject to redaction of confidential commercial information.
 
 ***
 
@@ -564,7 +564,7 @@ We retain personal data only as long as necessary to fulfill the purposes for wh
 | Cookie-consent records                                             | 13 months                                                                                                                                                                                                                      |
 | Records required to defend or pursue legal claims                  | Duration of the applicable limitation period                                                                                                                                                                                   |
 | Aggregated or anonymized data                                      | Indefinitely                                                                                                                                                                                                                   |
-| Public blockchain data                                             | Permanent — outside our control                                                                                                                                                                                                |
+| Public blockchain data                                             | Permanent - outside our control                                                                                                                                                                                                |
 
 Note on Tier 2+ retention: Because we collect KYC Data only when you elect to upgrade to Tier 2 or Tier 3, the AML retention obligations apply only to those users. Tier 0 and Tier 1 users do not generate AML-retention records.
 
@@ -576,7 +576,7 @@ When retention is no longer required, we delete or irreversibly anonymize person
 
 #### 13.1 Our Measures
 
-We implement technical and organizational measures appropriate to the risks of processing, including:<br>
+We implement technical and organizational measures appropriate to the risks of processing, including:
 
 * Encryption in transit (TLS 1.2+) and encryption at rest for personal data;
 * Salted, hashed password storage using industry-standard algorithms (Argon2, bcrypt) where passwords are used;
@@ -604,9 +604,9 @@ You should
 * Verify URLs before connecting your wallet (always check you are at the official Interface URL: predixpro.io);
 * Enable two-factor authentication on any account features;
 * Register at least two passkeys on separate devices if you choose to use passkey authentication, so that loss of a single device does not lock you out of your account and (if applicable) your embedded wallet;
-* Keep the secure-element-backed authenticator on your device up to date and protected by a strong device passcode, screen lock, or biometric — this is what protects your passkey at rest;
+* Keep the secure-element-backed authenticator on your device up to date and protected by a strong device passcode, screen lock, or biometric - this is what protects your passkey at rest;
 * Be alert to phishing, social engineering, fake-support attacks, and impostor sites;
-* Report suspected unauthorized access to [info@predixpro.io](mailto:info@predixpro.io) promptly.
+* Report suspected unauthorized access to contact@predixpro.io promptly.
 
 #### 13.3 Limitations
 
@@ -626,18 +626,18 @@ We maintain internal breach-response procedures designed to identify, contain, a
 
 ***
 
-### 15. YOUR RIGHTS — GENERAL
+### 15. YOUR RIGHTS - GENERAL
 
 Depending on your location and Applicable Data Protection Law, you may have:
 
-* Right of access — to obtain confirmation whether we process personal data about you and a copy;
-* Right to rectification — to have inaccurate or incomplete personal data corrected;
-* Right to erasure ("right to be forgotten") — subject to applicable exceptions;
-* Right to restriction of processing — to limit how we process your personal data in certain circumstances;
-* Right to data portability — to receive a copy in a structured, machine-readable format and transmit it to another controller;
-* Right to object — to processing based on legitimate interests, direct marketing, or scientific research (subject to statutory exceptions);
-* Right to withdraw consent — for processing based on consent, withdrawable at any time without affecting prior lawful processing;
-* Right to lodge a complaint — with the supervisory authority in your country of residence, place of work, or place of the alleged infringement;
+* Right of access - to obtain confirmation whether we process personal data about you and a copy;
+* Right to rectification - to have inaccurate or incomplete personal data corrected;
+* Right to erasure ("right to be forgotten") - subject to applicable exceptions;
+* Right to restriction of processing - to limit how we process your personal data in certain circumstances;
+* Right to data portability - to receive a copy in a structured, machine-readable format and transmit it to another controller;
+* Right to object - to processing based on legitimate interests, direct marketing, or scientific research (subject to statutory exceptions);
+* Right to withdraw consent - for processing based on consent, withdrawable at any time without affecting prior lawful processing;
+* Right to lodge a complaint - with the supervisory authority in your country of residence, place of work, or place of the alleged infringement;
 * Right not to be subject to solely automated decisions producing legal or similarly significant effects.
 
 Important limitations specific to the Services:
@@ -654,7 +654,7 @@ To exercise rights, see Section 17.
 
 #### 16.1 European Economic Area (EEA), Switzerland, United Kingdom
 
-Rights described in Section 15 apply under GDPR, UK GDPR, or Swiss DPA. Contact [info@predixpro.io](mailto:info@predixpro.io).
+Rights described in Section 15 apply under GDPR, UK GDPR, or Swiss DPA. Contact contact@predixpro.io .
 
 Response timeline: within one (1) month of receipt, extendable by up to two (2) months for complex or numerous requests (with notice).
 
@@ -664,13 +664,13 @@ Note: The EEA and UK are listed as Restricted Jurisdictions in Section 19 pendin
 
 #### 16.2 California (CCPA / CPRA)
 
-If you are a California resident:<br>
+If you are a California resident:
 
-* Right to Know — categories and specific pieces of personal information collected, sources, purposes, recipients.
-* Right to Delete — subject to permitted exceptions (including AML/CTF retention at Tier 2+ and legal-claim defense).
-* Right to Correct — request correction of inaccurate personal information.
-* Right to Opt Out of Sale or Sharing — PrediXpro does not sell personal data and does not share personal data for cross-context behavioral advertising. We honor GPC signals.
-* Right to Limit Use of Sensitive Personal Information — Sensitive Personal Information is used only for the purposes permitted under CPRA, including identity verification, sanctions, fraud prevention, security, and legal compliance.
+* Right to Know - categories and specific pieces of personal information collected, sources, purposes, recipients.
+* Right to Delete - subject to permitted exceptions (including AML/CTF retention at Tier 2+ and legal-claim defense).
+* Right to Correct - request correction of inaccurate personal information.
+* Right to Opt Out of Sale or Sharing - PrediXpro does not sell personal data and does not share personal data for cross-context behavioral advertising. We honor GPC signals.
+* Right to Limit Use of Sensitive Personal Information - Sensitive Personal Information is used only for the purposes permitted under CPRA, including identity verification, sanctions, fraud prevention, security, and legal compliance.
 * Right to Non-Discrimination.
 
 Categories of personal information collected in the preceding 12 months:
@@ -687,13 +687,13 @@ Categories of personal information collected in the preceding 12 months:
 
 Sources, purposes, and recipients: as described in Sections 5, 6, and 8.
 
-To exercise rights: email [info@predixpro.io](mailto:info@predixpro.io) with subject "California Privacy Request" or use in-Interface privacy tools. We respond within 45 days (extendable by 45 days with notice). Authorized agents permitted with verifiable written authorization. Appeals: reply with subject "California Privacy Appeal."
+To exercise rights: email contact@predixpro.io with subject "California Privacy Request" or use in-Interface privacy tools. We respond within 45 days (extendable by 45 days with notice). Authorized agents permitted with verifiable written authorization. Appeals: reply with subject "California Privacy Appeal."
 
 Note: The United States is restricted under Section 19. If a California user accesses the Interface in violation of Section 19, this section still applies to the personal data we have nonetheless collected.
 
 #### 16.3 Other US States
 
-Residents of Colorado, Connecticut, Virginia, Utah, Texas, Oregon, Montana, Iowa, Delaware, New Hampshire, New Jersey, Maryland, Minnesota, Rhode Island, Tennessee, Indiana, Kentucky, and other states with comprehensive privacy laws have substantively similar rights. Contact [info@predixpro.io](mailto:info@predixpro.io). Appeals available where statutory right exists.
+Residents of Colorado, Connecticut, Virginia, Utah, Texas, Oregon, Montana, Iowa, Delaware, New Hampshire, New Jersey, Maryland, Minnesota, Rhode Island, Tennessee, Indiana, Kentucky, and other states with comprehensive privacy laws have substantively similar rights. Contact contact@predixpro.io . Appeals available where statutory right exists.
 
 #### 16.4 Canada (PIPEDA / Provincial)
 
@@ -721,7 +721,7 @@ Rights of access, correction, withdrawal of consent. Complaints to PDPC (pdpc.go
 
 #### 16.10 Other Jurisdictions
 
-Contact [info@predixpro.io](mailto:info@predixpro.io); we respond per applicable law.
+Contact contact@predixpro.io we respond per applicable law.
 
 Note: Vietnam (PDPL 91/2025), Mainland China (PIPL), and certain other jurisdictions are listed as Restricted Jurisdictions in Section 19. Residents of those jurisdictions are not permitted to use the Services. If we have nonetheless collected personal data from a person located in such a jurisdiction, we will respond to data-subject requests to the extent required by Applicable Law.
 
@@ -730,7 +730,7 @@ Note: Vietnam (PDPL 91/2025), Mainland China (PIPL), and certain other jurisdict
 ### 17. HOW TO EXERCISE YOUR RIGHTS
 
 1. In-Interface self-service. Some rights can be exercised through Interface settings (profile correction, communication preferences, cookie preferences, account closure).
-2. Email us. Send a request to [info@predixpro.io](mailto:info@predixpro.io) from the email address associated with your account, clearly describing the request.
+2. Email us. Send a request to contact@predixpro.io from the email address associated with your account, clearly describing the request.
 3. Authorized agents. Designate via verifiable written authorization; we may also verify your identity directly.
 
 Verification. We verify your identity before fulfilling a request, with rigor proportionate to the sensitivity of the request. For Tier 2+ KYC-related requests, we may require re-verification through our identity provider\
@@ -739,7 +739,7 @@ Response timeline. Per applicable law (typically 30, 45, or 60 days). Extendable
 \
 Fees. No fee, except where requests are manifestly unfounded or excessive.
 
-Appeals. Where a statutory appeal right exists, reply with subject "Privacy Appeal" or contact [info@predixpro.io](mailto:info@predixpro.io).
+Appeals. Where a statutory appeal right exists, reply with subject "Privacy Appeal" or contact contact@predixpro.io .
 
 Limitations. Requests relating to Tier 2/3 KYC, sanctions screening, or AML records may be denied in whole or in part where retention is legally required. Requests relating to Blockchain Data may be technically infeasible (Section 9).
 
@@ -751,7 +751,7 @@ The Services are not directed to, designed for, or intended to be used by indivi
 
 By accessing or using the Services, you represent and warrant that you are at least 18 (or the age of legal majority in your jurisdiction if higher) and have legal capacity to enter into binding agreements.
 
-If you are a parent or legal guardian and believe a child under 18 has provided us personal data, contact [info@predixpro.io](mailto:info@predixpro.io) immediately. We will promptly investigate and, where confirmed, delete the data and terminate the account.
+If you are a parent or legal guardian and believe a child under 18 has provided us personal data, contact contact@predixpro.io immediately. We will promptly investigate and, where confirmed, delete the data and terminate the account.
 
 We do not rely on parental consent to permit minors to use the Services. The Services remain unavailable to individuals under the applicable minimum age regardless of parental consent.
 
@@ -794,7 +794,7 @@ Until PrediXpro obtains appropriate license, registration, or no-action relief i
 
 #### 19.3 Restricted Persons
 
-The Services are not available to:<br>
+The Services are not available to:
 
 * Persons listed on any sanctions, watchlist, or restricted-party list administered by OFAC, the UN, EU, UK, Switzerland, or other applicable authority (a "Sanctioned Person");
 * Persons acting on behalf of or for the benefit of a Sanctioned Person;
@@ -805,7 +805,7 @@ The Services are not available to:<br>
 
 #### 19.4 Enforcement
 
-We employ:<br>
+We employ:
 
 * IP-based geo-blocking;
 * VPN/proxy detection;
@@ -861,7 +861,7 @@ PrediXpro is associated with the development of the PrediXpro Token (the "Token"
 
 #### 21.1 Nature of the Token
 
-The Token is intended to be a utility token providing:<br>
+The Token is intended to be a utility token providing:
 
 * Governance rights with respect to certain Protocol parameters;
 * Fee discounts or rebates when using the Interface or the Protocol;
@@ -913,13 +913,13 @@ For sanctions, AML, and fraud-related automated decisions, processing may be nec
 
 #### 22.3 AI Training Commitments
 
-We do not:<br>
+We do not:
 
 * Share personal data with third-party AI providers to train their general-purpose models;
 * License, sell, or share personal data for third-party AI training;
 * Use Sensitive Personal Information for any AI training.
 
-We may use Aggregated Data, Anonymized Data, and limited personal data for internal model training to improve the Interface (e.g., fraud detection, recommendations). You may object to AI-related processing of your personal data by contacting [info@predixpro.io](mailto:info@predixpro.io); we will honor objections unless we can demonstrate compelling legitimate grounds or legal obligation.
+We may use Aggregated Data, Anonymized Data, and limited personal data for internal model training to improve the Interface (e.g., fraud detection, recommendations). You may object to AI-related processing of your personal data by contacting contact@predixpro.io ; we will honor objections unless we can demonstrate compelling legitimate grounds or legal obligation.
 
 ***
 
@@ -980,7 +980,7 @@ Past versions of this Policy are available on request.
 For all matters concerning this Policy or our privacy practices, please contact:\
 PrediXpro Labs Limited
 
-All inquiries — general, privacy, security, compliance, and legal: [info@predixpro.io](mailto:info@predixpro.io)
+All inquiries - general, privacy, security, compliance, and legal: contact@predixpro.io&#x20;
 
 For matters concerning the Protocol itself (as opposed to the Interface), please engage with PrediXpro governance through the official governance forum referenced on the Interface. PrediXpro Labs Limited is not the operator of, and does not control, the Protocol.
 

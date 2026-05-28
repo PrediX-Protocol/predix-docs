@@ -8,7 +8,7 @@ icon: wallet
 PrediX offers 2 sign-in methods, you maintain full control of your assets while trading at the best market prices.
 
 {% hint style="success" %}
-**Both are non-custodial — nobody (including PrediX) holds your private key.**
+**Both are non-custodial - nobody (including PrediX) holds your private key.**
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/1 (1).png" alt=""><figcaption></figcaption></figure>
@@ -28,13 +28,13 @@ PrediX offers 2 sign-in methods, you maintain full control of your assets while 
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
-<sub>Choose connect method: Passkey or Crypto Wallet — both non-custodial</sub>
+<sub>Choose connect method: Passkey or Crypto Wallet - both non-custodial</sub>
 
 ***
 
 ### Method 1: Passkey + Smart Account
 
-Passkeys use the **WebAuthn** standard — biometric (Touch ID, Face ID, Windows Hello) or your device PIN for authentication. The private key is generated and stored in the **Secure Enclave / TPM** and cannot be exported.
+Passkeys use the **WebAuthn** standard - biometric (Touch ID, Face ID, Windows Hello) or your device PIN for authentication. The private key is generated and stored in the **Secure Enclave / TPM** and cannot be exported.
 
 <mark style="color:yellow;background-color:yellow;">**\[Insert Video Here]**</mark>
 
@@ -72,7 +72,7 @@ Passkeys use the **WebAuthn** standard — biometric (Touch ID, Face ID, Windows
 **Note:**
 
 * [x] Your account is officially deployed on-chain the moment you perform your first action.
-* [x] On sign-up, the app deploys a **Kernel smart account (ERC-4337)** — an on-chain wallet contract that validates via passkey signature. All actions go through UserOps.
+* [x] On sign-up, the app deploys a **Kernel smart account (ERC-4337)** - an on-chain wallet contract that validates via passkey signature. All actions go through UserOps.
 {% endhint %}
 
 #### <mark style="background-color:$warning;">**2. Backup your account**</mark>
@@ -139,20 +139,20 @@ Authentication requires plugging in or tapping the hardware key, Passkeys are st
 
 | SCENARIO                                         | WHAT TO DO?                                                                                        |
 | ------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
-| <ol><li>Cloud sync enabled</li></ol>             | ✅ Sign in on a new device with the same Apple ID / Google account — Passkey restores automatically |
+| <ol><li>Cloud sync enabled</li></ol>             | ✅ Sign in on a new device with the same Apple ID / Google account - Passkey restores automatically |
 | <ol start="2"><li>Second device paired</li></ol> | ✅ Use the second device to authenticate, then re-pair a new device                                 |
 | <ol start="3"><li>Hardware key backup</li></ol>  | ✅ Plug in the Hardware Key on any device to restore access                                         |
 | <ol start="4"><li>None of the above</li></ol>    | ❌ Wallet is unrecoverable                                                                          |
 
 {% hint style="info" %}
-**Social recovery — TBA post-mainnet**
+**Social recovery - TBA post-mainnet**
 
 * Designate N trusted guardians; any M-of-N can co-sign to restore access.
 {% endhint %}
 
 ### Method 2: Crypto Wallet (EOA)
 
-Use your existing Web3 wallet — MetaMask, Rainbow, Coinbase Wallet, or any wallet that supports WalletConnect/Hardware Wallet.
+Use your existing Web3 wallet - MetaMask, Rainbow, Coinbase Wallet, or any wallet that supports WalletConnect/Hardware Wallet.
 
 #### <mark style="background-color:$warning;">1. How to connect Web3 wallet?</mark>
 
@@ -190,7 +190,7 @@ Note: This is an off-chain signature and incurs no gas cost.
 #### <mark style="background-color:$warning;">2. When to use Web3 Wallet ?</mark>
 
 * You already have a DeFi workflow with MetaMask + hardware wallet.
-* Large custody balance — want standard BIP-39 seed phrase backup.
+* Large custody balance - want standard BIP-39 seed phrase backup.
 * Integration with other tooling (Frame, Rabby, Safe multisig).
 * Prefer full control with no paymaster dependency.
 
@@ -212,7 +212,7 @@ The client requests a challenge, the user signs the EIP-4361 message, and the ba
 **Additional Gas Fee:**
 
 * By default, both methods require users to **pay their own gas**. Please ensure you have sufficient funds, as each transaction requires gas fees paid in **ETH on Unichain**.
-* PrediX has a **sponsorship program** for eligible users (new user onboarding, stakers above threshold, campaign-eligible events) — applies to both account types:
+* PrediX has a **sponsorship program** for eligible users (new user onboarding, stakers above threshold, campaign-eligible events) - applies to both account types:
 
 - [x] Paymaster covers gas directly
 - [x] Off-chain rebate/refund (mechanism announced pre-launch)

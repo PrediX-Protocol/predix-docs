@@ -133,7 +133,7 @@ Select your side based on your prediction:
 {% endstepper %}
 
 {% hint style="info" %}
-**The Router finds the best reverse path — drains CLOB bid orders first, swaps the remainder through AMM via**[ **CLOB & AMM Hybrid**](../../core-concepts/clob-amm-hybrid.md)**.**
+**The Router finds the best reverse path - drains CLOB bid orders first, swaps the remainder through AMM via**[ **CLOB & AMM Hybrid**](../../core-concepts/clob-amm-hybrid.md)**.**
 {% endhint %}
 
 ***

@@ -10,8 +10,8 @@ Dedicated pool of **12M PRX** from S1 (86M). Milestone-based - tokens are only d
 
 | Track                      | Entry                          | Tiers                        | Max PRX     | Best for                       |
 | -------------------------- | ------------------------------ | ---------------------------- | ----------- | ------------------------------ |
-| **Track 1 — Open Funnel**  | >= 1K followers, ER >= 5%      | Trial -> Active -> Qualified | 8,000 PRX   | Ambassadors, micro-influencers |
-| **Track 2 — Direct Entry** | >= 2K followers or Team invite | Bronze -> Silver -> Gold     | 300,000 PRX | KOLs, macro-influencers        |
+| **Track 1 - Open Funnel**  | >= 1K followers, ER >= 5%      | Trial -> Active -> Qualified | 8,000 PRX   | Ambassadors, micro-influencers |
+| **Track 2 - Direct Entry** | >= 2K followers or Team invite | Bronze -> Silver -> Gold     | 300,000 PRX | KOLs, macro-influencers        |
 
 ## Track 1 - Open Funnel
 
@@ -118,7 +118,7 @@ Entry: Silver S4 - Team invite (>= 50K followers). Gold is the maximum tier.
 
 1. Ensure you meet the follower requirement (>= 1K for Track 1, >= 2K for Direct Bronze).
 2. Link your X/Twitter account with your PrediX wallet (OAuth binding).
-3. Begin milestones — tokens activate when milestones are verified.
+3. Begin milestones - tokens activate when milestones are verified.
 4. Track progress in the **KOL Dashboard** on the app.
 
-Contact: [business@predix.app](mailto:business@predix.app) for Direct Entry or team invite.
+Contact: contact@predixpro.io for Direct Entry or team invite.

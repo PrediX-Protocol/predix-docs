@@ -118,9 +118,9 @@ Review your parameters and click Activate to begin following the trader's moves 
 
 Risks to understand before activating:
 
-* **Lead trader may underperform later** — past performance does not guarantee future results.
+* **Lead trader may underperform later** - past performance does not guarantee future results.
 * **Slippage gap**: The lead enters at $0.50; you copy 30s later when the price is already $0.55.
-* **Fee accumulation**: Copying many small leads = each lead = 1tx → gas fees add up (significantly reduced if the user qualifies for the sponsor program — applies to both account types; otherwise normal fees apply).
+* **Fee accumulation**: Copying many small leads = each lead = 1tx → gas fees add up (significantly reduced if the user qualifies for the sponsor program - applies to both account types; otherwise normal fees apply).
 
 {% hint style="warning" %}
 Start small ($50-100) and test for 1 week before scaling.

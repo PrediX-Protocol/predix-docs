@@ -32,7 +32,7 @@
 | **Explorer**        | [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz) | [uniscan.xyz](https://uniscan.xyz) |
 | **RPC public**      | `https://sepolia.unichain.org`                     | `https://mainnet.unichain.org`     |
 | **Chain ID**        | `1301`                                             | `130`                              |
-| **Multisig**        | 1-EOA shortcut (test only)                         | Gnosis Safe — TBA                  |
+| **Multisig**        | 1-EOA shortcut (test only)                         | Gnosis Safe - TBA                  |
 | **Treasury wallet** | N/A                                                | TBA                                |
 
 ## Brand & media
@@ -72,4 +72,4 @@ The PrediX team will **never**:
 * DM you first asking for a private key / seed phrase.
 * Ask you to approve unlimited tokens for an unknown address.
 * Promote "guaranteed returns" or "exclusive presales".
-* Send shortened links (bit.ly, tinyurl) — always use the full official domain.
+* Send shortened links (bit.ly, tinyurl) - always use the full official domain.

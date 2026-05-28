@@ -34,14 +34,14 @@ To pay transaction fees on Unichain you need a small amount of **ETH on Unichain
 
 | Wallet type                                                                      | Gas mechanism                                                                                          |
 | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| [**Passkey + Smart Account**](connect-wallet.md#method-1-passkey--smart-account) | <ul><li>Paymaster auto-pays in USDC. Sponsorship covers gas if eligible — no ETH needed.</li></ul>     |
-| [**Web3 Wallet (EOA)**](connect-wallet.md#method-2-crypto-wallet-eoa)            | <ul><li>You pay ETH directly. Bridge ETH using the same widget — select ETH instead of USDC.</li></ul> |
+| [**Passkey + Smart Account**](connect-wallet.md#method-1-passkey--smart-account) | <ul><li>Paymaster auto-pays in USDC. Sponsorship covers gas if eligible - no ETH needed.</li></ul>     |
+| [**Web3 Wallet (EOA)**](connect-wallet.md#method-2-crypto-wallet-eoa)            | <ul><li>You pay ETH directly. Bridge ETH using the same widget - select ETH instead of USDC.</li></ul> |
 
 ***
 
 ### Bridge Widget (in-app)
 
-PrediX UI has an integrated **Bridge widget** — no need to open **Across/Stargate** in a separate tab.
+PrediX UI has an integrated **Bridge widget** - no need to open **Across/Stargate** in a separate tab.
 
 <figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
