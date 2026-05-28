@@ -1,9 +1,11 @@
 ---
-description: Everything you need to start exploring PrediX.
+description: >-
+  Building the liquidity and execution layer for the next generation of
+  Prediction Markets.
 icon: align-justify
 ---
 
-# PREDIX 101 — QUICK START
+# PREDIX DOCS
 
 {% hint style="info" %}
 **PrediX is the On-chain Prediction Market on** [**Unichain**](https://www.unichain.org/)**. Each event creates two outcome tokens `YES / NO` and the correct token redeems 1:1 USDC when the market resolves.**

@@ -1,6 +1,6 @@
 # Table of contents
 
-* [PREDIX 101 — QUICK START](README.md)
+* [PREDIX DOCS](README.md)
 
 ## FUNDAMENTALS
 
