@@ -1,123 +1,90 @@
 ---
-description: Read prediction market charts, change timeframes, and apply indicators.
+description: Understand how to read the prediction market chart on PrediX.
 icon: chart-line-up-down
 ---
 
 # Chart & Timeframe
 
-Prediction market charts are not crypto charts. The Y-axis is bounded between $0 and $1 - a probability, not an unbounded asset price. PrediX renders prediction market data accurately while preserving the tooling traders expect from professional interfaces.
+The chart on PrediX may look similar to a conventional trading chart, but it functions differently. This page is designed to help you understand its components
 
 ### Understanding the chart
 
-The chart aggregates prices from three on-chain sources into a single canonical YES price / time series, All three feed into a unified combined chart on the _**Market detail page.**_
+#### <mark style="color:orange;">Price = Probability</mark>
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Hook AMM swaps</strong></mark></td><td>Tick-by-tick AMM prices for analytics.</td><td><a href="../../.gitbook/assets/44.jpg">44.jpg</a></td></tr><tr><td><mark style="color:orange;"><strong>CLOB matches</strong></mark></td><td>Price at each limit fill.</td><td><a href="../../.gitbook/assets/43.jpg">43.jpg</a></td></tr></tbody></table>
+PrediX charts are **not** crypto price charts. Prices are shown in **cents (¢)** and represent the **probability of the event happening**.
 
-***
+> Example: YES at `63¢` means the market prices a \~63% chance of the event occurring. _(Illustrative only — every market differs.)_
 
-#### <mark style="color:$warning;">1. Reading OHLC candles</mark>
+Since `YES + NO = 100¢`, looking at one side tells you the other.
 
-Each candle shows the **open / high / low / close** for that period. Volume is displayed as bars at the bottom of the chart.
+**Trading range: 1¢ – 99¢** (1¢ steps). There is no `0¢` or `100¢` while trading is open — these only appear after the market resolves: winning side = `100¢` ($1), losing side = `0¢`.
 
-```
-─┬─ high
- │
- │  close (green if close > open)
- ┃
- │  open
- │
-─┴─ low
-```
+| Price zone | What it means                |
+| ---------- | ---------------------------- |
+| Near 50¢   | Both sides roughly tied      |
+| Near 99¢   | Almost certain to happen     |
+| Near 1¢    | Almost certain not to happen |
 
-#### <mark style="color:$warning;">2. Timeframes</mark>
+### Market header
 
-PrediX supports six timeframes, each suited to a different style of trading.
+* **Yes / No** current prices
+* **Volume** total traded
+* **Trader count**
+* **Countdown** to endTime
 
-| Timeframe                                   | Use case                                             |
-| ------------------------------------------- | ---------------------------------------------------- |
-| <ul><li><strong>1m</strong></li></ul>       | <ul><li>Scalp, intraday</li></ul>                    |
-| <ul><li><strong>5m</strong></li></ul>       | <ul><li>Short-term momentum</li></ul>                |
-| <ul><li><strong>15m - 1h</strong></li></ul> | <ul><li>Day trade</li></ul>                          |
-| <ul><li><strong>4h</strong></li></ul>       | <ul><li>Swing</li></ul>                              |
-| <ul><li><strong>1D</strong></li></ul>       | <ul><li>Position trade, multi-day hold</li></ul>     |
-| <ul><li><strong>1W</strong></li></ul>       | <ul><li>Long market (3+ months to endTime)</li></ul> |
+### Two chart modes
 
-The app picks a sensible default based on time-to-end:
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td><mark style="color:orange;"><strong>Binary chart</strong></mark></td><td>for YES/NO markets. Shows a single price line (YES by default). The right-side axis updates with the live match price.</td><td></td></tr><tr><td><mark style="color:orange;"><strong>Multi-outcome chart</strong></mark></td><td>for markets with 3+ choices (elections, tournaments...). Plots multiple lines simultaneously, one color per choice, with a legend on top.</td><td></td></tr></tbody></table>
 
-* [x] < 24h to endTime → 5m
-* [x] 1-7 days → 15m or 1h
-* [x] 7 days → 1h or 4h
-* [x] 30 days → 1D
+* A line breaking away upward = the leading choice
+* Lines clustered together = choices running neck and neck
 
-#### <mark style="color:$warning;">3. Compare two markets</mark>
-
-Click **Compare** then select another market. The chart overlays two YES price lines on the same axis (normalized 0-1, since both are already probabilities).
-
-Useful pairings include "Trump win" vs "Biden win" during the 2024 election cycle.
-
-#### <mark style="color:$warning;">4. Order book depth</mark>
-
-The **Depth** tab next to the chart shows:
-
-* Bids (BUY orders) on the left, asks (SELL orders) on the right.
-* Cumulative volume as walls of liquidity.
-
-Useful for spotting a **liquidity wall** - a large limit order that may stall the price.
-
-#### <mark style="color:$warning;">5. Recent trades</mark>
-
-The **Trades** tab lists every trade in real time:
-
-* Side, size, price, timestamp.
-* Filter by size (whale-only mode).
-* Click a row → tx hash on the explorer.
-
-#### <mark style="color:$warning;">6. Mobile gestures</mark>
-
-The chart is full-width on mobile with full gesture support:
-
-* **Pinch** to zoom in/out.
-* **Drag** to pan horizontally.
-* **Long-press** for hover info.
-* **Double-tap** to reset zoom.
-
-***
-
-### Developer API
+Below the chart, each choice has its own row showing name, individual volume, **implied probability %**, and quick **Yes / No** buttons. See Multi-Outcome Markets.
 
 {% hint style="info" %}
-Details: [API Reference](/broken/pages/NaTE7epVHDvl0K9Pol1r).
+**Powered by TradingView** — charts are built on the TradingView library (look for the **TV** logo in the lower corner). Drag, zoom, and hover for OHLC details like on professional trading platforms.
 {% endhint %}
-
-Chart data from the Indexer endpoint:
-
-```
-GET /api/markets/:id/candles?timeframe=1h&from=...&to=...
-→ [
-  { ts, open, high, low, close, volume },
-  ...
-]
-```
-
-Or price snapshots only:
-
-```
-GET /api/markets/:id/price-history?from=...&to=...
-→ [{ ts, yesPrice, source }]
-```
 
 ***
 
-{% hint style="success" %}
-### Tips for reading prediction market charts
+### Timeframe
 
-* **Volume spike after endTime** - unusual activity, likely arbitrage as resolution approaches.
-* **Price pinned at $0.50** - the market lacks conviction; information is unclear.
-* **Sharp move** - new information has hit; check the news.
-* **Price near $0.95-$0.99** - approaching YES resolution. Low risk-reward (gain only 5%, risk losing 95%).
-* **Price near $0.01-$0.05** - tail event; high risk-reward but low probability.
-{% endhint %}
+| Range        | Best for                           | Strategy         |
+| ------------ | ---------------------------------- | ---------------- |
+| `5m` · `15m` | Intraday volatility, breaking news | Scalping         |
+| `1H` · `4H`  | Hours to a few days                | Trend trading    |
+| `1D`         | Multi-day holds                    | Mid-term         |
+| `1W` · `ALL` | Months out, macro view             | Position trading |
 
-{% hint style="warning" %}
-**Do not confuse a prediction market chart with a cryptocurrency chart.** The Y-axis is a **probability bounded in 0-1**, not an unbounded asset price. The same chart shape means different things.
-{% endhint %}
+Not sure which to pick? Leave it on default — the app chooses based on time remaining in the market.
+
+### Reading the chart
+
+* **Candle / line toggle:** top-right corner button.
+* **Y-axis auto-scales** to the data range — not fixed to 0–100.
+* **Volume bars** at the bottom: tall bars = heavy trading at that moment.
+
+**Common signals**
+
+* Price stuck near the middle → market lacks conviction
+* Sudden sharp move → fresh news has hit
+* Heavy action near endTime → traders closing positions
+
+### Order Book
+
+* **YES / NO tabs:** choose which side's book to view
+* **0.01 / 0.1:** price grouping
+* **ASK (sell) / BID (buy):** each level shows quantity + cumulative total
+* **Spread:** tighter = better liquidity
+
+> The **Buy / Sell** prices at the top of the Order Book are the **effective prices** you'll actually get — already blended from the order book and the liquidity pool. Even when the book looks empty, you still get a fair price thanks to the CLOB + AMM Hybrid model.
+
+### Recent Trades
+
+Real-time list of executed trades: time, wallet (truncated), buy/sell, size, YES/NO side, fill price, and value. Click a row to open the transaction on the explorer.
+
+A quick way to feel whether the market is hot or quiet, and which side whales are taking.
+
+***
+
+> Chart prices are **probabilities (1¢–99¢)**, not asset prices. The shape may look familiar from crypto charts, but it means something different.
