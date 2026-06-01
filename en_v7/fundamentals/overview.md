@@ -4,7 +4,7 @@ description: Prediction markets are entering a new phase.
 
 # PrediX Thesis
 
-{% embed url="https://www.youtube.com/embed/UVOx-bAWXHA?autoplay=1&controls=0&loop=1&mute=1&playlist=UVOx-bAWXHA" %}
+<figure><img src="../.gitbook/assets/LTTT-3.gif" alt=""><figcaption></figcaption></figure>
 
 Over the last decade, the internet transformed how information is distributed. In the decade ahead, markets will transform how information is evaluated, priced, and coordinated at global scale. As artificial intelligence accelerates the production of information, the challenge is no longer access.
 
