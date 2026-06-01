@@ -4,7 +4,9 @@ description: Prediction markets are entering a new phase.
 
 # PrediX Thesis
 
-Over the last decade, the internet transformed how information is distributed. In the decade ahead, markets will transform how information is evaluated, priced, and coordinated at global scale. As artificial intelligence accelerates the production of information, the challenge is no longer access.&#x20;
+{% embed url="https://youtu.be/UVOx-bAWXHA?si=AnG9CSSt2y9N2zMn" %}
+
+Over the last decade, the internet transformed how information is distributed. In the decade ahead, markets will transform how information is evaluated, priced, and coordinated at global scale. As artificial intelligence accelerates the production of information, the challenge is no longer access.
 
 The challenge is determining what is credible, what is likely, and what the world collectively believes to be true.
 
@@ -73,4 +75,3 @@ Outcome tokens on PrediX are designed as ERC-20 assets capable of integrating di
 PrediX integrates passkey onboarding, smart account infrastructure, sponsored transactions, and simplified bridging flows to reduce the operational complexity traditionally associated with on-chain trading systems.
 
 **PrediX aims to provide the liquidity, execution, and composability layer powering the next generation of predictive markets.**
-
