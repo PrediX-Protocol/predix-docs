@@ -37,7 +37,7 @@ The **Min trades** filter is the most important quality gate. Without it, leader
 
 Click a trader's name → `/profile/[address]` page.
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/16. Trader Profile.png" alt=""><figcaption></figcaption></figure>
 
 A profile shows hero KPIs (Volume, P\&L, Win rate, Accuracy), active positions, full trade history, calibration chart, badges, and a follow button.
 
