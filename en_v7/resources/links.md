@@ -27,13 +27,13 @@
 
 ## On-chain
 
-|                     | Testnet (live now)                                 | Mainnet (TBA)                      |
-| ------------------- | -------------------------------------------------- | ---------------------------------- |
-| **Explorer**        | [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz) | [uniscan.xyz](https://uniscan.xyz) |
-| **RPC public**      | `https://sepolia.unichain.org`                     | `https://mainnet.unichain.org`     |
-| **Chain ID**        | `1301`                                             | `130`                              |
-| **Multisig**        | 1-EOA shortcut (test only)                         | Gnosis Safe - TBA                  |
-| **Treasury wallet** | N/A                                                | TBA                                |
+|                     | Testnet                                            | Beta (Live Now)                    | Production (TBA)                   |
+| ------------------- | -------------------------------------------------- | ---------------------------------- | ---------------------------------- |
+| **Explorer**        | [sepolia.uniscan.xyz](https://sepolia.uniscan.xyz) | [uniscan.xyz](https://uniscan.xyz) | [uniscan.xyz](https://uniscan.xyz) |
+| **RPC public**      | `https://sepolia.unichain.org`                     | `https://mainnet.unichain.org`     | `https://mainnet.unichain.org`     |
+| **Chain ID**        | `1301`                                             | `130`                              | 130                                |
+| **Multisig**        | 1-EOA shortcut (test only)                         | Gnosis Safe - TBA                  | Gnosis Safe - TBA                  |
+| **Treasury wallet** | N/A                                                | TBA                                | TBA                                |
 
 ## Brand & media
 
@@ -43,9 +43,9 @@
 
 ## Legal
 
-* **Terms of Service**: TBA
-* **Privacy Policy**: TBA
-* **Risk disclosures**: TBA
+* **Terms of Service**: [https://docs.predixpro.io/legal/terms-of-service](https://docs.predixpro.io/legal/terms-of-service)&#x20;
+* **Privacy Policy**: [https://docs.predixpro.io/legal/privacy-policy](https://docs.predixpro.io/legal/privacy-policy)
+* **Risk disclosures**: [https://docs.predixpro.io/resources/disclaimers-and-risks](https://docs.predixpro.io/resources/disclaimers-and-risks)
 
 ## Disclaimers
 

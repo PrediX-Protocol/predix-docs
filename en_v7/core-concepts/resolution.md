@@ -69,13 +69,7 @@ PrediX uses Committee Oracle with Cross-chain governance outcomes, complex compo
 
 ### Oracles Comparison
 
-|                   | Manual                | Chainlink                  | UMA                           | Committee                 |
-| ----------------- | --------------------- | -------------------------- | ----------------------------- | ------------------------- |
-| Who resolves      | Multisig 2/3          | Anyone                     | Anyone proposes, DVM disputes | t-of-N validators         |
-| Subjective events | ✅                     | ❌                          | ✅                             | ✅                         |
-| Dispute           | Off-chain social      | None (data is law)         | On-chain 48h                  | On-chain commit-reveal    |
-| Latency           | Instant after signing | After 1 round (\~30s-1min) | 48h default                   | After commit-reveal cycle |
-| Decentralization  | Low                   | Medium                     | High                          | High                      |
+<table><thead><tr><th width="159"></th><th>Manual</th><th>Chainlink</th><th>UMA</th><th>Committee</th></tr></thead><tbody><tr><td>Who resolves</td><td>Multisig 2/3</td><td>Anyone</td><td>Anyone proposes, DVM disputes</td><td>t-of-N validators</td></tr><tr><td>Subjective events</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td></tr><tr><td>Dispute</td><td>Off-chain social</td><td>None (data is law)</td><td>On-chain 48h</td><td>On-chain commit-reveal</td></tr><tr><td>Latency</td><td>Instant after signing</td><td>After 1 round (~30s-1min)</td><td>48h default</td><td>After commit-reveal cycle</td></tr><tr><td>Decentralization</td><td>Low</td><td>Medium</td><td>High</td><td>High</td></tr></tbody></table>
 
 ***
 

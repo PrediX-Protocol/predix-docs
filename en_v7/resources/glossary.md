@@ -186,7 +186,7 @@ The Faucet is a testnet tool that dispenses free test tokens so developers and u
 **Testnet faucet allocation (per wallet, per 24 hours):**
 
 * 0.0005 ETH
-* 10,000 USDC
+* 10,000 USDC (Vitural Funds)&#x20;
 
 ***
 
