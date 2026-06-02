@@ -13,7 +13,7 @@ icon: align-justify
 
 ### Protocol Overview
 
-> 🟡 **Status -** see on [**Network info**](/broken/pages/It6qfi8FL3I2fGvFZtYs#network-info)**.**
+> 🟡 **Status -** see on [**Network info**](https://docs.predixpro.io/developers/getting-started/beta)**.**
 >
 > * Beta on **Unichain mainnet** (chain `130`).
 > * Production launches after **external audit** (chain `130`).
