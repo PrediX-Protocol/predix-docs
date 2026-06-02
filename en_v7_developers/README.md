@@ -2,7 +2,9 @@
 
 PrediX provides two paths for programmatic integration, depending on your use case.
 
-![Two developer paths: Path 1 Trade yourself (wallet + viem, Router contract, no API key) for bots/analytics. Path 2 Build platform (REST API + WebSocket, SIWE auth + AA, real-time streaming) for frontends/mobile apps.](.gitbook/assets/dev-two-paths.svg)
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+<sub>Two developer paths: Path 1 Trade yourself (wallet + viem, Router contract, no API key) for bots/analytics. Path 2 Build platform (REST API + WebSocket, SIWE auth + AA, real-time streaming) for frontends/mobile apps.</sub>
 
 ## Path 1 - Trade for yourself
 
@@ -53,7 +55,7 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 | Layer           | Technology                              | Purpose                                             |
 | --------------- | --------------------------------------- | --------------------------------------------------- |
 | Smart contracts | Solidity 0.8.34 , Foundry , Unichain L2 | On-chain execution: Diamond, Hook, Exchange, Router |
-| Indexer         | Ponder , PostgreSQL , Hono REST         | Index on-chain events -> queryable REST API          |
+| Indexer         | Ponder , PostgreSQL , Hono REST         | Index on-chain events -> queryable REST API         |
 | Backend         | NestJS , Fastify , MongoDB              | View model: cache + metadata + auth + social        |
 | Frontend        | Next.js , React , viem , wagmi          | Web app UI                                          |
 | Paymaster       | ERC-4337 v0.7 , Pimlico bundler         | Gas sponsorship for eligible users                  |
@@ -79,10 +81,10 @@ Build a frontend, mobile app, or trading platform where other users trade throug
 
 ## API base URLs
 
-| Environment           | Indexer | Backend |
-| --------------------- | ------- | ------- |
-| **Beta** (live)       | TBA     | TBA     |
-| **Production** (TBA)  | TBA     | TBA     |
+| Environment          | Indexer | Backend |
+| -------------------- | ------- | ------- |
+| **Beta** (live)      | TBA     | TBA     |
+| **Production** (TBA) | TBA     | TBA     |
 
 ## Next steps
 

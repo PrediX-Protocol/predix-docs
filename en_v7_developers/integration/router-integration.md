@@ -239,7 +239,9 @@ event ClobSkipped(
 
 ## Batch with Smart Account
 
-![AA UserOp batch](../.gitbook/assets/22-aa-userop.svg)
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+<sub>AA UserOp batch</sub>
 
 ```typescript
 import { createKernelClient } from '@zerodev/sdk';

@@ -23,8 +23,8 @@ Bot/analytics raw data -> Indexer. FE/app user-facing -> Backend.
 
 ## Base URL
 
-| Env                | Indexer                                                   | Backend                                                   |
-| ------------------ | --------------------------------------------------------- | --------------------------------------------------------- |
+| Env                  | Indexer                                           | Backend                                           |
+| -------------------- | ------------------------------------------------- | ------------------------------------------------- |
 | **Beta** (live)      | TBA - see [Beta info](../getting-started/beta.md) | TBA - see [Beta info](../getting-started/beta.md) |
 | **Production** (TBA) | TBA                                               | TBA                                               |
 
@@ -310,7 +310,9 @@ GET /version                               build version + git sha
 
 ### SIWE auth flow
 
-![SIWE auth: GET /auth/challenge -> server returns nonce -> user signMessage -> POST /auth/verify -> BE verifies ECDSA -> set HTTPOnly cookie 7 days](../.gitbook/assets/14-siwe-auth.svg)
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+<sub>SIWE auth: GET /auth/challenge -> server returns nonce -> user signMessage -> POST /auth/verify -> BE verifies ECDSA -> set HTTPOnly cookie 7 days</sub>
 
 ```typescript
 // 1. Challenge
@@ -376,7 +378,11 @@ const { data } = await api.GET('/markets/{id}', {
 
 Source of truth on-chain - bot listeners, custom subgraphs, and monitoring services should consume from here.
 
-![Event source: Router.Trade = canonical (volume + trades count), Hook\_MarketTraded = analytics only (priceSnapshot, NOT volume), PositionSplit/Merge/Redeem/Refund = audit rows always land](../.gitbook/assets/63-event-source-truth.svg)
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Event source: Router.Trade = canonical (volume + trades count), Hook\_MarketTraded = analytics only (priceSnapshot, NOT volume), PositionSplit/Merge/Redeem/Refund = audit rows always land</sub>
+
+
 
 * **Canonical trade**: `Router.Trade` - `protocolStats.totalVolume / totalTrades` **only** increments from this event.
 * **AMM swap analytics**: `Hook_MarketTraded` - priceSnapshot only, does not count volume (avoids double-counting).

@@ -14,13 +14,17 @@ An **external source** must deliver data on-chain. If the oracle is wrong, the m
 
 ## 4 phases, 4 oracle types
 
-![4 oracle types: ChainlinkOracle (price, auto), ManualOracle (subjective, REPORTER role + optional challenge window), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)](../.gitbook/assets/25-oracle-types.svg)
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+<sub>4 oracle types: ChainlinkOracle (price, auto), ManualOracle (subjective, REPORTER role + optional challenge window), UMAOracle (decentralized, 48h dispute, Phase 2), Committee (t-of-N, Phase 3)</sub>
 
 ## ChainlinkOracle
 
 Automated, permissionless.
 
-![ChainlinkOracle: creator register(feed, threshold, snapshotAt) -> endTime passes -> anyone resolve(roundIdHint, prevRoundIdHint) -> verify adjacency + sequencer uptime -> outcome = price >= threshold](../.gitbook/assets/37-chainlink-oracle-flow.svg)
+<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+
+<sub>ChainlinkOracle: creator register(feed, threshold, snapshotAt) -> endTime passes -> anyone resolve(roundIdHint, prevRoundIdHint) -> verify adjacency + sequencer uptime -> outcome = price >= threshold</sub>
 
 **Use case**: Price-threshold markets (BTC, ETH, asset prices, FX rates).
 
@@ -45,7 +49,11 @@ Role-gated `REPORTER` publishes the outcome from an off-chain source. Beta uses 
 
 ### Flow
 
-![ManualOracle: real-world event -> REPORTER verifies >= 2 sources -> report(marketId, outcome) -> OutcomeReported event -> optional challenge window elapses -> anyone resolveMarket -> MarketResolved](../.gitbook/assets/56-manual-oracle-flow.svg)
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+
+<sub>ManualOracle: real-world event -> REPORTER verifies >= 2 sources -> report(marketId, outcome) -> OutcomeReported event -> optional challenge window elapses -> anyone resolveMarket -> MarketResolved</sub>
+
+
 
 A reported outcome becomes consumable only after `finalizesAt = reportedAt + challengeDelay`. The `challengeDelay` is admin-controlled, defaults to `0` (immediate resolution), and is capped at 7 days.
 
@@ -66,7 +74,9 @@ Admin operations on a pending report (before `finalizesAt`):
 
 Permissionless propose + 48h dispute window.
 
-![UMAOracle: proposer propose(outcome, bond) -> 48h dispute window -> no dispute: finalize + refund bond; dispute: DVM vote -> loser loses bond -> market resolved](../.gitbook/assets/38-uma-oracle-flow.svg)
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+
+<sub>UMAOracle: proposer propose(outcome, bond) -> 48h dispute window -> no dispute: finalize + refund bond; dispute: DVM vote -> loser loses bond -> market resolved</sub>
 
 ### Bond sizing
 
@@ -109,17 +119,19 @@ Cross-chain governance outcomes, complex composite events.
 
 When no oracle can resolve the market:
 
-![Refund mode: oracle fails -> admin proposes enableRefundMode -> 48h timelock -> refundModeActive=true -> user burns min(YES,NO) pairs -> USDC pro-rata](../.gitbook/assets/39-refund-mode.svg)
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Refund mode: oracle fails -> admin proposes enableRefundMode -> 48h timelock -> refundModeActive=true -> user burns min(YES,NO) pairs -> USDC pro-rata</sub>
 
 Details: [Redeem & refund](../../users-guide/redeem-refund.md).
 
 ## Incorrect resolution - handling flow
 
-| Phase              | Mechanism                                                                                          |
-| ------------------ | -------------------------------------------------------------------------------------------------- |
+| Phase              | Mechanism                                                                                                    |
+| ------------------ | ------------------------------------------------------------------------------------------------------------ |
 | **Phase 1 Manual** | Admin `revoke` / `reopenReport` during challenge window; otherwise enable refund mode if confirmed incorrect |
-| **Phase 2 UMA**    | Dispute via UMA, DVM is final                                                                      |
-| **All phases**     | `isResolved=true` is never reverted (INV-6 hard invariant)                                         |
+| **Phase 2 UMA**    | Dispute via UMA, DVM is final                                                                                |
+| **All phases**     | `isResolved=true` is never reverted (INV-6 hard invariant)                                                   |
 
 ## Oracle approval list
 

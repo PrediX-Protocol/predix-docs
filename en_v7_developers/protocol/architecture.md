@@ -4,7 +4,9 @@ Solidity `0.8.34`, Foundry, EVM cancun (EIP-1153 transient storage). 7 packages,
 
 ## Dependency graph
 
-![SC dependency: shared -> oracle/diamond -> hook/exchange -> router. Cross-package import only via @predix/shared/interfaces](../.gitbook/assets/08-sc-dependency.svg)
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+<sub>SC dependency: shared -> oracle/diamond -> hook/exchange -> router. Cross-package import only via @predix/shared/interfaces</sub>
 
 Rule: cross-package imports are **only** allowed via `@predix/shared/interfaces/`. No importing implementations from other packages.
 
@@ -46,7 +48,9 @@ Single proxy `PrediX Diamond` with 6 facets. Each facet is independently upgrade
 
 ### Hook proxy upgrade - 48h monotonic timelock
 
-![Hook proxy upgrade: Idle -> Proposed (proposeUpgrade) -> 48h wait -> Executed (executeUpgrade) or Cancelled. timelockDuration monotonic, min 48h](../.gitbook/assets/23-hook-upgrade-state.svg)
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Hook proxy upgrade: Idle -> Proposed (proposeUpgrade) -> 48h wait -> Executed (executeUpgrade) or Cancelled. timelockDuration monotonic, min 48h</sub>
 
 * `proposeUpgrade(newImpl)` -> `readyAt = now + timelockDuration` (min 48h).
 * Wait >= timelockDuration -> `executeUpgrade(newImpl, sig, readyAt)`.
@@ -164,15 +168,15 @@ Facets are internal to the Diamond proxy. Developers interact with Diamond via t
 
 ### External / infrastructure
 
-| Contract                   | Beta                                                       | Production                                                |
-| -------------------------- | ---------------------------------------------------------- | --------------------------------------------------------- |
-| **USDC**                   | `0xB3FCA863dD0F6b496cCDDf6497Da5Dad67857F56` (TestUSDC)    | `0x078D782b760474a361dDA0AF3839290b0EF57AD6` (Circle USDC) |
-| **PRX token**              | Not deployed                                               | TBA (mint after TGE)                                      |
-| **Staking Vault**          | Not deployed                                               | TBA                                                       |
-| **vePRX**                  | Not deployed                                               | TBA                                                       |
-| **Uniswap v4 PoolManager** | `0x1F98400000000000000000000000000000000004`               | `0x1F98400000000000000000000000000000000004`              |
-| **Permit2**                | `0x000000000022D473030F116dDEE9F6B43aC78BA3`               | `0x000000000022D473030F116dDEE9F6B43aC78BA3`              |
-| **EntryPoint v0.7**        | `0x0000000071727De22E5E9d8BAf0edAc6f37da032`               | `0x0000000071727De22E5E9d8BAf0edAc6f37da032`              |
+| Contract                   | Beta                                                    | Production                                                 |
+| -------------------------- | ------------------------------------------------------- | ---------------------------------------------------------- |
+| **USDC**                   | `0xB3FCA863dD0F6b496cCDDf6497Da5Dad67857F56` (TestUSDC) | `0x078D782b760474a361dDA0AF3839290b0EF57AD6` (Circle USDC) |
+| **PRX token**              | Not deployed                                            | TBA (mint after TGE)                                       |
+| **Staking Vault**          | Not deployed                                            | TBA                                                        |
+| **vePRX**                  | Not deployed                                            | TBA                                                        |
+| **Uniswap v4 PoolManager** | `0x1F98400000000000000000000000000000000004`            | `0x1F98400000000000000000000000000000000004`               |
+| **Permit2**                | `0x000000000022D473030F116dDEE9F6B43aC78BA3`            | `0x000000000022D473030F116dDEE9F6B43aC78BA3`               |
+| **EntryPoint v0.7**        | `0x0000000071727De22E5E9d8BAf0edAc6f37da032`            | `0x0000000071727De22E5E9d8BAf0edAc6f37da032`               |
 
 > Permit2, EntryPoint, and the Uniswap v4 PoolManager are canonical addresses - identical across beta and production since both run on Unichain mainnet (chain `130`).
 

@@ -31,7 +31,9 @@ How PrediX compares to other prediction market protocols from a developer perspe
 
 ### Hybrid execution
 
-![Router hybrid execution: User -> Smart Router (stateless) -> splits to CLOB (priority, 99-tick order book) + AMM (fallback, Uniswap v4 Hook, dynamic fees) -> combined YES/NO tokens out. Single atomic tx.](.gitbook/assets/router-hybrid-execution.svg)
+<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Router hybrid execution: User -> Smart Router (stateless) -> splits to CLOB (priority, 99-tick order book) + AMM (fallback, Uniswap v4 Hook, dynamic fees) -> combined YES/NO tokens out. Single atomic tx.</sub>
 
 PrediX Router aggregates liquidity from both CLOB (on-chain order book) and AMM (Uniswap v4 pool) in a single atomic transaction. Other protocols typically use one or the other.
 

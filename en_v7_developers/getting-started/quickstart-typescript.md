@@ -2,7 +2,9 @@
 
 Buy YES tokens on a PrediX market in under 5 minutes using viem.
 
-![Quickstart flow: Setup (connect wallet) -> Approve (USDC to Permit2) -> Quote (quoteBuyYes) -> Trade (buyYes) -> Done (YES tokens). Router handles CLOB -> AMM routing automatically.](../.gitbook/assets/quickstart-flow.svg)
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+<sub>Quickstart flow: Setup (connect wallet) -> Approve (USDC to Permit2) -> Quote (quoteBuyYes) -> Trade (buyYes) -> Done (YES tokens). Router handles CLOB -> AMM routing automatically.</sub>
 
 ## Prerequisites
 
@@ -179,17 +181,17 @@ Permit2 variants: `buyYesWithPermit`, `sellYesWithPermit`, `buyNoWithPermit`, `s
 
 ## Common errors
 
-| Error                    | Cause                      | Fix                        |
-| ------------------------ | -------------------------- | -------------------------- |
-| `InsufficientOutput`     | Price moved past tolerance | Increase slippage or retry |
-| `DeadlineExpired`        | Tx took too long           | Increase deadline          |
-| `MarketModulePaused`     | Diamond MARKET module paused | Wait for resume          |
-| `MarketResolved`         | Market already resolved    | Cannot trade               |
-| `MarketExpired`          | `block.timestamp >= endTime` | Cannot trade             |
-| `MarketInRefundMode`     | Refund mode active         | Use redeem/refund instead  |
-| `InsufficientLiquidity`  | Not enough depth across CLOB + AMM | Reduce size        |
-| `InvalidPermitAmount`    | Permit2 amount != usdcIn   | Sign exact-amount permit   |
-| `FinalizeBalanceNonZero` | Internal error             | Report as bug              |
+| Error                    | Cause                              | Fix                        |
+| ------------------------ | ---------------------------------- | -------------------------- |
+| `InsufficientOutput`     | Price moved past tolerance         | Increase slippage or retry |
+| `DeadlineExpired`        | Tx took too long                   | Increase deadline          |
+| `MarketModulePaused`     | Diamond MARKET module paused       | Wait for resume            |
+| `MarketResolved`         | Market already resolved            | Cannot trade               |
+| `MarketExpired`          | `block.timestamp >= endTime`       | Cannot trade               |
+| `MarketInRefundMode`     | Refund mode active                 | Use redeem/refund instead  |
+| `InsufficientLiquidity`  | Not enough depth across CLOB + AMM | Reduce size                |
+| `InvalidPermitAmount`    | Permit2 amount != usdcIn           | Sign exact-amount permit   |
+| `FinalizeBalanceNonZero` | Internal error                     | Report as bug              |
 
 ## Next steps
 
