@@ -28,9 +28,9 @@ The Router is **stateless** - the invariant `balanceOf(router) == 0` is enforced
 
 #### <mark style="color:orange;">How the Execution Router Works</mark>
 
-For every trade the Router prices **both** venues and routes for best execution — it does **not** blindly drain the order book first:
+For every trade the Router prices **both** venues and routes for best execution - it does **not** blindly drain the order book first:
 
-1. **Quote the AMM.** The Router computes the AMM **effective** price (size-adjusted and fee-included) for your trade size — not the spot price.
+1. **Quote the AMM.** The Router computes the AMM **effective** price (size-adjusted and fee-included) for your trade size - not the spot price.
 2. **Let the CLOB compete.** The CLOB leg is **capped at that AMM-effective price**, so the order book fills **only** the portion priced as good as or better than the AMM. The Router converges on the optimal split: the size where the marginal CLOB order equals the AMM-effective price for the leftover.
 3. **Execute.** One CLOB fill (bounded by the cap) + one AMM swap for the remainder. If the AMM is cheaper across your whole size, the CLOB fills ~nothing and the AMM takes everything; if the CLOB is better, it fills more. Either way you get the best blended price.
 
@@ -55,14 +55,14 @@ All 3 satisfy: **no one is disadvantaged** - each side accepts their own price.
 
 
 * **Complementary**: BUY\_YES ↔ SELL\_YES in the same market. Most common.
-* **Mint** (synthetic): BUY\_YES + BUY\_NO ≥ $1. The Diamond mints a pair, delivering YES to the YES buyer and NO to the NO buyer. Any surplus (their combined price above $1) is refunded to the taker as price improvement — **the protocol charges no per-trade fee**.
-* **Merge** (synthetic): SELL\_YES + SELL\_NO ≤ $1. The Diamond burns a pair, returning USDC to both sellers. Surplus is **zero by construction** — **no per-trade fee**.
+* **Mint** (synthetic): BUY\_YES + BUY\_NO ≥ $1. The Diamond mints a pair, delivering YES to the YES buyer and NO to the NO buyer. Any surplus (their combined price above $1) is refunded to the taker as price improvement - **the protocol charges no per-trade fee**.
+* **Merge** (synthetic): SELL\_YES + SELL\_NO ≤ $1. The Diamond burns a pair, returning USDC to both sellers. Surplus is **zero by construction** - **no per-trade fee**.
 
 ***
 
 ### AMM - Uniswap v4 Pool
 
-**Each market has exactly one v4 pool: YES-USDC.** There is no NO-USDC pool — NO is priced as `1 − YES` and traded synthetically through the YES pool: buying NO mints a YES/NO pair and sells the YES leg into the pool; selling NO buys YES from the pool and merges it with your NO back into collateral. (Anyone could permissionlessly deploy a separate NO-USDC pool on Uniswap, but it cannot register with the PrediX Hook and the Router never routes to it.)
+**Each market has exactly one v4 pool: YES-USDC.** There is no NO-USDC pool - NO is priced as `1 − YES` and traded synthetically through the YES pool: buying NO mints a YES/NO pair and sells the YES leg into the pool; selling NO buys YES from the pool and merges it with your NO back into collateral. (Anyone could permissionlessly deploy a separate NO-USDC pool on Uniswap, but it cannot register with the PrediX Hook and the Router never routes to it.)
 
 **PrediX Hook** plugs into v4:
 
@@ -79,7 +79,7 @@ The Hook **does not hold user funds long-term**. LPs hold standard Uniswap v4 li
 ### Trading Directly on AMM
 
 * The YES-USDC pool is a standard v4 pool - you can swap via UniversalRouter, Uniswap web, or PoolManager directly.
-* **However**: bypassing CLOB liquidity → price may be worse. Always use `PrediXRouter` to take advantage of both.
+* **However**: bypassing CLOB liquidity -> price may be worse. Always use `PrediXRouter` to take advantage of both.
 {% endhint %}
 
 ***
@@ -88,10 +88,10 @@ The Hook **does not hold user funds long-term**. LPs hold standard Uniswap v4 li
 
 The Router prices the AMM **first**, then lets the CLOB compete against that price:
 
-1. It quotes the AMM **effective** price (size-adjusted) — not spot.
+1. It quotes the AMM **effective** price (size-adjusted) - not spot.
 2. The CLOB leg is capped at that price, so it fills **only** orders as good as or better than the AMM; the remainder routes to the AMM.
-3. It converges on the optimal split — the size where the marginal CLOB order equals the AMM-effective price for the leftover.
-4. **No active pool liquidity → routing is 100% CLOB.** If the CLOB reverts (insufficient token match, price deviation) → the Router skips it, emits a `ClobSkipped(reason)` event, and falls back **entirely to the AMM**.
+3. It converges on the optimal split - the size where the marginal CLOB order equals the AMM-effective price for the leftover.
+4. **No active pool liquidity -> routing is 100% CLOB.** If the CLOB reverts (insufficient token match, price deviation) -> the Router skips it, emits a `ClobSkipped(reason)` event, and falls back **entirely to the AMM**.
 
 Users don't need to worry - the Router always returns the best blended price within the same tx.
 
