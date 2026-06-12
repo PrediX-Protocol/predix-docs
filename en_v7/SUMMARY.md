@@ -37,6 +37,7 @@
 * [PrediX Market](core-concepts/overview.md)
 * [Outcome token (YES/NO)](core-concepts/outcome-tokens.md)
 * [CLOB + AMM hybrid](core-concepts/clob-amm-hybrid.md)
+* [CLOB + AMM hybrid (update)](core-concepts/clob-amm-hybrid_update.md)
 * [Resolution & Oracle](core-concepts/resolution.md)
 * [Economic Architecture](core-concepts/economic-architecture.md)
 * [Business Model & Flywheel](core-concepts/business-model-and-flywheel.md)
