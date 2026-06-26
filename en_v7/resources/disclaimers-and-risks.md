@@ -1,5 +1,11 @@
 # Disclaimers & Risks
 
+### Figures Are Illustrative
+
+All figures, examples, fee rates, prices, returns, and liquidity numbers across this documentation are provided for reference and illustration only. They do not constitute financial, investment, legal, or tax advice, and are not guarantees of any outcome or return.
+
+Protocol parameters — including AMM swap fees, CLOB fees, market-creation fees, and the dynamic fee schedule — are configurable and may change at any time without prior notice. Always verify current parameters on-chain before transacting. Nothing here is a commitment to deliver any feature, parameter, or economic result.
+
 PrediX is an experimental, decentralized, non-custodial protocol for predictive markets. Participation in any PrediX product - including trading, liquidity provisioning, staking, governance, and any product feature described in this documentation - involves material risk.
 
 This page outlines the categories of risk that users, liquidity providers, token holders, and integrators should understand before interacting with the protocol. The list is not exhaustive. Users are solely responsible for their own due diligence and the consequences of their actions on the protocol.

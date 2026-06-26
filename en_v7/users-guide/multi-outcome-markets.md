@@ -43,15 +43,11 @@ For multi-outcome markets, PrediX provides **GroupSplit** and **GroupMerge** - c
 
 <figure><img src="../.gitbook/assets/7.png" alt=""><figcaption></figcaption></figure>
 
-**Deposit `$1 USDC` → receive `1 YES + 1 NO` for every outcome in the group.**
+**Deposit `$1 USDC` → receive `1 YES` for every outcome in the group.**
 
 <figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
-But wait - that doesn't sum to `$1`. Why?
-
-Because **only the winning YES + 31 losing NO** pay. The 31 losing YES = `$0`, and the 1 winning NO = `$0`. Net effect: you get exactly your `$1 USDC` back (minus the winning YES which is the one you'd actually "want").
-
-In practice, traders use GroupSplit to **sell the YES tokens they don't believe in** at market prices and hold the YES they do believe in.
+This sums to exactly $1: at resolution, exactly one outcome's YES pays $1 and the rest pay $0. GroupSplit is the exact inverse of GroupMerge — split $1 into the full YES set, or merge the full YES set back into $1. Traders use GroupSplit to acquire the full set cheaply, then sell the YES tokens they don't believe in and hold the one they do.
 
 #### <mark style="color:orange;">GroupMerge</mark>
 
@@ -89,13 +85,17 @@ If sum of all YES prices = `$0.92`:
 
 If sum of all YES prices = `$1.07`:
 
-1. **GroupSplit** `$1 USDC` → get `1 YES + 1 NO` per outcome
-2. Sell every YES at market = `$1.07 received`
-3. **Profit: `$0.07`** (you keep the NO tokens, but they collectively are worth `~$0` after resolution since only 1 NO loses)
+1. **GroupSplit** `$1 USDC` → get `1 YES` per outcome
+2. Sell every YES at market = `$1.07` received
+3. **Profit: `$0.07`** (no residual position — the full YES set was sold)
 
 </details>
 
 These arbitrages keep prices honest. Bots run them continuously, so manual opportunities last seconds.
+
+{% hint style="warning" %}
+All figures are illustrative and for reference only. Parameters may change; verify on-chain.
+{% endhint %}
 
 ***
 

@@ -54,14 +54,20 @@ The lower the spread, the more efficient the market. As makers place tighter lim
 
 Behind every market is also a **Uniswap v4 pool** with a custom hook designed for prediction markets. The pool always has liquidity, even when the orderbook is thin or empty.
 
-| Property             | Value                                                            |
-| -------------------- | ---------------------------------------------------------------- |
-| **Pricing**          | Continuous - every price between `$0.01` and `$0.99` is quotable |
-| **Liquidity source** | LP positions (anyone can be an LP)                               |
-| **Fee**              | `0.30%` per swap, paid to LPs                                    |
-| **Availability**     | 24/7, even on brand-new markets with empty orderbooks            |
+| Property             | Value                                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------- |
+| **Pricing**          | Continuous - every price between `$0.01` and `$0.99` is quotable                      |
+| **Liquidity source** | LP positions (anyone can be an LP)                                                    |
+| **Fee**              | Dynamic `0.5%–5%` per swap by time to expiry, paid to LPs (see Economic Architecture) |
+| **Availability**     | 24/7, even on brand-new markets with empty orderbooks                                 |
 
 The AMM ensures you can always trade, no matter the orderbook depth. This is PrediX's edge over pure orderbook exchanges where new markets often start with no liquidity.
+
+> Decision needed (P0 for SC team): confirm the canonical AMM fee is the dynamic 0.5–5% schedule, then make every page reference it — do not restate a flat number anywhere.
+
+{% hint style="warning" %}
+_All figures are illustrative and for reference only. Parameters may change; verify on-chain._
+{% endhint %}
 
 ***
 

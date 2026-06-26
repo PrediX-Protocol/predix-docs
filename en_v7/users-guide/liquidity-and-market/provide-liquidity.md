@@ -171,18 +171,23 @@ Unlike standard AMM pairs (ETH/USDC), outcome token prices are bounded between $
 YES-USDC pool created when YES = $0.50:
 - Deposit: 100 USDC + 200 YES = total $200 (200 YES × $0.50 + 100 USDC)
 - Suppose YES → $0.80 (new information leads the market to believe the event will occur)
-- AMM rebalances: fewer YES, more USDC (constant product k)
-- After rebalance: e.g. 150 USDC + 125 YES
-- Total = 150 + 125 × 0.80 = 150 + 100 = $250
+- AMM rebalances along the constant-product curve (k = 100 × 200 = 20,000):
+    USDC = √(k × 0.80) ≈ 126.49
+    YES  = √(k ÷ 0.80) ≈ 158.11
+- Total = 126.49 + 158.11 × 0.80 = 126.49 + 126.49 = $252.98
 
 If you had held instead of LP:
-- Held 100 USDC + 200 YES = 100 + 160 = $260
+- Held 100 USDC + 200 YES = 100 + 160 = $260.00
 
-IL = $260 - $250 = $10 (3.85% vs hold)
+IL = $260.00 - $252.98 = $7.02 (2.70% vs hold)
 ```
 
 {% hint style="info" %}
 IL is offset by earned fees. If volume is high enough → fees > IL → net profit.
+{% endhint %}
+
+{% hint style="warning" %}
+_All figures are illustrative and for reference only. Parameters may change; verify on-chain._
 {% endhint %}
 
 ***
